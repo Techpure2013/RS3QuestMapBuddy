@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "resolvePackageJsonExports": true,
+    "module": "ESNext",
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "target": "es6",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "strictNullChecks": false,
+    "lib": ["es2019", "dom"],
+    "baseUrl": "./src",
+    "paths": {
+      "src/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "allowTsInNodeModules": true
+}

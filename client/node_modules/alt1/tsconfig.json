@@ -1,0 +1,47 @@
+{
+	"compilerOptions": {
+		"rootDir": "./src",
+		"moduleResolution": "node16",
+		"module": "Node16",
+		"lib": [
+			"es6",
+			"dom"
+		],
+		"paths": {
+			//somehow can't get typescript to pick up on export of our own package.json
+			"alt1/*": [
+				"./src/*"
+			]
+		},
+		//currently doesn't work for intellisense
+		// "customConditions": [
+		// 	"alt1-source"
+		// ],
+		"target": "ES2017",
+		"alwaysStrict": true,
+		"jsx": "react",
+		"allowJs": false,
+		"baseUrl": ".",
+		"strictNullChecks": true,
+		"strictPropertyInitialization": false,
+		"experimentalDecorators": true,
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+		"declarationDir": "./dist",
+		"outDir": "./dist",
+		"esModuleInterop": true
+	},
+	"include": [
+		"./src"
+	],
+	"exclude": [
+		"node_modules",
+		"./types/*",
+		"./scripts/**",
+		"**/webpack.config.ts",
+		"./dist/**",
+		"tests"
+	],
+	"compileOnSave": false
+}

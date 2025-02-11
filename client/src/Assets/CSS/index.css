@@ -1,0 +1,94 @@
+/* Topdown Layer */
+.map-topdown img {
+  filter: brightness(0.8) saturate(1.5) hue-rotate(18deg) contrast(1.6);
+}
+
+/*Smooth transitions when tiles load */
+.map-topdown img {
+  transition: filter 0.3s ease-in-out;
+}
+.leaflet-container .leaflet-layer:first-child {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Collision Layer if its applied */
+.map-collisionlayer img {
+  filter: grayscale(100%) hue-rotate(22deg);
+}
+/* Walls Layer */
+.map-walls {
+  filter: saturate(1.7);
+}
+/* Floor Button */
+.floorButtonContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.floor-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #4a5568;
+  background-color: #2d3748;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.floor-button:hover {
+  background-color: #4a5568;
+  transform: scale(1.1);
+}
+
+.floor-button:active {
+  transform: scale(0.95);
+}
+
+.floor-button--up {
+  order: 1;
+}
+
+.floor-display {
+  background-color: rgba(45, 55, 72, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.floor-button--down {
+  order: 3;
+}
+/*Coordinate Box*/
+.cursor-coordinates-box {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: rgba(45, 55, 72, 0.9);
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: white;
+  font-family: monospace;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.coordinate-row {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  margin: 4px 0;
+}
