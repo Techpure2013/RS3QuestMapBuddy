@@ -53,9 +53,11 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "dist"), // Serve files from the 'dist' folder
     },
+
     port: 3000, // Development server port
     open: true, // Automatically open the browser
-    hot: true, // Enable hot module replacement
-    historyApiFallback: true, // For SPA routing
+    hot: false, // Enable hot module replacement
+    historyApiFallback: true,
+    liveReload: false, // Disable Live Reloading
   },
 };

@@ -1,75 +1,93 @@
-import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { MapContainer, TileLayer, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { LatLngBounds } from "leaflet";
-import "./../Assets/CSS/leafless.css";
 import "./../Assets/CSS/index.css";
-import "./../Assets/Images/runescapeCursor.png";
-import GridLayer from "./../Map Classes/Map Components/GridLayerComponent";
-import HighlightLayer from "./../Map Classes/Map Components/TileHighlighting";
+import "./../Assets/CSS/leafless.css";
+import { LatLngBounds } from "leaflet";
 import {
   bounds,
   gameMapOptions,
-  MapDragHandler,
   HandleFloorIncreaseDecrease,
 } from "./../Map Classes/MapFunctions";
-import axios from "axios";
+import GridLayer from "./../Map Classes/Map Components/GridLayerComponent";
+import HighlightLayer from "./../Map Classes/Map Components/TileHighlighting";
+import { useParams } from "react-router-dom";
+import { useSocket } from "./../Entrance/Entrance Components/SocketProvider";
 
 const App: React.FC = () => {
-  const [floor, setFloor] = useState(0);
-  const [zoom, setZoom] = useState(0);
-  const [, setX] = useState(0);
-  const [, setY] = useState(0);
+  const { UserID, QuestName, level, z, x, y } = useParams<{
+    UserID: string;
+    QuestName: string;
+    level: string;
+    z: string;
+    x: string;
+    y: string;
+  }>();
+  let socket = useSocket();
+  // Parse the URL parameters into numbers (if applicable)
+  const initialFloor = level ? parseInt(level, 10) : 0;
+  const initialZoom = z ? parseInt(z, 10) : 2;
+  const initialCursorX = x ? parseInt(x, 10) : 3288;
+  const initialCursorY = y ? parseInt(y, 10) : 3023;
+
+  const [floor, setFloor] = useState(initialFloor);
+  const [zoom] = useState(initialZoom);
+  const [cursorX, setCursorX] = useState(initialCursorX);
+  const [cursorY, setCursorY] = useState(initialCursorY);
+
   const bound: LatLngBounds = bounds();
-  const [cursorX, setCursorX] = useState(0);
-  const [cursorY, setCursorY] = useState(0);
-  const layers = [
-    {
-      name: "Topdown",
-      url: `https://runeapps.org/s3/map4/live/topdown-${floor}/{z}/{x}-{y}.webp`,
-      tileSize: 512,
-      maxNativeZoom: 5,
-      minZoom: -4,
-      opacity: 0.8,
-      className: "map-topdown",
-      updateWhenZooming: false,
-      updateInterval: 100,
-    },
-    {
-      name: "Walls",
-      url: `https://runeapps.org/s3/map4/live/walls-${floor}/{z}/{x}-{y}.svg`,
-      tileSize: 512,
-      maxNativeZoom: 3,
-      minNativeZoom: 3,
-      minZoom: -4,
-      opacity: 0.6,
-      className: "map-walls",
-      updateWhenZooming: false,
-      updateInterval: 100,
-    },
-  ];
-  const [data, setData] = useState<any>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  // Function to fetch data from MapBuddy backend
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "http://localhost:42069/api/messagesenttomapbuddy"
-      );
-      setData(response.data); // Update the state with new data
-    } catch (err: any) {
-      setError("Error fetching processed data");
-      console.error("Error:", err);
-    }
-  };
-
-  // Polling the backend every 5 seconds
   useEffect(() => {
-    const intervalId = setInterval(fetchData, 5000); // 5000ms = 5 seconds
-    console.log(data);
-    // Clean up interval when component unmounts
-    return () => clearInterval(intervalId);
+    console.log("URL Parameters:", { UserID, QuestName, level, z, x, y });
+  }, [UserID, QuestName, level, z, x, y]);
+
+  const layers = useMemo(
+    () => [
+      {
+        name: "Topdown",
+        url: `https://runeapps.org/s3/map4/live/topdown-${floor}/{z}/{x}-{y}.webp`,
+        tileSize: 512,
+        maxNativeZoom: 5,
+        minZoom: -4,
+        opacity: 0.8,
+        className: "map-topdown",
+        updateWhenZooming: false,
+        updateInterval: 100,
+      },
+      {
+        name: "Walls",
+        url: `https://runeapps.org/s3/map4/live/walls-${floor}/{z}/{x}-{y}.svg`,
+        tileSize: 512,
+        maxNativeZoom: 3,
+        minNativeZoom: 3,
+        minZoom: -4,
+        opacity: 0.6,
+        className: "map-walls",
+        updateWhenZooming: true,
+        updateInterval: 50,
+      },
+    ],
+    [floor]
+  );
+  const MapClickHandler = () => {
+    useMapEvents({
+      click: (e) => {
+        const { lat, lng } = e.latlng;
+        const jsonOutput = {
+          lat: Math.round(lat),
+          lng: Math.round(lng) - 1,
+        };
+
+        // Send the coordinates to the backend via Socket.IO
+        socket.emit("send-coordinates", jsonOutput);
+
+        console.log("Coordinates sent to the server:", jsonOutput);
+      },
+    });
+    return null;
+  };
+  const handleCursorMove = useCallback((x: number, y: number) => {
+    setCursorX((prevX) => (prevX !== x - 0.5 ? x - 0.5 : prevX));
+    setCursorY((prevY) => (prevY !== y + 0.5 ? y + 0.5 : prevY));
   }, []);
 
   return (
@@ -86,6 +104,7 @@ const App: React.FC = () => {
         center={[3288, 3023]}
         crs={gameMapOptions().crs}
       >
+        <MapClickHandler />
         <div className="cursor-coordinates-box">
           <div className="coordinate-row">
             <span>Zoom: {zoom}</span>
@@ -105,9 +124,7 @@ const App: React.FC = () => {
           >
             ↑
           </button>
-
           <div className="floor-display">Floor {floor}</div>
-
           <button
             className="floor-button floor-button--down"
             onClick={() => {
@@ -120,8 +137,6 @@ const App: React.FC = () => {
             ↓
           </button>
         </div>
-
-        <MapDragHandler setX={setX} setY={setY} setZoom={setZoom} />
         {layers.map((layer) => (
           <TileLayer
             key={layer.name}
@@ -138,12 +153,7 @@ const App: React.FC = () => {
           />
         ))}
         <GridLayer />
-        <HighlightLayer
-          onCursorMove={(x, y) => {
-            setCursorX(x - 0.5);
-            setCursorY(y + 0.5);
-          }}
-        />
+        <HighlightLayer onCursorMove={handleCursorMove} />
       </MapContainer>
     </div>
   );

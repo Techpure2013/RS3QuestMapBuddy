@@ -1,4 +1,10 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { useMap } from "react-leaflet";
 import * as leaflet from "leaflet";
 import { MapOptions } from "leaflet";
@@ -15,34 +21,34 @@ export const MapDragHandler: React.FC<DragHandlerInterface> = ({
 }) => {
   const map = useMap();
 
+  // Memoized function to update state
+  const updateState = useCallback(() => {
+    const currentZoom = map.getZoom();
+    const center = map.getCenter();
+    const point = map.project(center, currentZoom);
+    const tileSize = 512;
+    const x = Math.floor(point.x / tileSize);
+    const y = Math.floor(point.y / tileSize);
+
+    setX((prevX) => (prevX !== x ? x : prevX)); // Only update if value changes
+    setY((prevY) => (prevY !== y ? y : prevY)); // Only update if value changes
+    setZoom((prevZoom) => (prevZoom !== currentZoom ? currentZoom : prevZoom)); // Only update if value changes
+  }, [map, setX, setY, setZoom]);
+
   useEffect(() => {
-    const updateState = () => {
-      const currentZoom = map.getZoom();
-      const center = map.getCenter();
-      const point = map.project(center, currentZoom);
-      const tileSize = 512;
-      const x = Math.floor(point.x / tileSize);
-      const y = Math.floor(point.y / tileSize);
-      setX(x);
-      setY(y);
-      setZoom(currentZoom);
-    };
-
-    const handleZoomEnd = () => {
-      setZoom(map.getZoom());
-    };
-
+    // Attach event listeners
     map.on("moveend", updateState);
-    map.on("zoomend", handleZoomEnd);
+    map.on("zoomend", updateState);
 
-    // Initial update
+    // Initial state update
     updateState();
 
     return () => {
+      // Cleanup event listeners
       map.off("moveend", updateState);
-      map.off("zoomend", handleZoomEnd);
+      map.off("zoomend", updateState);
     };
-  }, [map, setX, setY, setZoom]);
+  }, [map, updateState]);
 
   return null;
 };

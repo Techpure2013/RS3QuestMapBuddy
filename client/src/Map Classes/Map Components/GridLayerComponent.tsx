@@ -6,6 +6,7 @@ const GridLayer = () => {
   const map = useMap();
 
   useEffect(() => {
+    // Create a new Graticule instance
     const grid = new Graticule({
       intervals: [
         { min_zoom: -6, interval: 1024 },
@@ -26,13 +27,16 @@ const GridLayer = () => {
       pane: "overlayPane",
     });
 
+    // Add the grid to the map
     grid.addTo(map);
 
+    // Cleanup: Remove the grid when the component unmounts
     return () => {
       grid.remove();
     };
-  }, [map]);
+  }, []); // Dependency array ensures this runs only once
 
   return null;
 };
+
 export default GridLayer;

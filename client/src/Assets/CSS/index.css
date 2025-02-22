@@ -1,3 +1,16 @@
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* Topdown Layer */
 .map-topdown img {
   filter: brightness(0.8) saturate(1.5) hue-rotate(18deg) contrast(1.6);

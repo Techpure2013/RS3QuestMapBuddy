@@ -2,12 +2,17 @@
   "name": "runescape-leafletbuddy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently --raw \"npm run server\" \"npm run client\"",
+    "server": "cd server && tsc && node dist/server.js",
+    "client": "cd client && npm run build && npm run start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "concurrently": "^9.1.2"
+  }
 }

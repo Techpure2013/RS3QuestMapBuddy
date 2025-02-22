@@ -1,9 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client"; // Note the '/client' for React 18
+import React, { useEffect, useRef } from "react";
+import ReactDOM from "react-dom/client";
 import App from "./../Application/app";
+import { io, Socket } from "socket.io-client";
+import { SocketProvider } from "./Entrance Components/SocketProvider";
 
-const rootElement = document.getElementById("root");
-if (!rootElement) throw new Error("Root element not found");
-const root = ReactDOM.createRoot(rootElement);
-
-root.render(<App />);
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <SocketProvider>
+    <App />
+  </SocketProvider>
+);

@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Rectangle, useMap } from "react-leaflet";
 import * as leaflet from "leaflet";
 
 interface HighlightLayerProps {
   onCursorMove: (x: number, y: number) => void;
 }
+
 const HighlightLayer: React.FC<HighlightLayerProps> = ({ onCursorMove }) => {
   const map = useMap();
   const [currentTile, setCurrentTile] = useState<leaflet.LatLngBounds | null>(
@@ -12,18 +13,21 @@ const HighlightLayer: React.FC<HighlightLayerProps> = ({ onCursorMove }) => {
   );
   const [zoom, setZoom] = useState(map.getZoom());
 
-  // Calculate tile bounds from mouse position
-  const getTileBounds = (latlng: leaflet.LatLng) => {
-    const interval = 1;
-    const x = Math.floor(latlng.lng - 0.5) + 0.5;
-    const y = Math.floor(latlng.lat + 0.5) - 0.5;
-    onCursorMove(x, y);
-    return new leaflet.LatLngBounds([y, x], [y + interval, x + interval]);
-  };
+  // Memoized function to calculate tile bounds
+  const getTileBounds = useCallback(
+    (latlng: leaflet.LatLng) => {
+      const interval = 1;
+      const x = Math.floor(latlng.lng - 0.5) + 0.5;
+      const y = Math.floor(latlng.lat + 0.5) - 0.5;
+      onCursorMove(x, y);
+      return new leaflet.LatLngBounds([y, x], [y + interval, x + interval]);
+    },
+    [onCursorMove]
+  );
 
-  // Mouse move handler
+  // Mouse move and zoom handlers
   useEffect(() => {
-    let lastTile = "";
+    let lastTileKey = "";
 
     const handleMove = (e: leaflet.LeafletMouseEvent) => {
       if (zoom < -3) {
@@ -36,14 +40,15 @@ const HighlightLayer: React.FC<HighlightLayerProps> = ({ onCursorMove }) => {
         bounds.getSouthWest().lat
       }`;
 
-      if (tileKey !== lastTile) {
+      if (tileKey !== lastTileKey) {
         setCurrentTile(bounds);
-        lastTile = tileKey;
+        lastTileKey = tileKey;
       }
     };
+
     const handleZoom = () => {
       setZoom(map.getZoom());
-      setCurrentTile(null); // Clear highlight on zoom important
+      setCurrentTile(null); // Clear highlight on zoom
     };
 
     map.on("mousemove", handleMove);
@@ -53,7 +58,7 @@ const HighlightLayer: React.FC<HighlightLayerProps> = ({ onCursorMove }) => {
       map.off("mousemove", handleMove);
       map.off("zoomend", handleZoom);
     };
-  }, [map, zoom]);
+  }, [map, zoom, getTileBounds]);
 
   return currentTile && zoom >= 1 ? (
     <Rectangle
@@ -69,4 +74,5 @@ const HighlightLayer: React.FC<HighlightLayerProps> = ({ onCursorMove }) => {
     />
   ) : null;
 };
+
 export default HighlightLayer;
