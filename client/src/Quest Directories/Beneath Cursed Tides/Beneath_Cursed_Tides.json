@@ -1,0 +1,890 @@
+{
+    "questName": "Beneath Cursed Tides",
+    "questSteps": [
+        {
+            "stepDescription": "Speak to Wizard Myrtle at the fountain near the entrance to the Wizards' Tower. (Fairy ring DIS) (Chat 2\u2022\u2713\u20221)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go to the Edgeville ruins just south of the bank and speak to Vannaka. (Chat 1\u20224\u20221)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Return to the Wizards' Tower, and talk to Wizard Myrtle. (Chat 2\u20221)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Make your way to Mudskipper Point. The fastest route is via fairy ring AIQ. Alternatively, you can run south from the Port Sarim lodestone.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Unequip your weapons and dismiss followers and then talk to Wizard Myrtle. (Chat 1\u20222\u20221)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "If you have completed the Freeing Pirate Pete Recipe for Disaster subquest, or have built any kind of diving suit in the Aquarium. (Chat 1\u20221\u20222\u20221)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "East of the room, read the message in the bottle for the key and open the door.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Brynna, the survival expert. (directly to the south)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Catch two raw shrimps.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Gather the seaweed nearby and cut the dead tree.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Interact with the boulder.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Cook both shrimp on the steam vent (two squares west of the boulder) to receive two boiled shrimps.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Boil 1 shrimp again to burn it. (Keep one boiled shrimp)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Brynna twice.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Continue through the west gate.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go to the building to the west and talk to Lev, the master chef.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go to the large jellyfish south-east of the chef's house and play the music box. (Chat 2\u20223\u20221)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Gather tasty seaweed.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the master chef again.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Prepare the large table 3 times by matching the 3 tastes with 3 ingredients. (large table is in the same house)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Recipe Number And Recipe Solution",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "First: Sweet, Sour, Spicy -> 1 up, 2 up, 3 up",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Second: Mellow, Sour, Bitter -> 2 down, 2 up, 3 down",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Third: Spicy, Salty, Bitter -> 3 up, 1 down, 3 down",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Continue through the west door to the small house in the north.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Climb down the ladder.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Dezzick, the mining instructor. (Chat 1\u20223)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Mine soggy copper ore and soggy tin ore.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Add the ores to furnace",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Right click and close the doors.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Operate the pump and light the furnace.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Retrieve the bronzish bar from the furnace.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Smith a bronze dagger.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the mining instructor again.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Continue through the east gate.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Vannaka, the combat instructor. (Chat 1\u20222)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Open the gate and click on the sword in the middle of the room to begin combat training.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Click on the rats and other elements bouncing on the screen.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Exit the cage and climb the ladder to the north-east.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Fishy business",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the financial advisor. (Chat 1)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Enter the vault (the code is 139).",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the financial advisor.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Leave through the 2 doors to the east",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Head south to the church through double doors",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Brother Brace.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Read the friend list",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "There will be 2 fish just east of the bank and 3 fish back through the 2 doors leading through the bank",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "One of the five fish will tell you where the book is. Search for it.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Give the book to Brother Brace.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go through the south door to the south-east building and talk to Wizard Terrova. (Chat 1\u20221)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Attack a chicken.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the wizard.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Commotion in the ocean",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Pick any option during the cutscene.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Channel the spell while repelling Crassians.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Finish Hector Vivian.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Wizard Myrtle. (Chat 1)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Quest complete!",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        }
+    ]
+}

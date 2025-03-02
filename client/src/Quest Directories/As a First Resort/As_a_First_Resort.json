@@ -1,0 +1,1640 @@
+{
+  "questName": "As a First Resort",
+  "questSteps": [
+    {
+      "stepDescription": "Head to Oo'glog and talk to Chief Tess. (Chat 1\u20221\u2022\u2713\u20221\u20221)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2850,
+          "lng": 2547
+        },
+        {
+          "lat": 2850,
+          "lng": 2548
+        },
+        {
+          "lat": 2851,
+          "lng": 2545
+        },
+        {
+          "lat": 2851,
+          "lng": 2547
+        },
+        {
+          "lat": 2851,
+          "lng": 2548
+        },
+        {
+          "lat": 2851,
+          "lng": 2549
+        },
+        {
+          "lat": 2851,
+          "lng": 2550
+        },
+        {
+          "lat": 2852,
+          "lng": 2550
+        },
+        {
+          "lat": 2852,
+          "lng": 2549
+        },
+        {
+          "lat": 2852,
+          "lng": 2548
+        },
+        {
+          "lat": 2852,
+          "lng": 2547
+        },
+        {
+          "lat": 2852,
+          "lng": 2546
+        },
+        {
+          "lat": 2852,
+          "lng": 2545
+        },
+        {
+          "lat": 2853,
+          "lng": 2545
+        },
+        {
+          "lat": 2853,
+          "lng": 2546
+        },
+        {
+          "lat": 2853,
+          "lng": 2547
+        },
+        {
+          "lat": 2853,
+          "lng": 2548
+        },
+        {
+          "lat": 2853,
+          "lng": 2549
+        },
+        {
+          "lat": 2853,
+          "lng": 2550
+        },
+        {
+          "lat": 2854,
+          "lng": 2550
+        },
+        {
+          "lat": 2854,
+          "lng": 2549
+        },
+        {
+          "lat": 2854,
+          "lng": 2548
+        },
+        {
+          "lat": 2854,
+          "lng": 2547
+        },
+        {
+          "lat": 2854,
+          "lng": 2546
+        },
+        {
+          "lat": 2854,
+          "lng": 2545
+        },
+        {
+          "lat": 2855,
+          "lng": 2545
+        },
+        {
+          "lat": 2855,
+          "lng": 2546
+        },
+        {
+          "lat": 2855,
+          "lng": 2547
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Balnea in the Oo'glog bank. (Chat 1\u20222\u20221\u20221\u20221\u20221)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2840,
+          "lng": 2556
+        },
+        {
+          "lat": 2839,
+          "lng": 2556
+        },
+        {
+          "lat": 2839,
+          "lng": 2557
+        },
+        {
+          "lat": 2840,
+          "lng": 2557
+        },
+        {
+          "lat": 2840,
+          "lng": 2558
+        },
+        {
+          "lat": 2839,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Chargurr north of the bank. (Chat 1)",
+      "itemsNeeded": [
+        "10 eucalyptus logs",
+        "8 achey tree logs",
+        "4 spears and 2 raw chompies"
+      ],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2852,
+          "lng": 2558
+        },
+        {
+          "lat": 2852,
+          "lng": 2559
+        },
+        {
+          "lat": 2852,
+          "lng": 2560
+        },
+        {
+          "lat": 2852,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2560
+        },
+        {
+          "lat": 2851,
+          "lng": 2559
+        },
+        {
+          "lat": 2851,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Chargurr",
+      "itemsNeeded": ["8 achey tree logs", "10 eucalyptus logs"],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2852,
+          "lng": 2558
+        },
+        {
+          "lat": 2852,
+          "lng": 2559
+        },
+        {
+          "lat": 2852,
+          "lng": 2560
+        },
+        {
+          "lat": 2852,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2560
+        },
+        {
+          "lat": 2851,
+          "lng": 2559
+        },
+        {
+          "lat": 2851,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [
+        "With eight achey tree logs and ten eucalyptus logs in your inventory (make sure it is one inventory) to add them to the fire pit."
+      ]
+    },
+    {
+      "stepDescription": "Talk to Chargurr. (Chat 2)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2852,
+          "lng": 2558
+        },
+        {
+          "lat": 2852,
+          "lng": 2559
+        },
+        {
+          "lat": 2852,
+          "lng": 2560
+        },
+        {
+          "lat": 2852,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2560
+        },
+        {
+          "lat": 2851,
+          "lng": 2559
+        },
+        {
+          "lat": 2851,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Give her four spears. (Chat 2)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2852,
+          "lng": 2558
+        },
+        {
+          "lat": 2852,
+          "lng": 2559
+        },
+        {
+          "lat": 2852,
+          "lng": 2560
+        },
+        {
+          "lat": 2852,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2560
+        },
+        {
+          "lat": 2851,
+          "lng": 2559
+        },
+        {
+          "lat": 2851,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Chargurr. (Chat 2)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2852,
+          "lng": 2558
+        },
+        {
+          "lat": 2852,
+          "lng": 2559
+        },
+        {
+          "lat": 2852,
+          "lng": 2560
+        },
+        {
+          "lat": 2852,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2560
+        },
+        {
+          "lat": 2851,
+          "lng": 2559
+        },
+        {
+          "lat": 2851,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Use two raw chompies on Chargurr.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2852,
+          "lng": 2558
+        },
+        {
+          "lat": 2852,
+          "lng": 2559
+        },
+        {
+          "lat": 2852,
+          "lng": 2560
+        },
+        {
+          "lat": 2852,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2560
+        },
+        {
+          "lat": 2851,
+          "lng": 2559
+        },
+        {
+          "lat": 2851,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Chargurr.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2852,
+          "lng": 2558
+        },
+        {
+          "lat": 2852,
+          "lng": 2559
+        },
+        {
+          "lat": 2852,
+          "lng": 2560
+        },
+        {
+          "lat": 2852,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2560
+        },
+        {
+          "lat": 2851,
+          "lng": 2559
+        },
+        {
+          "lat": 2851,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Light the fire pit.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2853,
+          "lng": 2558
+        },
+        {
+          "lat": 2854,
+          "lng": 2558
+        },
+        {
+          "lat": 2855,
+          "lng": 2558
+        },
+        {
+          "lat": 2855,
+          "lng": 2559
+        },
+        {
+          "lat": 2855,
+          "lng": 2560
+        },
+        {
+          "lat": 2854,
+          "lng": 2560
+        },
+        {
+          "lat": 2854,
+          "lng": 2559
+        },
+        {
+          "lat": 2853,
+          "lng": 2559
+        },
+        {
+          "lat": 2853,
+          "lng": 2560
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Chargurr.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2852,
+          "lng": 2558
+        },
+        {
+          "lat": 2852,
+          "lng": 2559
+        },
+        {
+          "lat": 2852,
+          "lng": 2560
+        },
+        {
+          "lat": 2852,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2561
+        },
+        {
+          "lat": 2851,
+          "lng": 2560
+        },
+        {
+          "lat": 2851,
+          "lng": 2559
+        },
+        {
+          "lat": 2851,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Balnea located in the bank. (Chat 1)",
+      "itemsNeeded": ["8 stripy feathers (or a bird snare)"],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2840,
+          "lng": 2556
+        },
+        {
+          "lat": 2839,
+          "lng": 2556
+        },
+        {
+          "lat": 2839,
+          "lng": 2557
+        },
+        {
+          "lat": 2840,
+          "lng": 2557
+        },
+        {
+          "lat": 2840,
+          "lng": 2558
+        },
+        {
+          "lat": 2839,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Snurgh who is in the eastern most building of Oo'glog. (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2846,
+          "lng": 2594
+        },
+        {
+          "lat": 2846,
+          "lng": 2595
+        },
+        {
+          "lat": 2846,
+          "lng": 2596
+        },
+        {
+          "lat": 2846,
+          "lng": 2597
+        },
+        {
+          "lat": 2845,
+          "lng": 2597
+        },
+        {
+          "lat": 2845,
+          "lng": 2596
+        },
+        {
+          "lat": 2845,
+          "lng": 2595
+        },
+        {
+          "lat": 2845,
+          "lng": 2594
+        },
+        {
+          "lat": 2844,
+          "lng": 2594
+        },
+        {
+          "lat": 2844,
+          "lng": 2595
+        },
+        {
+          "lat": 2844,
+          "lng": 2596
+        },
+        {
+          "lat": 2844,
+          "lng": 2597
+        },
+        {
+          "lat": 2843,
+          "lng": 2597
+        },
+        {
+          "lat": 2843,
+          "lng": 2596
+        },
+        {
+          "lat": 2843,
+          "lng": 2595
+        },
+        {
+          "lat": 2843,
+          "lng": 2594
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Give her eight stripy feathers.",
+      "itemsNeeded": ["8 stripy feathers"],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2846,
+          "lng": 2594
+        },
+        {
+          "lat": 2846,
+          "lng": 2595
+        },
+        {
+          "lat": 2846,
+          "lng": 2596
+        },
+        {
+          "lat": 2846,
+          "lng": 2597
+        },
+        {
+          "lat": 2845,
+          "lng": 2597
+        },
+        {
+          "lat": 2845,
+          "lng": 2596
+        },
+        {
+          "lat": 2845,
+          "lng": 2595
+        },
+        {
+          "lat": 2845,
+          "lng": 2594
+        },
+        {
+          "lat": 2844,
+          "lng": 2594
+        },
+        {
+          "lat": 2844,
+          "lng": 2595
+        },
+        {
+          "lat": 2844,
+          "lng": 2596
+        },
+        {
+          "lat": 2844,
+          "lng": 2597
+        },
+        {
+          "lat": 2843,
+          "lng": 2597
+        },
+        {
+          "lat": 2843,
+          "lng": 2596
+        },
+        {
+          "lat": 2843,
+          "lng": 2595
+        },
+        {
+          "lat": 2843,
+          "lng": 2594
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Balnea. (Chat 1\u20221)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2840,
+          "lng": 2556
+        },
+        {
+          "lat": 2839,
+          "lng": 2556
+        },
+        {
+          "lat": 2839,
+          "lng": 2557
+        },
+        {
+          "lat": 2840,
+          "lng": 2557
+        },
+        {
+          "lat": 2840,
+          "lng": 2558
+        },
+        {
+          "lat": 2839,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Kringk in the building east of the bank. (Chat 2)",
+      "itemsNeeded": [
+        "8 larupia furs (tatty or regular) and 4 wolf bones (if you need to trap the larupias bring a teasing stick)"
+      ],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2845,
+          "lng": 2577
+        },
+        {
+          "lat": 2844,
+          "lng": 2577
+        },
+        {
+          "lat": 2844,
+          "lng": 2578
+        },
+        {
+          "lat": 2845,
+          "lng": 2578
+        },
+        {
+          "lat": 2845,
+          "lng": 2579
+        },
+        {
+          "lat": 2844,
+          "lng": 2579
+        },
+        {
+          "lat": 2844,
+          "lng": 2580
+        },
+        {
+          "lat": 2845,
+          "lng": 2580
+        },
+        {
+          "lat": 2845,
+          "lng": 2581
+        },
+        {
+          "lat": 2844,
+          "lng": 2581
+        },
+        {
+          "lat": 2844,
+          "lng": 2582
+        },
+        {
+          "lat": 2845,
+          "lng": 2582
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Give her four wolf bones and eight larupia furs. (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2845,
+          "lng": 2577
+        },
+        {
+          "lat": 2844,
+          "lng": 2577
+        },
+        {
+          "lat": 2844,
+          "lng": 2578
+        },
+        {
+          "lat": 2845,
+          "lng": 2578
+        },
+        {
+          "lat": 2845,
+          "lng": 2579
+        },
+        {
+          "lat": 2844,
+          "lng": 2579
+        },
+        {
+          "lat": 2844,
+          "lng": 2580
+        },
+        {
+          "lat": 2845,
+          "lng": 2580
+        },
+        {
+          "lat": 2845,
+          "lng": 2581
+        },
+        {
+          "lat": 2844,
+          "lng": 2581
+        },
+        {
+          "lat": 2844,
+          "lng": 2582
+        },
+        {
+          "lat": 2845,
+          "lng": 2582
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Balnea.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2840,
+          "lng": 2556
+        },
+        {
+          "lat": 2839,
+          "lng": 2556
+        },
+        {
+          "lat": 2839,
+          "lng": 2557
+        },
+        {
+          "lat": 2840,
+          "lng": 2557
+        },
+        {
+          "lat": 2840,
+          "lng": 2558
+        },
+        {
+          "lat": 2839,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Seegud north-east of the bank.",
+      "itemsNeeded": [
+        "16 eucalyptus logs",
+        "7 each of the five types of herb or more Collect 16 eucalyptus logs and 7 each of the five type of herbs from outside around the outskirts of Oo'glog."
+      ],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2856,
+          "lng": 2568
+        },
+        {
+          "lat": 2855,
+          "lng": 2568
+        },
+        {
+          "lat": 2855,
+          "lng": 2569
+        },
+        {
+          "lat": 2856,
+          "lng": 2569
+        },
+        {
+          "lat": 2856,
+          "lng": 2570
+        },
+        {
+          "lat": 2855,
+          "lng": 2570
+        },
+        {
+          "lat": 2855,
+          "lng": 2571
+        },
+        {
+          "lat": 2856,
+          "lng": 2571
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [
+        "To clear the bugs, eucalyptus logs and different plant types are needed.",
+        "Plant and rock combinations are different for every player, using a reference chart (Provided in the images)"
+      ]
+    },
+    {
+      "stepDescription": "Head north-west of Seegud to the saltwater spring.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2865,
+          "lng": 2560
+        },
+        {
+          "lat": 2865,
+          "lng": 2561
+        },
+        {
+          "lat": 2865,
+          "lng": 2562
+        },
+        {
+          "lat": 2866,
+          "lng": 2562
+        },
+        {
+          "lat": 2866,
+          "lng": 2561
+        },
+        {
+          "lat": 2866,
+          "lng": 2560
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Examine the stones between the spring and the fire pit.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2864,
+          "lng": 2579
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [
+        "Open the quest log to find what log/plant goes with the examination message.",
+        "Place eucalyptus logs and the correct combination of plants in the fire pit and light them. The insects won't disperse."
+      ]
+    },
+    {
+      "stepDescription": "Talk to Seegud (Chat 2\u20221).",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2856,
+          "lng": 2568
+        },
+        {
+          "lat": 2855,
+          "lng": 2568
+        },
+        {
+          "lat": 2855,
+          "lng": 2569
+        },
+        {
+          "lat": 2856,
+          "lng": 2569
+        },
+        {
+          "lat": 2856,
+          "lng": 2570
+        },
+        {
+          "lat": 2855,
+          "lng": 2570
+        },
+        {
+          "lat": 2855,
+          "lng": 2571
+        },
+        {
+          "lat": 2856,
+          "lng": 2571
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Head back to the spring and talk to Snarrk.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2861,
+          "lng": 2577
+        },
+        {
+          "lat": 2861,
+          "lng": 2578
+        },
+        {
+          "lat": 2861,
+          "lng": 2579
+        },
+        {
+          "lat": 2861,
+          "lng": 2580
+        },
+        {
+          "lat": 2862,
+          "lng": 2580
+        },
+        {
+          "lat": 2862,
+          "lng": 2579
+        },
+        {
+          "lat": 2862,
+          "lng": 2578
+        },
+        {
+          "lat": 2863,
+          "lng": 2578
+        },
+        {
+          "lat": 2863,
+          "lng": 2579
+        },
+        {
+          "lat": 2863,
+          "lng": 2580
+        },
+        {
+          "lat": 2863,
+          "lng": 2581
+        },
+        {
+          "lat": 2862,
+          "lng": 2581
+        },
+        {
+          "lat": 2861,
+          "lng": 2581
+        },
+        {
+          "lat": 2860,
+          "lng": 2581
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [
+        "Disperse the insects from each of the pools. Each of the five pools will have a fire pit and a pile of stones beside it, with all pools sharing one common stone. This stone represents eucalyptus logs, which must be added to every fire. Examine the piles of stones for a detailed description of each stone."
+      ]
+    },
+    {
+      "stepDescription": "",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 0,
+          "lng": 0
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Start with the thermal bath, north-east of Seegud. ",
+      "itemsNeeded": [
+        "This fire pit requires eucalyptus logs and one of the five plants in order to disperse the insects. By trial and error, determine which plant is needed for this pool and memorise the corresponding stone. If done correctly, the swarm of insects above the pool will vanish completely."
+      ],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2864,
+          "lng": 2578
+        },
+        {
+          "lat": 2865,
+          "lng": 2578
+        },
+        {
+          "lat": 2866,
+          "lng": 2578
+        },
+        {
+          "lat": 2866,
+          "lng": 2579
+        },
+        {
+          "lat": 2865,
+          "lng": 2579
+        },
+        {
+          "lat": 2864,
+          "lng": 2579
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Next, move to the mud bath to the east",
+      "itemsNeeded": [
+        "this fire pit requires eucalyptus logs and two plants. The primary plant of this pool is the same as the plant used at the thermal bath. Figure out the secondary plant by using any of the other four unused plants, until the correct combination is discovered."
+      ],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2861,
+          "lng": 2601
+        },
+        {
+          "lat": 2860,
+          "lng": 2601
+        },
+        {
+          "lat": 2860,
+          "lng": 2602
+        },
+        {
+          "lat": 2860,
+          "lng": 2603
+        },
+        {
+          "lat": 2861,
+          "lng": 2603
+        },
+        {
+          "lat": 2861,
+          "lng": 2602
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Move to the salt-water spring west of the thermal bath",
+      "itemsNeeded": [
+        "this fire pit requires eucalyptus logs and two plants. Be sure to use the secondary plant from the mud bath as the primary plant for this pool. Find the secondary plant by using the three remaining herbs until the correct one is found."
+      ],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2865,
+          "lng": 2560
+        },
+        {
+          "lat": 2865,
+          "lng": 2561
+        },
+        {
+          "lat": 2865,
+          "lng": 2562
+        },
+        {
+          "lat": 2866,
+          "lng": 2562
+        },
+        {
+          "lat": 2866,
+          "lng": 2561
+        },
+        {
+          "lat": 2866,
+          "lng": 2560
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Now head to the sulphur spring",
+      "itemsNeeded": [
+        "this fire pit requires eucalyptus logs and two plants. Use the secondary plant for the salt-water spring as the primary plant for this spring. One of the two remaining herbs will be the secondary plant, so try them both."
+      ],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2850,
+          "lng": 2533
+        },
+        {
+          "lat": 2850,
+          "lng": 2534
+        },
+        {
+          "lat": 2850,
+          "lng": 2535
+        },
+        {
+          "lat": 2851,
+          "lng": 2535
+        },
+        {
+          "lat": 2851,
+          "lng": 2534
+        },
+        {
+          "lat": 2851,
+          "lng": 2533
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Lastly, head to the Bandos pool",
+      "itemsNeeded": [
+        "This fire pit requires eucalyptus logs and three plants. Use the secondary plant from the mud bath, the secondary plant from the sulphur pool and the unused herb."
+      ],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2844,
+          "lng": 2517
+        },
+        {
+          "lat": 2844,
+          "lng": 2518
+        },
+        {
+          "lat": 2845,
+          "lng": 2518
+        },
+        {
+          "lat": 2846,
+          "lng": 2518
+        },
+        {
+          "lat": 2846,
+          "lng": 2519
+        },
+        {
+          "lat": 2845,
+          "lng": 2519
+        },
+        {
+          "lat": 2844,
+          "lng": 2519
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "After all of the bugs are taken care of, talk to Seegud.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2856,
+          "lng": 2568
+        },
+        {
+          "lat": 2855,
+          "lng": 2568
+        },
+        {
+          "lat": 2855,
+          "lng": 2569
+        },
+        {
+          "lat": 2856,
+          "lng": 2569
+        },
+        {
+          "lat": 2856,
+          "lng": 2570
+        },
+        {
+          "lat": 2855,
+          "lng": 2570
+        },
+        {
+          "lat": 2855,
+          "lng": 2571
+        },
+        {
+          "lat": 2856,
+          "lng": 2571
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Balnea. (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2840,
+          "lng": 2556
+        },
+        {
+          "lat": 2839,
+          "lng": 2556
+        },
+        {
+          "lat": 2839,
+          "lng": 2557
+        },
+        {
+          "lat": 2840,
+          "lng": 2557
+        },
+        {
+          "lat": 2840,
+          "lng": 2558
+        },
+        {
+          "lat": 2839,
+          "lng": 2558
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Talk to Chief Tess. (Chat 1\u20221)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2850,
+          "lng": 2547
+        },
+        {
+          "lat": 2850,
+          "lng": 2548
+        },
+        {
+          "lat": 2851,
+          "lng": 2545
+        },
+        {
+          "lat": 2851,
+          "lng": 2547
+        },
+        {
+          "lat": 2851,
+          "lng": 2548
+        },
+        {
+          "lat": 2851,
+          "lng": 2549
+        },
+        {
+          "lat": 2851,
+          "lng": 2550
+        },
+        {
+          "lat": 2852,
+          "lng": 2550
+        },
+        {
+          "lat": 2852,
+          "lng": 2549
+        },
+        {
+          "lat": 2852,
+          "lng": 2548
+        },
+        {
+          "lat": 2852,
+          "lng": 2547
+        },
+        {
+          "lat": 2852,
+          "lng": 2546
+        },
+        {
+          "lat": 2852,
+          "lng": 2545
+        },
+        {
+          "lat": 2853,
+          "lng": 2545
+        },
+        {
+          "lat": 2853,
+          "lng": 2546
+        },
+        {
+          "lat": 2853,
+          "lng": 2547
+        },
+        {
+          "lat": 2853,
+          "lng": 2548
+        },
+        {
+          "lat": 2853,
+          "lng": 2549
+        },
+        {
+          "lat": 2853,
+          "lng": 2550
+        },
+        {
+          "lat": 2854,
+          "lng": 2550
+        },
+        {
+          "lat": 2854,
+          "lng": 2549
+        },
+        {
+          "lat": 2854,
+          "lng": 2548
+        },
+        {
+          "lat": 2854,
+          "lng": 2547
+        },
+        {
+          "lat": 2854,
+          "lng": 2546
+        },
+        {
+          "lat": 2854,
+          "lng": 2545
+        },
+        {
+          "lat": 2855,
+          "lng": 2545
+        },
+        {
+          "lat": 2855,
+          "lng": 2546
+        },
+        {
+          "lat": 2855,
+          "lng": 2547
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Head to the salt-water spring.",
+      "itemsNeeded": ["4 logs ", "6 fever grass"],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 0,
+          "lng": 0
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [
+        "Use the deadfall traps to catch diseased kebbits. To bait the trap, use fever grass on it, then light a fever grass from the inventory and move around."
+      ]
+    },
+    {
+      "stepDescription": "Catch two from the western and eastern side.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 2862,
+          "lng": 2545
+        },
+        {
+          "lat": 2861,
+          "lng": 2545
+        },
+        {
+          "lat": 2860,
+          "lng": 2548
+        },
+        {
+          "lat": 2860,
+          "lng": 2549
+        },
+        {
+          "lat": 2864,
+          "lng": 2550
+        },
+        {
+          "lat": 2864,
+          "lng": 2551
+        },
+        {
+          "lat": 2866,
+          "lng": 2566
+        },
+        {
+          "lat": 2865,
+          "lng": 2566
+        },
+        {
+          "lat": 2863,
+          "lng": 2567
+        },
+        {
+          "lat": 2863,
+          "lng": 2568
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [
+        "Do this until all four kebbits are caught."
+      ]
+    },
+    {
+      "stepDescription": "Set up a bird snare west of the bank.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 0,
+          "lng": 0
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [
+        "Light a tansymum from the inventory and move around.",
+        "Do this until all five birds are caught."
+      ]
+    },
+    {
+      "stepDescription": "Head west of Chief Tess and the sulphur spring.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 0,
+          "lng": 0
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Set up a box trap.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 0,
+          "lng": 0
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [
+        "Once the box shakes, check the trap.",
+        "Burn lavender from the inventory and move around the area."
+      ]
+    },
+    {
+      "stepDescription": "When all four platypodes are caught, head to the north-east corner of the village and release them next to the plants in the water.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 0,
+          "lng": 0
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": ["Dismiss any followers before continuing."]
+    },
+    {
+      "stepDescription": "Talk to Balnea and do not skip the cutscene.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 0,
+          "lng": 0
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": [
+        {
+          "lat": 0,
+          "lng": 0
+        }
+      ],
+      "floor": 0,
+      "additionalStepInformation": [""]
+    }
+  ]
+}

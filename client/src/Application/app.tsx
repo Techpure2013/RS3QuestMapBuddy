@@ -13,7 +13,9 @@ import GridLayer from "./../Map Classes/Map Components/GridLayerComponent";
 import HighlightLayer from "./../Map Classes/Map Components/TileHighlighting";
 import { useParams } from "react-router-dom";
 import { useSocket } from "./../Entrance/Entrance Components/SocketProvider";
-
+import ChunkGridLayer from "Map Classes/Map Components/ChunkGrid";
+import QuestJSON from "./../Quest Directories/A Clockwork Syringe/A_Clockwork_Syringe.json";
+import StaticHighlightLayer from "Map Classes/Map Components/staticHighlighter";
 const App: React.FC = () => {
   const { UserID, QuestName, level, z, x, y } = useParams<{
     UserID: string;
@@ -31,7 +33,7 @@ const App: React.FC = () => {
   const initialCursorY = y ? parseInt(y, 10) : 3023;
 
   const [floor, setFloor] = useState(initialFloor);
-  const [zoom] = useState(initialZoom);
+  const [zoom, setZoom] = useState(initialZoom); // Make zoom state dynamic
   const [cursorX, setCursorX] = useState(initialCursorX);
   const [cursorY, setCursorY] = useState(initialCursorY);
 
@@ -68,6 +70,7 @@ const App: React.FC = () => {
     ],
     [floor]
   );
+
   const MapClickHandler = () => {
     useMapEvents({
       click: (e) => {
@@ -85,6 +88,16 @@ const App: React.FC = () => {
     });
     return null;
   };
+
+  const ZoomHandler = () => {
+    const map = useMapEvents({
+      zoom: () => {
+        setZoom(map.getZoom()); // Update zoom state when zoom changes
+      },
+    });
+    return null;
+  };
+
   const handleCursorMove = useCallback((x: number, y: number) => {
     setCursorX((prevX) => (prevX !== x - 0.5 ? x - 0.5 : prevX));
     setCursorY((prevY) => (prevY !== y + 0.5 ? y + 0.5 : prevY));
@@ -100,14 +113,17 @@ const App: React.FC = () => {
         maxBounds={gameMapOptions().maxBounds}
         zoomSnap={gameMapOptions().zoomSnap}
         zoomControl={false}
-        zoom={2}
+        scrollWheelZoom={true}
+        zoom={zoom}
         center={[3288, 3023]}
         crs={gameMapOptions().crs}
       >
         <MapClickHandler />
+        <ZoomHandler />
+        <ChunkGridLayer />
         <div className="cursor-coordinates-box">
           <div className="coordinate-row">
-            <span>Zoom: {zoom}</span>
+            <span>Zoom: {Math.round(zoom)}</span>
             <span>X: {cursorX}</span>
             <span>Y: {cursorY}</span>
           </div>
@@ -137,21 +153,33 @@ const App: React.FC = () => {
             ↓
           </button>
         </div>
-        {layers.map((layer) => (
-          <TileLayer
-            key={layer.name}
-            url={layer.url}
-            tileSize={layer.tileSize}
-            maxNativeZoom={layer.maxNativeZoom}
-            minZoom={layer.minZoom}
-            opacity={layer.opacity}
-            className={layer.className}
-            updateWhenZooming={layer.updateWhenZooming}
-            updateInterval={layer.updateInterval}
-            noWrap={true}
-            bounds={bound}
-          />
-        ))}
+        <>
+          {layers.map((layer) => (
+            <TileLayer
+              key={layer.name}
+              url={layer.url}
+              tileSize={layer.tileSize}
+              maxNativeZoom={layer.maxNativeZoom}
+              minZoom={layer.minZoom}
+              opacity={layer.opacity}
+              className={layer.className}
+              updateWhenZooming={layer.updateWhenZooming}
+              updateInterval={layer.updateInterval}
+              noWrap={true}
+              bounds={bound}
+            />
+          ))}
+          {/* {QuestJSON.questSteps.map((value) =>
+            value.highlights.map((highlight) => (
+              <StaticHighlightLayer
+                key={`${highlight.lat}-${highlight.lng}`}
+                lat={highlight.lat}
+                level={value.floor}
+                lng={highlight.lng}
+              />
+            ))
+          )} */}
+        </>
         <GridLayer />
         <HighlightLayer onCursorMove={handleCursorMove} />
       </MapContainer>

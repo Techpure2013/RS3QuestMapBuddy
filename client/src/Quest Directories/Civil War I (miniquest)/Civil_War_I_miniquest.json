@@ -1,0 +1,95 @@
+{
+    "questName": "Civil War I (miniquest)",
+    "questSteps": [
+        {
+            "stepDescription": "Talk to Adrasteia on the 3rd floor[US] of the White Knights' Castle east side to start the quest. (Chat \u2713\u2022~)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Teleport to Edgeville and talk to Anne Dimitri, who is just north of Quercus in the Wilderness.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Kill 144 demons in the Wilderness for the Gross Misconduct achievement if not already completed.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Return to Anne Dimitri for a cutscene.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Have one free inventory slot for the reward item.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Miniquest Complete!",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        }
+    ]
+}

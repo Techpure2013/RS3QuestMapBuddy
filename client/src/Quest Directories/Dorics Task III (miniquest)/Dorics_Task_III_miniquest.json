@@ -1,0 +1,80 @@
+{
+    "questName": "Dorics Task III (miniquest)",
+    "questSteps": [
+        {
+            "stepDescription": "Speak to Doric in his hut north of Falador. (Chat 1\u2022\u2713)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Head north to Goblin village and talk to either General Bentnoze or General Wartface in the building in the back. (Chat 2)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Head to any anvil and make a Mithril longsword +1 and a Mithril warhammer +1.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Return to General Bentnoze or General Wartface. (Chat 2)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Miniquest complete!",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        }
+    ]
+}

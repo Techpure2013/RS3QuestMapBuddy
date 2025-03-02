@@ -1,0 +1,445 @@
+{
+    "questName": "Battle of Forinthry",
+    "questSteps": [
+        {
+            "stepDescription": "Talk to the Raptor in Fort Forinthry. (Chat 1\u2022\u2713\u20221)",
+            "itemsNeeded": [
+                "Combat weapon",
+                "equipment",
+                "and supplies",
+                "food"
+            ],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Watch the cutscene.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Begin Encounter with Fort Forinthry Gate.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "The battle is in story mode and a death will result in appearing near the Raptor. This is a safe death.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Run north to the camp with an undead giant.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Kill the undead giant. The other enemies are optional.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Disrupt the place of power.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Head west.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Kill the undead giant. The other enemies are optional.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Disrupt the place of power.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Head south.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Kill the undead giant. The other enemies are optional.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Disrupt the place of power.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Defeat the Zemouregal & Vorkath encounter.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the Raptor, near the Guardhouse.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to guard captain Sof\u00eda or Overseer Siv in the Guardhouse.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Aster or Bill in the Command Centre.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Oak or Zoe east of the Command Centre.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Copperpot, Father Flint or Granny Rowan in the Chapel.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Princess or Rodney in the Kitchen.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the Raptor, near the Guardhouse.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Bill in the Town Hall.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Head east of the Kitchen and collect 4 stone wall segments from the pile of stone.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Fully repair the fortifications with the 4 repair hotspots to the west near the broken Workshop.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Aster, Overseer Siv, or Rodney in the Town Hall. (Chat 1)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the Raptor, near the Guardhouse.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Enter the floor hatch to the east of the Command Centre.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Zemouregal in his prison cell. (Chat ~)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Quest Complete!",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        }
+    ]
+}

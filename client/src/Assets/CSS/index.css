@@ -2,6 +2,18 @@
   height: 100%;
   width: 100%;
 }
+.chunk-grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent the grid from interfering with map interactions */
+}
+.chunk-label {
+  pointer-events: none; /* Prevent labels from interfering with map interactions */
+  text-align: center;
+}
 
 html,
 body,

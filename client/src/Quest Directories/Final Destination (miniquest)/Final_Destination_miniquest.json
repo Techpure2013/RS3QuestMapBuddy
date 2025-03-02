@@ -1,0 +1,245 @@
+{
+    "questName": "Final Destination (miniquest)",
+    "questSteps": [
+        {
+            "stepDescription": "Talk to Lookout Ekahi (if you have just completed the previous miniquests you may need to relog for the chat option to show up). (Chat 1\u2022\u2713\u20221)",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Fire the cannon.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Climb the ladder.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Kill the Zyclopses.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Climb another ladder.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Kill the zombies.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Kill the 2 skeletons.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Climb the ladder.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Kill 2 more Zyclopses.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Defeat Captain Cora then talk to her.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Captain Cora again.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Run east to the gates. Cora will talk to you.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Run southwest to the destroyed colony. Cora will talk to you again.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Jiangshi will appear between the colony and the gates, talk to Jiangshi.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Captain Cora.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Miniquest Complete!",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "questName": "Recipe for Disaster Another Cooks Quest",
+    "questSteps": [
+        {
+            "stepDescription": "Talk to the Cook in the kitchen of Lumbridge Castle. (Chat 1\u2022~\u20221\u2022\u2713)",
+            "itemsNeeded": [
+                "1 Eye of newt",
+                "1 Greenman's ale",
+                "1 Rotten tomato",
+                "1 Ashes",
+                "1 Fruit blast (premade does not work)"
+            ],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Use the ashes on the fruit blast.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Give the items to the cook.",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go through the dining hall door and complete the dialogue to unlock the rest of subquests. \nIt is recommended to inspect each character first, complete every subquest outside this instanced area and then finish all of them at once",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Subquest complete!",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        }
+    ]
+}

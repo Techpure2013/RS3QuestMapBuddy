@@ -1,0 +1,624 @@
+{
+    "questName": "Aftermath",
+    "questSteps": [
+        {
+            "stepDescription": "Talk to Adrasteia in the library on the 2nd floor[US] floor of White Knights' Castle in Falador.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3333,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3333,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3333,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3332,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3332,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2978
+                }
+            ],
+            "floor": 1,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Enter Senntisten through the ancient door at the Varrock Dig Site.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3455,
+                    "lng": 3327
+                },
+                {
+                    "lat": 3455,
+                    "lng": 3328
+                },
+                {
+                    "lat": 3455,
+                    "lng": 3329
+                },
+                {
+                    "lat": 3455,
+                    "lng": 3330
+                },
+                {
+                    "lat": 3454,
+                    "lng": 3330
+                },
+                {
+                    "lat": 3454,
+                    "lng": 3329
+                },
+                {
+                    "lat": 3454,
+                    "lng": 3328
+                },
+                {
+                    "lat": 3454,
+                    "lng": 3327
+                },
+                {
+                    "lat": 3453,
+                    "lng": 3327
+                },
+                {
+                    "lat": 3453,
+                    "lng": 3328
+                },
+                {
+                    "lat": 3453,
+                    "lng": 3329
+                },
+                {
+                    "lat": 3453,
+                    "lng": 3330
+                },
+                {
+                    "lat": 3452,
+                    "lng": 3330
+                },
+                {
+                    "lat": 3452,
+                    "lng": 3329
+                },
+                {
+                    "lat": 3452,
+                    "lng": 3328
+                },
+                {
+                    "lat": 3452,
+                    "lng": 3327
+                },
+                {
+                    "lat": 3451,
+                    "lng": 3327
+                },
+                {
+                    "lat": 3451,
+                    "lng": 3328
+                },
+                {
+                    "lat": 3451,
+                    "lng": 3329
+                },
+                {
+                    "lat": 3451,
+                    "lng": 3330
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Once inside, enter the undercity by using the nearby pulley lift (a few steps east of the larger-looking pulley lift used to enter/exit Senntisten).",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 1344,
+                    "lng": 1760
+                },
+                {
+                    "lat": 1344,
+                    "lng": 1761
+                },
+                {
+                    "lat": 1343,
+                    "lng": 1761
+                },
+                {
+                    "lat": 1343,
+                    "lng": 1760
+                },
+                {
+                    "lat": 1342,
+                    "lng": 1760
+                },
+                {
+                    "lat": 1342,
+                    "lng": 1761
+                },
+                {
+                    "lat": 1342,
+                    "lng": 1762
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Sir Cadian.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Clear The Zamorakian Undercity on any difficulty. Players who have already cleared it may skip this step.",
+            "itemsNeeded": [
+                "Best Combat Gear",
+                "Potions",
+                "Luck"
+            ],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Return to Adrasteia in the library and talk to her.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3333,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3333,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3333,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3332,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3332,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2978
+                }
+            ],
+            "floor": 1,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go to the 3rd floor[US] and talk to Saradomin.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3333,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3333,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3333,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3332,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3332,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2978
+                }
+            ],
+            "floor": 2,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to anyone again to continue the dialogue.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3333,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3333,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3333,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3332,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3332,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2978
+                }
+            ],
+            "floor": 2,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Travel to the Kharid-et Dig Site and talk to Dr Nabanik.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3197,
+                    "lng": 3351
+                },
+                {
+                    "lat": 3196,
+                    "lng": 3351
+                },
+                {
+                    "lat": 3195,
+                    "lng": 3351
+                },
+                {
+                    "lat": 3195,
+                    "lng": 3352
+                },
+                {
+                    "lat": 3196,
+                    "lng": 3352
+                },
+                {
+                    "lat": 3197,
+                    "lng": 3352
+                },
+                {
+                    "lat": 3197,
+                    "lng": 3353
+                },
+                {
+                    "lat": 3196,
+                    "lng": 3353
+                },
+                {
+                    "lat": 3195,
+                    "lng": 3353
+                },
+                {
+                    "lat": 3195,
+                    "lng": 3354
+                },
+                {
+                    "lat": 3196,
+                    "lng": 3354
+                },
+                {
+                    "lat": 3197,
+                    "lng": 3354
+                },
+                {
+                    "lat": 3197,
+                    "lng": 3355
+                },
+                {
+                    "lat": 3196,
+                    "lng": 3355
+                },
+                {
+                    "lat": 3195,
+                    "lng": 3355
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Nex, Trindine, Wahisietel, or Azzanadra.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Armadyl at his tower south of Falador.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3258,
+                    "lng": 2995
+                },
+                {
+                    "lat": 3258,
+                    "lng": 2993
+                },
+                {
+                    "lat": 3257,
+                    "lng": 2993
+                },
+                {
+                    "lat": 3257,
+                    "lng": 2994
+                },
+                {
+                    "lat": 3257,
+                    "lng": 2995
+                }
+            ],
+            "floor": 1,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Return to Adrasteia in the library and talk to her.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3333,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3333,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3333,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3332,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3332,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3331,
+                    "lng": 2978
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2976
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2977
+                },
+                {
+                    "lat": 3334,
+                    "lng": 2978
+                }
+            ],
+            "floor": 1,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Quest complete!",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        }
+    ]
+}

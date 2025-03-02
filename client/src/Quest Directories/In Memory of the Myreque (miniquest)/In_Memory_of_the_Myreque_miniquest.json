@@ -1,0 +1,20 @@
+{
+    "questName": "In Memory of the Myreque (miniquest)",
+    "questSteps": [
+        {
+            "stepDescription": "Talk to Veliaf Hurtz north of Canifis.\nWait one day for each of the 10 plinths to appear. You can either do one per day, or you can speak to Veliaf, wait 10 days, and build them all at once.\nBuild all ten statues on the statue plinths with two Granite (5kg) for each statue.\nAdd the following items to each statue along with a blisterwood sickle.\nTalk to Veliaf Hurtz.\nMiniquest complete!",
+            "itemsNeeded": [],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        }
+    ]
+}

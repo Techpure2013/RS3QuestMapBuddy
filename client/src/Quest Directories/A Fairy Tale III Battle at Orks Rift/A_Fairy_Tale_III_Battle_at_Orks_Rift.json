@@ -1,0 +1,2516 @@
+{
+    "questName": "A Fairy Tale III Battle at Ork's Rift",
+    "questSteps": [
+        {
+            "stepDescription": "Use any fairy ring to travel to Zanaris. If you can start the quest, you will be redirected to the Sparse Plane.",
+            "itemsNeeded": [
+                "Dramen staff or the Lunar staff and Nuff's certificate (to reach the Fairy Resistance Hideout)"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "If you cannot start the quest, enter and leave Zanaris via fairy rings repeatedly until Fairy Very Wise appears and talks to you. It may require up to 30 minutes after completing A Fairy Tale II - Cure a Queen. If you've declined her before, you have to travel by fairy ring BIR to reach her.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Fairy Very Wise and accept her offer (Chat 4). After accepting her offer, Nuff's certificate is no longer needed to reach the Fairy Resistance headquarters.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Accept the teleport from her (Chat 1), or use the fairy ring to get to the Fairy Resistance headquarters (AIR, DLR, DJQ, AJS).",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4397,
+                    "lng": 2453
+                },
+                {
+                    "lat": 4397,
+                    "lng": 2452
+                },
+                {
+                    "lat": 4396,
+                    "lng": 2452
+                },
+                {
+                    "lat": 4395,
+                    "lng": 2452
+                },
+                {
+                    "lat": 4395,
+                    "lng": 2453
+                },
+                {
+                    "lat": 4396,
+                    "lng": 2453
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the Fairy Queen south-east in the headquarters and then finish talking to the Tooth Fairy (she automatically speaks to you after you speak with the queen). (Chat 2\u2022\u2713)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4435,
+                    "lng": 2273
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2274
+                },
+                {
+                    "lat": 4436,
+                    "lng": 2273
+                },
+                {
+                    "lat": 4436,
+                    "lng": 2274
+                },
+                {
+                    "lat": 4437,
+                    "lng": 2274
+                },
+                {
+                    "lat": 4437,
+                    "lng": 2273
+                },
+                {
+                    "lat": 4437,
+                    "lng": 2275
+                },
+                {
+                    "lat": 4436,
+                    "lng": 2275
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2275
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2276
+                },
+                {
+                    "lat": 4436,
+                    "lng": 2276
+                },
+                {
+                    "lat": 4437,
+                    "lng": 2276
+                },
+                {
+                    "lat": 4437,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4436,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4432,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4431,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4431,
+                    "lng": 2276
+                },
+                {
+                    "lat": 4432,
+                    "lng": 2276
+                },
+                {
+                    "lat": 4432,
+                    "lng": 2275
+                },
+                {
+                    "lat": 4431,
+                    "lng": 2275
+                },
+                {
+                    "lat": 4431,
+                    "lng": 2274
+                },
+                {
+                    "lat": 4432,
+                    "lng": 2274
+                },
+                {
+                    "lat": 4432,
+                    "lng": 2273
+                },
+                {
+                    "lat": 4431,
+                    "lng": 2273
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2273
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2274
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2275
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2275
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2274
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2276
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2273
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2273
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2274
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2272
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Be wary of cutscenes that may trigger epilepsy. Talk to the Tooth Fairy, then turn on the projector to watch the first briefing. (Chat 2)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4434,
+                    "lng": 2278
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2278
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the Tooth Fairy again after the briefing. (Chat 5\u20221)Turn on the projector to watch the second briefing.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4434,
+                    "lng": 2278
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2278
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "After both briefings, agree to collect her wand. (Chat 3)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Run north-west and take a hammer and secateurs. Use them on each other.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4453,
+                    "lng": 2261
+                },
+                {
+                    "lat": 4453,
+                    "lng": 2260
+                },
+                {
+                    "lat": 4453,
+                    "lng": 2259
+                },
+                {
+                    "lat": 4454,
+                    "lng": 2259
+                },
+                {
+                    "lat": 4454,
+                    "lng": 2260
+                },
+                {
+                    "lat": 4454,
+                    "lng": 2261
+                },
+                {
+                    "lat": 4454,
+                    "lng": 2262
+                },
+                {
+                    "lat": 4455,
+                    "lng": 2262
+                },
+                {
+                    "lat": 4455,
+                    "lng": 2261
+                },
+                {
+                    "lat": 4455,
+                    "lng": 2260
+                },
+                {
+                    "lat": 4456,
+                    "lng": 2259
+                },
+                {
+                    "lat": 4456,
+                    "lng": 2260
+                },
+                {
+                    "lat": 4456,
+                    "lng": 2261
+                },
+                {
+                    "lat": 4456,
+                    "lng": 2262
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Leave through the fairy ring.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4427,
+                    "lng": 2252
+                },
+                {
+                    "lat": 4427,
+                    "lng": 2253
+                },
+                {
+                    "lat": 4427,
+                    "lng": 2254
+                },
+                {
+                    "lat": 4426,
+                    "lng": 2254
+                },
+                {
+                    "lat": 4426,
+                    "lng": 2253
+                },
+                {
+                    "lat": 4426,
+                    "lng": 2252
+                },
+                {
+                    "lat": 4425,
+                    "lng": 2252
+                },
+                {
+                    "lat": 4425,
+                    "lng": 2253
+                },
+                {
+                    "lat": 4425,
+                    "lng": 2254
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go to the house north-west of Zanaris bank. Use your tooth extractor on the door to pick the lock on it. Talk to Gnarly. (Chat 4)",
+            "itemsNeeded": [
+                "Bucket of milk",
+                "Tooth extractor"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4473,
+                    "lng": 2383
+                },
+                {
+                    "lat": 4472,
+                    "lng": 2383
+                },
+                {
+                    "lat": 4471,
+                    "lng": 2383
+                },
+                {
+                    "lat": 4470,
+                    "lng": 2383
+                },
+                {
+                    "lat": 4470,
+                    "lng": 2384
+                },
+                {
+                    "lat": 4471,
+                    "lng": 2384
+                },
+                {
+                    "lat": 4472,
+                    "lng": 2384
+                },
+                {
+                    "lat": 4473,
+                    "lng": 2384
+                },
+                {
+                    "lat": 4473,
+                    "lng": 2385
+                },
+                {
+                    "lat": 4472,
+                    "lng": 2385
+                },
+                {
+                    "lat": 4471,
+                    "lng": 2385
+                },
+                {
+                    "lat": 4470,
+                    "lng": 2385
+                },
+                {
+                    "lat": 4470,
+                    "lng": 2386
+                },
+                {
+                    "lat": 4471,
+                    "lng": 2386
+                },
+                {
+                    "lat": 4472,
+                    "lng": 2386
+                },
+                {
+                    "lat": 4473,
+                    "lng": 2386
+                },
+                {
+                    "lat": 4473,
+                    "lng": 2387
+                },
+                {
+                    "lat": 4472,
+                    "lng": 2387
+                },
+                {
+                    "lat": 4471,
+                    "lng": 2387
+                },
+                {
+                    "lat": 4470,
+                    "lng": 2387
+                },
+                {
+                    "lat": 4470,
+                    "lng": 2388
+                },
+                {
+                    "lat": 4471,
+                    "lng": 2388
+                },
+                {
+                    "lat": 4472,
+                    "lng": 2388
+                },
+                {
+                    "lat": 4473,
+                    "lng": 2388
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "In no particular order, compliment him with the following responses (Only 3 compliments may be needed to continue to the next part): \"Your enamel shimmers like a river of silver in the moonlight.\",\"I've never seen such amazing, inspired and dream-like toothiness.\", \"I can see your bicuspid ancestry is an example to all molar-kind.\", and \"You're a wonderful guard tooth with lovely cusps.\"",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4472,
+                    "lng": 2384
+                },
+                {
+                    "lat": 4472,
+                    "lng": 2385
+                },
+                {
+                    "lat": 4471,
+                    "lng": 2385
+                },
+                {
+                    "lat": 4471,
+                    "lng": 2384
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Use the bucket of milk on him, (Chat 2\u20222). Gnarly should jump into your inventory.",
+            "itemsNeeded": [
+                "Bucket of Milk"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go back to the Tooth Fairy (Fairy Resistance HQ) in the south-east room.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4437,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4437,
+                    "lng": 2278
+                },
+                {
+                    "lat": 4437,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4436,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4436,
+                    "lng": 2278
+                },
+                {
+                    "lat": 4436,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2278
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2279
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "(Cutscene) Talk to the tooth fairy, then watch another briefing by turning on the projector.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4434,
+                    "lng": 2278
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2278
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "After the briefing, agree to the tooth extraction. (Chat 2\u20222\u20223\u20224)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Step onto the yellow flowers and use the wave emote. There will be a cutscene.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4430,
+                    "lng": 2277
+                },
+                {
+                    "lat": 4430,
+                    "lng": 2278
+                },
+                {
+                    "lat": 4429,
+                    "lng": 2278
+                },
+                {
+                    "lat": 4429,
+                    "lng": 2277
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Leave through the fairy ring.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4427,
+                    "lng": 2252
+                },
+                {
+                    "lat": 4427,
+                    "lng": 2253
+                },
+                {
+                    "lat": 4427,
+                    "lng": 2254
+                },
+                {
+                    "lat": 4426,
+                    "lng": 2254
+                },
+                {
+                    "lat": 4426,
+                    "lng": 2253
+                },
+                {
+                    "lat": 4426,
+                    "lng": 2252
+                },
+                {
+                    "lat": 4425,
+                    "lng": 2252
+                },
+                {
+                    "lat": 4425,
+                    "lng": 2253
+                },
+                {
+                    "lat": 4425,
+                    "lng": 2254
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to General Bre'egth outside of the Zanaris mill, north west of the fairy ring. (Chat 3)",
+            "itemsNeeded": [
+                "Dramen staff or the Lunar staff"
+            ],
+            "itemsRecommended": [
+                "4 regular planks (has to be regular planks) for bridge repair",
+                "8 nails of any kind for bridge repair",
+                "8 Willow logs if you have level 85 Firemaking, lighting bonfire for K'Chunk for 10k firemaking xp"
+            ],
+            "highlights": [
+                {
+                    "lat": 4454,
+                    "lng": 2400
+                },
+                {
+                    "lat": 4453,
+                    "lng": 2400
+                },
+                {
+                    "lat": 4452,
+                    "lng": 2400
+                },
+                {
+                    "lat": 4451,
+                    "lng": 2400
+                },
+                {
+                    "lat": 4450,
+                    "lng": 2400
+                },
+                {
+                    "lat": 4450,
+                    "lng": 2401
+                },
+                {
+                    "lat": 4451,
+                    "lng": 2401
+                },
+                {
+                    "lat": 4452,
+                    "lng": 2401
+                },
+                {
+                    "lat": 4453,
+                    "lng": 2401
+                },
+                {
+                    "lat": 4454,
+                    "lng": 2401
+                },
+                {
+                    "lat": 4454,
+                    "lng": 2402
+                },
+                {
+                    "lat": 4453,
+                    "lng": 2402
+                },
+                {
+                    "lat": 4452,
+                    "lng": 2402
+                },
+                {
+                    "lat": 4451,
+                    "lng": 2402
+                },
+                {
+                    "lat": 4450,
+                    "lng": 2402
+                },
+                {
+                    "lat": 4450,
+                    "lng": 2403
+                },
+                {
+                    "lat": 4451,
+                    "lng": 2403
+                },
+                {
+                    "lat": 4452,
+                    "lng": 2403
+                },
+                {
+                    "lat": 4453,
+                    "lng": 2403
+                },
+                {
+                    "lat": 4454,
+                    "lng": 2403
+                },
+                {
+                    "lat": 4454,
+                    "lng": 2404
+                },
+                {
+                    "lat": 4452,
+                    "lng": 2404
+                },
+                {
+                    "lat": 4453,
+                    "lng": 2404
+                },
+                {
+                    "lat": 4451,
+                    "lng": 2404
+                },
+                {
+                    "lat": 4450,
+                    "lng": 2404
+                },
+                {
+                    "lat": 4450,
+                    "lng": 2405
+                },
+                {
+                    "lat": 4451,
+                    "lng": 2405
+                },
+                {
+                    "lat": 4452,
+                    "lng": 2405
+                },
+                {
+                    "lat": 4453,
+                    "lng": 2405
+                },
+                {
+                    "lat": 4454,
+                    "lng": 2405
+                },
+                {
+                    "lat": 4454,
+                    "lng": 2406
+                },
+                {
+                    "lat": 4453,
+                    "lng": 2406
+                },
+                {
+                    "lat": 4452,
+                    "lng": 2406
+                },
+                {
+                    "lat": 4451,
+                    "lng": 2406
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to any other Ork about K'Chunk. (Chat 4)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Run to the fairy ring, talk to Fairy Fixit about K'Chunk. (Chat 2)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4435,
+                    "lng": 2409
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2409
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2408
+                },
+                {
+                    "lat": 4435,
+                    "lng": 2408
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Teleport to DIP and talk to K'Chunk. (Chat 4)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 2925,
+                    "lng": 3760
+                },
+                {
+                    "lat": 2925,
+                    "lng": 3761
+                },
+                {
+                    "lat": 2925,
+                    "lng": 3762
+                },
+                {
+                    "lat": 2924,
+                    "lng": 3762
+                },
+                {
+                    "lat": 2923,
+                    "lng": 3762
+                },
+                {
+                    "lat": 2923,
+                    "lng": 3761
+                },
+                {
+                    "lat": 2923,
+                    "lng": 3760
+                },
+                {
+                    "lat": 2924,
+                    "lng": 3760
+                },
+                {
+                    "lat": 2924,
+                    "lng": 3761
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Pickpocket him for the tooth.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Teleport to BKQ and run down the waterfall to talk to the Wood Dryad to the west. (Chat 2) Talk to General Gromblod.",
+            "itemsNeeded": [
+                "Dramen staff or the Lunar staff and the Tooth extractor you can then"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4518,
+                    "lng": 3028
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3028
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3027
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3026
+                },
+                {
+                    "lat": 4518,
+                    "lng": 3026
+                },
+                {
+                    "lat": 4518,
+                    "lng": 3027
+                },
+                {
+                    "lat": 4519,
+                    "lng": 3026
+                },
+                {
+                    "lat": 4519,
+                    "lng": 3027
+                },
+                {
+                    "lat": 4519,
+                    "lng": 3028
+                },
+                {
+                    "lat": 4518,
+                    "lng": 3025
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3025
+                },
+                {
+                    "lat": 4516,
+                    "lng": 3025
+                },
+                {
+                    "lat": 4516,
+                    "lng": 3026
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the Wood Dryad again.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4518,
+                    "lng": 3028
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3028
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3027
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3026
+                },
+                {
+                    "lat": 4518,
+                    "lng": 3026
+                },
+                {
+                    "lat": 4518,
+                    "lng": 3027
+                },
+                {
+                    "lat": 4519,
+                    "lng": 3026
+                },
+                {
+                    "lat": 4519,
+                    "lng": 3027
+                },
+                {
+                    "lat": 4519,
+                    "lng": 3028
+                },
+                {
+                    "lat": 4518,
+                    "lng": 3025
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3025
+                },
+                {
+                    "lat": 4516,
+                    "lng": 3025
+                },
+                {
+                    "lat": 4516,
+                    "lng": 3026
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Teleport to CLR, pick a mango. Unblock this end of the hollow log if you haven't yet.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 2746,
+                    "lng": 2729
+                },
+                {
+                    "lat": 2746,
+                    "lng": 2730
+                },
+                {
+                    "lat": 2746,
+                    "lng": 2731
+                },
+                {
+                    "lat": 2746,
+                    "lng": 2732
+                },
+                {
+                    "lat": 2745,
+                    "lng": 2732
+                },
+                {
+                    "lat": 2745,
+                    "lng": 2731
+                },
+                {
+                    "lat": 2745,
+                    "lng": 2730
+                },
+                {
+                    "lat": 2745,
+                    "lng": 2729
+                },
+                {
+                    "lat": 2744,
+                    "lng": 2729
+                },
+                {
+                    "lat": 2744,
+                    "lng": 2730
+                },
+                {
+                    "lat": 2744,
+                    "lng": 2731
+                },
+                {
+                    "lat": 2744,
+                    "lng": 2732
+                },
+                {
+                    "lat": 2743,
+                    "lng": 2732
+                },
+                {
+                    "lat": 2743,
+                    "lng": 2731
+                },
+                {
+                    "lat": 2743,
+                    "lng": 2730
+                },
+                {
+                    "lat": 2743,
+                    "lng": 2729
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Return to BKQ. Talk to Grombold, giving him the mango, he will spit it out to the south of the cave.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4508,
+                    "lng": 3028
+                },
+                {
+                    "lat": 4507,
+                    "lng": 3028
+                },
+                {
+                    "lat": 4506,
+                    "lng": 3028
+                },
+                {
+                    "lat": 4505,
+                    "lng": 3028
+                },
+                {
+                    "lat": 4505,
+                    "lng": 3029
+                },
+                {
+                    "lat": 4506,
+                    "lng": 3029
+                },
+                {
+                    "lat": 4507,
+                    "lng": 3029
+                },
+                {
+                    "lat": 4508,
+                    "lng": 3029
+                },
+                {
+                    "lat": 4508,
+                    "lng": 3030
+                },
+                {
+                    "lat": 4507,
+                    "lng": 3030
+                },
+                {
+                    "lat": 4506,
+                    "lng": 3030
+                },
+                {
+                    "lat": 4505,
+                    "lng": 3030
+                },
+                {
+                    "lat": 4505,
+                    "lng": 3031
+                },
+                {
+                    "lat": 4506,
+                    "lng": 3031
+                },
+                {
+                    "lat": 4507,
+                    "lng": 3031
+                },
+                {
+                    "lat": 4508,
+                    "lng": 3031
+                },
+                {
+                    "lat": 4508,
+                    "lng": 3032
+                },
+                {
+                    "lat": 4507,
+                    "lng": 3032
+                },
+                {
+                    "lat": 4505,
+                    "lng": 3032
+                },
+                {
+                    "lat": 4504,
+                    "lng": 3032
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Pick up the mango with tooth and use the tooth extractor on it.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4520,
+                    "lng": 3030
+                },
+                {
+                    "lat": 4520,
+                    "lng": 3031
+                },
+                {
+                    "lat": 4520,
+                    "lng": 3032
+                },
+                {
+                    "lat": 4520,
+                    "lng": 3033
+                },
+                {
+                    "lat": 4519,
+                    "lng": 3033
+                },
+                {
+                    "lat": 4519,
+                    "lng": 3032
+                },
+                {
+                    "lat": 4519,
+                    "lng": 3031
+                },
+                {
+                    "lat": 4519,
+                    "lng": 3030
+                },
+                {
+                    "lat": 4518,
+                    "lng": 3030
+                },
+                {
+                    "lat": 4518,
+                    "lng": 3031
+                },
+                {
+                    "lat": 4518,
+                    "lng": 3032
+                },
+                {
+                    "lat": 4518,
+                    "lng": 3033
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3033
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3032
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3031
+                },
+                {
+                    "lat": 4517,
+                    "lng": 3030
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Teleport to ALP and talk to General Shredflesh. (Chat 4\u20221\u20222\u20223\u20224)",
+            "itemsNeeded": [
+                "Dramen staff or the Lunar staff",
+                "and the Tooth extractor"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4206,
+                    "lng": 2463
+                },
+                {
+                    "lat": 4205,
+                    "lng": 2463
+                },
+                {
+                    "lat": 4204,
+                    "lng": 2463
+                },
+                {
+                    "lat": 4203,
+                    "lng": 2463
+                },
+                {
+                    "lat": 4202,
+                    "lng": 2463
+                },
+                {
+                    "lat": 4202,
+                    "lng": 2464
+                },
+                {
+                    "lat": 4203,
+                    "lng": 2464
+                },
+                {
+                    "lat": 4204,
+                    "lng": 2464
+                },
+                {
+                    "lat": 4205,
+                    "lng": 2464
+                },
+                {
+                    "lat": 4206,
+                    "lng": 2464
+                },
+                {
+                    "lat": 4206,
+                    "lng": 2465
+                },
+                {
+                    "lat": 4205,
+                    "lng": 2465
+                },
+                {
+                    "lat": 4204,
+                    "lng": 2465
+                },
+                {
+                    "lat": 4203,
+                    "lng": 2465
+                },
+                {
+                    "lat": 4202,
+                    "lng": 2465
+                },
+                {
+                    "lat": 4202,
+                    "lng": 2466
+                },
+                {
+                    "lat": 4203,
+                    "lng": 2466
+                },
+                {
+                    "lat": 4204,
+                    "lng": 2466
+                },
+                {
+                    "lat": 4205,
+                    "lng": 2466
+                },
+                {
+                    "lat": 4206,
+                    "lng": 2466
+                },
+                {
+                    "lat": 4206,
+                    "lng": 2467
+                },
+                {
+                    "lat": 4205,
+                    "lng": 2467
+                },
+                {
+                    "lat": 4204,
+                    "lng": 2467
+                },
+                {
+                    "lat": 4203,
+                    "lng": 2467
+                },
+                {
+                    "lat": 4202,
+                    "lng": 2467
+                },
+                {
+                    "lat": 4202,
+                    "lng": 2468
+                },
+                {
+                    "lat": 4203,
+                    "lng": 2468
+                },
+                {
+                    "lat": 4204,
+                    "lng": 2468
+                },
+                {
+                    "lat": 4205,
+                    "lng": 2468
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "In no particular order, calm him with the following responses: \"What's a bit of pain for a huge ork hero like you?\", \"If the tooth isn't pulled out, all your teeth will hurt much worse!\", \"Let me pull it! What are you, an ork or a goblin?\", and \"I'll make sure it doesn't hurt a bit; I'm a professional.\"",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Use the extractor on him.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Clear the pile of rock behind him if you haven't yet already.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go back and talk to the Tooth Fairy in the hideout.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4434,
+                    "lng": 2278
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2278
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "(Cutscene) Turn on the projector to watch another briefing (Chat 5), She gives you a wand.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4434,
+                    "lng": 2278
+                },
+                {
+                    "lat": 4434,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2279
+                },
+                {
+                    "lat": 4433,
+                    "lng": 2278
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Prepare for the final battle, with the listed items.",
+            "itemsNeeded": [
+                "The fairy wand",
+                "the 3 teeth and combat equipment. You will not use the fairy wand to fight",
+                "you will need the fairy wand during the fight to heal the farming patches and the friendly generals. You can also use the fairy wand to access the fairy ring system",
+                "you can bank your Dramen or Lunar staff at this point."
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Teleport to BIR, DIP, CLR, ALP. (If the fairy ring at BIR does not appear, lobby and start over.)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Look through fairy tree where you'll encounter a cutscene.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4131,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4131,
+                    "lng": 1573
+                },
+                {
+                    "lat": 4132,
+                    "lng": 1573
+                },
+                {
+                    "lat": 4132,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4133,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4133,
+                    "lng": 1573
+                },
+                {
+                    "lat": 4134,
+                    "lng": 1573
+                },
+                {
+                    "lat": 4134,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4135,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4135,
+                    "lng": 1573
+                },
+                {
+                    "lat": 4136,
+                    "lng": 1573
+                },
+                {
+                    "lat": 4136,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4137,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4137,
+                    "lng": 1573
+                },
+                {
+                    "lat": 4138,
+                    "lng": 1573
+                },
+                {
+                    "lat": 4138,
+                    "lng": 1572
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "After the cutscene talk to the tooth fairy.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4136,
+                    "lng": 1569
+                },
+                {
+                    "lat": 4136,
+                    "lng": 1570
+                },
+                {
+                    "lat": 4136,
+                    "lng": 1571
+                },
+                {
+                    "lat": 4136,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4135,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4135,
+                    "lng": 1571
+                },
+                {
+                    "lat": 4135,
+                    "lng": 1570
+                },
+                {
+                    "lat": 4135,
+                    "lng": 1569
+                },
+                {
+                    "lat": 4134,
+                    "lng": 1569
+                },
+                {
+                    "lat": 4134,
+                    "lng": 1570
+                },
+                {
+                    "lat": 4134,
+                    "lng": 1571
+                },
+                {
+                    "lat": 4134,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4133,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4133,
+                    "lng": 1571
+                },
+                {
+                    "lat": 4133,
+                    "lng": 1570
+                },
+                {
+                    "lat": 4133,
+                    "lng": 1569
+                },
+                {
+                    "lat": 4132,
+                    "lng": 1569
+                },
+                {
+                    "lat": 4132,
+                    "lng": 1570
+                },
+                {
+                    "lat": 4132,
+                    "lng": 1571
+                },
+                {
+                    "lat": 4132,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4131,
+                    "lng": 1572
+                },
+                {
+                    "lat": 4131,
+                    "lng": 1571
+                },
+                {
+                    "lat": 4131,
+                    "lng": 1570
+                },
+                {
+                    "lat": 4131,
+                    "lng": 1569
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "How to kill the Fairy Godfather Read the steps below",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Use all 3 teeth on the farming patches.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4122,
+                    "lng": 1575
+                },
+                {
+                    "lat": 4122,
+                    "lng": 1576
+                },
+                {
+                    "lat": 4122,
+                    "lng": 1577
+                },
+                {
+                    "lat": 4121,
+                    "lng": 1577
+                },
+                {
+                    "lat": 4121,
+                    "lng": 1576
+                },
+                {
+                    "lat": 4121,
+                    "lng": 1575
+                },
+                {
+                    "lat": 4121,
+                    "lng": 1574
+                },
+                {
+                    "lat": 4120,
+                    "lng": 1574
+                },
+                {
+                    "lat": 4120,
+                    "lng": 1575
+                },
+                {
+                    "lat": 4120,
+                    "lng": 1576
+                },
+                {
+                    "lat": 4120,
+                    "lng": 1577
+                },
+                {
+                    "lat": 4119,
+                    "lng": 1577
+                },
+                {
+                    "lat": 4119,
+                    "lng": 1576
+                },
+                {
+                    "lat": 4119,
+                    "lng": 1575
+                },
+                {
+                    "lat": 4119,
+                    "lng": 1574
+                },
+                {
+                    "lat": 4118,
+                    "lng": 1574
+                },
+                {
+                    "lat": 4118,
+                    "lng": 1575
+                },
+                {
+                    "lat": 4118,
+                    "lng": 1576
+                },
+                {
+                    "lat": 4118,
+                    "lng": 1577
+                },
+                {
+                    "lat": 4124,
+                    "lng": 1582
+                },
+                {
+                    "lat": 4124,
+                    "lng": 1583
+                },
+                {
+                    "lat": 4124,
+                    "lng": 1584
+                },
+                {
+                    "lat": 4124,
+                    "lng": 1585
+                },
+                {
+                    "lat": 4123,
+                    "lng": 1585
+                },
+                {
+                    "lat": 4123,
+                    "lng": 1584
+                },
+                {
+                    "lat": 4123,
+                    "lng": 1583
+                },
+                {
+                    "lat": 4123,
+                    "lng": 1582
+                },
+                {
+                    "lat": 4122,
+                    "lng": 1582
+                },
+                {
+                    "lat": 4122,
+                    "lng": 1583
+                },
+                {
+                    "lat": 4122,
+                    "lng": 1584
+                },
+                {
+                    "lat": 4122,
+                    "lng": 1585
+                },
+                {
+                    "lat": 4121,
+                    "lng": 1585
+                },
+                {
+                    "lat": 4121,
+                    "lng": 1584
+                },
+                {
+                    "lat": 4121,
+                    "lng": 1583
+                },
+                {
+                    "lat": 4121,
+                    "lng": 1582
+                },
+                {
+                    "lat": 4131,
+                    "lng": 1588
+                },
+                {
+                    "lat": 4131,
+                    "lng": 1589
+                },
+                {
+                    "lat": 4131,
+                    "lng": 1590
+                },
+                {
+                    "lat": 4131,
+                    "lng": 1591
+                },
+                {
+                    "lat": 4130,
+                    "lng": 1591
+                },
+                {
+                    "lat": 4130,
+                    "lng": 1590
+                },
+                {
+                    "lat": 4130,
+                    "lng": 1589
+                },
+                {
+                    "lat": 4130,
+                    "lng": 1588
+                },
+                {
+                    "lat": 4129,
+                    "lng": 1588
+                },
+                {
+                    "lat": 4129,
+                    "lng": 1589
+                },
+                {
+                    "lat": 4129,
+                    "lng": 1590
+                },
+                {
+                    "lat": 4129,
+                    "lng": 1591
+                },
+                {
+                    "lat": 4128,
+                    "lng": 1591
+                },
+                {
+                    "lat": 4128,
+                    "lng": 1590
+                },
+                {
+                    "lat": 4128,
+                    "lng": 1589
+                },
+                {
+                    "lat": 4128,
+                    "lng": 1588
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Stand by the patches and kill the generals and ork warriors.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Once the teeth have grown, instruct them to fight.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Focus on ork warriors while the teeth focus on killing the generals.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "After you and the teeth kill the generals, kill the godfather (let the teeth attack the godfather to reduce the shields). Ensure all 3 teeth are attacking the godfather at once, as each one removes a layer of his 3-layer shield (note: if all 3 teeth aren't attacking the godfather, you will not land hits as his shield will still be active)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to the Fairy Godfather for a cutscene.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 4138,
+                    "lng": 1579
+                },
+                {
+                    "lat": 4138,
+                    "lng": 1580
+                },
+                {
+                    "lat": 4138,
+                    "lng": 1581
+                },
+                {
+                    "lat": 4138,
+                    "lng": 1582
+                },
+                {
+                    "lat": 4137,
+                    "lng": 1582
+                },
+                {
+                    "lat": 4137,
+                    "lng": 1581
+                },
+                {
+                    "lat": 4137,
+                    "lng": 1580
+                },
+                {
+                    "lat": 4137,
+                    "lng": 1579
+                },
+                {
+                    "lat": 4136,
+                    "lng": 1579
+                },
+                {
+                    "lat": 4136,
+                    "lng": 1580
+                },
+                {
+                    "lat": 4136,
+                    "lng": 1581
+                },
+                {
+                    "lat": 4136,
+                    "lng": 1582
+                },
+                {
+                    "lat": 4135,
+                    "lng": 1582
+                },
+                {
+                    "lat": 4135,
+                    "lng": 1581
+                },
+                {
+                    "lat": 4135,
+                    "lng": 1580
+                },
+                {
+                    "lat": 4135,
+                    "lng": 1579
+                },
+                {
+                    "lat": 4134,
+                    "lng": 1579
+                },
+                {
+                    "lat": 4134,
+                    "lng": 1580
+                },
+                {
+                    "lat": 4134,
+                    "lng": 1581
+                },
+                {
+                    "lat": 4134,
+                    "lng": 1582
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Continue dialogue with the Fairy Queen and accept her teleport. (Chat 1)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Martin the Master Gardener. (Chat 2)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3256,
+                    "lng": 3073
+                },
+                {
+                    "lat": 3256,
+                    "lng": 3074
+                },
+                {
+                    "lat": 3256,
+                    "lng": 3075
+                },
+                {
+                    "lat": 3256,
+                    "lng": 3076
+                },
+                {
+                    "lat": 3256,
+                    "lng": 3077
+                },
+                {
+                    "lat": 3257,
+                    "lng": 3077
+                },
+                {
+                    "lat": 3257,
+                    "lng": 3076
+                },
+                {
+                    "lat": 3257,
+                    "lng": 3075
+                },
+                {
+                    "lat": 3257,
+                    "lng": 3074
+                },
+                {
+                    "lat": 3257,
+                    "lng": 3073
+                },
+                {
+                    "lat": 3258,
+                    "lng": 3073
+                },
+                {
+                    "lat": 3258,
+                    "lng": 3074
+                },
+                {
+                    "lat": 3258,
+                    "lng": 3075
+                },
+                {
+                    "lat": 3258,
+                    "lng": 3076
+                },
+                {
+                    "lat": 3258,
+                    "lng": 3077
+                },
+                {
+                    "lat": 3259,
+                    "lng": 3077
+                },
+                {
+                    "lat": 3259,
+                    "lng": 3076
+                },
+                {
+                    "lat": 3259,
+                    "lng": 3075
+                },
+                {
+                    "lat": 3259,
+                    "lng": 3074
+                },
+                {
+                    "lat": 3259,
+                    "lng": 3073
+                },
+                {
+                    "lat": 3260,
+                    "lng": 3073
+                },
+                {
+                    "lat": 3260,
+                    "lng": 3074
+                },
+                {
+                    "lat": 3260,
+                    "lng": 3075
+                },
+                {
+                    "lat": 3260,
+                    "lng": 3076
+                },
+                {
+                    "lat": 3260,
+                    "lng": 3077
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Quest complete!",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        }
+    ]
+}

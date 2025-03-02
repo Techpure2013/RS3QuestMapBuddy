@@ -19,7 +19,7 @@ const StaticHighlightLayer: React.FC<StaticHighlightLayerProps> = ({
   // Calculate tile bounds based on lat, lng, and level
   const getTileBounds = (lat: number, lng: number) => {
     const interval = 1; // Tile size in degrees (adjust as needed)
-    const x = Math.floor(lng - 0.5) + 0.5;
+    const x = Math.floor(lng - 0.5) + 1.5;
     const y = Math.floor(lat + 0.5) - 0.5;
     return new leaflet.LatLngBounds([y, x], [y + interval, x + interval]);
   };

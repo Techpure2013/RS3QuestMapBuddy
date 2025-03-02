@@ -1,0 +1,1061 @@
+{
+    "questName": "A Tail of Two Cats",
+    "questSteps": [
+        {
+            "stepDescription": "Equip your catspeak amulet, have your pet cat with you, and talk to Unferth. His house is in eastern Burthorpe, south of Dunstan, east of Tam McGrubor and north of Xuan. (Chat \u2713)",
+            "itemsNeeded": [
+                "Catspeak Amulet"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3540,
+                    "lng": 2926
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2927
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2929
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2929
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2927
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2926
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2926
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2927
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2929
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Speak to Hild in the building north of the Heroes' Guild.",
+            "itemsNeeded": [
+                "5 death runes"
+            ],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 3525,
+                    "lng": 2912
+                },
+                {
+                    "lat": 3525,
+                    "lng": 2913
+                },
+                {
+                    "lat": 3525,
+                    "lng": 2914
+                },
+                {
+                    "lat": 3525,
+                    "lng": 2915
+                },
+                {
+                    "lat": 3524,
+                    "lng": 2915
+                },
+                {
+                    "lat": 3524,
+                    "lng": 2914
+                },
+                {
+                    "lat": 3524,
+                    "lng": 2913
+                },
+                {
+                    "lat": 3524,
+                    "lng": 2912
+                },
+                {
+                    "lat": 3523,
+                    "lng": 2912
+                },
+                {
+                    "lat": 3523,
+                    "lng": 2913
+                },
+                {
+                    "lat": 3523,
+                    "lng": 2914
+                },
+                {
+                    "lat": 3523,
+                    "lng": 2915
+                },
+                {
+                    "lat": 3522,
+                    "lng": 2915
+                },
+                {
+                    "lat": 3522,
+                    "lng": 2914
+                },
+                {
+                    "lat": 3522,
+                    "lng": 2913
+                },
+                {
+                    "lat": 3522,
+                    "lng": 2912
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Locate Bob the cat using the catspeak amulet. The highlighted area indicates Bob's wander radius. Look at the image at step.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Right-click and \"open\" the amulet.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Click on the whiskers until the arrow and the eyes glow white.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Run in the direction of the arrow, occasionally re-checking the amulet, until you find Bob.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "The easiest way to find Bob is to keep hopping worlds at the anvil, south of the varrock's west bank, until you find Bob.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Bob.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Ask Gertrude about Bob's parents in her house west of Varrock. (Chat 4)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3411,
+                    "lng": 3147
+                },
+                {
+                    "lat": 3411,
+                    "lng": 3148
+                },
+                {
+                    "lat": 3411,
+                    "lng": 3149
+                },
+                {
+                    "lat": 3411,
+                    "lng": 3150
+                },
+                {
+                    "lat": 3411,
+                    "lng": 3151
+                },
+                {
+                    "lat": 3410,
+                    "lng": 3151
+                },
+                {
+                    "lat": 3410,
+                    "lng": 3150
+                },
+                {
+                    "lat": 3410,
+                    "lng": 3149
+                },
+                {
+                    "lat": 3410,
+                    "lng": 3148
+                },
+                {
+                    "lat": 3410,
+                    "lng": 3147
+                },
+                {
+                    "lat": 3409,
+                    "lng": 3147
+                },
+                {
+                    "lat": 3409,
+                    "lng": 3148
+                },
+                {
+                    "lat": 3409,
+                    "lng": 3149
+                },
+                {
+                    "lat": 3409,
+                    "lng": 3150
+                },
+                {
+                    "lat": 3409,
+                    "lng": 3151
+                },
+                {
+                    "lat": 3408,
+                    "lng": 3151
+                },
+                {
+                    "lat": 3408,
+                    "lng": 3150
+                },
+                {
+                    "lat": 3408,
+                    "lng": 3149
+                },
+                {
+                    "lat": 3408,
+                    "lng": 3148
+                },
+                {
+                    "lat": 3408,
+                    "lng": 3147
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "If Rat Catchers has been started. (Chat 5)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Speak to Reldo in the Varrock library. (Chat 3)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3496,
+                    "lng": 3207
+                },
+                {
+                    "lat": 3496,
+                    "lng": 3208
+                },
+                {
+                    "lat": 3496,
+                    "lng": 3209
+                },
+                {
+                    "lat": 3495,
+                    "lng": 3209
+                },
+                {
+                    "lat": 3495,
+                    "lng": 3208
+                },
+                {
+                    "lat": 3495,
+                    "lng": 3207
+                },
+                {
+                    "lat": 3494,
+                    "lng": 3207
+                },
+                {
+                    "lat": 3493,
+                    "lng": 3207
+                },
+                {
+                    "lat": 3492,
+                    "lng": 3207
+                },
+                {
+                    "lat": 3492,
+                    "lng": 3208
+                },
+                {
+                    "lat": 3492,
+                    "lng": 3209
+                },
+                {
+                    "lat": 3493,
+                    "lng": 3209
+                },
+                {
+                    "lat": 3494,
+                    "lng": 3209
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go back to Bob the cat again, in the same spot you found him.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Go to Sophanem and talk to the Sphinx. (Chat 1\u20222)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 2787,
+                    "lng": 3297
+                },
+                {
+                    "lat": 2787,
+                    "lng": 3298
+                },
+                {
+                    "lat": 2787,
+                    "lng": 3299
+                },
+                {
+                    "lat": 2787,
+                    "lng": 3300
+                },
+                {
+                    "lat": 2787,
+                    "lng": 3301
+                },
+                {
+                    "lat": 2786,
+                    "lng": 3301
+                },
+                {
+                    "lat": 2786,
+                    "lng": 3300
+                },
+                {
+                    "lat": 2786,
+                    "lng": 3299
+                },
+                {
+                    "lat": 2786,
+                    "lng": 3298
+                },
+                {
+                    "lat": 2786,
+                    "lng": 3297
+                },
+                {
+                    "lat": 2785,
+                    "lng": 3297
+                },
+                {
+                    "lat": 2785,
+                    "lng": 3298
+                },
+                {
+                    "lat": 2785,
+                    "lng": 3299
+                },
+                {
+                    "lat": 2785,
+                    "lng": 3300
+                },
+                {
+                    "lat": 2785,
+                    "lng": 3301
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Raetul and buy a full desert robe set, if you don't have them already.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 2789,
+                    "lng": 3301
+                },
+                {
+                    "lat": 2789,
+                    "lng": 3302
+                },
+                {
+                    "lat": 2789,
+                    "lng": 3303
+                },
+                {
+                    "lat": 2789,
+                    "lng": 3304
+                },
+                {
+                    "lat": 2789,
+                    "lng": 3305
+                },
+                {
+                    "lat": 2788,
+                    "lng": 3305
+                },
+                {
+                    "lat": 2788,
+                    "lng": 3304
+                },
+                {
+                    "lat": 2788,
+                    "lng": 3303
+                },
+                {
+                    "lat": 2788,
+                    "lng": 3302
+                },
+                {
+                    "lat": 2788,
+                    "lng": 3301
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Return to Unferth's house in Burthorpe and do the following in the next steps",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3540,
+                    "lng": 2926
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2927
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2929
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2929
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2927
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2926
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2926
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2927
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2929
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Rake the patch behind his house and plant potato seeds in it. Your cat will notify you when they are done (typically 25\u201335 minutes to grow).",
+            "itemsNeeded": [
+                "4 potato seeds"
+            ],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 3541,
+                    "lng": 2931
+                },
+                {
+                    "lat": 3541,
+                    "lng": 2932
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2932
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2931
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2931
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2932
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2932
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2931
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "A supreme growth potion from player-owned farm cannot be used to accelerate growth.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "If you don't have your cat out, chatbox will tell \"Perhaps I should have a look and see if Unferth's potatoes have grown...\".",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Use the logs on fireplace, then light the fireplace.",
+            "itemsNeeded": [
+                "Logs"
+            ],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 3540,
+                    "lng": 2930
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2930
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Use the chocolate cake and bucket of milk on the table.",
+            "itemsNeeded": [
+                "bucket of milk",
+                "chocolate cake"
+            ],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 3541,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3541,
+                    "lng": 2929
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Make his bed upstairs.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3541,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2929
+                },
+                {
+                    "lat": 3541,
+                    "lng": 2929
+                },
+                {
+                    "lat": 3541,
+                    "lng": 2930
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2930
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Give Unferth a haircut. (Chat 2)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Unferth once all the chores are done. (Chat 1)",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Unequip your weapons and equip the doctor's hat/nurse hat and your white robes. Talk to the Apothecary in south-west Varrock. (Chat 1\u2022~)",
+            "itemsNeeded": [
+                "vial of water",
+                "desert robe and desert shirt or other white robes"
+            ],
+            "itemsRecommended": [],
+            "highlights": [
+                {
+                    "lat": 3405,
+                    "lng": 3191
+                },
+                {
+                    "lat": 3405,
+                    "lng": 3192
+                },
+                {
+                    "lat": 3405,
+                    "lng": 3193
+                },
+                {
+                    "lat": 3405,
+                    "lng": 3194
+                },
+                {
+                    "lat": 3405,
+                    "lng": 3195
+                },
+                {
+                    "lat": 3405,
+                    "lng": 3196
+                },
+                {
+                    "lat": 3404,
+                    "lng": 3196
+                },
+                {
+                    "lat": 3404,
+                    "lng": 3195
+                },
+                {
+                    "lat": 3404,
+                    "lng": 3194
+                },
+                {
+                    "lat": 3404,
+                    "lng": 3193
+                },
+                {
+                    "lat": 3404,
+                    "lng": 3192
+                },
+                {
+                    "lat": 3404,
+                    "lng": 3191
+                },
+                {
+                    "lat": 3403,
+                    "lng": 3191
+                },
+                {
+                    "lat": 3403,
+                    "lng": 3192
+                },
+                {
+                    "lat": 3403,
+                    "lng": 3193
+                },
+                {
+                    "lat": 3403,
+                    "lng": 3194
+                },
+                {
+                    "lat": 3403,
+                    "lng": 3195
+                },
+                {
+                    "lat": 3403,
+                    "lng": 3196
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Return to Unferth with a vial of water.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 3540,
+                    "lng": 2926
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2927
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3540,
+                    "lng": 2929
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2929
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2927
+                },
+                {
+                    "lat": 3539,
+                    "lng": 2926
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2926
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2927
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2928
+                },
+                {
+                    "lat": 3538,
+                    "lng": 2929
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Talk to Bob the cat. If he's not at his previous location, locate him again using the catspeak amulet (e).",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "After the cutscene, talk to Unferth again.",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        },
+        {
+            "stepDescription": "Quest complete!",
+            "itemsNeeded": [
+                "none"
+            ],
+            "itemsRecommended": [
+                "none"
+            ],
+            "highlights": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ],
+            "floor": 0,
+            "additionalStepInformation": [
+                ""
+            ]
+        }
+    ]
+}
