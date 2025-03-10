@@ -1,0 +1,447 @@
+{
+  "object": [
+    {
+      "name": "Rimmington House Portal",
+      "objectLocation": [
+        {
+          "lat": 3223,
+          "lng": 2950
+        },
+        {
+          "lat": 3223,
+          "lng": 2951
+        },
+        {
+          "lat": 3224,
+          "lng": 2951
+        },
+        {
+          "lat": 3224,
+          "lng": 2950
+        },
+        {
+          "lat": 3225,
+          "lng": 2950
+        },
+        {
+          "lat": 3225,
+          "lng": 2951
+        },
+        {
+          "lat": 3226,
+          "lng": 2951
+        },
+        {
+          "lat": 3226,
+          "lng": 2950
+        },
+        {
+          "lat": 3227,
+          "lng": 2950
+        },
+        {
+          "lat": 3227,
+          "lng": 2951
+        }
+      ],
+      "objectRadius": {
+        "bottomLeft": {
+          "lat": 3222,
+          "lng": 2949
+        },
+        "topRight": {
+          "lat": 3228,
+          "lng": 2952
+        }
+      }
+    },
+    {
+      "name": "Brimhaven House Portal",
+      "objectLocation": [
+        {
+          "lat": 3176,
+          "lng": 2754
+        },
+        {
+          "lat": 3176,
+          "lng": 2755
+        },
+        {
+          "lat": 3177,
+          "lng": 2754
+        },
+        {
+          "lat": 3177,
+          "lng": 2755
+        },
+        {
+          "lat": 3178,
+          "lng": 2754
+        },
+        {
+          "lat": 3178,
+          "lng": 2755
+        },
+        {
+          "lat": 3179,
+          "lng": 2754
+        },
+        {
+          "lat": 3179,
+          "lng": 2755
+        },
+        {
+          "lat": 3180,
+          "lng": 2754
+        },
+        {
+          "lat": 3180,
+          "lng": 2755
+        }
+      ],
+      "objectRadius": {
+        "bottomLeft": {
+          "lat": 3175,
+          "lng": 2753
+        },
+        "topRight": {
+          "lat": 3181,
+          "lng": 2756
+        }
+      }
+    },
+    {
+      "name": "Fremmenik House Portal",
+      "objectLocation": [
+        {
+          "lat": 3630,
+          "lng": 2667
+        },
+        {
+          "lat": 3629,
+          "lng": 2667
+        },
+        {
+          "lat": 3629,
+          "lng": 2668
+        },
+        {
+          "lat": 3630,
+          "lng": 2668
+        },
+        {
+          "lat": 3630,
+          "lng": 2669
+        },
+        {
+          "lat": 3629,
+          "lng": 2669
+        },
+        {
+          "lat": 3629,
+          "lng": 2670
+        },
+        {
+          "lat": 3630,
+          "lng": 2670
+        },
+        {
+          "lat": 3630,
+          "lng": 2671
+        },
+        {
+          "lat": 3629,
+          "lng": 2671
+        }
+      ],
+      "objectRadius": {
+        "bottomLeft": {
+          "lat": 3628,
+          "lng": 2666
+        },
+        "topRight": {
+          "lat": 3631,
+          "lng": 2672
+        }
+      }
+    },
+    {
+      "name": "Prifddinas House Portal",
+      "objectLocation": [
+        {
+          "lat": 3332,
+          "lng": 2166
+        }
+      ],
+      "objectRadius": {
+        "bottomLeft": {
+          "lat": 3331,
+          "lng": 2164
+        },
+        "topRight": {
+          "lat": 3333,
+          "lng": 2166
+        }
+      }
+    },
+    {
+      "name": "North-Pollnivneach House Portal",
+      "objectLocation": [
+        {
+          "lat": 3002,
+          "lng": 3337
+        },
+        {
+          "lat": 3001,
+          "lng": 3337
+        },
+        {
+          "lat": 3001,
+          "lng": 3338
+        },
+        {
+          "lat": 3002,
+          "lng": 3338
+        },
+        {
+          "lat": 3002,
+          "lng": 3339
+        },
+        {
+          "lat": 3001,
+          "lng": 3339
+        },
+        {
+          "lat": 3001,
+          "lng": 3340
+        },
+        {
+          "lat": 3002,
+          "lng": 3340
+        },
+        {
+          "lat": 3002,
+          "lng": 3341
+        },
+        {
+          "lat": 3001,
+          "lng": 3341
+        }
+      ],
+      "objectRadius": {
+        "bottomLeft": {
+          "lat": 3000,
+          "lng": 3336
+        },
+        "topRight": {
+          "lat": 3003,
+          "lng": 3342
+        }
+      }
+    },
+    {
+      "name": "Taverly House Portal",
+      "objectLocation": [
+        {
+          "lat": 3450,
+          "lng": 2879
+        },
+        {
+          "lat": 3450,
+          "lng": 2880
+        },
+        {
+          "lat": 3451,
+          "lng": 2880
+        },
+        {
+          "lat": 3451,
+          "lng": 2879
+        },
+        {
+          "lat": 3452,
+          "lng": 2879
+        },
+        {
+          "lat": 3452,
+          "lng": 2880
+        },
+        {
+          "lat": 3453,
+          "lng": 2880
+        },
+        {
+          "lat": 3453,
+          "lng": 2879
+        },
+        {
+          "lat": 3454,
+          "lng": 2879
+        },
+        {
+          "lat": 3454,
+          "lng": 2880
+        },
+        {
+          "lat": 3455,
+          "lng": 2880
+        },
+        {
+          "lat": 3455,
+          "lng": 2879
+        }
+      ],
+      "objectRadius": {
+        "bottomLeft": {
+          "lat": 3449,
+          "lng": 2878
+        },
+        "topRight": {
+          "lat": 3456,
+          "lng": 2881
+        }
+      }
+    },
+    {
+      "name": "Yanille House Portal",
+      "objectLocation": [
+        {
+          "lat": 3098,
+          "lng": 2541
+        },
+        {
+          "lat": 3097,
+          "lng": 2541
+        },
+        {
+          "lat": 3097,
+          "lng": 2542
+        },
+        {
+          "lat": 3098,
+          "lng": 2542
+        },
+        {
+          "lat": 3098,
+          "lng": 2543
+        },
+        {
+          "lat": 3097,
+          "lng": 2543
+        },
+        {
+          "lat": 3097,
+          "lng": 2544
+        },
+        {
+          "lat": 3098,
+          "lng": 2544
+        },
+        {
+          "lat": 3098,
+          "lng": 2545
+        },
+        {
+          "lat": 3097,
+          "lng": 2545
+        }
+      ],
+      "objectRadius": {
+        "bottomLeft": {
+          "lat": 3096,
+          "lng": 2540
+        },
+        "topRight": {
+          "lat": 3099,
+          "lng": 2546
+        }
+      }
+    },
+    {
+      "name": "Menaphos House Portal",
+      "objectLocation": [
+        {
+          "lat": 2636,
+          "lng": 3122
+        },
+        {
+          "lat": 2635,
+          "lng": 3122
+        },
+        {
+          "lat": 2635,
+          "lng": 3123
+        },
+        {
+          "lat": 2636,
+          "lng": 3123
+        },
+        {
+          "lat": 2636,
+          "lng": 3124
+        },
+        {
+          "lat": 2635,
+          "lng": 3124
+        }
+      ],
+      "objectRadius": {
+        "bottomLeft": {
+          "lat": 2634,
+          "lng": 3121
+        },
+        "topRight": {
+          "lat": 2637,
+          "lng": 3125
+        }
+      }
+    },
+    {
+      "name": "Otot House Portal",
+      "objectLocation": [
+        {
+          "lat": 927,
+          "lng": 4192
+        },
+        {
+          "lat": 926,
+          "lng": 4192
+        },
+        {
+          "lat": 926,
+          "lng": 4193
+        },
+        {
+          "lat": 927,
+          "lng": 4193
+        },
+        {
+          "lat": 927,
+          "lng": 4194
+        },
+        {
+          "lat": 926,
+          "lng": 4194
+        },
+        {
+          "lat": 926,
+          "lng": 4195
+        },
+        {
+          "lat": 927,
+          "lng": 4195
+        }
+      ],
+      "objectRadius": {
+        "bottomLeft": {
+          "lat": 925,
+          "lng": 4191
+        },
+        "topRight": {
+          "lat": 928,
+          "lng": 4196
+        }
+      }
+    }
+  ]
+}

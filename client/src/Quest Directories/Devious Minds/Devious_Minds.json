@@ -1,309 +1,1029 @@
 {
-    "questName": "Devious Minds",
-    "questSteps": [
-        {
-            "stepDescription": "Talk to the monk just outside of Paterdomus which is east of Silvarea. (Chat \u2713)",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+  "questName": "Devious Minds",
+  "questSteps": [
+    {
+      "stepDescription": "Talk to the monk just outside of Paterdomus which is east of Silvarea. (Chat \u2713)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Head to Doric's hut north of the Falador lodestone and use a mithril 2h sword on the whetstone outside of the hut.",
-            "itemsNeeded": [
-                "Bowstring and mithril 2h sword"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head to Doric's hut north of the Falador lodestone and use a mithril 2h sword on the whetstone outside of the hut.",
+      "itemsNeeded": [
+        "Bowstring and mithril 2h sword"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Use a bowstring on the slender blade.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Use a bowstring on the slender blade.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to the monk. (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Return to the monk. (Chat 1)",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Use the orb on a large pouch.",
+      "itemsNeeded": [
+        "Large pouch"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Use the orb on a large pouch.",
-            "itemsNeeded": [
-                "Large pouch"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Bank anything you have, except for the large pouch.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Reach Entrana either through the Abyss or by using a Law altar teleport.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Bank anything you have, except for the large pouch.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Note: A wicked hood will not work here.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Reach Entrana either through the Abyss or by using a Law altar teleport.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "If entering through the Abyss: Enter the Abyss north of Edgeville, then make your way to the Law rift. Dismiss any Summoning familiar. Leave the Law Altar by using the portal.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Note: A wicked hood will not work here.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head into the church of Entrana to the south.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "If entering through the Abyss: Enter the Abyss north of Edgeville, then make your way to the Law rift. Dismiss any Summoning familiar. Leave the Law Altar by using the portal.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Use the pouch on the prayer altar. Doing this will cause you to lose your large pouch.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Head into the church of Entrana to the south.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Watch the cutscene.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Use the pouch on the prayer altar. Doing this will cause you to lose your large pouch.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to the High Priest if you didn't during the cutscene.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Watch the cutscene.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to the monk, back outside Paterdomus.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to the High Priest if you didn't during the cutscene.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Search the Dead Monk.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Return to the monk, back outside Paterdomus.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to the High Priest back on Entrana.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Search the Dead Monk.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "A wicked hood will work now.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to the High Priest back on Entrana.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Sir Tiffy Cashien in Falador Park, ask about Devious Minds. (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "A wicked hood will work now.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "(Chat 2) if The Slug Menace has not yet been started.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Sir Tiffy Cashien in Falador Park, ask about Devious Minds. (Chat 1)",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "(Chat 2) if The Slug Menace has not yet been started.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Quest complete!",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        }
-    ]
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    }
+  ]
 }

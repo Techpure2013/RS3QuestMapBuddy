@@ -14,7 +14,7 @@ import HighlightLayer from "./../Map Classes/Map Components/TileHighlighting";
 import { useParams } from "react-router-dom";
 import { useSocket } from "./../Entrance/Entrance Components/SocketProvider";
 import ChunkGridLayer from "Map Classes/Map Components/ChunkGrid";
-import QuestJSON from "./../Quest Directories/A Clockwork Syringe/A_Clockwork_Syringe.json";
+//import QuestJSON from "../Map Classes/Quest Directories/A Fairy Tale II Cure a Queen/A_Fairy_Tale_II_Cure_a_Queen.json";
 import StaticHighlightLayer from "Map Classes/Map Components/staticHighlighter";
 const App: React.FC = () => {
   const { UserID, QuestName, level, z, x, y } = useParams<{
@@ -169,16 +169,6 @@ const App: React.FC = () => {
               bounds={bound}
             />
           ))}
-          {/* {QuestJSON.questSteps.map((value) =>
-            value.highlights.map((highlight) => (
-              <StaticHighlightLayer
-                key={`${highlight.lat}-${highlight.lng}`}
-                lat={highlight.lat}
-                level={value.floor}
-                lng={highlight.lng}
-              />
-            ))
-          )} */}
         </>
         <GridLayer />
         <HighlightLayer onCursorMove={handleCursorMove} />

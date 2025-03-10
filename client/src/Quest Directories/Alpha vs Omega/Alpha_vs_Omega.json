@@ -1,508 +1,508 @@
 {
-    "questName": "Alpha vs Omega",
-    "questSteps": [
-        {
-            "stepDescription": "Talk to Rasial, the First Necromancer on the bridge in the City of Um. (Chat \u2713)",
-            "itemsNeeded": [
-                "none"
+  "questName": "Alpha vs Omega",
+  "questSteps": [
+    {
+      "stepDescription": "Talk to Rasial, the First Necromancer on the bridge in the City of Um. (Chat \u2713)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Kharen to travel to Rasial's Citadel. (Chat 1), Using the boss portal in War's Retreat or boss portal in Max Guild to get to Rasial's citadel will not work to start the fight.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "highlights": [
-                {
-                    "lat": 1777,
-                    "lng": 1071
-                },
-                {
-                    "lat": 1777,
-                    "lng": 1072
-                },
-                {
-                    "lat": 1777,
-                    "lng": 1073
-                },
-                {
-                    "lat": 1777,
-                    "lng": 1074
-                },
-                {
-                    "lat": 1777,
-                    "lng": 1075
-                },
-                {
-                    "lat": 1777,
-                    "lng": 1076
-                },
-                {
-                    "lat": 1776,
-                    "lng": 1076
-                },
-                {
-                    "lat": 1776,
-                    "lng": 1075
-                },
-                {
-                    "lat": 1776,
-                    "lng": 1074
-                },
-                {
-                    "lat": 1776,
-                    "lng": 1073
-                },
-                {
-                    "lat": 1776,
-                    "lng": 1072
-                },
-                {
-                    "lat": 1776,
-                    "lng": 1071
-                },
-                {
-                    "lat": 1775,
-                    "lng": 1071
-                },
-                {
-                    "lat": 1775,
-                    "lng": 1072
-                },
-                {
-                    "lat": 1775,
-                    "lng": 1073
-                },
-                {
-                    "lat": 1775,
-                    "lng": 1074
-                },
-                {
-                    "lat": 1775,
-                    "lng": 1075
-                },
-                {
-                    "lat": 1775,
-                    "lng": 1076
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "If at any point you die during the fights, simply speak to Kharen to get back to Rasial's Citadel.",
+      "itemsNeeded": [
+        "Necromancy Gear",
+        "Food",
+        "Potions"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Kharen to travel to Rasial's Citadel. (Chat 1), Using the boss portal in War's Retreat or boss portal in Max Guild to get to Rasial's citadel will not work to start the fight.",
-            "itemsNeeded": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Speak with Rasial.",
+      "itemsNeeded": [
+        "Necromancy Gear",
+        "Food",
+        "Potions"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Defeat Hermod, the Spirit of War.",
+      "itemsNeeded": [
+        "Necromancy Gear",
+        "Food",
+        "Potions"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "highlights": [
-                {
-                    "lat": 1812,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1812,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1812,
-                    "lng": 1081
-                },
-                {
-                    "lat": 1811,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1811,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1811,
-                    "lng": 1081
-                },
-                {
-                    "lat": 1810,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1810,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1810,
-                    "lng": 1081
-                },
-                {
-                    "lat": 1809,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1809,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1809,
-                    "lng": 1081
-                },
-                {
-                    "lat": 1808,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1808,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1808,
-                    "lng": 1081
-                },
-                {
-                    "lat": 1807,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1807,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1807,
-                    "lng": 1081
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Defeat Rasial, the First Necromancer. Cannot be killed with Deathtouched dart.",
+      "itemsNeeded": [
+        "Necromancy Gear",
+        "Food",
+        "Potions"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "If at any point you die during the fights, simply speak to Kharen to get back to Rasial's Citadel.",
-            "itemsNeeded": [
-                "Necromancy Gear",
-                "Food",
-                "Potions"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "A cutscene ensues. Continue speaking with Rasial.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to Death in the City of Um.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "highlights": [
-                {
-                    "lat": 1812,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1812,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1812,
-                    "lng": 1081
-                },
-                {
-                    "lat": 1811,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1811,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1811,
-                    "lng": 1081
-                },
-                {
-                    "lat": 1810,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1810,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1810,
-                    "lng": 1081
-                },
-                {
-                    "lat": 1809,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1809,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1809,
-                    "lng": 1081
-                },
-                {
-                    "lat": 1808,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1808,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1808,
-                    "lng": 1081
-                },
-                {
-                    "lat": 1807,
-                    "lng": 1079
-                },
-                {
-                    "lat": 1807,
-                    "lng": 1080
-                },
-                {
-                    "lat": 1807,
-                    "lng": 1081
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Speak with Rasial.",
-            "itemsNeeded": [
-                "Necromancy Gear",
-                "Food",
-                "Potions"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 1764,
-                    "lng": 862
-                },
-                {
-                    "lat": 1764,
-                    "lng": 863
-                },
-                {
-                    "lat": 1764,
-                    "lng": 864
-                },
-                {
-                    "lat": 1763,
-                    "lng": 864
-                },
-                {
-                    "lat": 1763,
-                    "lng": 863
-                },
-                {
-                    "lat": 1763,
-                    "lng": 862
-                },
-                {
-                    "lat": 1762,
-                    "lng": 862
-                },
-                {
-                    "lat": 1762,
-                    "lng": 863
-                },
-                {
-                    "lat": 1762,
-                    "lng": 864
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Defeat Hermod, the Spirit of War.",
-            "itemsNeeded": [
-                "Necromancy Gear",
-                "Food",
-                "Potions"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Defeat Rasial, the First Necromancer. Cannot be killed with Deathtouched dart.",
-            "itemsNeeded": [
-                "Necromancy Gear",
-                "Food",
-                "Potions"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "A cutscene ensues. Continue speaking with Rasial.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 1764,
-                    "lng": 862
-                },
-                {
-                    "lat": 1764,
-                    "lng": 863
-                },
-                {
-                    "lat": 1764,
-                    "lng": 864
-                },
-                {
-                    "lat": 1763,
-                    "lng": 864
-                },
-                {
-                    "lat": 1763,
-                    "lng": 863
-                },
-                {
-                    "lat": 1763,
-                    "lng": 862
-                },
-                {
-                    "lat": 1762,
-                    "lng": 862
-                },
-                {
-                    "lat": 1762,
-                    "lng": 863
-                },
-                {
-                    "lat": 1762,
-                    "lng": 864
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Return to Death in the City of Um.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 1779,
-                    "lng": 1101
-                },
-                {
-                    "lat": 1779,
-                    "lng": 1102
-                },
-                {
-                    "lat": 1779,
-                    "lng": 1103
-                },
-                {
-                    "lat": 1778,
-                    "lng": 1103
-                },
-                {
-                    "lat": 1778,
-                    "lng": 1102
-                },
-                {
-                    "lat": 1778,
-                    "lng": 1101
-                },
-                {
-                    "lat": 1777,
-                    "lng": 1101
-                },
-                {
-                    "lat": 1777,
-                    "lng": 1102
-                },
-                {
-                    "lat": 1777,
-                    "lng": 1103
-                },
-                {
-                    "lat": 1776,
-                    "lng": 1103
-                },
-                {
-                    "lat": 1776,
-                    "lng": 1102
-                },
-                {
-                    "lat": 1776,
-                    "lng": 1101
-                },
-                {
-                    "lat": 1775,
-                    "lng": 1101
-                },
-                {
-                    "lat": 1775,
-                    "lng": 1102
-                },
-                {
-                    "lat": 1775,
-                    "lng": 1103
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Quest complete!",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        }
-    ]
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    }
+  ]
 }

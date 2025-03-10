@@ -1,579 +1,551 @@
 {
-    "questName": "All Fired Up",
-    "questSteps": [
-        {
-            "stepDescription": "Talk to King Roald in Varrock Palace. (Chat 3\u20221\u2022\u2713)",
-            "itemsNeeded": [
-                "none"
+  "questName": "All Fired Up",
+  "questSteps": [
+    {
+      "stepDescription": "Talk to King Roald in Varrock Palace. (Chat 3\u20221\u2022\u2713)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Blaze Sharpeye in Silvarea which is north-east of the Varrock Dig Site and south-west of the Paterdomus Temple on the river Salve. (Chat 1)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "highlights": [
-                {
-                    "lat": 3473,
-                    "lng": 3219
-                },
-                {
-                    "lat": 3473,
-                    "lng": 3220
-                },
-                {
-                    "lat": 3473,
-                    "lng": 3221
-                },
-                {
-                    "lat": 3473,
-                    "lng": 3222
-                },
-                {
-                    "lat": 3473,
-                    "lng": 3223
-                },
-                {
-                    "lat": 3472,
-                    "lng": 3223
-                },
-                {
-                    "lat": 3472,
-                    "lng": 3222
-                },
-                {
-                    "lat": 3472,
-                    "lng": 3221
-                },
-                {
-                    "lat": 3472,
-                    "lng": 3220
-                },
-                {
-                    "lat": 3472,
-                    "lng": 3219
-                },
-                {
-                    "lat": 3471,
-                    "lng": 3219
-                },
-                {
-                    "lat": 3471,
-                    "lng": 3220
-                },
-                {
-                    "lat": 3471,
-                    "lng": 3221
-                },
-                {
-                    "lat": 3471,
-                    "lng": 3222
-                },
-                {
-                    "lat": 3471,
-                    "lng": 3223
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Place the logs in the nearby beacon then light it.",
+      "itemsNeeded": [
+        "20 Regular Logs"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Blaze Sharpeye in Silvarea which is north-east of the Varrock Dig Site and south-west of the Paterdomus Temple on the river Salve. (Chat 1)",
-            "itemsNeeded": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Blaze Sharpeye again. (Chat 2)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Chop 20 logs on the way to Squire Fyre if you don't already have them. Light the beacon west-north-west of the Odd Old Man with twenty logs of the same type.",
+      "itemsNeeded": [
+        "20 regular logs"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "highlights": [
-                {
-                    "lat": 3468,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3468,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3468,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3396
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Go back to Blaze and talk to him. (Chat 1)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Place the logs in the nearby beacon then light it.",
-            "itemsNeeded": [
-                "20 Regular Logs"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Add-Logs to the beacon (Requires 5 Logs). (Chat 1)",
+      "itemsNeeded": [
+        "5 Logs"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Blaze. (Chat ~)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "highlights": [
-                {
-                    "lat": 3463,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3462,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3461,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3461,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3462,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3463,
-                    "lng": 3395
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to King Roald. (Chat 2)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Blaze Sharpeye again. (Chat 2)",
-            "itemsNeeded": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 3468,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3468,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3468,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3396
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Chop 20 logs on the way to Squire Fyre if you don't already have them. Light the beacon west-north-west of the Odd Old Man with twenty logs of the same type.",
-            "itemsNeeded": [
-                "20 regular logs"
-            ],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 3510,
-                    "lng": 3342
-                },
-                {
-                    "lat": 3510,
-                    "lng": 3343
-                },
-                {
-                    "lat": 3510,
-                    "lng": 3344
-                },
-                {
-                    "lat": 3511,
-                    "lng": 3344
-                },
-                {
-                    "lat": 3511,
-                    "lng": 3343
-                },
-                {
-                    "lat": 3511,
-                    "lng": 3342
-                },
-                {
-                    "lat": 3512,
-                    "lng": 3342
-                },
-                {
-                    "lat": 3512,
-                    "lng": 3343
-                },
-                {
-                    "lat": 3512,
-                    "lng": 3344
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Go back to Blaze and talk to him. (Chat 1)",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 3468,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3468,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3468,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3396
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Add-Logs to the beacon (Requires 5 Logs). (Chat 1)",
-            "itemsNeeded": [
-                "5 Logs"
-            ],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Blaze. (Chat ~)",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 3468,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3468,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3468,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3467,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3466,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3396
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3465,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3394
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3395
-                },
-                {
-                    "lat": 3464,
-                    "lng": 3396
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to King Roald. (Chat 2)",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 3473,
-                    "lng": 3219
-                },
-                {
-                    "lat": 3473,
-                    "lng": 3220
-                },
-                {
-                    "lat": 3473,
-                    "lng": 3221
-                },
-                {
-                    "lat": 3473,
-                    "lng": 3222
-                },
-                {
-                    "lat": 3473,
-                    "lng": 3223
-                },
-                {
-                    "lat": 3472,
-                    "lng": 3223
-                },
-                {
-                    "lat": 3472,
-                    "lng": 3222
-                },
-                {
-                    "lat": 3472,
-                    "lng": 3221
-                },
-                {
-                    "lat": 3472,
-                    "lng": 3220
-                },
-                {
-                    "lat": 3472,
-                    "lng": 3219
-                },
-                {
-                    "lat": 3471,
-                    "lng": 3219
-                },
-                {
-                    "lat": 3471,
-                    "lng": 3220
-                },
-                {
-                    "lat": 3471,
-                    "lng": 3221
-                },
-                {
-                    "lat": 3471,
-                    "lng": 3222
-                },
-                {
-                    "lat": 3471,
-                    "lng": 3223
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Quest complete!",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        }
-    ]
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    }
+  ]
 }

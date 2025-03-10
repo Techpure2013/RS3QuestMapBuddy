@@ -25,7 +25,7 @@ body,
 
 /* Topdown Layer */
 .map-topdown img {
-  filter: brightness(0.8) saturate(1.5) hue-rotate(18deg) contrast(1.6);
+  filter: saturate(1.5);
 }
 
 /*Smooth transitions when tiles load */
@@ -36,9 +36,7 @@ body,
   background-color: rgba(0, 0, 0, 0.8);
 }
 /* Collision Layer if its applied */
-.map-collisionlayer img {
-  filter: grayscale(100%) hue-rotate(22deg);
-}
+
 /* Walls Layer */
 .map-walls {
   filter: saturate(1.7);

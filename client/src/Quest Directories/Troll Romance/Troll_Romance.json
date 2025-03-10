@@ -1,368 +1,1196 @@
 {
-    "questName": "Troll Romance",
-    "questSteps": [
-        {
-            "stepDescription": "Trollheim teleport or teleport to Burthorpe and go west up the mountains to the Troll Stronghold (see the map on the right).",
-            "itemsNeeded": [
-                "Climbing boots or Trollheim teleport"
+  "questName": "Troll Romance",
+  "questSteps": [
+    {
+      "stepDescription": "Trollheim teleport or teleport to Burthorpe and go west up the mountains to the Troll Stronghold (see the map on the right).",
+      "itemsNeeded": [
+        "Climbing boots or Trollheim teleport"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Enter the Troll Stronghold cave and go down one level (if you used the main entrance)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Enter the Troll Stronghold cave and go down one level (if you used the main entrance)",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Ug on the middle level of the Troll Stronghold. Offer him your help. (Chat 1\u20223\u2022\u2713)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Ug on the middle level of the Troll Stronghold. Offer him your help. (Chat 1\u20223\u2022\u2713)",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Aga in the room to the north. (Chat 2\u20221)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Aga in the room to the north. (Chat 2\u20221)",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Arrg in the same room. (Chat 2)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Arrg in the same room. (Chat 2)",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Ug again.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Ug again.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Teleport to Burthorpe and talk to Freda in the plateaus west of Burthorpe. (Chat 1\u20222)",
+      "itemsNeeded": [
+        "1 rope",
+        "1 maple logs or yew logs",
+        "1 iron bar",
+        "1 swamp tar",
+        "1 cake tin and 1 bucket of wax"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Teleport to Burthorpe and talk to Freda in the plateaus west of Burthorpe. (Chat 1\u20222)",
-            "itemsNeeded": [
-                "1 rope",
-                "1 maple logs or yew logs",
-                "1 iron bar",
-                "1 swamp tar",
-                "1 cake tin and 1 bucket of wax"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Dunstan east of the Burthorpe lodestone about a sled. (Chat 2\u20221)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to him again to give him a rope, maple or yew logs, and an iron bar.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Dunstan east of the Burthorpe lodestone about a sled. (Chat 2\u20221)",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Use swamp tar on a wax bucket (with a cake tin in your inventory).",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to him again to give him a rope, maple or yew logs, and an iron bar.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Use your wax on the sled.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Use swamp tar on a wax bucket (with a cake tin in your inventory).",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Path to the Troll Cave entrance from Burthorpe",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Use your wax on the sled.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Climb all the way back up the mountain and go north-west of the main Trollheim entrance (see the map on the right).",
+      "itemsNeeded": [
+        "Climbing boots or trollheim teleport",
+        "1 sled",
+        "combat gear and eventual food for next quest step"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Path to the Troll Cave entrance from Burthorpe",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Preferably use trollheim teleport here if you have it",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Climb all the way back up the mountain and go north-west of the main Trollheim entrance (see the map on the right).",
-            "itemsNeeded": [
-                "Climbing boots or trollheim teleport",
-                "1 sled",
-                "combat gear and eventual food for next quest step"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head north-west and enter the cave.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head north-west and exit the cave through the crevasse.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Preferably use trollheim teleport here if you have it",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head south, equip your sled and slide through the slope.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Head north-west and enter the cave.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "After the end of the first part of the ride, pick the Trollweiss flowers west of your location. Do not sled any further south at this point or you will have to climb the mountain again.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Head north-west and exit the cave through the crevasse.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Go back and talk to Ug.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Head south, equip your sled and slide through the slope.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Arrg and tell him you're here to kill him. The fight will start immediately after that. Arrg also attacks immediately after the teleport, so be prepared. (Chat 1)",
+      "itemsNeeded": [
+        "Climbing boots",
+        "1 Trollweiss",
+        "combat gear and food",
+        "7 free inventory spaces for reward",
+        "reward will be dropped on floor if there is not enough space"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "After the end of the first part of the ride, pick the Trollweiss flowers west of your location. Do not sled any further south at this point or you will have to climb the mountain again.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Kill Arrg.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Go back and talk to Ug.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to Ug and talk to him.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Arrg and tell him you're here to kill him. The fight will start immediately after that. Arrg also attacks immediately after the teleport, so be prepared. (Chat 1)",
-            "itemsNeeded": [
-                "Climbing boots",
-                "1 Trollweiss",
-                "combat gear and food",
-                "7 free inventory spaces for reward",
-                "reward will be dropped on floor if there is not enough space"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Kill Arrg.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Return to Ug and talk to him.",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Quest complete!",
-            "itemsNeeded": [],
-            "itemsRecommended": [],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        }
-    ]
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    }
+  ]
 }

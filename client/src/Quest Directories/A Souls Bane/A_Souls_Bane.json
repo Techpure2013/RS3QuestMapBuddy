@@ -1,259 +1,555 @@
 {
-    "questName": "A Soul's Bane",
-    "questSteps": [
-        {
-            "stepDescription": "Talk to Launa who is east of Varrock and south of the path leading to Silvarea. (Chat \u2713) and Enter the rift.",
-            "itemsNeeded": [
-                "none"
+  "questName": "A Soul's Bane",
+  "questSteps": [
+    {
+      "stepDescription": "Talk to Launa who is east of Varrock and south of the path leading to Silvarea. (Chat \u2713) and Enter the rift.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "NOTE - You cannot deal damage to these enemies if you are wearing ranged, mage, or necromancy armour. Near the entrance of the Room of Rage is a set of weapons. Different weapons kill different monsters. Kill monsters until the rage meter at the top of the screen is full.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "highlights": [
-                {
-                    "lat": 3454,
-                    "lng": 3307
-                },
-                {
-                    "lat": 3454,
-                    "lng": 3308
-                },
-                {
-                    "lat": 3454,
-                    "lng": 3309
-                },
-                {
-                    "lat": 3453,
-                    "lng": 3309
-                },
-                {
-                    "lat": 3453,
-                    "lng": 3308
-                },
-                {
-                    "lat": 3453,
-                    "lng": 3307
-                },
-                {
-                    "lat": 3452,
-                    "lng": 3307
-                },
-                {
-                    "lat": 3452,
-                    "lng": 3308
-                },
-                {
-                    "lat": 3452,
-                    "lng": 3309
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Anger sword - kills Angry unicorn, Anger spear - kills Angry bear, Anger maul - kills Angry giant rat, Anger battleaxe - kills Angry goblin. Once Rage Meter is filled Enter the Exit",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "NOTE - You cannot deal damage to these enemies if you are wearing ranged, mage, or necromancy armour. Near the entrance of the Room of Rage is a set of weapons. Different weapons kill different monsters. Kill monsters until the rage meter at the top of the screen is full.",
-            "itemsNeeded": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Room of Fear The easiest way to complete this is to move clock-wise around the room, looking inside every dark hole until all fear reapers have been killed. Look-inside random dark holes alongside wall. Kill the five fear reapers as they appear. Multiple rounds may be needed. Continue the process until you receive a cutscene. After the cutscene, Enter the black hole on the west wall to proceed.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Room of Confusion In this room, the confusion beast must be killed. There will be four fakes and one real one.If you skip the cutscene, you will be sent back out to the surface.Kill the real beast five times.Enter the single remaining confusing door for a cutscene. After the cutscene, enter the confusing door to proceed.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Room of Hopelessness In this room, kill all 5 Hopeless creatures. Each must be killed 3 times and restores 75% of life points when the player eats.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Anger sword - kills Angry unicorn, Anger spear - kills Angry bear, Anger maul - kills Angry giant rat, Anger battleaxe - kills Angry goblin. Once Rage Meter is filled Enter the Exit",
-            "itemsNeeded": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Kill all of the creatures. Cross the bridge and Use the exit.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Kill all three of Tolna's heads, and Talk to Tolna.Please note the clickbox for talking to him may be on a grid next to him (observed once on the void grid south of him) instead of on him. If he doesn't spawn, exit the room and re-enter.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "On the surface, talk to Tolna again.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Room of Fear The easiest way to complete this is to move clock-wise around the room, looking inside every dark hole until all fear reapers have been killed. Look-inside random dark holes alongside wall. Kill the five fear reapers as they appear. Multiple rounds may be needed. Continue the process until you receive a cutscene. After the cutscene, Enter the black hole on the west wall to proceed.",
-            "itemsNeeded": [
-                "none"
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
             ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Room of Confusion In this room, the confusion beast must be killed. There will be four fakes and one real one.If you skip the cutscene, you will be sent back out to the surface.Kill the real beast five times.Enter the single remaining confusing door for a cutscene. After the cutscene, enter the confusing door to proceed.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Room of Hopelessness In this room, kill all 5 Hopeless creatures. Each must be killed 3 times and restores 75% of life points when the player eats.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Kill all of the creatures. Cross the bridge and Use the exit.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Kill all three of Tolna's heads, and Talk to Tolna.Please note the clickbox for talking to him may be on a grid next to him (observed once on the void grid south of him) instead of on him. If he doesn't spawn, exit the room and re-enter.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "On the surface, talk to Tolna again.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 3454,
-                    "lng": 3307
-                },
-                {
-                    "lat": 3454,
-                    "lng": 3308
-                },
-                {
-                    "lat": 3454,
-                    "lng": 3309
-                },
-                {
-                    "lat": 3453,
-                    "lng": 3309
-                },
-                {
-                    "lat": 3453,
-                    "lng": 3308
-                },
-                {
-                    "lat": 3453,
-                    "lng": 3307
-                },
-                {
-                    "lat": 3452,
-                    "lng": 3307
-                },
-                {
-                    "lat": 3452,
-                    "lng": 3308
-                },
-                {
-                    "lat": 3452,
-                    "lng": 3309
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Quest complete!",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        }
-    ]
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    }
+  ]
 }

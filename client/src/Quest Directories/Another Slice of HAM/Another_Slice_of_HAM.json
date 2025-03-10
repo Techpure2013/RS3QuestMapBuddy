@@ -1,1048 +1,1492 @@
 {
-    "questName": "Another Slice of HAM",
-    "questSteps": [
-        {
-            "stepDescription": "Talk to Ambassador Alvijar on the 2nd floor[US] of Dorgesh-Kaan in the northern part of the city. (Chat \u2713)",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 5350,
-                    "lng": 2729
-                },
-                {
-                    "lat": 5353,
-                    "lng": 2733
-                },
-                {
-                    "lat": 5353,
-                    "lng": 2734
-                },
-                {
-                    "lat": 5353,
-                    "lng": 2735
-                },
-                {
-                    "lat": 5352,
-                    "lng": 2735
-                },
-                {
-                    "lat": 5351,
-                    "lng": 2735
-                },
-                {
-                    "lat": 5350,
-                    "lng": 2735
-                },
-                {
-                    "lat": 5350,
-                    "lng": 2734
-                },
-                {
-                    "lat": 5350,
-                    "lng": 2733
-                },
-                {
-                    "lat": 5350,
-                    "lng": 2732
-                },
-                {
-                    "lat": 5351,
-                    "lng": 2732
-                },
-                {
-                    "lat": 5352,
-                    "lng": 2732
-                },
-                {
-                    "lat": 5352,
-                    "lng": 2736
-                },
-                {
-                    "lat": 5351,
-                    "lng": 2736
-                },
-                {
-                    "lat": 5350,
-                    "lng": 2736
-                },
-                {
-                    "lat": 5350,
-                    "lng": 2737
-                },
-                {
-                    "lat": 5350,
-                    "lng": 2738
-                },
-                {
-                    "lat": 5352,
-                    "lng": 2738
-                },
-                {
-                    "lat": 5352,
-                    "lng": 2737
-                }
-            ],
-            "floor": 1,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "While on the same floor, head west then south until a transport icon is seen on the minimap.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 5276,
-                    "lng": 2695
-                },
-                {
-                    "lat": 5277,
-                    "lng": 2695
-                },
-                {
-                    "lat": 5278,
-                    "lng": 2695
-                },
-                {
-                    "lat": 5278,
-                    "lng": 2696
-                },
-                {
-                    "lat": 5277,
-                    "lng": 2696
-                },
-                {
-                    "lat": 5276,
-                    "lng": 2696
-                },
-                {
-                    "lat": 5276,
-                    "lng": 2697
-                },
-                {
-                    "lat": 5277,
-                    "lng": 2697
-                },
-                {
-                    "lat": 5278,
-                    "lng": 2697
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Enter the doorway, head south down the tracks and talk to Tegdak (you need 2 free spaces for the specimen brush and trowel).",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 5276,
-                    "lng": 2695
-                },
-                {
-                    "lat": 5277,
-                    "lng": 2695
-                },
-                {
-                    "lat": 5278,
-                    "lng": 2695
-                },
-                {
-                    "lat": 5278,
-                    "lng": 2696
-                },
-                {
-                    "lat": 5277,
-                    "lng": 2696
-                },
-                {
-                    "lat": 5276,
-                    "lng": 2696
-                },
-                {
-                    "lat": 5276,
-                    "lng": 2697
-                },
-                {
-                    "lat": 5277,
-                    "lng": 2697
-                },
-                {
-                    "lat": 5278,
-                    "lng": 2697
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Use the trowel on the 6 artefacts on the ground to dig them up. Disabling shadows in graphics settings may make them easier to spot. If you need more inventory space you can talk to Tegdak per restored artefact, you don't need to give all in at once",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 5539,
-                    "lng": 2512
-                },
-                {
-                    "lat": 5544,
-                    "lng": 2511
-                },
-                {
-                    "lat": 5547,
-                    "lng": 2510
-                },
-                {
-                    "lat": 5550,
-                    "lng": 2512
-                },
-                {
-                    "lat": 5561,
-                    "lng": 2510
-                },
-                {
-                    "lat": 5563,
-                    "lng": 2512
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Use each of them on the specimen table.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 5559,
-                    "lng": 2512
-                },
-                {
-                    "lat": 5558,
-                    "lng": 2512
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Tegdak.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 5566,
-                    "lng": 2511
-                },
-                {
-                    "lat": 5566,
-                    "lng": 2510
-                },
-                {
-                    "lat": 5565,
-                    "lng": 2510
-                },
-                {
-                    "lat": 5565,
-                    "lng": 2511
-                },
-                {
-                    "lat": 5565,
-                    "lng": 2512
-                },
-                {
-                    "lat": 5566,
-                    "lng": 2512
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Dismiss any pets/familiars and talk to Zanik. (Chat 1) Zanik will now be following you. (If you lose Zanik you will need to return here to retrieve her)",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 5568,
-                    "lng": 2510
-                },
-                {
-                    "lat": 5568,
-                    "lng": 2511
-                },
-                {
-                    "lat": 5568,
-                    "lng": 2512
-                },
-                {
-                    "lat": 5567,
-                    "lng": 2512
-                },
-                {
-                    "lat": 5566,
-                    "lng": 2512
-                },
-                {
-                    "lat": 5565,
-                    "lng": 2512
-                },
-                {
-                    "lat": 5565,
-                    "lng": 2511
-                },
-                {
-                    "lat": 5565,
-                    "lng": 2510
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "With Zanik following, exit and talk to the Goblin scribe, west of the quest start point.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 5370,
-                    "lng": 2710
-                },
-                {
-                    "lat": 5369,
-                    "lng": 2710
-                },
-                {
-                    "lat": 5368,
-                    "lng": 2710
-                },
-                {
-                    "lat": 5367,
-                    "lng": 2710
-                },
-                {
-                    "lat": 5369,
-                    "lng": 2711
-                },
-                {
-                    "lat": 5369,
-                    "lng": 2712
-                },
-                {
-                    "lat": 5368,
-                    "lng": 2712
-                },
-                {
-                    "lat": 5368,
-                    "lng": 2713
-                },
-                {
-                    "lat": 5369,
-                    "lng": 2713
-                },
-                {
-                    "lat": 5370,
-                    "lng": 2713
-                },
-                {
-                    "lat": 5370,
-                    "lng": 2714
-                },
-                {
-                    "lat": 5369,
-                    "lng": 2714
-                },
-                {
-                    "lat": 5368,
-                    "lng": 2714
-                },
-                {
-                    "lat": 5367,
-                    "lng": 2714
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "In the house just west of the Goblin scribe, climb down the stairs.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 5361,
-                    "lng": 2719
-                },
-                {
-                    "lat": 5361,
-                    "lng": 2720
-                },
-                {
-                    "lat": 5362,
-                    "lng": 2720
-                },
-                {
-                    "lat": 5362,
-                    "lng": 2719
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to Oldak (Chat 2). You will be teleported to Goblin Village with Zanik, receiving a Dorgesh-kaan sphere in your inventory.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 5367,
-                    "lng": 2701
-                },
-                {
-                    "lat": 5367,
-                    "lng": 2702
-                },
-                {
-                    "lat": 5367,
-                    "lng": 2703
-                },
-                {
-                    "lat": 5367,
-                    "lng": 2704
-                },
-                {
-                    "lat": 5366,
-                    "lng": 2703
-                },
-                {
-                    "lat": 5366,
-                    "lng": 2702
-                },
-                {
-                    "lat": 5366,
-                    "lng": 2701
-                },
-                {
-                    "lat": 5365,
-                    "lng": 2701
-                },
-                {
-                    "lat": 5365,
-                    "lng": 2702
-                },
-                {
-                    "lat": 5365,
-                    "lng": 2703
-                },
-                {
-                    "lat": 5365,
-                    "lng": 2704
-                },
-                {
-                    "lat": 5365,
-                    "lng": 2705
-                },
-                {
-                    "lat": 5364,
-                    "lng": 2703
-                },
-                {
-                    "lat": 5364,
-                    "lng": 2702
-                },
-                {
-                    "lat": 5364,
-                    "lng": 2701
-                },
-                {
-                    "lat": 5363,
-                    "lng": 2701
-                },
-                {
-                    "lat": 5363,
-                    "lng": 2703
-                },
-                {
-                    "lat": 5363,
-                    "lng": 2704
-                },
-                {
-                    "lat": 5363,
-                    "lng": 2705
-                },
-                {
-                    "lat": 5362,
-                    "lng": 2705
-                },
-                {
-                    "lat": 5362,
-                    "lng": 2704
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "In Goblin Village, in the northernmost building, talk to either General Bentnoze or Wartface. (Chat 2)",
-            "itemsNeeded": [
-                "A range or magic weapon and its ammunition to defeat 2 H.A.M. members behind object"
-            ],
-            "itemsRecommended": [
-                "You can find a crossbow and 50 bronze bolts on the ground at their location"
-            ],
-            "highlights": [
-                {
-                    "lat": 3513,
-                    "lng": 2953
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2953
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2954
-                },
-                {
-                    "lat": 3513,
-                    "lng": 2954
-                },
-                {
-                    "lat": 3514,
-                    "lng": 2954
-                },
-                {
-                    "lat": 3515,
-                    "lng": 2954
-                },
-                {
-                    "lat": 3515,
-                    "lng": 2955
-                },
-                {
-                    "lat": 3514,
-                    "lng": 2955
-                },
-                {
-                    "lat": 3513,
-                    "lng": 2955
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2955
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2956
-                },
-                {
-                    "lat": 3513,
-                    "lng": 2956
-                },
-                {
-                    "lat": 3514,
-                    "lng": 2956
-                },
-                {
-                    "lat": 3515,
-                    "lng": 2956
-                },
-                {
-                    "lat": 3515,
-                    "lng": 2957
-                },
-                {
-                    "lat": 3514,
-                    "lng": 2957
-                },
-                {
-                    "lat": 3513,
-                    "lng": 2957
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2957
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2958
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2959
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "After the cutscene, go behind the buildings to the west then go south until a tower is seen.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 3496,
-                    "lng": 2951
-                },
-                {
-                    "lat": 3496,
-                    "lng": 2952
-                },
-                {
-                    "lat": 3496,
-                    "lng": 2953
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Enter through the collapsed wall in the southwest corner. If you attempt to walk around the front of the buildings, you will be stopped by falling arrows.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 3496,
-                    "lng": 2951
-                },
-                {
-                    "lat": 3496,
-                    "lng": 2952
-                },
-                {
-                    "lat": 3496,
-                    "lng": 2953
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Kill the H.A.M. Mage and H.A.M. Archer. A crossbow and 50 bronze bolts can be found on the ground here.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Talk to either General about how to rescue Zanik. (Chat 2\u20221). If Recipe for Disaster: Freeing the Goblin Generals was started. (Chat 2\u20222)",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 3513,
-                    "lng": 2953
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2953
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2954
-                },
-                {
-                    "lat": 3513,
-                    "lng": 2954
-                },
-                {
-                    "lat": 3514,
-                    "lng": 2954
-                },
-                {
-                    "lat": 3515,
-                    "lng": 2954
-                },
-                {
-                    "lat": 3515,
-                    "lng": 2955
-                },
-                {
-                    "lat": 3514,
-                    "lng": 2955
-                },
-                {
-                    "lat": 3513,
-                    "lng": 2955
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2955
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2956
-                },
-                {
-                    "lat": 3513,
-                    "lng": 2956
-                },
-                {
-                    "lat": 3514,
-                    "lng": 2956
-                },
-                {
-                    "lat": 3515,
-                    "lng": 2956
-                },
-                {
-                    "lat": 3515,
-                    "lng": 2957
-                },
-                {
-                    "lat": 3514,
-                    "lng": 2957
-                },
-                {
-                    "lat": 3513,
-                    "lng": 2957
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2957
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2958
-                },
-                {
-                    "lat": 3512,
-                    "lng": 2959
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "It is recommended to turn on legacy combat for this next section as your fight with Sigmund will go significantly quicker.",
-            "itemsNeeded": [
-                " A light source (and a rope if you have never entered the caves from the surface before)"
-            ],
-            "itemsRecommended": [
-                "Water altar teleport",
-                "Enlightened amulet"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Use water altar teleport or Enlightened amulet to the nexus now if you have it. With a light source, head to the entrance to the Lumbridge Swamp Caves in the Lumbridge Swamp and talk to Sergeant Slimetoes or Mossfists, slightly south-east of the water altar.",
-            "itemsNeeded": [
-                " A light source (and a rope if you have never entered the caves from the surface before)"
-            ],
-            "itemsRecommended": [
-                "Water altar teleport",
-                "Enlightened amulet"
-            ],
-            "highlights": [
-                {
-                    "lat": 3161,
-                    "lng": 3186
-                },
-                {
-                    "lat": 3161,
-                    "lng": 3187
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Climb down the dark hole under the tree and go down the ladder, directly south east of the Climbing Rope.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 3161,
-                    "lng": 3188
-                },
-                {
-                    "lat": 3162,
-                    "lng": 3188
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "With the guards out of sight, enter the small room. As they walk north passing the room, exit the room (let them see you for a second), then quickly run south and hide behind a crate on the northern wall.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Once the guards from north attack the goblins, lure the next guard towards the goblins by running past the goblins so that they will focus on the goblins instead.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Repeat the step to lure the last guard with the same method.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "With the last guard engaging the goblins, it is safe to run south to the ladder.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Equip the ancient mace and climb down the ladder.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "If you have legacy combat enabled, simply use the Ancient Mace's special attack at the start of the fight and finish him however you choose.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Initiate combat with Sigmund. Once you reach 100% adrenaline, use its special attack to disable Sigmund's prayers. Be sure to not have any ranged or magic equipment on as your special attack will miss. The special attack ability can be found in the Constitution ability book. After disabling his prayers, other weapons may be used to kill him.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "After defeating Sigmund, untie Zanik.",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        },
-        {
-            "stepDescription": "Quest complete!",
-            "itemsNeeded": [
-                "none"
-            ],
-            "itemsRecommended": [
-                "none"
-            ],
-            "highlights": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ],
-            "floor": 0,
-            "additionalStepInformation": [
-                ""
-            ]
-        }
-    ]
+  "questName": "Another Slice of HAM",
+  "questSteps": [
+    {
+      "stepDescription": "Talk to Ambassador Alvijar on the 2nd floor[US] of Dorgesh-Kaan in the northern part of the city. (Chat \u2713)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 1,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "While on the same floor, head west then south until a transport icon is seen on the minimap.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Enter the doorway, head south down the tracks and talk to Tegdak (you need 2 free spaces for the specimen brush and trowel).",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Use the trowel on the 6 artefacts on the ground to dig them up. Disabling shadows in graphics settings may make them easier to spot. If you need more inventory space you can talk to Tegdak per restored artefact, you don't need to give all in at once",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Use each of them on the specimen table.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Tegdak.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Dismiss any pets/familiars and talk to Zanik. (Chat 1) Zanik will now be following you. (If you lose Zanik you will need to return here to retrieve her)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "With Zanik following, exit and talk to the Goblin scribe, west of the quest start point.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "In the house just west of the Goblin scribe, climb down the stairs.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Oldak (Chat 2). You will be teleported to Goblin Village with Zanik, receiving a Dorgesh-kaan sphere in your inventory.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "In Goblin Village, in the northernmost building, talk to either General Bentnoze or Wartface. (Chat 2)",
+      "itemsNeeded": [
+        "A range or magic weapon and its ammunition to defeat 2 H.A.M. members behind object"
+      ],
+      "itemsRecommended": [
+        "You can find a crossbow and 50 bronze bolts on the ground at their location"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "After the cutscene, go behind the buildings to the west then go south until a tower is seen.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Enter through the collapsed wall in the southwest corner. If you attempt to walk around the front of the buildings, you will be stopped by falling arrows.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Kill the H.A.M. Mage and H.A.M. Archer. A crossbow and 50 bronze bolts can be found on the ground here.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to either General about how to rescue Zanik. (Chat 2\u20221). If Recipe for Disaster: Freeing the Goblin Generals was started. (Chat 2\u20222)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "It is recommended to turn on legacy combat for this next section as your fight with Sigmund will go significantly quicker.",
+      "itemsNeeded": [
+        " A light source (and a rope if you have never entered the caves from the surface before)"
+      ],
+      "itemsRecommended": [
+        "Water altar teleport",
+        "Enlightened amulet"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Use water altar teleport or Enlightened amulet to the nexus now if you have it. With a light source, head to the entrance to the Lumbridge Swamp Caves in the Lumbridge Swamp and talk to Sergeant Slimetoes or Mossfists, slightly south-east of the water altar.",
+      "itemsNeeded": [
+        " A light source (and a rope if you have never entered the caves from the surface before)"
+      ],
+      "itemsRecommended": [
+        "Water altar teleport",
+        "Enlightened amulet"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Climb down the dark hole under the tree and go down the ladder, directly south east of the Climbing Rope.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "With the guards out of sight, enter the small room. As they walk north passing the room, exit the room (let them see you for a second), then quickly run south and hide behind a crate on the northern wall.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Once the guards from north attack the goblins, lure the next guard towards the goblins by running past the goblins so that they will focus on the goblins instead.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Repeat the step to lure the last guard with the same method.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "With the last guard engaging the goblins, it is safe to run south to the ladder.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Equip the ancient mace and climb down the ladder.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "If you have legacy combat enabled, simply use the Ancient Mace's special attack at the start of the fight and finish him however you choose.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Initiate combat with Sigmund. Once you reach 100% adrenaline, use its special attack to disable Sigmund's prayers. Be sure to not have any ranged or magic equipment on as your special attack will miss. The special attack ability can be found in the Constitution ability book. After disabling his prayers, other weapons may be used to kill him.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "After defeating Sigmund, untie Zanik.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    }
+  ]
 }
