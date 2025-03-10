@@ -10,19 +10,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Grish",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3055,
+              "lng": 2442
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3048,
+                "lng": 2444
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3059,
+                "lng": 2449
               }
             }
           }

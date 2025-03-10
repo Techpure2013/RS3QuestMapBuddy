@@ -78,21 +78,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Loose Railing (You Are It)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3500,
+                "lng": 2661
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3499,
+                "lng": 2660
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3501,
+                "lng": 2661
               }
             }
           }
@@ -129,21 +129,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Tree (You Are It)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3482,
+                "lng": 2643
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3480,
+                "lng": 2641
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3484,
+                "lng": 2645
               }
             }
           }
@@ -263,70 +263,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Reldo (You Are It)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3494,
+              "lng": 3208
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3490,
+                "lng": 3207
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "The dig location in Lumbridge cemetery",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3496,
+                "lng": 3209
               }
             }
           }
@@ -365,19 +314,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Duke Horacio (You Are It)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3220,
+              "lng": 3211
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3219,
+                "lng": 3208
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3225,
+                "lng": 3211
               }
             }
           }
@@ -486,21 +435,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Dig Location Cemetary (You Are It)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3192,
+                "lng": 3240
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3191,
+                "lng": 3239
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3193,
+                "lng": 3241
               }
             }
           }
@@ -537,21 +486,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Portal (You Are It)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3225,
+                "lng": 2951
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3223,
+                "lng": 2949
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3227,
+                "lng": 2952
               }
             }
           }
@@ -588,21 +537,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Draynor Mansion (You Are It)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3359,
+                "lng": 3099
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3354,
+                "lng": 3096
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3363,
+                "lng": 3103
               }
             }
           }
@@ -639,21 +588,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Bookcase (You Are It)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3362,
+                "lng": 3096
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3361,
+                "lng": 3096
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3363,
+                "lng": 3097
               }
             }
           }
@@ -741,21 +690,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Dig Location McGrubor's Wood (You Are It)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3486,
+                "lng": 2657
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3485,
+                "lng": 2656
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3488,
+                "lng": 2658
               }
             }
           }
