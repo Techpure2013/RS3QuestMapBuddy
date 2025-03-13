@@ -63,19 +63,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Fairy Very Wise (Sparse Plane)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4397,
+              "lng": 2452
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4396,
+                "lng": 2451
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4398,
+                "lng": 2453
               }
             }
           }
@@ -112,19 +112,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Fairy Very Wise (Sparse Plane)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4397,
+              "lng": 2452
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4396,
+                "lng": 2451
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4398,
+                "lng": 2453
               }
             }
           }
@@ -161,19 +161,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Fairy Queen (Fairy Headquarters)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4243,
+              "lng": 1579
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1578
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4244,
+                "lng": 1580
               }
             }
           }
@@ -210,40 +210,40 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Tooth Fairy",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4243,
+              "lng": 1584
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1583
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4244,
+                "lng": 1585
               }
             }
           }
         ],
         "object": [
           {
-            "name": "",
+            "name": "Projector (Fairy Tale Part III)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4241,
+                "lng": 1584
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4240,
+                "lng": 1583
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1585
               }
             }
           }
@@ -259,40 +259,40 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Tooth Fairy",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4243,
+              "lng": 1584
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1583
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4244,
+                "lng": 1585
               }
             }
           }
         ],
         "object": [
           {
-            "name": "",
+            "name": "Projector (Fairy Tale Part III)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4241,
+                "lng": 1584
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4240,
+                "lng": 1583
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1585
               }
             }
           }
@@ -308,19 +308,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Tooth Fairy",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4243,
+              "lng": 1584
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1583
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4244,
+                "lng": 1585
               }
             }
           }
@@ -376,21 +376,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Hammer and Secateurs",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4261,
+                "lng": 1567
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4260,
+                "lng": 1564
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4265,
+                "lng": 1569
               }
             }
           }
@@ -425,21 +425,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Fairy Ring (Fairy Headquarters)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4234,
+                "lng": 1559
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4233,
+                "lng": 1558
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4235,
+                "lng": 1560
               }
             }
           }
