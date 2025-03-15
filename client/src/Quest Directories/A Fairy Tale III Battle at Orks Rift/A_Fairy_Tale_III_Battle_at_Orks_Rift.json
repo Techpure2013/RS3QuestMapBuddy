@@ -376,11 +376,11 @@
         ],
         "object": [
           {
-            "name": "Hammer and Secateurs",
+            "name": "Hammer and Secateurs ( Fairy Headquarters )",
             "objectLocation": [
               {
                 "lat": 4261,
-                "lng": 1567
+                "lng": 1566
               }
             ],
             "objectRadius": {
@@ -455,19 +455,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Gnarly",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4467,
+              "lng": 2377
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4466,
+                "lng": 2376
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4468,
+                "lng": 2378
               }
             }
           }
@@ -498,25 +498,25 @@
       "additionalStepInformation": [""]
     },
     {
-      "stepDescription": "In no particular order, compliment him with the following responses (Only 3 compliments may be needed to continue to the next part): \"Your enamel shimmers like a river of silver in the moonlight.\",\"I've never seen such amazing, inspired and dream-like toothiness.\", \"I can see your bicuspid ancestry is an example to all molar-kind.\", and \"You're a wonderful guard tooth with lovely cusps.\"",
+      "stepDescription": "In no particular order, compliment him with the following responses (Only 3 compliments may be needed to continue to the next part)",
       "itemsNeeded": ["none"],
       "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Gnarly",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4467,
+              "lng": 2377
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4466,
+                "lng": 2376
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4468,
+                "lng": 2378
               }
             }
           }
@@ -544,7 +544,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        "Your enamel shimmers like a river of silver in the moonlight.",
+        "I've never seen such amazing, inspired and dream-like toothiness.",
+        "I can see your bicuspid ancestry is an example to all molar-kind.",
+        "You're a wonderful guard tooth with lovely cusps."
+      ]
     },
     {
       "stepDescription": "Use the bucket of milk on him, (Chat 2\u20222). Gnarly should jump into your inventory.",
@@ -553,19 +558,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Gnarly",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4467,
+              "lng": 2377
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4466,
+                "lng": 2376
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4468,
+                "lng": 2378
               }
             }
           }
@@ -602,19 +607,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Tooth Fairy",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4243,
+              "lng": 1584
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1583
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4244,
+                "lng": 1585
               }
             }
           }
@@ -651,19 +656,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Tooth Fairy",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4243,
+              "lng": 1584
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1583
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4244,
+                "lng": 1585
               }
             }
           }
@@ -700,19 +705,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Tooth Fairy",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4243,
+              "lng": 1584
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1583
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4244,
+                "lng": 1585
               }
             }
           }
@@ -768,21 +773,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Yellow Flowers ( Fairy Headquarters )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4237,
+                "lng": 1583
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4236,
+                "lng": 1582
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4238,
+                "lng": 1584
               }
             }
           }
@@ -817,21 +822,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Fairy Ring (Fairy Headquarters)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4234,
+                "lng": 1559
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4233,
+                "lng": 1558
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4235,
+                "lng": 1560
               }
             }
           }
@@ -851,19 +856,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "General Bre'egth",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4453,
+              "lng": 2400
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4451,
+                "lng": 2398
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4454,
+                "lng": 2403
               }
             }
           }
@@ -919,21 +924,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Any Other Ork ( Fairy Tale Part III )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4453,
+                "lng": 2414
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4449,
+                "lng": 2404
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4472,
+                "lng": 2420
               }
             }
           }
@@ -949,19 +954,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Fairy Fixit",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4434,
+              "lng": 2409
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4433,
+                "lng": 2408
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4436,
+                "lng": 2411
               }
             }
           }
@@ -998,19 +1003,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "K'Chunk",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 2920,
+              "lng": 3761
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 2919,
+                "lng": 3755
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 2932,
+                "lng": 3767
               }
             }
           }
@@ -1038,7 +1043,10 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        "Take the 8 willow logs if you have level 85 Firemaking, light the bonfire for K'Chunk and receive 10,000 Firemaking experience.",
+        " If you have the 4 regular planks and 8 nails of any kind, you can fix one of the bridges by using a plank on the bridge."
+      ]
     },
     {
       "stepDescription": "Pickpocket him for the tooth.",
@@ -1047,19 +1055,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "K'Chunk",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 2920,
+              "lng": 3761
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 2919,
+                "lng": 3755
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 2932,
+                "lng": 3767
               }
             }
           }
@@ -1098,19 +1106,36 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Wood Dryad ( Enchanted Valley )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4521,
+              "lng": 3025
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4517,
+                "lng": 3022
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4522,
+                "lng": 3028
+              }
+            }
+          },
+          {
+            "npcName": "General Gromblod ( Enchanted Valley )",
+            "npcLocation": {
+              "lat": 4508,
+              "lng": 3033
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 4506,
+                "lng": 3031
+              },
+              "topRight": {
+                "lat": 4512,
+                "lng": 3036
               }
             }
           }
@@ -1147,19 +1172,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Wood Dryad ( Enchanted Valley )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4521,
+              "lng": 3025
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4517,
+                "lng": 3022
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4522,
+                "lng": 3028
               }
             }
           }
@@ -1215,21 +1240,60 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Mango Tree ( Ape Atoll )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 2744,
+                "lng": 2730
+              },
+              {
+                "lat": 2744,
+                "lng": 2731
+              },
+              {
+                "lat": 2745,
+                "lng": 2731
+              },
+              {
+                "lat": 2745,
+                "lng": 2730
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 2743,
+                "lng": 2729
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 2746,
+                "lng": 2732
+              }
+            }
+          },
+          {
+            "name": "Hollow Log ( Ape Atoll )",
+            "objectLocation": [
+              {
+                "lat": 2740,
+                "lng": 2737
+              },
+              {
+                "lat": 2740,
+                "lng": 2738
+              },
+              {
+                "lat": 2740,
+                "lng": 2739
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 2739,
+                "lng": 2737
+              },
+              "topRight": {
+                "lat": 2741,
+                "lng": 2739
               }
             }
           }
@@ -1245,40 +1309,40 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "General Gromblod ( Enchanted Valley )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4508,
+              "lng": 3033
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4506,
+                "lng": 3031
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4512,
+                "lng": 3036
               }
             }
           }
         ],
         "object": [
           {
-            "name": "",
+            "name": "Mango ( Tooth )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4519,
+                "lng": 3034
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4517,
+                "lng": 3032
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4521,
+                "lng": 3036
               }
             }
           }
@@ -1313,21 +1377,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Mango ( Tooth )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4519,
+                "lng": 3034
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4517,
+                "lng": 3032
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4521,
+                "lng": 3036
               }
             }
           }
@@ -1346,19 +1410,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "General Shredflesh",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4205,
+              "lng": 2467
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4203,
+                "lng": 2465
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4206,
+                "lng": 2469
               }
             }
           }
@@ -1387,31 +1451,32 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        "In no particular order, calm him with the following responses: \"What's a bit of pain for a huge ork hero like you?\", \"If the tooth isn't pulled out, all your teeth will hurt much worse!\", \"Let me pull it! What are you, an ork or a goblin?\", and \"I'll make sure it doesn't hurt a bit; I'm a professional.\"",
         "Use the extractor on him.",
+        "In no particular order, calm him with the following responses: \"What's a bit of pain for a huge ork hero like you?\", \"If the tooth isn't pulled out, all your teeth will hurt much worse!\", \"Let me pull it! What are you, an ork or a goblin?\", and \"I'll make sure it doesn't hurt a bit; I'm a professional.\"",
+
         "Clear the pile of rock behind him if you haven't yet already."
       ]
     },
     {
-      "stepDescription": "Go back and talk to the Tooth Fairy in the hideout.",
+      "stepDescription": "Go back and talk to the Tooth Fairy in Fairy Headquarters.",
       "itemsNeeded": ["none"],
       "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Tooth Fairy",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4243,
+              "lng": 1584
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1583
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4244,
+                "lng": 1585
               }
             }
           }
@@ -1467,21 +1532,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Projector (Fairy Tale Part III)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4241,
+                "lng": 1584
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4240,
+                "lng": 1583
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4242,
+                "lng": 1585
               }
             }
           }
@@ -1619,21 +1684,41 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Barrier (Fairy Fight)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4135,
+                "lng": 1572
+              },
+              {
+                "lat": 4135,
+                "lng": 1573
+              },
+              {
+                "lat": 4134,
+                "lng": 1573
+              },
+              {
+                "lat": 4134,
+                "lng": 1572
+              },
+              {
+                "lat": 4133,
+                "lng": 1572
+              },
+              {
+                "lat": 4133,
+                "lng": 1573
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4132,
+                "lng": 1571
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4136,
+                "lng": 1574
               }
             }
           }
@@ -1649,19 +1734,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Tooth Fairy ( Final Fight )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4132,
+              "lng": 1570
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4130,
+                "lng": 1568
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4134,
+                "lng": 1571
               }
             }
           }
@@ -1717,21 +1802,191 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Planter 1",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4122,
+                "lng": 1575
+              },
+              {
+                "lat": 4122,
+                "lng": 1576
+              },
+              {
+                "lat": 4121,
+                "lng": 1577
+              },
+              {
+                "lat": 4120,
+                "lng": 1577
+              },
+              {
+                "lat": 4119,
+                "lng": 1576
+              },
+              {
+                "lat": 4119,
+                "lng": 1575
+              },
+              {
+                "lat": 4120,
+                "lng": 1574
+              },
+              {
+                "lat": 4121,
+                "lng": 1574
+              },
+              {
+                "lat": 4121,
+                "lng": 1575
+              },
+              {
+                "lat": 4121,
+                "lng": 1576
+              },
+              {
+                "lat": 4120,
+                "lng": 1576
+              },
+              {
+                "lat": 4120,
+                "lng": 1575
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4119,
+                "lng": 1574
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4122,
+                "lng": 1577
+              }
+            }
+          },
+          {
+            "name": "Planter 2",
+            "objectLocation": [
+              {
+                "lat": 4124,
+                "lng": 1583
+              },
+              {
+                "lat": 4124,
+                "lng": 1584
+              },
+              {
+                "lat": 4123,
+                "lng": 1585
+              },
+              {
+                "lat": 4122,
+                "lng": 1585
+              },
+              {
+                "lat": 4121,
+                "lng": 1584
+              },
+              {
+                "lat": 4121,
+                "lng": 1583
+              },
+              {
+                "lat": 4122,
+                "lng": 1582
+              },
+              {
+                "lat": 4123,
+                "lng": 1582
+              },
+              {
+                "lat": 4123,
+                "lng": 1583
+              },
+              {
+                "lat": 4123,
+                "lng": 1584
+              },
+              {
+                "lat": 4122,
+                "lng": 1584
+              },
+              {
+                "lat": 4122,
+                "lng": 1583
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 4121,
+                "lng": 1582
+              },
+              "topRight": {
+                "lat": 4124,
+                "lng": 1585
+              }
+            }
+          },
+          {
+            "name": "Planter 3",
+            "objectLocation": [
+              {
+                "lat": 4130,
+                "lng": 1588
+              },
+              {
+                "lat": 4129,
+                "lng": 1588
+              },
+              {
+                "lat": 4128,
+                "lng": 1589
+              },
+              {
+                "lat": 4128,
+                "lng": 1590
+              },
+              {
+                "lat": 4129,
+                "lng": 1591
+              },
+              {
+                "lat": 4130,
+                "lng": 1591
+              },
+              {
+                "lat": 4131,
+                "lng": 1590
+              },
+              {
+                "lat": 4131,
+                "lng": 1589
+              },
+              {
+                "lat": 4130,
+                "lng": 1589
+              },
+              {
+                "lat": 4130,
+                "lng": 1590
+              },
+              {
+                "lat": 4129,
+                "lng": 1590
+              },
+              {
+                "lat": 4129,
+                "lng": 1589
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 4128,
+                "lng": 1588
+              },
+              "topRight": {
+                "lat": 4131,
+                "lng": 1591
               }
             }
           }
@@ -1753,19 +2008,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Fairy Godfather ( Defeated )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4139,
+              "lng": 1581
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4138,
+                "lng": 1580
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4141,
+                "lng": 1583
               }
             }
           }
@@ -1802,19 +2057,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Fairy Queen (Final Fight)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4138,
+              "lng": 1582
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4136,
+                "lng": 1580
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4140,
+                "lng": 1584
               }
             }
           }
@@ -1851,19 +2106,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Martin the Master Gardener",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3258,
+              "lng": 3075
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3255,
+                "lng": 3073
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3261,
+                "lng": 3078
               }
             }
           }
