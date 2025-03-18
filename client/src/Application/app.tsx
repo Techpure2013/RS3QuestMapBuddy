@@ -16,6 +16,8 @@ import { useSocket } from "./../Entrance/Entrance Components/SocketProvider";
 import ChunkGridLayer from "Map Classes/Map Components/ChunkGrid";
 //import QuestJSON from "../Map Classes/Quest Directories/A Fairy Tale II Cure a Queen/A_Fairy_Tale_II_Cure_a_Queen.json";
 import StaticHighlightLayer from "Map Classes/Map Components/staticHighlighter";
+import FairyTale from "./../Quest Directories/A Fairy Tale I Growing Pains/A_Fairy_Tale_I_Growing_Pains.json";
+import QuestHighlightLayer from "./../Map Classes/Map Components/QuestHighlighter";
 const App: React.FC = () => {
   const { UserID, QuestName, level, z, x, y } = useParams<{
     UserID: string;
@@ -172,6 +174,7 @@ const App: React.FC = () => {
         </>
         <GridLayer />
         <HighlightLayer onCursorMove={handleCursorMove} />
+        {/* <QuestHighlightLayer questSteps={FairyTale.questSteps} /> */}
       </MapContainer>
     </div>
   );

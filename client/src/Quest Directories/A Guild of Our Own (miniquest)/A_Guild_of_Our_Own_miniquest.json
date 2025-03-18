@@ -3,31 +3,24 @@
   "questSteps": [
     {
       "stepDescription": "Talk to Darren Lightfinger just inside of the Thieves' Guild in Lumbridge. (Chat \u2713)",
-      "itemsNeeded": [
-        "Onion",
-        "Irit Potion(unf)",
-        "Empty Bowl"
-      ],
-      "itemsRecommended": [
-        "Ardougne Teleport Tab",
-        "Ardougne Teleport"
-      ],
+      "itemsNeeded": ["Onion", "Irit Potion(unf)", "Empty Bowl"],
+      "itemsRecommended": ["Ardougne Teleport Tab", "Ardougne Teleport"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Darren Lightfinger",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 5776,
+              "lng": 4759
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5775,
+                "lng": 4758
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5777,
+                "lng": 4760
               }
             }
           }
@@ -55,34 +48,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Chief Thief Robin. (Chat 3)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Chief Thief Robin",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 5777,
+              "lng": 4761
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5776,
+                "lng": 4760
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5778,
+                "lng": 4762
               }
             }
           }
@@ -110,34 +97,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Use an onion on a bowl with a knife (tool belt works) to make chopped onion.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Chief Thief Robin",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 5777,
+              "lng": 4761
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5776,
+                "lng": 4760
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5778,
+                "lng": 4762
               }
             }
           }
@@ -165,34 +146,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Use (right click) irit potion (unf) with chopped onion to get a vial of stench.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Chief Thief Robin",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 5777,
+              "lng": 4761
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5776,
+                "lng": 4760
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5778,
+                "lng": 4762
               }
             }
           }
@@ -220,34 +195,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Chief Thief Robin to get a vial of stench (a).",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Chief Thief Robin",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 5777,
+              "lng": 4761
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5776,
+                "lng": 4760
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5778,
+                "lng": 4762
               }
             }
           }
@@ -275,34 +244,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "If it does not work, talk to Darren Lightfinger about a disguise, and then talk to Robin again.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Darren Lightfinger",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 5776,
+              "lng": 4759
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5775,
+                "lng": 4758
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5777,
+                "lng": 4760
               }
             }
           }
@@ -330,19 +293,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Make sure to bring your lockpick and a blackjack",
-      "itemsNeeded": [
-        "Lockpick",
-        "Blackjack"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["Lockpick", "Blackjack"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -365,55 +321,49 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Building South East Ardougne",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3289,
+                "lng": 2678
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3287,
+                "lng": 2677
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3293,
+                "lng": 2681
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "In a building south-east of Ardougne market, pickpocket the Registrar for a key.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Registrar",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3288,
+              "lng": 2681
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3287,
+                "lng": 2680
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3289,
+                "lng": 2681
               }
             }
           }
@@ -441,18 +391,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Get ready, the next steps are time sensitive. You can try again if you fail with no consequence. Make sure to equip a blackjack first.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -496,18 +440,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "In the other room, wind the clock on the wall. Have a blackjack already equipped.",
-      "itemsNeeded": [
-        "Blackjack"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["Blackjack"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -530,39 +468,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Clock (Registrar House)",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3292,
+                "lng": 2681
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3291,
+                "lng": 2680
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3293,
+                "lng": 2681
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "With the Registrar in the clock room, go back to the front of the desk.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -585,55 +517,49 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Stand Location",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3289,
+                "lng": 2679
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3288,
+                "lng": 2678
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3290,
+                "lng": 2679
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Quickly (right click) lure, then (right click) knock out, then (right click) steal-from the guard.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Guard",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3290,
+              "lng": 2677
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3288,
+                "lng": 2677
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3290,
+                "lng": 2679
               }
             }
           }
@@ -661,18 +587,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Pull the vault lever behind the desk.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -695,39 +615,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Vault Lever",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3289,
+                "lng": 2681
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3288,
+                "lng": 2680
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3289,
+                "lng": 2681
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Go down the trapdoor that opens.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -750,39 +664,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Trapdoor",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3287,
+                "lng": 2677
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3287,
+                "lng": 2677
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3288,
+                "lng": 2678
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "(Right click) Picklock the vault door, not (left click) open.",
-      "itemsNeeded": [
-        "Lockpick"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["Lockpick"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -826,18 +734,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "(Right click) Check the chest for traps, then open it. You should receive some bonds.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -881,18 +783,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Inspect the box under the square hole in the wall to exit. (Chat 1)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -936,18 +832,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Bank (recommended) or destroy your vial of stench (a).",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -970,55 +860,53 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Bank Window",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3286,
+                "lng": 2655
+              },
+              {
+                "lat": 3283,
+                "lng": 2655
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3282,
+                "lng": 2654
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3287,
+                "lng": 2655
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Re-enter the building and talk to the Registrar.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Registrar",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3288,
+              "lng": 2681
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3287,
+                "lng": 2680
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3289,
+                "lng": 2681
               }
             }
           }
@@ -1046,34 +934,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Return to Darren Lightfinger. (Chat 3)",
-      "itemsNeeded": [
-        "Bonds (A Guild of Our Own)"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["Bonds (A Guild of Our Own)"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Darren Lightfinger",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 5776,
+              "lng": 4759
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5775,
+                "lng": 4758
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5777,
+                "lng": 4760
               }
             }
           }
@@ -1101,18 +983,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Caper complete!",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1156,9 +1032,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     }
   ]
 }
