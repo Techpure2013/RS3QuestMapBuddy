@@ -3,28 +3,24 @@
   "questSteps": [
     {
       "stepDescription": "Talk to Adrasteia in the library on the 2nd floor[US] floor of White Knights' Castle in Falador.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Adrasteia",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3332,
+              "lng": 2977
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3331,
+                "lng": 2976
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3333,
+                "lng": 2978
               }
             }
           }
@@ -52,18 +48,12 @@
         ]
       },
       "floor": 1,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Enter Senntisten through the ancient door at the Varrock Dig Site.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -86,39 +76,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Ancient Door",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3453,
+                "lng": 3331
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3452,
+                "lng": 3330
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3455,
+                "lng": 3333
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Once inside, enter the undercity by using the nearby pulley lift (a few steps east of the larger-looking pulley lift used to enter/exit Senntisten).",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -141,55 +125,49 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Pully Lift (  Zamorak Dungeon Entrance )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 1344,
+                "lng": 1762
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 1343,
+                "lng": 1761
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 1345,
+                "lng": 1763
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Sir Cadian.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Sir Cadian",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 1570,
+              "lng": 1669
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 1569,
+                "lng": 1668
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 1571,
+                "lng": 1670
               }
             }
           }
@@ -217,17 +195,11 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Clear The Zamorakian Undercity on any difficulty. Players who have already cleared it may skip this step.",
-      "itemsNeeded": [
-        "Best Combat Gear",
-        "Potions",
-        "Luck"
-      ],
+      "itemsNeeded": ["Best Combat Gear", "Potions", "Luck"],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -272,34 +244,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Return to Adrasteia in the library and talk to her.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Adrasteia",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3332,
+              "lng": 2977
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3331,
+                "lng": 2976
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3333,
+                "lng": 2978
               }
             }
           }
@@ -327,34 +293,28 @@
         ]
       },
       "floor": 1,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Go to the 3rd floor[US] and talk to Saradomin.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Saradomin",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3341,
+              "lng": 2980
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3340,
+                "lng": 2979
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3342,
+                "lng": 2980
               }
             }
           }
@@ -382,34 +342,28 @@
         ]
       },
       "floor": 2,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to anyone again to continue the dialogue.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Saradomin",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3341,
+              "lng": 2980
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3340,
+                "lng": 2979
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3342,
+                "lng": 2980
               }
             }
           }
@@ -437,34 +391,28 @@
         ]
       },
       "floor": 2,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Travel to the Kharid-et Dig Site and talk to Dr Nabanik.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Dr Nabanik",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3195,
+              "lng": 3352
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3194,
+                "lng": 3351
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3196,
+                "lng": 3352
               }
             }
           }
@@ -492,18 +440,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Nex, Trindine, Wahisietel, or Azzanadra.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -547,34 +489,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Armadyl at his tower south of Falador.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Armadyl",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3261,
+              "lng": 2975
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3259,
+                "lng": 2972
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3263,
+                "lng": 2977
               }
             }
           }
@@ -601,35 +537,29 @@
           }
         ]
       },
-      "floor": 1,
-      "additionalStepInformation": [
-        ""
-      ]
+      "floor": 3,
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Return to Adrasteia in the library and talk to her.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Adrasteia",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3332,
+              "lng": 2977
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3331,
+                "lng": 2976
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3333,
+                "lng": 2978
               }
             }
           }
@@ -657,18 +587,12 @@
         ]
       },
       "floor": 1,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -712,9 +636,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     }
   ]
 }

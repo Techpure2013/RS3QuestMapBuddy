@@ -3,28 +3,24 @@
   "questSteps": [
     {
       "stepDescription": "Talk to King Roald in Varrock Palace. (Chat 3\u20221\u2022\u2713)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "King Roald",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3472,
+              "lng": 3220
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3470,
+                "lng": 3219
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3478,
+                "lng": 3223
               }
             }
           }
@@ -52,34 +48,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Blaze Sharpeye in Silvarea which is north-east of the Varrock Dig Site and south-west of the Paterdomus Temple on the river Salve. (Chat 1)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Blaze Sharpeye",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3469,
+              "lng": 3393
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3467,
+                "lng": 3393
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3469,
+                "lng": 3396
               }
             }
           }
@@ -107,18 +97,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Place the logs in the nearby beacon then light it.",
-      "itemsNeeded": [
-        "20 Regular Logs"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["20 Regular Logs"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -141,55 +125,53 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Paterdomus Beacon",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3462,
+                "lng": 3396
+              },
+              {
+                "lat": 3461,
+                "lng": 3396
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3460,
+                "lng": 3395
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3463,
+                "lng": 3397
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Blaze Sharpeye again. (Chat 2)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Blaze Sharpeye",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3469,
+              "lng": 3393
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3467,
+                "lng": 3393
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3469,
+                "lng": 3396
               }
             }
           }
@@ -217,15 +199,11 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Chop 20 logs on the way to Squire Fyre if you don't already have them. Light the beacon west-north-west of the Odd Old Man with twenty logs of the same type.",
-      "itemsNeeded": [
-        "20 regular logs"
-      ],
+      "itemsNeeded": ["20 regular logs"],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -249,55 +227,49 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Odd Man Beacon",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3511,
+                "lng": 3343
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3510,
+                "lng": 3342
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3512,
+                "lng": 3344
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Go back to Blaze and talk to him. (Chat 1)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Blaze Sharpeye",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3469,
+              "lng": 3393
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3467,
+                "lng": 3393
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3469,
+                "lng": 3396
               }
             }
           }
@@ -325,32 +297,34 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Add-Logs to the beacon (Requires 5 Logs). (Chat 1)",
-      "itemsNeeded": [
-        "5 Logs"
-      ],
+      "itemsNeeded": ["5 Logs"],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
+            "name": "Paterdomus Beacon",
+            "objectLocation": [
+              {
+                "lat": 3462,
+                "lng": 3396
+              },
+              {
+                "lat": 3461,
+                "lng": 3396
+              }
+            ],
+            "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3460,
+                "lng": 3395
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3463,
+                "lng": 3397
               }
             }
           }
@@ -378,34 +352,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Blaze. (Chat ~)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Blaze Sharpeye",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3469,
+              "lng": 3393
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3467,
+                "lng": 3393
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3469,
+                "lng": 3396
               }
             }
           }
@@ -433,34 +401,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to King Roald. (Chat 2)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "King Roald",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3472,
+              "lng": 3220
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3470,
+                "lng": 3219
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3478,
+                "lng": 3223
               }
             }
           }
@@ -488,18 +450,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -543,9 +499,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     }
   ]
 }

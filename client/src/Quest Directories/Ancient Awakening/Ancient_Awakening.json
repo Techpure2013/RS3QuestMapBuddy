@@ -3,28 +3,24 @@
   "questSteps": [
     {
       "stepDescription": "Talk to Overseer Siv in Fort Forinthry. (Chat 2\u2022\u2713\u2022~)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Overseer Siv",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3540,
+              "lng": 3318
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3537,
+                "lng": 3316
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3541,
+                "lng": 3319
               }
             }
           }
@@ -52,18 +48,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Go north of Fort Forinthry into the Wilderness crypt to the open sarcophagus. Beware of risen ghosts inside.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -86,39 +76,37 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Wilderness crypt",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3610,
+                "lng": 3287
+              },
+              {
+                "lat": 3609,
+                "lng": 3287
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3608,
+                "lng": 3282
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3611,
+                "lng": 3288
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Go across the bridge and enter the ancient door.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -162,18 +150,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "If the bridge is missing, log out and back in to have it reappear.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -217,18 +199,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to ANYONE at the map table. (Chat ~)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -272,18 +248,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Collect 20 artefacts in the tomb. Kill any tomb zombies that appear, and then collect any artefacts they drop. The zombies are based on your combat level, e.g. 3,200 lifepoints at combat level 152.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -327,18 +297,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to ANYONE at the map table. (Chat ~)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -382,18 +346,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Go to the Jolly Boar Inn, south-west of Fort Forinthry. Continue Ancient Awakening at the entrance, then stay on the 1st floor[US]",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -416,55 +374,49 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Jolly Boar Inn (  Continue Ancient Awakening )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3512,
+                "lng": 3279
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3511,
+                "lng": 3278
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3514,
+                "lng": 3281
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Bill at the bar. (Chat 2)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Bill ( Ancient Awakening )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3488,
+              "lng": 3277
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3487,
+                "lng": 3275
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3488,
+                "lng": 3279
               }
             }
           }
@@ -492,34 +444,28 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Go up the staircase, talk to Ellamaria. (Chat 4)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Ellamaria",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3503,
+              "lng": 3276
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3502,
+                "lng": 3274
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3504,
+                "lng": 3278
               }
             }
           }
@@ -547,18 +493,12 @@
         ]
       },
       "floor": 1,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Go west of Champions' Guild, near the bridge to Draynor Manor and continue Ancient Awakening.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -581,55 +521,49 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Bridge ( continue Ancient Awakening )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3364,
+                "lng": 3155
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3363,
+                "lng": 3155
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3365,
+                "lng": 3157
               }
             }
           }
         ]
       },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "floor": 1,
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Aster. (Chat 3)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Aster",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3356,
+              "lng": 3160
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3355,
+                "lng": 3159
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3357,
+                "lng": 3161
               }
             }
           }
@@ -657,73 +591,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Read mysterious letter.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": ["Read mysterious letter."]
     },
     {
       "stepDescription": "Go back to Fort Forinthry, continue Ancient Awakening at the Town Hall.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -746,21 +619,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Fort Forinthry Town Hall ( Ancient Awakening )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3561,
+                "lng": 3302
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3560,
+                "lng": 3301
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3562,
+                "lng": 3304
               }
             }
           }
@@ -768,126 +641,13 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Talk to anyone in the Town Hall.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Leave through the marker at the entrance to the Town Hall. (Chat 1)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "Talk to anyone in the Town Hall.",
+        "Leave through the marker at the entrance to the Town Hall. (Chat 1)"
       ]
     },
     {
       "stepDescription": "Go to the Grove east of the fort and interact with the rowboat to travel to Ungael. (Chat 1)",
-      "itemsNeeded": [
-        "Combat Gear",
-        "Food",
-        "Potions"
-      ],
+      "itemsNeeded": ["Combat Gear", "Food", "Potions"],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -911,39 +671,37 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "rowboat to Ungael",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3557,
+                "lng": 3359
+              },
+              {
+                "lat": 3556,
+                "lng": 3359
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3555,
+                "lng": 3359
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3558,
+                "lng": 3360
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Kill the zombie warriors.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -966,21 +724,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Zombie Warriors ( Ungael )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3976,
+                "lng": 2322
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3974,
+                "lng": 2320
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3981,
+                "lng": 2327
               }
             }
           }
@@ -988,72 +746,13 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Talk to the team and make your way north-east up the path.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "Talk to the team and make your way north-east up the path."
       ]
     },
     {
       "stepDescription": "Interact with the Ruins Entrance.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1076,39 +775,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Ruins Entrance",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4025,
+                "lng": 2350
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4024,
+                "lng": 2349
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4026,
+                "lng": 2351
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Inspect the Imposing Statue at the end of the path.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1131,39 +824,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Imposing Statue",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4066,
+                "lng": 2340
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4065,
+                "lng": 2337
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4068,
+                "lng": 2341
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Go up the stairs to the west, interact with the tower entrance. (Chat 1)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1186,39 +873,37 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Tower Entrance ( Ungael )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4070,
+                "lng": 2331
+              },
+              {
+                "lat": 4071,
+                "lng": 2332
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4069,
+                "lng": 2330
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4073,
+                "lng": 2332
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": ["Watch the cutscene."]
     },
     {
-      "stepDescription": "Watch the cutscene.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "stepDescription": "Face Zemouregal's minions (12 waves).",
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1241,21 +926,21 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Zemouregal's Waves",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4067,
+                "lng": 2316
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4061,
+                "lng": 2311
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4072,
+                "lng": 2321
               }
             }
           }
@@ -1263,143 +948,31 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Face Zemouregal's minions (12 waves). After each wave of enemies, you have to activate necrotic energy and sometimes choose a power-up for one of your allies. The last wave is the undead giant. See the full guide for details on all waves and power-ups.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Watch the cutscene.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "After each wave of enemies, you have to activate necrotic energy and sometimes choose a power-up for one of your allies.",
+        "The last wave is the undead giant.",
+        "Watch the cutscene."
       ]
     },
     {
       "stepDescription": "Talk to Aster. (Chat ~)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Aster ( Ungael )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4066,
+              "lng": 2318
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4063,
+                "lng": 2316
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4069,
+                "lng": 2321
               }
             }
           }
@@ -1427,18 +1000,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Interact with the doorway to the south.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1461,39 +1028,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Doorway ( Ungael )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4060,
+                "lng": 2326
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4059,
+                "lng": 2325
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4062,
+                "lng": 2328
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Walk west, then south, then interact with runic projector.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1516,39 +1077,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "runic projector",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4036,
+                "lng": 2327
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4035,
+                "lng": 2326
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4038,
+                "lng": 2329
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
-      "stepDescription": "Collect three motes of energy from the following areas in the next few steps",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "stepDescription": "Collect three motes of energy from the following areas",
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1571,7 +1126,7 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Mote 1",
             "objectLocation": [
               {
                 "lat": 0,
@@ -1580,122 +1135,50 @@
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4043,
+                "lng": 2329
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4045,
+                "lng": 2331
               }
             }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Searching bookcase in the north.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
+          },
           {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
+            "name": "Mote 2",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4034,
+                "lng": 2320
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4033,
+                "lng": 2319
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4035,
+                "lng": 2321
               }
             }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Searching ruined pillar in the southwest.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
+          },
           {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
+            "name": "Mote 3",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4035,
+                "lng": 2321
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4035,
+                "lng": 2321
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4035,
+                "lng": 2321
               }
             }
           }
@@ -1703,72 +1186,15 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Go north to catch the mote just outside the tower.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "Searching bookcase in the north.",
+        "Searching ruined pillar in the southwest.",
+        "Go north to catch the mote just outside the tower."
       ]
     },
     {
       "stepDescription": "Interact with the runic projector.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1791,55 +1217,49 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "runic projector",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4036,
+                "lng": 2327
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4035,
+                "lng": 2326
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4038,
+                "lng": 2329
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Listen to the Archivist. (Chat ~\u20222\u20223\u20224\u20221)",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Archivist",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 4036,
+              "lng": 2327
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4035,
+                "lng": 2326
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4037,
+                "lng": 2328
               }
             }
           }
@@ -1867,18 +1287,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Inspect the mysterious device to the south-east.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1901,39 +1315,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Mysterious Device",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4033,
+                "lng": 2334
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4032,
+                "lng": 2333
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 4034,
+                "lng": 2335
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Return to Fort Forinthry and continue via the Ancient Awakening in front of the Town Hall.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -1956,94 +1364,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Fort Forinthry Town Hall ( Ancient Awakening )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3561,
+                "lng": 3302
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3560,
+                "lng": 3301
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3562,
+                "lng": 3304
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Talk to anyone in the Town Hall.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": ["Talk to anyone in the Town Hall."]
     },
     {
       "stepDescription": "Quest Complete!!",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
+      "itemsNeeded": ["none"],
+      "itemsRecommended": ["none"],
       "highlights": {
         "npc": [
           {
@@ -2087,9 +1434,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     }
   ]
 }
