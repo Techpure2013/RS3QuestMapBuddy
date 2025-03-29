@@ -8,19 +8,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Horacio",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3312,
+              "lng": 2634
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3311,
+                "lng": 2633
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3313,
+                "lng": 2635
               }
             }
           }
@@ -48,9 +48,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Wizard Cromperty in his house to the north-east of the market. (Chat 1)",
@@ -59,19 +57,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Wizard Cromperty",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3325,
+              "lng": 2680
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3324,
+                "lng": 2679
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3326,
+                "lng": 2684
               }
             }
           }
@@ -99,9 +97,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to an RPDT employee south of the southern bank in Ardougne.",
@@ -110,19 +106,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "RPDT Employee",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3282,
+              "lng": 2671
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3281,
+                "lng": 2668
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3283,
+                "lng": 2675
               }
             }
           }
@@ -150,9 +146,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Open the smelly package on the table.",
@@ -180,11 +174,15 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Smelly Package",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3281,
+                "lng": 2674
+              },
+              {
+                "lat": 3281,
+                "lng": 2675
               }
             ],
             "objectRadius": {
@@ -202,58 +200,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Keep The Wizards Hand for One Foot in the Grave (miniquest)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "Keep The Wizards Hand for One Foot in the Grave (miniquest)"
       ]
     },
     {
@@ -263,19 +210,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Wizard Cromperty",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3325,
+              "lng": 2680
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3324,
+                "lng": 2679
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3326,
+                "lng": 2684
               }
             }
           }
@@ -304,58 +251,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Make a pot lid (any pot lid acquired before this point will not work). The potter's wheel and pottery oven in north-west of East Ardougne or Draynor or a portable crafter will work.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "Make a pot lid (any pot lid acquired before this point will not work). The potter's wheel and pottery oven in north-west of East Ardougne or Draynor or a portable crafter will work."
       ]
     },
     {
@@ -365,19 +261,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Wizard Cromperty",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3325,
+              "lng": 2680
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3324,
+                "lng": 2679
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3326,
+                "lng": 2684
               }
             }
           }
@@ -405,9 +301,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Garth, the farmer located at the fruit tree patch in Brimhaven, north of the Karamja lodestone. (Chat 2)",
@@ -416,19 +310,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Garth",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3211,
+              "lng": 2763
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3211,
+                "lng": 2762
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3214,
+                "lng": 2765
               }
             }
           }
@@ -456,9 +350,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "The path through the maze. Click to enlarge.",
@@ -507,17 +399,11 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "South-east of the nature altar, enter the maze by climbing the vine (north side). Do not leave the maze until you have followed all steps in this section.",
-      "itemsNeeded": [
-        "pot lid",
-        "filled plant pot",
-        "empty pot"
-      ],
+      "itemsNeeded": ["pot lid", "filled plant pot", "empty pot"],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -541,30 +427,28 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Vine Maze",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 2986,
+                "lng": 2897
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 2977,
+                "lng": 2880
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3003,
+                "lng": 2904
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Navigate the maze to reach the roots using the solution provided.",
@@ -592,30 +476,28 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Vine Maze",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 2986,
+                "lng": 2897
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 2977,
+                "lng": 2880
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3003,
+                "lng": 2904
               }
             }
           }
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Once you reach the root, dig the loose soil, cut the root, then use it on your plant pot.",
@@ -665,160 +547,9 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "If it does not grow, dig up and cut a different root. Out of the five roots in the area, only one of them can successfully grow. Try a different root until it works.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Fast travelling before covering the plant will destroy the clipping.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Once the correct root takes, use the potted root on your empty pot to make a sealed pot.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "If it does not grow, dig up and cut a different root. Out of the five roots in the area, only one of them can successfully grow. Try a different root until it works.",
+        "Fast travelling before covering the plant will destroy the clipping.",
+        "Once the correct root takes, use the potted root on your empty pot to make a sealed pot."
       ]
     },
     {
@@ -828,19 +559,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Horacio",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3312,
+              "lng": 2634
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3311,
+                "lng": 2633
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3313,
+                "lng": 2635
               }
             }
           }
@@ -868,9 +599,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Use the sealed pot on the east patch to plant the vine.",
@@ -898,11 +627,43 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Vine Patch",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3316,
+                "lng": 2637
+              },
+              {
+                "lat": 3315,
+                "lng": 2637
+              },
+              {
+                "lat": 3314,
+                "lng": 2637
+              },
+              {
+                "lat": 3314,
+                "lng": 2638
+              },
+              {
+                "lat": 3315,
+                "lng": 2638
+              },
+              {
+                "lat": 3316,
+                "lng": 2638
+              },
+              {
+                "lat": 3316,
+                "lng": 2639
+              },
+              {
+                "lat": 3315,
+                "lng": 2639
+              },
+              {
+                "lat": 3314,
+                "lng": 2639
               }
             ],
             "objectRadius": {
@@ -919,9 +680,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Attempt to attack the wild jade vine. (Chat 1)",
@@ -949,11 +708,43 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Vine Patch",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3316,
+                "lng": 2637
+              },
+              {
+                "lat": 3315,
+                "lng": 2637
+              },
+              {
+                "lat": 3314,
+                "lng": 2637
+              },
+              {
+                "lat": 3314,
+                "lng": 2638
+              },
+              {
+                "lat": 3315,
+                "lng": 2638
+              },
+              {
+                "lat": 3316,
+                "lng": 2638
+              },
+              {
+                "lat": 3316,
+                "lng": 2639
+              },
+              {
+                "lat": 3315,
+                "lng": 2639
+              },
+              {
+                "lat": 3314,
+                "lng": 2639
               }
             ],
             "objectRadius": {
@@ -970,9 +761,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Once killed, cut the remaining vine.",
@@ -1000,11 +789,43 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Vine Patch",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3316,
+                "lng": 2637
+              },
+              {
+                "lat": 3315,
+                "lng": 2637
+              },
+              {
+                "lat": 3314,
+                "lng": 2637
+              },
+              {
+                "lat": 3314,
+                "lng": 2638
+              },
+              {
+                "lat": 3315,
+                "lng": 2638
+              },
+              {
+                "lat": 3316,
+                "lng": 2638
+              },
+              {
+                "lat": 3316,
+                "lng": 2639
+              },
+              {
+                "lat": 3315,
+                "lng": 2639
+              },
+              {
+                "lat": 3314,
+                "lng": 2639
               }
             ],
             "objectRadius": {
@@ -1021,9 +842,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Talk to Horacio.",
@@ -1032,19 +851,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Horacio",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3312,
+              "lng": 2634
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3311,
+                "lng": 2633
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3313,
+                "lng": 2635
               }
             }
           }
@@ -1072,9 +891,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Quest complete!",
@@ -1123,9 +940,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     }
   ]
 }
