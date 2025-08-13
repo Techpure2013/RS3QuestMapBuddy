@@ -1,3 +1,117 @@
+.item-lists-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.item-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-list textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.tool-section {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.tool-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.tool-controls input {
+  width: 60px;
+}
+
+.editor-panel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Ensure it's above the map */
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 350px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.step-description-display {
+  background-color: #f0f8ff; /* AliceBlue */
+  border: 1px solid #b0c4de; /* LightSteelBlue */
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  max-height: 150px; /* Give it a max height */
+  overflow-y: auto; /* Add a scrollbar if text is long */
+}
+
+.step-description-display p {
+  margin: 5px 0 0 0;
+  font-style: italic;
+}
+
+.step-control .step-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.step-control input {
+  width: 60px; /* Give the input a fixed width */
+  text-align: center;
+}
+
+.step-button {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+.editor-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.control-group label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.json-textarea {
+  width: 100%;
+  height: 400px; /* Adjust as needed */
+  resize: vertical;
+  font-family: monospace;
+}
+.capture-mode-panel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+}
 #map {
   height: 100%;
   width: 100%;

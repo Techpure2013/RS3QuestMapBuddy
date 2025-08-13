@@ -2983,56 +2983,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "thing to remember the enemies in this next room can drain your prayer points to heal themselves.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": ["thing to remember the enemies in this next room can drain your prayer points to heal themselves."]
     },
     {
       "stepDescription": "Use the key on the next door. Kill both Black Knight Guardians.",

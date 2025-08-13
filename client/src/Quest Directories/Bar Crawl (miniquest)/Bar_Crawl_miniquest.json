@@ -8,19 +8,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Barbarian Guard",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3571,
+              "lng": 2543
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3568,
+                "lng": 2541
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3574,
+                "lng": 2544
               }
             }
           }
@@ -49,66 +49,12 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Bars are marked with Pub on the world map. It may be helpful to turn off other map icons so that it is easier to locate the bars during the miniquest.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "Bars are marked with Pub on the world map. It may be helpful to turn off other map icons so that it is easier to locate the bars during the miniquest."
       ]
     },
     {
       "stepDescription": "Go to the 2nd floor[US] of the Grand Tree, and talk to Blurberry. (Chat ~) You can use Home Teleport to Al Kharid and then take the Gnome Glider to the Tree Gnome Stronghold, Ardougne lodestone and run north-west, or Eagles' Peak lodestone with 61 Agility and head east.",
-      "itemsNeeded": [
-        "208 gold coins",
-        "Barcrawl card"
-      ],
+      "itemsNeeded": ["208 gold coins", "Barcrawl card"],
       "itemsRecommended": [
         "Unlocked multiple lodestones on the lodestone network",
         "Grand seed pod",
@@ -117,19 +63,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Blurberry",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3489,
+              "lng": 2480
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3486,
+                "lng": 2479
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3490,
+                "lng": 2483
               }
             }
           }
@@ -157,9 +103,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Home Teleport to Seers' Village, and then visit the Forester's Arms. Talk to the Bartender. (Chat 3)",
@@ -168,19 +112,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Bartender ( Seers Village )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3493,
+              "lng": 2690
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3491,
+                "lng": 2688
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3496,
+                "lng": 2690
               }
             }
           }
@@ -208,9 +152,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Home Teleport to Ardougne, then proceed to the Flying Horse Inn, located directly north of Ardougne castle. Talk to the Bartender. (Chat 3)",
@@ -219,10 +161,10 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Talk to the Bartender ( Flying Horse Inn )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3319,
+              "lng": 2571
             },
             "wanderRadius": {
               "bottomLeft": {
@@ -259,9 +201,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Home Teleport to Yanille, and then visit the Dragon Inn. Talk to the Bartender. (Chat 4)",
@@ -270,19 +210,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Bartender ( Dragon Inn )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3078,
+              "lng": 2576
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3077,
+                "lng": 2575
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3078,
+                "lng": 2577
               }
             }
           }
@@ -310,9 +250,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Home Teleport to Karamja. Run north and then east until you reach the Dead Man's Chest. Talk to the Bartender. (Chat 4)",
@@ -321,7 +259,7 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Bartender ( Dead Man's Chest )",
             "npcLocation": {
               "lat": 0,
               "lng": 0
@@ -361,9 +299,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Go through the gate in northeast Brimhaven and run over to the Karamja Spirits Bar on the other side of the volcano at Musa Point. Talk to Zambo. (Chat 3)",
@@ -372,19 +308,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Zambo",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3143,
+              "lng": 2924
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3142,
+                "lng": 2917
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3147,
+                "lng": 2929
               }
             }
           }
@@ -412,9 +348,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Home teleport to Port Sarim or take the ship from Musa Point, and visit the Rusty Anchor to the northeast. Talk to the Bartender. (Chat 1)",
@@ -423,19 +357,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Bartender ( Rusty Anchor )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3256,
+              "lng": 3044
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3255,
+                "lng": 3043
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3258,
+                "lng": 3045
               }
             }
           }
@@ -463,9 +397,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Home Teleport to Varrock and visit the Blue Moon Inn. Talk to the Bartender. (Chat 4)",
@@ -474,19 +406,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Bartender ( Blue Moon Inn )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3399,
+              "lng": 3225
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3397,
+                "lng": 3224
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3402,
+                "lng": 3226
               }
             }
           }
@@ -514,9 +446,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Home Teleport to Fort Forinthry and visit the Jolly Boar Inn. Talk to the Bartender. (Chat 4)",
@@ -525,19 +455,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Bartender ( Jolly Boar Inn )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3488,
+              "lng": 3278
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3487,
+                "lng": 3273
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3488,
+                "lng": 3279
               }
             }
           }
@@ -565,9 +495,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Home Teleport to Falador, and go to the Rising Sun Inn. Talk to Emily. (Chat 2)",
@@ -576,19 +504,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Emily ( Rising Sun Inn )",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3373,
+              "lng": 2953
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3370,
+                "lng": 2952
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3374,
+                "lng": 2954
               }
             }
           }
@@ -616,9 +544,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Return to the Barbarian Outpost, ideally by using a games necklace, and talk to the Barbarian guard.",
@@ -627,19 +553,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Barbarian Guard",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3571,
+              "lng": 2543
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3568,
+                "lng": 2541
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3574,
+                "lng": 2544
               }
             }
           }
@@ -667,9 +593,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Miniquest complete!",
@@ -718,9 +642,7 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     }
   ]
 }
