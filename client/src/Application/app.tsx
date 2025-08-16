@@ -23,7 +23,7 @@ interface QuestData {
   questName: string;
   questSteps: any[];
 }
-
+type FileSystemFileHandle = any;
 const App: React.FC = () => {
   const { UserID, QuestName, level, z, x, y } = useParams<{
     UserID: string;
@@ -36,6 +36,7 @@ const App: React.FC = () => {
   let socket = useSocket();
 
   // --- STATE ---
+  const [selectedObjectColor, setSelectedObjectColor] = useState("#00FF00");
   const [floor, setFloor] = useState(level ? parseInt(level, 10) : 0);
   const [zoom, setZoom] = useState(z ? parseInt(z, 10) : 2);
   const [cursorX, setCursorX] = useState(x ? parseInt(x, 10) : 3288);
@@ -51,6 +52,10 @@ const App: React.FC = () => {
     lng: number;
   } | null>(null);
   const [wanderRadiusInput, setWanderRadiusInput] = useState(5);
+  const [objectNumberLabel, setObjectNumberLabel] = useState("");
+  const [fileHandle, setFileHandle] = useState<FileSystemFileHandle | null>(
+    null
+  );
   const selectionGeometry = useMemo<SelectionGeometry>(() => {
     if (!questJson) return { type: "none" };
     const target =
@@ -103,12 +108,23 @@ const App: React.FC = () => {
     setTargetIndex(0);
   }, [selectedStep]);
 
+  useEffect(() => {
+    if (targetType === "object") {
+      setCaptureMode("multi-point");
+    } else {
+      setCaptureMode("single");
+    }
+  }, [targetType]);
+
   // --- HANDLERS ---
   const updateQuestState = (newQuestState: QuestData) => {
     setQuestJson(newQuestState);
     setJsonString(JSON.stringify(newQuestState, null, 2));
   };
 
+  const handleSetRadiusMode = () => {
+    setCaptureMode("radius");
+  };
   const handleJsonTextChange = (text: string) => {
     setJsonString(text);
     try {
@@ -142,7 +158,6 @@ const App: React.FC = () => {
     }
   };
 
-  // FIX 1: Create the dedicated handler for the stepDescription string.
   const handleStepDescriptionChange = (newDescription: string) => {
     if (!questJson) return;
     const nextState = produce(questJson, (draft) => {
@@ -177,20 +192,15 @@ const App: React.FC = () => {
   };
 
   const handleWanderRadiusCapture = () => {
-    if (targetType !== "npc") {
-      alert("Wander Radius can only be applied to NPCs.");
-      return;
-    }
     setCaptureMode("wanderRadius");
-    alert(
-      `Wander Radius mode activated. Click the NPC's center point on the map.`
-    );
   };
 
   const handleApplyRadius = () => {
-    if (!questJson) return;
+    // FIX: Add a guard clause to ensure this only runs for NPCs.
+    if (!questJson || targetType !== "npc") return;
+
     const target =
-      questJson.questSteps[selectedStep].highlights[targetType][targetIndex];
+      questJson.questSteps[selectedStep].highlights.npc[targetIndex];
     const center = target?.npcLocation;
 
     if (!center || (center.lat === 0 && center.lng === 0)) {
@@ -201,17 +211,10 @@ const App: React.FC = () => {
     const radius = wanderRadiusInput;
     const nextState = produce(questJson, (draft) => {
       const draftTarget =
-        draft.questSteps[selectedStep].highlights[targetType][targetIndex];
-      // Assemble the object according to the unusual schema
+        draft.questSteps[selectedStep].highlights.npc[targetIndex];
       draftTarget.wanderRadius = {
-        bottomLeft: {
-          lat: center.lat - (radius - 1),
-          lng: center.lng - (radius + 1),
-        },
-        topRight: {
-          lat: center.lat + (radius - 1),
-          lng: center.lng + (radius + 1),
-        },
+        bottomLeft: { lat: center.lat - radius, lng: center.lng - radius },
+        topRight: { lat: center.lat + radius, lng: center.lng + radius },
       };
     });
     updateQuestState(nextState);
@@ -237,6 +240,19 @@ const App: React.FC = () => {
     });
     updateQuestState(nextState);
   };
+
+  const handleClearObjectLocations = () => {
+    if (!questJson || targetType !== "object") return;
+    const nextState = produce(questJson, (draft) => {
+      const target =
+        draft.questSteps[selectedStep].highlights.object[targetIndex];
+      if (target) {
+        target.objectLocation = [];
+      }
+    });
+    updateQuestState(nextState);
+  };
+
   const handleDataCaptured = (data: any) => {
     if (!questJson) return;
     const nextState = produce(questJson, (draft) => {
@@ -249,8 +265,10 @@ const App: React.FC = () => {
       if (data.type === "single") {
         if (targetType === "npc") {
           highlightTarget.npcLocation = data.payload;
-        } else {
-          highlightTarget.objectLocation = [data.payload];
+        }
+      } else if (data.type === "multi-point") {
+        if (targetType === "object") {
+          highlightTarget.objectLocation = data.payload;
         }
       } else if (data.type === "radius") {
         const radiusKey =
@@ -265,12 +283,89 @@ const App: React.FC = () => {
     });
     updateQuestState(nextState);
   };
+  // --- FILE HANDLERS ---
+  const handleFileLoadFromInput = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const text = e.target?.result as string;
+      if (text) {
+        handleJsonTextChange(text);
+        setFileHandle(null);
+        alert(
+          "File loaded. Use 'Save As...' to save changes, as this file cannot be overwritten directly."
+        );
+      }
+    };
+    reader.readAsText(file);
+  };
 
+  const handleLoadFile = async () => {
+    if ("showOpenFilePicker" in window) {
+      try {
+        const [handle] = await window.showOpenFilePicker({
+          types: [
+            {
+              description: "JSON Files",
+              accept: { "application/json": [".json"] },
+            },
+          ],
+        });
+        const file = await handle.getFile();
+        const text = await file.text();
+        handleJsonTextChange(text);
+        setFileHandle(handle);
+      } catch (err) {
+        console.error("User cancelled the file open dialog.");
+      }
+    } else {
+      document.getElementById("json-file-loader")?.click();
+    }
+  };
+
+  const handleSaveFile = async () => {
+    if (!fileHandle) {
+      alert(
+        "No file is open to save to. Please use 'Save As...' or load a file first."
+      );
+      return;
+    }
+    try {
+      const writable = await fileHandle.createWritable();
+      await writable.write(jsonString);
+      await writable.close();
+      alert(`Saved changes to ${fileHandle.name}`);
+    } catch (err) {
+      console.error("Error saving file:", err);
+      alert("Failed to save file. Please try using 'Save As...'.");
+    }
+  };
+
+  const handleSaveAsFile = () => {
+    if (!questJson) return;
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    const fileName = questJson.questName
+      ? `${questJson.questName.replace(/\s+/g, "_")}.json`
+      : "quest_data.json";
+    link.download = fileName;
+    link.href = url;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
   // --- MAP COMPONENTS ---
   const snapToTileCoordinate = (latlng: L.LatLng) => {
-    const lat = Math.floor(latlng.lat + 0.5);
-    const lng = Math.floor(latlng.lng - 0.5);
-    return { lat, lng };
+    const visualCenterX = Math.floor(latlng.lng - 0.5) + 0.5;
+    const visualCenterY = Math.floor(latlng.lat + 0.5) - 0.5;
+    const storedLng = visualCenterX - 0.5;
+    const storedLat = visualCenterY + 0.5;
+    return { lat: storedLat, lng: storedLng };
   };
 
   const MapClickHandler = () => {
@@ -282,40 +377,65 @@ const App: React.FC = () => {
           case "single":
             handleDataCaptured({ type: "single", payload: snappedCoord });
             break;
+          case "multi-point":
+            if (targetType === "object") {
+              const currentLocations =
+                questJson?.questSteps[selectedStep]?.highlights.object[
+                  targetIndex
+                ]?.objectLocation || [];
+              const isDuplicate = currentLocations.some(
+                (loc: { lat: number; lng: number }) =>
+                  loc.lat === snappedCoord.lat && loc.lng === snappedCoord.lng
+              );
+
+              if (isDuplicate) {
+                return;
+              }
+              // FIX 2: Include the numberLabel when creating the new point.
+              const newPoint = {
+                ...snappedCoord,
+                color: selectedObjectColor,
+                numberLabel: objectNumberLabel,
+              };
+              const newLocations = [...currentLocations, newPoint];
+              handleDataCaptured({
+                type: "multi-point",
+                payload: newLocations,
+              });
+            }
+            break;
           case "radius":
             if (!firstCorner) {
               setFirstCorner(snappedCoord);
-              console.log("Corner 1 set. Click corner 2.");
               return;
             }
-            // FIX 3: Update two-click radius with integer logic.
+            const minLat = Math.min(firstCorner.lat, snappedCoord.lat);
+            const maxLat = Math.max(firstCorner.lat, snappedCoord.lat);
+            const minLng = Math.min(firstCorner.lng, snappedCoord.lng);
+            const maxLng = Math.max(firstCorner.lng, snappedCoord.lng);
+
             const radiusPayload = {
-              bottomLeft: {
-                lat: Math.max(firstCorner.lat, snappedCoord.lat),
-                lng: Math.min(firstCorner.lng, snappedCoord.lng),
-              },
-              topRight: {
-                lat: Math.min(firstCorner.lat, snappedCoord.lat),
-                lng: Math.max(firstCorner.lng, snappedCoord.lng),
-              },
+              bottomLeft: { lat: minLat, lng: minLng },
+              topRight: { lat: maxLat, lng: maxLng },
             };
             handleDataCaptured({ type: "radius", payload: radiusPayload });
             setFirstCorner(null);
+            // Return to the default mode for the current target type
+            setCaptureMode(targetType === "object" ? "multi-point" : "single");
             break;
           case "wanderRadius":
             const radius = wanderRadiusInput;
-            // FIX 4: Update one-click wander radius with integer logic.
             handleDataCaptured({
               type: "wanderRadius",
               payload: {
                 center: snappedCoord,
                 wanderRadius: {
                   bottomLeft: {
-                    lat: snappedCoord.lat + radius,
+                    lat: snappedCoord.lat - radius,
                     lng: snappedCoord.lng - radius,
                   },
                   topRight: {
-                    lat: snappedCoord.lat - radius,
+                    lat: snappedCoord.lat + radius,
                     lng: snappedCoord.lng + radius,
                   },
                 },
@@ -351,7 +471,9 @@ const App: React.FC = () => {
         opacity: 0.8,
         className: "map-topdown",
         updateWhenZooming: false,
+        updateWhenIdle: true,
         updateInterval: 100,
+        keepBuffer: 8,
       },
       {
         name: "Walls",
@@ -359,23 +481,13 @@ const App: React.FC = () => {
         tileSize: 512,
         maxNativeZoom: 3,
         minNativeZoom: 3,
+        updateWhenIdle: true,
         minZoom: -4,
         opacity: 0.6,
         className: "map-walls",
         updateWhenZooming: true,
         updateInterval: 50,
-      },
-      {
-        name: "Collision",
-        url: `https://runeapps.org/s3/map4/live/collision-${floor}/{z}/{x}-{y}.svg`,
-        tileSize: 512,
-        maxNativeZoom: 3,
-        minNativeZoom: 3,
-        minZoom: -4,
-        opacity: 0.6,
-        className: "map-collision",
-        updateWhenZooming: true,
-        updateInterval: 50,
+        keepBuffer: 8,
       },
     ],
     [floor]
@@ -403,12 +515,10 @@ const App: React.FC = () => {
         onApplyRadius={handleApplyRadius}
         jsonString={jsonString}
         onJsonChange={handleJsonTextChange}
-        onFileLoad={handleFileLoad}
         selectedStep={selectedStep}
         onStepChange={setSelectedStep}
         onStepIncrement={handleStepIncrement}
         onStepDecrement={handleStepDecrement}
-        // FIX 2: Pass the correct, dedicated handler to the prop.
         stepDescriptionValue={stepDescriptionValue}
         onStepDescriptionChange={handleStepDescriptionChange}
         targetNameValue={targetNameValue}
@@ -419,6 +529,16 @@ const App: React.FC = () => {
         onTargetIndexChange={setTargetIndex}
         floor={floor}
         onFloorChange={setFloor}
+        onClearObjectLocations={handleClearObjectLocations}
+        selectedObjectColor={selectedObjectColor}
+        onSelectedObjectColorChange={setSelectedObjectColor}
+        onSetRadiusMode={handleSetRadiusMode}
+        objectNumberLabel={objectNumberLabel}
+        onObjectNumberLabelChange={setObjectNumberLabel}
+        onFileLoadFromInput={handleFileLoadFromInput}
+        onLoadFile={handleLoadFile}
+        onSaveFile={handleSaveFile}
+        onSaveAsFile={handleSaveAsFile}
       />
       <MapContainer
         {...gameMapOptions()}
@@ -470,12 +590,6 @@ const App: React.FC = () => {
         <SelectionHighlightLayer geometry={selectionGeometry} />
         <GridLayer />
         <HighlightLayer onCursorMove={handleCursorMove} />
-        <div className="capture-mode-panel">
-          <button onClick={() => setCaptureMode("single")}>Single Point</button>
-          <button onClick={() => setCaptureMode("radius")}>Radius</button>
-          <p>Mode: {captureMode}</p>
-          {firstCorner && <p>Corner 1 Set!</p>}
-        </div>
       </MapContainer>
     </div>
   );

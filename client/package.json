@@ -13,6 +13,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@types/typescript": "^0.4.29",
+    "@types/wicg-file-system-access": "^2023.10.6",
     "alt1": "^0.0.10",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",

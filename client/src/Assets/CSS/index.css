@@ -9,18 +9,41 @@
   display: flex;
   flex-direction: column;
 }
+.file-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
 
+.file-actions .file-loader-button {
+  flex-grow: 1;
+  /* You might want to adjust padding or other styles */
+}
 .item-list textarea {
   width: 100%;
   resize: vertical;
 }
-
+.object-number-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 3px black, 0 0 3px black; /* Makes text readable on any color */
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none; /* Allows clicks to pass through the label */
+}
 .tool-section {
   margin-top: 15px;
   padding-top: 10px;
   border-top: 1px solid #ccc;
 }
-
+.map-collision {
+  image-rendering: pixelated;
+  filter: brightness(0%) grayscale(100%) opacity(0.2);
+}
 .tool-controls {
   display: flex;
   align-items: center;

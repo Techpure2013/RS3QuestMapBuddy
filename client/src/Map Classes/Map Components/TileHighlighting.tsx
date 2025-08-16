@@ -6,7 +6,7 @@ interface HighlightLayerProps {
   onCursorMove: (x: number, y: number) => void;
 }
 
-const HighlightLayer: React.FC<HighlightLayerProps> = ({ onCursorMove }) => {
+const HighlightLayer = React.memo<HighlightLayerProps>(({ onCursorMove }) => {
   const map = useMap();
   const [currentTile, setCurrentTile] = useState<leaflet.LatLngBounds | null>(
     null
@@ -73,6 +73,6 @@ const HighlightLayer: React.FC<HighlightLayerProps> = ({ onCursorMove }) => {
       }}
     />
   ) : null;
-};
+});
 
 export default HighlightLayer;
