@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Captain Rovin in Varrock Palace, north-west tower top floor. (Chat 1\u2022\u2713\u20221)",
+      "stepDescription": "Talk to Captain Rovin in Varrock Palace, north-west tower top floor. (Chat 1•✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -410,12 +410,63 @@
       ]
     },
     {
-      "stepDescription": "Run north and look over the balcony.",
+      "stepDescription": "Items needed: combat equipment to kill six or more armoured zombies, blurite ore, light source and a spade.",
       "itemsNeeded": [
         "combat equipment to kill six or more armoured zombies",
         "blurite ore",
         "light source and a spade."
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Run north and look over the balcony.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1536,7 +1587,7 @@
       ]
     },
     {
-      "stepDescription": "Aeonisig Raispher, next to King Roald (Chat 1\u20221)",
+      "stepDescription": "Aeonisig Raispher, next to King Roald (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1843,49 +1894,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

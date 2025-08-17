@@ -2,7 +2,7 @@
   "questName": "While Guthix Sleeps",
   "questSteps": [
     {
-      "stepDescription": "Talk to Radimus Erkle in the Legends' Guild (fairy ring BLR). (Chat 4\u2022\u2713)",
+      "stepDescription": "Items recommended: Varrock teleport, any boosts you wish to use to start the quest and equipment to kill two Assassins",
       "itemsNeeded": [],
       "itemsRecommended": [
         "Varrock teleport",
@@ -51,10 +51,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "In Taverley, talk to Ivy Sophista in the house west of the summoning obelisk. (Chat 1\u20224)",
+      "stepDescription": "Talk to Radimus Erkle in the Legends' Guild (fairy ring BLR). (Chat 4•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -100,7 +102,60 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "In Taverley, talk to Ivy Sophista in the house west of the summoning obelisk. (Chat 1•4)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go upstairs and talk to Thaerisk Cemphier. Kill both assassins that appear.",
@@ -149,10 +204,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Thaerisk again. (Chat 1\u20222\u20222\u20223\u20224)",
+      "stepDescription": "Talk to Thaerisk again. (Chat 1•2•2•3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -198,59 +255,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Reldo in the Varrock Library. If you have completed Desperate Times, the first chat option is 2, after that, if you have given him the restored Dominarion device for Archaeology the first chat option is 4, if you didn't it's 3. (It could also be 5 in some cases) Regardless, the chat option should state \"Talk about Lucien and Movario\" (Chat 4\u20221\u20222\u20223\u20224)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Feldip Hunter area",
+      "stepDescription": "Talk to Reldo in the Varrock Library. If you have completed Desperate Times, the first chat option is 2, after that, if you have given him the restored Dominarion device for Archaeology the first chat option is 4, if you didn't it's 3. (It could also be 5 in some cases) Regardless, the chat option should state \"Talk about Lucien and Movario\" (Chat 4•1•2•3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [
         "Watchtower teleport",
@@ -299,10 +309,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to the Hunting expert in Feldip Hunter area and ask about tracking down a person. (Chat 5\u20222\u20223\u20224) She is north of Oo'glog lodestone, or south-west of fairy ring AKS. After the conversation she will give you a mort myre fungus.",
+      "stepDescription": "Items needed: Logs of any type, ring of charos (a) or 5,000 coins, one of each of the following runes: air, mind, water, earth, fire (bring more in case of failure), mort myre fungus, at least 6 free inventory spaces, but more is preferrable",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -348,7 +360,162 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: Watchtower teleport, Ardougne teleport (Ardougne Cloak preferably)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Feldip Hunter area",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to the Hunting expert in Feldip Hunter area and ask about tracking down a person. (Chat 5•2•3•4) She is north of Oo'glog lodestone, or south-west of fairy ring AKS. After the conversation she will give you a mort myre fungus.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go west and create a pitfall trap at a square trap pit, then use your mort myre fungus on the trap. (if you go to the larupia pit falls, go to your other west)",
@@ -397,7 +564,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Dismantle the collapsed trap to obtain an unconscious broav.",
@@ -446,7 +615,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Talk to the Hunting expert. (Chat 5)",
@@ -495,7 +666,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Dismiss any followers you might have before going to the next steps.",
@@ -544,7 +717,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Head to the west of Fight Arena and into the laundry room two houses north of the pub.",
@@ -593,10 +768,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "With your ring of charos (a) equipped, talk to the Khazard launderer to obtain dirty laundry. (Chat 2\u20222)",
+      "stepDescription": "With your ring of charos (a) equipped, talk to the Khazard launderer to obtain dirty laundry. (Chat 2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -642,10 +819,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "If you brought coins instead, take them out of your coin pouch and use them on the launderer. (Chat 2\u20221)",
+      "stepDescription": "If you brought coins instead, take them out of your coin pouch and use them on the launderer. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -691,7 +870,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go to the Khazard Battleground north-west (north of Tree Gnome Village and across the bridges).",
@@ -740,7 +921,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Climb-over the crumbled wall inside the north-westernmost building.",
@@ -789,7 +972,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Drop your Broav in the room with the broken table then use the dirty laundry on him.",
@@ -838,7 +1023,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go through the door, and follow the path to the north, then climb down the stairs.",
@@ -887,7 +1074,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search the door and find the correct rune to use on it. After you enter the correct rune, you hear a click.",
@@ -936,7 +1125,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search the door again (boost your thieving level if needed), and you will find a trap to disarm. (Chat 1)",
@@ -985,7 +1176,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go through the old battered door.",
@@ -1034,7 +1227,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "\"Prohibited\" is the key indicating which rune to use. In the game, only one letter will be affected.",
@@ -1083,7 +1278,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search the painting on the east wall (Chat 1).",
@@ -1132,7 +1329,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search bookcases until you receive the chat response CLICK!.",
@@ -1181,7 +1380,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Follow the wire that faintly glows to the next bookshelf.",
@@ -1230,7 +1431,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search the bookshelf.",
@@ -1279,7 +1482,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Repeat searching each bookshelf until the electricity on the door disappears.",
@@ -1328,7 +1533,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Open the gate and right-click search the spiral staircase to disarm the trap, then climb up.",
@@ -1377,7 +1584,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search the desk to obtain Movario's notes (volume 1)",
@@ -1426,7 +1635,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Read the notes (42 pages).",
@@ -1475,7 +1686,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Pick-up the waste-paper basket.",
@@ -1524,7 +1737,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "With Movario's notes in your backpack, search the basket.",
@@ -1573,7 +1788,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search the bookcase to the west of the trash can.",
@@ -1622,7 +1839,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Use the ruby key on the bookcase.",
@@ -1671,7 +1890,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Climb-up the staircase just north of you.",
@@ -1720,7 +1941,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search the bed.",
@@ -1769,7 +1992,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Use the key on the bed chest.",
@@ -1818,7 +2043,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search the bed chest disabling traps (Chat 1)",
@@ -1867,7 +2094,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Open and search it.",
@@ -1916,7 +2145,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Climb back down twice to the wire room and in the small east room, search the drawers.",
@@ -1965,7 +2196,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Pick-up your Broav and look-at the thermometer. Note down the number it says. Check your current character's weight in your equipment interface. You must equalise both numbers.",
@@ -2014,7 +2247,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "If you weigh more than the number: subtract the number from the thermometer from your character's weight to get the result number. For example if the thermometer says 20 and you weigh 30 kg, you would need 10 kg.",
@@ -2063,7 +2298,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "If you weigh less than the number: subtract your character's weight from the number from to get the result number.",
@@ -2112,7 +2349,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Pick up your Broav if you haven't already otherwise it will mess with the numbers.",
@@ -2161,7 +2400,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "On the floor of this room is a pile of weights. Right-click take weights equalling the result number you got. CAUTION: You will not be able to recover any items dropped in this room.",
@@ -2210,157 +2451,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Climb back up the spiral staircase. If you weigh more than the number : Use all the weights on the statue just north of you. Open the door just east. If you weigh less than the number: keep the weights in your inventory and open the door east of the statue.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Solving this part successfully gives the chat response The magical interference to teleportation has lifted.. If you are having trouble with this part, check to make sure you aren't wearing weight reducing equipment such as Boots of lightness, un-equip, and try again.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Head east through the door and up the ladder to leave the hideout.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Return to Thaerisk in Taverley with the items obtained in Movario's base. (Chat 2\u20225)",
       "itemsNeeded": [
         "Strange key loop",
         "Strange key teeth",
@@ -2411,7 +2507,213 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Solving this part successfully gives the chat response The magical interference to teleportation has lifted.. If you are having trouble with this part, check to make sure you aren't wearing weight reducing equipment such as Boots of lightness, un-equip, and try again.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head east through the door and up the ladder to leave the hideout.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Strange key loop, Strange key teeth, Movarios' notes volume 1 and Movarios' notes volume 2, equipment to kill two mercenary axeman and a mercenary mage",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to Thaerisk in Taverley with the items obtained in Movario's base. (Chat 2•5)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Head to the building in McGrubor's Wood (fairy ring ALS), and a cutscene will start. Kill all the mercenaries.",
@@ -2460,7 +2762,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search the dead mercenaries and talk to the wounded Guardian of Armadyl.",
@@ -2509,10 +2813,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Go upstairs in the Seers' Village pub and talk to Idria. (Chat 1\u20223)",
+      "stepDescription": "Go upstairs in the Seers' Village pub and talk to Idria. (Chat 1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2558,7 +2864,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Talk to Sir Tiffy Cashien in the Falador Park. (Chat 1) or (Chat 2) if Slug Menace hasn't been completed.",
@@ -2607,7 +2915,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go to the White Knight's Castle.",
@@ -2656,10 +2966,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "In the eastern room on the 1st floor[US], talk to Akrisae. (Chat 3\u20221)",
+      "stepDescription": "In the eastern room on the 1st floor[US], talk to Akrisae. (Chat 3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2705,206 +3017,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "At Draynor Village, use the teleorb on the shady stranger wearing white robes and near the shore. This may take several attempts.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Go back to Falador and talk to Akrisae in the White Knight's Castle. Cutscene plays",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "If you don't have a snapdragon seed, buy one from Thaerisk. (Chat 2\u20221)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Talk to Thaerisk to teleport to Port Sarim. (Chat 3)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Talk to Betty in the Port Sarim magic shop for truth serum. (Chat 1\u20221)",
       "itemsNeeded": [
         "Lantern lens",
         "snapdragon seed",
@@ -2957,10 +3075,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to her again for pink dye. (Chat 3\u20222)",
+      "stepDescription": "Go back to Falador and talk to Akrisae in the White Knight's Castle. Cutscene plays",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3006,7 +3126,264 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "If you don't have a snapdragon seed, buy one from Thaerisk. (Chat 2•1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Thaerisk to teleport to Port Sarim. (Chat 3)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Lantern lens, snapdragon seed, 20 coins, 6 air runes, 3 cosmic runes, 3 astral runes",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Betty in the Port Sarim magic shop for truth serum. (Chat 1•1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to her again for pink dye. (Chat 3•2)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "If the snapdragon seed isn't already on the counter, talk to her again until she places the seed on the counter.",
@@ -3055,7 +3432,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Use the pink dye on your lantern lens.",
@@ -3104,7 +3483,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Stand just inside the doorway, use the lens with the counter and take the enriched snapdragon seed.",
@@ -3153,7 +3534,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "If not already, switch to the Lunar spellbook.",
@@ -3202,10 +3585,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Return to White Knight's Castle in Falador and speak to Thaerisk. (Chat 1\u20223)",
+      "stepDescription": "Return to White Knight's Castle in Falador and speak to Thaerisk. (Chat 1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3251,7 +3636,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Using the most western staircase, head to the top of the castle and plant the seed in the herb patch.",
@@ -3300,7 +3687,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go back downstairs and talk to Thaerisk. (Chat 1)",
@@ -3349,255 +3738,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Cast NPC Contact to talk to the following people:",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Turael (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Duradel (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Mazchna (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Talk to Hazelmere upstairs in the hut east of Yanille near fairy ring CLS.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Pick the enriched snapdragon (top of west tower at White Knights' Castle) and mix it into your truth serum for a super truth serum.",
       "itemsNeeded": [
         "Truth serum",
         "1 astral rune",
@@ -3648,7 +3794,315 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Turael (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Duradel (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Mazchna (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Hazelmere upstairs in the hut east of Yanille near fairy ring CLS.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Truth serum, 1 astral rune, 1 cosmic rune, and 2 air runes",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Pick the enriched snapdragon (top of west tower at White Knights' Castle) and mix it into your truth serum for a super truth serum.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Head back to the room with Thaerisk and the others.",
@@ -3697,7 +4151,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Open and search the cupboard to find charcoal and papyrus.",
@@ -3746,7 +4202,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go into the cell and use the serum on the Shady Stranger. (Chat ~) The correct chat option varies from player to player. Exhaust chat options until you reach the correct one.",
@@ -3795,7 +4253,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Talk to the spy, then talk to Idria.",
@@ -3844,304 +4304,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Cast NPC Contact to talk to Cyrisus. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Head to the Warriors' Guild and talk to the following:",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Ghommal just outside",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Harrallak Menarous in the main lobby (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Sloane upstairs (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Return and speak to Idria, then Akrisae.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Switch back to the standard spellbook.",
       "itemsNeeded": [],
       "itemsRecommended": [
         "Falador teleport",
@@ -4194,7 +4362,417 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head to the Warriors' Guild and talk to the following:",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Ghommal just outside",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Harrallak Menarous in the main lobby (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Sloane upstairs (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return and speak to Idria, then Akrisae.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Unpowered orb, runes for any charge orb spell (3 cosmics and 30 runes of any element or any elemental staff), items to enter Black Knights' Fortress (Skull of Remembrance, bronze med helm/iron chainbody, black armour set or black knight captain's armour), equipment for two combat styles (Melee and Ranged recommended).",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: Falador teleport, Food for fighting multiple enemies, Elite Black Knight armour from the Grand Exchange to save some time. Once you have a set of Elite Black Knight armour, you will need 9 free inventory slots to proceed. If you have purchased Elite Black Knight armour, you do not need combat gear, but some food is still advised. Bringing a summoning familiar with a different combat style will make the fights much easier.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Switch back to the standard spellbook.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "You will need 10 free inventory slots to proceed.",
@@ -4243,7 +4821,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Equip your disguise and head inside Black Knights' Fortress with all the items above or use the skull of remembrance to teleport to the ritual chamber, and make your way down to the 1st floor[US].",
@@ -4292,7 +4872,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Climb down the ladder in the south-west corner.",
@@ -4341,7 +4923,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Along the east wall, right-click search the floor tile. Cast your charge orb spell on it.",
@@ -4390,7 +4974,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Climb-down the trapdoor.",
@@ -4439,7 +5025,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Kill Elite Black Knights to obtain a helmet, platebody and platelegs if you don't have a set already. Equip the full set to remove their aggression.",
@@ -4488,7 +5076,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Head north by jumping across the broken bridge, go east, and climb up the wall.",
@@ -4537,7 +5127,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Jump over the barricade and walk north-west until you reach a fork in the path, then head east.",
@@ -4586,10 +5178,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Silif in the northmost cell. (Chat 1\u20222\u20223)",
+      "stepDescription": "Talk to Silif in the northmost cell. (Chat 1•2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4635,7 +5229,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go back west and enter the northern centre door.",
@@ -4684,7 +5280,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search all desks and wardrobes in the room for:",
@@ -4733,7 +5331,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Another set of elite black armour",
@@ -4782,7 +5382,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Full set of Dagon'hai robes",
@@ -4831,7 +5433,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Restore potion (4) (Do NOT drink the restore potion)",
@@ -4880,402 +5484,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Strange teleorb",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Lobster (Do NOT eat the lobster)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "If you accidentally eat the lobster, any kind of cooked food will work as well.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Search the key rack on the northern wall (a few tiles east of the wardrobe) for a cell key.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Enter Silif's cell. Use the piece of food on Silif then the potion. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Give Silif a set of elite black armour (dismiss your familiar if you have one).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Return to the northern room. Walk to the map on the southern wall then talk to Silif.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Plant the teleorb on Dark Squall, who is located in the east of the room, then escape back to Falador.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Talk to Akrisae. (Chat 1\u20222\u20223)",
       "itemsNeeded": [],
       "itemsRecommended": [
         "In this section",
@@ -5326,10 +5540,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Wear your Dagon'hai robes and enter the nearby jail cell.",
+      "stepDescription": "Lobster (Do NOT eat the lobster)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5375,10 +5591,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Climb up the ladder in the north-eastern corner, stand in the stone circle in the middle of the room, and activate the strange teleorb. (Note: Activation will fail if the required runes are in a pouch.)",
+      "stepDescription": "If you accidentally eat the lobster, any kind of cooked food will work as well.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5424,10 +5642,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Follow the north-eastern path towards the chapel and climb up the ice wall. There is a stick in the ice wall to indicate where to climb.",
+      "stepDescription": "Search the key rack on the northern wall (a few tiles east of the wardrobe) for a cell key.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5473,10 +5693,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Jump across to the ledge on the chapel into the Wilderness.",
+      "stepDescription": "Enter Silif's cell. Use the piece of food on Silif then the potion. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5522,10 +5744,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Walk east to activate a cutscene.",
+      "stepDescription": "Give Silif a set of elite black armour (dismiss your familiar if you have one).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5571,10 +5795,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Return to Falador after the cutscene.",
+      "stepDescription": "Return to the northern room. Walk to the map on the southern wall then talk to Silif.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5620,10 +5846,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Idria.",
+      "stepDescription": "Plant the teleorb on Dark Squall, who is located in the east of the room, then escape back to Falador.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5669,10 +5897,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "(If she won't talk about Movario and instead keeps saying to investigate Lucien's Base, then unfortunately the game glitched and you must go back and rewatch the cutscene. Remember to bring the strange teleorb, a law rune, and a death rune. A good indicator that the cutscene registered is to check for the \"You have unlocked a new music track: The Evil Within\" game message. )",
+      "stepDescription": "Items needed: Strange teleorb, one Law rune, one Death rune, Dagon'hai robes.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5718,10 +5948,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Go to the Tears of Guthix cavern.",
+      "stepDescription": "Items recommended: In this section, there is a brief encounter in the Wilderness, where it is possible to encounter danger from creatures and/or events. Therefore, carrying food and defensive armour is recommended. Teleport (preferably to Falador)",
       "itemsNeeded": [],
       "itemsRecommended": [
         "Games necklace",
@@ -5772,10 +6004,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Equip your Dagon'hai robes and talk to Movario. (Chat 3\u20221\u20223)",
+      "stepDescription": "Talk to Akrisae. (Chat 1•2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5821,7 +6055,621 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Wear your Dagon'hai robes and enter the nearby jail cell.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Climb up the ladder in the north-eastern corner, stand in the stone circle in the middle of the room, and activate the strange teleorb. (Note: Activation will fail if the required runes are in a pouch.)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Follow the north-eastern path towards the chapel and climb up the ice wall. There is a stick in the ice wall to indicate where to climb.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Jump across to the ledge on the chapel into the Wilderness.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Walk east to activate a cutscene.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to Falador after the cutscene.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Idria.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "(If she won't talk about Movario and instead keeps saying to investigate Lucien's Base, then unfortunately the game glitched and you must go back and rewatch the cutscene. Remember to bring the strange teleorb, a law rune, and a death rune. A good indicator that the cutscene registered is to check for the \"You have unlocked a new music track: The Evil Within\" game message. )",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Sapphire lantern, Dagon'hai robes, equipment for two combat styles and some food (You can go back to get these at a later step), prayer points to use the Bloom ability OR two full druid pouches. You also need enough free inventory space to unequip anything in your main hand and off hand, plus 6 additional free inventory slots",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: Games necklace, emergency teleport, energy potions, super restore potions for fighting the balance elemental.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Go to the Tears of Guthix cavern.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Equip your Dagon'hai robes and talk to Movario. (Chat 3•1•3)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "With a sapphire lantern lit, right-click travel into cavern with a light creature.",
@@ -5870,7 +6718,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Right-click search the northernmost skeleton for a silver sickle (b) and 6 druid pouches.",
@@ -5919,7 +6769,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Right-click search the rocks (Chat 1) in the north-eastern corner. Then right-click search on the brazier that appears, choosing the chisel option to receive a fire orb.",
@@ -5968,7 +6820,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Repeat on the north-west rock for the earth orb.",
@@ -6017,7 +6871,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Repeat for the standing lit braziers for air and water orbs in the south-western and south-eastern corners.",
@@ -6066,7 +6922,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Head further south to reach three skull cavities on the southern wall. Examine each recessed block and use the respective orb on the block.",
@@ -6115,7 +6973,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Climb up the wall twice and use the water orb on the recessed block.",
@@ -6164,7 +7024,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Jump down the same way you came up. For each of the three lower skulls, enter its nose cavity.",
@@ -6213,7 +7075,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Dismiss any followers and empty both your main and off-hand slots before entering the cavities.",
@@ -6262,7 +7126,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Crawl along the tunnel in each cavity to its end. Examine the door there and insert the respective element key into the door lock. Crawl back through the tunnel and exit the skull.",
@@ -6311,7 +7177,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Climb up the walls to the upper skull. Use the fire key on the skull's recessed block, then right-click search the stone cube in front of the skull.",
@@ -6360,7 +7228,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Climb-through the cave opening to enter the Ancient Guthix Temple.",
@@ -6409,7 +7279,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "You will now need at least two free inventory slots, though more can make it quicker to proceed. Ensure that you have also deactivated any sign of the porter effects.",
@@ -6458,7 +7330,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "There are eight statues in this temple. Each, when examined, will reveal what type of potion must be \"made\" at that statue.",
@@ -6507,7 +7381,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Use your druid pouches on the druid spirits. Each will drop required ingredients for the statues once - if these are lost (e.g. by dropping and letting them timeout), you will have to get replacements yourself. Grace of the Elves will send items to the bank so unequip.",
@@ -6556,7 +7432,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Do not let your druid pouch empty completely else it disappears! You need 3 open inventory slots to add (3) Flowers into the druid pouch.",
@@ -6605,7 +7483,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Use the herbs and the secondary ingredients on the various statues referencing the table below. Not all keywords will be on statues.",
@@ -6654,595 +7534,213 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "If you have an ouroboros pouch, you do not need to worry about the druid pouch losing charges. However, you must carry a druid pouch in your inventory to \"use\" it on the spirits, though it will never deplete.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "If you need to refill your druid pouch, right-click bloom with your silver sickle near dead vines to get flowers. These can be used to refill the druid pouch. If you received a mort myre fungus from the druids, use it with the correct statue or drop it for a moment before filling the druid pouch else you will lose it!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Use the dolmens you receive from the statues on the Stone Table in the middle of the temple. It will open the huge door in front of it.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Make whatever arrangements necessary to battle the level 102 Balance Elemental that can use all three combat styles, and lower your combat stats. You can leave the area to get supplies, but always bring your lit sapphire lantern. Don't forget to bring at least two combat styles for the tormented demon fight. The Balance Elemental drains combat stats during the fight, so be sure to bring at least one full super restore.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Proceed down the corridor and enter a large chamber.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Once ready, search the mysterious stone (Chat 1) and kill the Balance Elemental that appears.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Search the mysterious stone again for a cutscene. Doing so boosts all your combat stats to level 255 except Prayer.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Continue dialogue with Movario (Chat 1\u20222\u20223\u20224), then with Lucien. (Chat 1\u20222\u20223)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "Continue dialogue with Movario (Chat 1•2•3•4), then with Lucien. (Chat 1•2•3)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Kill the two Tormented demons, switching between your two combat styles.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Talk to Idria to have her teleport you to Falador. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Continue dialogue with Idria in Falador.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     }
   ]
 }

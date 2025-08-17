@@ -2,7 +2,7 @@
   "questName": "Tribal Totem",
   "questSteps": [
     {
-      "stepDescription": "Talk to Kangai Mau in the large building north of Brimhaven's pub. (Chat 2\u2022\u2713)",
+      "stepDescription": "Talk to Kangai Mau in the large building north of Brimhaven's pub. (Chat 2•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Wizard Cromperty in a house to the northeast of Ardougne market. (The one with the blue checkered floor.) (Chat 2\u20222\u20221)",
+      "stepDescription": "Talk to Wizard Cromperty in a house to the northeast of Ardougne market. (The one with the blue checkered floor.) (Chat 2•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -308,7 +308,7 @@
       ]
     },
     {
-      "stepDescription": "Return to Cromperty and ask to use his new teleport spell. (Chat 2\u20222\u20221)",
+      "stepDescription": "Return to Cromperty and ask to use his new teleport spell. (Chat 2•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

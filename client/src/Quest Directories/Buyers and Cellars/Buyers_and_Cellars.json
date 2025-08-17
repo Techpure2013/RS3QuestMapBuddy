@@ -2,7 +2,7 @@
   "questName": "Buyers and Cellars",
   "questSteps": [
     {
-      "stepDescription": "Talk to Guildmaster Darren Lightfinger in the Thieves' Guild north of the house with a furnace in Lumbridge (enter the trapdoor). (Chat 2\u20222\u2022\u2713\u20222\u20221)",
+      "stepDescription": "Talk to Guildmaster Darren Lightfinger in the Thieves' Guild north of the house with a furnace in Lumbridge (enter the trapdoor). (Chat 2•2•✓•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to Father Urhney in his house, south in the Lumbridge Swamp. (Chat 3\u20223)",
+      "stepDescription": "Speak to Father Urhney in his house, south in the Lumbridge Swamp. (Chat 3•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "stepDescription": "If The Restless Ghost has been completed, (Chat 4\u20223)",
+      "stepDescription": "If The Restless Ghost has been completed, (Chat 4•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -257,7 +257,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Urhney and mention the chalice then the fire. (Chat 3\u20224)",
+      "stepDescription": "Talk to Urhney and mention the chalice then the fire. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -308,7 +308,7 @@
       ]
     },
     {
-      "stepDescription": "If The Restless Ghost has been completed, (Chat 4\u20224)",
+      "stepDescription": "If The Restless Ghost has been completed, (Chat 4•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

@@ -2,7 +2,7 @@
   "questName": "Haunted Mine",
   "questSteps": [
     {
-      "stepDescription": "Speak to Saradominist zealot, north of the mine west of Burgh de Rott. (Chat 1\u20221\u2022\u2713\u20221)",
+      "stepDescription": "Speak to Saradominist zealot, north of the mine west of Burgh de Rott. (Chat 1•1•✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -359,7 +359,7 @@
       ]
     },
     {
-      "stepDescription": "Go down the south ladder (beware of the moving cart \u2014 follow it as it moves south and step off the track when you can).",
+      "stepDescription": "Go down the south ladder (beware of the moving cart — follow it as it moves south and step off the track when you can).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1022,7 +1022,7 @@
       ]
     },
     {
-      "stepDescription": "Go west and exit the cave.",
+      "stepDescription": "Go west and exit the cave then enter the northern cave.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

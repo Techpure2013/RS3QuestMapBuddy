@@ -2,9 +2,13 @@
   "questName": "All Fired Up",
   "questSteps": [
     {
-      "stepDescription": "Talk to King Roald in Varrock Palace. (Chat 3\u20221\u2022\u2713)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Talk to King Roald in Varrock Palace. (Chat 3•1•✓)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -48,12 +52,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Talk to Blaze Sharpeye in Silvarea which is north-east of the Varrock Dig Site and south-west of the Paterdomus Temple on the river Salve. (Chat 1)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -97,12 +107,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Place the logs in the nearby beacon then light it.",
-      "itemsNeeded": ["20 Regular Logs"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Location of the first beacon",
+      "itemsNeeded": [
+        "20 Regular Logs"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -150,12 +166,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Blaze Sharpeye again. (Chat 2)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Place the logs in the nearby beacon then light it.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -199,11 +221,15 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Chop 20 logs on the way to Squire Fyre if you don't already have them. Light the beacon west-north-west of the Odd Old Man with twenty logs of the same type.",
-      "itemsNeeded": ["20 regular logs"],
+      "stepDescription": "Talk to Blaze Sharpeye again. (Chat 2)",
+      "itemsNeeded": [
+        "20 regular logs"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -248,12 +274,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Go back to Blaze and talk to him. (Chat 1)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Chop 20 logs on the way to Squire Fyre if you don't already have them.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -297,11 +329,15 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Add-Logs to the beacon (Requires 5 Logs). (Chat 1)",
-      "itemsNeeded": ["5 Logs"],
+      "stepDescription": "Light the beacon west-north-west of the Odd Old Man with twenty logs of the same type.",
+      "itemsNeeded": [
+        "5 Logs"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -352,12 +388,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Blaze. (Chat ~)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Location of Squire Fyre's beacon",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -401,12 +443,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to King Roald. (Chat 2)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Go back to Blaze and talk to him. (Chat 1)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -450,12 +498,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Quest complete!",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Use five logs on the nearby beacon. (Chat 1)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -499,7 +553,60 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Blaze. (Chat ~)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to King Roald. (Chat 2)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     }
   ]
 }

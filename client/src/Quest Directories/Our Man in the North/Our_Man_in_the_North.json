@@ -2,7 +2,7 @@
   "questName": "Our Man in the North",
   "questSteps": [
     {
-      "stepDescription": "Talk to Grand Vizier Hassan in the Merchant district, south of the bank deposit box. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Grand Vizier Hassan in the Merchant district, south of the bank deposit box. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -53,13 +53,64 @@
       ]
     },
     {
-      "stepDescription": "Go to the Grand Library in the Imperial district. The entrance is next to the deposit box (bank chest).",
+      "stepDescription": "Items recommended: Combat gear and food, Pollnivneach Teleport, 1 Free inventory space",
       "itemsNeeded": [],
       "itemsRecommended": [
         "Combat gear and food",
         "Pollnivneach Teleport",
         "1 Free inventory space"
       ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Go to the Grand Library in the Imperial district. The entrance is next to the deposit box (bank chest).",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -210,7 +261,7 @@
       ]
     },
     {
-      "stepDescription": "Head north to talk to Commander Akhomet. (Chat 1\u20222)",
+      "stepDescription": "Head north to talk to Commander Akhomet. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -618,7 +669,7 @@
       ]
     },
     {
-      "stepDescription": "Go to Uzer Mastaba. After the cutscene, walk inside and speak to Senliten (fairy code DLQ). (Chat 4\u20224\u20222)",
+      "stepDescription": "Go to Uzer Mastaba. After the cutscene, walk inside and speak to Senliten (fairy code DLQ). (Chat 4•4•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -722,6 +773,59 @@
     {
       "stepDescription": "Speak to Emir Ali Mirza next to the throne. (Chat 1)",
       "itemsNeeded": [],
+      "itemsRecommended": [
+        "Have roofs on the Selectively setting in your Graphics Settings"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: Have roofs on the Selectively setting in your Graphics Settings",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -773,9 +877,7 @@
     {
       "stepDescription": "Leave the Palace and head north-east to Dommik's Crafting Store.",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "Have roofs on the Selectively setting in your Graphics Settings"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1998,7 +2100,9 @@
     },
     {
       "stepDescription": "Run north to the house near the north-east exit of Al Kharid, and talk to Jabari.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Combat Equipment and Food"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2099,10 +2203,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Combat Equipment and Food",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Prepare to battle Jabari four times. He is level 112 and uses Magic. He has a weakness to Slash",
-      "itemsNeeded": [
-        "Combat Equipment and Food"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2867,49 +3020,15 @@
     },
     {
       "stepDescription": "Talk to Emir Ali, in the Al Kharid throne room. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2918,49 +3037,15 @@
     },
     {
       "stepDescription": "After the cutscene, talk to Emir Ali again. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2969,49 +3054,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

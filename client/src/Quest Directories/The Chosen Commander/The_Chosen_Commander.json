@@ -2,7 +2,7 @@
   "questName": "The Chosen Commander",
   "questSteps": [
     {
-      "stepDescription": "Talk to Captain Undak, east of the bank (by the eastern water fountain) in Dorgesh-Kaan. (You must dismiss any follower or pet you have or he will not go with you.) (Chat 2\u20221\u20222\u2022\u2713)",
+      "stepDescription": "Talk to Captain Undak, east of the bank (by the eastern water fountain) in Dorgesh-Kaan. (You must dismiss any follower or pet you have or he will not go with you.) (Chat 2•1•2•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Torzek outside. (Chat 4\u20221\u20221)",
+      "stepDescription": "Talk to Torzek outside. (Chat 4•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -512,7 +512,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Merchant Walton, just outside of the market to the south-east. (Chat 1\u20221\u20223\u20221)\nProceed to kill the merchant (cannot be ranged).",
+      "stepDescription": "Talk to Merchant Walton, just outside of the market to the south-east. (Chat 1•1•3•1)\nProceed to kill the merchant (cannot be ranged).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -563,7 +563,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Zanik. (Chat ~\u2022~\u20221)",
+      "stepDescription": "Talk to Zanik. (Chat ~•~•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1124,7 +1124,7 @@
       ]
     },
     {
-      "stepDescription": "Watch the cutscene. (Chat ~\u20223\u20221\u2022~)",
+      "stepDescription": "Watch the cutscene. (Chat ~•3•1•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1175,7 +1175,7 @@
       ]
     },
     {
-      "stepDescription": "Continue conversation with Captain Undak. (Chat 1\u20224)",
+      "stepDescription": "Continue conversation with Captain Undak. (Chat 1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1328,7 +1328,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Zanik. (Chat 4\u20224\u20224\u20224\u20222\u2022~\u20224\u20221)",
+      "stepDescription": "Talk to Zanik. (Chat 4•4•4•4•2•~•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1379,7 +1379,7 @@
       ]
     },
     {
-      "stepDescription": "Watch the cutscene. (Chat ~\u20223)",
+      "stepDescription": "Watch the cutscene. (Chat ~•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1481,7 +1481,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Captain Undak for a set of H.A.M. robes. (Chat 1\u20221)",
+      "stepDescription": "Talk to Captain Undak for a set of H.A.M. robes. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1634,7 +1634,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Johanhus Ulsbrecht in the centremost of the three southern rooms. (Chat 3\u20223\u20223\u20221)",
+      "stepDescription": "Talk to Johanhus Ulsbrecht in the centremost of the three southern rooms. (Chat 3•3•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1736,7 +1736,7 @@
       ]
     },
     {
-      "stepDescription": "Take off your HAM clothes and talk to Milton in the windmill near the Fishing Guild. (Chat 1\u20221)",
+      "stepDescription": "Take off your HAM clothes and talk to Milton in the windmill near the Fishing Guild. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1889,7 +1889,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the guard next to the prison. (Chat 1\u20221\u20223\u20223)",
+      "stepDescription": "Talk to the guard next to the prison. (Chat 1•1•3•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2348,7 +2348,7 @@
       ]
     },
     {
-      "stepDescription": "Return to Grubfoot. (Chat 1\u20223)",
+      "stepDescription": "Return to Grubfoot. (Chat 1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2501,7 +2501,7 @@
       ]
     },
     {
-      "stepDescription": "Squeeze into the kitchen. Take the dirty plates from the sink, and wait for the H.A.M. guard to come talk to you. (Chat 1\u2022~)",
+      "stepDescription": "Squeeze into the kitchen. Take the dirty plates from the sink, and wait for the H.A.M. guard to come talk to you. (Chat 1•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2807,7 +2807,7 @@
       ]
     },
     {
-      "stepDescription": "Kill Zanik repeatedly. (Chat 1\u20223\u20223\u20221\u20222\u20223\u20222)",
+      "stepDescription": "Kill Zanik repeatedly. (Chat 1•3•3•1•2•3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3011,7 +3011,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Zanik. (Chat 4\u20221\u20222\u20222\u20221\u20221\u20221\u20221)",
+      "stepDescription": "Talk to Zanik. (Chat 4•1•2•2•1•1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3419,10 +3419,61 @@
       ]
     },
     {
-      "stepDescription": "Enter Dorgesh-Kaan and talk to Captain Undak north of the market (between the fountains). (Chat 4\u20224)",
+      "stepDescription": "Items needed: 2 free inventory spaces",
       "itemsNeeded": [
         "2 free inventory spaces"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Enter Dorgesh-Kaan and talk to Captain Undak north of the market (between the fountains). (Chat 4•4)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -3523,7 +3574,7 @@
       ]
     },
     {
-      "stepDescription": "Climb back up the stairs, talk to the Goblin scribe. (Chat 1\u20222\u20221)",
+      "stepDescription": "Climb back up the stairs, talk to the Goblin scribe. (Chat 1•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3676,7 +3727,7 @@
       ]
     },
     {
-      "stepDescription": "Return to the Goblin scribe upstairs. (Chat 1\u20221)",
+      "stepDescription": "Return to the Goblin scribe upstairs. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3829,7 +3880,7 @@
       ]
     },
     {
-      "stepDescription": "Return to the city and talk to Oldak north of the bank. (Chat 1\u2022~\u20221\u20221)",
+      "stepDescription": "Return to the city and talk to Oldak north of the bank. (Chat 1•~•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4135,7 +4186,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Zanik. (Chat 1\u20221\u20223)",
+      "stepDescription": "Talk to Zanik. (Chat 1•1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4186,7 +4237,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Mernik in the children's nursery north-east upstairs. (Chat 1\u20221)",
+      "stepDescription": "Talk to Mernik in the children's nursery north-east upstairs. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4237,7 +4288,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Ambassador Alvijar in the house just north-west. (Chat 2\u20221)",
+      "stepDescription": "Talk to Ambassador Alvijar in the house just north-west. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4288,7 +4339,7 @@
       ]
     },
     {
-      "stepDescription": "Return to Mernik. (Chat 1\u20221)",
+      "stepDescription": "Return to Mernik. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4696,7 +4747,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Zanik. (Chat 4\u20224\u20223\u20222\u20223\u20223)",
+      "stepDescription": "Talk to Zanik. (Chat 4•4•3•2•3•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4850,49 +4901,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

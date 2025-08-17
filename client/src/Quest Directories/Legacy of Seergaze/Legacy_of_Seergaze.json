@@ -2,11 +2,113 @@
   "questName": "Legacy of Seergaze",
   "questSteps": [
     {
-      "stepDescription": "Talk to the Mercenary Adventurer at the Temple Trekking ending point (west of Canifis). CKS or the Canifis lodestone are good options to reach the area quickly. (Chat \u2713)",
+      "stepDescription": "Items needed: Rod of Ivandis, or another silver weapon.",
       "itemsNeeded": [],
       "itemsRecommended": [
         "2 different combat styles and equipment"
       ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: 2 different combat styles and equipment",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to the Mercenary Adventurer at the Temple Trekking ending point (west of Canifis). CKS or the Canifis lodestone are good options to reach the area quickly. (Chat ✓)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -106,7 +208,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Drezel. (Chat 2\u20224)",
+      "stepDescription": "Talk to Drezel. (Chat 2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -514,7 +616,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Mercenary Adventurer and escort him the same way as any Burgh de Rott Ramble. (Chat 2\u20221)",
+      "stepDescription": "Talk to the Mercenary Adventurer and escort him the same way as any Burgh de Rott Ramble. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -565,7 +667,7 @@
       ]
     },
     {
-      "stepDescription": "Easy path recommended for least time and effort. Be sure to remove any melee-reducing equipment like ranged and magic armour. If you encounter juvinates, you will require your Rod of Ivandis or another silver weapon.",
+      "stepDescription": "Easy path recommended for least time and effort. Be sure to remove any melee-reducing equipment like ranged and magic armour. If you encounter juvinates, you will require your Rod of Ivandis or another silver weapon. If you end up at the swamp with the uncrossable river, trim the swamp tree with 3 vines, combine them and swing on the top branch.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -769,7 +871,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Veliaf Hurtz until he gives you a crate. (Chat 2\u20223)",
+      "stepDescription": "Talk to Veliaf Hurtz until he gives you a crate. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -973,7 +1075,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Flaygian Screwte, in the same room, and offer him your help. (Chat 3\u20224\u20225)",
+      "stepDescription": "Talk to Flaygian Screwte, in the same room, and offer him your help. (Chat 3•4•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1228,7 +1330,7 @@
       ]
     },
     {
-      "stepDescription": "Head to the northernmost part of Meiyerditch and enter the house south of the house with the furnace (\"mass of debris\").",
+      "stepDescription": "Head to the northernmost part of Meiyerditch and enter the house south of the house with the furnace (\"mass of debris\"). Refer to the image for the map location.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2299,7 +2401,7 @@
       ]
     },
     {
-      "stepDescription": "After the cutscene, Look at one of the bodies. (Chat 2\u20223)",
+      "stepDescription": "After the cutscene, Look at one of the bodies. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2605,7 +2707,7 @@
       ]
     },
     {
-      "stepDescription": "Search the strange bloodied stones in the northern part of the cavern.",
+      "stepDescription": "Search the strange stones in the northern part of the cavern.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2963,7 +3065,9 @@
     },
     {
       "stepDescription": "Go to the surface, equip the Ivandis flail, kill a vyrewatch, and pick up its corpse.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Teak pyre logs or better"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -3064,10 +3168,8 @@
       ]
     },
     {
-      "stepDescription": "Return to the basement of the pub in Burgh de Rott and talk to Veliaf. Ask him what to do. (Chat 1\u20224\u20225)",
-      "itemsNeeded": [
-        "Teak pyre logs or better"
-      ],
+      "stepDescription": "Items needed: Teak pyre logs or better",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -3117,7 +3219,58 @@
       ]
     },
     {
-      "stepDescription": "Return to and talk to Drezel at the Paterdomus temple. (Chat 2\u20224)",
+      "stepDescription": "Return to the basement of the pub in Burgh de Rott and talk to Veliaf. Ask him what to do. (Chat 1•4•5)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to and talk to Drezel at the Paterdomus temple. (Chat 2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3372,50 +3525,16 @@
       ]
     },
     {
-      "stepDescription": "After the cutscene, go upstairs and ask Drezel what to do. If you still have the library key: (Chat 2\u20223). Otherwise, to bypass getting a new key. (Chat 2\u20222\u20223)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "After the cutscene, go upstairs and ask Drezel what to do. If you still have the library key: (Chat 2•3). Otherwise, to bypass getting a new key. (Chat 2•2•3)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3424,49 +3543,15 @@
     },
     {
       "stepDescription": "Report to Veliaf.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3475,49 +3560,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

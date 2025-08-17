@@ -2,7 +2,7 @@
   "questName": "The Void Stares Back",
   "questSteps": [
     {
-      "stepDescription": "Equip the Black armour and enter. Commander Colby will yell at you and teleport you.",
+      "stepDescription": "Items needed: 3 free inventory spaces then\ntalk to Korasi in Falador Park. (Chat ✓)",
       "itemsNeeded": [
         "5 free inventory spaces",
         "limestone brick",
@@ -14,6 +14,108 @@
         "armour",
         "and a melee weapon then go  \nto the Black Knights' Fortress north-west of the Edgeville Monastery (with 5 free inventory spaces)."
       ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: 5 free inventory spaces, limestone brick, hard leather, and bugged black armour and \nItems recommended: Food, armour, and a melee weapon then go  \nto the Black Knights' Fortress north-west of the Edgeville Monastery (with 5 free inventory spaces).",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Equip the Black armour and enter. Commander Colby will yell at you and teleport you.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -419,7 +521,7 @@
       ]
     },
     {
-      "stepDescription": "Give him the blocks in the indicated order. (Chat 3\u20221\u20225\u20222\u20224).",
+      "stepDescription": "Give him the blocks in the indicated order. (Chat 3•1•5•2•4).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1388,7 +1490,7 @@
       ]
     },
     {
-      "stepDescription": "Reveal yourself and explain the danger to Lord Daquarius. Accept the allegiance. (Chat 1\u20223\u20221)",
+      "stepDescription": "Reveal yourself and explain the danger to Lord Daquarius. Accept the allegiance. (Chat 1•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2103,49 +2205,15 @@
     },
     {
       "stepDescription": "Talk to Commodore Tyr.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2154,49 +2222,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

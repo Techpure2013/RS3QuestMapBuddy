@@ -32,12 +32,15 @@ interface EditorPanelProps {
   selectedObjectColor: string;
   onSelectedObjectColorChange: (color: string) => void;
   onSetRadiusMode: () => void;
+  onResetNpcLocation: () => void;
   objectNumberLabel: string;
   onObjectNumberLabelChange: (label: string) => void;
   onFileLoadFromInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onLoadFile: () => void;
   onSaveFile: () => void;
   onSaveAsFile: () => void;
+  selectEditDescription: boolean;
+  onSelectEditStepDescription: () => void;
 }
 
 export const EditorPanel = React.memo<EditorPanelProps>(
@@ -79,10 +82,12 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     onLoadFile,
     onSaveFile,
     onSaveAsFile,
+    selectEditDescription,
+    onSelectEditStepDescription,
+    onResetNpcLocation,
   }) => {
     return (
       <div className="editor-panel">
-        <h3>Quest Editor</h3>
         <input
           type="file"
           id="json-file-loader"
@@ -110,15 +115,23 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             Save As...
           </button>
         </div>
-
+        <label className="EditDescriptionLabel">
+          Edit Step Description
+          <input type="checkbox" onClick={onSelectEditStepDescription} />
+        </label>
         <div className="step-description-display">
-          <strong>Step Description:</strong>
-          <textarea
-            value={stepDescriptionValue}
-            onChange={(e) => onStepDescriptionChange(e.target.value)}
-            rows={4}
-          />
+          <strong>Step {selectedStep + 1}: </strong>
+          {selectEditDescription ? (
+            <textarea
+              value={stepDescriptionValue}
+              onChange={(e) => onStepDescriptionChange(e.target.value)}
+              rows={10}
+            />
+          ) : (
+            <label>{stepDescriptionValue}</label>
+          )}
         </div>
+
         <div className="item-lists-container">
           <div className="item-list">
             <strong>Items Needed:</strong>
@@ -150,14 +163,14 @@ export const EditorPanel = React.memo<EditorPanelProps>(
         </div>
         <div className="editor-controls">
           <div className="control-group step-control">
-            <label>Step Index:</label>
+            <label>Step Number:</label>
             <div className="step-input-group">
               <button onClick={onStepDecrement} className="step-button">
                 -
               </button>
               <input
                 type="number"
-                value={selectedStep}
+                value={selectedStep + 1}
                 onChange={(e) => onStepChange(parseInt(e.target.value, 10))}
               />
               <button onClick={onStepIncrement} className="step-button">
@@ -185,6 +198,16 @@ export const EditorPanel = React.memo<EditorPanelProps>(
               <option value="object">Object</option>
             </select>
           </div>
+          {targetType === "npc" && (
+            <div className="control-group">
+              <button
+                onClick={onResetNpcLocation}
+                style={{ width: "100%", backgroundColor: "#ffdddd" }}
+              >
+                Reset NPC Location
+              </button>
+            </div>
+          )}
           {targetType === "object" && (
             <>
               <div className="control-group">
@@ -219,7 +242,7 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             <label>Target Index:</label>
             <input
               type="number"
-              value={targetIndex}
+              value={targetIndex + 1}
               onChange={(e) =>
                 onTargetIndexChange(parseInt(e.target.value, 10))
               }

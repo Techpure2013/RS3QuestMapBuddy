@@ -2,13 +2,64 @@
   "questName": "The Fremennik Isles",
   "questSteps": [
     {
-      "stepDescription": "Talk to Mord Gunnars on the northern Rellekka dock about Jatizso's history. (Chat \u2713\u20221\u20223)",
+      "stepDescription": "Items needed: Raw Tuna, one of either 8 tin ores (level 1-10 Mining), 7 coal (11-54 Mining), or 6 mithril ores (55+ Mining)",
       "itemsNeeded": [
         "Raw Tuna",
         "one of either 8 tin ores (level 1-10 Mining)",
         "7 coal (11-54 Mining)",
         "or 6 mithril ores (55+ Mining)"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Mord Gunnars on the northern Rellekka dock about Jatizso's history. (Chat ✓•1•3)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -211,7 +262,7 @@
       ]
     },
     {
-      "stepDescription": "Open the chest (behind the throne) and take the jester outfit. (Chat 1\u20221\u20221\u20221)",
+      "stepDescription": "Open the chest (behind the throne) and take the jester outfit. (Chat 1•1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -313,7 +364,7 @@
       ]
     },
     {
-      "stepDescription": "Equip your jester costume, with nothing in your hands, and talk to Slug Hemligssen, north of the bank. (Chat 4\u20221)",
+      "stepDescription": "Equip your jester costume, with nothing in your hands, and talk to Slug Hemligssen, north of the bank. (Chat 4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -466,7 +517,61 @@
       ]
     },
     {
-      "stepDescription": "Return to Slug Hemligssen. (Chat 1\u20223\u20222\u20221)",
+      "stepDescription": "Return to Slug Hemligssen. (Chat 1•3•2•1)",
+      "itemsNeeded": [
+        "8 split logs",
+        "8 ropes"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: 8 split logs, 8 ropes",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -518,10 +623,7 @@
     },
     {
       "stepDescription": "Remove the jester costume (save it for later) and talk to Mawnis Burowgar.",
-      "itemsNeeded": [
-        "8 split logs",
-        "8 ropes"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1082,7 +1184,12 @@
     },
     {
       "stepDescription": "Right click bridges, north of Neitiznot, to repair them.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "One bronze nails",
+        "two arctic pine logs",
+        "one rope",
+        "three yak-hides"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1183,13 +1290,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: One bronze nails, two arctic pine logs, one rope, three yak-hides",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Return to King Gjuki Sorvott IV (Jatizso).",
-      "itemsNeeded": [
-        "One bronze nails",
-        "two arctic pine logs",
-        "one rope",
-        "three yak-hides"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1698,7 +1851,7 @@
       ]
     },
     {
-      "stepDescription": "Skuli Myrka. (Chat 1)",
+      "stepDescription": "Skuli Myrka who is North of Hring Hring. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2055,7 +2208,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Slug Hemligssen. (Chat 1\u20222\u20221\u20223)",
+      "stepDescription": "Talk to Slug Hemligssen. (Chat 1•2•1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2974,49 +3127,15 @@
     },
     {
       "stepDescription": "Cross the bridge, kill and decapitate the Ice Troll King.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3025,49 +3144,15 @@
     },
     {
       "stepDescription": "Take the head to Mawnis Burowgar.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3076,49 +3161,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

@@ -104,10 +104,61 @@
       ]
     },
     {
-      "stepDescription": "Talk to Koschei. (Chat 1)",
+      "stepDescription": "Items needed: Balmung",
       "itemsNeeded": [
         "Balmung"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Koschei. (Chat 1)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -718,7 +769,7 @@
       ]
     },
     {
-      "stepDescription": "For additional completion, talk to Kharshai. (Chat 4\u20223\u20221)",
+      "stepDescription": "For additional completion, talk to Kharshai. (Chat 4•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -820,7 +871,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Kharshai. (Chat 4\u20223)",
+      "stepDescription": "Talk to Kharshai. (Chat 4•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -871,7 +922,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Kharshai again. (Chat 4\u20223\u20222)",
+      "stepDescription": "Talk to Kharshai again. (Chat 4•3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -973,7 +1024,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Kharshai. (Chat 4\u20223)",
+      "stepDescription": "Talk to Kharshai. (Chat 4•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1076,49 +1127,15 @@
     },
     {
       "stepDescription": "Miniquest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

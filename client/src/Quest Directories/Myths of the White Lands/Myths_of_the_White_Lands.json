@@ -2,7 +2,7 @@
   "questName": "Myths of the White Lands",
   "questSteps": [
     {
-      "stepDescription": "Talk to Explorer Jack who is located in a house west of the Lumbridge General Store. (Chat 2\u2022\u2713\u20221\u20223)",
+      "stepDescription": "Talk to Explorer Jack who is located in a house west of the Lumbridge General Store. (Chat 2•✓•1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5204,57 +5204,6 @@
       ]
     },
     {
-      "stepDescription": "[uncheck all]",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
       "stepDescription": "Part three",
       "itemsNeeded": [],
       "itemsRecommended": [],
@@ -7499,7 +7448,58 @@
       ]
     },
     {
-      "stepDescription": "Return to Explorer Jack in Lumbridge. (Chat 2\u2022~)",
+      "stepDescription": "Return to Explorer Jack in Lumbridge. (Chat 2•~)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

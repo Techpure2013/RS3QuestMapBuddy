@@ -104,7 +104,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the fallen man (close the interface when it appears). (Chat \u2713)",
+      "stepDescription": "Talk to the fallen man (close the interface when it appears). (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -257,7 +257,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to him again. (Chat 1\u20221)",
+      "stepDescription": "Talk to him again. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -869,7 +869,7 @@
       ]
     },
     {
-      "stepDescription": "Change your spellbook as necessary if you wish to use magic in the final fight. \nFill the vial with water, add a goutweed. You can find a sink in the house directly west of the bank on Lunar Isle.",
+      "stepDescription": "Change your spellbook as necessary if you wish to use magic in the final fight. \nFill the vial with water. You can find a sink in the house directly west of the bank on Lunar Isle.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

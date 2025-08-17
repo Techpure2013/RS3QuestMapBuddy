@@ -2,7 +2,7 @@
   "questName": "Gower Quest",
   "questSteps": [
     {
-      "stepDescription": "Speak to the Gowers in the house next to rats and a cabbage patch south-east of the Varrock lodestone. (Chat 1\u2022\u2713)",
+      "stepDescription": "Speak to the Gowers in the house next to rats and a cabbage patch south-east of the Varrock lodestone. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -665,7 +665,7 @@
       ]
     },
     {
-      "stepDescription": "Go to Dwarven Mines (entrance north-east of Falador lodestone).",
+      "stepDescription": "Items recommended: Armour, weapon, and food (Note: keep 6-7 free spaces)----\nIf you destroy \"Crispy The Cabbage\", you can reclaim \"Crispy\" from the Gower Farm.----",
       "itemsNeeded": [],
       "itemsRecommended": [
         "Armour",
@@ -673,6 +673,57 @@
         "and food (Note: keep 6-7 free spaces)----\nIf you destroy \"Crispy The Cabbage\"",
         "you can reclaim \"Crispy\" from the Gower Farm.----"
       ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Go to Dwarven Mines (entrance north-east of Falador lodestone).",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1180,7 +1231,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Thordur. (Chat ~\u2022~\u20221)",
+      "stepDescription": "Talk to Thordur. (Chat ~•~•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1231,7 +1282,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Spiral Orb (the purple spider DJ in the middle). (Chat 1\u20222)",
+      "stepDescription": "Talk to Spiral Orb (the purple spider DJ in the middle). (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1333,7 +1384,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Lucien, north-west of spiral orb and next to central bank portal. (Chat 2\u20223)",
+      "stepDescription": "Talk to Lucien, north-west of spiral orb and next to central bank portal. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1843,7 +1894,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Romeo, southeast of Beastmaster Durzag. (Chat 2\u20222)",
+      "stepDescription": "Talk to Romeo, southeast of Beastmaster Durzag. (Chat 2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2455,7 +2506,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Chaos Elemental, north of the Grand Exchange Maintenance. (Chat 2\u20222\u20223)",
+      "stepDescription": "Talk to Chaos Elemental, north of the Grand Exchange Maintenance. (Chat 2•2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2710,7 +2761,7 @@
       ]
     },
     {
-      "stepDescription": "Enter Beta Room Portal and talk to Max. (Chat ~\u20222)",
+      "stepDescription": "Enter Beta Room Portal and talk to Max. (Chat ~•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3272,49 +3323,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

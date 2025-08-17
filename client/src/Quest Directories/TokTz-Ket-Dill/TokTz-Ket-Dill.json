@@ -2,10 +2,61 @@
   "questName": "TokTz-Ket-Dill",
   "questSteps": [
     {
-      "stepDescription": "After entering the TzHaar City, go east as far as possible along the southern wall, then directly north (just west of Fight Cauldron teleport). Speak to one of the three guards. (Chat 1\u2022\u2713)",
+      "stepDescription": "Items needed: 2 empty inventory slots",
       "itemsNeeded": [
         "2 empty inventory slots"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "After entering the TzHaar City, go east as far as possible along the southern wall, then directly north (just west of Fight Cauldron teleport). Speak to one of the three guards. (Chat 1•✓)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -361,7 +412,7 @@
       ]
     },
     {
-      "stepDescription": "Return to TzHaar-Ket-Grol. (Chat 1\u20225\u20225\u20224)",
+      "stepDescription": "Return to TzHaar-Ket-Grol. (Chat 1•5•5•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -463,7 +514,7 @@
       ]
     },
     {
-      "stepDescription": "Enter the mine directly east and speak with TzHaar-Hur-Brekt on the east side (Chat 2\u20221), then talk again. (Chat 2\u20223)",
+      "stepDescription": "Enter the mine directly east and speak with TzHaar-Hur-Brekt on the east side (Chat 2•1), then talk again. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -514,7 +565,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to TzHaar-Hur-Klag on the west wall. (Chat 3\u20222\u20224)",
+      "stepDescription": "Speak to TzHaar-Hur-Klag on the west wall. (Chat 3•2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -565,7 +616,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to TzHaar-Mej-Kol, just north. (Chat 3\u20222\u20224)",
+      "stepDescription": "Speak to TzHaar-Mej-Kol, just north. (Chat 3•2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -616,7 +667,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to TzHaar-Xil-Mor, south-east in the mine. (Chat 3\u20221)",
+      "stepDescription": "Speak to TzHaar-Xil-Mor, south-east in the mine. (Chat 3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -667,7 +718,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to TzHaar-Hur-Brekt. (Chat 1\u20221)",
+      "stepDescription": "Speak to TzHaar-Hur-Brekt. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -718,7 +769,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to TzHaar-Xil-Mor. (Chat 3\u20222)",
+      "stepDescription": "Speak to TzHaar-Xil-Mor. (Chat 3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -820,7 +871,7 @@
       ]
     },
     {
-      "stepDescription": "Speak with TzHaar-Ket-Jok, south-west in the mine. (Chat 1\u20223\u20222\u20223\u20222\u20224)",
+      "stepDescription": "Speak with TzHaar-Ket-Jok, south-west in the mine. (Chat 1•3•2•3•2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -871,7 +922,7 @@
       ]
     },
     {
-      "stepDescription": "Speak with TzHaar-Xil-Mor. (Chat 1\u20221\u20222\u20224)",
+      "stepDescription": "Speak with TzHaar-Xil-Mor. (Chat 1•1•2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -922,7 +973,7 @@
       ]
     },
     {
-      "stepDescription": "Speak with TzHaar-Hur-Klag. (Chat 1\u20224\u20222\u20223\u20221\u20224)",
+      "stepDescription": "Speak with TzHaar-Hur-Klag. (Chat 1•4•2•3•1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -973,7 +1024,7 @@
       ]
     },
     {
-      "stepDescription": "Speak with TzHaar-Mej-Kol. (Chat 1\u20222\u20223\u20224)",
+      "stepDescription": "Speak with TzHaar-Mej-Kol. (Chat 1•2•3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1127,57 +1178,6 @@
     },
     {
       "stepDescription": "Mine the obsidian walls and craft 4 pillars for the first cave section (you can easily return for more).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Go to the quest start location and have your planks treated by the small TzHaar-Hur-Frok. (Chat 1\u20221).",
       "itemsNeeded": [
         "14 oak planks (bank at Fight Cauldron or the Main Plaza if needed.)"
       ],
@@ -1230,12 +1230,165 @@
       ]
     },
     {
-      "stepDescription": "Enter the crack in the south wall by TzHaar-Ket-Grol.",
+      "stepDescription": "Items needed: 14 oak planks (bank at Fight Cauldron or the Main Plaza if needed.)",
       "itemsNeeded": [
         "Magic weapon with runes for water spells",
         "ranged weapon that's not a bow and with more distance than just darts",
         "enough pillars and planks for a cave section (there are checkpoints.)"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Go to the quest start location and have your planks treated by the small TzHaar-Hur-Frok. (Chat 1•1).",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Magic weapon with runes for water spells, ranged weapon that's not a bow and with more distance than just darts, enough pillars and planks for a cave section (there are checkpoints.)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Enter the crack in the south wall by TzHaar-Ket-Grol.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1541,7 +1694,10 @@
     },
     {
       "stepDescription": "The first cave requires 6 treated planks and 4 pillars. After fixing the cave-ins, mine the blocked tunnel and proceed to the next checkpoint.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Adamant pickaxe or better in your inventory or tool belt",
+        "full melee or hybrid armour"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1693,11 +1849,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Adamant pickaxe or better in your inventory or tool belt, full melee or hybrid armour",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Once you've cleared the southern entrance, you will no longer be able to use the crack in the wall to access the tunnel. You must use the entrance north of the three NPC's where you started the quest.",
-      "itemsNeeded": [
-        "Adamant pickaxe or better in your inventory or tool belt",
-        "full melee or hybrid armour"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1748,49 +1952,15 @@
     },
     {
       "stepDescription": "Once you are ready to fight the TokTz-Ket-Dill, enter the tunnel to the north. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1799,49 +1969,15 @@
     },
     {
       "stepDescription": "If you die, your gravestone will appear in the chamber with the trapped TzHaar-Hurs, outside the tunnel to the TokTz-Ket-Dill.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1850,49 +1986,15 @@
     },
     {
       "stepDescription": "Kill the TokTz-Ket-Dill. Do not use prayers until the shell is broken.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1901,49 +2003,15 @@
     },
     {
       "stepDescription": "After killing the TokTz-Ket-Dill, exit to the north, head south out of the caves, and then talk to any of the three TzHaar to finish the quest.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

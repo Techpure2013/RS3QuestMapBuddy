@@ -2,7 +2,7 @@
   "questName": "The Prisoner of Glouphrie",
   "questSteps": [
     {
-      "stepDescription": "Speak to Golrie in the Gnome Village Dungeon. (Chat 2\u2022\u2713\u20224) (Note: If you run into a bug where you can't click the X to close the letter without it moving your character, right-click on the X and click \"Close\" or press \"Esc\" on your keyboard to close the note.)",
+      "stepDescription": "Speak to Golrie in the Gnome Village Dungeon. (Chat 2•✓•4) (Note: If you run into a bug where you can't click the X to close the letter without it moving your character, right-click on the X and click \"Close\" or press \"Esc\" on your keyboard to close the note.)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1277,7 +1277,7 @@
       ]
     },
     {
-      "stepDescription": "Enter the prison through the metal doors. Talk to the guard. (Chat ~\u2022~)",
+      "stepDescription": "Enter the prison through the metal doors. Talk to the guard. (Chat ~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1328,7 +1328,7 @@
       ]
     },
     {
-      "stepDescription": "Pick-lock on the northwest cell door. Talk to Bolrie. (Chat 1\u20222\u20223\u20223\u20221)",
+      "stepDescription": "Pick-lock on the northwest cell door. Talk to Bolrie. (Chat 1•2•3•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

@@ -2,7 +2,7 @@
   "questName": "Dead and Buried",
   "questSteps": [
     {
-      "stepDescription": "Talk to the Raptor in Fort Forinthry. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to the Raptor in Fort Forinthry. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Herald of Varrock. (Chat ~\u2022~\u2022~\u20224\u20221)",
+      "stepDescription": "Talk to the Herald of Varrock. (Chat ~•~•~•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -206,11 +206,62 @@
       ]
     },
     {
-      "stepDescription": "Talk to Bill. (Chat 1)",
+      "stepDescription": "Items needed: 14 acadia frames, 6 stone wall segments.",
       "itemsNeeded": [
         "14 acadia frames",
         "6 stone wall segments."
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Bill. (Chat 1)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -362,7 +413,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to guard captain Sof\u00eda in the newly-built Ranger's Workroom.",
+      "stepDescription": "Talk to guard captain Sofía in the newly-built Ranger's Workroom.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -465,6 +516,61 @@
     },
     {
       "stepDescription": "Retrieving the dragonkin device",
+      "itemsNeeded": [
+        "Combat gear",
+        "food",
+        "and two free backpack spaces.----\nContinue with the portal by the Wilderness crypt entrance."
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Combat gear, food, and two free backpack spaces.----\nContinue with the portal by the Wilderness crypt entrance.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -516,11 +622,7 @@
     },
     {
       "stepDescription": "Talk to the Raptor.",
-      "itemsNeeded": [
-        "Combat gear",
-        "food",
-        "and two free backpack spaces.----\nContinue with the portal by the Wilderness crypt entrance."
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2917,49 +3019,15 @@
     },
     {
       "stepDescription": "Talk to the Raptor",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2968,49 +3036,15 @@
     },
     {
       "stepDescription": "Quest Completed!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

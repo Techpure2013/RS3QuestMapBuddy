@@ -2,7 +2,7 @@
   "questName": "Blood Runs Deep",
   "questSteps": [
     {
-      "stepDescription": "Talk to Baba Yaga on Lunar Isle about the man in the bed. (Chat 1\u2022\u2713\u20221\u20221\u20221)",
+      "stepDescription": "Items recommended: Magic or Ranged combat equipment and food for all parts of the quest",
       "itemsNeeded": [],
       "itemsRecommended": [
         "Magic or Ranged combat equipment and food for all parts of the quest"
@@ -55,7 +55,58 @@
       ]
     },
     {
-      "stepDescription": "Talk to Baba Yaga again to go to the Dream World. (Chat 1\u20221\u20221\u20221)",
+      "stepDescription": "Talk to Baba Yaga on Lunar Isle about the man in the bed. (Chat 1•✓•1•1•1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Baba Yaga again to go to the Dream World. (Chat 1•1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -565,7 +616,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Baba Yaga to be teleported to Rellekka. (Chat 1\u20221\u20222)",
+      "stepDescription": "Talk to Baba Yaga to be teleported to Rellekka. (Chat 1•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -718,7 +769,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Queen Sigrid. (Chat 1\u20221)",
+      "stepDescription": "Talk to Queen Sigrid. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -922,7 +973,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Jarvald (slightly north west of Rellekka markets) to head to Waterbirth Island. (Chat 1\u20222\u20221)",
+      "stepDescription": "Talk to Jarvald (slightly north west of Rellekka markets) to head to Waterbirth Island. (Chat 1•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -973,7 +1024,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Bardur near the cave entrance for a rope. (Chat 1\u20221)",
+      "stepDescription": "Talk to Bardur near the cave entrance for a rope. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1126,7 +1177,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to King Vargas. (Chat 1\u20221\u20221\u20221)",
+      "stepDescription": "Talk to King Vargas. (Chat 1•1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1381,7 +1432,7 @@
       ]
     },
     {
-      "stepDescription": "Fight through the rock lobsters and climb the last ladder. (Chat 1\u20221)",
+      "stepDescription": "Fight through the rock lobsters and climb the last ladder. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1432,7 +1483,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Eir. (Chat 1\u20221\u20221\u20221)",
+      "stepDescription": "Talk to Eir. (Chat 1•1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1483,7 +1534,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Nial Swiftling. (Chat 1\u20221\u20221)",
+      "stepDescription": "Talk to Nial Swiftling. (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1534,7 +1585,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Asleif Hamalsdotter. (Chat 1\u20221\u20221)",
+      "stepDescription": "Talk to Asleif Hamalsdotter. (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1738,7 +1789,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to King Vargas. (Chat ~\u2022~\u2022~\u2022~\u2022~\u2022~\u2022~\u2022~\u20222)",
+      "stepDescription": "Talk to King Vargas. (Chat ~•~•~•~•~•~•~•~•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1893,57 +1944,6 @@
     {
       "stepDescription": "If the spiritual realm sequence is interrupted, speak with Brundt in the long hall in Rellekka to return.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Talk to Brundt in the long hall in Rellekka when you are ready. (Chat 2\u20221)",
-      "itemsNeeded": [],
       "itemsRecommended": [
         "Combat equipment for Melee",
         "Magic (Water",
@@ -2000,7 +2000,160 @@
       ]
     },
     {
-      "stepDescription": "Talk to Baba Yaga on the boat. (Chat 1\u20222\u20221\u20221\u20221)",
+      "stepDescription": "Items needed: Balmung",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: Combat equipment for Melee, Magic (Water, Earth, Air, Fire spells) and Ranged styles, a way to teleport out - as you can not leave the room while in combat",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Brundt in the long hall in Rellekka when you are ready. (Chat 2•1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Baba Yaga on the boat. (Chat 1•2•1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2867,7 +3020,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Eir. (Chat 1\u20222\u20221)",
+      "stepDescription": "Talk to Eir. (Chat 1•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3020,50 +3173,16 @@
       ]
     },
     {
-      "stepDescription": "Attempt to climb up the rope. (Chat ~\u2022~)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "Attempt to climb up the rope. (Chat ~•~)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3072,49 +3191,15 @@
     },
     {
       "stepDescription": "Speak to Brundt to receive your reward. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3123,49 +3208,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

@@ -2,9 +2,13 @@
   "questName": "A Fairy Tale I Growing Pains",
   "questSteps": [
     {
-      "stepDescription": "Talk to Martin the Master Gardener in Draynor Village. (Chat 2\u20221\u2022\u2713\u20221)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Talk to Martin the Master Gardener in Draynor Village. (Chat 2•1•✓•1)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -48,12 +52,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to 5 different gardeners near farming patches around RuneScape. Use these farmers Frizzy, just west of Martin; Elstan, to the north of Frizzy; Alain north of Taverley lodestone; Dantaera, north-west of Catherby lodestone; and Ellena, east of the Catherby lodestone. (Use Option Chat 2)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Talk to 5 different gardeners near farming patches around RuneScape. (Use Option Chat 2)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -165,12 +175,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Martin again. (Chat 2)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Easy options include Frizzy, just west of Martin; Elstan, to the north of Frizzy; Alain north of Taverley lodestone; Dantaera, north-west of Catherby lodestone; and Ellena, east of the Catherby lodestone.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -214,12 +230,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Equip your Dramen Staff and head to the Lumbridge Swamp to enter the Lost City shed.",
-      "itemsNeeded": ["Dramen Staff"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Spirit Tree farmers all count as the same farmer,\nfarmers in Prifddinas won't work,\nZombie farmer does not work,\nHead Farmer Jones in Taverley won't work,\nWyson the gardener in Falador won't work,and then\nthe fifth farmer you talk to will mention fairies.",
+      "itemsNeeded": [
+        "Dramen Staff"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -263,12 +285,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Run south (near Chaeldar, the Slayer master), talk to the Fairy Godfather about the Queen. (Chat 2) Make sure to finish the whole dialogue.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Talk to Martin again. (Chat 2)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -312,12 +340,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Run west to the bank. Talk to Fairy Nuff a few steps north of the bank.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Equip your Dramen Staff and head to the Lumbridge Swamp to enter the Lost City shed.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -361,12 +395,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Player with low combat level should be aware of the aggressive dark wizards. It may be difficult to talk to Zandar.\nIt is recommended to bring combat gear and space-through the dialogue with Zandar. Travel to The Dark Wizards' Tower (west of Falador).",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["Combat Gear if Low Level"],
+      "stepDescription": "Run south (near Chaeldar, the Slayer master), talk to the Fairy Godfather about the Queen. (Chat 2) Make sure to finish the whole dialogue.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "Combat Gear if Low Level"
+      ],
       "highlights": {
         "npc": [
           {
@@ -422,12 +462,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Climb to the top, talk to Zandar Horfyre.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Run west to the bank. Talk to Fairy Nuff a few steps north of the bank.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -471,12 +517,18 @@
         ]
       },
       "floor": 2,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Teleport to Port Sarim and talk to Malignius Mortifer about a Tanglefoot. (Chat 2) or (Chat 1) if Swan Song has been completed.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Travel to The Dark Wizards' Tower (west of Falador).",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -491,8 +543,8 @@
                 "lng": 2998
               },
               "topRight": {
-                "lat": 3268,
-                "lng": 3003
+                "lat": 3269,
+                "lng": 3004
               }
             }
           }
@@ -520,12 +572,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Run around to the back, north, of Draynor Manor within the fenced area, and click the gravestone slightly west of the Gallows to dig up a skull.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Climb to the top, talk to Zandar Horfyre.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -569,12 +627,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Return to Malignius. (Chat 2) or (Chat 1) if Swan Song has been started.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Player with low combat level should be aware of the aggressive dark wizards. It may be difficult to talk to Zandar.\nIt is recommended to bring combat gear and space-through the dialogue with Zandar.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -618,12 +682,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Fetch the items that Malignius requested (they will be listed in your quest journal). Bring multiple of any edible item, or bring a filled druid pouch to ward off ghasts. Make sure to clean any requested herbs.",
-      "itemsNeeded": ["Secateurs"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Teleport to Port Sarim and talk to Malignius Mortifer about a Tanglefoot. (Chat 2) or (Chat 1) if Swan Song has been completed.",
+      "itemsNeeded": [
+        "Secateurs"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -667,12 +737,19 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to the Nature Spirit in Mort Myre Swamp to receive magic secateurs.",
-      "itemsNeeded": ["Secateurs", "requested items"],
-      "itemsRecommended": ["Teleport to Barrows or Burgh de Rott"],
+      "stepDescription": "Run around to the back, north, of Draynor Manor within the fenced area, and click the gravestone slightly west of the Gallows to dig up a skull.",
+      "itemsNeeded": [
+        "Secateurs",
+        "requested items"
+      ],
+      "itemsRecommended": [
+        "Teleport to Barrows or Burgh de Rott"
+      ],
       "highlights": {
         "npc": [
           {
@@ -716,12 +793,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Return to Zanaris, then enter the shady grove (dungeon icon) west of the Cosmic altar.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Return to Malignius. (Chat 2) or (Chat 1) if Swan Song has been started.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -777,12 +860,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Run through the grove to the large room.",
-      "itemsNeeded": ["Magic secateurs"],
-      "itemsRecommended": ["Combat gear"],
+      "stepDescription": "Fetch the items that Malignius requested (they will be listed in your quest journal). Bring multiple of any edible item, or bring a filled druid pouch to ward off ghasts.",
+      "itemsNeeded": [
+        "Magic secateurs"
+      ],
+      "itemsRecommended": [
+        "Combat gear"
+      ],
       "highlights": {
         "npc": [
           {
@@ -831,9 +920,13 @@
       ]
     },
     {
-      "stepDescription": "Take the Queen's secateurs.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Make sure to clean any requested herbs.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -877,12 +970,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to the Fairy Godfather.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Talk to the Nature Spirit in Mort Myre Swamp to receive magic secateurs.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -926,12 +1025,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Quest complete!",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Return to Zanaris, then enter the shady grove (dungeon icon) west of the Cosmic altar.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -975,7 +1080,94 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Run through the grove to the large room.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Equip your magic secateurs and kill Tanglefoot. Off-hand weaponry will work here, but will only deal as much as the secateurs would.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Take the Queen's secateurs.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to the Fairy Godfather.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     }
   ]
 }

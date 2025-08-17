@@ -2,7 +2,7 @@
   "questName": "Land of the Goblins",
   "questSteps": [
     {
-      "stepDescription": "Talk to Grubfoot in the Dorgeshuun Mines. (Chat 2\u20223\u2022\u2713)",
+      "stepDescription": "Talk to Grubfoot in the Dorgeshuun Mines. (Chat 2•3•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "stepDescription": "With Grubfoot following, enter Dorgesh-Kaan using the door to the south and head north-west where Oldak is.\nIn the north-west room, talk to Zanik. (Chat 3\u20223\u20222\u2022~\u20221\u20221)",
+      "stepDescription": "With Grubfoot following, enter Dorgesh-Kaan using the door to the south and head north-west where Oldak is.\nIn the north-west room, talk to Zanik. (Chat 3•3•2•~•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -155,12 +155,63 @@
       ]
     },
     {
-      "stepDescription": "If you forgot to bring the toadflax potion, make sure to proceed until Zanik has entered into the temple; otherwise, you will need to meet her again at Oldak, and provide him two law runes and a molten glass.",
+      "stepDescription": "Items needed: 1 Vial, 1 toadflax potion (unf), 1 goblin mail",
       "itemsNeeded": [
         "1 Vial",
         "1 toadflax potion (unf)",
         "1 goblin mail"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "If you forgot to bring the toadflax potion, make sure to proceed until Zanik has entered into the temple; otherwise, you will need to meet her again at Oldak, and provide him two law runes and a molten glass.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -363,7 +414,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Makeover Mage south-west of Falador. (Chat 4\u20221\u20221\u20223)",
+      "stepDescription": "Talk to the Makeover Mage south-west of Falador. (Chat 4•1•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -466,6 +517,59 @@
     },
     {
       "stepDescription": "Head to the goblin cave (just north of the Ardougne lodestone).",
+      "itemsNeeded": [
+        "Enough free inventory spaces to unequip all items"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Enough free inventory spaces to unequip all items",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -517,9 +621,7 @@
     },
     {
       "stepDescription": "Unequip any items and dismiss any followers.",
-      "itemsNeeded": [
-        "Enough free inventory spaces to unequip all items"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -620,7 +722,7 @@
       ]
     },
     {
-      "stepDescription": "Climb down the entrance. (Chat 1\u20221)",
+      "stepDescription": "Climb down the entrance. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -671,7 +773,7 @@
       ]
     },
     {
-      "stepDescription": "North, sitting on his throne, talk to the High Priest. (Chat 1\u20221\u20221)",
+      "stepDescription": "North, sitting on his throne, talk to the High Priest. (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -722,7 +824,7 @@
       ]
     },
     {
-      "stepDescription": "Take the quiz. (Chat 1\u20221\u20222\u20222\u20222\u20221\u20222)",
+      "stepDescription": "Take the quiz. (Chat 1•1•2•2•2•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -773,7 +875,7 @@
       ]
     },
     {
-      "stepDescription": "After the quiz, ask about Yu'biusk. (Chat 1\u20222\u20225)",
+      "stepDescription": "After the quiz, ask about Yu'biusk. (Chat 1•2•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -978,7 +1080,11 @@
     },
     {
       "stepDescription": "Talk to Zanik in the prison cell. (Chat 4)",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "5 coins",
+        "1 black goblin mail",
+        "1 raw slimy eel"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1079,12 +1185,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: 5 coins, 1 black goblin mail, 1 raw slimy eel",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Leave the cave.",
-      "itemsNeeded": [
-        "5 coins",
-        "1 black goblin mail",
-        "1 raw slimy eel"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1185,7 +1338,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Aggie in Draynor Village. (Chat 4\u20222\u20224) \nOr, if Vampyre Slayer is complete. (Chat 5\u20222\u20224)",
+      "stepDescription": "Talk to Aggie in Draynor Village. (Chat 4•2•4) \nOr, if Vampyre Slayer is complete. (Chat 5•2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1237,7 +1390,13 @@
     },
     {
       "stepDescription": "Teleport to Seers' Village and head south-west to the Fishing Contest area in Hemenster. (Chat 3)",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Blue dye",
+        "yellow dye",
+        "purple dye",
+        "orange dye",
+        "enough free inventory spaces to unequip all items"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1389,14 +1548,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Blue dye, yellow dye, purple dye, orange dye, enough free inventory spaces to unequip all items",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Unequip any items and dismiss any followers.",
-      "itemsNeeded": [
-        "Blue dye",
-        "yellow dye",
-        "purple dye",
-        "orange dye",
-        "enough free inventory spaces to unequip all items"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1905,7 +2109,7 @@
       ]
     },
     {
-      "stepDescription": "South-west: Snothead (Chat 1\u20221\u20224)",
+      "stepDescription": "South-west: Snothead (Chat 1•1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2007,7 +2211,7 @@
       ]
     },
     {
-      "stepDescription": "North-west: Mosschin (Chat 3)",
+      "stepDescription": "North-west: Mosschin (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2058,7 +2262,7 @@
       ]
     },
     {
-      "stepDescription": "North-east: Redeyes (Chat 4)",
+      "stepDescription": "North-east: Redeyes (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2160,7 +2364,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Strongbones after defeating him (Chat 1\u20224)",
+      "stepDescription": "Talk to Strongbones after defeating him (Chat 1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2467,49 +2671,15 @@
     },
     {
       "stepDescription": "Click on the machines next to Oldak, use combination 9-4-1, activate the machine.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2518,49 +2688,15 @@
     },
     {
       "stepDescription": "Open the strange box in the north-western part of Yu'biusk for a cutscene.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2569,49 +2705,15 @@
     },
     {
       "stepDescription": "Continue dialogue with Oldak.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2620,49 +2722,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

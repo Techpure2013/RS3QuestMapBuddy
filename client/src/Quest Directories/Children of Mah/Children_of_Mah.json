@@ -2,7 +2,112 @@
   "questName": "Children of Mah",
   "questSteps": [
     {
-      "stepDescription": "Talk to Kharshai beneath the helmet shop in Rellekka (requires completion of the Koschei's Troubles miniquest) or all the way north of Rellekka in the snowy hunter area, next to the Arctic (azure) habitat mine. (Chat 1\u2022\u2713\u20225\u20221\u20221)",
+      "stepDescription": "Talk to Kharshai beneath the helmet shop in Rellekka (requires completion of the Koschei's Troubles miniquest) or all the way north of Rellekka in the snowy hunter area, next to the Arctic (azure) habitat mine. (Chat 1•✓•5•1•1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: 1 free inventory slot",
+      "itemsNeeded": [],
+      "itemsRecommended": [
+        "TokKul-Zo",
+        "Dig Site pendant"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: TokKul-Zo, Dig Site pendant",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -55,10 +160,7 @@
     {
       "stepDescription": "Go to the Mahjarrat Ritual Site via:",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "TokKul-Zo",
-        "Dig Site pendant"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -668,7 +770,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Perjour. (Chat 3\u20224)",
+      "stepDescription": "Talk to Perjour. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -821,7 +923,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Duke Sucellus to the north. (Chat 3\u20224)",
+      "stepDescription": "Talk to Duke Sucellus to the north. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1025,7 +1127,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Pernix. (Chat 2\u20223\u20222\u20222)",
+      "stepDescription": "Talk to Pernix. (Chat 2•3•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1076,7 +1178,7 @@
       ]
     },
     {
-      "stepDescription": "Head down a flight of stairs and talk to Akthanakos. (Chat 3\u20223\u20221\u20222)",
+      "stepDescription": "Head down a flight of stairs and talk to Akthanakos. (Chat 3•3•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1280,7 +1382,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Sliske. (Chat 3\u20224)",
+      "stepDescription": "Talk to Sliske. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1486,7 +1588,14 @@
     {
       "stepDescription": "Watch or skip the cutscene. (Chat 1)",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "Sixth-Age circuit",
+        "combat equipment",
+        "food",
+        "Shard of Zaros",
+        "sign of life or portent of life",
+        "1-2 free inventory spaces to remove weapon and shield"
+      ],
       "highlights": {
         "npc": [
           {
@@ -1586,16 +1695,60 @@
       ]
     },
     {
+      "stepDescription": "Items recommended: Sixth-Age circuit, combat equipment, food, Shard of Zaros, sign of life or portent of life, 1-2 free inventory spaces to remove weapon and shield",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Go to the World Gate, dial Freneskae, and enter it (left click, select \"Children of Mah\"). (Chat 1)",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "Sixth-Age circuit",
-        "combat equipment",
-        "food",
-        "Shard of Zaros",
-        "sign of life or portent of life",
-        "1-2 free inventory spaces to remove weapon and shield"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -2205,7 +2358,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Seren. The third deathstone is to the east of Seren. (Chat ~\u20222)",
+      "stepDescription": "Talk to Seren. The third deathstone is to the east of Seren. (Chat ~•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2258,7 +2411,10 @@
     {
       "stepDescription": "Enter the cave. The final deathstone is right before meeting with the mahjarrat.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "3 empty inventory spaces. Bank all your equipment and bring food. If you want to speed up this part",
+        "whenever you need to up or down the northern path teleport to the world gate and re-enter the quest instance"
+      ],
       "highlights": {
         "npc": [
           {
@@ -2307,7 +2463,7 @@
       ]
     },
     {
-      "stepDescription": "Go west and talk to Zemouregal. (Chat ~\u20222\u20222\u20222)",
+      "stepDescription": "Go west and talk to Zemouregal. (Chat ~•2•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2409,12 +2565,60 @@
       ]
     },
     {
+      "stepDescription": "Items recommended: 3 empty inventory spaces. Bank all your equipment and bring food. If you want to speed up this part, whenever you need to up or down the northern path teleport to the world gate and re-enter the quest instance",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Go up the northern path and talk to Seren at the end. (Chat 1)",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "3 empty inventory spaces. Bank all your equipment and bring food. If you want to speed up this part",
-        "whenever you need to up or down the northern path teleport to the world gate and re-enter the quest instance"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -3127,49 +3331,15 @@
     },
     {
       "stepDescription": "Talk to Seren. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3178,49 +3348,15 @@
     },
     {
       "stepDescription": "Go down the path and talk to Seren at the ritual site. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3229,49 +3365,15 @@
     },
     {
       "stepDescription": "Go back up the path and talk to Zaros. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3280,49 +3382,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

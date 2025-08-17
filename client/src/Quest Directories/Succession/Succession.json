@@ -2,7 +2,7 @@
   "questName": "Succession",
   "questSteps": [
     {
-      "stepDescription": "Talk to Adrasteia in the Falador throne room on the 3rd floor[US] of the White Knights' Castle. (Chat \u2713\u20221\u20224)",
+      "stepDescription": "Talk to Adrasteia in the Falador throne room on the 3rd floor[US] of the White Knights' Castle. (Chat ✓•1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -461,7 +461,7 @@
       ]
     },
     {
-      "stepDescription": "To skip the puzzle: Talk to one of the guards by the crates, then right-click one of the objects and reset the puzzle 2 times. (Chat 1\u20221), then right click one of the objects and skip the puzzle. (Chat 2)",
+      "stepDescription": "To skip the puzzle: Talk to one of the guards by the crates, then right-click one of the objects and reset the puzzle 2 times. (Chat 1•1), then right click one of the objects and skip the puzzle. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -563,7 +563,7 @@
       ]
     },
     {
-      "stepDescription": "Continue speaking to Adrasteia after the cutscene. (Chat 1\u20224)",
+      "stepDescription": "Continue speaking to Adrasteia after the cutscene. (Chat 1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -920,7 +920,7 @@
       ]
     },
     {
-      "stepDescription": "Continue speaking to Adrasteia and head to the Magister's chamber. (Chat 2\u20221)",
+      "stepDescription": "Continue speaking to Adrasteia and head to the Magister's chamber. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1481,7 +1481,7 @@
       ]
     },
     {
-      "stepDescription": "Continue speaking with Adrasteia. (Chat 1\u20224)",
+      "stepDescription": "Continue speaking with Adrasteia. (Chat 1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1532,7 +1532,7 @@
       ]
     },
     {
-      "stepDescription": "Return to the Falador throne room and speak to Adrasteia. (Chat 1\u20224)",
+      "stepDescription": "Return to the Falador throne room and speak to Adrasteia. (Chat 1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1940,7 +1940,7 @@
       ]
     },
     {
-      "stepDescription": "Deposit your items via the popup.\nTalk to Vengeance. (Chat 3\u20221\u20223\u20221)",
+      "stepDescription": "Deposit your items via the popup.\nTalk to Vengeance. (Chat 3•1•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2654,7 +2654,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Adrasteia. (Chat 2\u20221\u20223\u20224\u20222\u2022~\u20221)",
+      "stepDescription": "Talk to Adrasteia. (Chat 2•1•3•4•2•~•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

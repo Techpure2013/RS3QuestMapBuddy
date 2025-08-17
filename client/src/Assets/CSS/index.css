@@ -3,7 +3,17 @@
   gap: 10px;
   margin-top: 10px;
 }
-
+.EditDescriptionLabel {
+  display: inline-block; /* make the label respect box styles */
+  padding: 6px 12px; /* space inside the box */
+  margin: 4px 0; /* space outside the box */
+  border: 2px solid #0b0c0c; /* blue border */
+  border-radius: 5px; /* rounded corners */
+  background-color: #f0f8ff; /* light background (AliceBlue) */
+  font-weight: bold; /* make text stand out */
+  cursor: pointer; /* pointer cursor when hovering */
+  width: 6vw;
+}
 .item-list {
   flex: 1;
   display: flex;
@@ -60,26 +70,34 @@
   top: 10px;
   left: 10px;
   z-index: 1000; /* Ensure it's above the map */
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(31, 118, 145, 0.788);
   padding: 15px;
   border-radius: 8px;
   border: 1px solid #ccc;
   width: 350px;
-  max-height: 90vh;
+  max-height: 95vh;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  opacity: 0.8;
+  pointer-events: auto;
 }
 .step-description-display {
   background-color: #f0f8ff; /* AliceBlue */
   border: 1px solid #b0c4de; /* LightSteelBlue */
   border-radius: 5px;
   padding: 10px;
-  margin-top: 10px;
-  max-height: 150px; /* Give it a max height */
-  overflow-y: auto; /* Add a scrollbar if text is long */
 }
-
+.step-description-display textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical; /* user can drag to resize */
+}
+.step-description-display label {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical; /* user can drag to resize */
+}
 .step-description-display p {
   margin: 5px 0 0 0;
   font-style: italic;

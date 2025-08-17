@@ -2,7 +2,7 @@
   "questName": "Dorics Task II (miniquest)",
   "questSteps": [
     {
-      "stepDescription": "Speak to Doric in his hut north of Falador. (Chat 1\u2022\u2713)",
+      "stepDescription": "Speak to Doric in his hut north of Falador. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -308,7 +308,7 @@
       ]
     },
     {
-      "stepDescription": "Return to Doric and speak to him. (Chat 1\u2022\u2713)",
+      "stepDescription": "Return to Doric and speak to him. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

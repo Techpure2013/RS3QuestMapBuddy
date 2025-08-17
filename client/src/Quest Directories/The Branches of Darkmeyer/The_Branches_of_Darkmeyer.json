@@ -2,7 +2,7 @@
   "questName": "The Branches of Darkmeyer",
   "questSteps": [
     {
-      "stepDescription": "Talk to Veliaf Hurtz in the Burgh de Rott pub's basement. (Chat 1\u20221\u2022\u2713\u20221)",
+      "stepDescription": "Talk to Veliaf Hurtz in the Burgh de Rott pub's basement. (Chat 1•1•✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -206,7 +206,7 @@
       ]
     },
     {
-      "stepDescription": "Climb the rope to leave the cave and return to Veliaf Hurtz. (Chat 1\u20221)",
+      "stepDescription": "Climb the rope to leave the cave and return to Veliaf Hurtz. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -308,7 +308,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Safalaan. (Chat 2\u20222\u20221\u20221\u20221\u20221)",
+      "stepDescription": "Talk to Safalaan. (Chat 2•2•1•1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -818,7 +818,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Nessie who is in the courtyard south of the building. (Chat 1\u20221)",
+      "stepDescription": "Talk to Nessie who is in the courtyard south of the building. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -920,7 +920,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to her and exhaust all options, eventually learning about the tree. (Chat 1\u20221\u20223\u20222\u20223\u20221\u20223\u20221\u20223\u20221)",
+      "stepDescription": "Talk to her and exhaust all options, eventually learning about the tree. (Chat 1•1•3•2•3•1•3•1•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1277,7 +1277,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Vanescula on the other side of the grate. (Chat 1\u20221\u20221\u20222) In Darkmeyer, the vyrewatch will attack you when you pass them as opposed to in Meiyerditch.",
+      "stepDescription": "Talk to Vanescula on the other side of the grate. (Chat 1•1•1•2) In Darkmeyer, the vyrewatch will attack you when you pass them as opposed to in Meiyerditch.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1481,7 +1481,7 @@
       ]
     },
     {
-      "stepDescription": "Return to Vanescula. (Chat 1\u20221)",
+      "stepDescription": "Return to Vanescula. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1583,7 +1583,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Sentinel Mortshade, telling him your vampyre name. (Chat ~\u2022~)",
+      "stepDescription": "Talk to Sentinel Mortshade, telling him your vampyre name. (Chat ~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1787,7 +1787,7 @@
       ]
     },
     {
-      "stepDescription": "Terrorising Maria Gadderanks (Chat 1\u20221), (Chat 1\u20221), (Chat 1\u20221)",
+      "stepDescription": "Terrorising Maria Gadderanks (Chat 1•1), (Chat 1•1), (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2195,7 +2195,7 @@
       ]
     },
     {
-      "stepDescription": "Entertaining Misdrievus Vakan (Chat 1) then approach the nearby blood tither (Chat 1). Talk to Misdrievus Vakan again and then enter the building to the west for a cutscene. (Chat 2\u20221)",
+      "stepDescription": "Entertaining Misdrievus Vakan (Chat 1) then approach the nearby blood tither (Chat 1). Talk to Misdrievus Vakan again and then enter the building to the west for a cutscene. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2246,7 +2246,7 @@
       ]
     },
     {
-      "stepDescription": "Speaking to Vanescula Drakan to pledge allegiance to the Drakan family. (Chat 1\u20221\u20221)",
+      "stepDescription": "Speaking to Vanescula Drakan to pledge allegiance to the Drakan family. (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2297,7 +2297,7 @@
       ]
     },
     {
-      "stepDescription": "Killing Captured Meiyerditch citizens for the Vyrewatch guards. Start task by talking to a Vyrewatch guard in south-western jail. (Chat 1\u20221)",
+      "stepDescription": "Killing Captured Meiyerditch citizens for the Vyrewatch guards. Start task by talking to a Vyrewatch guard in south-western jail. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2501,7 +2501,7 @@
       ]
     },
     {
-      "stepDescription": "Enter the Arboretum (Ranis will stop you). (Chat 1\u20221)",
+      "stepDescription": "Enter the Arboretum (Ranis will stop you). (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3164,7 +3164,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Vertida Sefalatis. (Chat 1\u20221\u20221)",
+      "stepDescription": "Talk to Vertida Sefalatis. (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3266,7 +3266,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Kael Forshaw for two silver sickles. (Chat 1\u20222)",
+      "stepDescription": "Talk to Kael Forshaw for two silver sickles. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3623,7 +3623,7 @@
       ]
     },
     {
-      "stepDescription": "How to kill Vanstrom:",
+      "stepDescription": "Items needed: Equip full Darkmeyer disguise, Vertida's bottle of holy water, and a blisterwood weapon of choice",
       "itemsNeeded": [],
       "itemsRecommended": [
         "Combat armour",
@@ -3631,6 +3631,108 @@
         "stat-boosting potions",
         "and legacy combat mode"
       ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: Combat armour, prayer potions, stat-boosting potions, and legacy combat mode",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "How to kill Vanstrom:",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -4189,7 +4291,7 @@
       ]
     },
     {
-      "stepDescription": "When you awaken, speak with Vertida (Chat 1\u20221), and watch a short cutscene.",
+      "stepDescription": "When you awaken, speak with Vertida (Chat 1•1), and watch a short cutscene.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4241,49 +4343,15 @@
     },
     {
       "stepDescription": "Teleport to Burgh de Rott with the medallion (Chat 2) and talk to Veliaf Hurtz. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -4292,49 +4360,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

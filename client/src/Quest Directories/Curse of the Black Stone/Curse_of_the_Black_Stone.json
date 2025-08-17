@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Brhyll Thoksdottir in Daemonheim beside the rewards trader. (Chat 3\u2022\u2713)",
+      "stepDescription": "Talk to Brhyll Thoksdottir in Daemonheim beside the rewards trader. (Chat 3•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -104,10 +104,61 @@
       ]
     },
     {
-      "stepDescription": "Talk to Zhuka (bamboo merchant) at the southern part of the marketplace. (Chat 1)",
+      "stepDescription": "Items needed: Combat gear and a free inventory space next \nTravel to Waiko via Quartermaster Gully in the northern part of Port Sarim.",
       "itemsNeeded": [
         "Combat gear and a free inventory space next \nTravel to Waiko via Quartermaster Gully in the northern part of Port Sarim."
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Zhuka (bamboo merchant) at the southern part of the marketplace. (Chat 1)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -617,6 +668,68 @@
     },
     {
       "stepDescription": "If you have already completed the dungeon, skip the battle. (Chat 1)",
+      "itemsNeeded": [
+        "Uncut dragonstone",
+        "Rope--"
+      ],
+      "itemsRecommended": [
+        "'Chipped' Varrock teleport or Dave's spellbook",
+        "ring of kinship",
+        "dragon trinkets",
+        "or Dungeoneering cape---\nHead to the Varrock Museum using a 'chipped' Varrock teleport",
+        "Dave's spellbook",
+        "or the Varrock lodestone. Go down the flight of stairs",
+        "and walk behind the first flight of stairs to find a door."
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Uncut dragonstone, Rope--\nItems recommended: 'Chipped' Varrock teleport or Dave's spellbook, ring of kinship, dragon trinkets, or Dungeoneering cape---\nHead to the Varrock Museum using a 'chipped' Varrock teleport, Dave's spellbook, or the Varrock lodestone. Go down the flight of stairs, and walk behind the first flight of stairs to find a door.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -668,19 +781,8 @@
     },
     {
       "stepDescription": "Talk to Mr. Mordaut who is behind the door. (Chat 2)",
-      "itemsNeeded": [
-        "Uncut dragonstone",
-        "Rope--"
-      ],
-      "itemsRecommended": [
-        "'Chipped' Varrock teleport or Dave's spellbook",
-        "ring of kinship",
-        "dragon trinkets",
-        "or Dungeoneering cape---\nHead to the Varrock Museum using a 'chipped' Varrock teleport",
-        "Dave's spellbook",
-        "or the Varrock lodestone. Go down the flight of stairs",
-        "and walk behind the first flight of stairs to find a door."
-      ],
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1137,7 +1239,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the adamant dragon in the south-western room to heat the metallic object. (Chat 1\u20223)",
+      "stepDescription": "Talk to the adamant dragon in the south-western room to heat the metallic object. (Chat 1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1189,8 +1291,13 @@
     },
     {
       "stepDescription": "With a rope in your inventory, investigate one of the Pits north of the entrance. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "Combat gear"
+      ],
+      "itemsRecommended": [
+        "Ring of kinship",
+        "Goshima teleport"
+      ],
       "highlights": {
         "npc": [
           {
@@ -1290,14 +1397,60 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Combat gear\nItems recommended: Ring of kinship, Goshima teleport",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Head back to Kerapac's Lab by entering the crumbling watchtower in Daemonheim.",
-      "itemsNeeded": [
-        "Combat gear"
-      ],
-      "itemsRecommended": [
-        "Ring of kinship",
-        "Goshima teleport"
-      ],
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1552,7 +1705,11 @@
     {
       "stepDescription": "Speak to Bryll Thoksdottir back in Daemonheim. (Chat 3) Then \ncomplete the Dragonkin Laboratory which can be done in story mode or\nif you have already completed the dungeon, skip the battle. (Chat 2)",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "Traveler's necklace or Wicked hood",
+        "Mask of the Yellow Wyrm",
+        "Ring of kinship"
+      ],
       "highlights": {
         "npc": [
           {
@@ -1703,13 +1860,9 @@
       ]
     },
     {
-      "stepDescription": "Use the Traveler's necklace or Wicked hood to navigate to the Wizards' Tower, or use the fairy ring to teleport, or run to it from the Draynor lodestone.",
+      "stepDescription": "Items needed: Law rune, Raw fish, and two free inventory spaces",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "Traveler's necklace or Wicked hood",
-        "Mask of the Yellow Wyrm",
-        "Ring of kinship"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1758,7 +1911,109 @@
       ]
     },
     {
-      "stepDescription": "Speak to Wizard Myrtle near the Wizards' Tower. (Chat 1\u20224\u20221)",
+      "stepDescription": "Items recommended: Traveler's necklace or Wicked hood, Mask of the Yellow Wyrm, Ring of kinship",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Use the Traveler's necklace or Wicked hood to navigate to the Wizards' Tower, or use the fairy ring to teleport, or run to it from the Draynor lodestone.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Speak to Wizard Myrtle near the Wizards' Tower. (Chat 1•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1861,8 +2116,12 @@
     },
     {
       "stepDescription": "Fill the empty enchanted \"vacuum\" vial on the Ice Mountain near Edgeville.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "Disguise to enter the Black Knights' Fortress; Combat gear"
+      ],
+      "itemsRecommended": [
+        "'Chipped' Varrock teleport; Desert amulet 2,3,or 4 or The Heart teleport; Waiko teleport; Dragon trinkets or Dungeoneering cape; Ring of charos (a); Ring of kinship; Master archaeologist's outfit"
+      ],
       "highlights": {
         "npc": [
           {
@@ -2115,13 +2374,60 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Disguise to enter the Black Knights' Fortress; Combat gear \nItems recommended: 'Chipped' Varrock teleport; Desert amulet 2,3,or 4 or The Heart teleport; Waiko teleport; Dragon trinkets or Dungeoneering cape; Ring of charos (a); Ring of kinship; Master archaeologist's outfit",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Head to the Edgeville lodestone to activate the Artefact northwest. (Chat 1)",
-      "itemsNeeded": [
-        "Disguise to enter the Black Knights' Fortress; Combat gear"
-      ],
-      "itemsRecommended": [
-        "'Chipped' Varrock teleport; Desert amulet 2,3,or 4 or The Heart teleport; Waiko teleport; Dragon trinkets or Dungeoneering cape; Ring of charos (a); Ring of kinship; Master archaeologist's outfit"
-      ],
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -3088,7 +3394,7 @@
       ]
     },
     {
-      "stepDescription": "Give her the suit of armour. (Chat 1\u20221\u2022~)",
+      "stepDescription": "Give her the suit of armour. (Chat 1•1•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3242,49 +3548,15 @@
     },
     {
       "stepDescription": "Speak to Commandant Bletchley in the Black Knights' Fortress on the 2nd floor[US]. He is standing along the north wall.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3293,49 +3565,15 @@
     },
     {
       "stepDescription": "Speak to Lieutenant Crane.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3344,49 +3582,15 @@
     },
     {
       "stepDescription": "Speak to Bryll Thoksdottir near the war table.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3395,49 +3599,15 @@
     },
     {
       "stepDescription": "Choose any option for your speech. (Chat ~)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3446,49 +3616,15 @@
     },
     {
       "stepDescription": "If this is your first time completing the dungeon, Once finished with the dungeon return to Bryll otherwise. \nIf you have already completed the dungeon, skip the battle. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3497,49 +3633,15 @@
     },
     {
       "stepDescription": "Quest Complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

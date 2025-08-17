@@ -2,7 +2,7 @@
   "questName": "Ode of the Devourer",
   "questSteps": [
     {
-      "stepDescription": "Read note on the cabbage dummy at the Workshop (Fort Forinthry). (Chat \u2713)",
+      "stepDescription": "Read note on the cabbage dummy at the Workshop (Fort Forinthry). (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -512,7 +512,7 @@
       ]
     },
     {
-      "stepDescription": "A cutscene will play select (Chat ~\u2022~\u20223)",
+      "stepDescription": "A cutscene will play select (Chat ~•~•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

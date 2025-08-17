@@ -2,7 +2,7 @@
   "questName": "Hunt for Red Raktuber",
   "questSteps": [
     {
-      "stepDescription": "Talk to Larry in the south-west of the Ardougne Zoo and agree to help. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Larry in the south-west of the Ardougne Zoo and agree to help. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -155,12 +155,63 @@
       ]
     },
     {
-      "stepDescription": "North-east of Rellekka (north of Fremennik lodestone), travel via the small boat to the Iceberg.",
+      "stepDescription": "Items needed: Penguin suit, 8 Silk, 4 (regular) Planks and 1 Thread",
       "itemsNeeded": [
         "Penguin suit",
         "8 Silk",
         "4 (regular) Planks and 1 Thread"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "North-east of Rellekka (north of Fremennik lodestone), travel via the small boat to the Iceberg.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -312,7 +363,7 @@
       ]
     },
     {
-      "stepDescription": "Enter the west room, speak to KGP Interrogator. (Chat 1\u20221\u20222\u20221\u20223\u20222\u20221\u20223\u20222\u20221\u20222\u20221)",
+      "stepDescription": "Enter the west room, speak to KGP Interrogator. (Chat 1•1•2•1•3•2•1•3•2•1•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -618,7 +669,7 @@
       ]
     },
     {
-      "stepDescription": "Return to Ping & Pong. (Chat 4\u20225\u20221\u20223\u20224\u20222\u20221)",
+      "stepDescription": "Return to Ping & Pong. (Chat 4•5•1•3•4•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1996,6 +2047,62 @@
     },
     {
       "stepDescription": "Exit your penguin suit and talk to Larry.",
+      "itemsNeeded": [
+        "The toolbox",
+        "the fish hats",
+        "the conch shell",
+        "penguin suit"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: The toolbox, the fish hats, the conch shell, penguin suit",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2047,12 +2154,7 @@
     },
     {
       "stepDescription": "South-east of Yanille just outside the city walls, talk to Larry. (Chat 1)",
-      "itemsNeeded": [
-        "The toolbox",
-        "the fish hats",
-        "the conch shell",
-        "penguin suit"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -3021,49 +3123,15 @@
     },
     {
       "stepDescription": "Talk to Chuck towards the east side of the island to leave the island and get a cutscene.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3072,49 +3140,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

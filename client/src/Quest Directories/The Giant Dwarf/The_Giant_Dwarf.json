@@ -155,7 +155,7 @@
       ]
     },
     {
-      "stepDescription": "After the cutscene, you should spawn in the same room with Commander Veldaban. The chat instance should end with you accepting the quest . (Chat \u2713)",
+      "stepDescription": "After the cutscene, you should spawn in the same room with Commander Veldaban. The chat instance should end with you accepting the quest . (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -563,7 +563,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Vermundi. (Chat 2\u20221)",
+      "stepDescription": "Talk to Vermundi. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -971,7 +971,7 @@
       ]
     },
     {
-      "stepDescription": "Go to the North-West corner and talk to Santiri. (Chat 2\u20222\u20222)",
+      "stepDescription": "Go to the North-West corner and talk to Santiri. (Chat 2•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1328,7 +1328,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Thurgo in his small hut (fairy ring AIQ), south of Port Sarim, and north of Mudskipper Point. (Chat 2\u20222\u20221)",
+      "stepDescription": "If you have not completed The Knight's Sword: \nTake a redberry pie with you when you talk to Thurgo.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1379,7 +1379,58 @@
       ]
     },
     {
-      "stepDescription": "If Knight's sword is complete (Chat 3\u20222\u20221)",
+      "stepDescription": "Talk to Thurgo in his small hut (fairy ring AIQ), south of Port Sarim, and north of Mudskipper Point. (Chat 2•2•2•1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "If The Knight's Sword is complete (Chat 2•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1685,7 +1736,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to any secretary (yellow is closest to metal bank) - your character's gender may disqualify your eligibility to work for that colour of company, consequently try another colour. (Chat 3\u2022~)",
+      "stepDescription": "Talk to any secretary (yellow is closest to metal bank) - your character's gender may disqualify your eligibility to work for that colour of company, consequently try another colour. (Chat 3•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1787,7 +1838,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the director. (Chat 3\u2022~)",
+      "stepDescription": "Talk to the director. (Chat 3•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1889,7 +1940,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the director. (Chat 2\u20223\u20221\u20221)",
+      "stepDescription": "Talk to the director. (Chat 2•3•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1940,7 +1991,7 @@
       ]
     },
     {
-      "stepDescription": "Return to Commander Veldaban in Black Guard headquarters, where you started the quest (west of the palace and west of the bank). (Chat 1\u20222\u20222)",
+      "stepDescription": "Return to Commander Veldaban in Black Guard headquarters, where you started the quest (west of the palace and west of the bank). (Chat 1•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1992,49 +2043,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

@@ -2,7 +2,7 @@
   "questName": "One Small Favour",
   "questSteps": [
     {
-      "stepDescription": "Talk to Yanni Salika in Shilo Village (north of the bridge). (Chat 2\u20225\u2022\u2713)",
+      "stepDescription": "Talk to Yanni Salika in Shilo Village (north of the bridge). (Chat 2•5•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the jungle forester south of the village. You will receive their blunt hatchet. (Chat 4\u20221)",
+      "stepDescription": "Talk to the jungle forester south of the village. You will receive their blunt hatchet. (Chat 4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to Brian in Port Sarim (Axe shop north-east of the lodestone). Make sure he takes the blunt hatchet before you leave. (Chat 3\u20222\u20224)",
+      "stepDescription": "Items needed: 3 steel bars, clean harralander, clean marrentill, and vial of water",
       "itemsNeeded": [
         "3 steel bars",
         "clean harralander",
@@ -211,7 +211,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to Aggie, the witch in Draynor Village. (Chat 1\u20223\u20222)",
+      "stepDescription": "Speak to Brian in Port Sarim (Axe shop north-east of the lodestone). Make sure he takes the blunt hatchet before you leave. (Chat 3•2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -262,7 +262,7 @@
       ]
     },
     {
-      "stepDescription": "Go to the H.A.M. Hideout (north-east of the Lumbridge furnace and west of the Lumbridge cow field). Pick the lock on the old mine entrance, and climb down. Head to the southern cavern and speak to Johanhus Ulsbrecht. (Chat 4\u20223\u20222)",
+      "stepDescription": "Speak to Aggie, the witch in Draynor Village. (Chat 1•3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -313,7 +313,58 @@
       ]
     },
     {
-      "stepDescription": "Or if player has completed The Chosen Commander. (Chat 2\u20224\u20223\u20222)",
+      "stepDescription": "Go to the H.A.M. Hideout (north-east of the Lumbridge furnace and west of the Lumbridge cow field). Pick the lock on the old mine entrance, and climb down. Head to the southern cavern and speak to Johanhus Ulsbrecht. (Chat 4•3•2)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Or if player has completed The Chosen Commander. (Chat 2•4•3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -517,7 +568,7 @@
       ]
     },
     {
-      "stepDescription": "Take 3 steel bars (cannot be noted) to Horvik in the platebody shop in Varrock (north-east of the central fountain), who is ill and needs a herbal tincture. (Chat 2\u20223\u20222)",
+      "stepDescription": "Take 3 steel bars (cannot be noted) to Horvik in the platebody shop in Varrock (north-east of the central fountain), who is ill and needs a herbal tincture. (Chat 2•3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -568,7 +619,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to the Apothecary, located in south-west Varrock, at the potion icon. (Chat 1\u20225\u20222)",
+      "stepDescription": "Speak to the Apothecary, located in south-west Varrock, at the potion icon. (Chat 1•5•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -619,7 +670,7 @@
       ]
     },
     {
-      "stepDescription": "Or if player has destroyed their Doctor's hat.(Chat 2\u20225\u20222)",
+      "stepDescription": "Or if player has destroyed their Doctor's hat.(Chat 2•5•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -721,7 +772,7 @@
       ]
     },
     {
-      "stepDescription": "Enter the Dwarven Mine and find Hammerspike Stoutbeard in the south west corner. Ask him about Tassie Slipcast. (Chat 4\u20222)",
+      "stepDescription": "Enter the Dwarven Mine and find Hammerspike Stoutbeard in the south west corner. Ask him about Tassie Slipcast. (Chat 4•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -772,7 +823,7 @@
       ]
     },
     {
-      "stepDescription": "Go to Taverley and talk with Sanfew, located in the house slightly south-west of Pikkupstix's Summoning Shop. (Chat 2\u20222\u20223\u20221)",
+      "stepDescription": "Go to Taverley and talk with Sanfew, located in the house slightly south-west of Pikkupstix's Summoning Shop. (Chat 2•2•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -823,7 +874,7 @@
       ]
     },
     {
-      "stepDescription": "Or if \"Eadgar's Ruse\" is completed. (Chat 3\u20222\u20223\u20221)",
+      "stepDescription": "Or if \"Eadgar's Ruse\" is completed. (Chat 3•2•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -925,58 +976,7 @@
       ]
     },
     {
-      "stepDescription": "Travel to White Wolf Mountain, and speak to Captain Bleemadge. (Chat 2\u20224) Right-click to chat with him.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Travel to Catherby and speak to Arhein on the docks. (General shop owner, south of the lodestone) (Chat 3\u20221)",
+      "stepDescription": "Travel to White Wolf Mountain, and speak to Captain Bleemadge. (Chat 2•4) Right-click to chat with him.",
       "itemsNeeded": [
         "14 free inventory spaces",
         "around 2000 coins (or 2+ cut opals",
@@ -1031,7 +1031,109 @@
       ]
     },
     {
-      "stepDescription": "Go to Seers' Village and speak to Phantuwti Fanstuwi Farsight, south-east of the lodestone. (Chat 4\u20225\u20221)",
+      "stepDescription": "Items needed: 14 free inventory spaces, around 2000 coins (or 2+ cut opals, jades and red topazes in case you crush the ones you get)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Travel to Catherby and speak to Arhein on the docks. (General shop owner, south of the lodestone) (Chat 3•1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Go to Seers' Village and speak to Phantuwti Fanstuwi Farsight, south-east of the lodestone. (Chat 4•5•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1235,7 +1337,7 @@
       ]
     },
     {
-      "stepDescription": "Go to Ardougne and speak to Wizard Cromperty, located north-east from the market, the house with the blue floor. (Chat 4\u20222)",
+      "stepDescription": "Go to Ardougne and speak to Wizard Cromperty, located north-east from the market, the house with the blue floor. (Chat 4•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1337,7 +1439,7 @@
       ]
     },
     {
-      "stepDescription": "Go to Port Khazard (teleport to Catherby and use a charter to Port Khazard or teleport to the Yanille Lodestone, run east through town then north) and talk to Tindel Marchant on the southern pier. (Chat 2\u20221)",
+      "stepDescription": "Go to Port Khazard (teleport to Catherby and use a charter to Port Khazard or teleport to the Yanille Lodestone, run east through town then north) and talk to Tindel Marchant on the southern pier. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1388,7 +1490,7 @@
       ]
     },
     {
-      "stepDescription": "While you are here you can also speak to him about identifying swords for an Ardougne achievement (Chat 1\u20221)",
+      "stepDescription": "While you are here you can also speak to him about identifying swords for an Ardougne achievement (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1439,7 +1541,7 @@
       ]
     },
     {
-      "stepDescription": "Go to the Feldip Hills and talk to Rantz, located to the far east of fairy ring AKS. (Chat 1\u20224)",
+      "stepDescription": "Go to the Feldip Hills and talk to Rantz, located to the far east of fairy ring AKS. (Chat 1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1490,8 +1592,15 @@
       ]
     },
     {
-      "stepDescription": "Go west until you see Gnormadium Avlafrim and a gnome glider. Talk to him by right-clicking (Chat 4\u20221) and search each landing light for a gem, cut it, and put it back in the landing lights (from west to east is sapphire, opal, red topaz, jade). If you crush one talk to him again to buy a replacement. (Chat 4\u20221)",
-      "itemsNeeded": [],
+      "stepDescription": "Go west until you see Gnormadium Avlafrim and a gnome glider. Talk to him by right-clicking (Chat 4•1) and search each landing light for a gem, cut it, and put it back in the landing lights (from west to east is sapphire, opal, red topaz, jade). If you crush one talk to him again to buy a replacement. (Chat 4•1)",
+      "itemsNeeded": [
+        "Armour weapon for Slagilith fight. (Weak to air spells)",
+        "bronze bar",
+        "iron bar",
+        "steel bar",
+        "empty pot",
+        "and 5 pigeon cages"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1592,15 +1701,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Armour weapon for Slagilith fight. (Weak to air spells), bronze bar, iron bar, steel bar, empty pot, and 5 pigeon cages",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Go back to Rantz to receive a comfy mattress. (Chat 1)",
-      "itemsNeeded": [
-        "Armour weapon for Slagilith fight. (Weak to air spells)",
-        "bronze bar",
-        "iron bar",
-        "steel bar",
-        "empty pot",
-        "and 5 pigeon cages"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1854,7 +2007,7 @@
       ]
     },
     {
-      "stepDescription": "Go to Seers' Village and speak to Phantuwti in his house. (Chat 4\u20224\u20222\u20222\u20221)",
+      "stepDescription": "Go to Seers' Village and speak to Phantuwti in his house. (Chat 4•4•2•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2313,7 +2466,7 @@
       ]
     },
     {
-      "stepDescription": "Go to the apothecary in Varrock and give him the pot. (Chat 1\u20225)",
+      "stepDescription": "Go to the apothecary in Varrock and give him the pot. (Chat 1•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2364,7 +2517,7 @@
       ]
     },
     {
-      "stepDescription": "Or if player has destroyed their Doctor's hat.(Chat 2\u20225)",
+      "stepDescription": "Or if player has destroyed their Doctor's hat.(Chat 2•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2415,7 +2568,7 @@
       ]
     },
     {
-      "stepDescription": "Go to Horvik (Varrock Platebody Shop) and give him the herbal tincture and breathing salts. (Chat 2\u20223). Talk to him again with five pigeon cages to get some chicken cages. (Chat 2\u20223)",
+      "stepDescription": "Go to Horvik (Varrock Platebody Shop) and give him the herbal tincture and breathing salts. (Chat 2•3). Talk to him again with five pigeon cages to get some chicken cages. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2671,49 +2824,15 @@
     },
     {
       "stepDescription": "Go back to Shilo Village and speak with the jungle forester, who gives you red mahogany logs in exchange for the hatchet. (Chat 4) (Closest fairy ring: CKR)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2722,49 +2841,15 @@
     },
     {
       "stepDescription": "Speak with Yanni in Shilo Village. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2773,49 +2858,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

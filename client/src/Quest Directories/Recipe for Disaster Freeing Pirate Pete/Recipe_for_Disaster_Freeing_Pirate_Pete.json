@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Cook in the Lumbridge Castle. (Chat 3\u20221\u20222\u20223\u20225)",
+      "stepDescription": "Talk to the Cook in the Lumbridge Castle. (Chat 3•1•2•3•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -104,13 +104,64 @@
       ]
     },
     {
-      "stepDescription": "Bank any Summoning pouches or Pets.",
+      "stepDescription": "Items needed: 1 fishbowl, 1 needle, 3 bronze wire, Weapon",
       "itemsNeeded": [
         "1 fishbowl",
         "1 needle",
         "3 bronze wire",
         "Weapon"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Bank any Summoning pouches or Pets.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -211,7 +262,7 @@
       ]
     },
     {
-      "stepDescription": "With your fishbowl, talk to him again. (Chat 1\u20222)",
+      "stepDescription": "With your fishbowl, talk to him again. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -313,7 +364,7 @@
       ]
     },
     {
-      "stepDescription": "Whilst weighing under 27kg (exactly 27 works), having your needle and bronze wire, ask Murphy to go diving. (Chat 1\u20221) There is a bank deposit box right next to Murphy.",
+      "stepDescription": "Whilst weighing under 27kg (exactly 27 works), having your needle and bronze wire, ask Murphy to go diving. (Chat 1•1) There is a bank deposit box right next to Murphy.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1334,49 +1385,15 @@
     },
     {
       "stepDescription": "Subquest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

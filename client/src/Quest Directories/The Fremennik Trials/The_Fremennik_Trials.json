@@ -2,7 +2,7 @@
   "questName": "The Fremennik Trials",
   "questSteps": [
     {
-      "stepDescription": "Talk to Brundt the Chieftain in the longhall in Rellekka. (Chat 3\u2022\u2713\u20221)",
+      "stepDescription": "Talk to Brundt the Chieftain in the longhall in Rellekka. (Chat 3•✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Pick up a Keg of beer and Beer from one of the tables.",
+      "stepDescription": "If Mountain Daughter has been completed but you never talked to Brundt the Chieftain after its completion: (Chat 2•3•✓•1)\nItems needed: Beer, 250 coins then go \ntalk to Manni the Reveller in the longhall next to Brundt. (Chat 1)",
       "itemsNeeded": [
         "Beer",
         "250 coins then go \ntalk to Manni the Reveller in the longhall next to Brundt. (Chat 1)"
@@ -107,7 +107,58 @@
       ]
     },
     {
-      "stepDescription": "Travel to Seers' Village and purchase a low alcohol keg from the Poison Salesman. (Chat 2\u20221)",
+      "stepDescription": "Pick up a Keg of beer and Beer from one of the tables.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Travel to Seers' Village and purchase a low alcohol keg from the Poison Salesman. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -261,6 +312,63 @@
     },
     {
       "stepDescription": "Challenge Manni. (Chat 1)",
+      "itemsNeeded": [
+        "Raw potato",
+        "onion",
+        "cabbage",
+        "and a raw shark then go\nspeak to Olaf the Bard",
+        "who is located east of the longhall. (Chat 1)"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Raw potato, onion, cabbage, and a raw shark then go\nspeak to Olaf the Bard, who is located east of the longhall. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -312,13 +420,7 @@
     },
     {
       "stepDescription": "Travel to the swaying tree, east of Rellekka's southern border, north-west of the Golden Apple Tree on the world map.",
-      "itemsNeeded": [
-        "Raw potato",
-        "onion",
-        "cabbage",
-        "and a raw shark then go\nspeak to Olaf the Bard",
-        "who is located east of the longhall. (Chat 1)"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -676,7 +778,9 @@
     {
       "stepDescription": "Use the Golden fleece on the spinning wheel in south-west Rellekka. Use the golden wool on the unstrung lyre.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "Combat gear then \ntalk to Sigli near Rellekka's southern entrance. (Chat 1•1)"
+      ],
       "highlights": {
         "npc": [
           {
@@ -776,11 +880,62 @@
       ]
     },
     {
-      "stepDescription": "Use the received hunters' talisman to locate and kill the Draugen. The Draugen is not visible until you get close to his location. Look for a tiny grey butterfly. There are only a few of these, one of which is the Draugen. Once in melee distance of the butterfly, use the 'Locate' function on the talisman once again, and the Draugen will appear.",
+      "stepDescription": "Return to Rellekka and enter the backstage of the long hall through the north-east door that is guarded by a bouncer. Play your lyre in front of the crowd. You will receive Olaf's vote.\nItems recommended: Combat gear then \ntalk to Sigli near Rellekka's southern entrance. (Chat 1•1)",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "Combat gear then \ntalk to Sigli near Rellekka's southern entrance. (Chat 1\u20221)"
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Use the received hunters' talisman to locate and kill the Draugen. The Draugen is not visible until you get close to his location. Look for a tiny grey butterfly. There are only a few of these, one of which is the Draugen. Once in melee distance of the butterfly, use the 'Locate' function on the talisman once again, and the Draugen will appear.",
+      "itemsNeeded": [
+        "5,000 coins then go \ntalk to Sigmund in the marketplace. (Chat 1)"
       ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -931,10 +1086,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: 5,000 coins then go \ntalk to Sigmund in the marketplace. (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Talk to the Sailor on the middle dock about the exotic flower. He wants a romantic ballad. (Chat 1)",
-      "itemsNeeded": [
-        "5,000 coins then go \ntalk to Sigmund in the marketplace. (Chat 1)"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1545,7 +1749,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Askeladden outside the longhall. Buy the promissory note for 5,000 gp. (Chat 1\u20221)",
+      "stepDescription": "Talk to Askeladden outside the longhall. Buy the promissory note for 5,000 gp. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2259,9 +2463,15 @@
       ]
     },
     {
-      "stepDescription": "Talk to Swensen in his house south-west of the longhall. (Chat 1\u20222\u20221)",
+      "stepDescription": "Talk to Swensen in his house south-west of the longhall. (Chat 1•2•1)",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "A lot of food (such as sharks)",
+        "Rings of recoil",
+        "Super attack potions",
+        "Super strength potions",
+        "and Super defence potions. Weapon poison also works. Make sure to store all armour and weapons prior to visiting Thorvald."
+      ],
       "highlights": {
         "npc": [
           {
@@ -2463,15 +2673,60 @@
       ]
     },
     {
+      "stepDescription": "Items recommended: A lot of food (such as sharks), Rings of recoil, Super attack potions, Super strength potions, and Super defence potions. Weapon poison also works. Make sure to store all armour and weapons prior to visiting Thorvald.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Talk to Thorvald the Warrior in the helmet store north of the longhall. (Chat 1) In order to receive his vote, you must kill a special warrior called Koschei the deathless.\nHowever...",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "A lot of food (such as sharks)",
-        "Rings of recoil",
-        "Super attack potions",
-        "Super strength potions",
-        "and Super defence potions. Weapon poison also works. Make sure to store all armour and weapons prior to visiting Thorvald."
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -3439,7 +3694,9 @@
     },
     {
       "stepDescription": "Fill the jug again, and use it with the bucket to get a 4/5ths full bucket.\nUse the 4/5ths full bucket with the chest, and it will open, giving you a vase.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "10 free inventory slots"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -3541,49 +3798,15 @@
     },
     {
       "stepDescription": "Use the lid on the vase to get a sealed vase.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3592,49 +3815,15 @@
     },
     {
       "stepDescription": "Use the sealed vase with the frozen table to freeze the water, which then expands in the vase and shatters it. You will receive a key frozen in a block of ice (if you accidentally freeze the water without sealing it, use it on the range to empty it).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3643,49 +3832,32 @@
     },
     {
       "stepDescription": "Thaw the frozen key on the range, then go down the eastern ladder again and out the exit. You will receive Peer the Seer's vote.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: 10 free inventory slots",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3695,50 +3867,14 @@
     {
       "stepDescription": "Talk to Brundt the Chieftain in the longhall in Rellekka.",
       "itemsNeeded": [
-        "10 free inventory slots"
+        "none"
       ],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3747,49 +3883,15 @@
     },
     {
       "stepDescription": "Congratulations, quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

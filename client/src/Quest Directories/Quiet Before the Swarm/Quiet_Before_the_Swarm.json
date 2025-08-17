@@ -2,7 +2,7 @@
   "questName": "Quiet Before the Swarm",
   "questSteps": [
     {
-      "stepDescription": "Speak to Sir Tiffy Cashien in the Falador Park about the void knights. (Chat 1\u2022\u2713) \nif Slug Menace isn't complete (Chat 2\u2022\u2713)",
+      "stepDescription": "Speak to Sir Tiffy Cashien in the Falador Park about the void knights. (Chat 1•✓) \nif Slug Menace isn't complete (Chat 2•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -767,7 +767,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Jessika about the crimes she has committed. (Chat 5\u20223)",
+      "stepDescription": "Talk to Jessika about the crimes she has committed. (Chat 5•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1379,7 +1379,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the toll booth to send yourself over. (Chat 1\u20221)",
+      "stepDescription": "Talk to the toll booth to send yourself over. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1481,7 +1481,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the toll booth to send Bernard over. (Chat 1\u20221)",
+      "stepDescription": "Talk to the toll booth to send Bernard over. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

@@ -2,7 +2,7 @@
   "questName": "The Lord of Vampyrium",
   "questSteps": [
     {
-      "stepDescription": "Talk to Vanescula Drakan at the docks south-east of Burgh de Rott. (Chat \u2713)",
+      "stepDescription": "Talk to Vanescula Drakan at the docks south-east of Burgh de Rott. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -971,7 +971,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Vanescula. (Chat ~\u2022~\u2022~\u2022~)",
+      "stepDescription": "Talk to Vanescula. (Chat ~•~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4235,7 +4235,7 @@
       ]
     },
     {
-      "stepDescription": "Start In Memory of the Myreque (miniquest) now by talking to Veliaf Hurtz north-west of the Canifis lodestone. The miniquest can only be completed 10 or more days after talking to them",
+      "stepDescription": "Start In Memory of the Myreque (miniquest) now by talking to Veliaf Hurtz north-west of the Canifis lodestone.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

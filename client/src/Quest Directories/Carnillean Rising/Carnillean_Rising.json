@@ -2,7 +2,7 @@
   "questName": "Carnillean Rising",
   "questSteps": [
     {
-      "stepDescription": "Outside the Carnillean Mansion south-west of East Ardougne, to talk to Xenia. (Chat 2\u20221\u2022\u2713)",
+      "stepDescription": "Outside the Carnillean Mansion south-west of East Ardougne, to talk to Xenia. (Chat 2•1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Ceril Carnillean. (Chat 1\u20221\u20221\u20224)",
+      "stepDescription": "Talk to Ceril Carnillean. (Chat 1•1•1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Butler Crichton. (Chat 1\u20221)",
+      "stepDescription": "Talk to Butler Crichton. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -512,7 +512,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Sarsaparilla. (Chat 3), then talk again. (Chat 3\u20222\u20222\u20224\u20221)",
+      "stepDescription": "Talk to Sarsaparilla. (Chat 3), then talk again. (Chat 3•2•2•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -971,7 +971,7 @@
       ]
     },
     {
-      "stepDescription": "Continue through the cave and talk to the goblins. (Chat 3\u20223\u20221)",
+      "stepDescription": "Continue through the cave and talk to the goblins. (Chat 3•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1838,7 +1838,7 @@
       ]
     },
     {
-      "stepDescription": "Head back into the house and talk to Philipe. (Chat \u2713)",
+      "stepDescription": "Head back into the house and talk to Philipe. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1889,7 +1889,7 @@
       ]
     },
     {
-      "stepDescription": "Pickpocket him. Talk to him again. (Chat 4\u2022\u2713\u20221)",
+      "stepDescription": "Pickpocket him. Talk to him again. (Chat 4•✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

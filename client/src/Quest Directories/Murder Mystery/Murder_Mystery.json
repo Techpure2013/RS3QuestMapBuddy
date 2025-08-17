@@ -2,7 +2,7 @@
   "questName": "Murder Mystery",
   "questSteps": [
     {
-      "stepDescription": "Talk to a guard on the Sinclair Mansion property which is located north of Camelot Castle. (Chat \u2713)",
+      "stepDescription": "Talk to a guard on the Sinclair Mansion property which is located north of Camelot Castle. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -869,7 +869,7 @@
       ]
     },
     {
-      "stepDescription": "Or if \"The Fremennik Trials\" is started. (Chat 1\u20222)",
+      "stepDescription": "Or if \"The Fremennik Trials\" is started. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

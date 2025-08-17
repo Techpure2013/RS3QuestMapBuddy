@@ -2,7 +2,7 @@
   "questName": "In Search of the Myreque",
   "questSteps": [
     {
-      "stepDescription": "Talk to Vanstrom Klause in the Hair of the Dog tavern in Canifis. (Chat 2\u20224\u20224\u2022\u2713)",
+      "stepDescription": "Items needed: Steel weapons, 75 steel nails, druid pouch, normal planks, combat equipment",
       "itemsNeeded": [
         "Steel weapons",
         "75 steel nails",
@@ -10,6 +10,57 @@
         "normal planks",
         "combat equipment"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Vanstrom Klause in the Hair of the Dog tavern in Canifis. (Chat 2•4•4•✓)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -365,7 +416,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Cyreg Paddlehorn, before the bridge east of Mort'ton. (Chat 2\u20222\u20223\u20223\u20221)",
+      "stepDescription": "Talk to Cyreg Paddlehorn, before the bridge east of Mort'ton. (Chat 2•2•3•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1385,7 +1436,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Veliaf. (Chat 3\u20225)",
+      "stepDescription": "Talk to Veliaf. (Chat 3•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1590,49 +1641,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

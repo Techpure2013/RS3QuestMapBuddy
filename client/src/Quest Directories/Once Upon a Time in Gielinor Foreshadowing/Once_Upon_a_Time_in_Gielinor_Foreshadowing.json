@@ -2,7 +2,7 @@
   "questName": "Once Upon a Time in Gielinor Foreshadowing",
   "questSteps": [
     {
-      "stepDescription": "Talk to Relomia at the Blue Moon Inn in Varrock. (Chat \u2713)",
+      "stepDescription": "Talk to Relomia at the Blue Moon Inn in Varrock. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -461,7 +461,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Delrith. (Chat 3\u20221\u20222\u20225\u20224)",
+      "stepDescription": "Talk to Delrith. (Chat 3•1•2•5•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -920,7 +920,7 @@
       ]
     },
     {
-      "stepDescription": "Re-equip the party hat and speak to Relomia in the Blue Moon Inn. (Chat 3\u20224\u20223)",
+      "stepDescription": "Re-equip the party hat and speak to Relomia in the Blue Moon Inn. (Chat 3•4•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

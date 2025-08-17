@@ -2,12 +2,63 @@
   "questName": "In Aid of the Myreque",
   "questSteps": [
     {
-      "stepDescription": "*Note: to save a bank run, also take the items needed for the next chapter. If you don't want to use a beast of burden, bringing 6 planks and 24 nails will also save you one bank run.",
+      "stepDescription": "Items needed: 1 food, 1-5 buckets and 9 free spaces, preferably charged druid pouch so your food won't rot",
       "itemsNeeded": [
         "1 food",
         "1-5 buckets and 9 free spaces",
         "preferably charged druid pouch so your food won't rot"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "*Note: to save a bank run, also take the items needed for the next chapter. If you don't want to use a beast of burden, bringing 6 planks and 24 nails will also save you one bank run.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -108,7 +159,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Veliaf Hurtz. (Chat 1\u20222\u20221\u2022\u2713\u20221)",
+      "stepDescription": "Talk to Veliaf Hurtz. (Chat 1•2•1•✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -465,7 +516,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Florin. (Chat 4\u20225)",
+      "stepDescription": "Talk to Florin. (Chat 4•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -720,7 +771,66 @@
       ]
     },
     {
-      "stepDescription": "Go up and talk to any villager. (Chat 3\u20224)",
+      "stepDescription": "Go up and talk to any villager. (Chat 3•4)",
+      "itemsNeeded": [
+        "11 planks",
+        "10 bronze hatchets",
+        "3 tinderboxes",
+        "44 nails",
+        "2 steel bars",
+        "1 swamp paste",
+        "1 coal and 10 mackerel or snails (all un-noted). A beast of burden familiar may also help out in holding all the needed supplies. A plank box may help with inventory space as well."
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: 11 planks, 10 bronze hatchets, 3 tinderboxes, 44 nails, 2 steel bars, 1 swamp paste, 1 coal and 10 mackerel or snails (all un-noted). A beast of burden familiar may also help out in holding all the needed supplies. A plank box may help with inventory space as well.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -771,16 +881,8 @@
       ]
     },
     {
-      "stepDescription": "Talk to Aurel in the general store. (Chat 3\u20224)",
-      "itemsNeeded": [
-        "11 planks",
-        "10 bronze hatchets",
-        "3 tinderboxes",
-        "44 nails",
-        "2 steel bars",
-        "1 swamp paste",
-        "1 coal and 10 mackerel or snails (all un-noted). A beast of burden familiar may also help out in holding all the needed supplies. A plank box may help with inventory space as well."
-      ],
+      "stepDescription": "Talk to Aurel in the general store. (Chat 3•4)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -932,7 +1034,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Aurel. (Chat 4\u20225)",
+      "stepDescription": "Talk to Aurel. (Chat 4•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1034,7 +1136,7 @@
       ]
     },
     {
-      "stepDescription": "Return the crate to Aurel.\nTalk to Cornelius in the bank. (Chat 4\u20225)",
+      "stepDescription": "Return the crate to Aurel.\nTalk to Cornelius in the bank. (Chat 4•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1187,7 +1289,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Cornelius. (Chat 4\u20223)",
+      "stepDescription": "Talk to Cornelius. (Chat 4•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1289,7 +1391,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to any villager. (Chat 4\u20225)",
+      "stepDescription": "Talk to any villager. (Chat 4•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1342,7 +1444,10 @@
     {
       "stepDescription": "Use two steel bars and a piece of coal on the furnace to the east.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "For fight with Gadderanks: magic equipment",
+        "runes for magic attacks"
+      ],
       "highlights": {
         "npc": [
           {
@@ -1442,12 +1547,111 @@
       ]
     },
     {
+      "stepDescription": "Items needed: A silver melee weapon (silver sickle), combat equipment, food",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: For fight with Gadderanks: magic equipment, runes for magic attacks",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Talk to Gadderanks in the general store.",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "For fight with Gadderanks: magic equipment",
-        "runes for magic attacks"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1905,7 +2109,15 @@
     },
     {
       "stepDescription": "Kill the vampyres.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Rope",
+        "water rune",
+        "cosmic rune",
+        "soft clay",
+        "cut sapphire",
+        "silver bar",
+        "mithril bar (metal bank is fine)"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1955,7 +2167,7 @@
       ]
     },
     {
-      "stepDescription": "Enter the Mausoleum west of Canifis and talk to Drezel until he gives you a key. (Chat 2) then (Chat 1\u20224\u20223)",
+      "stepDescription": "Enter the Mausoleum west of Canifis and talk to Drezel until he gives you a key. (Chat 2) then (Chat 1•4•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2108,16 +2320,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Rope, water rune, cosmic rune, soft clay, cut sapphire, silver bar, mithril bar (metal bank is fine)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Return to Canifis and enter the trapdoor south of the pub.",
-      "itemsNeeded": [
-        "Rope",
-        "water rune",
-        "cosmic rune",
-        "soft clay",
-        "cut sapphire",
-        "silver bar",
-        "mithril bar (metal bank is fine)"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2321,49 +2576,15 @@
     },
     {
       "stepDescription": "Enchant it using the Enchant Level 1 Jewellery spell.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2372,49 +2593,15 @@
     },
     {
       "stepDescription": "Use the rod on the well in the room west of Drezel in the Mausoleum (must have rope in inventory).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2423,49 +2610,15 @@
     },
     {
       "stepDescription": "Return to Burgh de Rott, and go to the cellar in the pub where you previously cleared the rubble.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2473,50 +2626,16 @@
       ]
     },
     {
-      "stepDescription": "Talk to Veliaf. (Chat 1\u20221)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "Talk to Veliaf. (Chat 1•1)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2525,49 +2644,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

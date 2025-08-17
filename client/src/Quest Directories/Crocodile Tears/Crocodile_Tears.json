@@ -2,7 +2,7 @@
   "questName": "Crocodile Tears",
   "questSteps": [
     {
-      "stepDescription": "If you have not already done so, bring Leela to Senliten by talking to her along the fence north of the prison in Draynor Village.",
+      "stepDescription": "Items recommended: enchanted water tiara, waterskins, or other desert heat protection-\nThe fastest ways to get to Senliten are: \nAmulet of glory teleport to Al Kharid then use the magic carpet to Uzer and run south, \nDesert amulet 2 teleport to Nardah then run north-east, Desert amulet 4 teleport to Uzer then run south, or\nFairy ring code DLQ then run east",
       "itemsNeeded": [],
       "itemsRecommended": [
         "enchanted water tiara",
@@ -12,6 +12,57 @@
         "Desert amulet 4 teleport to Uzer then run south",
         "or\nFairy ring code DLQ then run east"
       ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "If you have not already done so, bring Leela to Senliten by talking to her along the fence north of the prison in Draynor Village.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -111,62 +162,11 @@
       ]
     },
     {
-      "stepDescription": "Speak with Senliten. (Chat 3\u20223\u2022\u2713)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Talk to Jex, who is north-east of the Sphinx. (Chat 2\u20223\u20221\u20222\u20223)",
+      "stepDescription": "Speak with Senliten. (Chat 3•3•✓)",
       "itemsNeeded": [
         "rope and a cat",
         "kitten",
-        "or hellcat-\nTalk to the Sphinx in Sophanem with your cat (do not wear a catspeak amulet or cramulet). (Chat 2\u20223\u20223\u20222)"
+        "or hellcat-\nTalk to the Sphinx in Sophanem with your cat (do not wear a catspeak amulet or cramulet). (Chat 2•3•3•2)"
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -217,9 +217,119 @@
       ]
     },
     {
-      "stepDescription": "Return to Senliten. (Chat 3)",
+      "stepDescription": "Items needed: rope and a cat, kitten, or hellcat-\nTalk to the Sphinx in Sophanem with your cat (do not wear a catspeak amulet or cramulet). (Chat 2•3•3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Jex, who is north-east of the Sphinx. (Chat 2•3•1•2•3)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to Senliten. (Chat 3)",
+      "itemsNeeded": [
+        "dowsing rod",
+        "rope",
+        "ancestral key-"
+      ],
+      "itemsRecommended": [
+        "enchanted water tiara",
+        "waterskins",
+        "or other desert heat protection----\nEnter the temple again but use the explore option. (Chat 2)"
+      ],
       "highlights": {
         "npc": [
           {
@@ -319,17 +429,60 @@
       ]
     },
     {
+      "stepDescription": "Items needed: dowsing rod, rope, ancestral key-\nItems recommended: enchanted water tiara, waterskins, or other desert heat protection----\nEnter the temple again but use the explore option. (Chat 2)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Head north and click the ship to get the dowsing rod (Pick up relic Massive stone boat) to get the dowsing rod.",
-      "itemsNeeded": [
-        "dowsing rod",
-        "rope",
-        "ancestral key-"
-      ],
-      "itemsRecommended": [
-        "enchanted water tiara",
-        "waterskins",
-        "or other desert heat protection----\nEnter the temple again but use the explore option. (Chat 2)"
-      ],
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -532,7 +685,9 @@
     },
     {
       "stepDescription": "Head to the waterfall north of the Dominion Tower and climb up it.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "charged dowsing rod-\nTalk to Portmaster Kags in the Menaphos Port District on the southwest pier by the POH portal. (Chat 2)"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -634,6 +789,64 @@
     },
     {
       "stepDescription": "Talk to the spirits (Tirrie, Nirrie, or Hallak) in the north part of the cave. (Chat 1)",
+      "itemsNeeded": [
+        "fishing bait-"
+      ],
+      "itemsRecommended": [
+        "enchanted water tiara or other desert heat protection",
+        "weight-reducing clothes",
+        "food if you fail Agility obstacles or take desert heat damage-\nYou must wait until after Crondis asks for each item before gathering it or the requirement will not be satisfied. \nCatch a Raw beltfish in the southeast corner of the Menaphos Port District or the VIP Skilling area. \nIf using Bait and Switch first catch a beltfish",
+        "then obtain it via GE or bank raw."
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: charged dowsing rod-\nTalk to Portmaster Kags in the Menaphos Port District on the southwest pier by the POH portal. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -685,9 +898,7 @@
     },
     {
       "stepDescription": "Enter Crondis's pyramid.",
-      "itemsNeeded": [
-        "charged dowsing rod-\nTalk to Portmaster Kags in the Menaphos Port District on the southwest pier by the POH portal. (Chat 2)"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -788,16 +999,60 @@
       ]
     },
     {
+      "stepDescription": "Items needed: fishing bait-\nItems recommended: enchanted water tiara or other desert heat protection, weight-reducing clothes, food if you fail Agility obstacles or take desert heat damage-\nYou must wait until after Crondis asks for each item before gathering it or the requirement will not be satisfied. \nCatch a Raw beltfish in the southeast corner of the Menaphos Port District or the VIP Skilling area. \nIf using Bait and Switch first catch a beltfish, then obtain it via GE or bank raw.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Return to Crondis (Chat 1)",
-      "itemsNeeded": [
-        "fishing bait-"
-      ],
-      "itemsRecommended": [
-        "enchanted water tiara or other desert heat protection",
-        "weight-reducing clothes",
-        "food if you fail Agility obstacles or take desert heat damage-\nYou must wait until after Crondis asks for each item before gathering it or the requirement will not be satisfied. \nCatch a Raw beltfish in the southeast corner of the Menaphos Port District or the VIP Skilling area. \nIf using Bait and Switch first catch a beltfish",
-        "then obtain it via GE or bank raw."
-      ],
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1102,7 +1357,9 @@
     },
     {
       "stepDescription": "Return to Crondis. (Chat 1)",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Combat gear and food for fighting Ukunduka"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1356,10 +1613,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Combat gear and food for fighting Ukunduka",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "It is recommended to stock up a full backpack on food or healing potions, as this challenger utilises a special move enabling it to steal your food items, one by one. But, Ukunduka does not treat raw fish, Saradomin brews, or baron sharks as food and will not take these items.",
-      "itemsNeeded": [
-        "Combat gear and food for fighting Ukunduka"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1614,49 +1920,15 @@
     },
     {
       "stepDescription": "Talk to Crondis again to continue forward to the fight when you return. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1665,49 +1937,15 @@
     },
     {
       "stepDescription": "Kill Ukunduka (stay out of melee distance or use Saradomin brews). There is a safe spot on the stairs leading up to Crondis.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1716,49 +1954,15 @@
     },
     {
       "stepDescription": "Talk to the High Priest of Crondis.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1767,49 +1971,15 @@
     },
     {
       "stepDescription": "Return to Senliten.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1818,49 +1988,15 @@
     },
     {
       "stepDescription": "After the cutscene, speak with Senliten. (Chat 3)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1869,49 +2005,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

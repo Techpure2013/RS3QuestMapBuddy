@@ -2,7 +2,7 @@
   "questName": "Ghosts Ahoy",
   "questSteps": [
     {
-      "stepDescription": "Speak to Velorina at Port Phasmatys, in the northernmost building just east of the entrance. (Chat 1\u20221\u2022\u2713)",
+      "stepDescription": "Speak to Velorina at Port Phasmatys, in the northernmost building just east of the entrance. (Chat 1•1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -257,13 +257,64 @@
       ]
     },
     {
-      "stepDescription": "Teleport to Canifis using the lodestone.",
+      "stepDescription": "Items needed: nettle tea, silk, thread, bucket of milk",
       "itemsNeeded": [
         "nettle tea",
         "silk",
         "thread",
         "bucket of milk"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Teleport to Canifis using the lodestone.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -620,6 +671,60 @@
     },
     {
       "stepDescription": "Repair the model ship with the silk.",
+      "itemsNeeded": [
+        "dyes",
+        "combat equipment"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: dyes, combat equipment",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -671,10 +776,7 @@
     },
     {
       "stepDescription": "Go inside the ship wreck just north of the allotment patches, east of the Canifis lodestone.",
-      "itemsNeeded": [
-        "dyes",
-        "combat equipment"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1082,7 +1184,10 @@
     },
     {
       "stepDescription": "Go back to the ship and climb down to the lowest level of the ship, and open a chest in the eastern end of the ship. Kill the giant lobster and search the chest again.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "spade (inventory) ",
+        "treasure map"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1183,11 +1288,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: spade (inventory) , treasure map",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Speak to the ghost captain on the south-east docks (the one with the smaller boat, not the one directly east of Velorina) to get a ride to Dragontooth Island. Alternatively, use right-click 'Travel'. (Chat 1)",
-      "itemsNeeded": [
-        "spade (inventory) ",
-        "treasure map"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1339,7 +1492,7 @@
       ]
     },
     {
-      "stepDescription": "6 South (Chat 3\u20223) then (Chat 3\u20222)",
+      "stepDescription": "6 South (Chat 3•3) then (Chat 3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1390,7 +1543,7 @@
       ]
     },
     {
-      "stepDescription": "8 East (Chat 2\u20223) then (Chat 2\u20223)",
+      "stepDescription": "8 East (Chat 2•3) then (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1441,7 +1594,7 @@
       ]
     },
     {
-      "stepDescription": "2 North (Chat 1\u20222)",
+      "stepDescription": "2 North (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1492,7 +1645,7 @@
       ]
     },
     {
-      "stepDescription": "4 East (Chat 2\u20223)",
+      "stepDescription": "4 East (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1543,8 +1696,10 @@
       ]
     },
     {
-      "stepDescription": "22 South (Chat 3\u20224) then (Chat 3\u20224) then (Chat 3\u20222)",
-      "itemsNeeded": [],
+      "stepDescription": "22 South (Chat 3•4) then (Chat 3•4) then (Chat 3•2)",
+      "itemsNeeded": [
+        "Oak shieldbow"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1696,10 +1851,8 @@
       ]
     },
     {
-      "stepDescription": "Speak to Ak-Haranu (who is not a ghost) around the docks. (Chat 1)",
-      "itemsNeeded": [
-        "Oak shieldbow"
-      ],
+      "stepDescription": "Items needed: Oak shieldbow",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1749,7 +1902,58 @@
       ]
     },
     {
-      "stepDescription": "Go to the inn and speak to Robin. (Chat 2\u20221)",
+      "stepDescription": "Speak to Ak-Haranu (who is not a ghost) around the docks. (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Go to the inn and speak to Robin. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1902,7 +2106,7 @@
       ]
     },
     {
-      "stepDescription": "Ask the Ghost innkeeper (Who is located in the pub) for a job to get a bed sheet. (Chat 4\u20221)",
+      "stepDescription": "Ask the Ghost innkeeper (Who is located in the pub) for a job to get a bed sheet. (Chat 4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2515,49 +2719,15 @@
     },
     {
       "stepDescription": "Return to the Netty in her shack (east of the Slayer Tower). (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2566,49 +2736,15 @@
     },
     {
       "stepDescription": "Equip the enchanted ghostspeak amulet and speak to Necrovarus near the ectofuntus. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2617,49 +2753,15 @@
     },
     {
       "stepDescription": "Speak to Velorina in northern Port Phasmatys (at this point you can enter without needing to pay ecto-tokens).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2668,49 +2770,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

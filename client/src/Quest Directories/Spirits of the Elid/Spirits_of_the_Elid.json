@@ -2,12 +2,63 @@
   "questName": "Spirits of the Elid",
   "questSteps": [
     {
-      "stepDescription": "Head to the house north-east of the fountain and talk to Ghaslor the Elder. You should receive a Ballad. (Chat 1\u20221)",
+      "stepDescription": "Items needed: 1 thread, 1 law rune, 1 air rune then\nhead to Nardah (south of fairy ring DLQ) and talk to Awusah the Mayor in the building east of the fountain. (Chat 1•2•✓)",
       "itemsNeeded": [
         "1 thread",
         "1 law rune",
-        "1 air rune then\nhead to Nardah (south of fairy ring DLQ) and talk to Awusah the Mayor in the building east of the fountain. (Chat 1\u20222\u2022\u2713)"
+        "1 air rune then\nhead to Nardah (south of fairy ring DLQ) and talk to Awusah the Mayor in the building east of the fountain. (Chat 1•2•✓)"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head to the house north-east of the fountain and talk to Ghaslor the Elder. You should receive a Ballad. (Chat 1•1)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -262,6 +313,63 @@
     },
     {
       "stepDescription": "Fix the top and bottom robes.",
+      "itemsNeeded": [
+        "Bow",
+        "arrows",
+        "rope",
+        "thread \nHead north",
+        "past the Dominion Tower until a waterfall is seen."
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Bow, arrows, rope, thread \nHead north, past the Dominion Tower until a waterfall is seen.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -313,13 +421,7 @@
     },
     {
       "stepDescription": "There is a bronze arrow south-east of Dominion Tower and a shortbow north-east of it.",
-      "itemsNeeded": [
-        "Bow",
-        "arrows",
-        "rope",
-        "thread \nHead north",
-        "past the Dominion Tower until a waterfall is seen."
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -624,7 +726,7 @@
       ]
     },
     {
-      "stepDescription": "Head north to the large area and talk to one of the spirits. (Chat 4\u20221)",
+      "stepDescription": "Head north to the large area and talk to one of the spirits. (Chat 4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1032,7 +1134,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Genie (Chat 1\u20221\u20223), then talk again.",
+      "stepDescription": "Talk to the Genie (Chat 1•1•3), then talk again.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1186,49 +1288,15 @@
     },
     {
       "stepDescription": "Optional: Pray at the statue for medium desert task achievement Heathen Idle.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1237,49 +1305,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

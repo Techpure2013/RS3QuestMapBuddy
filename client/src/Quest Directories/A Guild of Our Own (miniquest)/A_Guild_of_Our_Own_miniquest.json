@@ -2,9 +2,16 @@
   "questName": "A Guild of Our Own (miniquest)",
   "questSteps": [
     {
-      "stepDescription": "Talk to Darren Lightfinger just inside of the Thieves' Guild in Lumbridge. (Chat \u2713)",
-      "itemsNeeded": ["Onion", "Irit Potion(unf)", "Empty Bowl"],
-      "itemsRecommended": ["Ardougne Teleport Tab", "Ardougne Teleport"],
+      "stepDescription": "Talk to Darren Lightfinger just inside of the Thieves' Guild in Lumbridge. (Chat ✓)",
+      "itemsNeeded": [
+        "Onion",
+        "Irit Potion(unf)",
+        "Empty Bowl"
+      ],
+      "itemsRecommended": [
+        "Ardougne Teleport Tab",
+        "Ardougne Teleport"
+      ],
       "highlights": {
         "npc": [
           {
@@ -48,12 +55,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Talk to Chief Thief Robin. (Chat 3)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -97,12 +110,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Use an onion on a bowl with a knife (tool belt works) to make chopped onion.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -146,12 +165,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Use (right click) irit potion (unf) with chopped onion to get a vial of stench.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -195,12 +220,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Talk to Chief Thief Robin to get a vial of stench (a).",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -244,12 +275,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "If it does not work, talk to Darren Lightfinger about a disguise, and then talk to Robin again.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -293,12 +330,19 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Make sure to bring your lockpick and a blackjack",
-      "itemsNeeded": ["Lockpick", "Blackjack"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Make sure to bring your lockpick.",
+      "itemsNeeded": [
+        "Lockpick",
+        "Blackjack"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -342,12 +386,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "In a building south-east of Ardougne market, pickpocket the Registrar for a key.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -391,12 +441,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Get ready, the next steps are time sensitive. You can try again if you fail with no consequence. Make sure to equip a blackjack first.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -440,12 +496,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "In the other room, wind the clock on the wall. Have a blackjack already equipped.",
-      "itemsNeeded": ["Blackjack"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "Blackjack"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -489,12 +551,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "With the Registrar in the clock room, go back to the front of the desk.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -538,12 +606,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Quickly (right click) lure, then (right click) knock out, then (right click) steal-from the guard.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -587,12 +661,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Pull the vault lever behind the desk.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -636,12 +716,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go down the trapdoor that opens.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -685,12 +771,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "(Right click) Picklock the vault door, not (left click) open.",
-      "itemsNeeded": ["Lockpick"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "Lockpick"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -734,12 +826,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "(Right click) Check the chest for traps, then open it. You should receive some bonds.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -783,12 +881,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Inspect the box under the square hole in the wall to exit. (Chat 1)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -832,12 +936,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Bank (recommended) or destroy your vial of stench (a).",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -885,12 +995,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Re-enter the building and talk to the Registrar.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -934,12 +1050,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Return to Darren Lightfinger. (Chat 3)",
-      "itemsNeeded": ["Bonds (A Guild of Our Own)"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "Bonds (A Guild of Our Own)"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -983,12 +1105,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Caper complete!",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -1032,7 +1160,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     }
   ]
 }

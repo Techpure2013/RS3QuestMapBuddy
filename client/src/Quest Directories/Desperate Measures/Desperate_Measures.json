@@ -2,7 +2,7 @@
   "questName": "Desperate Measures",
   "questSteps": [
     {
-      "stepDescription": "Speak to Seren on the 2nd floor[US] of Burthorpe Castle (north of the lodestone). (Chat ~\u2022\u2713\u2022~)",
+      "stepDescription": "Speak to Seren on the 2nd floor[US] of Burthorpe Castle (north of the lodestone). (Chat ~•✓•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Head to Anachronia to speak with Mr Mordaut in the base camp. (Chat 1\u20221)",
+      "stepDescription": "Head to Anachronia to speak with Mr Mordaut in the base camp. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -359,7 +359,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Laniakea and then follow her across the bridge. After Kerapac leaves, finish the conversation with Charos. (Chat 2\u20223)",
+      "stepDescription": "Talk to Laniakea and then follow her across the bridge. After Kerapac leaves, finish the conversation with Charos. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -614,7 +614,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Charos about the artefacts. (Chat 1\u20222)",
+      "stepDescription": "Talk to Charos about the artefacts. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2042,7 +2042,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to Jas about Kerapac. (Chat 1\u20222\u20221\u20221)",
+      "stepDescription": "Speak to Jas about Kerapac. (Chat 1•2•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2093,7 +2093,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to Jas about the Needle. (Chat 5\u20222\u20222)",
+      "stepDescription": "Speak to Jas about the Needle. (Chat 5•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2144,7 +2144,7 @@
       ]
     },
     {
-      "stepDescription": "Ask for Jas' help (Chat 4\u20221) then exit the dialogue. The Eye of Jas should be in your inventory.",
+      "stepDescription": "Ask for Jas' help (Chat 4•1) then exit the dialogue. The Eye of Jas should be in your inventory.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2450,11 +2450,62 @@
       ]
     },
     {
-      "stepDescription": "Locations of Charos where the Measure is to be placed.",
+      "stepDescription": "Items needed: The Measure, Eye of Jas",
       "itemsNeeded": [
         "The Measure",
         "Eye of Jas"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Locations of Charos where the Measure is to be placed.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2555,7 +2606,7 @@
       ]
     },
     {
-      "stepDescription": "After the fight is complete, speak with Charos next to the lodestone. Go north past the Anachronia Agility Course and speak with Charos once more. (Chat ~) The Measure should be in your inventory after speaking to him\u2014if not, it may be in your bank; you will need to speak with Charos again before proceeding.",
+      "stepDescription": "After the fight is complete, speak with Charos next to the lodestone. Go north past the Anachronia Agility Course and speak with Charos once more. (Chat ~) The Measure should be in your inventory after speaking to him—if not, it may be in your bank; you will need to speak with Charos again before proceeding.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3066,6 +3117,63 @@
     },
     {
       "stepDescription": "Enter the correct codes into the pylons on the four corners of the area, as given in the the table at this step.",
+      "itemsNeeded": [
+        "A weapon to kill a level 91 version of the black stone dragon and"
+      ],
+      "itemsRecommended": [
+        "food",
+        "armour",
+        "prayer potions"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: A weapon to kill a level 91 version of the black stone dragon and \nItems recommended: food, armour, prayer potions",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3117,14 +3225,8 @@
     },
     {
       "stepDescription": "Enter the room to the north that has now opened up and prepare for a battle with the black stone dragon. (If you die while fighting the dragon, it is a safe death.)",
-      "itemsNeeded": [
-        "A weapon to kill a level 91 version of the black stone dragon and"
-      ],
-      "itemsRecommended": [
-        "food",
-        "armour",
-        "prayer potions"
-      ],
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -3225,49 +3327,15 @@
     },
     {
       "stepDescription": "After escaping the lab and the following cutscenes, return to Seren in Burthorpe.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3276,49 +3344,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

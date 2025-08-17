@@ -2,7 +2,7 @@
   "questName": "The Slug Menace",
   "questSteps": [
     {
-      "stepDescription": "Talk to Sir Tiffy Cashien in Falador park. (Chat 1\u2022\u2713\u20223)",
+      "stepDescription": "Talk to Sir Tiffy Cashien in Falador park. (Chat 1•✓•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Col. O'Niall on the pier in Witchaven (fairy ring BLR or Cape of Legends and run south). (Chat 3\u20224)",
+      "stepDescription": "Talk to Col. O'Niall on the pier in Witchaven (fairy ring BLR or Cape of Legends and run south). (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Mayor Hobb in the western building just south of Caroline. (Chat ~\u20222\u20224)",
+      "stepDescription": "Talk to Mayor Hobb in the western building just south of Caroline. (Chat ~•2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -359,10 +359,61 @@
       ]
     },
     {
-      "stepDescription": "Climb-down the old ruin entrance west of Witchaven.",
+      "stepDescription": "Items needed: Commorb v2",
       "itemsNeeded": [
         "Commorb v2"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Climb-down the old ruin entrance west of Witchaven.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1024,8 +1075,12 @@
       ]
     },
     {
-      "stepDescription": "The completed puzzle",
-      "itemsNeeded": [],
+      "stepDescription": "Items needed: Commorb v2, 1 swamp paste, 5 free inventory slots",
+      "itemsNeeded": [
+        "Commorb v2",
+        "1 swamp paste",
+        "5 free inventory slots"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1076,11 +1131,7 @@
     },
     {
       "stepDescription": "Search the Mayor's Study desk. You may fail so repeat until you receive Page 1.",
-      "itemsNeeded": [
-        "Commorb v2",
-        "1 swamp paste",
-        "5 free inventory slots"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1539,6 +1590,59 @@
     },
     {
       "stepDescription": "Shaped runes",
+      "itemsNeeded": [
+        "At least five (5) rune or pure essence"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: At least five (5) rune or pure essence",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1590,9 +1694,7 @@
     },
     {
       "stepDescription": "With essence in your inventory, right click the papers to create 5 shapes. Page 1: Earth, Air. Page 2: Fire, Water. Page 3: Mind.",
-      "itemsNeeded": [
-        "At least five (5) rune or pure essence"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2000,7 +2102,11 @@
     },
     {
       "stepDescription": "Water -> In western Lumbridge Swamp",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "The runes you created",
+        "Commorb v2",
+        "melee weapons"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2101,12 +2207,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: The runes you created, Commorb v2, melee weapons",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Climb down the old ruins in Witchaven, then enter the wall opening to your immediate east.",
-      "itemsNeeded": [
-        "The runes you created",
-        "Commorb v2",
-        "melee weapons"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2259,49 +2412,15 @@
     },
     {
       "stepDescription": "Kill the Slug Prince. The prince is immune to magic, range and necromancy and is level 51 combat.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2310,49 +2429,15 @@
     },
     {
       "stepDescription": "Talk to Sir Tiffy. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2361,49 +2446,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

@@ -2,7 +2,7 @@
   "questName": "The Death of Chivalry",
   "questSteps": [
     {
-      "stepDescription": "Speak to Sir Owen in the garden north of the Edgeville Monastery. (Chat 1\u20221\u20221)",
+      "stepDescription": "Speak to Sir Owen in the garden north of the Edgeville Monastery. (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Saradomin after the cutscene. (Chat 1\u20222\u2022\u2713)",
+      "stepDescription": "Talk to Saradomin after the cutscene. (Chat 1•2•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1175,7 +1175,7 @@
       ]
     },
     {
-      "stepDescription": "Chant over the north-west candle. The correct order is Arom Nahrea Imperium. (Chat 3\u20224\u20222)",
+      "stepDescription": "Chant over the north-west candle. The correct order is Arom Nahrea Imperium. (Chat 3•4•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1226,7 +1226,7 @@
       ]
     },
     {
-      "stepDescription": "Chant over the north-east candle. The correct order is Feritas Silenti Sepulchrum. (Chat 2\u20224\u20222)",
+      "stepDescription": "Chant over the north-east candle. The correct order is Feritas Silenti Sepulchrum. (Chat 2•4•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1277,7 +1277,7 @@
       ]
     },
     {
-      "stepDescription": "Chant over the south-east candle. The correct order is Igasac Perdimit Ebulam. (Chat 4\u20222\u20224)",
+      "stepDescription": "Chant over the south-east candle. The correct order is Igasac Perdimit Ebulam. (Chat 4•2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1634,7 +1634,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Dawn and learn all she knows. (Chat 1\u20222\u20223\u20224\u20221)",
+      "stepDescription": "Talk to Dawn and learn all she knows. (Chat 1•2•3•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1991,7 +1991,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Fern and defeat her. (Chat 3\u20221\u20222)",
+      "stepDescription": "Talk to Fern and defeat her. (Chat 3•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2042,7 +2042,7 @@
       ]
     },
     {
-      "stepDescription": "If The Restless Ghost has been completed, (Chat 4\u20221\u20222)",
+      "stepDescription": "If The Restless Ghost has been completed, (Chat 4•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2348,7 +2348,7 @@
       ]
     },
     {
-      "stepDescription": "Head north. Talk to Dawn. (Chat 3\u20222)",
+      "stepDescription": "Head north. Talk to Dawn. (Chat 3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2705,7 +2705,7 @@
       ]
     },
     {
-      "stepDescription": "Head south, enter the Portcullis and speak with Saradomin. (Chat 4\u20222\u20222\u2022~\u20222\u2022~)\nWhen Saradomin asks if the player wants to be teleported back to Edgeville, it is recommended to stay in the tombs, to claim the extra post-quest rewards which require level 40 Strength and two other coffins requiring level 80 and level 60 Strength.",
+      "stepDescription": "Head south, enter the Portcullis and speak with Saradomin. (Chat 4•2•2•~•2•~)\nWhen Saradomin asks if the player wants to be teleported back to Edgeville, it is recommended to stay in the tombs, to claim the extra post-quest rewards which require level 40 Strength and two other coffins requiring level 80 and level 60 Strength.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

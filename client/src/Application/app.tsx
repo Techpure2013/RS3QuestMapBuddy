@@ -16,7 +16,7 @@ import { useSocket } from "./../Entrance/Entrance Components/SocketProvider";
 import ChunkGridLayer from "Map Classes/Map Components/ChunkGrid";
 import { EditorPanel } from "./../Map Classes/Map Components/DeveloperControls";
 import { produce } from "immer";
-
+import StepSnapHandler from "Map Classes/Map Components/StepSnapHandler";
 import { SelectionHighlightLayer } from "./../Map Classes/Map Components/SelectionHighlightLayer";
 import type { SelectionGeometry } from "./../Map Classes/Map Components/SelectionHighlightLayer";
 interface QuestData {
@@ -58,25 +58,25 @@ const App: React.FC = () => {
   );
   const selectionGeometry = useMemo<SelectionGeometry>(() => {
     if (!questJson) return { type: "none" };
-    const target =
-      questJson.questSteps[selectedStep]?.highlights[targetType]?.[targetIndex];
-    if (!target) return { type: "none" };
+    const step = questJson.questSteps[selectedStep];
+    if (!step) return { type: "none" };
 
     if (targetType === "npc") {
       return {
         type: "npc",
-        location: target.npcLocation,
-        radius: target.wanderRadius,
+        npcArray: step.highlights?.npc || [],
       };
-    } else {
-      // targetType is 'object'
+    } else if (targetType === "object") {
       return {
         type: "object",
-        locationArray: target.objectLocation,
-        radius: target.objectRadius,
+        objectArray: step.highlights?.object || [],
       };
     }
-  }, [questJson, selectedStep, targetType, targetIndex]);
+
+    return { type: "none" };
+  }, [questJson, selectedStep, targetType]);
+  const [stepDescriptionEdit, setStepDescriptionEdit] =
+    useState<boolean>(false);
   // --- DERIVED VALUES ---
   const targetNameValue = useMemo(() => {
     if (!questJson) return "";
@@ -105,7 +105,7 @@ const App: React.FC = () => {
 
   // --- EFFECTS ---
   useEffect(() => {
-    setTargetIndex(0);
+    setTargetIndex(selectedStep);
   }, [selectedStep]);
 
   useEffect(() => {
@@ -134,30 +134,44 @@ const App: React.FC = () => {
       // Do nothing
     }
   };
-
-  const handleFileLoad = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const text = e.target?.result as string;
-      if (text) handleJsonTextChange(text);
-    };
-    reader.readAsText(file);
+  const handleStepDescriptionView = () => {
+    setStepDescriptionEdit((prev) => !prev);
   };
 
   const handleStepIncrement = () => {
-    if (questJson && selectedStep < questJson.questSteps.length - 1) {
-      setSelectedStep((prev) => prev + 1);
+    if (!questJson) return;
+
+    const newStep = Math.min(selectedStep + 1, questJson.questSteps.length - 1);
+    if (newStep !== selectedStep) {
+      setSelectedStep(newStep);
+      autoSetTargetType(questJson.questSteps[newStep]);
     }
   };
 
   const handleStepDecrement = () => {
-    if (selectedStep > 0) {
-      setSelectedStep((prev) => prev - 1);
+    if (!questJson) return;
+
+    const newStep = Math.max(selectedStep - 1, 0);
+    if (newStep !== selectedStep) {
+      setSelectedStep(newStep);
+      autoSetTargetType(questJson.questSteps[newStep]);
     }
   };
-
+  const autoSetTargetType = (step: any) => {
+    if (
+      step?.highlights?.npc?.some(
+        (npc: any) => npc.npcLocation?.lat !== 0 || npc.npcLocation?.lng !== 0
+      )
+    ) {
+      setTargetType("npc");
+    } else if (
+      step?.highlights?.object?.some((obj: any) =>
+        obj.objectLocation?.some((loc: any) => loc.lat !== 0 || loc.lng !== 0)
+      )
+    ) {
+      setTargetType("object");
+    }
+  };
   const handleStepDescriptionChange = (newDescription: string) => {
     if (!questJson) return;
     const nextState = produce(questJson, (draft) => {
@@ -217,6 +231,18 @@ const App: React.FC = () => {
         topRight: { lat: center.lat + radius, lng: center.lng + radius },
       };
     });
+    updateQuestState(nextState);
+  };
+  const handleResetNpcLocation = () => {
+    if (!questJson || targetType !== "npc") return;
+
+    const nextState = produce(questJson, (draft) => {
+      const target = draft.questSteps[selectedStep].highlights.npc[targetIndex];
+      if (target) {
+        target.npcLocation = { lat: 0, lng: 0 }; // Reset to default
+      }
+    });
+
     updateQuestState(nextState);
   };
   const handleResetRadius = () => {
@@ -471,7 +497,6 @@ const App: React.FC = () => {
         opacity: 0.8,
         className: "map-topdown",
         updateWhenZooming: false,
-        updateWhenIdle: true,
         updateInterval: 100,
         keepBuffer: 8,
       },
@@ -485,7 +510,19 @@ const App: React.FC = () => {
         minZoom: -4,
         opacity: 0.6,
         className: "map-walls",
-        updateWhenZooming: true,
+        updateInterval: 50,
+        keepBuffer: 8,
+      },
+      {
+        name: "Collision",
+        url: `https://runeapps.org/s3/map4/live/collision-${floor}/{z}/{x}-{y}.png`,
+        tileSize: 512,
+        maxNativeZoom: 3,
+        minNativeZoom: 3,
+        updateWhenIdle: true,
+        minZoom: -4,
+        opacity: 0.6,
+        className: "map-collision",
         updateInterval: 50,
         keepBuffer: 8,
       },
@@ -533,18 +570,25 @@ const App: React.FC = () => {
         selectedObjectColor={selectedObjectColor}
         onSelectedObjectColorChange={setSelectedObjectColor}
         onSetRadiusMode={handleSetRadiusMode}
+        onResetNpcLocation={handleResetNpcLocation}
         objectNumberLabel={objectNumberLabel}
         onObjectNumberLabelChange={setObjectNumberLabel}
         onFileLoadFromInput={handleFileLoadFromInput}
         onLoadFile={handleLoadFile}
         onSaveFile={handleSaveFile}
         onSaveAsFile={handleSaveAsFile}
+        selectEditDescription={stepDescriptionEdit}
+        onSelectEditStepDescription={handleStepDescriptionView}
       />
       <MapContainer
-        {...gameMapOptions()}
+        crs={gameMapOptions().crs}
         bounds={bound}
         id="map"
         zoom={zoom}
+        maxBounds={gameMapOptions().maxBounds}
+        zoomSnap={gameMapOptions().zoomSnap}
+        zoomControl={false}
+        dragging={true}
         center={[3288, 3023]}
       >
         <MapClickHandler />
@@ -581,12 +625,20 @@ const App: React.FC = () => {
           {layers.map((layer) => (
             <TileLayer
               key={layer.name}
-              {...layer}
+              url={layer.url}
+              tileSize={layer.tileSize}
+              maxNativeZoom={layer.maxNativeZoom}
+              minZoom={layer.minZoom}
+              opacity={layer.opacity}
+              className={layer.className}
+              updateWhenZooming={layer.updateWhenZooming}
+              updateInterval={layer.updateInterval}
               noWrap={true}
               bounds={bound}
             />
           ))}
         </>
+        <StepSnapHandler questJson={questJson} selectedStep={selectedStep} />
         <SelectionHighlightLayer geometry={selectionGeometry} />
         <GridLayer />
         <HighlightLayer onCursorMove={handleCursorMove} />

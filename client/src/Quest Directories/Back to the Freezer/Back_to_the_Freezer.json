@@ -2,7 +2,7 @@
   "questName": "Back to the Freezer",
   "questSteps": [
     {
-      "stepDescription": "Talk to Chuck in the Ardougne Zoo (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Chuck in the Ardougne Zoo (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "stepDescription": "In the Rellekka marketplace, talk to Skot or Mundsen.",
+      "stepDescription": "Note down the blue text.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "stepDescription": "South-west of Pollnivneach, talk to Dundee, who will give you a crocspeak amulet. (Chat 1)",
+      "stepDescription": "Alternatively, the Passphrase may also be found in your quest journal.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -152,10 +152,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": ["Equip the crocspeak amulet."]
+      "additionalStepInformation": [
+        "Equip the crocspeak amulet."
+      ]
     },
     {
-      "stepDescription": "Just west, talk to Croc. (Chat 4)",
+      "stepDescription": "In the Rellekka marketplace, talk to Skot or Mundsen.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -201,10 +203,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "South-west, investigate the T.A.R.D.I.S..",
+      "stepDescription": "When prompted, tell them the passphrase from Chuck.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -262,10 +266,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Return to Chuck in Ardougne. (Chat 1)",
+      "stepDescription": "After telling the passphrase, finish the dialogue and cutscene.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -316,7 +322,7 @@
       ]
     },
     {
-      "stepDescription": "Return to the T.A.R.D.I.S.",
+      "stepDescription": "South-west of Pollnivneach, talk to Dundee, who will give you a crocspeak amulet. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -381,7 +387,7 @@
       ]
     },
     {
-      "stepDescription": "In order, talk to the following penguins:",
+      "stepDescription": "Equip the crocspeak amulet.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -427,10 +433,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Emperor Wing (Chat 1\u20222)",
+      "stepDescription": "Just west, talk to Croc. (Chat 4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -476,10 +484,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Elon (Chat 2)",
+      "stepDescription": "South-west, investigate the T.A.R.D.I.S..",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -525,10 +535,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Hugh (Chat 2)",
+      "stepDescription": "Return to Chuck in Ardougne. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -574,10 +586,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Gordon (Chat 2\u20223)",
+      "stepDescription": "Note down the agent's favourite food Chuck tells you. Favourite food may be found in your quest journal.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -628,7 +642,7 @@
       ]
     },
     {
-      "stepDescription": "Head to a pier north of Fremennik Province lodestone and north-east of Rellekka, travel to the Iceberg via the smaller boat.",
+      "stepDescription": "Return to the T.A.R.D.I.S.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -686,10 +700,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Locate with the G.P.S., follow the directions until you find the Mysterious Hatch.",
+      "stepDescription": "Unequip any item in your cape and weapon slot.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -735,10 +751,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Back to the Freezer secret bunker map images right here",
+      "stepDescription": "With your clockwork suit in your backpack talk to any named penguin and you will automatically equip your clockwork suit.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -784,10 +802,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "To the north-east, right click Jim the polar bear and choose \"Tuxedo-Time\".",
+      "stepDescription": "If you don't have a clockwork suit with you return to the zoo and speak with Chuck. Chuck will give you a clockwork suit.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -833,10 +853,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Interact with the hatch and type in \"1234\" to enter.",
+      "stepDescription": "In order, talk to the following penguins:",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -882,10 +904,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Search the interactable cupboard in the north-east room for a hat.",
+      "stepDescription": "Talk to Emperor Wing (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -939,7 +963,7 @@
       ]
     },
     {
-      "stepDescription": "Search Gordon's locker on the west side for the de-lore-ing device parts list and de-lore-ing device (incomplete).",
+      "stepDescription": "Talk to Elon (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -990,7 +1014,7 @@
       ]
     },
     {
-      "stepDescription": "Enter the southwest room full of crates and search or look in them until you find both a hammer and flax.",
+      "stepDescription": "Talk to Hugh (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1052,10 +1076,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "In the north-western room, Peruse the ice shelf (looks like a normal shelf) for The Penguin Book of Gielinor.",
+      "stepDescription": "Talk to Gordon (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1109,10 +1135,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Behind you, Get Ice from the Ice Maker to take ice cubes.",
+      "stepDescription": "Gordon will give you a G.P.S.. If he does not, simply talk to him again.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1165,7 +1193,7 @@
       ]
     },
     {
-      "stepDescription": "Take the monkey wrench (north & slightly east), use it on the de-lore-ing device then operate the device again.",
+      "stepDescription": "Head to a pier north of Fremennik Province lodestone and north-east of Rellekka, travel to the Iceberg via the smaller boat.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1211,10 +1239,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Take the penguin bongos and cowbells in the north-west corner, use either on the device, operate the device again.",
+      "stepDescription": "Locate with the G.P.S., follow the directions until you find the Mysterious Hatch.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1269,7 +1299,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to the man with a dragon pickaxe, use worthless old boots on the device, operate the device one last time.",
+      "stepDescription": "Back to the Freezer secret bunker map images right here",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1315,10 +1345,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Gordon in the south-western room.",
+      "stepDescription": "To the north-east, right click Jim the polar bear and choose \"Tuxedo-Time\".",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1364,10 +1396,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Elon in the centre of the bunker.",
+      "stepDescription": "Interact with the hatch and type in \"1234\" to enter.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1413,10 +1447,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Get the fishing rod from the room south of the big door.",
+      "stepDescription": "Search the interactable cupboard in the north-east room for a hat.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1462,10 +1498,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Go to the crate room and search until you have both the cog and coolant holder.",
+      "stepDescription": "Exit the room and then head south to end of the hall.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1532,7 +1570,7 @@
       ]
     },
     {
-      "stepDescription": "",
+      "stepDescription": "Head west and go to first hall to north.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1578,10 +1616,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Gather Pure S-now in the western room - wait until you have gathered all 2,000. (Process takes no time at all)",
+      "stepDescription": "Enter the large door leading to the large room in the centre of the bunker.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1627,10 +1667,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Search the crate north of the Mysterious Ice Block for a lemon.",
+      "stepDescription": "Enter the locker room to your west and search Gordon's locker on the west side for the de-lore-ing device parts list and de-lore-ing device (incomplete).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1676,10 +1718,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Investigate the Mysterious ice block to craft 2000 lemon sole runes.",
+      "stepDescription": "Exit the large door to go back to the main hall",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1725,10 +1769,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Click on the Ice Maker in the north-western room to create cool-ant and an ice box.",
+      "stepDescription": "Enter the southwest room full of crates and search or look in them until you find both a hammer and flax.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1774,10 +1820,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Buzz in the prison to the east for 21 killerwatt energy.",
+      "stepDescription": "In the north-western room, Peruse the ice shelf (looks like a normal shelf) for The Penguin Book of Gielinor.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1828,7 +1876,7 @@
       ]
     },
     {
-      "stepDescription": "Walk east, talk to Jim the polar bear to exit your disguise. (Chat 1)",
+      "stepDescription": "Behind you, Get Ice from the Ice Maker to take ice cubes.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1874,10 +1922,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Make your way to the top floor of Draynor Manor (staircase then ladder).",
+      "stepDescription": "Use the hammer on the ice cubes to create the flax cap-ice-i-tor.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1934,7 +1984,7 @@
       ]
     },
     {
-      "stepDescription": "Return to the iceberg.",
+      "stepDescription": "Use the flax cap-ice-i-tor on the de-lore-ing device (incomplete) for the de-lore-ing device.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1994,10 +2044,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Head to north-east of the iceberg, talk with Jim the polar bear, right click \"Tuxedo-Time\".",
+      "stepDescription": "Operate the de-lore-ing device. Images at this step are from the (past) bunker.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2043,10 +2095,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Re-enter the bunker via the Mysterious Hatch.",
+      "stepDescription": "Take the monkey wrench (north & slightly east), use it on the de-lore-ing device then operate the device again.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2094,10 +2148,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "In the centre of the bunker, talk to Elon to give him all the items.",
+      "stepDescription": "Take the penguin bongos and cowbells in the north-west corner, use either on the device, operate the device again.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2127,7 +2183,7 @@
       ]
     },
     {
-      "stepDescription": "Configure the battery control station, north-west.",
+      "stepDescription": "Pick cabbage, use it on the device, operate the device again.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2182,7 +2238,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Elon, in the same (central) room, roaming around T.A.R.D.I.S.",
+      "stepDescription": "Speak to the man with a dragon pickaxe, use worthless old boots on the device, operate the device one last time.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2228,10 +2284,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Gordon, in the south-west room (northern part).",
+      "stepDescription": "Talk to Gordon in the south-western room.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2277,10 +2335,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Hugh roaming around the north-west room.",
+      "stepDescription": "Talk to Elon in the centre of the bunker.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2326,10 +2386,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Emperor Wing, in the central room again, easy to recognise due to his size.",
+      "stepDescription": "Get the fishing rod from the room south of the big door.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2375,10 +2437,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Click the T.A.R.D.I.S. in the centre for a cutscene.",
+      "stepDescription": "Go to the crate room and search until you have both the cog and coolant holder.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2424,10 +2488,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Return to Chuck. (Chat 1)",
+      "stepDescription": "Use the cog on the fishing rod to create the 'fishvention' rod.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2473,10 +2539,12 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Quest complete!",
+      "stepDescription": "Gather Pure S-now in the western room - wait until you have gathered all 2,000. (Process takes no time at all)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2522,7 +2590,451 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Search the crate north of the Mysterious Ice Block for a lemon.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Investigate the Mysterious ice block to craft 2000 lemon sole runes.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Click on the Ice Maker in the north-western room to create cool-ant and an ice box.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Buzz in the prison to the east for 21 killerwatt energy.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Leave the bunker via the door to the north.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Walk east, talk to Jim the polar bear to exit your disguise. (Chat 1)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Equip your insulated boots and prepare for combat.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Make your way to the top floor of Draynor Manor (staircase then ladder).",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Enter the eastern room, then the Interdimensional Rift.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Kill 10 Killerwatts until you have 121 killerwatt energy.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to the iceberg.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head to a pier north of Fremennik Province lodestone and north-east of Rellekka, travel to the Iceberg via the smaller boat.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head to north-east of the iceberg, talk with Jim the polar bear, right click \"Tuxedo-Time\".",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Re-enter the bunker via the Mysterious Hatch.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "In the centre of the bunker, talk to Elon to give him all the items.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Fill the energy container to the north-west with your divination energy.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Configure the battery control station, north-west.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Solve the puzzle, DO NOT RESET UNTIL YOU HAVE FAILED TO 10 OR ELSE YOU WILL HAVE A NEW PUZZLE TO COMPLETE. You have 10 tries to get the pattern correct. A Grey Square means a energy is in the correct spot. A White Square mean a energy is correct but in the wrong spot. GREY SQUARES DO NOT CORRELATE TO THE POSITION. Look in quest images to see and example and solution.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Once complete, speak to the following penguins, in order:",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Elon, in the same (central) room, roaming around T.A.R.D.I.S.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Gordon, in the south-west room (northern part).",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Hugh roaming around the north-west room.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Emperor Wing, in the central room again, easy to recognise due to his size.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Click the T.A.R.D.I.S. in the centre for a cutscene.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to Chuck. (Chat 1)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     }
   ]
 }

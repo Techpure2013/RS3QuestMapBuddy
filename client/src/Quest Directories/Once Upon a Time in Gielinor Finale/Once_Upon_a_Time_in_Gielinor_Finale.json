@@ -2,7 +2,7 @@
   "questName": "Once Upon a Time in Gielinor Finale",
   "questSteps": [
     {
-      "stepDescription": "Talk to Closure. (Chat \u2713)",
+      "stepDescription": "Talk to Closure. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Relomia. (Chat 3\u20224)",
+      "stepDescription": "Talk to Relomia. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -512,7 +512,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Relomia. (Chat 3\u20224)",
+      "stepDescription": "Talk to Relomia. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -869,7 +869,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Relomia. (Chat 3\u20224)",
+      "stepDescription": "Talk to Relomia. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

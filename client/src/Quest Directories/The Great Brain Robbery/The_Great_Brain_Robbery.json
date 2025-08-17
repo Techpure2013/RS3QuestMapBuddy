@@ -2,13 +2,64 @@
   "questName": "The Great Brain Robbery",
   "questSteps": [
     {
-      "stepDescription": "Travel to Mos Le'Harmless (fairy ring DIP if you have repaired the bridge), walk a bit north off the dock and talk to Brother Tranquillity (if you arrived via the fairy ring, run into town and he is north of the docks). (Chat \u2713)",
+      "stepDescription": "Items needed: 4 regular planks, at least 10 nails, fishbowl helmet, diving apparatus and a holy symbol",
       "itemsNeeded": [
         "4 regular planks",
         "at least 10 nails",
         "fishbowl helmet",
         "diving apparatus and a holy symbol"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Travel to Mos Le'Harmless (fairy ring DIP if you have repaired the bridge), walk a bit north off the dock and talk to Brother Tranquillity (if you arrived via the fairy ring, run into town and he is north of the docks). (Chat ✓)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -977,6 +1028,63 @@
     },
     {
       "stepDescription": "After talking to Dr Fenkenstrain, you will be able to use a plank and bear fur on a Clockmaker's Bench in a player-owned house to make 10 wooden cats. You can also buy them straight off the Grand Exchange.",
+      "itemsNeeded": [
+        "10 wooden cats (10 bear fur and 10 planks if making yourself)",
+        "28+ nails",
+        "4 planks",
+        "ring of charos (a)",
+        "at least 2 empty inventory slots"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: 10 wooden cats (10 bear fur and 10 planks if making yourself), 28+ nails, 4 planks, ring of charos (a), at least 2 empty inventory slots",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1028,13 +1136,7 @@
     },
     {
       "stepDescription": "Make sure you have at least two open inventory slots, and equip your ring of charos (a).",
-      "itemsNeeded": [
-        "10 wooden cats (10 bear fur and 10 planks if making yourself)",
-        "28+ nails",
-        "4 planks",
-        "ring of charos (a)",
-        "at least 2 empty inventory slots"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1340,7 +1442,14 @@
     },
     {
       "stepDescription": "Blow the wolf whistle to call Rufus.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "fishbowl helmet",
+        "diving apparatus",
+        "hammer",
+        "tinderbox (can be picked up on the pirate ship)",
+        "combat gear",
+        "at least 6 empty inventory slots"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1441,15 +1550,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: fishbowl helmet, diving apparatus, hammer, tinderbox (can be picked up on the pirate ship), combat gear, at least 6 empty inventory slots",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Travel back to Mos Le'Harmless.",
-      "itemsNeeded": [
-        "fishbowl helmet",
-        "diving apparatus",
-        "hammer",
-        "tinderbox (can be picked up on the pirate ship)",
-        "combat gear",
-        "at least 6 empty inventory slots"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2266,7 +2419,9 @@
     {
       "stepDescription": "30 skull staples",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "Food and potions"
+      ],
       "highlights": {
         "npc": [
           {
@@ -2417,11 +2572,9 @@
       ]
     },
     {
-      "stepDescription": "Walk through the demolished front door of the monastery and confront Mi-Gor.",
+      "stepDescription": "Items needed: Combat equipment, fishbowl helmet, diving apparatus",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "Food and potions"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -2463,6 +2616,74 @@
             }
           }
         ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: Food and potions",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Walk through the demolished front door of the monastery and confront Mi-Gor.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2471,49 +2692,15 @@
     },
     {
       "stepDescription": "Kill Barrelchest.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2522,49 +2709,15 @@
     },
     {
       "stepDescription": "After the fight, pick up the Barrelchest anchor.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2573,49 +2726,15 @@
     },
     {
       "stepDescription": "Inform Brother Tranquillity of your victory.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2624,49 +2743,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

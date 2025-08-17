@@ -2,7 +2,7 @@
   "questName": "The Elder Kiln",
   "questSteps": [
     {
-      "stepDescription": "Talk to TzHaar-Mej-Jeh at the Birthing Pool in TzHaar City. (Chat \u2713)",
+      "stepDescription": "Talk to TzHaar-Mej-Jeh at the Birthing Pool in TzHaar City. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to TzHaar-Mej-Jeh. (Chat 2\u20221\u20221)",
+      "stepDescription": "Talk to TzHaar-Mej-Jeh. (Chat 2•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -206,7 +206,7 @@
       ]
     },
     {
-      "stepDescription": "Go west to the main plaza and talk to TzHaar-Mej-Ak. (Chat 1\u20221)",
+      "stepDescription": "Go west to the main plaza and talk to TzHaar-Mej-Ak. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -359,10 +359,61 @@
       ]
     },
     {
-      "stepDescription": "Talk to one of the TzHaar-Mejs. (Chat 1\u20222\u20222\u20223)",
+      "stepDescription": "Items needed: 1 free inventory space",
       "itemsNeeded": [
         "1 free inventory space"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to one of the TzHaar-Mejs. (Chat 1•2•2•3)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -464,6 +515,59 @@
     },
     {
       "stepDescription": "Enter the cave. (Chat 2)",
+      "itemsNeeded": [
+        "Adamant pickaxe or better (tool belt works only if using Melee weapon)"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Adamant pickaxe or better (tool belt works only if using Melee weapon)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -515,9 +619,7 @@
     },
     {
       "stepDescription": "Necromancy will not break the shell of the last monster in the tunnel",
-      "itemsNeeded": [
-        "Adamant pickaxe or better (tool belt works only if using Melee weapon)"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1332,7 +1434,7 @@
       ]
     },
     {
-      "stepDescription": "Complete all seven waves of the Kiln.\nTalk to TokHaar-Hok. (Chat 2\u20225\u20221)",
+      "stepDescription": "Complete all seven waves of the Kiln.\nTalk to TokHaar-Hok. (Chat 2•5•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1434,50 +1536,16 @@
       ]
     },
     {
-      "stepDescription": "Return to the centre of the Main Plaza and talk to one of TzHaar-Mejs. (Chat 1\u20221\u20221)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "Return to the centre of the Main Plaza and talk to one of TzHaar-Mejs. (Chat 1•1•1)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1486,49 +1554,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

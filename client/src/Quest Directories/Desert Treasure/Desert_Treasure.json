@@ -2,7 +2,7 @@
   "questName": "Desert Treasure",
   "questSteps": [
     {
-      "stepDescription": "Talk to Terry Balando in the digsite Exam Centre (Dig Site Pendant is the fastest teleport). (Chat 1)",
+      "stepDescription": "**Items needed: 650 coins, 1 charcoal, 1 ashes, 1 bones, 1 blood rune, 6 steel bars, 12 magic logs, 6 molten glass, and one free inventory space.** \nTravel to the Bedabin Camp and talk to Asgarnia Smith nearby (refer to map at current step for quest start location). (Chat 2•✓)",
       "itemsNeeded": [
         "650 coins",
         "1 charcoal",
@@ -12,8 +12,59 @@
         "6 steel bars",
         "12 magic logs",
         "6 molten glass",
-        "and one free inventory space.** \nTravel to the Bedabin Camp and talk to Asgarnia Smith nearby (refer to map at current step for quest start location). (Chat 2\u2022\u2713)"
+        "and one free inventory space.** \nTravel to the Bedabin Camp and talk to Asgarnia Smith nearby (refer to map at current step for quest start location). (Chat 2•✓)"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Terry Balando in the digsite Exam Centre (Dig Site Pendant is the fastest teleport). (Chat 1)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -216,7 +267,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the bartender at the pub for a beer. (Chat 2\u20221), then talk to the bartender about four diamonds. (Chat 2)",
+      "stepDescription": "Talk to the bartender at the pub for a beer. (Chat 2•1), then talk to the bartender about four diamonds. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -318,7 +369,7 @@
       ]
     },
     {
-      "stepDescription": "Take off any Zamorak or Saradomin clothing then talk to Eblis, by or in the eastern-most building of the Bandit Camp. (Chat 2\u20224\u20221\u20221)",
+      "stepDescription": "Take off any Zamorak or Saradomin clothing then talk to Eblis, by or in the eastern-most building of the Bandit Camp. (Chat 2•4•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -421,6 +472,64 @@
     },
     {
       "stepDescription": "Run south-east, and talk to Eblis by the Bandit Camp lodestone.",
+      "itemsNeeded": [
+        "Garlic",
+        "silver bar",
+        "spice",
+        "food",
+        "air spells if using magic** \nEnter the pub in Canifis. After a short cut scene",
+        "talk to Malak. (Chat 5•1•3•3)"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "**Items needed: Garlic, silver bar, spice, food, air spells if using magic** \nEnter the pub in Canifis. After a short cut scene, talk to Malak. (Chat 5•1•3•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -472,14 +581,7 @@
     },
     {
       "stepDescription": "Talk to Ruantun in the Draynor Sewers for a Silver pot",
-      "itemsNeeded": [
-        "Garlic",
-        "silver bar",
-        "spice",
-        "food",
-        "air spells if using magic** \nEnter the pub in Canifis. After a short cut scene",
-        "talk to Malak. (Chat 5\u20221\u20223\u20223)"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -785,7 +887,16 @@
     },
     {
       "stepDescription": "Use the pot on the tomb. Then kill Dessous.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "A cake or a chocolate bar",
+        "spiked boots",
+        "climbing boots (unless you've completed Eadgar's Ruse)",
+        "restore potion or super restore potions",
+        "5-10 pieces of food",
+        "fire runes to kill Kamil and to melt the ice blocks** \nPrepare for combat by getting plenty of food",
+        "a few super restore and super energy potions (even at max combat)",
+        "and get magic items for Fire Spells."
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -886,17 +997,59 @@
       ]
     },
     {
+      "stepDescription": "**Items needed: A cake or a chocolate bar, spiked boots, climbing boots (unless you've completed Eadgar's Ruse), restore potion or super restore potions, 5-10 pieces of food, fire runes to kill Kamil and to melt the ice blocks** \nPrepare for combat by getting plenty of food, a few super restore and super energy potions (even at max combat), and get magic items for Fire Spells.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Get Spiked or Climbing Boots to Climb Rock Barriers (refer to image at step for Route Reference) or If Trollheim teleport is unlocked take the path that leads North-East to the snow area.",
-      "itemsNeeded": [
-        "A cake or a chocolate bar",
-        "spiked boots",
-        "climbing boots (unless you've completed Eadgar's Ruse)",
-        "restore potion or super restore potions",
-        "5-10 pieces of food",
-        "fire runes to kill Kamil and to melt the ice blocks** \nPrepare for combat by getting plenty of food",
-        "a few super restore and super energy potions (even at max combat)",
-        "and get magic items for Fire Spells."
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1253,7 +1406,14 @@
     },
     {
       "stepDescription": "Pass through the ice gate and across the bridge.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Face mask or slayer helmet",
+        "ice gloves** \nPrepare for combat by bringing plenty of food",
+        "few super energy potions",
+        "melee gear",
+        "or water spells if using magic",
+        "or ice arrows if using ranged. Once prepared \ntravel to Pollnivneach."
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1405,14 +1565,62 @@
       ]
     },
     {
+      "stepDescription": "**Items needed: Face mask or slayer helmet, ice gloves** \nPrepare for combat by bringing plenty of food, few super energy potions, melee gear, or water spells if using magic, or ice arrows if using ranged. Once prepared \ntravel to Pollnivneach.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "If Smoking Kills is complete the dungeon can be entered from the Pollnivneach well and through the Dark stairs to the west. \nOtherwise the player can enter the Smokey Well which is located west of Pollnivneach. (refer to image at step for smokey well location)",
       "itemsNeeded": [
-        "Face mask or slayer helmet",
-        "ice gloves** \nPrepare for combat by bringing plenty of food",
-        "few super energy potions",
-        "melee gear",
-        "or water spells if using magic",
-        "or ice arrows if using ranged. Once prepared \ntravel to Pollnivneach."
+        "A few antipoisons",
+        "lots of lockpicks",
+        "earth spells if using magic. Once prepared go talk\nto Rasolo (Chat 3•1) (Refer to image at step for Rasolo's location)."
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -1616,12 +1824,66 @@
       ]
     },
     {
-      "stepDescription": "Hair clips are very useful here, as you can reclaim them from Merlin for free but requires Kings Ransom, you could also steal from the level 54 Bandits around the camp to get lock picks and antipoison. \nOnce you figure out the Lockpick situation head back to the Bandit Camp. (Refer to image at next step)",
+      "stepDescription": "Items needed: A few antipoisons, lots of lockpicks, earth spells if using magic. Once prepared go talk\nto Rasolo (Chat 3•1) (Refer to image at step for Rasolo's location).",
       "itemsNeeded": [
-        "A few antipoisons",
-        "lots of lockpicks",
-        "earth spells if using magic. Once prepared go talk\nto Rasolo (Chat 3\u20221) (Refer to image at step for Rasolo's location)."
+        "All 4 diamonds",
+        "weapon** \n**"
       ],
+      "itemsRecommended": [
+        "Energy potions",
+        "weight-reducing equipment",
+        "antipoison** \nDo not bring any food or combat gear BUT DONT FORGET A WEAPON (make sure your weight is less than 5 kg or you'll keep failing traps). \nBoots of lightness and any other weight reducing equipment helps."
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Hair clips are very useful here, as you can reclaim them from Merlin for free but requires Kings Ransom, you could also steal from the level 54 Bandits around the camp to get lock picks and antipoison. \nOnce you figure out the Lockpick situation head back to the Bandit Camp. (Refer to image at next step)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1824,57 +2086,33 @@
       ]
     },
     {
-      "stepDescription": "Return to the Bedabin Camp, and head directly south of Eblis to the pyramid with all Diamonds in the Inventory.",
+      "stepDescription": "**Items needed: All 4 diamonds, weapon** \n**Items recommended: Energy potions, weight-reducing equipment, antipoison** \nDo not bring any food or combat gear BUT DONT FORGET A WEAPON (make sure your weight is less than 5 kg or you'll keep failing traps). \nBoots of lightness and any other weight reducing equipment helps.",
       "itemsNeeded": [
-        "All 4 diamonds",
-        "weapon** \n**"
+        "none"
       ],
       "itemsRecommended": [
-        "Energy potions",
-        "weight-reducing equipment",
-        "antipoison** \nDo not bring any food or combat gear BUT DONT FORGET A WEAPON (make sure your weight is less than 5 kg or you'll keep failing traps). \nBoots of lightness and any other weight reducing equipment helps."
+        "none"
       ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to the Bedabin Camp, and head directly south of Eblis to the pyramid with all Diamonds in the Inventory.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1883,49 +2121,15 @@
     },
     {
       "stepDescription": "Use the diamonds on the obelisks surrounding the pyramid. \nBlood diamond in the north-west obelisk. \nShadow diamond in the south-west obelisk. \nIce diamond in the south-east obelisk. \nSmoke diamond in the north-east obelisk. \nClimb down the ladder at the top of the pyramid.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1934,49 +2138,15 @@
     },
     {
       "stepDescription": "Run through the pyramid using the maps (refer to image's at this step). Don't stand still, or you may be transported back to the start. Also \nthere's a possibility that scarabs spawn in Azzanadra's room so... hopefully you brought a weapon, antipoison, and some more food just in case.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1985,49 +2155,15 @@
     },
     {
       "stepDescription": "Talk to Azzanadra.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2036,49 +2172,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

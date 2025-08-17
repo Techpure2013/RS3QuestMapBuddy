@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to Mosol Rei outside and south-east of Shilo Village, he gives you a Wampum belt. (\ud83d\udde8\ufe0f 1\u20221\u20221\u20224\u2022\u2713)",
+      "stepDescription": "Speak to Mosol Rei outside and south-east of Shilo Village, he gives you a Wampum belt. (🗨️ 1•1•1•4•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "stepDescription": "Use the belt on Trufitus, north-east of Tai Bwo Wannai Village. Tell him you're going to search for \"Ah Za Rhoon\". (\ud83d\udde8\ufe0f 2\u20221\u20223\u20221)",
+      "stepDescription": "Use the belt on Trufitus, north-east of Tai Bwo Wannai Village. Tell him you're going to search for \"Ah Za Rhoon\". (🗨️ 2•1•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "stepDescription": "Travel east of Trufitus' hut, over the agility log and then south to Ah Za Rhoon.",
+      "stepDescription": "**Items needed: torch and rope**\nLocation of the mound",
       "itemsNeeded": [
         "torch and rope**\nLocation of the mound"
       ],
@@ -208,7 +208,58 @@
       ]
     },
     {
-      "stepDescription": "Search the mound and select excavate. (\ud83d\udde8\ufe0f 1)",
+      "stepDescription": "Travel east of Trufitus' hut, over the agility log and then south to Ah Za Rhoon.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Search the mound and select excavate. (🗨️ 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -361,7 +412,7 @@
       ]
     },
     {
-      "stepDescription": "Search the fissure, climb down. (\ud83d\udde8\ufe0f 1)",
+      "stepDescription": "Search the fissure, climb down. (🗨️ 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -463,7 +514,7 @@
       ]
     },
     {
-      "stepDescription": "Search the 'cave in' (see step image) and wiggle through the rocks. (\ud83d\udde8\ufe0f 1)",
+      "stepDescription": "Search the 'cave in' (see step image) and wiggle through the rocks. (🗨️ 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -514,7 +565,7 @@
       ]
     },
     {
-      "stepDescription": "Search the loose rocks up north from the entrance for a Tattered scroll. (You might fail this action and take damage. If you do, Search again until you get the item.) (\ud83d\udde8\ufe0f 1)",
+      "stepDescription": "Search the loose rocks up north from the entrance for a Tattered scroll. (You might fail this action and take damage. If you do, Search again until you get the item.) (🗨️ 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -667,7 +718,7 @@
       ]
     },
     {
-      "stepDescription": "Search the gallows for the Zadimus corpse. (\ud83d\udde8\ufe0f 2)",
+      "stepDescription": "Search the gallows for the Zadimus corpse. (🗨️ 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -718,7 +769,7 @@
       ]
     },
     {
-      "stepDescription": "Read both scrolls. (\ud83d\udde8\ufe0f 1)",
+      "stepDescription": "Read both scrolls. (🗨️ 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -820,7 +871,7 @@
       ]
     },
     {
-      "stepDescription": "Use the two scrolls and the corpse on Trufitus and ask about the sacred ground. (\ud83d\udde8\ufe0f 1)",
+      "stepDescription": "Use the two scrolls and the corpse on Trufitus and ask about the sacred ground. (🗨️ 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -922,7 +973,7 @@
       ]
     },
     {
-      "stepDescription": "Use the bone shard on Trufitus. (\ud83d\udde8\ufe0f 1\u20221\u20221)",
+      "stepDescription": "Use the bone shard on Trufitus. (🗨️ 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -973,58 +1024,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Trufitus. (\ud83d\udde8\ufe0f 2) Ensure Trufitus mentions the need to find the Tomb of Bervirius.\nLocation of Cairn Isle",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Head southwest to Cairn Isle by climbing the rocks and going across the bridge. Be careful, you can sometimes fall - use the Surge ability to bypass this.",
+      "stepDescription": "Talk to Trufitus. (🗨️ 2) Ensure Trufitus mentions the need to find the Tomb of Bervirius.\nLocation of Cairn Isle",
       "itemsNeeded": [
         "Chisel and bronze wire (or a bronze bar to make the wire)**"
       ],
@@ -1077,7 +1077,109 @@
       ]
     },
     {
-      "stepDescription": "Search the 'well stacked rocks' to the north to enter the Tomb of Bervirius. If you fail search again until you are able to enter. (\ud83d\udde8\ufe0f 1)",
+      "stepDescription": "**Items needed: Chisel and bronze wire (or a bronze bar to make the wire)**",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head southwest to Cairn Isle by climbing the rocks and going across the bridge. Be careful, you can sometimes fall - use the Surge ability to bypass this.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Search the 'well stacked rocks' to the north to enter the Tomb of Bervirius. If you fail search again until you are able to enter. (🗨️ 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1333,8 +1435,16 @@
     },
     {
       "stepDescription": "Show Trufitus the necklace.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "Chisel",
+        "bone shard",
+        "beads of the dead",
+        "and 3 regular bones (can be obtained from monsters in cave)"
+      ],
+      "itemsRecommended": [
+        "Combat equipment and food",
+        "three forms are weak to fire spells."
+      ],
       "highlights": {
         "npc": [
           {
@@ -1434,17 +1544,60 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Chisel, bone shard, beads of the dead, and 3 regular bones (can be obtained from monsters in cave) \nItems recommended: Combat equipment and food, three forms are weak to fire spells.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Travel east of Trufitus' hut, over the agility log and run north, to the general area of The Shaikahan.",
-      "itemsNeeded": [
-        "Chisel",
-        "bone shard",
-        "beads of the dead",
-        "and 3 regular bones (can be obtained from monsters in cave)"
-      ],
-      "itemsRecommended": [
-        "Combat equipment and food",
-        "three forms are weak to fire spells."
-      ],
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1850,50 +2003,16 @@
       ]
     },
     {
-      "stepDescription": "Travel back to Cairn Island, and search the well stacked rocks again to enter the tomb.(\ud83d\udde8\ufe0f 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "Travel back to Cairn Island, and search the well stacked rocks again to enter the tomb.(🗨️ 1)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1902,49 +2021,15 @@
     },
     {
       "stepDescription": "Use the Rashiliyia corpse on the 'tomb dolmen'.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -1953,49 +2038,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

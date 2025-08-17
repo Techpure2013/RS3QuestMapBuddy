@@ -2,10 +2,61 @@
   "questName": "The World Wakes",
   "questSteps": [
     {
-      "stepDescription": "Talk to Orlando Smith, West of the Legends' Guild (fairy code BLR, or use the Ardougne lodestone). (Chat 1\u20221\u20221\u2022\u2713)",
+      "stepDescription": "Items needed: Gear and food for fights.",
       "itemsNeeded": [
         "Gear and food for fights."
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Orlando Smith, West of the Legends' Guild (fairy code BLR, or use the Ardougne lodestone). (Chat 1•1•1•✓)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -514,7 +565,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Sliske. (Chat 3\u20221\u20221\u20221\u20221\u20222\u20221\u20222)",
+      "stepDescription": "Talk to Sliske. (Chat 3•1•1•1•1•2•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -616,7 +667,7 @@
       ]
     },
     {
-      "stepDescription": "After the cutscenes, talk to Kree'arra. (Chat 3\u20223)",
+      "stepDescription": "After the cutscenes, talk to Kree'arra. (Chat 3•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1279,7 +1330,7 @@
       ]
     },
     {
-      "stepDescription": "After a short chat (Chat 1\u20221\u20221), you will need to drag the guardian icons to the correct threat (Image here)",
+      "stepDescription": "After a short chat (Chat 1•1•1), you will need to drag the guardian icons to the correct threat (Image here)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1330,7 +1381,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Juna. (Chat 1\u20221)",
+      "stepDescription": "Talk to Juna. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3625,7 +3676,7 @@
       ]
     },
     {
-      "stepDescription": "On your return, talk to one of the guardians. (Chat ~\u2022~)",
+      "stepDescription": "On your return, talk to one of the guardians. (Chat ~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3676,7 +3727,7 @@
       ]
     },
     {
-      "stepDescription": "Saradomin will appear. Talk to him. (Chat ~\u2022~)",
+      "stepDescription": "Saradomin will appear. Talk to him. (Chat ~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3779,49 +3830,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

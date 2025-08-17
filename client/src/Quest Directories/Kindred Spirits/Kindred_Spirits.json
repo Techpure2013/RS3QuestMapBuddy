@@ -2,7 +2,7 @@
   "questName": "Kindred Spirits",
   "questSteps": [
     {
-      "stepDescription": "Talk to Linza in Burthorpe, near the furnaces south of the Burthorpe lodestone. (Chat \u2713)",
+      "stepDescription": "Talk to Linza in Burthorpe, near the furnaces south of the Burthorpe lodestone. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Relomia in the middle of Draynor Village. (Chat 1\u2022~\u2022~)",
+      "stepDescription": "Talk to Relomia in the middle of Draynor Village. (Chat 1•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1736,7 +1736,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Dharok. (Chat 2\u20222\u20222)",
+      "stepDescription": "Talk to Dharok. (Chat 2•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1991,7 +1991,7 @@
       ]
     },
     {
-      "stepDescription": "Talk-To Verac. (Chat 3\u20221\u20221\u20221\u20221)",
+      "stepDescription": "Talk-To Verac. (Chat 3•1•1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2348,7 +2348,7 @@
       ]
     },
     {
-      "stepDescription": "Investigate the lever. (Chat 3\u20221)",
+      "stepDescription": "Investigate the lever. (Chat 3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

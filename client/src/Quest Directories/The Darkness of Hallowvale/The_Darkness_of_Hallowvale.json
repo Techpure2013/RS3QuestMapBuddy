@@ -2,11 +2,62 @@
   "questName": "The Darkness of Hallowvale",
   "questSteps": [
     {
-      "stepDescription": "The location of Old Man Ral.",
+      "stepDescription": "Items needed: 2 planks (protean planks do not work), 8 nails (any type except rune nails)",
       "itemsNeeded": [
         "2 planks (protean planks do not work)",
         "8 nails (any type except rune nails)"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Turning on always highlight mode for entity borders may make this section easier, as you can more easily see where each ladder/door/jump locations",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -107,7 +158,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Veliaf Hurtz in the Burgh de Rott pub basement. (Chat 4\u2022\u2713\u20221\u20222\u20223\u20224\u20225)",
+      "stepDescription": "Talk to Veliaf Hurtz in the Burgh de Rott pub basement. (Chat 4•✓•1•2•3•4•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -566,7 +617,7 @@
       ]
     },
     {
-      "stepDescription": "Climb the wall rubble to the north and talk to a Meiyerditch citizen. (Chat 4\u20224\u20224)",
+      "stepDescription": "Climb the wall rubble to the north and talk to a Meiyerditch citizen. (Chat 4•4•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -617,7 +668,7 @@
       ]
     },
     {
-      "stepDescription": "North of the wall rubble, talk to Old Man Ral (Achievement icon on the map). (Chat 4\u20224)",
+      "stepDescription": "North of the wall rubble, talk to Old Man Ral (Achievement icon on the map). (Chat 4•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -873,6 +924,57 @@
     },
     {
       "stepDescription": "The final destination of this section of the quest. A room marked by a greenish-blue carped and wall-mounted sickle. This room is found against the mid-eastern wall of the city.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "If you are having trouble being caught by one of the vyres, lobbying will cause them to catch you again. This is a rare glitch that happens if you freedom and walk away from a vyre while it is catching you",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2861,7 +2963,7 @@
       ]
     },
     {
-      "stepDescription": "Run north and talk to Vertida. (Chat 3\u20224)",
+      "stepDescription": "Run north and talk to Vertida. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2912,7 +3014,7 @@
       ]
     },
     {
-      "stepDescription": "Take the message back to Veliaf Hurtz who is in the basement of the pub in Burgh de Rott. (Chat 1\u20223\u20224)",
+      "stepDescription": "Take the message back to Veliaf Hurtz who is in the basement of the pub in Burgh de Rott. (Chat 1•3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2963,7 +3065,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Drezel in the Mausoleum under the Paterdomus temple west of Canifis. Use CKS or the invitation box to teleport nearby. (Chat 2\u20225)",
+      "stepDescription": "Talk to Drezel in the Mausoleum under the Paterdomus temple west of Canifis. Use CKS or the invitation box to teleport nearby. (Chat 2•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3269,7 +3371,7 @@
       ]
     },
     {
-      "stepDescription": "Teleport to Varrock and talk to King Roald in the palace. (Chat 1\u20224\u20221)",
+      "stepDescription": "Teleport to Varrock and talk to King Roald in the palace. (Chat 1•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3371,7 +3473,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Drezel about what to do next. (Chat 2\u20223)",
+      "stepDescription": "Talk to Drezel about what to do next. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3422,7 +3524,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Veliaf Hurtz back in the basement of the pub in Burgh de Rott. (Chat 1\u20222\u20223\u20224)",
+      "stepDescription": "Talk to Veliaf Hurtz back in the basement of the pub in Burgh de Rott. (Chat 1•2•3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3779,7 +3881,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Vertida (Chat 3\u20222)",
+      "stepDescription": "Talk to Vertida (Chat 3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4136,7 +4238,7 @@
       ]
     },
     {
-      "stepDescription": "Keep running north along the wall, over more ladders. Talk to Safalaan at the very end to receive papyrus and charcoal. (Chat 2\u20221\u20223)",
+      "stepDescription": "Keep running north along the wall, over more ladders. Talk to Safalaan at the very end to receive papyrus and charcoal. (Chat 2•1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -4595,7 +4697,7 @@
       ]
     },
     {
-      "stepDescription": "Return to the hideout and talk to Safalaan (Chat 1\u20224\u20225)",
+      "stepDescription": "Return to the hideout and talk to Safalaan (Chat 1•4•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -5259,49 +5361,15 @@
     },
     {
       "stepDescription": "Take the sealed message to Veliaf. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -5310,49 +5378,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

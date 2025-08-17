@@ -2,7 +2,7 @@
   "questName": "That Old Black Magic Flesh and Bone",
   "questSteps": [
     {
-      "stepDescription": "Talk to Lady Grey, behind Death in the City of Um and agree to get her guitar back. (Chat \u2713)",
+      "stepDescription": "Items needed: 360 flesh and 520 bone runes",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Travel to Lumbridge Catacombs.",
+      "stepDescription": "Talk to Zommy 'Brains' Walker (appears at 50 Necromancy).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "stepDescription": "At the end of the catacombs, kill Dragith Nurn using Necromancy and pick up Lady Grey's guitar.",
+      "stepDescription": "With 360 flesh runes and 520 bone runes, speak to the Former Master Crafter, north of the city taskmaster. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "stepDescription": "Return to the City of Um and speak to Lady Grey. Hand her the guitar. (Chat 1\u20221\u20224)",
+      "stepDescription": "Return to Zommy the pianist with the keys.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -206,7 +206,7 @@
       ]
     },
     {
-      "stepDescription": "Head to the Ritual site. Perform the any ritual with a Speed I alteration glyph active.",
+      "stepDescription": "Talk to Lady Grey about the drummer. (Chat 1•2)",
       "itemsNeeded": [
         "Any tier Speed alteration",
         "Everlight trumpet"
@@ -260,7 +260,7 @@
       ]
     },
     {
-      "stepDescription": "Head back to the bandstand where Lady Grey was and speak to 'No Gums' Murray.",
+      "stepDescription": "You have Completed That Old Black Magic: Flesh and Bone",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -568,7 +568,7 @@
       ]
     },
     {
-      "stepDescription": "With 360 flesh runes and 520 bone runes, speak to the Former Master Crafter, north of the city taskmaster. (Chat 1\u20221)",
+      "stepDescription": "With 360 flesh runes and 520 bone runes, speak to the Former Master Crafter, north of the city taskmaster. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -670,7 +670,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Lady Grey about the drummer. (Chat 1\u20222)",
+      "stepDescription": "Talk to Lady Grey about the drummer. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

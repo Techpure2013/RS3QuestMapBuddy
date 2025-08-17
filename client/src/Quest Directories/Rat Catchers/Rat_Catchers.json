@@ -2,11 +2,62 @@
   "questName": "Rat Catchers",
   "questSteps": [
     {
-      "stepDescription": "Take out your cat or kitten.",
+      "stepDescription": "Items needed: a cat, 1 free inventory space go\ntalk to Gertrude in west edge of Varrock. (Chat 3•✓) or\nif you have a Hellcat out (Chat 4•✓)",
       "itemsNeeded": [
         "a cat",
-        "1 free inventory space go\ntalk to Gertrude in west edge of Varrock. (Chat 3\u2022\u2713) or\nif you have a Hellcat out (Chat 4\u2022\u2713)"
+        "1 free inventory space go\ntalk to Gertrude in west edge of Varrock. (Chat 3•✓) or\nif you have a Hellcat out (Chat 4•✓)"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Take out your cat or kitten.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -210,57 +261,6 @@
     },
     {
       "stepDescription": "Talk to them again to obtain a Rat pole.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Read the \"directions\" scroll he gives you. (Chat 1)",
       "itemsNeeded": [
         "1 free inventory space go\ntalk to Jimmy Dazzler in the house directly west of the Flying Horse Inn in East Ardougne. Finish all dialogue",
         "if you dont you will not proceed."
@@ -314,12 +314,165 @@
       ]
     },
     {
-      "stepDescription": "Hide at the hedges directly west of the mansion when the southwest guard walks toward the bridge.",
+      "stepDescription": "Items needed: 1 free inventory space go\ntalk to Jimmy Dazzler in the house directly west of the Flying Horse Inn in East Ardougne. Finish all dialogue, if you dont you will not proceed.",
       "itemsNeeded": [
         "cat",
         "ratpole",
         "1 free inventory space if you are dual wielding try to\navoid guards whilst traversing throughout. You can use Surge or Dive to navigate quickly."
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Read the \"directions\" scroll he gives you. (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: cat, ratpole, 1 free inventory space if you are dual wielding try to\navoid guards whilst traversing throughout. You can use Surge or Dive to navigate quickly.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Hide at the hedges directly west of the mansion when the southwest guard walks toward the bridge.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -931,8 +1084,19 @@
     },
     {
       "stepDescription": "Talk to Jimmy Dazzler.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "a cat",
+        "a catspeak amulet",
+        "4 pieces of cheese",
+        "a bucket of milk",
+        "clean marrentill",
+        "unicorn horn dust",
+        "rat poison or kwuarm",
+        "red spiders eggs and an empty vial also"
+      ],
+      "itemsRecommended": [
+        "8-10 raw fish"
+      ],
       "highlights": {
         "npc": [
           {
@@ -1083,20 +1247,60 @@
       ]
     },
     {
+      "stepDescription": "Items needed: a cat, a catspeak amulet, 4 pieces of cheese, a bucket of milk, clean marrentill, unicorn horn dust, rat poison or kwuarm, red spiders eggs and an empty vial also\nItems recommended: 8-10 raw fish",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Talk to Hooknosed Jack in south-east Varrock, inside the fenced area past the guard. Talk to him again, if you're making the Rat poison and don't have the ingredients in your inventory on the first talk.",
-      "itemsNeeded": [
-        "a cat",
-        "a catspeak amulet",
-        "4 pieces of cheese",
-        "a bucket of milk",
-        "clean marrentill",
-        "unicorn horn dust",
-        "rat poison or kwuarm",
-        "red spiders eggs and an empty vial also"
-      ],
-      "itemsRecommended": [
-        "8-10 raw fish"
-      ],
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1349,7 +1553,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Apothecary in western Varrock for cat antipoison. (Chat 2\u20225)",
+      "stepDescription": "Talk to the Apothecary in western Varrock for cat antipoison. (Chat 2•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1503,7 +1707,12 @@
     },
     {
       "stepDescription": "Pick up your cat and use it on the hole in wall. (not the rat holes)",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "a cat",
+        "a catspeak amulet",
+        "a pot",
+        "weeds"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1706,13 +1915,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: a cat, a catspeak amulet, a pot, weeds",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Talk to Smokin' Joe in east Keldagrim, just east of the pickaxe shop. (Chat 1)",
-      "itemsNeeded": [
-        "a cat",
-        "a catspeak amulet",
-        "a pot",
-        "weeds"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1763,7 +2018,12 @@
     },
     {
       "stepDescription": "Use some weeds on an empty pot and light it.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "a snakecharm",
+        "101 coins or Ring of charos(a) to only pay 51gp",
+        "you will need\nMusic scroll notes to play (View Image at step) or Talk to a woman named The Face",
+        "north of Port Sarim lodestone."
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2017,13 +2277,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: a snakecharm, 101 coins or Ring of charos(a) to only pay 51gp, you will need\nMusic scroll notes to play (View Image at step) or Talk to a woman named The Face, north of Port Sarim lodestone.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Talk to Felkrash, who is nearby.",
-      "itemsNeeded": [
-        "a snakecharm",
-        "101 coins or Ring of charos(a) to only pay 51gp",
-        "you will need\nMusic scroll notes to play (View Image at step) or Talk to a woman named The Face",
-        "north of Port Sarim lodestone."
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2175,7 +2481,7 @@
       ]
     },
     {
-      "stepDescription": "Use a coin with Badir the Snake Charmer's money pot. (Chat 2\u20223\u20222\u20222\u20221) (unless wearing a Ring of charos).",
+      "stepDescription": "Use a coin with Badir the Snake Charmer's money pot. (Chat 2•3•2•2•1) (unless wearing a Ring of charos).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2431,49 +2737,15 @@
     },
     {
       "stepDescription": "Go through the pages and click the correct notes. The red dots in the music scroll correspond to the black dots on the flutes.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2482,49 +2754,15 @@
     },
     {
       "stepDescription": "On page 5, click the <) icon in the top left before you play the note. You can go back and make corrections to the pages if needed.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2533,49 +2771,15 @@
     },
     {
       "stepDescription": "Click play once all the notes are correctly selected.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2584,49 +2788,15 @@
     },
     {
       "stepDescription": "There will be short cutscene upon completing correctly.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2635,49 +2805,15 @@
     },
     {
       "stepDescription": "Talk to Felkrash.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2686,49 +2822,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

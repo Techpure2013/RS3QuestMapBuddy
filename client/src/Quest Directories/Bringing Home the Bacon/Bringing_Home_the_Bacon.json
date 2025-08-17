@@ -2,7 +2,7 @@
   "questName": "Bringing Home the Bacon",
   "questSteps": [
     {
-      "stepDescription": "Speak to Eli in Falador Farm north of Port Sarim. (Chat \u2713)",
+      "stepDescription": "Speak to Eli in Falador Farm north of Port Sarim. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -563,7 +563,7 @@
       ]
     },
     {
-      "stepDescription": "Go back to Eli in the storm cellar and talk to him for construction materials. (Chat 1\u20224)",
+      "stepDescription": "Go back to Eli in the storm cellar and talk to him for construction materials. (Chat 1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

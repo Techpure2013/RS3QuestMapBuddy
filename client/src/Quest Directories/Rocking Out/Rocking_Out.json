@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Bill Teach in The Green Ghost, The Other Inn, or on The Adventurous. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Bill Teach in The Green Ghost, The Other Inn, or on The Adventurous. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -104,10 +104,61 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Customs Sergeant in the house in south-east Rimmington while wearing three pieces of pirate clothing. (Read the noticeboard next to the entrance door for information on the answers to the trick questions. The answers to the trick questions are different for everyone. If the sergeant tells you that they boarded the ship whose crew is congratulated on the noticeboard, tell him that that is one of their ships. He will then ask if you served on one of the other ships.",
+      "stepDescription": "Items needed: 3 pieces of pirate clothing",
       "itemsNeeded": [
         "3 pieces of pirate clothing"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to the Customs Sergeant in the house in south-east Rimmington while wearing three pieces of pirate clothing. (Read the noticeboard next to the entrance door for information on the answers to the trick questions. The answers to the trick questions are different for everyone. If the sergeant tells you that they boarded the ship whose crew is congratulated on the noticeboard, tell him that that is one of their ships. He will then ask if you served on one of the other ships.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -872,6 +923,65 @@
     },
     {
       "stepDescription": "Speak to Young Ralph and go to the east side of the island to a dock and Dive Pier. (Chat 1)",
+      "itemsNeeded": [
+        "Hammer",
+        "two bronze wires",
+        "pirate clothing",
+        "charcoal",
+        "diving apparatus",
+        "fishbowl helmet",
+        "and ghostspeak amulet"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Hammer, two bronze wires, pirate clothing, charcoal, diving apparatus, fishbowl helmet, and ghostspeak amulet",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -923,15 +1033,7 @@
     },
     {
       "stepDescription": "Travel to Braindeath Island by speaking to Pirate Pete north of Port Phasmatys. (Chat 1)",
-      "itemsNeeded": [
-        "Hammer",
-        "two bronze wires",
-        "pirate clothing",
-        "charcoal",
-        "diving apparatus",
-        "fishbowl helmet",
-        "and ghostspeak amulet"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -3073,7 +3175,13 @@
     },
     {
       "stepDescription": "Talk to the Locker Officer and receive the brooch.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Izzy's mark",
+        "Bill Teach's mark",
+        "Frank's mark",
+        "Braindeath's mark",
+        "and Brass Hand Harry's mark"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -3174,14 +3282,59 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Izzy's mark, Bill Teach's mark, Frank's mark, Braindeath's mark, and Brass Hand Harry's mark",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Bring the 5 marks and go back to the Customs Sergeant in Rimmington and tell him you want to make a confession. He will give you a file.",
-      "itemsNeeded": [
-        "Izzy's mark",
-        "Bill Teach's mark",
-        "Frank's mark",
-        "Braindeath's mark",
-        "and Brass Hand Harry's mark"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -3436,49 +3589,15 @@
     },
     {
       "stepDescription": "Go to the top floor and talk to the Locker Officer to get back the filled file that you gave the Customs Sergeant earlier.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3487,49 +3606,15 @@
     },
     {
       "stepDescription": "Head back down to your cell and shout-through the barred window to Young Ralph. A cutscene will follow, do not misclick off of the chat dialogs during the cutscene or you'll have to restart this step again.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3538,49 +3623,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

@@ -4,17 +4,22 @@ import L from "leaflet";
 
 export interface SelectionGeometry {
   type: "npc" | "object" | "none";
-  location?: { lat: number; lng: number };
-  locationArray?: {
-    lat: number;
-    lng: number;
-    color: string;
-    numberLabel?: string; // Optional number/label for object points
+  npcArray?: {
+    npcName: string;
+    npcLocation: { lat: number; lng: number };
+    wanderRadius: {
+      bottomLeft: { lat: number; lng: number };
+      topRight: { lat: number; lng: number };
+    };
   }[];
-  radius?: {
-    bottomLeft: { lat: number; lng: number };
-    topRight: { lat: number; lng: number };
-  };
+  objectArray?: {
+    name: string;
+    objectLocation: { lat: number; lng: number }[];
+    objectRadius: {
+      bottomLeft: { lat: number; lng: number };
+      topRight: { lat: number; lng: number };
+    };
+  }[];
 }
 
 interface SelectionHighlightLayerProps {
@@ -68,76 +73,67 @@ export const SelectionHighlightLayer: React.FC<
 
     if (geometry.type === "none") return;
 
-    // Draw the radius/area if it exists (works for both NPCs and Objects)
-    if (
-      geometry.radius &&
-      (geometry.radius.bottomLeft.lat !== 0 ||
-        geometry.radius.bottomLeft.lng !== 0)
-    ) {
-      const topLeftVisualCenter = convertStoredToVisual(
-        geometry.radius.bottomLeft
-      );
-      const bottomRightVisualCenter = convertStoredToVisual(
-        geometry.radius.topRight
-      );
-
-      // Calculate the full bounds from the top-left corner of the top-left tile
-      // to the bottom-right corner of the bottom-right tile.
-      const bounds = L.latLngBounds(
-        [bottomRightVisualCenter.lat + 1, topLeftVisualCenter.lng], // South-West corner
-        [topLeftVisualCenter.lat, bottomRightVisualCenter.lng + 1] // North-East corner
-      );
-      L.rectangle(bounds, radiusStyle).addTo(layerRef.current);
-    }
-
-    // Draw the single location for an NPC
-    if (
-      geometry.type === "npc" &&
-      geometry.location &&
-      (geometry.location.lat !== 0 || geometry.location.lng !== 0)
-    ) {
-      const visualCenter = convertStoredToVisual(geometry.location);
-      const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
-      L.rectangle(tileBounds, tileStyle).addTo(layerRef.current);
-    }
-    // Draw the array of locations for an Object
-    else if (geometry.type === "object" && geometry.locationArray) {
-      geometry.locationArray.forEach((loc) => {
-        if (loc.lat !== 0 || loc.lng !== 0) {
-          const visualCenter = convertStoredToVisual(loc);
+    // Draw NPCs
+    if (geometry.type === "npc" && geometry.npcArray) {
+      geometry.npcArray.forEach((npc) => {
+        // NPC location tile
+        if (npc.npcLocation.lat !== 0 || npc.npcLocation.lng !== 0) {
+          const visualCenter = convertStoredToVisual(npc.npcLocation);
           const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
+          L.rectangle(tileBounds, tileStyle).addTo(layerRef.current);
+        }
 
-          // Use the color stored with the point, with a fallback
-          const pointColor = loc.color || "#FF00FF"; // Default to magenta
-          const pointStyle = {
-            ...tileStyle,
-            color: pointColor,
-            fillColor: pointColor,
-          };
+        // NPC wander radius
+        if (npc.wanderRadius) {
+          const topLeftVisualCenter = convertStoredToVisual(
+            npc.wanderRadius.bottomLeft
+          );
+          const bottomRightVisualCenter = convertStoredToVisual(
+            npc.wanderRadius.topRight
+          );
 
-          // 1. Draw the colored tile background
-          L.rectangle(tileBounds, pointStyle).addTo(layerRef.current);
+          const bounds = L.latLngBounds(
+            [bottomRightVisualCenter.lat + 1, topLeftVisualCenter.lng],
+            [topLeftVisualCenter.lat, bottomRightVisualCenter.lng + 1]
+          );
+          L.rectangle(bounds, radiusStyle).addTo(layerRef.current);
+        }
+      });
+    }
 
-          // 2. If a numberLabel exists, create and add a text marker on top
-          if (loc.numberLabel) {
-            const numberIcon = L.divIcon({
-              className: "object-number-label", // Uses the CSS you added
-              html: `<span>${loc.numberLabel}</span>`,
-              iconSize: [20, 20],
-              iconAnchor: [10, 10], // Center the icon on the coordinate
-            });
+    // Draw Objects
+    if (geometry.type === "object" && geometry.objectArray) {
+      geometry.objectArray.forEach((obj) => {
+        // Object locations
+        obj.objectLocation.forEach((loc) => {
+          if (loc.lat !== 0 || loc.lng !== 0) {
+            const visualCenter = convertStoredToVisual(loc);
+            const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
 
-            // Position the marker in the exact center of the tile
-            const markerPosition: L.LatLngTuple = [
-              visualCenter.lat + 0.5,
-              visualCenter.lng + 0.5,
-            ];
+            const pointStyle = {
+              ...tileStyle,
+              color: "#FF00FF", // Magenta for objects
+              fillColor: "#FF00FF",
+            };
 
-            L.marker(markerPosition, {
-              icon: numberIcon,
-              interactive: false, // Make it non-clickable
-            }).addTo(layerRef.current);
+            L.rectangle(tileBounds, pointStyle).addTo(layerRef.current);
           }
+        });
+
+        // Object radius
+        if (obj.objectRadius) {
+          const topLeftVisualCenter = convertStoredToVisual(
+            obj.objectRadius.bottomLeft
+          );
+          const bottomRightVisualCenter = convertStoredToVisual(
+            obj.objectRadius.topRight
+          );
+
+          const bounds = L.latLngBounds(
+            [bottomRightVisualCenter.lat + 1, topLeftVisualCenter.lng],
+            [topLeftVisualCenter.lat, bottomRightVisualCenter.lng + 1]
+          );
+          L.rectangle(bounds, radiusStyle).addTo(layerRef.current);
         }
       });
     }

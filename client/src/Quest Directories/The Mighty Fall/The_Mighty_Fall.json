@@ -2,10 +2,61 @@
   "questName": "The Mighty Fall",
   "questSteps": [
     {
-      "stepDescription": "Speak to councillor Ur-tag in the north-easternmost house on the 2nd floor[US] (upstairs) of Dorgesh-Kaan. (Chat 2\u2022\u2713\u20222)",
+      "stepDescription": "Items needed: Light source",
       "itemsNeeded": [
         "Light source"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Speak to councillor Ur-tag in the north-easternmost house on the 2nd floor[US] (upstairs) of Dorgesh-Kaan. (Chat 2•✓•2)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -157,7 +208,7 @@
       ]
     },
     {
-      "stepDescription": "Speak to one of the leaders and suggest a candidate for the new leader (Chat ~\u20225\u2022~\u2022~\u2022~\u20222) to continue. The leaders will not agree and will insist upon having a Kyzaj Tournament to determine the new leader.",
+      "stepDescription": "Speak to one of the leaders and suggest a candidate for the new leader (Chat ~•5•~•~•~•2) to continue. The leaders will not agree and will insist upon having a Kyzaj Tournament to determine the new leader.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -259,58 +310,7 @@
       ]
     },
     {
-      "stepDescription": "Travel to the Bandosian camp on the east side of the Goblin Village and talk to Zanik once more (a teleport using the Wicked hood to the mind altar, or a Goblin Village sphere can be used). (Chat 1\u20222\u20221)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Go up one ladder and travel to the north-east corner to talk to Zarador, who will explain the rules of the tournament. (Chat 4)",
+      "stepDescription": "Travel to the Bandosian camp on the east side of the Goblin Village and talk to Zanik once more (a teleport using the Wicked hood to the mind altar, or a Goblin Village sphere can be used). (Chat 1•2•1)",
       "itemsNeeded": [
         "Weapons",
         "Armour\nEnter the portal to travel to Yu'biusk."
@@ -364,7 +364,109 @@
       ]
     },
     {
-      "stepDescription": "Head to your camp (travel west, down 2 ladders into a small room with a cooking pot) and talk to Burntmeat or My Arm. (Chat 4\u20221)",
+      "stepDescription": "Items needed: Weapons, Armour\nEnter the portal to travel to Yu'biusk.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Go up one ladder and travel to the north-east corner to talk to Zarador, who will explain the rules of the tournament. (Chat 4)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head to your camp (travel west, down 2 ladders into a small room with a cooking pot) and talk to Burntmeat or My Arm. (Chat 4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -619,7 +721,7 @@
       ]
     },
     {
-      "stepDescription": "Goblin guard, climb up the ladder south of Zarador, then south-east next to a big chest. (Chat 1\u20222\u20223\u20221)",
+      "stepDescription": "Goblin guard, climb up the ladder south of Zarador, then south-east next to a big chest. (Chat 1•2•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -670,7 +772,7 @@
       ]
     },
     {
-      "stepDescription": "Goblin guard at the crossroads west of Zarador. (Chat 1\u20222\u20223\u20221)",
+      "stepDescription": "Goblin guard at the crossroads west of Zarador. (Chat 1•2•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -721,7 +823,7 @@
       ]
     },
     {
-      "stepDescription": "Goblin guard in the Troll tower near the entrance. (Chat 1\u20222\u20223\u20221)",
+      "stepDescription": "Goblin guard in the Troll tower near the entrance. (Chat 1•2•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -772,7 +874,63 @@
       ]
     },
     {
-      "stepDescription": "Goblin ork, in the Ork Tower next to Bork. (Chat 1\u20222\u20223\u20221)",
+      "stepDescription": "Goblin ork, in the Ork Tower next to Bork. (Chat 1•2•3•1)",
+      "itemsNeeded": [
+        "Weapon",
+        "Armour",
+        "food",
+        "potions"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Goblin cleaner in the Goblin camp to the west, near Yelps. (Chat 1•2•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -823,7 +981,7 @@
       ]
     },
     {
-      "stepDescription": "Goblin cleaner in the Goblin camp to the west, near Yelps. (Chat 1\u20222\u20223\u20221)",
+      "stepDescription": "Items needed: Weapon, Armour, food, potions",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -875,12 +1033,7 @@
     },
     {
       "stepDescription": "If you die during the tournament, your gravestone will appear outside the Yu'biusk portal.",
-      "itemsNeeded": [
-        "Weapon",
-        "Armour",
-        "food",
-        "potions"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1287,7 +1440,7 @@
       ]
     },
     {
-      "stepDescription": "After you have made your choice speak to Zanik outside of the portal. (Chat ~\u20223)",
+      "stepDescription": "After you have made your choice speak to Zanik outside of the portal. (Chat ~•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2461,49 +2614,15 @@
     },
     {
       "stepDescription": "Speak to Zanik one final time.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2512,49 +2631,15 @@
     },
     {
       "stepDescription": "Return to Ur-tag in Dorgesh-Kaan.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2563,49 +2648,15 @@
     },
     {
       "stepDescription": "Congratulations, quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

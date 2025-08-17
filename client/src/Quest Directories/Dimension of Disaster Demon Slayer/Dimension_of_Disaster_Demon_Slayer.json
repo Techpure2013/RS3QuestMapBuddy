@@ -2,7 +2,7 @@
   "questName": "Dimension of Disaster Demon Slayer",
   "questSteps": [
     {
-      "stepDescription": "Talk to Aris in New Varrock Square. (Chat \u2713)",
+      "stepDescription": "Talk to Aris in New Varrock Square. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -563,7 +563,7 @@
       ]
     },
     {
-      "stepDescription": "At the cost of 2 Zemomarks, buy beer from the Bartender in the Blue Moon Inn. (Chat 1\u20224)",
+      "stepDescription": "At the cost of 2 Zemomarks, buy beer from the Bartender in the Blue Moon Inn. (Chat 1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -614,7 +614,7 @@
       ]
     },
     {
-      "stepDescription": "To get dog hair, go west to Gertrude's house, just north of the tanner. Search the kennel next to her house. (Chat 1\u20221\u20221\u20221\u20222\u20221\u20223\u20221)",
+      "stepDescription": "To get dog hair, go west to Gertrude's house, just north of the tanner. Search the kennel next to her house. (Chat 1•1•1•1•2•1•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -665,7 +665,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Apothecary to the south-east of the Kennel. (Chat 2\u20224) He will use the cabbage, dog hair, and rotten tomato.",
+      "stepDescription": "Talk to the Apothecary to the south-east of the Kennel. (Chat 2•4) He will use the cabbage, dog hair, and rotten tomato.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1073,10 +1073,61 @@
       ]
     },
     {
-      "stepDescription": "Fill vial with blood at blood fountain at the front of the Varrock castle or north-west of eastern bank.",
+      "stepDescription": "Items needed: Vial",
       "itemsNeeded": [
         "Vial"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Fill vial with blood at blood fountain at the front of the Varrock castle or north-west of eastern bank.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1330,7 +1381,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Spirit of the Mind. (Chat ~\u2022~\u2022~\u2022~\u2022~\u2022~\u2022~\u2022~\u2022~\u2022~\u2022~)",
+      "stepDescription": "Talk to Spirit of the Mind. (Chat ~•~•~•~•~•~•~•~•~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1381,7 +1432,7 @@
       ]
     },
     {
-      "stepDescription": "Replay: (Chat 4\u20223\u20224\u20224\u20224) (Always choose the last option whenever that last option says, \"I'm looking for you!\")",
+      "stepDescription": "Replay: (Chat 4•3•4•4•4) (Always choose the last option whenever that last option says, \"I'm looking for you!\")",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1791,6 +1842,59 @@
     {
       "stepDescription": "The Darklight and the dyed Silverlight override do not work with Silverlight equipped.",
       "itemsNeeded": [],
+      "itemsRecommended": [
+        "Armour and food"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: Armour and food",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1842,9 +1946,7 @@
     {
       "stepDescription": "Pass barrier.",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "Armour and food"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -2302,49 +2404,15 @@
     },
     {
       "stepDescription": "Return to Aris.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2353,49 +2421,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

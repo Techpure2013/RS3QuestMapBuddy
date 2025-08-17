@@ -2,9 +2,9 @@
   "questName": "The Brink of Extinction",
   "questSteps": [
     {
-      "stepDescription": "Run east through the arch. A cutscene will begin.",
+      "stepDescription": "Items needed: 4 free inventory spaces---\nSpeak to TzHaar-Mej-Ak or TzHaar-Mej-Jeh in the main plaza of TzHaar City. (Chat ✓)",
       "itemsNeeded": [
-        "4 free inventory spaces---\nSpeak to TzHaar-Mej-Ak or TzHaar-Mej-Jeh in the main plaza of TzHaar City. (Chat \u2713)"
+        "4 free inventory spaces---\nSpeak to TzHaar-Mej-Ak or TzHaar-Mej-Jeh in the main plaza of TzHaar City. (Chat ✓)"
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -55,7 +55,58 @@
       ]
     },
     {
-      "stepDescription": "Run north-east to the Birthing Pool and speak to TzHaar-Mej-Het. (Chat 4\u20221)",
+      "stepDescription": "Run east through the arch. A cutscene will begin.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Run north-east to the Birthing Pool and speak to TzHaar-Mej-Het. (Chat 4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -260,6 +311,59 @@
     },
     {
       "stepDescription": "Speak to TzHaar-Mej-Ak or TzHaar-Mej-Jeh again. (Chat 5)",
+      "itemsNeeded": [
+        "Communication orb"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Communication orb",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -311,9 +415,7 @@
     },
     {
       "stepDescription": "Note: There are several Ga'al around the city. Speak to any three of them. The locations below are recommended.",
-      "itemsNeeded": [
-        "Communication orb"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -2658,7 +2760,7 @@
       ]
     },
     {
-      "stepDescription": "Room 9 (Boss)----\nIn legacy mode, bring a weapon with more than one special attack (dragon dagger recommended).",
+      "stepDescription": "Room 9 (Boss)----\nIn legacy mode, bring a weapon with more than one special attack (dragon dagger recommended). If you're not using legacy mode, click the picture for a list of stun abilities you need to use on the boss.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -3372,50 +3474,16 @@
       ]
     },
     {
-      "stepDescription": "A cutscene ensues. (Chat 1\u2022~)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "A cutscene ensues. (Chat 1•~)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3424,49 +3492,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

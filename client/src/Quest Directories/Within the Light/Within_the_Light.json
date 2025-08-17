@@ -2,7 +2,7 @@
   "questName": "Within the Light",
   "questSteps": [
     {
-      "stepDescription": "A suitable chanting spot, just above the dead exploration party and entrance to the Temple of Light.",
+      "stepDescription": "Items needed: Two sets of mourner gear, new key, tarnished key, blank teleport crystal",
       "itemsNeeded": [
         "Two sets of mourner gear",
         "new key",
@@ -58,7 +58,58 @@
       ]
     },
     {
-      "stepDescription": "Talk to Arianwyn in the large building in Lletya. He may be located at the Temple of Light, death altar teleport using the wicked hood.(Chat \u2713)",
+      "stepDescription": "A suitable chanting spot, just above the dead exploration party and entrance to the Temple of Light.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Arianwyn in the large building in Lletya. He may be located at the Temple of Light, death altar teleport using the wicked hood.(Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -415,7 +466,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the gnome. (Chat 1\u20222)",
+      "stepDescription": "Talk to the gnome. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -721,7 +772,7 @@
       ]
     },
     {
-      "stepDescription": "When you get there, talk to Arianwyn. Dismiss your pet or familliar if you have any. (Chat 1\u20221)",
+      "stepDescription": "When you get there, talk to Arianwyn. Dismiss your pet or familliar if you have any. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -773,6 +824,60 @@
     },
     {
       "stepDescription": "Make sure to have a second set of mourner gear to hand in, if not done earlier, talk to him again once he is dressed.",
+      "itemsNeeded": [
+        "Crystal trinket",
+        "Death talisman"
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items needed: Crystal trinket, Death talisman",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -824,10 +929,7 @@
     },
     {
       "stepDescription": "Proceed to Thorgel in the temple. Do not teleport out of the room to the death altar as the light door will be locked on return.",
-      "itemsNeeded": [
-        "Crystal trinket",
-        "Death talisman"
-      ],
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1438,7 +1540,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Thorgel to become energised. (Chat 1\u20222)",
+      "stepDescription": "Talk to Thorgel to become energised. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2765,49 +2867,15 @@
     },
     {
       "stepDescription": "Return to Arianwyn in Lletya and give him the report.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2816,49 +2884,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

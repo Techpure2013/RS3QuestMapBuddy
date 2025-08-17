@@ -3,8 +3,12 @@
   "questSteps": [
     {
       "stepDescription": "Talk to Adrasteia in the library on the 2nd floor[US] floor of White Knights' Castle in Falador.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -48,12 +52,18 @@
         ]
       },
       "floor": 1,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Enter Senntisten through the ancient door at the Varrock Dig Site.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Enter Senntisten. If Zamorak, Lord of Chaos is currently the newest boss, use the Fateful portal in War's Retreat.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -97,12 +107,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Once inside, enter the undercity by using the nearby pulley lift (a few steps east of the larger-looking pulley lift used to enter/exit Senntisten).",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Alternatively, enter through the Ancient door at the Varrock Dig Site.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -146,12 +162,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Sir Cadian.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Once inside, enter the undercity by using the nearby pulley lift (a few steps east of the larger-looking pulley lift used to enter/exit Senntisten).",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -195,11 +217,17 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Clear The Zamorakian Undercity on any difficulty. Players who have already cleared it may skip this step.",
-      "itemsNeeded": ["Best Combat Gear", "Potions", "Luck"],
+      "stepDescription": "Talk to Sir Cadian.",
+      "itemsNeeded": [
+        "Best Combat Gear",
+        "Potions",
+        "Luck"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -244,12 +272,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Return to Adrasteia in the library and talk to her.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Clear The Zamorakian Undercity on any difficulty.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -293,110 +327,128 @@
         ]
       },
       "floor": 1,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Players who have already cleared it may skip this step.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Saradomin",
+            "npcLocation": {
+              "lat": 3341,
+              "lng": 2980
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3340,
+                "lng": 2979
+              },
+              "topRight": {
+                "lat": 3342,
+                "lng": 2980
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 2,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to Adrasteia in the library and talk to her.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Saradomin",
+            "npcLocation": {
+              "lat": 3341,
+              "lng": 2980
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3340,
+                "lng": 2979
+              },
+              "topRight": {
+                "lat": 3342,
+                "lng": 2980
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 2,
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go to the 3rd floor[US] and talk to Saradomin.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Saradomin",
-            "npcLocation": {
-              "lat": 3341,
-              "lng": 2980
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3340,
-                "lng": 2979
-              },
-              "topRight": {
-                "lat": 3342,
-                "lng": 2980
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 2,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Talk to anyone again to continue the dialogue.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Saradomin",
-            "npcLocation": {
-              "lat": 3341,
-              "lng": 2980
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3340,
-                "lng": 2979
-              },
-              "topRight": {
-                "lat": 3342,
-                "lng": 2980
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 2,
-      "additionalStepInformation": [""]
-    },
-    {
-      "stepDescription": "Travel to the Kharid-et Dig Site and talk to Dr Nabanik.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -440,12 +492,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Nex, Trindine, Wahisietel, or Azzanadra.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Talk to anyone again to continue the dialogue.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -489,12 +547,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Armadyl at his tower south of Falador.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Travel to the Kharid-et Dig Site and talk to Dr Nabanik.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -538,12 +602,18 @@
         ]
       },
       "floor": 3,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Return to Adrasteia in the library and talk to her.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Talk to Nex, Trindine, Wahisietel, or Azzanadra.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -587,12 +657,18 @@
         ]
       },
       "floor": 1,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Quest complete!",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Talk to Armadyl at his tower south of Falador.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -636,7 +712,43 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Return to Adrasteia in the library and talk to her.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Quest complete!",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
     }
   ]
 }

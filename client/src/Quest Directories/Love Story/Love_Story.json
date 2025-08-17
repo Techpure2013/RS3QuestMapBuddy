@@ -2,7 +2,7 @@
   "questName": "Love Story",
   "questSteps": [
     {
-      "stepDescription": "Talk to Mabel in the barn east of the Draynor Village lodestone. (Chat 1\u2022\u2713\u20223)",
+      "stepDescription": "Talk to Mabel in the barn east of the Draynor Village lodestone. (Chat 1•✓•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -512,7 +512,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Zenevivia. (Chat 3\u20222\u20221\u20223)",
+      "stepDescription": "Talk to Zenevivia. (Chat 3•2•1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -614,7 +614,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to her again. (Chat 2\u20222\u20225)",
+      "stepDescription": "Talk to her again. (Chat 2•2•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -665,7 +665,7 @@
       ]
     },
     {
-      "stepDescription": "Go to Draynor Village and talk to the Wise Old Man. (Chat 2\u20221)",
+      "stepDescription": "Go to Draynor Village and talk to the Wise Old Man. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -716,7 +716,7 @@
       ]
     },
     {
-      "stepDescription": "After the cutscene, talk to him outside his house. If you have a familiar summoned then you must dismiss it to be able to progress. (Chat 2\u20221)",
+      "stepDescription": "After the cutscene, talk to him outside his house. If you have a familiar summoned then you must dismiss it to be able to progress. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -767,7 +767,7 @@
       ]
     },
     {
-      "stepDescription": "Head to the Rimmington house portal, talk to him again. (Chat ~\u20223)",
+      "stepDescription": "Head to the Rimmington house portal, talk to him again. (Chat ~•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -920,13 +920,64 @@
       ]
     },
     {
-      "stepDescription": "Enter the dungeon. (Chat 2)",
+      "stepDescription": "Items needed: 2 oak plank, 1 mithril bar, 1 steel bar or Clockwork---\nWhile standing next to the Wise Old Man, break the chipped tablet.",
       "itemsNeeded": [
         "2 oak plank",
         "1 mithril bar",
         "1 steel bar or Clockwork---\nWhile standing next to the Wise Old Man",
         "break the chipped tablet."
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Enter the dungeon. (Chat 2)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1384,7 +1435,7 @@
       ]
     },
     {
-      "stepDescription": "Enter the final door, talk to the Wise Old Man. (Chat ~\u20222\u20224)",
+      "stepDescription": "Enter the final door, talk to the Wise Old Man. (Chat ~•2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1792,7 +1843,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Zenevivia in the Wise Old Man's house. (Chat 4\u20222\u20221\u20221)",
+      "stepDescription": "Talk to Zenevivia in the Wise Old Man's house. (Chat 4•2•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1894,7 +1945,7 @@
       ]
     },
     {
-      "stepDescription": "Head downstairs, talk to Zenevivia again. (Chat 1\u20221)",
+      "stepDescription": "Head downstairs, talk to Zenevivia again. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1946,49 +1997,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

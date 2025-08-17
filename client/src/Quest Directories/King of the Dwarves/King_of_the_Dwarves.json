@@ -2,7 +2,7 @@
   "questName": "King of the Dwarves",
   "questSteps": [
     {
-      "stepDescription": "Speak to lava-flow miner Sven standing outside of the Lava Flow Mine in Keldagrim East. (Chat 1\u2022\u2713)",
+      "stepDescription": "Speak to lava-flow miner Sven standing outside of the Lava Flow Mine in Keldagrim East. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Veldaban near the protesters outside. (Chat ~\u2022~\u2022~)",
+      "stepDescription": "Talk to Veldaban near the protesters outside. (Chat ~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -257,7 +257,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Veldaban. (Chat 3\u20222)",
+      "stepDescription": "Talk to Veldaban. (Chat 3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -308,7 +308,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Green Gemstone Director. (Chat 4\u20223)",
+      "stepDescription": "Talk to the Green Gemstone Director. (Chat 4•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -359,7 +359,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Yellow Fortune Director. (Chat 1\u20221)",
+      "stepDescription": "Talk to the Yellow Fortune Director. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -410,7 +410,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Blue Opal Director. (Chat 2\u20222)",
+      "stepDescription": "Talk to the Blue Opal Director. (Chat 2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -461,7 +461,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the Brown Engine Director. (Chat 3\u20222)",
+      "stepDescription": "Talk to the Brown Engine Director. (Chat 3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -563,10 +563,61 @@
       ]
     },
     {
-      "stepDescription": "If you should somehow lose Veldaban, he will be waiting for you at the Laughing Miner Pub located in Keldagrim East.",
+      "stepDescription": "Items needed: 6 soft clay and 6 mithril bars",
       "itemsNeeded": [
         "6 soft clay and 6 mithril bars"
       ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "If you should somehow lose Veldaban, he will be waiting for you at the Laughing Miner Pub located in Keldagrim East.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -718,7 +769,7 @@
       ]
     },
     {
-      "stepDescription": "Head to the King's Axe Inn (Keldagrim West) and talk to Luitger. (Chat 3\u20223)",
+      "stepDescription": "Head to the King's Axe Inn (Keldagrim West) and talk to Luitger. (Chat 3•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -820,7 +871,7 @@
       ]
     },
     {
-      "stepDescription": "Go to the top of the Keldagrim Watchtower (just south of the Palace) and talk to Meike. (Chat 3\u20221)",
+      "stepDescription": "Go to the top of the Keldagrim Watchtower (just south of the Palace) and talk to Meike. (Chat 3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1228,7 +1279,7 @@
       ]
     },
     {
-      "stepDescription": "Use the furnace (not forge) such as the one in the Consortium south of the library, if the prompt doesn't show up go to another furnace. (Chat 1\u20221)",
+      "stepDescription": "Use the furnace (not forge) such as the one in the Consortium south of the library, if the prompt doesn't show up go to another furnace. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1485,6 +1536,59 @@
     {
       "stepDescription": "Open the door. After Brief Discussion Talk to Veldaban.",
       "itemsNeeded": [],
+      "itemsRecommended": [
+        "Combat boosting potions and food then go\ntalk to Veldaban. (Chat 1)"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: Combat boosting potions and food then go\ntalk to Veldaban. (Chat 1)",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -1536,9 +1640,7 @@
     {
       "stepDescription": "Enter the tunnel and go to the opposite end of the cavern.",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "Combat boosting potions and food then go\ntalk to Veldaban. (Chat 1)"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1689,7 +1791,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Veldaban. (Chat 3\u20223\u2022~\u20223)",
+      "stepDescription": "Talk to Veldaban. (Chat 3•3•~•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1740,7 +1842,7 @@
       ]
     },
     {
-      "stepDescription": "Head back halfway through the cavern until you come to an entrance on the east side. Enter it and speak to Pretty Flower. (Chat 2\u20222)",
+      "stepDescription": "Head back halfway through the cavern until you come to an entrance on the east side. Enter it and speak to Pretty Flower. (Chat 2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1893,7 +1995,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Pretty Flower (Chat 1\u20224).",
+      "stepDescription": "Talk to Pretty Flower (Chat 1•4).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1944,7 +2046,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to My Arm (Chat 3\u2022~\u20223\u20223\u20222\u20222).",
+      "stepDescription": "Talk to My Arm (Chat 3•~•3•3•2•2).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1995,7 +2097,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Pretty Flower. (Chat 1\u20224\u20223)",
+      "stepDescription": "Talk to Pretty Flower. (Chat 1•4•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2098,49 +2200,15 @@
     },
     {
       "stepDescription": "Talk to Veldaban, who is standing within the group of protesters.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -2149,49 +2217,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [

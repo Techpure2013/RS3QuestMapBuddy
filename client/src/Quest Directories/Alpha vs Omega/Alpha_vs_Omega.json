@@ -2,9 +2,13 @@
   "questName": "Alpha vs Omega",
   "questSteps": [
     {
-      "stepDescription": "Talk to Rasial, the First Necromancer on the bridge in the City of Um. (Chat \u2713)",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Talk to Rasial, the First Necromancer on the bridge in the City of Um. (Chat ✓)",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -48,12 +52,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Talk to Kharen to travel to Rasial's Citadel. (Chat 1), Using the boss portal in War's Retreat or boss portal in Max Guild to get to Rasial's citadel will not work to start the fight.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "stepDescription": "Talk to Kharen to travel to Rasial's Citadel. (Chat 1) Using the boss portal in War's Retreat or boss portal in Max Guild to get to Rasial's citadel will not work to start the fight.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -97,12 +107,20 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "If at any point you die during the fights, simply speak to Kharen to get back to Rasial's Citadel.",
-      "itemsNeeded": ["Necromancy Gear", "Food", "Potions"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "Necromancy Gear",
+        "Food",
+        "Potions"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -146,12 +164,20 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Speak with Rasial.",
-      "itemsNeeded": ["Necromancy Gear", "Food", "Potions"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "Necromancy Gear",
+        "Food",
+        "Potions"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -195,12 +221,20 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Defeat Hermod, the Spirit of War.",
-      "itemsNeeded": ["Necromancy Gear", "Food", "Potions"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "Necromancy Gear",
+        "Food",
+        "Potions"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -244,12 +278,20 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Defeat Rasial, the First Necromancer. Cannot be killed with Deathtouched dart.",
-      "itemsNeeded": ["Necromancy Gear", "Food", "Potions"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "Necromancy Gear",
+        "Food",
+        "Potions"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -293,12 +335,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "A cutscene ensues. Continue speaking with Rasial.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -342,12 +390,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Return to Death in the City of Um.",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -391,12 +445,18 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": ["none"],
-      "itemsRecommended": ["none"],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -440,7 +500,9 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": [""]
+      "additionalStepInformation": [
+        ""
+      ]
     }
   ]
 }

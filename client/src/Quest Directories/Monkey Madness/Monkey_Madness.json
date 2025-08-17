@@ -2,7 +2,7 @@
   "questName": "Monkey Madness",
   "questSteps": [
     {
-      "stepDescription": "Speak to King Narnode Shareen in The Grand Tree. He will give you a gnome royal seal. (Chat \u2713)",
+      "stepDescription": "Speak to King Narnode Shareen in The Grand Tree. He will give you a gnome royal seal. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -257,7 +257,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Daero, found on the east side of the 2nd floor[US] of the Grand Tree. He is at the Blurberry bar platform. (Chat 1\u20224\u20222\u20224\u20223\u20224\u20224\u20221)",
+      "stepDescription": "Talk to Daero, found on the east side of the 2nd floor[US] of the Grand Tree. He is at the Blurberry bar platform. (Chat 1•4•2•4•3•4•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -461,7 +461,7 @@
       ]
     },
     {
-      "stepDescription": "Or pay Glough 200,000 coins. He's located in the tree house south-east of the Grand Tree. (Chat 1\u20221\u20221) Speak to Daero at the Blurberry bar platform to return to the hangar; you will only have to complete the last move in the puzzle if you pay.",
+      "stepDescription": "Or pay Glough 200,000 coins. He's located in the tree house south-east of the Grand Tree. (Chat 1•1•1) Speak to Daero at the Blurberry bar platform to return to the hangar; you will only have to complete the last move in the puzzle if you pay.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -869,7 +869,7 @@
       ]
     },
     {
-      "stepDescription": "Head to the U-shaped building in the southern side of the monkey village. Enter through the southern door.",
+      "stepDescription": "Items needed: gold bar, ball of wool",
       "itemsNeeded": [],
       "itemsRecommended": [
         "food",
@@ -877,6 +877,108 @@
         "prayer potion",
         "energy potion"
       ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: food, antipoison, prayer potion, energy potion",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head to the U-shaped building in the southern side of the monkey village. Enter through the southern door.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -1590,7 +1692,11 @@
     {
       "stepDescription": "If you use the monkey bones on him here you don't need to get new ones when turning in the talisman. Monkey bones from the monkey zombies in the cave do not work. Keep your monkeyspeak amulet mould as it used in Do No Evil.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "antipoison",
+        "food",
+        "other types of monkey bones"
+      ],
       "highlights": {
         "npc": [
           {
@@ -1690,13 +1796,111 @@
       ]
     },
     {
+      "stepDescription": "Items needed: monkeyspeak amulet mould, enchanted bar, ball of wool, monkey corpse or monkey bones, 5 bananas",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: antipoison, food, other types of monkey bones",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Return to Marim (protect from missiles and surge to gate).",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "antipoison",
-        "food",
-        "other types of monkey bones"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -2306,7 +2510,7 @@
       ]
     },
     {
-      "stepDescription": "If you're obtaining multiple for Recipe for Disaster: Freeing King Awowogei, Do No Evil or Monkey butler then repeat the same step as before (Chat 2\u20221) then speak to the Monkey child again. (Chat 2)",
+      "stepDescription": "If you're obtaining multiple for Recipe for Disaster: Freeing King Awowogei, Do No Evil or Monkey butler then repeat the same step as before (Chat 2•1) then speak to the Monkey child again. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2459,7 +2663,7 @@
       ]
     },
     {
-      "stepDescription": "Bring other monkey bones and multiple talismans if you want to make more greegrees and (Chat 2\u20221) then use your Monkey talisman and different types of monkey bones on Zooknock.",
+      "stepDescription": "Bring other monkey bones and multiple talismans if you want to make more greegrees and (Chat 2•1) then use your Monkey talisman and different types of monkey bones on Zooknock.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -2563,7 +2767,10 @@
     {
       "stepDescription": "Watch the cutscene. Talk to Zooknock to receive your greegree.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "antipoison",
+        "food"
+      ],
       "highlights": {
         "npc": [
           {
@@ -2765,12 +2972,111 @@
       ]
     },
     {
+      "stepDescription": "Items needed: Monkey greegree, M'speak amulet",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: antipoison, food",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
       "stepDescription": "Enter Ardougne zoo and equip your greegree. Speak to the monkey minder.",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "antipoison",
-        "food"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -3076,7 +3382,11 @@
     {
       "stepDescription": "Go up the ladder and cross the bridge.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "food",
+        "armour",
+        "prayer potions"
+      ],
       "highlights": {
         "npc": [
           {
@@ -3380,13 +3690,9 @@
       ]
     },
     {
-      "stepDescription": "Right-click 10th squad sigil teleport when you are ready to kill Jungle Demon.",
+      "stepDescription": "Items needed: a weapon to kill a level 70 demon, 10th squad sigil",
       "itemsNeeded": [],
-      "itemsRecommended": [
-        "food",
-        "armour",
-        "prayer potions"
-      ],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
@@ -3428,6 +3734,40 @@
             }
           }
         ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Items recommended: food, armour, prayer potions",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Right-click 10th squad sigil teleport when you are ready to kill Jungle Demon.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3436,49 +3776,15 @@
     },
     {
       "stepDescription": "If you rub the sigil with your greegree equipped and with a full inventory, your greegree will drop on the ground.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3487,49 +3793,15 @@
     },
     {
       "stepDescription": "Kill the Jungle demon.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3538,49 +3810,15 @@
     },
     {
       "stepDescription": "You can minimise a lot of the damage taken, if you prayer flick between Protect from Melee and Magic (or Deflect Melee and Magic). Stay on Protect From Melee, and as the demon begins the animation for the magic attack swap to magic, wait for the hit and back to melee. Staying on one or the other means that he will use the other",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3589,49 +3827,15 @@
     },
     {
       "stepDescription": "style.\nSpeak to Garkor (if you speak to Zooknock afterward he will teleport you back to Ape Atoll which is not recommended)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3640,49 +3844,15 @@
     },
     {
       "stepDescription": "Speak to King Narnode in the Grand Tree.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -3691,49 +3861,15 @@
     },
     {
       "stepDescription": "Quest complete!",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
