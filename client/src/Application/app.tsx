@@ -19,11 +19,13 @@ import { produce } from "immer";
 import StepSnapHandler from "Map Classes/Map Components/StepSnapHandler";
 import { SelectionHighlightLayer } from "./../Map Classes/Map Components/SelectionHighlightLayer";
 import type { SelectionGeometry } from "./../Map Classes/Map Components/SelectionHighlightLayer";
+
 interface QuestData {
   questName: string;
   questSteps: any[];
 }
 type FileSystemFileHandle = any;
+
 const App: React.FC = () => {
   const { UserID, QuestName, level, z, x, y } = useParams<{
     UserID: string;
@@ -56,57 +58,69 @@ const App: React.FC = () => {
   const [fileHandle, setFileHandle] = useState<FileSystemFileHandle | null>(
     null
   );
+  const [stepDescriptionEdit, setStepDescriptionEdit] =
+    useState<boolean>(false);
+
+  // --- DERIVED VALUES ---
   const selectionGeometry = useMemo<SelectionGeometry>(() => {
     if (!questJson) return { type: "none" };
     const step = questJson.questSteps[selectedStep];
     if (!step) return { type: "none" };
 
     if (targetType === "npc") {
-      return {
-        type: "npc",
-        npcArray: step.highlights?.npc || [],
-      };
+      return { type: "npc", npcArray: step.highlights?.npc || [] };
     } else if (targetType === "object") {
-      return {
-        type: "object",
-        objectArray: step.highlights?.object || [],
-      };
+      return { type: "object", objectArray: step.highlights?.object || [] };
     }
-
     return { type: "none" };
   }, [questJson, selectedStep, targetType]);
-  const [stepDescriptionEdit, setStepDescriptionEdit] =
-    useState<boolean>(false);
-  // --- DERIVED VALUES ---
+
   const targetNameValue = useMemo(() => {
     if (!questJson) return "";
     const target =
       questJson.questSteps[selectedStep]?.highlights[targetType]?.[targetIndex];
-    return target
-      ? targetType === "npc"
-        ? target.npcName || ""
-        : target.name || ""
-      : "";
+    if (!target) return "";
+    return targetType === "npc" ? target.npcName || "" : target.name || "";
   }, [questJson, selectedStep, targetType, targetIndex]);
 
   const stepDescriptionValue =
     questJson?.questSteps[selectedStep]?.stepDescription || "";
-
   const itemsNeededValue =
     questJson?.questSteps[selectedStep]?.itemsNeeded?.join("\n") || "";
-
   const itemsRecommendedValue =
     questJson?.questSteps[selectedStep]?.itemsRecommended?.join("\n") || "";
-
   const additionalInfoValue =
     questJson?.questSteps[selectedStep]?.additionalStepInformation?.join(
       "\n"
     ) || "";
 
   // --- EFFECTS ---
+  // ✅ THIS IS THE SINGLE SOURCE OF TRUTH FOR STEP CHANGES
   useEffect(() => {
-    setTargetIndex(selectedStep);
-  }, [selectedStep]);
+    if (!questJson) return;
+    const step = questJson.questSteps[selectedStep];
+    if (!step) return;
+
+    const hasValidNpcs =
+      step.highlights?.npc?.some(
+        (npc: any) => npc.npcLocation?.lat !== 0 || npc.npcLocation?.lng !== 0
+      ) || false;
+    const hasValidObjects =
+      step.highlights?.object?.some((obj: any) =>
+        obj.objectLocation?.some((loc: any) => loc.lat !== 0 || loc.lng !== 0)
+      ) || false;
+
+    if (hasValidNpcs) {
+      setTargetType("npc");
+      setTargetIndex(0);
+    } else if (hasValidObjects) {
+      setTargetType("object");
+      setTargetIndex(0);
+    } else {
+      // No valid highlights in this step
+      setTargetIndex(0); // Default to index 0, can be empty
+    }
+  }, [questJson, selectedStep]);
 
   useEffect(() => {
     if (targetType === "object") {
@@ -117,61 +131,113 @@ const App: React.FC = () => {
   }, [targetType]);
 
   // --- HANDLERS ---
+  const handleSubmitToGitHub = async () => {
+    if (!questJson) {
+      alert("No quest data loaded to submit.");
+      return;
+    }
+
+    if (
+      !window.confirm(
+        "Are you sure you want to submit this quest as a Pull Request to GitHub?"
+      )
+    ) {
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:42069/api/submit-pr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userID: UserID || "anonymous-user",
+          questJson: questJson,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        alert(
+          `Successfully created Pull Request! You can view it here: ${data.prUrl}`
+        );
+        window.open(data.prUrl, "_blank"); // Open the PR in a new tab
+      } else {
+        throw new Error(data.error || "An unknown error occurred.");
+      }
+    } catch (err: any) {
+      console.error("Failed to submit PR:", err);
+      alert(`Error: Could not create Pull Request.\n\n${err.message}`);
+    }
+  };
   const updateQuestState = (newQuestState: QuestData) => {
     setQuestJson(newQuestState);
     setJsonString(JSON.stringify(newQuestState, null, 2));
   };
+  const handleDeleteStep = () => {
+    if (!questJson || questJson.questSteps.length <= 1) {
+      alert("Cannot delete the last remaining step.");
+      return;
+    }
 
-  const handleSetRadiusMode = () => {
-    setCaptureMode("radius");
+    if (
+      window.confirm(
+        `Are you sure you want to delete Step ${
+          selectedStep + 1
+        }? This cannot be undone.`
+      )
+    ) {
+      const nextState = produce(questJson, (draft) => {
+        // Remove one element at the current selectedStep index
+        draft.questSteps.splice(selectedStep, 1);
+      });
+
+      updateQuestState(nextState);
+
+      // Adjust the selectedStep index if we deleted the last item in the array
+      if (selectedStep >= nextState.questSteps.length) {
+        setSelectedStep(nextState.questSteps.length - 1);
+      }
+    }
   };
+  const handleSetRadiusMode = () => setCaptureMode("radius");
   const handleJsonTextChange = (text: string) => {
     setJsonString(text);
     try {
       const parsed = JSON.parse(text);
       setQuestJson(parsed);
     } catch (error) {
-      // Do nothing
+      /* ignore invalid json */
     }
   };
-  const handleStepDescriptionView = () => {
+  const handleStepDescriptionView = () =>
     setStepDescriptionEdit((prev) => !prev);
-  };
 
   const handleStepIncrement = () => {
     if (!questJson) return;
-
-    const newStep = Math.min(selectedStep + 1, questJson.questSteps.length - 1);
-    if (newStep !== selectedStep) {
-      setSelectedStep(newStep);
-      autoSetTargetType(questJson.questSteps[newStep]);
+    const newStepIndex = Math.min(
+      selectedStep + 1,
+      questJson.questSteps.length - 1
+    );
+    if (newStepIndex !== selectedStep) {
+      const newStepData = questJson.questSteps[newStepIndex];
+      setFloor(newStepData.floor ?? 0); // ✅ Sync floor view to new step's data
+      setSelectedStep(newStepIndex);
     }
   };
 
   const handleStepDecrement = () => {
     if (!questJson) return;
+    const newStepIndex = Math.max(selectedStep - 1, 0);
+    if (newStepIndex !== selectedStep) {
+      const newStepData = questJson.questSteps[newStepIndex];
+      setFloor(newStepData.floor ?? 0); // ✅ Sync floor view to new step's data
+      setSelectedStep(newStepIndex);
+    }
+  };
 
-    const newStep = Math.max(selectedStep - 1, 0);
-    if (newStep !== selectedStep) {
-      setSelectedStep(newStep);
-      autoSetTargetType(questJson.questSteps[newStep]);
-    }
-  };
-  const autoSetTargetType = (step: any) => {
-    if (
-      step?.highlights?.npc?.some(
-        (npc: any) => npc.npcLocation?.lat !== 0 || npc.npcLocation?.lng !== 0
-      )
-    ) {
-      setTargetType("npc");
-    } else if (
-      step?.highlights?.object?.some((obj: any) =>
-        obj.objectLocation?.some((loc: any) => loc.lat !== 0 || loc.lng !== 0)
-      )
-    ) {
-      setTargetType("object");
-    }
-  };
   const handleStepDescriptionChange = (newDescription: string) => {
     if (!questJson) return;
     const nextState = produce(questJson, (draft) => {
@@ -195,11 +261,64 @@ const App: React.FC = () => {
   const handleTargetNameChange = (newName: string) => {
     if (!questJson) return;
     const nextState = produce(questJson, (draft) => {
+      const step = draft.questSteps[selectedStep];
+      if (!step.highlights) step.highlights = {};
+      if (!step.highlights[targetType]) step.highlights[targetType] = [];
+      if (!step.highlights[targetType][targetIndex]) {
+        if (targetType === "npc") {
+          step.highlights.npc[targetIndex] = {
+            npcName: "",
+            npcLocation: { lat: 0, lng: 0 },
+            wanderRadius: {
+              bottomLeft: { lat: 0, lng: 0 },
+              topRight: { lat: 0, lng: 0 },
+            },
+          };
+        } else {
+          step.highlights.object[targetIndex] = {
+            name: "",
+            objectLocation: [],
+            objectRadius: {
+              bottomLeft: { lat: 0, lng: 0 },
+              topRight: { lat: 0, lng: 0 },
+            },
+          };
+        }
+      }
+      const target = step.highlights[targetType][targetIndex];
+      if (targetType === "npc") target.npcName = newName;
+      else target.name = newName;
+    });
+    updateQuestState(nextState);
+  };
+
+  const handleAddNpc = () => {
+    if (!questJson) return;
+    const nextState = produce(questJson, (draft) => {
+      const step = draft.questSteps[selectedStep];
+      if (!step.highlights) step.highlights = {};
+      if (!step.highlights.npc) step.highlights.npc = [];
+      step.highlights.npc.push({
+        npcName: "New NPC",
+        npcLocation: { lat: 0, lng: 0 },
+        wanderRadius: {
+          bottomLeft: { lat: 0, lng: 0 },
+          topRight: { lat: 0, lng: 0 },
+        },
+      });
+      setTargetIndex(step.highlights.npc.length - 1);
+      setTargetType("npc");
+    });
+    updateQuestState(nextState);
+  };
+
+  const handleResetNpcLocation = () => {
+    if (!questJson || targetType !== "npc") return;
+    const nextState = produce(questJson, (draft) => {
       const target =
-        draft.questSteps[selectedStep].highlights[targetType][targetIndex];
+        draft.questSteps[selectedStep]?.highlights.npc?.[targetIndex];
       if (target) {
-        if (targetType === "npc") target.npcName = newName;
-        else target.name = newName;
+        target.npcLocation = { lat: 0, lng: 0 };
       }
     });
     updateQuestState(nextState);
@@ -210,7 +329,6 @@ const App: React.FC = () => {
   };
 
   const handleApplyRadius = () => {
-    // FIX: Add a guard clause to ensure this only runs for NPCs.
     if (!questJson || targetType !== "npc") return;
 
     const target =
@@ -231,18 +349,6 @@ const App: React.FC = () => {
         topRight: { lat: center.lat + radius, lng: center.lng + radius },
       };
     });
-    updateQuestState(nextState);
-  };
-  const handleResetNpcLocation = () => {
-    if (!questJson || targetType !== "npc") return;
-
-    const nextState = produce(questJson, (draft) => {
-      const target = draft.questSteps[selectedStep].highlights.npc[targetIndex];
-      if (target) {
-        target.npcLocation = { lat: 0, lng: 0 }; // Reset to default
-      }
-    });
-
     updateQuestState(nextState);
   };
   const handleResetRadius = () => {
@@ -278,7 +384,21 @@ const App: React.FC = () => {
     });
     updateQuestState(nextState);
   };
-
+  const handleFloorChange = (newFloor: number) => {
+    if (HandleFloorIncreaseDecrease(newFloor)) {
+      setFloor(newFloor);
+      if (!questJson) return;
+      const nextState = produce(questJson, (draft) => {
+        const step = draft.questSteps[selectedStep];
+        if (step) {
+          step.floor = newFloor;
+        }
+      });
+      updateQuestState(nextState);
+    }
+  };
+  const handleFloorIncrement = () => handleFloorChange(floor + 1);
+  const handleFloorDecrement = () => handleFloorChange(floor - 1);
   const handleDataCaptured = (data: any) => {
     if (!questJson) return;
     const nextState = produce(questJson, (draft) => {
@@ -417,7 +537,6 @@ const App: React.FC = () => {
               if (isDuplicate) {
                 return;
               }
-              // FIX 2: Include the numberLabel when creating the new point.
               const newPoint = {
                 ...snappedCoord,
                 color: selectedObjectColor,
@@ -446,7 +565,6 @@ const App: React.FC = () => {
             };
             handleDataCaptured({ type: "radius", payload: radiusPayload });
             setFirstCorner(null);
-            // Return to the default mode for the current target type
             setCaptureMode(targetType === "object" ? "multi-point" : "single");
             break;
           case "wanderRadius":
@@ -523,7 +641,7 @@ const App: React.FC = () => {
         minZoom: -4,
         opacity: 0.6,
         className: "map-collision",
-        updateInterval: 50,
+        updateInterval: 100,
         keepBuffer: 8,
       },
     ],
@@ -533,6 +651,7 @@ const App: React.FC = () => {
   return (
     <div style={{ height: "100%", width: "100%" }}>
       <EditorPanel
+        onSubmitToGitHub={handleSubmitToGitHub}
         onResetRadius={handleResetRadius}
         itemsNeededValue={itemsNeededValue}
         onItemsNeededChange={(val) =>
@@ -579,6 +698,10 @@ const App: React.FC = () => {
         onSaveAsFile={handleSaveAsFile}
         selectEditDescription={stepDescriptionEdit}
         onSelectEditStepDescription={handleStepDescriptionView}
+        onAddNpc={handleAddNpc}
+        onDeleteStep={handleDeleteStep}
+        onFloorDecrement={handleFloorDecrement}
+        onFloorIncrement={handleFloorIncrement}
       />
       <MapContainer
         crs={gameMapOptions().crs}
@@ -602,24 +725,21 @@ const App: React.FC = () => {
           </div>
         </div>
         <div className="floorButtonContainer">
-          <button
-            className="floor-button floor-button--up"
-            onClick={() => {
-              if (HandleFloorIncreaseDecrease(floor + 1)) setFloor(floor + 1);
-            }}
-          >
-            ↑
-          </button>
-          <div className="floor-display">Floor {floor}</div>
-          <button
-            className="floor-button floor-button--down"
-            onClick={() => {
-              if (HandleFloorIncreaseDecrease(floor - 1))
-                setFloor(Math.max(0, floor - 1));
-            }}
-          >
-            ↓
-          </button>
+          <div className="floorButtonContainer">
+            <button
+              className="floor-button floor-button--up"
+              onClick={handleFloorIncrement}
+            >
+              ↑
+            </button>
+            <div className="floor-display">Floor {floor}</div>
+            <button
+              className="floor-button floor-button--down"
+              onClick={handleFloorDecrement}
+            >
+              ↓
+            </button>
+          </div>
         </div>
         <>
           {layers.map((layer) => (

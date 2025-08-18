@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
+import chatheadOverrides from "./chatheadOverrides.json";
 
 export interface SelectionGeometry {
   type: "npc" | "object" | "none";
   npcArray?: {
     npcName: string;
     npcLocation: { lat: number; lng: number };
+    chatheadOverride?: string;
     wanderRadius: {
       bottomLeft: { lat: number; lng: number };
       topRight: { lat: number; lng: number };
@@ -27,7 +29,7 @@ interface SelectionHighlightLayerProps {
 }
 
 const radiusStyle = {
-  color: "#00FFFF", // Bright Cyan for radius
+  color: "#00FFFF",
   weight: 2,
   opacity: 0.9,
   fillOpacity: 0.3,
@@ -36,18 +38,16 @@ const radiusStyle = {
 
 const tileStyle = {
   ...radiusStyle,
-  color: "#00FF00", // Default color for NPCs
-  fillOpacity: 0.7, // High opacity for single tiles
+  color: "#00FF00",
+  fillOpacity: 0.7,
 };
 
-// Helper to convert stored integer coordinates to visual .5 coordinates for drawing
 const convertStoredToVisual = (coord: { lat: number; lng: number }) => {
   const visualY = coord.lat - 0.5;
   const visualX = coord.lng + 0.5;
   return { lat: visualY, lng: visualX };
 };
 
-// Helper to get the drawing bounds for a single tile from its visual center
 const getTileBoundsFromVisualCenter = (visualCenter: {
   lat: number;
   lng: number;
@@ -56,6 +56,114 @@ const getTileBoundsFromVisualCenter = (visualCenter: {
   const y = visualCenter.lat;
   const x = visualCenter.lng;
   return L.latLngBounds([y, x], [y + interval, x + interval]);
+};
+
+const getChatheadUrl = (npcName: string) => {
+  const key = Object.keys(chatheadOverrides).find(
+    (k) => k.toLowerCase() === npcName.toLowerCase()
+  );
+
+  if (key) {
+    let url = chatheadOverrides[key];
+    if (url.includes("/images/")) return url;
+    if (url.includes("#/media/File:")) {
+      const match = url.match(/File:(.*?)(?:$|#|\/)/);
+      if (match && match[1]) {
+        const fileName = match[1].replace(/ /g, "_");
+        return `https://runescape.wiki/images/${fileName}`;
+      }
+    }
+    if (url.includes("/w/")) {
+      const parts = url.split("/w/");
+      if (parts[1]) {
+        const fileName = parts[1].replace(/ /g, "_");
+        return `https://runescape.wiki/images/${fileName}_chathead.png`;
+      }
+    }
+    return url;
+  }
+
+  const formatted = npcName.replace(/\s+/g, "_");
+  return `https://runescape.wiki/images/${formatted}_chathead.png`;
+};
+const resizeImage = (imageUrl: string, maxSize: number): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    // This is CRITICAL for loading images from another domain (the wiki) onto a canvas.
+    img.crossOrigin = "Anonymous";
+
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+
+      if (!ctx) {
+        return reject(new Error("Could not get canvas context"));
+      }
+
+      let width = img.width;
+      let height = img.height;
+
+      // Calculate new dimensions while preserving aspect ratio
+      if (width > height) {
+        if (width > maxSize) {
+          height *= maxSize / width;
+          width = maxSize;
+        }
+      } else {
+        if (height > maxSize) {
+          width *= maxSize / height;
+          height = maxSize;
+        }
+      }
+
+      canvas.width = width;
+      canvas.height = height;
+
+      // Draw the resized image onto the canvas
+      ctx.drawImage(img, 0, 0, width, height);
+
+      // Export the canvas content as a new data URL
+      resolve(canvas.toDataURL("image/png"));
+    };
+
+    img.onerror = (err) => {
+      reject(new Error("Failed to load image for resizing"));
+    };
+
+    img.src = imageUrl;
+  });
+};
+
+const createChatheadIcon = (resizedDataUrl: string) => {
+  const displaySize = 48; // The final, "super small" display size
+  return L.divIcon({
+    className: "chathead-icon",
+    html: `
+      <div style="
+        width: ${displaySize}px; 
+        height: ${displaySize}px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        border: 1px solid #888;
+        box-sizing: border-box;
+      ">
+        <img 
+          src="${resizedDataUrl}" 
+          style="
+            max-width: 100%; 
+            max-height: 100%;
+            image-rendering: pixelated; /* For sharp, crisp pixels */
+          " 
+        />
+      </div>
+    `,
+    iconSize: [displaySize, displaySize],
+    iconAnchor: [displaySize / 2, displaySize / 2],
+    popupAnchor: [0, -displaySize / 2],
+  });
 };
 
 export const SelectionHighlightLayer: React.FC<
@@ -68,76 +176,102 @@ export const SelectionHighlightLayer: React.FC<
     if (!layerRef.current) {
       layerRef.current = new L.LayerGroup().addTo(map);
     }
-    // Clear previous drawings on every update
     layerRef.current.clearLayers();
 
     if (geometry.type === "none") return;
 
-    // Draw NPCs
     if (geometry.type === "npc" && geometry.npcArray) {
       geometry.npcArray.forEach((npc) => {
-        // NPC location tile
-        if (npc.npcLocation.lat !== 0 || npc.npcLocation.lng !== 0) {
-          const visualCenter = convertStoredToVisual(npc.npcLocation);
-          const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
-          L.rectangle(tileBounds, tileStyle).addTo(layerRef.current);
-        }
-
-        // NPC wander radius
-        if (npc.wanderRadius) {
+        // Wander Radius (drawn first to be underneath)
+        if (
+          npc.wanderRadius &&
+          (npc.wanderRadius.bottomLeft.lat !== 0 ||
+            npc.wanderRadius.bottomLeft.lng !== 0 ||
+            npc.wanderRadius.topRight.lat !== 0 ||
+            npc.wanderRadius.topRight.lng !== 0)
+        ) {
           const topLeftVisualCenter = convertStoredToVisual(
             npc.wanderRadius.bottomLeft
           );
           const bottomRightVisualCenter = convertStoredToVisual(
             npc.wanderRadius.topRight
           );
-
           const bounds = L.latLngBounds(
             [bottomRightVisualCenter.lat + 1, topLeftVisualCenter.lng],
             [topLeftVisualCenter.lat, bottomRightVisualCenter.lng + 1]
           );
-          L.rectangle(bounds, radiusStyle).addTo(layerRef.current);
+          L.rectangle(bounds, radiusStyle).addTo(layerRef.current!);
+        }
+
+        // NPC Location
+        if (npc.npcLocation.lat !== 0 || npc.npcLocation.lng !== 0) {
+          const visualCenter = convertStoredToVisual(npc.npcLocation);
+          const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
+          const tileCenter = tileBounds.getCenter();
+
+          if (!npc.npcName || npc.npcName.length < 3) {
+            L.rectangle(tileBounds, tileStyle).addTo(layerRef.current!);
+            return;
+          }
+
+          const chatheadUrl =
+            npc.chatheadOverride || getChatheadUrl(npc.npcName);
+
+          // ✅ Use the new resize function
+          resizeImage(chatheadUrl, 40) // Resize to a max of 32x32 pixels
+            .then((resizedDataUrl) => {
+              // On success, create the marker with the small, resized image
+              const marker = L.marker([tileCenter.lat, tileCenter.lng], {
+                icon: createChatheadIcon(resizedDataUrl),
+              }).bindPopup(`<b>${npc.npcName}</b>`);
+              layerRef.current?.addLayer(marker);
+            })
+            .catch(() => {
+              // On failure (image not found, etc.), draw the fallback rectangle
+              L.rectangle(tileBounds, tileStyle).addTo(layerRef.current!);
+            });
         }
       });
     }
 
-    // Draw Objects
     if (geometry.type === "object" && geometry.objectArray) {
       geometry.objectArray.forEach((obj) => {
-        // Object locations
+        // ... (object rendering logic is unchanged)
         obj.objectLocation.forEach((loc) => {
           if (loc.lat !== 0 || loc.lng !== 0) {
             const visualCenter = convertStoredToVisual(loc);
             const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
-
             const pointStyle = {
               ...tileStyle,
-              color: "#FF00FF", // Magenta for objects
+              color: "#FF00FF",
               fillColor: "#FF00FF",
             };
-
-            L.rectangle(tileBounds, pointStyle).addTo(layerRef.current);
+            L.rectangle(tileBounds, pointStyle).addTo(layerRef.current!);
           }
         });
 
-        // Object radius
-        if (obj.objectRadius) {
+        if (
+          obj.objectRadius &&
+          (obj.objectRadius.bottomLeft.lat !== 0 ||
+            obj.objectRadius.bottomLeft.lng !== 0 ||
+            obj.objectRadius.topRight.lat !== 0 ||
+            obj.objectRadius.topRight.lng !== 0)
+        ) {
           const topLeftVisualCenter = convertStoredToVisual(
             obj.objectRadius.bottomLeft
           );
           const bottomRightVisualCenter = convertStoredToVisual(
             obj.objectRadius.topRight
           );
-
           const bounds = L.latLngBounds(
             [bottomRightVisualCenter.lat + 1, topLeftVisualCenter.lng],
             [topLeftVisualCenter.lat, bottomRightVisualCenter.lng + 1]
           );
-          L.rectangle(bounds, radiusStyle).addTo(layerRef.current);
+          L.rectangle(bounds, radiusStyle).addTo(layerRef.current!);
         }
       });
     }
   }, [geometry, map]);
 
-  return null; // This component only adds layers to the map, it doesn't render any JSX.
+  return null;
 };

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
+import { LatLngTuple } from "leaflet";
 
 interface StepSnapHandlerProps {
   questJson: any;
@@ -16,29 +17,44 @@ const StepSnapHandler: React.FC<StepSnapHandlerProps> = ({
     if (!questJson) return;
 
     const step = questJson.questSteps[selectedStep];
-    if (!step) return;
+    if (!step?.highlights) return;
 
-    // Always zoom to level 4
     const targetZoom = 4;
+    let snapLocation: LatLngTuple | null = null;
 
-    // Snap to NPC location if available
-    if (step.highlights?.npc?.length > 0) {
-      const npc = step.highlights.npc[0];
-      if (npc.npcLocation?.lat && npc.npcLocation?.lng) {
-        map.flyTo([npc.npcLocation.lat, npc.npcLocation.lng], targetZoom, {
-          duration: 0.5, // smooth animation
-        });
+    // 1. Try to find the first valid NPC location
+    const firstValidNpc = step.highlights.npc?.find(
+      (npc: any) => npc.npcLocation?.lat !== 0 || npc.npcLocation?.lng !== 0
+    );
+
+    if (firstValidNpc) {
+      snapLocation = [
+        firstValidNpc.npcLocation.lat,
+        firstValidNpc.npcLocation.lng,
+      ];
+    }
+
+    // 2. If no valid NPC, try to find the first valid Object location
+    if (!snapLocation) {
+      const firstValidObject = step.highlights.object?.find((obj: any) =>
+        obj.objectLocation?.some((loc: any) => loc.lat !== 0 || loc.lng !== 0)
+      );
+
+      if (firstValidObject) {
+        const firstLoc = firstValidObject.objectLocation.find(
+          (loc: any) => loc.lat !== 0 || loc.lng !== 0
+        );
+        if (firstLoc) {
+          snapLocation = [firstLoc.lat, firstLoc.lng];
+        }
       }
     }
-    // Otherwise snap to object location if available
-    else if (step.highlights?.object?.length > 0) {
-      const obj = step.highlights.object[0];
-      if (obj.objectLocation?.length > 0) {
-        const loc = obj.objectLocation[0];
-        map.flyTo([loc.lat, loc.lng], targetZoom, {
-          duration: 0.5,
-        });
-      }
+
+    // 3. If we found any valid location, fly to it
+    if (snapLocation) {
+      map.flyTo(snapLocation, targetZoom, {
+        duration: 0.5, // smooth animation
+      });
     }
   }, [questJson, selectedStep, map]);
 

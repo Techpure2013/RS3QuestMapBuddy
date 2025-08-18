@@ -41,6 +41,12 @@ interface EditorPanelProps {
   onSaveAsFile: () => void;
   selectEditDescription: boolean;
   onSelectEditStepDescription: () => void;
+  onAddNpc: () => void;
+  onDeleteStep: () => void;
+  onFloorIncrement: () => void; // New prop
+  onFloorDecrement: () => void;
+
+  onSubmitToGitHub: () => void;
 }
 
 export const EditorPanel = React.memo<EditorPanelProps>(
@@ -85,6 +91,12 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     selectEditDescription,
     onSelectEditStepDescription,
     onResetNpcLocation,
+    onAddNpc,
+    onDeleteStep,
+    onFloorIncrement,
+    onFloorDecrement,
+
+    onSubmitToGitHub,
   }) => {
     return (
       <div className="editor-panel">
@@ -113,6 +125,13 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             style={{ backgroundColor: "#d1ecf1" }}
           >
             Save As...
+          </button>
+          <button
+            onClick={onSubmitToGitHub}
+            className="file-loader-button"
+            style={{ backgroundColor: "#e2e3e5", color: "#383d41" }}
+          >
+            Submit to GitHub
           </button>
         </div>
         <label className="EditDescriptionLabel">
@@ -168,25 +187,71 @@ export const EditorPanel = React.memo<EditorPanelProps>(
               <button onClick={onStepDecrement} className="step-button">
                 -
               </button>
-              <input
-                type="number"
-                value={selectedStep + 1}
-                onChange={(e) => onStepChange(parseInt(e.target.value, 10))}
-              />
+              <label
+                style={{
+                  minWidth: "40px",
+                  padding: "6px 12px",
+                  textAlign: "center",
+                  backgroundColor: "#e9ecef",
+                  border: "1px solid #ced4da",
+                  borderRadius: "4px",
+                  margin: "0 4px",
+                  fontWeight: "bold",
+                  fontSize: "1rem",
+                  color: "#495057",
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                }}
+              >
+                {selectedStep + 1}
+              </label>
               <button onClick={onStepIncrement} className="step-button">
                 +
+              </button>
+              <button
+                onClick={onDeleteStep}
+                style={{
+                  width: "100%",
+                  backgroundColor: "#f8d7da",
+                  color: "#721c24",
+                  marginTop: "4px",
+                  border: "1px solid #f5c6cb",
+                  marginLeft: "10px",
+                }}
+              >
+                Delete Current Step
               </button>
             </div>
           </div>
           <div className="control-group">
             <label>Floor:</label>
-            <input
-              type="number"
-              value={floor}
-              onChange={(e) => onFloorChange(parseInt(e.target.value, 10))}
-            />
-          </div>
-          <div className="control-group">
+            {/* ✅ NEW UI FOR FLOOR CONTROL */}
+            <div className="step-input-group">
+              <button onClick={onFloorDecrement} className="step-button">
+                -
+              </button>
+              <label
+                style={{
+                  minWidth: "40px",
+                  padding: "6px 12px",
+                  textAlign: "center",
+                  backgroundColor: "#e9ecef",
+                  border: "1px solid #ced4da",
+                  borderRadius: "4px",
+                  margin: "0 4px",
+                  fontWeight: "bold",
+                  fontSize: "1rem",
+                  color: "#495057",
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                }}
+              >
+                {floor}
+              </label>
+              <button onClick={onFloorIncrement} className="step-button">
+                +
+              </button>
+            </div>
             <label>Target Type:</label>
             <select
               value={targetType}
@@ -205,6 +270,16 @@ export const EditorPanel = React.memo<EditorPanelProps>(
                 style={{ width: "100%", backgroundColor: "#ffdddd" }}
               >
                 Reset NPC Location
+              </button>
+              <button
+                onClick={onAddNpc}
+                style={{
+                  width: "100%",
+                  backgroundColor: "#ddffdd",
+                  marginTop: "4px",
+                }}
+              >
+                Add New NPC
               </button>
             </div>
           )}
@@ -272,6 +347,9 @@ export const EditorPanel = React.memo<EditorPanelProps>(
                       onWanderRadiusInputChange(parseInt(e.target.value, 10))
                     }
                   />
+                  <button onClick={onSetRadiusMode} style={{ width: "100%" }}>
+                    Set Area by Corners
+                  </button>
                   <button onClick={onApplyRadius}>Apply to Center</button>
                 </>
               )}
