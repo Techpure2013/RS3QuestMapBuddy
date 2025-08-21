@@ -1,149 +1,406 @@
-.item-lists-container {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-.EditDescriptionLabel {
-  display: inline-block; /* make the label respect box styles */
-  padding: 6px 12px; /* space inside the box */
-  margin: 4px 0; /* space outside the box */
-  border: 2px solid #0b0c0c; /* blue border */
-  border-radius: 5px; /* rounded corners */
-  background-color: #f0f8ff; /* light background (AliceBlue) */
-  font-weight: bold; /* make text stand out */
-  cursor: pointer; /* pointer cursor when hovering */
-  width: 6vw;
-}
-.item-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.file-actions {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: #333;
+  overflow: hidden;
 }
 
-.file-actions .file-loader-button {
-  flex-grow: 1;
-  /* You might want to adjust padding or other styles */
-}
-.item-list textarea {
+/* ==========================================================================
+   Main Map Container
+   ========================================================================== */
+#map {
+  height: 100%;
   width: 100%;
-  resize: vertical;
-}
-.object-number-label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  text-shadow: 0 0 3px black, 0 0 3px black; /* Makes text readable on any color */
-  width: 100% !important;
-  height: 100% !important;
-  pointer-events: none; /* Allows clicks to pass through the label */
-}
-.tool-section {
-  margin-top: 15px;
-  padding-top: 10px;
-  border-top: 1px solid #ccc;
-}
-.map-collision {
-  image-rendering: pixelated;
-  filter: brightness(0%) grayscale(100%) opacity(0.2);
-}
-.tool-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 5px;
 }
 
-.tool-controls input {
-  width: 60px;
-}
-
+/* ==========================================================================
+   Editor Panel
+   ========================================================================== */
 .editor-panel {
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 1000; /* Ensure it's above the map */
-  background: rgba(31, 118, 145, 0.788);
+  z-index: 1000;
+  background: rgba(31, 41, 55, 0.95);
+  color: #f9fafb;
   padding: 15px;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  width: 350px;
-  max-height: 95vh;
+  border: 1px solid #4b5563;
+  width: 400px;
+  max-height: calc(100vh - 20px);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  opacity: 0.8;
+  gap: 15px;
   pointer-events: auto;
-}
-.step-description-display {
-  background-color: #f0f8ff; /* AliceBlue */
-  border: 1px solid #b0c4de; /* LightSteelBlue */
-  border-radius: 5px;
-  padding: 10px;
-}
-.step-description-display textarea {
-  width: 100%;
-  min-height: 100px;
-  resize: vertical; /* user can drag to resize */
-}
-.step-description-display label {
-  width: 100%;
-  min-height: 100px;
-  resize: vertical; /* user can drag to resize */
-}
-.step-description-display p {
-  margin: 5px 0 0 0;
-  font-style: italic;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
-.step-control .step-input-group {
+.editor-panel.closed {
+  transform: translateX(-100%);
+}
+
+/* --- Custom Scrollbar for the Panel --- */
+.editor-panel::-webkit-scrollbar {
+  width: 8px;
+}
+.editor-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.editor-panel::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   Panel Toggle Button
+   ========================================================================== */
+.panel-toggle-button {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1001;
+  width: 25px;
+  height: 60px;
+  background-color: #374151;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: left 0.3s ease-in-out;
   display: flex;
   align-items: center;
-}
-
-.step-control input {
-  width: 60px; /* Give the input a fixed width */
-  text-align: center;
-}
-
-.step-button {
-  width: 30px;
-  height: 30px;
-  font-size: 18px;
+  justify-content: center;
+  font-size: 1.5rem;
   font-weight: bold;
-  cursor: pointer;
-  border: 1px solid #ccc;
+  padding: 0;
+  line-height: 1;
 }
-.editor-controls {
+
+.panel-toggle-button.is-open {
+  left: 440px;
+}
+
+/* A generic container for distinct sections within the panel */
+.panel-section {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  border-radius: 5px;
+}
+
+/* --- File Action Buttons --- */
+.file-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 0;
+  background-color: transparent;
+}
+.file-actions .button--save-as {
+  grid-column: 1 / span 2;
+}
+.file-actions .button--submit {
+  grid-column: 1 / -1;
+}
+
+.file-loader-button {
+  padding: 8px 10px;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
+  background-color: #374151;
+  color: #f9fafb;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;
+}
+.file-loader-button:hover {
+  background-color: #4b5563;
+}
+.button--new {
+  background-color: #1e40af;
+  border-color: #3b82f6;
+}
+.button--save {
+  background-color: #15803d;
+  border-color: #4ade80;
+}
+.button--save-as {
+  background-color: #0e7490;
+  border-color: #22d3ee;
+}
+
+/* --- Step Description --- */
+.step-description-display {
+  padding: 0;
+  background-color: transparent;
+}
+.EditDescriptionLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+.description-text {
+  white-space: normal;
+  padding-right: 10px;
+}
+
+/* --- Info Grid & General Inputs --- */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+.full-width {
+  grid-column: 1 / -1;
+}
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.item-list strong,
+.control-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #9ca3af;
+}
+.item-list textarea,
+.step-description-display textarea,
+.control-group input,
+.control-group select {
+  width: 100%;
+  background-color: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  color: #f9fafb;
+  padding: 8px;
+  resize: vertical;
+  box-sizing: border-box;
+}
 
+/* --- Editor Controls Grid --- */
+.editor-controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
 .control-group {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+}
+.color-picker-label {
+  display: block;
+  width: 100%;
+  height: 38px; /* Match other inputs */
+  padding: 4px;
+  background-color: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
+.color-picker-swatch {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.color-input-hidden {
+  /* Hide the actual input but keep it functional */
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
 .control-group label {
-  font-size: 12px;
+  margin-bottom: 6px;
+}
+.control-group.full-width-control {
+  grid-column: 1 / -1;
+}
+
+/* --- Step Input Group --- */
+.step-input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.step-button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: #374151;
+  color: #f9fafb;
+  cursor: pointer;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.step-display-label {
+  flex-grow: 1;
+  text-align: center;
+  padding: 6px 8px;
+  background-color: #1f2937;
+  border-left: 1px solid #4b5563;
+  border-right: 1px solid #4b5563;
   font-weight: bold;
 }
 
+/* --- Generic & Action Buttons --- */
+.step-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+.button-group > button {
+  flex: 1;
+}
+.button--add {
+  background-color: #166534;
+  border-color: #22c55e;
+  color: white;
+}
+.button--delete {
+  background-color: #991b1b;
+  border-color: #ef4444;
+  color: white;
+}
+button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  filter: brightness(1.15);
+}
+
+/* --- Area/Radius Tools --- */
+.tool-section {
+  border-top: 1px solid #4b5563;
+  padding-top: 15px;
+}
+.tool-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tool-controls > button {
+  width: 100%;
+}
+.radius-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.radius-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.radius-input-group input {
+  flex: 1;
+}
+.radius-input-group button {
+  flex: 2;
+}
+
+/* --- JSON Text Area --- */
 .json-textarea {
   width: 100%;
-  height: 400px; /* Adjust as needed */
+  flex-grow: 1;
+  min-height: 150px;
   resize: vertical;
   font-family: monospace;
+  background-color: #111827;
+  color: #a5f3fc;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
+  padding: 10px;
 }
+/* ==========================================================================
+   NPC Search Component (UPDATED)
+   ========================================================================== */
+.npc-search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.npc-search-input {
+  width: 100%;
+  background-color: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  color: #f9fafb;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.npc-cycler {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #1f2937;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #4b5563;
+}
+
+.npc-cycler-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+.npc-cycler-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.npc-cycler-buttons button {
+  flex-grow: 1;
+  background-color: #4b5563;
+  color: #f9fafb;
+}
+/* ==========================================================================
+   Map Overlays & UI Elements
+   ========================================================================== */
 .capture-mode-panel {
   position: absolute;
   top: 10px;
@@ -153,50 +410,30 @@
   padding: 10px;
   border-radius: 5px;
 }
-#map {
-  height: 100%;
-  width: 100%;
-}
 .chunk-grid-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Prevent the grid from interfering with map interactions */
+  pointer-events: none;
 }
 .chunk-label {
-  pointer-events: none; /* Prevent labels from interfering with map interactions */
+  pointer-events: none;
   text-align: center;
 }
-
-html,
-body,
-#root {
+.object-number-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 3px black, 0 0 3px black;
+  width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
+  pointer-events: none;
 }
-
-/* Topdown Layer */
-.map-topdown img {
-  filter: saturate(1.5);
-}
-
-/*Smooth transitions when tiles load */
-.map-topdown img {
-  transition: filter 0.3s ease-in-out;
-}
-.leaflet-container .leaflet-layer:first-child {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-/* Collision Layer if its applied */
-
-/* Walls Layer */
-.map-walls {
-  filter: saturate(1.7);
-}
-/* Floor Button */
 .floorButtonContainer {
   position: fixed;
   top: 20px;
@@ -207,12 +444,11 @@ body,
   gap: 8px;
   align-items: center;
 }
-
 .floor-button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid #4a5568;
+  border: 2px solid #4a5563;
   background-color: #2d3748;
   color: white;
   font-size: 1.2rem;
@@ -223,20 +459,13 @@ body,
   justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .floor-button:hover {
   background-color: #4a5568;
   transform: scale(1.1);
 }
-
 .floor-button:active {
   transform: scale(0.95);
 }
-
-.floor-button--up {
-  order: 1;
-}
-
 .floor-display {
   background-color: rgba(45, 55, 72, 0.9);
   color: white;
@@ -245,15 +474,11 @@ body,
   font-size: 0.9rem;
   font-weight: 500;
 }
-
-.floor-button--down {
-  order: 3;
-}
-/*Coordinate Box*/
 .cursor-coordinates-box {
   position: fixed;
   top: 20px;
-  left: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
   background: rgba(45, 55, 72, 0.9);
   padding: 12px 16px;
@@ -263,10 +488,82 @@ body,
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   pointer-events: none;
 }
-
 .coordinate-row {
   display: flex;
   gap: 15px;
   justify-content: space-between;
   margin: 4px 0;
+}
+
+/* ==========================================================================
+   Map Layer Styling
+   ========================================================================== */
+.leaflet-container .leaflet-layer:first-child {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.map-topdown img {
+  filter: saturate(1.5);
+  transition: filter 0.3s ease-in-out;
+}
+.map-collision {
+  image-rendering: pixelated;
+  filter: brightness(0%) grayscale(100%) opacity(0.2);
+}
+.map-walls {
+  filter: saturate(1.7);
+}
+/* --- Improved Map Area Label Styling --- */
+.map-area-label div {
+  /* --- FIX: Add transform to perfectly center the label --- */
+  transform: translate(-50%, -50%);
+
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 1px 2px black;
+  pointer-events: none;
+}
+
+/* Styling for the interactive tooltips */
+.leaflet-tooltip {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  color: white !important;
+  box-shadow: none !important;
+  font-weight: bold;
+}
+/* For the new Map Area Search dropdown */
+.map-area-search-container {
+  position: relative; /* Needed for the results list positioning */
+}
+
+.search-results-list {
+  position: absolute;
+  width: 100%;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 4px;
+  list-style-type: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100; /* Ensure it appears above other elements */
+}
+
+.search-results-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.search-results-list li:hover {
+  background-color: #007bff;
+  color: white;
 }

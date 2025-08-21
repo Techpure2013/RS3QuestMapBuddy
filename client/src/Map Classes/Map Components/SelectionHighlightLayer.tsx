@@ -1,7 +1,16 @@
 import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
-import chatheadOverrides from "./chatheadOverrides.json";
+import chatheadOverrides from "./../Map Data/chatheadOverrides.json";
+
+// --- FIX #2: Define the structure for an individual object location ---
+interface ObjectLocation {
+  lat: number;
+  lng: number;
+  color?: string;
+  numberLabel?: string;
+}
+// --------------------------------------------------------------------
 
 export interface SelectionGeometry {
   type: "npc" | "object" | "none";
@@ -16,7 +25,8 @@ export interface SelectionGeometry {
   }[];
   objectArray?: {
     name: string;
-    objectLocation: { lat: number; lng: number }[];
+    // This now uses our new, more detailed type
+    objectLocation: ObjectLocation[];
     objectRadius: {
       bottomLeft: { lat: number; lng: number };
       topRight: { lat: number; lng: number };
@@ -64,7 +74,7 @@ const getChatheadUrl = (npcName: string) => {
   );
 
   if (key) {
-    let url = chatheadOverrides[key];
+    let url = (chatheadOverrides as any)[key];
     if (url.includes("/images/")) return url;
     if (url.includes("#/media/File:")) {
       const match = url.match(/File:(.*?)(?:$|#|\/)/);
@@ -89,7 +99,6 @@ const getChatheadUrl = (npcName: string) => {
 const resizeImage = (imageUrl: string, maxSize: number): Promise<string> => {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    // This is CRITICAL for loading images from another domain (the wiki) onto a canvas.
     img.crossOrigin = "Anonymous";
 
     img.onload = () => {
@@ -103,7 +112,6 @@ const resizeImage = (imageUrl: string, maxSize: number): Promise<string> => {
       let width = img.width;
       let height = img.height;
 
-      // Calculate new dimensions while preserving aspect ratio
       if (width > height) {
         if (width > maxSize) {
           height *= maxSize / width;
@@ -118,11 +126,7 @@ const resizeImage = (imageUrl: string, maxSize: number): Promise<string> => {
 
       canvas.width = width;
       canvas.height = height;
-
-      // Draw the resized image onto the canvas
       ctx.drawImage(img, 0, 0, width, height);
-
-      // Export the canvas content as a new data URL
       resolve(canvas.toDataURL("image/png"));
     };
 
@@ -135,7 +139,7 @@ const resizeImage = (imageUrl: string, maxSize: number): Promise<string> => {
 };
 
 const createChatheadIcon = (resizedDataUrl: string) => {
-  const displaySize = 48; // The final, "super small" display size
+  const displaySize = 48;
   return L.divIcon({
     className: "chathead-icon",
     html: `
@@ -155,7 +159,7 @@ const createChatheadIcon = (resizedDataUrl: string) => {
           style="
             max-width: 100%; 
             max-height: 100%;
-            image-rendering: pixelated; /* For sharp, crisp pixels */
+            image-rendering: pixelated;
           " 
         />
       </div>
@@ -182,7 +186,6 @@ export const SelectionHighlightLayer: React.FC<
 
     if (geometry.type === "npc" && geometry.npcArray) {
       geometry.npcArray.forEach((npc) => {
-        // Wander Radius (drawn first to be underneath)
         if (
           npc.wanderRadius &&
           (npc.wanderRadius.bottomLeft.lat !== 0 ||
@@ -203,7 +206,6 @@ export const SelectionHighlightLayer: React.FC<
           L.rectangle(bounds, radiusStyle).addTo(layerRef.current!);
         }
 
-        // NPC Location
         if (npc.npcLocation.lat !== 0 || npc.npcLocation.lng !== 0) {
           const visualCenter = convertStoredToVisual(npc.npcLocation);
           const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
@@ -217,17 +219,14 @@ export const SelectionHighlightLayer: React.FC<
           const chatheadUrl =
             npc.chatheadOverride || getChatheadUrl(npc.npcName);
 
-          // ✅ Use the new resize function
-          resizeImage(chatheadUrl, 40) // Resize to a max of 32x32 pixels
+          resizeImage(chatheadUrl, 40)
             .then((resizedDataUrl) => {
-              // On success, create the marker with the small, resized image
               const marker = L.marker([tileCenter.lat, tileCenter.lng], {
                 icon: createChatheadIcon(resizedDataUrl),
               }).bindPopup(`<b>${npc.npcName}</b>`);
               layerRef.current?.addLayer(marker);
             })
             .catch(() => {
-              // On failure (image not found, etc.), draw the fallback rectangle
               L.rectangle(tileBounds, tileStyle).addTo(layerRef.current!);
             });
         }
@@ -236,19 +235,34 @@ export const SelectionHighlightLayer: React.FC<
 
     if (geometry.type === "object" && geometry.objectArray) {
       geometry.objectArray.forEach((obj) => {
-        // ... (object rendering logic is unchanged)
+        // --- FIX #3: Loop through each location and use its specific data ---
         obj.objectLocation.forEach((loc) => {
           if (loc.lat !== 0 || loc.lng !== 0) {
             const visualCenter = convertStoredToVisual(loc);
             const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
+
             const pointStyle = {
               ...tileStyle,
-              color: "#FF00FF",
-              fillColor: "#FF00FF",
+              color: loc.color || "#FF00FF", // Use the location's color
+              fillColor: loc.color || "#FF00FF",
             };
             L.rectangle(tileBounds, pointStyle).addTo(layerRef.current!);
+
+            if (loc.numberLabel) {
+              const labelIcon = L.divIcon({
+                className: "object-number-label",
+                html: `<div>${loc.numberLabel}</div>`,
+                iconSize: [32, 32],
+                iconAnchor: [16, 16],
+              });
+
+              L.marker(tileBounds.getCenter(), { icon: labelIcon }).addTo(
+                layerRef.current!
+              );
+            }
           }
         });
+        // --------------------------------------------------------------------
 
         if (
           obj.objectRadius &&

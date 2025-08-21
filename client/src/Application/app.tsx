@@ -19,10 +19,22 @@ import { produce } from "immer";
 import StepSnapHandler from "Map Classes/Map Components/StepSnapHandler";
 import { SelectionHighlightLayer } from "./../Map Classes/Map Components/SelectionHighlightLayer";
 import type { SelectionGeometry } from "./../Map Classes/Map Components/SelectionHighlightLayer";
-
+import { IconSettings } from "@tabler/icons-react";
+import { NpcSearch } from "Map Classes/Map Components/NpcSearch";
+import type { Npc } from "./../Map Classes/Map Components/NpcSearch";
+import NpcFlyToHandler from "./../Map Classes/Map Components/NpcFlyToHandler";
+import MapAreaLayer from "Map Classes/Map Components/MapAreaLayer";
+import { MapAreaSearch } from "./../Map Classes/Map Components/MapAreaSearch";
+import MapAreaFlyToHandler from "./../Map Classes/Map Components/MapAreaFlyToHandler";
 interface QuestData {
   questName: string;
   questSteps: any[];
+}
+interface MapArea {
+  mapId: number;
+  bounds: [[number, number], [number, number]];
+  center: [number, number];
+  name: string;
 }
 type FileSystemFileHandle = any;
 
@@ -38,6 +50,10 @@ const App: React.FC = () => {
   let socket = useSocket();
 
   // --- STATE ---
+  const [selectedArea, setSelectedArea] = useState<MapArea | null>(null);
+  const [highlightedNpc, setHighlightedNpc] = useState<Npc | null>(null);
+  const [map, setMap] = useState<L.Map | null>(null);
+  const [isPanelOpen, setIsPanelOpen] = useState(true);
   const [selectedObjectColor, setSelectedObjectColor] = useState("#00FF00");
   const [floor, setFloor] = useState(level ? parseInt(level, 10) : 0);
   const [zoom, setZoom] = useState(z ? parseInt(z, 10) : 2);
@@ -74,7 +90,26 @@ const App: React.FC = () => {
     }
     return { type: "none" };
   }, [questJson, selectedStep, targetType]);
-
+  const highlightGeometry = useMemo<SelectionGeometry>(() => {
+    if (!highlightedNpc) {
+      return { type: "none" };
+    }
+    // Create a geometry object for the single highlighted NPC
+    return {
+      type: "npc",
+      npcArray: [
+        {
+          npcName: highlightedNpc.name,
+          npcLocation: { lat: highlightedNpc.lat, lng: highlightedNpc.lng },
+          // The highlight layer expects a wanderRadius, so we provide a dummy one
+          wanderRadius: {
+            bottomLeft: { lat: 0, lng: 0 },
+            topRight: { lat: 0, lng: 0 },
+          },
+        },
+      ],
+    };
+  }, [highlightedNpc]);
   const targetNameValue = useMemo(() => {
     if (!questJson) return "";
     const target =
@@ -93,9 +128,27 @@ const App: React.FC = () => {
     questJson?.questSteps[selectedStep]?.additionalStepInformation?.join(
       "\n"
     ) || "";
-
+  const currentTargetObjectData = useMemo(() => {
+    if (questJson && targetType === "object") {
+      const target =
+        questJson.questSteps[selectedStep]?.highlights.object?.[targetIndex];
+      return {
+        color: target?.color || selectedObjectColor,
+        numberLabel: target?.numberLabel || "", // Use the object's label or an empty string
+      };
+    }
+    // Default values when not targeting an object
+    return { color: selectedObjectColor, numberLabel: objectNumberLabel };
+  }, [
+    questJson,
+    selectedStep,
+    targetIndex,
+    targetType,
+    selectedObjectColor,
+    objectNumberLabel,
+  ]);
   // --- EFFECTS ---
-  // ✅ THIS IS THE SINGLE SOURCE OF TRUTH FOR STEP CHANGES
+  //THIS IS THE SINGLE SOURCE OF TRUTH FOR STEP CHANGES
   useEffect(() => {
     if (!questJson) return;
     const step = questJson.questSteps[selectedStep];
@@ -117,8 +170,7 @@ const App: React.FC = () => {
       setTargetType("object");
       setTargetIndex(0);
     } else {
-      // No valid highlights in this step
-      setTargetIndex(0); // Default to index 0, can be empty
+      setTargetIndex(0);
     }
   }, [questJson, selectedStep]);
 
@@ -131,17 +183,218 @@ const App: React.FC = () => {
   }, [targetType]);
 
   // --- HANDLERS ---
+  const handleSelectedObjectColorChange = (newColor: string) => {
+    setSelectedObjectColor(newColor);
+    if (questJson && targetType === "object") {
+      const nextState = produce(questJson, (draft) => {
+        const target =
+          draft.questSteps[selectedStep]?.highlights.object?.[targetIndex];
+        if (target) {
+          target.color = newColor;
+        }
+      });
+      updateQuestState(nextState);
+    }
+  };
+
+  const handleObjectNumberLabelChange = (newLabel: string) => {
+    setObjectNumberLabel(newLabel);
+    if (questJson && targetType === "object") {
+      const nextState = produce(questJson, (draft) => {
+        const target =
+          draft.questSteps[selectedStep]?.highlights.object?.[targetIndex];
+        if (target) {
+          target.numberLabel = newLabel;
+        }
+      });
+      updateQuestState(nextState);
+    }
+  };
+  const handleFloorChange = useCallback(
+    (newFloor: number) => {
+      if (HandleFloorIncreaseDecrease(newFloor)) {
+        setFloor(newFloor);
+        if (!questJson) return;
+        const nextState = produce(questJson, (draft) => {
+          const step = draft.questSteps[selectedStep];
+          if (step) {
+            step.floor = newFloor;
+          }
+        });
+        updateQuestState(nextState);
+      }
+    },
+    [questJson, selectedStep]
+  );
+  const handleNpcSearchSelect = (chosenNpc: Npc) => {
+    if (!questJson) return;
+
+    const nextState = produce(questJson, (draft) => {
+      const target =
+        draft.questSteps[selectedStep]?.highlights.npc?.[targetIndex];
+      if (target) {
+        target.npcName = chosenNpc.name;
+        target.npcLocation = { lat: chosenNpc.lat, lng: chosenNpc.lng };
+        // Also update the step's floor to match the NPC's floor
+        draft.questSteps[selectedStep].floor = chosenNpc.floor;
+      }
+    });
+
+    updateQuestState(nextState);
+    setHighlightedNpc(null); // Clear the temporary highlight
+  };
+
+  // This function's only job is to set the state.
+  const handleNpcHighlight = (npc: Npc | null) => {
+    setHighlightedNpc(npc);
+  };
+  const handleNewQuest = () => {
+    const newQuestTemplate: QuestData = {
+      questName: "New Quest",
+      questSteps: [
+        {
+          stepDescription: "This is the first step of your new quest.",
+          itemsNeeded: [],
+          itemsRecommended: [],
+          additionalStepInformation: [],
+          highlights: {
+            npc: [
+              {
+                npcName: "",
+                npcLocation: {
+                  lat: 0,
+                  lng: 0,
+                },
+                wanderRadius: {
+                  bottomLeft: {
+                    lat: 0,
+                    lng: 0,
+                  },
+                  topRight: {
+                    lat: 0,
+                    lng: 0,
+                  },
+                },
+              },
+            ],
+            object: [
+              {
+                name: "",
+                objectLocation: [],
+                objectRadius: {
+                  bottomLeft: {
+                    lat: 0,
+                    lng: 0,
+                  },
+                  topRight: {
+                    lat: 0,
+                    lng: 0,
+                  },
+                },
+              },
+            ],
+          },
+          floor: 0,
+        },
+      ],
+    };
+    updateQuestState(newQuestTemplate);
+    setSelectedStep(0);
+    setTargetIndex(0);
+    setTargetType("npc");
+    setFileHandle(null); // This is an unsaved file
+  };
+  const handleAddObject = () => {
+    if (!questJson) return;
+    let newIndex = 0;
+    const nextState = produce(questJson, (draft) => {
+      const step = draft.questSteps[selectedStep];
+      if (!step.highlights) step.highlights = {};
+      if (!step.highlights.object) step.highlights.object = [];
+      step.highlights.object.push({
+        name: "New Object",
+        object: [
+          {
+            name: "",
+            objectLocation: [],
+            objectRadius: {
+              bottomLeft: {
+                lat: 0,
+                lng: 0,
+              },
+              topRight: {
+                lat: 0,
+                lng: 0,
+              },
+            },
+          },
+        ],
+      });
+      newIndex = step.highlights.object.length - 1;
+    });
+    updateQuestState(nextState);
+    setTargetType("object");
+    setTargetIndex(newIndex);
+  };
+  const handleAddStep = () => {
+    if (!questJson) return;
+    const newStepObject = {
+      stepDescription: "New step description...",
+      itemsNeeded: [],
+      itemsRecommended: [],
+      additionalStepInformation: [],
+      highlights: {
+        npc: [
+          {
+            npcName: "",
+            npcLocation: {
+              lat: 0,
+              lng: 0,
+            },
+            wanderRadius: {
+              bottomLeft: {
+                lat: 0,
+                lng: 0,
+              },
+              topRight: {
+                lat: 0,
+                lng: 0,
+              },
+            },
+          },
+        ],
+        object: [
+          {
+            name: "",
+            objectLocation: [
+              {
+                lat: 0,
+                lng: 0,
+              },
+            ],
+            objectRadius: {
+              bottomLeft: {
+                lat: 0,
+                lng: 0,
+              },
+              topRight: {
+                lat: 0,
+                lng: 0,
+              },
+            },
+          },
+        ],
+      },
+      floor: floor, // Default to the current floor
+    };
+    const nextState = produce(questJson, (draft) => {
+      draft.questSteps.splice(selectedStep + 1, 0, newStepObject);
+    });
+    updateQuestState(nextState);
+    setSelectedStep(selectedStep + 1); // Jump to the new step
+  };
   const handleSubmitToGitHub = async () => {
     if (!questJson) {
-      alert("No quest data loaded to submit.");
-      return;
-    }
-
-    if (
-      !window.confirm(
-        "Are you sure you want to submit this quest as a Pull Request to GitHub?"
-      )
-    ) {
       return;
     }
 
@@ -160,16 +413,12 @@ const App: React.FC = () => {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        alert(
-          `Successfully created Pull Request! You can view it here: ${data.prUrl}`
-        );
         window.open(data.prUrl, "_blank"); // Open the PR in a new tab
       } else {
         throw new Error(data.error || "An unknown error occurred.");
       }
     } catch (err: any) {
       console.error("Failed to submit PR:", err);
-      alert(`Error: Could not create Pull Request.\n\n${err.message}`);
     }
   };
   const updateQuestState = (newQuestState: QuestData) => {
@@ -178,28 +427,19 @@ const App: React.FC = () => {
   };
   const handleDeleteStep = () => {
     if (!questJson || questJson.questSteps.length <= 1) {
-      alert("Cannot delete the last remaining step.");
       return;
     }
 
-    if (
-      window.confirm(
-        `Are you sure you want to delete Step ${
-          selectedStep + 1
-        }? This cannot be undone.`
-      )
-    ) {
-      const nextState = produce(questJson, (draft) => {
-        // Remove one element at the current selectedStep index
-        draft.questSteps.splice(selectedStep, 1);
-      });
+    const nextState = produce(questJson, (draft) => {
+      // Remove one element at the current selectedStep index
+      draft.questSteps.splice(selectedStep, 1);
+    });
 
-      updateQuestState(nextState);
+    updateQuestState(nextState);
 
-      // Adjust the selectedStep index if we deleted the last item in the array
-      if (selectedStep >= nextState.questSteps.length) {
-        setSelectedStep(nextState.questSteps.length - 1);
-      }
+    // Adjust the selectedStep index if we deleted the last item in the array
+    if (selectedStep >= nextState.questSteps.length) {
+      setSelectedStep(nextState.questSteps.length - 1);
     }
   };
   const handleSetRadiusMode = () => setCaptureMode("radius");
@@ -211,6 +451,9 @@ const App: React.FC = () => {
     } catch (error) {
       /* ignore invalid json */
     }
+  };
+  const handleAreaSelect = (area: MapArea) => {
+    setSelectedArea(area);
   };
   const handleStepDescriptionView = () =>
     setStepDescriptionEdit((prev) => !prev);
@@ -336,7 +579,6 @@ const App: React.FC = () => {
     const center = target?.npcLocation;
 
     if (!center || (center.lat === 0 && center.lng === 0)) {
-      alert("No center point set for this NPC. Please set a location first.");
       return;
     }
 
@@ -384,19 +626,7 @@ const App: React.FC = () => {
     });
     updateQuestState(nextState);
   };
-  const handleFloorChange = (newFloor: number) => {
-    if (HandleFloorIncreaseDecrease(newFloor)) {
-      setFloor(newFloor);
-      if (!questJson) return;
-      const nextState = produce(questJson, (draft) => {
-        const step = draft.questSteps[selectedStep];
-        if (step) {
-          step.floor = newFloor;
-        }
-      });
-      updateQuestState(nextState);
-    }
-  };
+
   const handleFloorIncrement = () => handleFloorChange(floor + 1);
   const handleFloorDecrement = () => handleFloorChange(floor - 1);
   const handleDataCaptured = (data: any) => {
@@ -414,7 +644,11 @@ const App: React.FC = () => {
         }
       } else if (data.type === "multi-point") {
         if (targetType === "object") {
+          // Save the location array
           highlightTarget.objectLocation = data.payload;
+          // ALSO save the color and number to the parent object
+          highlightTarget.color = selectedObjectColor;
+          highlightTarget.numberLabel = objectNumberLabel;
         }
       } else if (data.type === "radius") {
         const radiusKey =
@@ -441,9 +675,6 @@ const App: React.FC = () => {
       if (text) {
         handleJsonTextChange(text);
         setFileHandle(null);
-        alert(
-          "File loaded. Use 'Save As...' to save changes, as this file cannot be overwritten directly."
-        );
       }
     };
     reader.readAsText(file);
@@ -473,20 +704,27 @@ const App: React.FC = () => {
   };
 
   const handleSaveFile = async () => {
+    // If there's no file handle, we must use "Save As".
     if (!fileHandle) {
-      alert(
-        "No file is open to save to. Please use 'Save As...' or load a file first."
-      );
+      handleSaveAsFile();
       return;
     }
+
+    // This is the modern API that fails in Alt1.
+    // Will Fail in Alt1 but Succeed in regular browsers
     try {
       const writable = await fileHandle.createWritable();
       await writable.write(jsonString);
       await writable.close();
       alert(`Saved changes to ${fileHandle.name}`);
     } catch (err) {
-      console.error("Error saving file:", err);
-      alert("Failed to save file. Please try using 'Save As...'.");
+      // This catch block will execute when the DOMException occurs in Alt1.
+      console.error(
+        "File System Access API failed, falling back to download:",
+        err
+      );
+
+      handleSaveAsFile();
     }
   };
 
@@ -505,6 +743,7 @@ const App: React.FC = () => {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   };
+
   // --- MAP COMPONENTS ---
   const snapToTileCoordinate = (latlng: L.LatLng) => {
     const visualCenterX = Math.floor(latlng.lng - 0.5) + 0.5;
@@ -537,11 +776,15 @@ const App: React.FC = () => {
               if (isDuplicate) {
                 return;
               }
+
+              // --- FIX #1: Create the new point with all necessary data ---
               const newPoint = {
                 ...snappedCoord,
                 color: selectedObjectColor,
                 numberLabel: objectNumberLabel,
               };
+              // -----------------------------------------------------------
+
               const newLocations = [...currentLocations, newPoint];
               handleDataCaptured({
                 type: "multi-point",
@@ -651,6 +894,7 @@ const App: React.FC = () => {
   return (
     <div style={{ height: "100%", width: "100%" }}>
       <EditorPanel
+        isOpen={isPanelOpen}
         onSubmitToGitHub={handleSubmitToGitHub}
         onResetRadius={handleResetRadius}
         itemsNeededValue={itemsNeededValue}
@@ -684,14 +928,13 @@ const App: React.FC = () => {
         targetIndex={targetIndex}
         onTargetIndexChange={setTargetIndex}
         floor={floor}
-        onFloorChange={setFloor}
         onClearObjectLocations={handleClearObjectLocations}
-        selectedObjectColor={selectedObjectColor}
-        onSelectedObjectColorChange={setSelectedObjectColor}
+        selectedObjectColor={currentTargetObjectData.color}
+        onSelectedObjectColorChange={handleSelectedObjectColorChange}
+        objectNumberLabel={currentTargetObjectData.numberLabel}
+        onObjectNumberLabelChange={handleObjectNumberLabelChange}
         onSetRadiusMode={handleSetRadiusMode}
         onResetNpcLocation={handleResetNpcLocation}
-        objectNumberLabel={objectNumberLabel}
-        onObjectNumberLabelChange={setObjectNumberLabel}
         onFileLoadFromInput={handleFileLoadFromInput}
         onLoadFile={handleLoadFile}
         onSaveFile={handleSaveFile}
@@ -702,7 +945,27 @@ const App: React.FC = () => {
         onDeleteStep={handleDeleteStep}
         onFloorDecrement={handleFloorDecrement}
         onFloorIncrement={handleFloorIncrement}
-      />
+        onAddStep={handleAddStep}
+        onNewQuest={handleNewQuest}
+        onAddObject={handleAddObject}
+      >
+        <div className="panel-section">
+          <NpcSearch
+            onNpcSelect={handleNpcSearchSelect}
+            onNpcHighlight={handleNpcHighlight}
+          />
+        </div>
+        <div className="panel-section">
+          <MapAreaSearch onAreaSelect={handleAreaSelect} />
+        </div>
+      </EditorPanel>
+      <button
+        className={`panel-toggle-button ${isPanelOpen ? "is-open" : ""}`}
+        onClick={() => setIsPanelOpen(!isPanelOpen)}
+        title={isPanelOpen ? "Collapse Panel" : "Expand Panel"}
+      >
+        {isPanelOpen ? "‹" : "›"}
+      </button>
       <MapContainer
         crs={gameMapOptions().crs}
         bounds={bound}
@@ -722,6 +985,9 @@ const App: React.FC = () => {
             <span>Zoom: {Math.round(zoom)}</span>
             <span>X: {cursorX}</span>
             <span>Y: {cursorY}</span>
+            <span>
+              <IconSettings />
+            </span>
           </div>
         </div>
         <div className="floorButtonContainer">
@@ -758,8 +1024,15 @@ const App: React.FC = () => {
             />
           ))}
         </>
+        <MapAreaFlyToHandler selectedArea={selectedArea} />
         <StepSnapHandler questJson={questJson} selectedStep={selectedStep} />
-        <SelectionHighlightLayer geometry={selectionGeometry} />
+        <NpcFlyToHandler
+          highlightedNpc={highlightedNpc}
+          onFloorChange={handleFloorChange}
+        />
+        <SelectionHighlightLayer
+          geometry={highlightedNpc ? highlightGeometry : selectionGeometry}
+        />
         <GridLayer />
         <HighlightLayer onCursorMove={handleCursorMove} />
       </MapContainer>

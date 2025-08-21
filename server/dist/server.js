@@ -32,8 +32,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // --- Helper Functions ---
 const normalizeNameForPath = (name) => {
-    // Removes characters that are invalid in most file systems: \ / : * ? " < > |
-    return name.replace(/[\\/:\*\?"<>\|]/g, "");
+    const sanitized = name.replace(/[\\/:\*\?"<>\|]/g, "");
+    return sanitized.replace(/\s+/g, "_");
 };
 // --- REST API Endpoints ---
 app.get("/api/generate-url/:userID", (req, res) => {
@@ -99,7 +99,7 @@ app.post("/api/submit-pr", (req, res) => __awaiter(void 0, void 0, void 0, funct
         const baseBranch = "main";
         const submissionBranch = "quest-submissions";
         const normalizedFolderName = normalizeNameForPath(questJson.questName);
-        const filePath = `client/src/Quest Directories/${normalizedFolderName}/${normalizedFolderName}.json`;
+        const filePath = `client/src/Quest Directories/${questJson.questName}/${normalizedFolderName}.json`;
         // STEP 1: Ensure the submission branch exists and is up-to-date.
         try {
             yield octokit.git.getRef({
@@ -160,7 +160,7 @@ app.post("/api/submit-pr", (req, res) => __awaiter(void 0, void 0, void 0, funct
             message: `feat: Add/Update quest '${questJson.questName}'`,
             content,
             branch: submissionBranch,
-            sha: existingFileSha, // ✅ This is the crucial fix
+            sha: existingFileSha,
             committer: { name: "Quest Map Buddy Bot", email: "bot@example.com" },
             author: { name: userID || "Anonymous User", email: "user@example.com" },
         });

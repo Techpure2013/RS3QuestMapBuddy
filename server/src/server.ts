@@ -30,8 +30,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // --- Helper Functions ---
 const normalizeNameForPath = (name: string): string => {
-  // Removes characters that are invalid in most file systems: \ / : * ? " < > |
-  return name.replace(/[\\/:\*\?"<>\|]/g, "");
+  const sanitized = name.replace(/[\\/:\*\?"<>\|]/g, "");
+
+  return sanitized.replace(/\s+/g, "_");
 };
 
 // --- REST API Endpoints ---
@@ -106,7 +107,7 @@ app.post(
       const submissionBranch = "quest-submissions";
 
       const normalizedFolderName = normalizeNameForPath(questJson.questName);
-      const filePath = `client/src/Quest Directories/${normalizedFolderName}/${normalizedFolderName}.json`;
+      const filePath = `client/src/Quest Directories/${questJson.questName}/${normalizedFolderName}.json`;
 
       // STEP 1: Ensure the submission branch exists and is up-to-date.
       try {
@@ -170,7 +171,7 @@ app.post(
         message: `feat: Add/Update quest '${questJson.questName}'`,
         content,
         branch: submissionBranch,
-        sha: existingFileSha, // ✅ This is the crucial fix
+        sha: existingFileSha,
         committer: { name: "Quest Map Buddy Bot", email: "bot@example.com" },
         author: { name: userID || "Anonymous User", email: "user@example.com" },
       });

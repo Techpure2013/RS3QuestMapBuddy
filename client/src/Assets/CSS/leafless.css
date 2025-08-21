@@ -293,7 +293,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 /* visual tweaks */
 
 .leaflet-container {
-  background: #ddd;
+  /* FIX: Changed background from light grey to dark */
+  background: #3a3a3a;
   outline-offset: 1px;
 }
 .leaflet-container a {
@@ -301,7 +302,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 }
 .leaflet-zoom-box {
   border: 2px dotted #38f;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(102, 99, 99, 0.5);
 }
 
 /* general typography */
@@ -436,6 +437,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 /* attribution and scale controls */
 
 .leaflet-container .leaflet-control-attribution {
+  /* FIX: Added display: none to hide the attribution control */
+  display: none;
   background: #020202;
   background: rgba(0, 0, 0, 0.8);
   margin: 0;

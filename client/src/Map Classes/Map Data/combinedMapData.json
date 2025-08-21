@@ -1,0 +1,6536 @@
+[
+  {
+    "name": "Zanaris",
+    "center": [2440, 4420],
+    "bounds": [
+      [2368, 4352],
+      [2511, 4487]
+    ],
+    "mapId": 2
+  },
+  {
+    "name": "Doric's cave",
+    "center": [1568, 5984],
+    "bounds": [
+      [1536, 5952],
+      [1599, 6015]
+    ],
+    "mapId": 4
+  },
+  {
+    "name": "Pretty Flower's Cave",
+    "center": [1568, 5856],
+    "bounds": [
+      [1536, 5824],
+      [1599, 5887]
+    ],
+    "mapId": 5
+  },
+  {
+    "name": "Tunnels Near Keldagrim",
+    "center": [1696, 5856],
+    "bounds": [
+      [1664, 5824],
+      [1727, 5887]
+    ],
+    "mapId": 6
+  },
+  {
+    "name": "Keldagrim Records Chamber",
+    "center": [1824, 5856],
+    "bounds": [
+      [1792, 5824],
+      [1855, 5887]
+    ],
+    "mapId": 7
+  },
+  {
+    "name": "Keldagrim records chamber",
+    "center": [1952, 5856],
+    "bounds": [
+      [1920, 5824],
+      [1983, 5887]
+    ],
+    "mapId": 8
+  },
+  {
+    "name": "Fist of Guthix lobby",
+    "center": [1696, 5600],
+    "bounds": [
+      [1664, 5568],
+      [1727, 5631]
+    ],
+    "mapId": 9
+  },
+  {
+    "name": "Fist of Guthix waiting area",
+    "center": [1632, 5600],
+    "bounds": [
+      [1600, 5568],
+      [1663, 5631]
+    ],
+    "mapId": 10
+  },
+  {
+    "name": "Fist of Guthix arena",
+    "center": [1664, 5696],
+    "bounds": [
+      [1600, 5632],
+      [1727, 5759]
+    ],
+    "mapId": 11
+  },
+  {
+    "name": "Fist of Guthix arena",
+    "center": [1760, 5728],
+    "bounds": [
+      [1728, 5696],
+      [1791, 5759]
+    ],
+    "mapId": 12
+  },
+  {
+    "name": "Runecrafting Guild",
+    "center": [1696, 5472],
+    "bounds": [
+      [1664, 5440],
+      [1727, 5503]
+    ],
+    "mapId": 13
+  },
+  {
+    "name": "Soul Wars Tutorial",
+    "center": [3616, 5408],
+    "bounds": [
+      [3520, 5376],
+      [3711, 5439]
+    ],
+    "mapId": 14
+  },
+  {
+    "name": "Varrock",
+    "center": [1888, 5568],
+    "bounds": [
+      [1856, 5504],
+      [1919, 5631]
+    ],
+    "mapId": 15
+  },
+  {
+    "name": "Barbarian Assault",
+    "center": [1888, 5472],
+    "bounds": [
+      [1856, 5440],
+      [1919, 5503]
+    ],
+    "mapId": 16
+  },
+  {
+    "name": "Barbarian Assault",
+    "center": [1888, 5408],
+    "bounds": [
+      [1856, 5376],
+      [1919, 5439]
+    ],
+    "mapId": 17
+  },
+  {
+    "name": "Barbarian Assault lobby",
+    "center": [2592, 5280],
+    "bounds": [
+      [2560, 5248],
+      [2623, 5311]
+    ],
+    "mapId": 18
+  },
+  {
+    "name": "Cheese rolling",
+    "center": [1248, 5280],
+    "bounds": [
+      [1216, 5184],
+      [1279, 5375]
+    ],
+    "mapId": 19
+  },
+  {
+    "name": "Racetrack",
+    "center": [1376, 5280],
+    "bounds": [
+      [1344, 5184],
+      [1407, 5375]
+    ],
+    "mapId": 20
+  },
+  {
+    "name": "Resource race",
+    "center": [1504, 5216],
+    "bounds": [
+      [1472, 5184],
+      [1535, 5247]
+    ],
+    "mapId": 21
+  },
+  {
+    "name": "Barbarian cave",
+    "center": [1632, 5280],
+    "bounds": [
+      [1584, 5232],
+      [1679, 5327]
+    ],
+    "mapId": 22
+  },
+  {
+    "name": "Mole lair",
+    "center": [1760, 5216],
+    "bounds": [
+      [1728, 5184],
+      [1791, 5247]
+    ],
+    "mapId": 23
+  },
+  {
+    "name": "Varrock Museum",
+    "center": [1760, 4960],
+    "bounds": [
+      [1728, 4928],
+      [1791, 4991]
+    ],
+    "mapId": 24
+  },
+  {
+    "name": "TzHaar City",
+    "center": [4672, 5120],
+    "bounds": [
+      [4544, 5056],
+      [4799, 5183]
+    ],
+    "mapId": 25
+  },
+  {
+    "name": "Lava flow mine",
+    "center": [2196, 5664],
+    "bounds": [
+      [2152, 5608],
+      [2239, 5719]
+    ],
+    "mapId": 26
+  },
+  {
+    "name": "Dungeon",
+    "center": [1056, 5024],
+    "bounds": [
+      [1024, 4992],
+      [1087, 5055]
+    ],
+    "mapId": 27
+  },
+  {
+    "name": "Island",
+    "center": [1628, 5160],
+    "bounds": [
+      [1624, 5152],
+      [1631, 5167]
+    ],
+    "mapId": 28
+  },
+  {
+    "name": "Beehive farm",
+    "center": [1932, 5044],
+    "bounds": [
+      [1920, 5032],
+      [1943, 5055]
+    ],
+    "mapId": 29
+  },
+  {
+    "name": "Pinball",
+    "center": [1972, 5044],
+    "bounds": [
+      [1960, 5032],
+      [1983, 5055]
+    ],
+    "mapId": 30
+  },
+  {
+    "name": "Graveyard",
+    "center": [1928, 5000],
+    "bounds": [
+      [1920, 4992],
+      [1935, 5007]
+    ],
+    "mapId": 31
+  },
+  {
+    "name": "Church",
+    "center": [1972, 5004],
+    "bounds": [
+      [1960, 4992],
+      [1983, 5015]
+    ],
+    "mapId": 32
+  },
+  {
+    "name": "Room",
+    "center": [1868, 5132],
+    "bounds": [
+      [1856, 5120],
+      [1879, 5143]
+    ],
+    "mapId": 33
+  },
+  {
+    "name": "Certers office",
+    "center": [1892, 5128],
+    "bounds": [
+      [1880, 5120],
+      [1903, 5135]
+    ],
+    "mapId": 34
+  },
+  {
+    "name": "Sandwich shop",
+    "center": [1908, 5128],
+    "bounds": [
+      [1896, 5120],
+      [1919, 5135]
+    ],
+    "mapId": 35
+  },
+  {
+    "name": "Party room",
+    "center": [2084, 4460],
+    "bounds": [
+      [2056, 4440],
+      [2111, 4479]
+    ],
+    "mapId": 37
+  },
+  {
+    "name": "Maze",
+    "center": [2912, 4576],
+    "bounds": [
+      [2880, 4544],
+      [2943, 4607]
+    ],
+    "mapId": 38
+  },
+  {
+    "name": "Island",
+    "center": [3424, 4768],
+    "bounds": [
+      [3392, 4736],
+      [3455, 4799]
+    ],
+    "mapId": 39
+  },
+  {
+    "name": "Assault course",
+    "center": [3168, 4832],
+    "bounds": [
+      [3136, 4800],
+      [3199, 4863]
+    ],
+    "mapId": 40
+  },
+  {
+    "name": "Classroom",
+    "center": [1888, 5024],
+    "bounds": [
+      [1856, 4992],
+      [1919, 5055]
+    ],
+    "mapId": 41
+  },
+  {
+    "name": "Mos Le'Harmless",
+    "center": [2144, 5120],
+    "bounds": [
+      [2048, 4992],
+      [2239, 5247]
+    ],
+    "mapId": 43
+  },
+  {
+    "name": "Games Room",
+    "center": [2208, 4960],
+    "bounds": [
+      [2176, 4928],
+      [2239, 4991]
+    ],
+    "mapId": 44
+  },
+  {
+    "name": "Floating island",
+    "center": [2144, 5536],
+    "bounds": [
+      [2112, 5504],
+      [2175, 5567]
+    ],
+    "mapId": 45
+  },
+  {
+    "name": "Gublinch cave",
+    "center": [3168, 5344],
+    "bounds": [
+      [3136, 5312],
+      [3199, 5375]
+    ],
+    "mapId": 46
+  },
+  {
+    "name": "Blast furnace",
+    "center": [1952, 4960],
+    "bounds": [
+      [1920, 4928],
+      [1983, 4991]
+    ],
+    "mapId": 48
+  },
+  {
+    "name": "Eagle's Peak cave",
+    "center": [2016, 4960],
+    "bounds": [
+      [1984, 4928],
+      [2047, 4991]
+    ],
+    "mapId": 49
+  },
+  {
+    "name": "Mine",
+    "center": [1760, 4704],
+    "bounds": [
+      [1728, 4672],
+      [1791, 4735]
+    ],
+    "mapId": 50
+  },
+  {
+    "name": "Field",
+    "center": [1632, 4704],
+    "bounds": [
+      [1600, 4672],
+      [1663, 4735]
+    ],
+    "mapId": 51
+  },
+  {
+    "name": "King Black Dragon's Lair",
+    "center": [2272, 4700],
+    "bounds": [
+      [2240, 4664],
+      [2303, 4735]
+    ],
+    "mapId": 52
+  },
+  {
+    "name": "Sabbot's cave",
+    "center": [2272, 4756],
+    "bounds": [
+      [2248, 4736],
+      [2295, 4775]
+    ],
+    "mapId": 53
+  },
+  {
+    "name": "Meiyerditch mine",
+    "center": [2260, 4628],
+    "bounds": [
+      [2248, 4616],
+      [2271, 4639]
+    ],
+    "mapId": 54
+  },
+  {
+    "name": "Mouse hole",
+    "center": [2272, 5536],
+    "bounds": [
+      [2240, 5504],
+      [2303, 5567]
+    ],
+    "mapId": 55
+  },
+  {
+    "name": "Cosmic Rune Temple",
+    "center": [2144, 4832],
+    "bounds": [
+      [2112, 4800],
+      [2175, 4863]
+    ],
+    "mapId": 56
+  },
+  {
+    "name": "Death Rune Temple",
+    "center": [2208, 4832],
+    "bounds": [
+      [2176, 4800],
+      [2239, 4863]
+    ],
+    "mapId": 57
+  },
+  {
+    "name": "God Wars Dungeon",
+    "center": [2880, 5280],
+    "bounds": [
+      [2808, 5176],
+      [2951, 5383]
+    ],
+    "mapId": 58
+  },
+  {
+    "name": "Chaos Rune Temple",
+    "center": [2272, 4832],
+    "bounds": [
+      [2240, 4800],
+      [2303, 4863]
+    ],
+    "mapId": 59
+  },
+  {
+    "name": "Nature Rune Temple",
+    "center": [2400, 4832],
+    "bounds": [
+      [2368, 4800],
+      [2431, 4863]
+    ],
+    "mapId": 60
+  },
+  {
+    "name": "Law Rune Temple",
+    "center": [2464, 4832],
+    "bounds": [
+      [2432, 4800],
+      [2495, 4863]
+    ],
+    "mapId": 61
+  },
+  {
+    "name": "Body Rune Temple",
+    "center": [2528, 4832],
+    "bounds": [
+      [2496, 4800],
+      [2559, 4863]
+    ],
+    "mapId": 62
+  },
+  {
+    "name": "Fire Rune Temple",
+    "center": [2592, 4832],
+    "bounds": [
+      [2560, 4800],
+      [2623, 4863]
+    ],
+    "mapId": 63
+  },
+  {
+    "name": "Earth Rune Temple",
+    "center": [2656, 4832],
+    "bounds": [
+      [2624, 4800],
+      [2687, 4863]
+    ],
+    "mapId": 64
+  },
+  {
+    "name": "Mind Rune Temple",
+    "center": [2784, 4832],
+    "bounds": [
+      [2752, 4800],
+      [2815, 4863]
+    ],
+    "mapId": 65
+  },
+  {
+    "name": "Air Rune Temple",
+    "center": [2848, 4832],
+    "bounds": [
+      [2816, 4800],
+      [2879, 4863]
+    ],
+    "mapId": 66
+  },
+  {
+    "name": "Blood Rune Temple",
+    "center": [2464, 4896],
+    "bounds": [
+      [2432, 4864],
+      [2495, 4927]
+    ],
+    "mapId": 67
+  },
+  {
+    "name": "Water Rune Temple",
+    "center": [2464, 4896],
+    "bounds": [
+      [2432, 4864],
+      [2495, 4927]
+    ],
+    "mapId": 68
+  },
+  {
+    "name": "Circus",
+    "center": [3552, 5600],
+    "bounds": [
+      [3520, 5568],
+      [3583, 5631]
+    ],
+    "mapId": 70
+  },
+  {
+    "name": "Taverley dungeon",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 71
+  },
+  {
+    "name": "Burthorpe mine",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 72
+  },
+  {
+    "name": "Abandoned Burthorpe mine",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 73
+  },
+  {
+    "name": "Lumbridge Catacombs",
+    "center": [3872, 5536],
+    "bounds": [
+      [3840, 5504],
+      [3903, 5567]
+    ],
+    "mapId": 74
+  },
+  {
+    "name": "Lumbridge Catacombs",
+    "center": [4000, 5512],
+    "bounds": [
+      [3952, 5440],
+      [4047, 5583]
+    ],
+    "mapId": 75
+  },
+  {
+    "name": "Crucible lobby",
+    "center": [3360, 6112],
+    "bounds": [
+      [3328, 6080],
+      [3391, 6143]
+    ],
+    "mapId": 76
+  },
+  {
+    "name": "Crucible",
+    "center": [3264, 6144],
+    "bounds": [
+      [3200, 6080],
+      [3327, 6207]
+    ],
+    "mapId": 77
+  },
+  {
+    "name": "Wheat maze",
+    "center": [2592, 4320],
+    "bounds": [
+      [2552, 4280],
+      [2631, 4359]
+    ],
+    "mapId": 78
+  },
+  {
+    "name": "Stronghold of Security Peace",
+    "center": [1888, 5216],
+    "bounds": [
+      [1856, 5184],
+      [1919, 5247]
+    ],
+    "mapId": 79
+  },
+  {
+    "name": "Taverley Dungeon",
+    "center": [2908, 9760],
+    "bounds": [
+      [2808, 9664],
+      [3007, 9855]
+    ],
+    "mapId": 80
+  },
+  {
+    "name": "Stronghold of Security Plenty",
+    "center": [2016, 5216],
+    "bounds": [
+      [1984, 5184],
+      [2047, 5247]
+    ],
+    "mapId": 81
+  },
+  {
+    "name": "Stronghold of Security Health",
+    "center": [2144, 5280],
+    "bounds": [
+      [2112, 5248],
+      [2175, 5311]
+    ],
+    "mapId": 82
+  },
+  {
+    "name": "Stronghold of Security Life",
+    "center": [2336, 5216],
+    "bounds": [
+      [2304, 5184],
+      [2367, 5247]
+    ],
+    "mapId": 83
+  },
+  {
+    "name": "Troll cave",
+    "center": [1440, 4448],
+    "bounds": [
+      [1408, 4416],
+      [1471, 4479]
+    ],
+    "mapId": 84
+  },
+  {
+    "name": "Dragonkin castle",
+    "center": [1888, 4512],
+    "bounds": [
+      [1856, 4480],
+      [1919, 4543]
+    ],
+    "mapId": 85
+  },
+  {
+    "name": "Enchanted valley",
+    "center": [3040, 4512],
+    "bounds": [
+      [3008, 4480],
+      [3071, 4543]
+    ],
+    "mapId": 86
+  },
+  {
+    "name": "Guthixian temple",
+    "center": [2528, 5856],
+    "bounds": [
+      [2496, 5824],
+      [2559, 5887]
+    ],
+    "mapId": 87
+  },
+  {
+    "name": "Guthixian temple",
+    "center": [2560, 5760],
+    "bounds": [
+      [2496, 5696],
+      [2623, 5823]
+    ],
+    "mapId": 88
+  },
+  {
+    "name": "Tower of Life",
+    "center": [3040, 4384],
+    "bounds": [
+      [3008, 4352],
+      [3071, 4415]
+    ],
+    "mapId": 89
+  },
+  {
+    "name": "Killerwatt Plane",
+    "center": [2656, 5216],
+    "bounds": [
+      [2624, 5184],
+      [2687, 5247]
+    ],
+    "mapId": 90
+  },
+  {
+    "name": "Dwarven mines",
+    "center": [3016, 9760],
+    "bounds": [
+      [2960, 9664],
+      [3071, 9855]
+    ],
+    "mapId": 91
+  },
+  {
+    "name": "Thieves' Guild",
+    "center": [4616, 5944],
+    "bounds": [
+      [4608, 5936],
+      [4623, 5951]
+    ],
+    "mapId": 92
+  },
+  {
+    "name": "Thieves' Guild",
+    "center": [4664, 5896],
+    "bounds": [
+      [4656, 5888],
+      [4671, 5903]
+    ],
+    "mapId": 93
+  },
+  {
+    "name": "Thieves' Guild",
+    "center": [4768, 5920],
+    "bounds": [
+      [4736, 5888],
+      [4799, 5951]
+    ],
+    "mapId": 94
+  },
+  {
+    "name": "Thieves' Guild",
+    "center": [4640, 5792],
+    "bounds": [
+      [4608, 5760],
+      [4671, 5823]
+    ],
+    "mapId": 95
+  },
+  {
+    "name": "Thieves' Guild",
+    "center": [4768, 5792],
+    "bounds": [
+      [4736, 5760],
+      [4799, 5823]
+    ],
+    "mapId": 96
+  },
+  {
+    "name": "Rogues' Den",
+    "center": [3040, 4960],
+    "bounds": [
+      [3008, 4928],
+      [3071, 4991]
+    ],
+    "mapId": 97
+  },
+  {
+    "name": "The Abyss",
+    "center": [3040, 4896],
+    "bounds": [
+      [3008, 4864],
+      [3071, 4927]
+    ],
+    "mapId": 98
+  },
+  {
+    "name": "The Abyss",
+    "center": [3040, 4832],
+    "bounds": [
+      [3008, 4800],
+      [3071, 4863]
+    ],
+    "mapId": 99
+  },
+  {
+    "name": "Courtroom",
+    "center": [1824, 4256],
+    "bounds": [
+      [1792, 4224],
+      [1855, 4287]
+    ],
+    "mapId": 100
+  },
+  {
+    "name": "Black Knights Fortress Basement",
+    "center": [1868, 4240],
+    "bounds": [
+      [1856, 4224],
+      [1879, 4255]
+    ],
+    "mapId": 101
+  },
+  {
+    "name": "Braindeath Island",
+    "center": [2144, 5120],
+    "bounds": [
+      [2112, 5056],
+      [2175, 5183]
+    ],
+    "mapId": 102
+  },
+  {
+    "name": "Jail",
+    "center": [1900, 4268],
+    "bounds": [
+      [1880, 4248],
+      [1919, 4287]
+    ],
+    "mapId": 103
+  },
+  {
+    "name": "Rat pit",
+    "center": [1952, 4704],
+    "bounds": [
+      [1920, 4672],
+      [1983, 4735]
+    ],
+    "mapId": 104
+  },
+  {
+    "name": "Tunnel of Chaos",
+    "center": [3168, 5216],
+    "bounds": [
+      [3136, 5184],
+      [3199, 5247]
+    ],
+    "mapId": 105
+  },
+  {
+    "name": "Tolna's Rift",
+    "center": [2980, 5212],
+    "bounds": [
+      [2960, 5192],
+      [2999, 5231]
+    ],
+    "mapId": 106
+  },
+  {
+    "name": "Tolna's Rage",
+    "center": [3024, 5232],
+    "bounds": [
+      [3008, 5216],
+      [3039, 5247]
+    ],
+    "mapId": 107
+  },
+  {
+    "name": "Tolna's Fear",
+    "center": [3056, 5232],
+    "bounds": [
+      [3040, 5216],
+      [3071, 5247]
+    ],
+    "mapId": 108
+  },
+  {
+    "name": "Tolna's Confusion",
+    "center": [3056, 5200],
+    "bounds": [
+      [3040, 5184],
+      [3071, 5215]
+    ],
+    "mapId": 109
+  },
+  {
+    "name": "Tolna's Hopelessness",
+    "center": [3088, 5200],
+    "bounds": [
+      [3072, 5184],
+      [3103, 5215]
+    ],
+    "mapId": 110
+  },
+  {
+    "name": "Tolna's Hope",
+    "center": [3024, 5200],
+    "bounds": [
+      [3008, 5184],
+      [3039, 5215]
+    ],
+    "mapId": 111
+  },
+  {
+    "name": "Wizards' Tower",
+    "center": [1184, 4832],
+    "bounds": [
+      [1152, 4800],
+      [1215, 4863]
+    ],
+    "mapId": 112
+  },
+  {
+    "name": "Troll Stronghold",
+    "center": [2848, 10080],
+    "bounds": [
+      [2816, 10048],
+      [2879, 10111]
+    ],
+    "mapId": 113
+  },
+  {
+    "name": "Kalphite Hive",
+    "center": [3456, 9504],
+    "bounds": [
+      [3392, 9472],
+      [3519, 9535]
+    ],
+    "mapId": 114
+  },
+  {
+    "name": "Sewer",
+    "center": [2016, 4224],
+    "bounds": [
+      [1984, 4160],
+      [2047, 4287]
+    ],
+    "mapId": 115
+  },
+  {
+    "name": "Sewer",
+    "center": [1932, 4172],
+    "bounds": [
+      [1920, 4160],
+      [1943, 4183]
+    ],
+    "mapId": 116
+  },
+  {
+    "name": "Sewer",
+    "center": [2208, 5536],
+    "bounds": [
+      [2176, 5504],
+      [2239, 5567]
+    ],
+    "mapId": 117
+  },
+  {
+    "name": "Arzinian Gold Mine",
+    "center": [2368, 4960],
+    "bounds": [
+      [2304, 4928],
+      [2431, 4991]
+    ],
+    "mapId": 118
+  },
+  {
+    "name": "Arzinian Gold Mine",
+    "center": [2560, 4960],
+    "bounds": [
+      [2496, 4928],
+      [2623, 4991]
+    ],
+    "mapId": 119
+  },
+  {
+    "name": "Dorgesh-Kaan",
+    "center": [2464, 4320],
+    "bounds": [
+      [2432, 4288],
+      [2495, 4351]
+    ],
+    "mapId": 120
+  },
+  {
+    "name": "Stronghold",
+    "center": [3084, 4244],
+    "bounds": [
+      [3072, 4224],
+      [3095, 4263]
+    ],
+    "mapId": 122
+  },
+  {
+    "name": "Fishing Platform",
+    "center": [1504, 4320],
+    "bounds": [
+      [1472, 4288],
+      [1535, 4351]
+    ],
+    "mapId": 123
+  },
+  {
+    "name": "Iban's Lair",
+    "center": [2144, 4640],
+    "bounds": [
+      [2104, 4536],
+      [2183, 4743]
+    ],
+    "mapId": 124
+  },
+  {
+    "name": "Keldagrim",
+    "center": [2852, 10192],
+    "bounds": [
+      [2816, 10113],
+      [2942, 10287]
+    ],
+    "mapId": 125
+  },
+  {
+    "name": "Iban's Lair",
+    "center": [2016, 4704],
+    "bounds": [
+      [1984, 4672],
+      [2047, 4735]
+    ],
+    "mapId": 126
+  },
+  {
+    "name": "Temple of Light",
+    "center": [1956, 4636],
+    "bounds": [
+      [1856, 4600],
+      [2055, 4671]
+    ],
+    "mapId": 127
+  },
+  {
+    "name": "Elder Kiln",
+    "center": [4192, 5088],
+    "bounds": [
+      [4032, 5056],
+      [4351, 5119]
+    ],
+    "mapId": 144
+  },
+  {
+    "name": "TzHaar City",
+    "center": [4672, 5120],
+    "bounds": [
+      [4536, 5048],
+      [4807, 5191]
+    ],
+    "mapId": 145
+  },
+  {
+    "name": "Fight Cave",
+    "center": [4448, 5152],
+    "bounds": [
+      [4416, 5120],
+      [4479, 5183]
+    ],
+    "mapId": 146
+  },
+  {
+    "name": "Chaos tunnels",
+    "center": [3204, 5504],
+    "bounds": [
+      [3072, 5432],
+      [3335, 5575]
+    ],
+    "mapId": 147
+  },
+  {
+    "name": "TzHaar Theatre",
+    "center": [4448, 5224],
+    "bounds": [
+      [4416, 5200],
+      [4479, 5247]
+    ],
+    "mapId": 148
+  },
+  {
+    "name": "Prifddinas",
+    "center": [2176, 3360],
+    "bounds": [
+      [2048, 3264],
+      [2303, 3455]
+    ],
+    "mapId": 149
+  },
+  {
+    "name": "TokTz-Ket-Dill's Lair",
+    "center": [4464, 5068],
+    "bounds": [
+      [4448, 5056],
+      [4479, 5079]
+    ],
+    "mapId": 150
+  },
+  {
+    "name": "Armadillo nest",
+    "center": [4832, 5280],
+    "bounds": [
+      [4800, 5248],
+      [4863, 5311]
+    ],
+    "mapId": 151
+  },
+  {
+    "name": "TzHaar tunnels",
+    "center": [4672, 5280],
+    "bounds": [
+      [4544, 5248],
+      [4799, 5311]
+    ],
+    "mapId": 152
+  },
+  {
+    "name": "Agility Pyramid",
+    "center": [3040, 4704],
+    "bounds": [
+      [3008, 4672],
+      [3071, 4735]
+    ],
+    "mapId": 153
+  },
+  {
+    "name": "Yanille",
+    "center": [2912, 4704],
+    "bounds": [
+      [2880, 4672],
+      [2943, 4735]
+    ],
+    "mapId": 154
+  },
+  {
+    "name": "Phoenix's Lair",
+    "center": [3520, 5216],
+    "bounds": [
+      [3456, 5184],
+      [3583, 5247]
+    ],
+    "mapId": 155
+  },
+  {
+    "name": "Crypt",
+    "center": [2328, 4640],
+    "bounds": [
+      [2304, 4624],
+      [2351, 4655]
+    ],
+    "mapId": 156
+  },
+  {
+    "name": "Hetty's basement",
+    "center": [3168, 4520],
+    "bounds": [
+      [3152, 4504],
+      [3183, 4535]
+    ],
+    "mapId": 157
+  },
+  {
+    "name": "Stronghold of Security",
+    "center": [2112, 5248],
+    "bounds": [
+      [1856, 5184],
+      [2367, 5311]
+    ],
+    "mapId": 158
+  },
+  {
+    "name": "Betty's basement",
+    "center": [3232, 4512],
+    "bounds": [
+      [3200, 4480],
+      [3263, 4543]
+    ],
+    "mapId": 159
+  },
+  {
+    "name": "Forest",
+    "center": [3296, 4512],
+    "bounds": [
+      [3264, 4480],
+      [3327, 4543]
+    ],
+    "mapId": 160
+  },
+  {
+    "name": "Forest",
+    "center": [3232, 4448],
+    "bounds": [
+      [3200, 4416],
+      [3263, 4479]
+    ],
+    "mapId": 161
+  },
+  {
+    "name": "Watermill cellar",
+    "center": [2016, 5088],
+    "bounds": [
+      [1984, 5056],
+      [2047, 5119]
+    ],
+    "mapId": 162
+  },
+  {
+    "name": "Red Axe caves",
+    "center": [1888, 4960],
+    "bounds": [
+      [1856, 4928],
+      [1919, 4991]
+    ],
+    "mapId": 163
+  },
+  {
+    "name": "Battlefield",
+    "center": [1504, 4704],
+    "bounds": [
+      [1472, 4672],
+      [1535, 4735]
+    ],
+    "mapId": 164
+  },
+  {
+    "name": "Abandoned mine tracks",
+    "center": [1504, 4576],
+    "bounds": [
+      [1472, 4544],
+      [1535, 4607]
+    ],
+    "mapId": 165
+  },
+  {
+    "name": "Red Axe base",
+    "center": [1504, 4512],
+    "bounds": [
+      [1472, 4480],
+      [1535, 4543]
+    ],
+    "mapId": 166
+  },
+  {
+    "name": "Consortium meeting room",
+    "center": [2016, 4512],
+    "bounds": [
+      [1984, 4480],
+      [2047, 4543]
+    ],
+    "mapId": 167
+  },
+  {
+    "name": "Sigmund's base",
+    "center": [2336, 4320],
+    "bounds": [
+      [2304, 4288],
+      [2367, 4351]
+    ],
+    "mapId": 168
+  },
+  {
+    "name": "Asgarnian Ice Dungeon",
+    "center": [2992, 9628],
+    "bounds": [
+      [2912, 9536],
+      [3071, 9719]
+    ],
+    "mapId": 169
+  },
+  {
+    "name": "Bandos's throne room",
+    "center": [2336, 4240],
+    "bounds": [
+      [2304, 4224],
+      [2367, 4255]
+    ],
+    "mapId": 170
+  },
+  {
+    "name": "Bandos's throne room",
+    "center": [2336, 4272],
+    "bounds": [
+      [2304, 4256],
+      [2367, 4287]
+    ],
+    "mapId": 171
+  },
+  {
+    "name": "Small cave",
+    "center": [2400, 4256],
+    "bounds": [
+      [2368, 4224],
+      [2431, 4287]
+    ],
+    "mapId": 172
+  },
+  {
+    "name": "Goblin temple crypt",
+    "center": [2464, 4256],
+    "bounds": [
+      [2432, 4224],
+      [2495, 4287]
+    ],
+    "mapId": 173
+  },
+  {
+    "name": "Goblin temple",
+    "center": [2784, 4256],
+    "bounds": [
+      [2752, 4224],
+      [2815, 4287]
+    ],
+    "mapId": 174
+  },
+  {
+    "name": "The Lady Lumbridge",
+    "center": [2080, 5536],
+    "bounds": [
+      [2048, 5504],
+      [2111, 5567]
+    ],
+    "mapId": 175
+  },
+  {
+    "name": "Collapsing cave",
+    "center": [2080, 5664],
+    "bounds": [
+      [2048, 5632],
+      [2111, 5695]
+    ],
+    "mapId": 176
+  },
+  {
+    "name": "Ruins of Uzer",
+    "center": [2720, 4896],
+    "bounds": [
+      [2688, 4864],
+      [2751, 4927]
+    ],
+    "mapId": 177
+  },
+  {
+    "name": "Thammaron's throne room",
+    "center": [3552, 4960],
+    "bounds": [
+      [3520, 4928],
+      [3583, 4991]
+    ],
+    "mapId": 178
+  },
+  {
+    "name": "Firemakers' Caves",
+    "center": [3808, 4736],
+    "bounds": [
+      [3712, 4672],
+      [3903, 4799]
+    ],
+    "mapId": 179
+  },
+  {
+    "name": "Dorgesh-Kaan",
+    "center": [2720, 5312],
+    "bounds": [
+      [2688, 5248],
+      [2751, 5375]
+    ],
+    "mapId": 180
+  },
+  {
+    "name": "Island",
+    "center": [3936, 5856],
+    "bounds": [
+      [3648, 5760],
+      [4223, 5951]
+    ],
+    "mapId": 181
+  },
+  {
+    "name": "Waiting room",
+    "center": [4256, 5920],
+    "bounds": [
+      [4224, 5888],
+      [4287, 5951]
+    ],
+    "mapId": 182
+  },
+  {
+    "name": "The Primorial Realm",
+    "center": [1952, 5728],
+    "bounds": [
+      [1920, 5696],
+      [1983, 5759]
+    ],
+    "mapId": 183
+  },
+  {
+    "name": "Goblin Village",
+    "center": [2448, 5424],
+    "bounds": [
+      [2432, 5408],
+      [2463, 5439]
+    ],
+    "mapId": 184
+  },
+  {
+    "name": "Mage Training Arena basement",
+    "center": [3628, 4816],
+    "bounds": [
+      [3608, 4800],
+      [3647, 4831]
+    ],
+    "mapId": 185
+  },
+  {
+    "name": "Mage Training Arena basement",
+    "center": [3600, 4848],
+    "bounds": [
+      [3584, 4832],
+      [3615, 4863]
+    ],
+    "mapId": 186
+  },
+  {
+    "name": "Polypore Dungeon",
+    "center": [4672, 5440],
+    "bounds": [
+      [4608, 5376],
+      [4735, 5503]
+    ],
+    "mapId": 187
+  },
+  {
+    "name": "Polypore Dungeon",
+    "center": [4704, 5600],
+    "bounds": [
+      [4672, 5568],
+      [4735, 5631]
+    ],
+    "mapId": 188
+  },
+  {
+    "name": "Sorceress' garden",
+    "center": [2912, 5472],
+    "bounds": [
+      [2880, 5440],
+      [2943, 5503]
+    ],
+    "mapId": 189
+  },
+  {
+    "name": "H.AM. tunnel",
+    "center": [2400, 5536],
+    "bounds": [
+      [2368, 5504],
+      [2431, 5567]
+    ],
+    "mapId": 190
+  },
+  {
+    "name": "Mos Le'Harmless cave",
+    "center": [3776, 9408],
+    "bounds": [
+      [3712, 9344],
+      [3839, 9471]
+    ],
+    "mapId": 191
+  },
+  {
+    "name": "Keldagrim Station",
+    "center": [2440, 5536],
+    "bounds": [
+      [2432, 5512],
+      [2447, 5559]
+    ],
+    "mapId": 192
+  },
+  {
+    "name": "Dorgesh-Kaan Station",
+    "center": [2484, 5536],
+    "bounds": [
+      [2472, 5512],
+      [2495, 5559]
+    ],
+    "mapId": 193
+  },
+  {
+    "name": "Dorgesh-Kaan Station construction site",
+    "center": [2516, 5580],
+    "bounds": [
+      [2504, 5528],
+      [2527, 5631]
+    ],
+    "mapId": 194
+  },
+  {
+    "name": "Underground railway",
+    "center": [2544, 5516],
+    "bounds": [
+      [2528, 5504],
+      [2559, 5527]
+    ],
+    "mapId": 195
+  },
+  {
+    "name": "Turael's basement",
+    "center": [3104, 4960],
+    "bounds": [
+      [3096, 4952],
+      [3111, 4967]
+    ],
+    "mapId": 196
+  },
+  {
+    "name": "Rune Essence mine",
+    "center": [2912, 4832],
+    "bounds": [
+      [2880, 4800],
+      [2943, 4863]
+    ],
+    "mapId": 197
+  },
+  {
+    "name": "Witchaven excavations",
+    "center": [2656, 4896],
+    "bounds": [
+      [2624, 4864],
+      [2687, 4927]
+    ],
+    "mapId": 198
+  },
+  {
+    "name": "Temple Knight testing room",
+    "center": [2464, 4960],
+    "bounds": [
+      [2432, 4928],
+      [2495, 4991]
+    ],
+    "mapId": 199
+  },
+  {
+    "name": "Battlefield",
+    "center": [2144, 4960],
+    "bounds": [
+      [2112, 4928],
+      [2175, 4991]
+    ],
+    "mapId": 200
+  },
+  {
+    "name": "Land of Snow",
+    "center": [2080, 5792],
+    "bounds": [
+      [2048, 5760],
+      [2111, 5823]
+    ],
+    "mapId": 201
+  },
+  {
+    "name": "Land of Snow",
+    "center": [2016, 5728],
+    "bounds": [
+      [1984, 5696],
+      [2047, 5759]
+    ],
+    "mapId": 203
+  },
+  {
+    "name": "Grand Tree",
+    "center": [2336, 5408],
+    "bounds": [
+      [2304, 5376],
+      [2367, 5439]
+    ],
+    "mapId": 204
+  },
+  {
+    "name": "Oo'glog",
+    "center": [2592, 5528],
+    "bounds": [
+      [2560, 5504],
+      [2623, 5551]
+    ],
+    "mapId": 205
+  },
+  {
+    "name": "H.A.M. store rooms",
+    "center": [2592, 5216],
+    "bounds": [
+      [2560, 5184],
+      [2623, 5247]
+    ],
+    "mapId": 206
+  },
+  {
+    "name": "Soul Wars",
+    "center": [3616, 5408],
+    "bounds": [
+      [3520, 5376],
+      [3711, 5439]
+    ],
+    "mapId": 207
+  },
+  {
+    "name": "ZMI Altar",
+    "center": [3296, 4832],
+    "bounds": [
+      [3264, 4800],
+      [3327, 4863]
+    ],
+    "mapId": 208
+  },
+  {
+    "name": "Dominion Tower",
+    "center": [3744, 6304],
+    "bounds": [
+      [3648, 6016],
+      [3839, 6591]
+    ],
+    "mapId": 209
+  },
+  {
+    "name": "Varrock",
+    "center": [4640, 6080],
+    "bounds": [
+      [4608, 6016],
+      [4671, 6143]
+    ],
+    "mapId": 210
+  },
+  {
+    "name": "Kethsi",
+    "center": [4000, 5728],
+    "bounds": [
+      [3952, 5680],
+      [4047, 5775]
+    ],
+    "mapId": 211
+  },
+  {
+    "name": "Ice cave",
+    "center": [3424, 5664],
+    "bounds": [
+      [3392, 5632],
+      [3455, 5695]
+    ],
+    "mapId": 212
+  },
+  {
+    "name": "Ourania Altar",
+    "center": [3296, 4832],
+    "bounds": [
+      [3264, 4800],
+      [3327, 4863]
+    ],
+    "mapId": 213
+  },
+  {
+    "name": "Lumbridge Mine",
+    "center": [3104, 4960],
+    "bounds": [
+      [3072, 4928],
+      [3135, 4991]
+    ],
+    "mapId": 214
+  },
+  {
+    "name": "Lumbridge cellar",
+    "center": [3296, 4960],
+    "bounds": [
+      [3264, 4928],
+      [3327, 4991]
+    ],
+    "mapId": 215
+  },
+  {
+    "name": "Burgh de Rott underground",
+    "center": [2272, 5152],
+    "bounds": [
+      [2240, 5120],
+      [2303, 5183]
+    ],
+    "mapId": 216
+  },
+  {
+    "name": "Lair of Tarn Razorlor",
+    "center": [3152, 4656],
+    "bounds": [
+      [3136, 4640],
+      [3167, 4671]
+    ],
+    "mapId": 217
+  },
+  {
+    "name": "Haunted mine",
+    "center": [2784, 4576],
+    "bounds": [
+      [2752, 4544],
+      [2815, 4607]
+    ],
+    "mapId": 218
+  },
+  {
+    "name": "Haunted mine",
+    "center": [2720, 4512],
+    "bounds": [
+      [2688, 4480],
+      [2751, 4543]
+    ],
+    "mapId": 219
+  },
+  {
+    "name": "Haunted mine",
+    "center": [2784, 4512],
+    "bounds": [
+      [2752, 4480],
+      [2815, 4543]
+    ],
+    "mapId": 220
+  },
+  {
+    "name": "Haunted mine",
+    "center": [2720, 4448],
+    "bounds": [
+      [2688, 4416],
+      [2751, 4479]
+    ],
+    "mapId": 221
+  },
+  {
+    "name": "Haunted mine",
+    "center": [2784, 4448],
+    "bounds": [
+      [2752, 4416],
+      [2815, 4479]
+    ],
+    "mapId": 222
+  },
+  {
+    "name": "Movario's base",
+    "center": [2048, 4384],
+    "bounds": [
+      [1984, 4352],
+      [2111, 4415]
+    ],
+    "mapId": 223
+  },
+  {
+    "name": "Yanille Dungeon",
+    "center": [2592, 9532],
+    "bounds": [
+      [2560, 9472],
+      [2623, 9591]
+    ],
+    "mapId": 224
+  },
+  {
+    "name": "Lair of Tarn Razorlor",
+    "center": [3168, 4604],
+    "bounds": [
+      [3136, 4536],
+      [3199, 4671]
+    ],
+    "mapId": 225
+  },
+  {
+    "name": "House",
+    "center": [3804, 5724],
+    "bounds": [
+      [3776, 5696],
+      [3831, 5751]
+    ],
+    "mapId": 226
+  },
+  {
+    "name": "Dungeon",
+    "center": [3852, 5684],
+    "bounds": [
+      [3840, 5672],
+      [3863, 5695]
+    ],
+    "mapId": 227
+  },
+  {
+    "name": "Cave",
+    "center": [2464, 4776],
+    "bounds": [
+      [2432, 4752],
+      [2495, 4799]
+    ],
+    "mapId": 229
+  },
+  {
+    "name": "Forest",
+    "center": [2600, 4776],
+    "bounds": [
+      [2576, 4752],
+      [2623, 4799]
+    ],
+    "mapId": 230
+  },
+  {
+    "name": "Cave",
+    "center": [2520, 4712],
+    "bounds": [
+      [2480, 4672],
+      [2559, 4751]
+    ],
+    "mapId": 231
+  },
+  {
+    "name": "Forest",
+    "center": [2336, 4576],
+    "bounds": [
+      [2304, 4544],
+      [2367, 4607]
+    ],
+    "mapId": 232
+  },
+  {
+    "name": "Theatre",
+    "center": [2016, 4768],
+    "bounds": [
+      [1984, 4736],
+      [2047, 4799]
+    ],
+    "mapId": 233
+  },
+  {
+    "name": "Ape Atoll",
+    "center": [2656, 4576],
+    "bounds": [
+      [2624, 4544],
+      [2687, 4607]
+    ],
+    "mapId": 234
+  },
+  {
+    "name": "Fairy HQ",
+    "center": [2272, 4448],
+    "bounds": [
+      [2240, 4416],
+      [2303, 4479]
+    ],
+    "mapId": 235
+  },
+  {
+    "name": "Fairy HQ",
+    "center": [1568, 4256],
+    "bounds": [
+      [1536, 4224],
+      [1599, 4287]
+    ],
+    "mapId": 237
+  },
+  {
+    "name": "Canoe",
+    "center": [1824, 4512],
+    "bounds": [
+      [1792, 4480],
+      [1855, 4543]
+    ],
+    "mapId": 238
+  },
+  {
+    "name": "Shredflesh's Cave",
+    "center": [2464, 4192],
+    "bounds": [
+      [2432, 4160],
+      [2495, 4223]
+    ],
+    "mapId": 239
+  },
+  {
+    "name": "Zanik's Lab",
+    "center": [2592, 4192],
+    "bounds": [
+      [2560, 4160],
+      [2623, 4223]
+    ],
+    "mapId": 240
+  },
+  {
+    "name": "Baba Yaga's House",
+    "center": [3104, 4448],
+    "bounds": [
+      [3072, 4416],
+      [3135, 4479]
+    ],
+    "mapId": 241
+  },
+  {
+    "name": "Yu'biusk",
+    "center": [2208, 4256],
+    "bounds": [
+      [2136, 4184],
+      [2279, 4327]
+    ],
+    "mapId": 242
+  },
+  {
+    "name": "Lumbridge Cellar",
+    "center": [3680, 4960],
+    "bounds": [
+      [3648, 4928],
+      [3711, 4991]
+    ],
+    "mapId": 243
+  },
+  {
+    "name": "Lumbridge Cellar",
+    "center": [2528, 5024],
+    "bounds": [
+      [2496, 4992],
+      [2559, 5055]
+    ],
+    "mapId": 244
+  },
+  {
+    "name": "Desert",
+    "center": [1376, 4768],
+    "bounds": [
+      [1344, 4736],
+      [1407, 4799]
+    ],
+    "mapId": 245
+  },
+  {
+    "name": "Draynor",
+    "center": [1344, 4864],
+    "bounds": [
+      [1280, 4800],
+      [1407, 4927]
+    ],
+    "mapId": 246
+  },
+  {
+    "name": "Tutorial cellar",
+    "center": [3676, 4960],
+    "bounds": [
+      [3648, 4928],
+      [3703, 4991]
+    ],
+    "mapId": 247
+  },
+  {
+    "name": "The Skullery",
+    "center": [1440, 4704],
+    "bounds": [
+      [1408, 4672],
+      [1471, 4735]
+    ],
+    "mapId": 248
+  },
+  {
+    "name": "Iceburg",
+    "center": [3552, 5920],
+    "bounds": [
+      [3520, 5888],
+      [3583, 5951]
+    ],
+    "mapId": 249
+  },
+  {
+    "name": "Iceburg",
+    "center": [3552, 5984],
+    "bounds": [
+      [3520, 5952],
+      [3583, 6015]
+    ],
+    "mapId": 250
+  },
+  {
+    "name": "Iceburg",
+    "center": [3552, 6048],
+    "bounds": [
+      [3520, 6016],
+      [3583, 6079]
+    ],
+    "mapId": 251
+  },
+  {
+    "name": "Yanille",
+    "center": [3488, 5984],
+    "bounds": [
+      [3456, 5952],
+      [3519, 6015]
+    ],
+    "mapId": 252
+  },
+  {
+    "name": "Red Raktuber",
+    "center": [3552, 5792],
+    "bounds": [
+      [3520, 5760],
+      [3583, 5823]
+    ],
+    "mapId": 253
+  },
+  {
+    "name": "Submarine",
+    "center": [3488, 5792],
+    "bounds": [
+      [3456, 5760],
+      [3519, 5823]
+    ],
+    "mapId": 254
+  },
+  {
+    "name": "Lumbridge",
+    "center": [2336, 5740],
+    "bounds": [
+      [2280, 5672],
+      [2391, 5807]
+    ],
+    "mapId": 255
+  },
+  {
+    "name": "Captain Barnaby's Ship",
+    "center": [1888, 4872],
+    "bounds": [
+      [1856, 4848],
+      [1919, 4895]
+    ],
+    "mapId": 256
+  },
+  {
+    "name": "Draynor",
+    "center": [2136, 4904],
+    "bounds": [
+      [2112, 4880],
+      [2159, 4927]
+    ],
+    "mapId": 257
+  },
+  {
+    "name": "Tutorial cellar",
+    "center": [3680, 4960],
+    "bounds": [
+      [3648, 4928],
+      [3711, 4991]
+    ],
+    "mapId": 258
+  },
+  {
+    "name": "Abyss",
+    "center": [2332, 4772],
+    "bounds": [
+      [2320, 4760],
+      [2343, 4783]
+    ],
+    "mapId": 260
+  },
+  {
+    "name": "Witchaven Dungeon",
+    "center": [2336, 5088],
+    "bounds": [
+      [2304, 5056],
+      [2367, 5119]
+    ],
+    "mapId": 261
+  },
+  {
+    "name": "Slug Citadel",
+    "center": [1760, 4384],
+    "bounds": [
+      [1728, 4352],
+      [1791, 4415]
+    ],
+    "mapId": 262
+  },
+  {
+    "name": "Slug Citadel",
+    "center": [1632, 4320],
+    "bounds": [
+      [1600, 4288],
+      [1663, 4351]
+    ],
+    "mapId": 263
+  },
+  {
+    "name": "Slug Citadel",
+    "center": [1696, 4320],
+    "bounds": [
+      [1664, 4288],
+      [1727, 4351]
+    ],
+    "mapId": 264
+  },
+  {
+    "name": "Slug Citadel",
+    "center": [1760, 4320],
+    "bounds": [
+      [1728, 4288],
+      [1791, 4351]
+    ],
+    "mapId": 265
+  },
+  {
+    "name": "Slug Citadel",
+    "center": [1824, 4320],
+    "bounds": [
+      [1792, 4288],
+      [1855, 4351]
+    ],
+    "mapId": 266
+  },
+  {
+    "name": "Daemonheim",
+    "center": [1696, 4384],
+    "bounds": [
+      [1664, 4352],
+      [1727, 4415]
+    ],
+    "mapId": 267
+  },
+  {
+    "name": "Cave",
+    "center": [1568, 4384],
+    "bounds": [
+      [1536, 4352],
+      [1599, 4415]
+    ],
+    "mapId": 268
+  },
+  {
+    "name": "Tutorial cellar",
+    "center": [3680, 4960],
+    "bounds": [
+      [3648, 4928],
+      [3711, 4991]
+    ],
+    "mapId": 269
+  },
+  {
+    "name": "Keep Le Faye",
+    "center": [1696, 4256],
+    "bounds": [
+      [1664, 4224],
+      [1727, 4287]
+    ],
+    "mapId": 270
+  },
+  {
+    "name": "Waterbirth Dungeon",
+    "center": [1888, 4384],
+    "bounds": [
+      [1792, 4352],
+      [1983, 4415]
+    ],
+    "mapId": 271
+  },
+  {
+    "name": "Waterbirth Dungeon",
+    "center": [2912, 4448],
+    "bounds": [
+      [2880, 4416],
+      [2943, 4479]
+    ],
+    "mapId": 272
+  },
+  {
+    "name": "Silas's Dream",
+    "center": [4448, 5856],
+    "bounds": [
+      [4416, 5824],
+      [4479, 5887]
+    ],
+    "mapId": 273
+  },
+  {
+    "name": "Fremennik spiritual realm",
+    "center": [4384, 5920],
+    "bounds": [
+      [4352, 5888],
+      [4415, 5951]
+    ],
+    "mapId": 274
+  },
+  {
+    "name": "Rellekka",
+    "center": [4512, 5920],
+    "bounds": [
+      [4480, 5888],
+      [4543, 5951]
+    ],
+    "mapId": 275
+  },
+  {
+    "name": "Fortress of Annakarl",
+    "center": [4320, 5728],
+    "bounds": [
+      [4288, 5696],
+      [4351, 5759]
+    ],
+    "mapId": 276
+  },
+  {
+    "name": "Temple Knight archives",
+    "center": [4108, 5748],
+    "bounds": [
+      [4096, 5736],
+      [4119, 5759]
+    ],
+    "mapId": 277
+  },
+  {
+    "name": "Kethsi library",
+    "center": [4128, 5720],
+    "bounds": [
+      [4112, 5696],
+      [4143, 5743]
+    ],
+    "mapId": 278
+  },
+  {
+    "name": "The Barrows",
+    "center": [4072, 5720],
+    "bounds": [
+      [4048, 5696],
+      [4095, 5743]
+    ],
+    "mapId": 279
+  },
+  {
+    "name": "Living Rock Caverns",
+    "center": [3648, 5120],
+    "bounds": [
+      [3584, 5056],
+      [3711, 5183]
+    ],
+    "mapId": 280
+  },
+  {
+    "name": "Bank",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 281
+  },
+  {
+    "name": "Bank",
+    "center": [2768, 5136],
+    "bounds": [
+      [2752, 5120],
+      [2783, 5151]
+    ],
+    "mapId": 282
+  },
+  {
+    "name": "Player Moderator Room",
+    "center": [2848, 5148],
+    "bounds": [
+      [2840, 5136],
+      [2855, 5159]
+    ],
+    "mapId": 283
+  },
+  {
+    "name": "House",
+    "center": [2848, 5088],
+    "bounds": [
+      [2816, 5056],
+      [2879, 5119]
+    ],
+    "mapId": 284
+  },
+  {
+    "name": "Rat Pit",
+    "center": [2912, 5088],
+    "bounds": [
+      [2880, 5056],
+      [2943, 5119]
+    ],
+    "mapId": 285
+  },
+  {
+    "name": "Gorak Plane",
+    "center": [3040, 5344],
+    "bounds": [
+      [3008, 5312],
+      [3071, 5375]
+    ],
+    "mapId": 286
+  },
+  {
+    "name": "The Battle of the Archipelago",
+    "center": [1632, 5024],
+    "bounds": [
+      [1600, 4992],
+      [1663, 5055]
+    ],
+    "mapId": 287
+  },
+  {
+    "name": "Uzer Mastaba",
+    "center": [1504, 4960],
+    "bounds": [
+      [1472, 4928],
+      [1535, 4991]
+    ],
+    "mapId": 288
+  },
+  {
+    "name": "Uzer Mastaba",
+    "center": [1504, 4832],
+    "bounds": [
+      [1472, 4800],
+      [1535, 4863]
+    ],
+    "mapId": 289
+  },
+  {
+    "name": "Uzer Mastaba",
+    "center": [1568, 4832],
+    "bounds": [
+      [1536, 4800],
+      [1599, 4863]
+    ],
+    "mapId": 290
+  },
+  {
+    "name": "Jalsavrah Pyramid",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 292
+  },
+  {
+    "name": "Cosmic Entity plane",
+    "center": [2080, 4832],
+    "bounds": [
+      [2048, 4800],
+      [2111, 4863]
+    ],
+    "mapId": 293
+  },
+  {
+    "name": "Shady grove",
+    "center": [2336, 4384],
+    "bounds": [
+      [2304, 4352],
+      [2367, 4415]
+    ],
+    "mapId": 294
+  },
+  {
+    "name": "Golrie's cave",
+    "center": [2592, 4448],
+    "bounds": [
+      [2560, 4416],
+      [2623, 4479]
+    ],
+    "mapId": 295
+  },
+  {
+    "name": "Yewnock's cave",
+    "center": [2016, 5536],
+    "bounds": [
+      [1984, 5504],
+      [2047, 5567]
+    ],
+    "mapId": 296
+  },
+  {
+    "name": "Grim Reaper's office",
+    "center": [1972, 5304],
+    "bounds": [
+      [1960, 5296],
+      [1983, 5311]
+    ],
+    "mapId": 297
+  },
+  {
+    "name": "Nature grotto",
+    "center": [2272, 5344],
+    "bounds": [
+      [2240, 5312],
+      [2303, 5375]
+    ],
+    "mapId": 298
+  },
+  {
+    "name": "Bloodsplatter Isle",
+    "center": [3072, 5856],
+    "bounds": [
+      [3008, 5824],
+      [3135, 5887]
+    ],
+    "mapId": 299
+  },
+  {
+    "name": "Bolrie's lab",
+    "center": [3616, 4512],
+    "bounds": [
+      [3584, 4480],
+      [3647, 4543]
+    ],
+    "mapId": 300
+  },
+  {
+    "name": "Pollnivneach Dungeon",
+    "center": [3296, 4352],
+    "bounds": [
+      [3264, 4288],
+      [3327, 4415]
+    ],
+    "mapId": 301
+  },
+  {
+    "name": "Spirit Plane",
+    "center": [3712, 5568],
+    "bounds": [
+      [3648, 5504],
+      [3775, 5631]
+    ],
+    "mapId": 302
+  },
+  {
+    "name": "Pollnivneach Dungeon",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 303
+  },
+  {
+    "name": "Lighthouse Dungeon",
+    "center": [2528, 4640],
+    "bounds": [
+      [2496, 4608],
+      [2559, 4671]
+    ],
+    "mapId": 304
+  },
+  {
+    "name": "Edgeville Dungeon",
+    "center": [992, 4576],
+    "bounds": [
+      [960, 4544],
+      [1023, 4607]
+    ],
+    "mapId": 305
+  },
+  {
+    "name": "Dwarven Mine",
+    "center": [1056, 4576],
+    "bounds": [
+      [1024, 4544],
+      [1087, 4607]
+    ],
+    "mapId": 306
+  },
+  {
+    "name": "Edgeville Dungeon",
+    "center": [1120, 4580],
+    "bounds": [
+      [1088, 4552],
+      [1151, 4607]
+    ],
+    "mapId": 307
+  },
+  {
+    "name": "Karamja Volcano",
+    "center": [1184, 4576],
+    "bounds": [
+      [1152, 4544],
+      [1215, 4607]
+    ],
+    "mapId": 308
+  },
+  {
+    "name": "Baxtorian Falls",
+    "center": [1248, 4576],
+    "bounds": [
+      [1216, 4544],
+      [1279, 4607]
+    ],
+    "mapId": 309
+  },
+  {
+    "name": "Mining Guild",
+    "center": [1056, 4512],
+    "bounds": [
+      [1024, 4480],
+      [1087, 4543]
+    ],
+    "mapId": 310
+  },
+  {
+    "name": "Taverley Dungeon",
+    "center": [1376, 4576],
+    "bounds": [
+      [1344, 4544],
+      [1407, 4607]
+    ],
+    "mapId": 311
+  },
+  {
+    "name": "Taverley Dungeon",
+    "center": [992, 4512],
+    "bounds": [
+      [960, 4480],
+      [1023, 4543]
+    ],
+    "mapId": 312
+  },
+  {
+    "name": "Zanaris Fairy HQ",
+    "center": [1568, 4256],
+    "bounds": [
+      [1536, 4224],
+      [1599, 4287]
+    ],
+    "mapId": 313
+  },
+  {
+    "name": "Varrock Sewers",
+    "center": [1312, 4576],
+    "bounds": [
+      [1280, 4544],
+      [1343, 4607]
+    ],
+    "mapId": 314
+  },
+  {
+    "name": "Chaos Tunnels",
+    "center": [1248, 4512],
+    "bounds": [
+      [1216, 4480],
+      [1279, 4543]
+    ],
+    "mapId": 315
+  },
+  {
+    "name": "Chaos Tunnels",
+    "center": [1120, 4448],
+    "bounds": [
+      [1088, 4416],
+      [1151, 4479]
+    ],
+    "mapId": 316
+  },
+  {
+    "name": "Al Kharid mining site",
+    "center": [1184, 4512],
+    "bounds": [
+      [1152, 4480],
+      [1215, 4543]
+    ],
+    "mapId": 317
+  },
+  {
+    "name": "Brimhaven Dungeon",
+    "center": [1120, 4520],
+    "bounds": [
+      [1088, 4480],
+      [1151, 4559]
+    ],
+    "mapId": 318
+  },
+  {
+    "name": "Asgarnian Ice Dungeon",
+    "center": [1312, 4512],
+    "bounds": [
+      [1280, 4480],
+      [1343, 4543]
+    ],
+    "mapId": 319
+  },
+  {
+    "name": "Wilderness",
+    "center": [3424, 5088],
+    "bounds": [
+      [3392, 5056],
+      [3455, 5119]
+    ],
+    "mapId": 320
+  },
+  {
+    "name": "Nomad's temple",
+    "center": [3296, 5888],
+    "bounds": [
+      [3200, 5824],
+      [3391, 5951]
+    ],
+    "mapId": 321
+  },
+  {
+    "name": "Clan Wars",
+    "center": [2720, 5568],
+    "bounds": [
+      [2688, 5504],
+      [2751, 5631]
+    ],
+    "mapId": 322
+  },
+  {
+    "name": "Clan Wars",
+    "center": [2912, 5664],
+    "bounds": [
+      [2880, 5632],
+      [2943, 5695]
+    ],
+    "mapId": 323
+  },
+  {
+    "name": "Lava Flow Mine",
+    "center": [2204, 5660],
+    "bounds": [
+      [2168, 5624],
+      [2239, 5695]
+    ],
+    "mapId": 324
+  },
+  {
+    "name": "Clan Wars",
+    "center": [2880, 5920],
+    "bounds": [
+      [2816, 5888],
+      [2943, 5951]
+    ],
+    "mapId": 325
+  },
+  {
+    "name": "Clan Wars",
+    "center": [2784, 5952],
+    "bounds": [
+      [2752, 5888],
+      [2815, 6015]
+    ],
+    "mapId": 326
+  },
+  {
+    "name": "Clan Wars",
+    "center": [2912, 5536],
+    "bounds": [
+      [2880, 5504],
+      [2943, 5567]
+    ],
+    "mapId": 327
+  },
+  {
+    "name": "Realm Of The Culinaromancer",
+    "center": [1896, 5344],
+    "bounds": [
+      [1872, 5312],
+      [1919, 5375]
+    ],
+    "mapId": 328
+  },
+  {
+    "name": "Lumbridge",
+    "center": [1864, 5348],
+    "bounds": [
+      [1856, 5336],
+      [1871, 5359]
+    ],
+    "mapId": 329
+  },
+  {
+    "name": "Lumbridge",
+    "center": [1864, 5324],
+    "bounds": [
+      [1856, 5312],
+      [1871, 5335]
+    ],
+    "mapId": 330
+  },
+  {
+    "name": "Yanille",
+    "center": [3616, 5792],
+    "bounds": [
+      [3584, 5760],
+      [3647, 5823]
+    ],
+    "mapId": 331
+  },
+  {
+    "name": "Crash site",
+    "center": [1844, 4916],
+    "bounds": [
+      [1832, 4904],
+      [1855, 4927]
+    ],
+    "mapId": 332
+  },
+  {
+    "name": "Crash site",
+    "center": [1804, 4892],
+    "bounds": [
+      [1792, 4880],
+      [1815, 4903]
+    ],
+    "mapId": 333
+  },
+  {
+    "name": "Draynor Village",
+    "center": [3872, 5472],
+    "bounds": [
+      [3840, 5440],
+      [3903, 5503]
+    ],
+    "mapId": 334
+  },
+  {
+    "name": "Tolna's Rift",
+    "center": [3296, 9824],
+    "bounds": [
+      [3264, 9792],
+      [3327, 9855]
+    ],
+    "mapId": 335
+  },
+  {
+    "name": "Jadinko lair",
+    "center": [3040, 9248],
+    "bounds": [
+      [3008, 9216],
+      [3071, 9279]
+    ],
+    "mapId": 336
+  },
+  {
+    "name": "Fisher Realm",
+    "center": [2656, 4704],
+    "bounds": [
+      [2624, 4672],
+      [2687, 4735]
+    ],
+    "mapId": 337
+  },
+  {
+    "name": "Fisher Realm",
+    "center": [2784, 4704],
+    "bounds": [
+      [2752, 4672],
+      [2815, 4735]
+    ],
+    "mapId": 338
+  },
+  {
+    "name": "Troll Invasion",
+    "center": [1760, 4128],
+    "bounds": [
+      [1728, 4096],
+      [1791, 4159]
+    ],
+    "mapId": 339
+  },
+  {
+    "name": "Burthorpe",
+    "center": [2080, 6048],
+    "bounds": [
+      [2048, 6016],
+      [2111, 6079]
+    ],
+    "mapId": 340
+  },
+  {
+    "name": "Burthorpe",
+    "center": [2080, 5920],
+    "bounds": [
+      [2048, 5888],
+      [2111, 5951]
+    ],
+    "mapId": 341
+  },
+  {
+    "name": "Lighthouse",
+    "center": [2452, 4588],
+    "bounds": [
+      [2408, 4544],
+      [2495, 4631]
+    ],
+    "mapId": 342
+  },
+  {
+    "name": "Meiyerditch Mine",
+    "center": [2388, 4628],
+    "bounds": [
+      [2376, 4616],
+      [2399, 4639]
+    ],
+    "mapId": 343
+  },
+  {
+    "name": "Karamja jungle",
+    "center": [2528, 4576],
+    "bounds": [
+      [2496, 4544],
+      [2559, 4607]
+    ],
+    "mapId": 344
+  },
+  {
+    "name": "Karamja Shipyard",
+    "center": [2592, 4576],
+    "bounds": [
+      [2560, 4544],
+      [2623, 4607]
+    ],
+    "mapId": 345
+  },
+  {
+    "name": "Haunted mine",
+    "center": [2720, 4592],
+    "bounds": [
+      [2704, 4584],
+      [2735, 4599]
+    ],
+    "mapId": 346
+  },
+  {
+    "name": "Haunted mine",
+    "center": [2724, 4564],
+    "bounds": [
+      [2712, 4552],
+      [2735, 4575]
+    ],
+    "mapId": 348
+  },
+  {
+    "name": "Caverns under Arandar",
+    "center": [3552, 4384],
+    "bounds": [
+      [3520, 4352],
+      [3583, 4415]
+    ],
+    "mapId": 349
+  },
+  {
+    "name": "Duel Arena",
+    "center": [3200, 5120],
+    "bounds": [
+      [3072, 5056],
+      [3327, 5183]
+    ],
+    "mapId": 350
+  },
+  {
+    "name": "Varrock",
+    "center": [1632, 5344],
+    "bounds": [
+      [1600, 5312],
+      [1663, 5375]
+    ],
+    "mapId": 351
+  },
+  {
+    "name": "Tai Bwo Wannai Village",
+    "center": [1952, 5344],
+    "bounds": [
+      [1920, 5312],
+      [1983, 5375]
+    ],
+    "mapId": 352
+  },
+  {
+    "name": "Summoning obelisk",
+    "center": [2208, 5344],
+    "bounds": [
+      [2200, 5336],
+      [2215, 5351]
+    ],
+    "mapId": 353
+  },
+  {
+    "name": "Shadow Dungeon",
+    "center": [2688, 5088],
+    "bounds": [
+      [2624, 5056],
+      [2751, 5119]
+    ],
+    "mapId": 354
+  },
+  {
+    "name": "Erjolf's cave",
+    "center": [3424, 5536],
+    "bounds": [
+      [3392, 5504],
+      [3455, 5567]
+    ],
+    "mapId": 355
+  },
+  {
+    "name": "Erjolf's cave",
+    "center": [3488, 5536],
+    "bounds": [
+      [3456, 5504],
+      [3519, 5567]
+    ],
+    "mapId": 356
+  },
+  {
+    "name": "Ritual site cave",
+    "center": [2912, 5728],
+    "bounds": [
+      [2880, 5696],
+      [2943, 5759]
+    ],
+    "mapId": 357
+  },
+  {
+    "name": "Ascension Dungeon",
+    "center": [1120, 608],
+    "bounds": [
+      [960, 512],
+      [1279, 703]
+    ],
+    "mapId": 358
+  },
+  {
+    "name": "Elemental Workshop",
+    "center": [1952, 5152],
+    "bounds": [
+      [1920, 5120],
+      [1983, 5183]
+    ],
+    "mapId": 359
+  },
+  {
+    "name": "Elemental Workshop",
+    "center": [4128, 5600],
+    "bounds": [
+      [4096, 5568],
+      [4159, 5631]
+    ],
+    "mapId": 360
+  },
+  {
+    "name": "Elemental Workshop",
+    "center": [4128, 5536],
+    "bounds": [
+      [4096, 5504],
+      [4159, 5567]
+    ],
+    "mapId": 361
+  },
+  {
+    "name": "Spirit Plane",
+    "center": [3712, 5568],
+    "bounds": [
+      [3648, 5504],
+      [3775, 5631]
+    ],
+    "mapId": 362
+  },
+  {
+    "name": "Rusty Anchor cellar",
+    "center": [4384, 5600],
+    "bounds": [
+      [4352, 5568],
+      [4415, 5631]
+    ],
+    "mapId": 363
+  },
+  {
+    "name": "Chemist's laboratory",
+    "center": [4448, 5600],
+    "bounds": [
+      [4416, 5568],
+      [4479, 5631]
+    ],
+    "mapId": 364
+  },
+  {
+    "name": "Kinshra Workshop",
+    "center": [4384, 5664],
+    "bounds": [
+      [4352, 5632],
+      [4415, 5695]
+    ],
+    "mapId": 365
+  },
+  {
+    "name": "Black Knights' Fortress security rooms",
+    "center": [4512, 5664],
+    "bounds": [
+      [4480, 5632],
+      [4543, 5695]
+    ],
+    "mapId": 366
+  },
+  {
+    "name": "Valluta's domain",
+    "center": [4512, 5536],
+    "bounds": [
+      [4480, 5504],
+      [4543, 5567]
+    ],
+    "mapId": 367
+  },
+  {
+    "name": "Spirit Realm",
+    "center": [2848, 4320],
+    "bounds": [
+      [2688, 4224],
+      [3007, 4415]
+    ],
+    "mapId": 368
+  },
+  {
+    "name": "Gnome glider hangar",
+    "center": [2592, 4512],
+    "bounds": [
+      [2560, 4480],
+      [2623, 4543]
+    ],
+    "mapId": 370
+  },
+  {
+    "name": "Gnome glider hangar",
+    "center": [2656, 4512],
+    "bounds": [
+      [2624, 4480],
+      [2687, 4543]
+    ],
+    "mapId": 371
+  },
+  {
+    "name": "The past",
+    "center": [3360, 5248],
+    "bounds": [
+      [3264, 5184],
+      [3455, 5311]
+    ],
+    "mapId": 372
+  },
+  {
+    "name": "Desert island",
+    "center": [3584, 5728],
+    "bounds": [
+      [3520, 5696],
+      [3647, 5759]
+    ],
+    "mapId": 373
+  },
+  {
+    "name": "Valluta's den",
+    "center": [4544, 5600],
+    "bounds": [
+      [4480, 5568],
+      [4607, 5631]
+    ],
+    "mapId": 374
+  },
+  {
+    "name": "Fremennik fleet",
+    "center": [4448, 5920],
+    "bounds": [
+      [4416, 5888],
+      [4479, 5951]
+    ],
+    "mapId": 375
+  },
+  {
+    "name": "Arposandran underground",
+    "center": [3584, 4544],
+    "bounds": [
+      [3520, 4480],
+      [3647, 4607]
+    ],
+    "mapId": 376
+  },
+  {
+    "name": "Kharazi caves",
+    "center": [2400, 4704],
+    "bounds": [
+      [2368, 4672],
+      [2431, 4735]
+    ],
+    "mapId": 377
+  },
+  {
+    "name": "Mermaid Island",
+    "center": [3296, 4704],
+    "bounds": [
+      [3264, 4672],
+      [3327, 4735]
+    ],
+    "mapId": 378
+  },
+  {
+    "name": "Temple of Light",
+    "center": [1984, 4576],
+    "bounds": [
+      [1920, 4544],
+      [2047, 4607]
+    ],
+    "mapId": 379
+  },
+  {
+    "name": "",
+    "center": [1836, 6448],
+    "bounds": [
+      [1792, 6440],
+      [1879, 6455]
+    ],
+    "mapId": 380
+  },
+  {
+    "name": "Ship",
+    "center": [4256, 5600],
+    "bounds": [
+      [4224, 5568],
+      [4287, 5631]
+    ],
+    "mapId": 381
+  },
+  {
+    "name": "Senntisten dig",
+    "center": [3296, 5728],
+    "bounds": [
+      [3264, 5696],
+      [3327, 5759]
+    ],
+    "mapId": 382
+  },
+  {
+    "name": "Senntisten Temple",
+    "center": [3168, 5728],
+    "bounds": [
+      [3136, 5696],
+      [3199, 5759]
+    ],
+    "mapId": 383
+  },
+  {
+    "name": "Tunnel",
+    "center": [3424, 4256],
+    "bounds": [
+      [3392, 4224],
+      [3455, 4287]
+    ],
+    "mapId": 384
+  },
+  {
+    "name": "Dragonkin castle",
+    "center": [3424, 4960],
+    "bounds": [
+      [3392, 4928],
+      [3455, 4991]
+    ],
+    "mapId": 385
+  },
+  {
+    "name": "Clan Wars",
+    "center": [2816, 5568],
+    "bounds": [
+      [2752, 5504],
+      [2879, 5631]
+    ],
+    "mapId": 386
+  },
+  {
+    "name": "Clan Wars",
+    "center": [3008, 5568],
+    "bounds": [
+      [2944, 5504],
+      [3071, 5631]
+    ],
+    "mapId": 387
+  },
+  {
+    "name": "Spirit Realm demonic ruins",
+    "center": [3232, 4192],
+    "bounds": [
+      [3200, 4160],
+      [3263, 4223]
+    ],
+    "mapId": 388
+  },
+  {
+    "name": "Spirit Realm Chaos Altar",
+    "center": [3296, 4192],
+    "bounds": [
+      [3264, 4160],
+      [3327, 4223]
+    ],
+    "mapId": 389
+  },
+  {
+    "name": "Tunnel under Ice Mountain",
+    "center": [1888, 5728],
+    "bounds": [
+      [1856, 5696],
+      [1919, 5759]
+    ],
+    "mapId": 390
+  },
+  {
+    "name": "Exiled Kalphite Hive",
+    "center": [2972, 1692],
+    "bounds": [
+      [2936, 1600],
+      [3007, 1783]
+    ],
+    "mapId": 391
+  },
+  {
+    "name": "Saradomin's hidden cave",
+    "center": [4192, 5728],
+    "bounds": [
+      [4160, 5696],
+      [4223, 5759]
+    ],
+    "mapId": 392
+  },
+  {
+    "name": "Tch'ki nut cave",
+    "center": [3024, 5460],
+    "bounds": [
+      [3008, 5448],
+      [3039, 5471]
+    ],
+    "mapId": 393
+  },
+  {
+    "name": "Snake pit",
+    "center": [3024, 5488],
+    "bounds": [
+      [3016, 5480],
+      [3031, 5495]
+    ],
+    "mapId": 394
+  },
+  {
+    "name": "Cave",
+    "center": [3060, 5484],
+    "bounds": [
+      [3048, 5472],
+      [3071, 5495]
+    ],
+    "mapId": 395
+  },
+  {
+    "name": "Temple Knight HQ",
+    "center": [4320, 5596],
+    "bounds": [
+      [4304, 5584],
+      [4335, 5607]
+    ],
+    "mapId": 396
+  },
+  {
+    "name": "Cavern crawlspace",
+    "center": [2592, 5856],
+    "bounds": [
+      [2560, 5824],
+      [2623, 5887]
+    ],
+    "mapId": 398
+  },
+  {
+    "name": "Cave",
+    "center": [1824, 5280],
+    "bounds": [
+      [1792, 5248],
+      [1855, 5311]
+    ],
+    "mapId": 399
+  },
+  {
+    "name": "Deadliest Catch",
+    "center": [3360, 4704],
+    "bounds": [
+      [3328, 4672],
+      [3391, 4735]
+    ],
+    "mapId": 400
+  },
+  {
+    "name": "Ice Cave",
+    "center": [3424, 4384],
+    "bounds": [
+      [3392, 4352],
+      [3455, 4415]
+    ],
+    "mapId": 401
+  },
+  {
+    "name": "The Runespan",
+    "center": [3968, 6080],
+    "bounds": [
+      [3904, 6016],
+      [4031, 6143]
+    ],
+    "mapId": 402
+  },
+  {
+    "name": "Dagannoth Mother's chamber",
+    "center": [4384, 5856],
+    "bounds": [
+      [4352, 5824],
+      [4415, 5887]
+    ],
+    "mapId": 403
+  },
+  {
+    "name": "Dagannoth hatchery",
+    "center": [4384, 5792],
+    "bounds": [
+      [4352, 5760],
+      [4415, 5823]
+    ],
+    "mapId": 404
+  },
+  {
+    "name": "Dagannoth caves",
+    "center": [4448, 5728],
+    "bounds": [
+      [4416, 5696],
+      [4479, 5759]
+    ],
+    "mapId": 405
+  },
+  {
+    "name": "Ocean",
+    "center": [4512, 5856],
+    "bounds": [
+      [4488, 5832],
+      [4535, 5879]
+    ],
+    "mapId": 406
+  },
+  {
+    "name": "Dungeon",
+    "center": [2368, 5536],
+    "bounds": [
+      [2240, 5440],
+      [2495, 5631]
+    ],
+    "mapId": 407
+  },
+  {
+    "name": "Dragon forge",
+    "center": [1696, 5280],
+    "bounds": [
+      [1664, 5248],
+      [1727, 5311]
+    ],
+    "mapId": 408
+  },
+  {
+    "name": "Orks Rift",
+    "center": [1632, 4196],
+    "bounds": [
+      [1592, 4160],
+      [1671, 4231]
+    ],
+    "mapId": 409
+  },
+  {
+    "name": "Orks Rift entrance",
+    "center": [1568, 4128],
+    "bounds": [
+      [1536, 4096],
+      [1599, 4159]
+    ],
+    "mapId": 410
+  },
+  {
+    "name": "Orks Rift entrance",
+    "center": [1632, 4128],
+    "bounds": [
+      [1600, 4096],
+      [1663, 4159]
+    ],
+    "mapId": 411
+  },
+  {
+    "name": "Open sea",
+    "center": [3008, 5792],
+    "bounds": [
+      [2944, 5760],
+      [3071, 5823]
+    ],
+    "mapId": 412
+  },
+  {
+    "name": "The Runespan",
+    "center": [4160, 6080],
+    "bounds": [
+      [4096, 6016],
+      [4223, 6143]
+    ],
+    "mapId": 413
+  },
+  {
+    "name": "Burthorpe",
+    "center": [1120, 5920],
+    "bounds": [
+      [1088, 5888],
+      [1151, 5951]
+    ],
+    "mapId": 414
+  },
+  {
+    "name": "Sea battle",
+    "center": [1824, 4832],
+    "bounds": [
+      [1792, 4800],
+      [1855, 4863]
+    ],
+    "mapId": 415
+  },
+  {
+    "name": "Dream world",
+    "center": [1760, 5088],
+    "bounds": [
+      [1744, 5072],
+      [1775, 5103]
+    ],
+    "mapId": 416
+  },
+  {
+    "name": "Dream world",
+    "center": [1736, 5064],
+    "bounds": [
+      [1728, 5056],
+      [1743, 5071]
+    ],
+    "mapId": 417
+  },
+  {
+    "name": "Dream world",
+    "center": [1784, 5064],
+    "bounds": [
+      [1776, 5056],
+      [1791, 5071]
+    ],
+    "mapId": 418
+  },
+  {
+    "name": "Dream world",
+    "center": [1768, 5064],
+    "bounds": [
+      [1760, 5056],
+      [1775, 5071]
+    ],
+    "mapId": 419
+  },
+  {
+    "name": "Dream world",
+    "center": [1760, 5112],
+    "bounds": [
+      [1744, 5104],
+      [1775, 5119]
+    ],
+    "mapId": 420
+  },
+  {
+    "name": "Dream world",
+    "center": [1736, 5096],
+    "bounds": [
+      [1728, 5072],
+      [1743, 5119]
+    ],
+    "mapId": 421
+  },
+  {
+    "name": "Dream world",
+    "center": [1824, 5088],
+    "bounds": [
+      [1792, 5056],
+      [1855, 5119]
+    ],
+    "mapId": 422
+  },
+  {
+    "name": "Dream world",
+    "center": [1824, 5152],
+    "bounds": [
+      [1792, 5120],
+      [1855, 5183]
+    ],
+    "mapId": 423
+  },
+  {
+    "name": "The Runespan",
+    "center": [4352, 6080],
+    "bounds": [
+      [4288, 6016],
+      [4415, 6143]
+    ],
+    "mapId": 424
+  },
+  {
+    "name": "Quiz master",
+    "center": [1952, 4768],
+    "bounds": [
+      [1920, 4736],
+      [1983, 4799]
+    ],
+    "mapId": 425
+  },
+  {
+    "name": "Eagles' Peak",
+    "center": [1952, 4896],
+    "bounds": [
+      [1920, 4864],
+      [1983, 4927]
+    ],
+    "mapId": 426
+  },
+  {
+    "name": "Sinclair Mansion",
+    "center": [2208, 5408],
+    "bounds": [
+      [2176, 5376],
+      [2239, 5439]
+    ],
+    "mapId": 427
+  },
+  {
+    "name": "Quiz",
+    "center": [2580, 4628],
+    "bounds": [
+      [2576, 4624],
+      [2583, 4631]
+    ],
+    "mapId": 428
+  },
+  {
+    "name": "Water Rune Temple",
+    "center": [2720, 4832],
+    "bounds": [
+      [2688, 4800],
+      [2751, 4863]
+    ],
+    "mapId": 429
+  },
+  {
+    "name": "Jaldraocht Pyramid",
+    "center": [2784, 4960],
+    "bounds": [
+      [2752, 4928],
+      [2815, 4991]
+    ],
+    "mapId": 430
+  },
+  {
+    "name": "Jaldraocht Pyramid",
+    "center": [2848, 4960],
+    "bounds": [
+      [2816, 4928],
+      [2879, 4991]
+    ],
+    "mapId": 431
+  },
+  {
+    "name": "Jaldraocht Pyramid",
+    "center": [2912, 4960],
+    "bounds": [
+      [2880, 4928],
+      [2943, 4991]
+    ],
+    "mapId": 432
+  },
+  {
+    "name": "Flash Powder Factory",
+    "center": [3040, 5024],
+    "bounds": [
+      [3008, 4992],
+      [3071, 5055]
+    ],
+    "mapId": 433
+  },
+  {
+    "name": "Borehole entrance",
+    "center": [3040, 6112],
+    "bounds": [
+      [3008, 6080],
+      [3071, 6143]
+    ],
+    "mapId": 435
+  },
+  {
+    "name": "Cave",
+    "center": [2080, 4960],
+    "bounds": [
+      [2048, 4928],
+      [2111, 4991]
+    ],
+    "mapId": 436
+  },
+  {
+    "name": "Korasi's dream",
+    "center": [4320, 5536],
+    "bounds": [
+      [4224, 5504],
+      [4415, 5567]
+    ],
+    "mapId": 437
+  },
+  {
+    "name": "Jatizso troll cave",
+    "center": [2400, 10208],
+    "bounds": [
+      [2368, 10176],
+      [2431, 10239]
+    ],
+    "mapId": 438
+  },
+  {
+    "name": "Miscellania cave",
+    "center": [2560, 10272],
+    "bounds": [
+      [2496, 10240],
+      [2623, 10303]
+    ],
+    "mapId": 439
+  },
+  {
+    "name": "Penguin outpost",
+    "center": [2656, 10400],
+    "bounds": [
+      [2624, 10368],
+      [2687, 10431]
+    ],
+    "mapId": 440
+  },
+  {
+    "name": "Lighthouse Dungeon",
+    "center": [2528, 10016],
+    "bounds": [
+      [2496, 9984],
+      [2559, 10047]
+    ],
+    "mapId": 441
+  },
+  {
+    "name": "Piscatoris summoning cave",
+    "center": [2336, 10016],
+    "bounds": [
+      [2304, 9984],
+      [2367, 10047]
+    ],
+    "mapId": 442
+  },
+  {
+    "name": "Agility course pit",
+    "center": [2552, 9952],
+    "bounds": [
+      [2536, 9936],
+      [2567, 9967]
+    ],
+    "mapId": 443
+  },
+  {
+    "name": "Brimstail's home",
+    "center": [2400, 9820],
+    "bounds": [
+      [2376, 9800],
+      [2423, 9839]
+    ],
+    "mapId": 444
+  },
+  {
+    "name": "Grand Tree mine",
+    "center": [2464, 9888],
+    "bounds": [
+      [2432, 9848],
+      [2495, 9927]
+    ],
+    "mapId": 445
+  },
+  {
+    "name": "Fremennik Dungeon",
+    "center": [2844, 9992],
+    "bounds": [
+      [2680, 9936],
+      [3007, 10047]
+    ],
+    "mapId": 446
+  },
+  {
+    "name": "The borehole",
+    "center": [3104, 6112],
+    "bounds": [
+      [3072, 6080],
+      [3135, 6143]
+    ],
+    "mapId": 447
+  },
+  {
+    "name": "Gnome glider hangar",
+    "center": [2396, 9888],
+    "bounds": [
+      [2368, 9856],
+      [2423, 9919]
+    ],
+    "mapId": 448
+  },
+  {
+    "name": "Glarial's tomb",
+    "center": [2528, 9824],
+    "bounds": [
+      [2496, 9792],
+      [2559, 9855]
+    ],
+    "mapId": 449
+  },
+  {
+    "name": "Golrie's hideout",
+    "center": [2528, 9568],
+    "bounds": [
+      [2496, 9536],
+      [2559, 9599]
+    ],
+    "mapId": 450
+  },
+  {
+    "name": "Skavid cave",
+    "center": [2528, 9444],
+    "bounds": [
+      [2496, 9408],
+      [2559, 9479]
+    ],
+    "mapId": 451
+  },
+  {
+    "name": "Yanille Agility Dungeon",
+    "center": [2588, 9536],
+    "bounds": [
+      [2552, 9472],
+      [2623, 9599]
+    ],
+    "mapId": 452
+  },
+  {
+    "name": "Western Ardougne sewer",
+    "center": [2528, 9760],
+    "bounds": [
+      [2496, 9728],
+      [2559, 9791]
+    ],
+    "mapId": 453
+  },
+  {
+    "name": "Chaos Druid Tower Dungeon",
+    "center": [2592, 9760],
+    "bounds": [
+      [2560, 9728],
+      [2623, 9791]
+    ],
+    "mapId": 454
+  },
+  {
+    "name": "Isafdar underground",
+    "center": [2336, 9632],
+    "bounds": [
+      [2304, 9600],
+      [2367, 9663]
+    ],
+    "mapId": 455
+  },
+  {
+    "name": "Troll tunnels",
+    "center": [2784, 10208],
+    "bounds": [
+      [2752, 10176],
+      [2815, 10239]
+    ],
+    "mapId": 456
+  },
+  {
+    "name": "Temple of Ikov",
+    "center": [2696, 9848],
+    "bounds": [
+      [2624, 9776],
+      [2767, 9919]
+    ],
+    "mapId": 457
+  },
+  {
+    "name": "The borehole",
+    "center": [3040, 6048],
+    "bounds": [
+      [3008, 6016],
+      [3071, 6079]
+    ],
+    "mapId": 458
+  },
+  {
+    "name": "Keldagrim entrance tunnel",
+    "center": [2784, 10144],
+    "bounds": [
+      [2752, 10112],
+      [2815, 10175]
+    ],
+    "mapId": 459
+  },
+  {
+    "name": "Fishing Guild cave",
+    "center": [2592, 9824],
+    "bounds": [
+      [2560, 9792],
+      [2623, 9855]
+    ],
+    "mapId": 460
+  },
+  {
+    "name": "Rantz's house",
+    "center": [2648, 9384],
+    "bounds": [
+      [2624, 9360],
+      [2671, 9407]
+    ],
+    "mapId": 461
+  },
+  {
+    "name": "Cairn Island Dungeon",
+    "center": [2772, 9376],
+    "bounds": [
+      [2752, 9352],
+      [2791, 9399]
+    ],
+    "mapId": 462
+  },
+  {
+    "name": "Gem mine",
+    "center": [2844, 9388],
+    "bounds": [
+      [2816, 9368],
+      [2871, 9407]
+    ],
+    "mapId": 463
+  },
+  {
+    "name": "Desert temple",
+    "center": [3104, 9312],
+    "bounds": [
+      [3072, 9280],
+      [3135, 9343]
+    ],
+    "mapId": 464
+  },
+  {
+    "name": "Office",
+    "center": [2392, 9248],
+    "bounds": [
+      [2376, 9232],
+      [2407, 9263]
+    ],
+    "mapId": 465
+  },
+  {
+    "name": "Cellar",
+    "center": [2784, 9752],
+    "bounds": [
+      [2752, 9728],
+      [2815, 9775]
+    ],
+    "mapId": 466
+  },
+  {
+    "name": "Melzar's Maze",
+    "center": [2928, 9648],
+    "bounds": [
+      [2912, 9632],
+      [2943, 9663]
+    ],
+    "mapId": 467
+  },
+  {
+    "name": "Rat pits",
+    "center": [2976, 9632],
+    "bounds": [
+      [2944, 9600],
+      [3007, 9663]
+    ],
+    "mapId": 468
+  },
+  {
+    "name": "The borehole",
+    "center": [3104, 6048],
+    "bounds": [
+      [3072, 6016],
+      [3135, 6079]
+    ],
+    "mapId": 469
+  },
+  {
+    "name": "H.A.M. cave",
+    "center": [3168, 9632],
+    "bounds": [
+      [3136, 9600],
+      [3199, 9663]
+    ],
+    "mapId": 470
+  },
+  {
+    "name": "Champions' Arena",
+    "center": [3168, 9760],
+    "bounds": [
+      [3136, 9728],
+      [3199, 9791]
+    ],
+    "mapId": 471
+  },
+  {
+    "name": "Tolna's Rift",
+    "center": [3296, 9824],
+    "bounds": [
+      [3264, 9792],
+      [3327, 9855]
+    ],
+    "mapId": 472
+  },
+  {
+    "name": "Cave",
+    "center": [2784, 10080],
+    "bounds": [
+      [2752, 10048],
+      [2815, 10111]
+    ],
+    "mapId": 473
+  },
+  {
+    "name": "Castle Wars",
+    "center": [2400, 9504],
+    "bounds": [
+      [2360, 9472],
+      [2439, 9535]
+    ],
+    "mapId": 474
+  },
+  {
+    "name": "Jaldraocht Pyramid",
+    "center": [3232, 9312],
+    "bounds": [
+      [3192, 9280],
+      [3271, 9343]
+    ],
+    "mapId": 475
+  },
+  {
+    "name": "Shade Catacombs",
+    "center": [3488, 9696],
+    "bounds": [
+      [3456, 9664],
+      [3519, 9727]
+    ],
+    "mapId": 476
+  },
+  {
+    "name": "The Barrows",
+    "center": [3552, 9696],
+    "bounds": [
+      [3520, 9664],
+      [3583, 9727]
+    ],
+    "mapId": 477
+  },
+  {
+    "name": "Columbarium",
+    "center": [3424, 9952],
+    "bounds": [
+      [3392, 9920],
+      [3455, 9983]
+    ],
+    "mapId": 478
+  },
+  {
+    "name": "Paterdomus",
+    "center": [3424, 9888],
+    "bounds": [
+      [3392, 9856],
+      [3455, 9919]
+    ],
+    "mapId": 479
+  },
+  {
+    "name": "The borehole",
+    "center": [3040, 5984],
+    "bounds": [
+      [3008, 5952],
+      [3071, 6015]
+    ],
+    "mapId": 480
+  },
+  {
+    "name": "Fenkenstrain's Dungeon",
+    "center": [3520, 9952],
+    "bounds": [
+      [3456, 9920],
+      [3583, 9983]
+    ],
+    "mapId": 481
+  },
+  {
+    "name": "Werewolf Agility Course",
+    "center": [3552, 9888],
+    "bounds": [
+      [3520, 9856],
+      [3583, 9919]
+    ],
+    "mapId": 482
+  },
+  {
+    "name": "Port Phasmatys Distillery",
+    "center": [3680, 9960],
+    "bounds": [
+      [3656, 9936],
+      [3703, 9983]
+    ],
+    "mapId": 483
+  },
+  {
+    "name": "Ectofuntus",
+    "center": [3680, 9888],
+    "bounds": [
+      [3648, 9856],
+      [3711, 9919]
+    ],
+    "mapId": 484
+  },
+  {
+    "name": "Meiyerditch Myreque base",
+    "center": [3616, 9632],
+    "bounds": [
+      [3584, 9600],
+      [3647, 9663]
+    ],
+    "mapId": 485
+  },
+  {
+    "name": "Cellar",
+    "center": [3496, 9628],
+    "bounds": [
+      [3488, 9616],
+      [3503, 9639]
+    ],
+    "mapId": 486
+  },
+  {
+    "name": "Citharede Abbey basement",
+    "center": [3488, 9568],
+    "bounds": [
+      [3472, 9552],
+      [3503, 9583]
+    ],
+    "mapId": 487
+  },
+  {
+    "name": "Dwarf tunnel",
+    "center": [2848, 9876],
+    "bounds": [
+      [2808, 9856],
+      [2887, 9895]
+    ],
+    "mapId": 488
+  },
+  {
+    "name": "Ramarno's forge",
+    "center": [3040, 9888],
+    "bounds": [
+      [3008, 9856],
+      [3071, 9919]
+    ],
+    "mapId": 489
+  },
+  {
+    "name": "Legends' Guild Dungeon",
+    "center": [2720, 9760],
+    "bounds": [
+      [2688, 9728],
+      [2751, 9791]
+    ],
+    "mapId": 490
+  },
+  {
+    "name": "The final platform",
+    "center": [3104, 5984],
+    "bounds": [
+      [3072, 5952],
+      [3135, 6015]
+    ],
+    "mapId": 491
+  },
+  {
+    "name": "Pyramid",
+    "center": [3296, 9184],
+    "bounds": [
+      [3264, 9152],
+      [3327, 9215]
+    ],
+    "mapId": 492
+  },
+  {
+    "name": "Gamers' Grotto",
+    "center": [2976, 9696],
+    "bounds": [
+      [2944, 9664],
+      [3007, 9727]
+    ],
+    "mapId": 493
+  },
+  {
+    "name": "Sewer",
+    "center": [3104, 9664],
+    "bounds": [
+      [3072, 9600],
+      [3135, 9727]
+    ],
+    "mapId": 494
+  },
+  {
+    "name": "Bank vault",
+    "center": [3192, 9828],
+    "bounds": [
+      [3184, 9816],
+      [3199, 9839]
+    ],
+    "mapId": 495
+  },
+  {
+    "name": "Asgarnia Ice Cave",
+    "center": [3016, 9568],
+    "bounds": [
+      [2944, 9520],
+      [3087, 9615]
+    ],
+    "mapId": 496
+  },
+  {
+    "name": "Observatory",
+    "center": [2336, 9376],
+    "bounds": [
+      [2304, 9344],
+      [2367, 9407]
+    ],
+    "mapId": 497
+  },
+  {
+    "name": "Underwater cave",
+    "center": [2976, 9504],
+    "bounds": [
+      [2944, 9472],
+      [3007, 9535]
+    ],
+    "mapId": 498
+  },
+  {
+    "name": "Ghorrock Fortress Dungeon",
+    "center": [2912, 10336],
+    "bounds": [
+      [2880, 10304],
+      [2943, 10367]
+    ],
+    "mapId": 499
+  },
+  {
+    "name": "Ghorrock Fortress Dungeon",
+    "center": [2912, 10400],
+    "bounds": [
+      [2880, 10368],
+      [2943, 10431]
+    ],
+    "mapId": 500
+  },
+  {
+    "name": "Mage Training Arena",
+    "center": [3360, 9664],
+    "bounds": [
+      [3328, 9600],
+      [3391, 9727]
+    ],
+    "mapId": 501
+  },
+  {
+    "name": "The Graveyard",
+    "center": [3072, 6176],
+    "bounds": [
+      [3008, 6144],
+      [3135, 6207]
+    ],
+    "mapId": 502
+  },
+  {
+    "name": "Genie's Cave",
+    "center": [3360, 9312],
+    "bounds": [
+      [3328, 9280],
+      [3391, 9343]
+    ],
+    "mapId": 503
+  },
+  {
+    "name": "Clocktower Dungeon",
+    "center": [2592, 9632],
+    "bounds": [
+      [2560, 9600],
+      [2623, 9663]
+    ],
+    "mapId": 504
+  },
+  {
+    "name": "Interrogation room",
+    "center": [3664, 9392],
+    "bounds": [
+      [3648, 9376],
+      [3679, 9407]
+    ],
+    "mapId": 505
+  },
+  {
+    "name": "Mos Le'Harmless caves",
+    "center": [3776, 9408],
+    "bounds": [
+      [3712, 9344],
+      [3839, 9471]
+    ],
+    "mapId": 506
+  },
+  {
+    "name": "Elvarg's lair",
+    "center": [2852, 9600],
+    "bounds": [
+      [2824, 9536],
+      [2879, 9663]
+    ],
+    "mapId": 507
+  },
+  {
+    "name": "Artisans' Workshop",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 508
+  },
+  {
+    "name": "Draynor Manor basement",
+    "center": [3104, 9760],
+    "bounds": [
+      [3072, 9728],
+      [3135, 9791]
+    ],
+    "mapId": 509
+  },
+  {
+    "name": "Pollninveach Dungeon",
+    "center": [3360, 9408],
+    "bounds": [
+      [3328, 9344],
+      [3391, 9471]
+    ],
+    "mapId": 510
+  },
+  {
+    "name": "Tomb of Catolax",
+    "center": [3488, 9248],
+    "bounds": [
+      [3456, 9216],
+      [3519, 9279]
+    ],
+    "mapId": 511
+  },
+  {
+    "name": "Scabaras Dungeon",
+    "center": [3392, 9248],
+    "bounds": [
+      [3328, 9216],
+      [3455, 9279]
+    ],
+    "mapId": 512
+  },
+  {
+    "name": "Underground pig pens",
+    "center": [1056, 5728],
+    "bounds": [
+      [1024, 5696],
+      [1087, 5759]
+    ],
+    "mapId": 513
+  },
+  {
+    "name": "Brine rat caverns",
+    "center": [2720, 10144],
+    "bounds": [
+      [2688, 10112],
+      [2751, 10175]
+    ],
+    "mapId": 514
+  },
+  {
+    "name": "Lava Maze Dungeon",
+    "center": [3040, 10272],
+    "bounds": [
+      [3008, 10240],
+      [3071, 10303]
+    ],
+    "mapId": 515
+  },
+  {
+    "name": "Deep Wilderness Dungeon",
+    "center": [3040, 10336],
+    "bounds": [
+      [3008, 10304],
+      [3071, 10367]
+    ],
+    "mapId": 516
+  },
+  {
+    "name": "Agility course pit",
+    "center": [3000, 10352],
+    "bounds": [
+      [2984, 10336],
+      [3015, 10367]
+    ],
+    "mapId": 517
+  },
+  {
+    "name": "Jiggig Dungeon",
+    "center": [2464, 9408],
+    "bounds": [
+      [2432, 9344],
+      [2495, 9471]
+    ],
+    "mapId": 518
+  },
+  {
+    "name": "Conquest",
+    "center": [2652, 9056],
+    "bounds": [
+      [2616, 9024],
+      [2687, 9087]
+    ],
+    "mapId": 519
+  },
+  {
+    "name": "Jadinko lair",
+    "center": [3040, 9248],
+    "bounds": [
+      [3008, 9216],
+      [3071, 9279]
+    ],
+    "mapId": 520
+  },
+  {
+    "name": "River Elid cave",
+    "center": [3360, 9564],
+    "bounds": [
+      [3328, 9528],
+      [3391, 9599]
+    ],
+    "mapId": 521
+  },
+  {
+    "name": "Mine",
+    "center": [3296, 9440],
+    "bounds": [
+      [3264, 9408],
+      [3327, 9471]
+    ],
+    "mapId": 522
+  },
+  {
+    "name": "Haunted mine",
+    "center": [3424, 9632],
+    "bounds": [
+      [3392, 9600],
+      [3455, 9663]
+    ],
+    "mapId": 523
+  },
+  {
+    "name": "Underground pig pens",
+    "center": [1056, 5792],
+    "bounds": [
+      [1024, 5760],
+      [1087, 5823]
+    ],
+    "mapId": 524
+  },
+  {
+    "name": "Sophanem Dungeon",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 525
+  },
+  {
+    "name": "Cave",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 526
+  },
+  {
+    "name": "Ogre enclave",
+    "center": [2592, 9436],
+    "bounds": [
+      [2560, 9400],
+      [2623, 9471]
+    ],
+    "mapId": 527
+  },
+  {
+    "name": "Rashiliyia's tomb",
+    "center": [2912, 9500],
+    "bounds": [
+      [2880, 9464],
+      [2943, 9535]
+    ],
+    "mapId": 528
+  },
+  {
+    "name": "Pothole Dungeon",
+    "center": [2848, 9504],
+    "bounds": [
+      [2816, 9472],
+      [2879, 9535]
+    ],
+    "mapId": 529
+  },
+  {
+    "name": "Heroes' Guild mine",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 530
+  },
+  {
+    "name": "Ice Queen's lair",
+    "center": [2856, 9940],
+    "bounds": [
+      [2808, 9896],
+      [2903, 9983]
+    ],
+    "mapId": 531
+  },
+  {
+    "name": "Black Arm Gang hideout",
+    "center": [3244, 9772],
+    "bounds": [
+      [3224, 9752],
+      [3263, 9791]
+    ],
+    "mapId": 532
+  },
+  {
+    "name": "Beneath Iban's lair",
+    "center": [2336, 9856],
+    "bounds": [
+      [2296, 9784],
+      [2375, 9927]
+    ],
+    "mapId": 533
+  },
+  {
+    "name": "Underground path",
+    "center": [2400, 9664],
+    "bounds": [
+      [2304, 9536],
+      [2495, 9791]
+    ],
+    "mapId": 534
+  },
+  {
+    "name": "Underground pig pens",
+    "center": [1120, 5792],
+    "bounds": [
+      [1088, 5760],
+      [1151, 5823]
+    ],
+    "mapId": 535
+  },
+  {
+    "name": "Black Knights' catacombs",
+    "center": [3040, 10048],
+    "bounds": [
+      [3008, 9984],
+      [3071, 10111]
+    ],
+    "mapId": 536
+  },
+  {
+    "name": "Chaos Temple Dungeon",
+    "center": [3264, 10020],
+    "bounds": [
+      [3200, 9984],
+      [3327, 10055]
+    ],
+    "mapId": 537
+  },
+  {
+    "name": "Sewer",
+    "center": [3360, 10016],
+    "bounds": [
+      [3328, 9984],
+      [3391, 10047]
+    ],
+    "mapId": 538
+  },
+  {
+    "name": "Kitchen",
+    "center": [2980, 9912],
+    "bounds": [
+      [2968, 9904],
+      [2991, 9919]
+    ],
+    "mapId": 539
+  },
+  {
+    "name": "Kitchen",
+    "center": [2980, 9872],
+    "bounds": [
+      [2968, 9864],
+      [2991, 9879]
+    ],
+    "mapId": 540
+  },
+  {
+    "name": "Dragontooth shipwreck",
+    "center": [3808, 9952],
+    "bounds": [
+      [3776, 9920],
+      [3839, 9983]
+    ],
+    "mapId": 541
+  },
+  {
+    "name": "Eastern Ardougne sewer",
+    "center": [2656, 9668],
+    "bounds": [
+      [2624, 9608],
+      [2687, 9727]
+    ],
+    "mapId": 542
+  },
+  {
+    "name": "Southern Ardougne sewer",
+    "center": [2564, 9676],
+    "bounds": [
+      [2504, 9624],
+      [2623, 9727]
+    ],
+    "mapId": 543
+  },
+  {
+    "name": "Agility Arena",
+    "center": [2784, 9572],
+    "bounds": [
+      [2736, 9528],
+      [2831, 9615]
+    ],
+    "mapId": 544
+  },
+  {
+    "name": "Underground pig pens",
+    "center": [1120, 5728],
+    "bounds": [
+      [1088, 5696],
+      [1151, 5759]
+    ],
+    "mapId": 546
+  },
+  {
+    "name": "Dwarven Mine",
+    "center": [3012, 9792],
+    "bounds": [
+      [2952, 9728],
+      [3071, 9855]
+    ],
+    "mapId": 547
+  },
+  {
+    "name": "Smoke Dungeon",
+    "center": [3264, 9376],
+    "bounds": [
+      [3200, 9344],
+      [3327, 9407]
+    ],
+    "mapId": 548
+  },
+  {
+    "name": "Edgeville Dungeon",
+    "center": [3192, 9904],
+    "bounds": [
+      [3056, 9792],
+      [3327, 10015]
+    ],
+    "mapId": 549
+  },
+  {
+    "name": "Meiyerditch tunnels",
+    "center": [3552, 9760],
+    "bounds": [
+      [3456, 9664],
+      [3647, 9855]
+    ],
+    "mapId": 550
+  },
+  {
+    "name": "Windmill cellar",
+    "center": [3788, 9228],
+    "bounds": [
+      [3776, 9216],
+      [3799, 9239]
+    ],
+    "mapId": 551
+  },
+  {
+    "name": "Beneath Harmony Island",
+    "center": [3808, 9252],
+    "bounds": [
+      [3776, 9232],
+      [3839, 9271]
+    ],
+    "mapId": 552
+  },
+  {
+    "name": "Forinthry Dungeon",
+    "center": [3072, 10112],
+    "bounds": [
+      [3008, 10048],
+      [3135, 10175]
+    ],
+    "mapId": 553
+  },
+  {
+    "name": "Kalphite Hive",
+    "center": [3424, 9504],
+    "bounds": [
+      [3392, 9472],
+      [3455, 9535]
+    ],
+    "mapId": 554
+  },
+  {
+    "name": "Kalphite Hive",
+    "center": [3488, 9504],
+    "bounds": [
+      [3456, 9472],
+      [3519, 9535]
+    ],
+    "mapId": 555
+  },
+  {
+    "name": "Kalphite Hive",
+    "center": [3552, 9504],
+    "bounds": [
+      [3520, 9472],
+      [3583, 9535]
+    ],
+    "mapId": 556
+  },
+  {
+    "name": "Underground pig pens",
+    "center": [1056, 5664],
+    "bounds": [
+      [1024, 5632],
+      [1087, 5695]
+    ],
+    "mapId": 558
+  },
+  {
+    "name": "Kalphite tunnel",
+    "center": [3524, 9420],
+    "bounds": [
+      [3480, 9408],
+      [3567, 9431]
+    ],
+    "mapId": 559
+  },
+  {
+    "name": "Kalphite Hive",
+    "center": [3492, 9452],
+    "bounds": [
+      [3472, 9432],
+      [3511, 9471]
+    ],
+    "mapId": 560
+  },
+  {
+    "name": "Kalphite Hive",
+    "center": [3544, 9452],
+    "bounds": [
+      [3528, 9440],
+      [3559, 9463]
+    ],
+    "mapId": 561
+  },
+  {
+    "name": "Eagles' eyrie",
+    "center": [2528, 9312],
+    "bounds": [
+      [2496, 9280],
+      [2559, 9343]
+    ],
+    "mapId": 562
+  },
+  {
+    "name": "Eagles' eyrie",
+    "center": [2720, 10208],
+    "bounds": [
+      [2688, 10176],
+      [2751, 10239]
+    ],
+    "mapId": 563
+  },
+  {
+    "name": "Eagles' eyrie",
+    "center": [3424, 9568],
+    "bounds": [
+      [3392, 9536],
+      [3455, 9599]
+    ],
+    "mapId": 564
+  },
+  {
+    "name": "Watermill cellar",
+    "center": [3232, 9692],
+    "bounds": [
+      [3200, 9656],
+      [3263, 9727]
+    ],
+    "mapId": 565
+  },
+  {
+    "name": "Goblin mines",
+    "center": [3264, 9632],
+    "bounds": [
+      [3200, 9600],
+      [3327, 9663]
+    ],
+    "mapId": 566
+  },
+  {
+    "name": "Lumbridge Swamp caves",
+    "center": [3200, 9564],
+    "bounds": [
+      [3136, 9520],
+      [3263, 9607]
+    ],
+    "mapId": 567
+  },
+  {
+    "name": "Wizards' Tower basement",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 568
+  },
+  {
+    "name": "Queen Black Dragon's stomach",
+    "center": [992, 6624],
+    "bounds": [
+      [960, 6592],
+      [1023, 6655]
+    ],
+    "mapId": 569
+  },
+  {
+    "name": "Maze",
+    "center": [2656, 10016],
+    "bounds": [
+      [2624, 9984],
+      [2687, 10047]
+    ],
+    "mapId": 570
+  },
+  {
+    "name": "Cave",
+    "center": [2656, 10080],
+    "bounds": [
+      [2624, 10048],
+      [2687, 10111]
+    ],
+    "mapId": 571
+  },
+  {
+    "name": "Witchaven Dungeon",
+    "center": [2720, 9696],
+    "bounds": [
+      [2688, 9664],
+      [2751, 9727]
+    ],
+    "mapId": 572
+  },
+  {
+    "name": "Jhallan's resting place",
+    "center": [2848, 10336],
+    "bounds": [
+      [2816, 10304],
+      [2879, 10367]
+    ],
+    "mapId": 573
+  },
+  {
+    "name": "Ritual plateau tunnels",
+    "center": [2784, 10272],
+    "bounds": [
+      [2752, 10240],
+      [2815, 10303]
+    ],
+    "mapId": 574
+  },
+  {
+    "name": "Ape Atoll tunnels",
+    "center": [2752, 9120],
+    "bounds": [
+      [2680, 9088],
+      [2823, 9151]
+    ],
+    "mapId": 575
+  },
+  {
+    "name": "Jungle demon lair",
+    "center": [2720, 9184],
+    "bounds": [
+      [2688, 9152],
+      [2751, 9215]
+    ],
+    "mapId": 576
+  },
+  {
+    "name": "Temple of Marimbo Dungeon",
+    "center": [2784, 9184],
+    "bounds": [
+      [2752, 9152],
+      [2815, 9215]
+    ],
+    "mapId": 577
+  },
+  {
+    "name": "Dig Site caves",
+    "center": [3360, 9760],
+    "bounds": [
+      [3328, 9728],
+      [3391, 9791]
+    ],
+    "mapId": 578
+  },
+  {
+    "name": "Waterfall cave",
+    "center": [2560, 9888],
+    "bounds": [
+      [2496, 9856],
+      [2623, 9919]
+    ],
+    "mapId": 579
+  },
+  {
+    "name": "Queen Black Dragon's stomach",
+    "center": [1120, 6624],
+    "bounds": [
+      [1088, 6592],
+      [1151, 6655]
+    ],
+    "mapId": 580
+  },
+  {
+    "name": "Eadgar's cave",
+    "center": [2912, 10080],
+    "bounds": [
+      [2880, 10048],
+      [2943, 10111]
+    ],
+    "mapId": 581
+  },
+  {
+    "name": "Tunnel to Trollheim",
+    "center": [2912, 10016],
+    "bounds": [
+      [2880, 9984],
+      [2943, 10047]
+    ],
+    "mapId": 582
+  },
+  {
+    "name": "Kharazi caves",
+    "center": [2784, 9312],
+    "bounds": [
+      [2752, 9280],
+      [2815, 9343]
+    ],
+    "mapId": 583
+  },
+  {
+    "name": "Kharazi caves",
+    "center": [2912, 9312],
+    "bounds": [
+      [2880, 9280],
+      [2943, 9343]
+    ],
+    "mapId": 584
+  },
+  {
+    "name": "Kharazi caves",
+    "center": [2916, 9376],
+    "bounds": [
+      [2880, 9344],
+      [2951, 9407]
+    ],
+    "mapId": 585
+  },
+  {
+    "name": "Varrock Dig Site caves",
+    "center": [3360, 9824],
+    "bounds": [
+      [3328, 9792],
+      [3391, 9855]
+    ],
+    "mapId": 586
+  },
+  {
+    "name": "Varrock Dig Site caves",
+    "center": [3488, 10080],
+    "bounds": [
+      [3456, 10048],
+      [3519, 10111]
+    ],
+    "mapId": 587
+  },
+  {
+    "name": "Elemental Workshop",
+    "center": [2720, 9888],
+    "bounds": [
+      [2688, 9856],
+      [2751, 9919]
+    ],
+    "mapId": 588
+  },
+  {
+    "name": "Blue Moon Inn cellar",
+    "center": [3236, 9800],
+    "bounds": [
+      [3224, 9792],
+      [3247, 9807]
+    ],
+    "mapId": 589
+  },
+  {
+    "name": "Crate interior",
+    "center": [2784, 9824],
+    "bounds": [
+      [2768, 9792],
+      [2799, 9855]
+    ],
+    "mapId": 590
+  },
+  {
+    "name": "Queen Black Dragon's stomach",
+    "center": [1248, 6624],
+    "bounds": [
+      [1216, 6592],
+      [1279, 6655]
+    ],
+    "mapId": 591
+  },
+  {
+    "name": "Escape route",
+    "center": [2416, 9912],
+    "bounds": [
+      [2408, 9904],
+      [2423, 9919]
+    ],
+    "mapId": 592
+  },
+  {
+    "name": "Cave",
+    "center": [3296, 9696],
+    "bounds": [
+      [3264, 9664],
+      [3327, 9727]
+    ],
+    "mapId": 593
+  },
+  {
+    "name": "Desert obelisk",
+    "center": [3300, 9316],
+    "bounds": [
+      [3288, 9304],
+      [3311, 9327]
+    ],
+    "mapId": 594
+  },
+  {
+    "name": "Pit",
+    "center": [2396, 9560],
+    "bounds": [
+      [2384, 9552],
+      [2407, 9567]
+    ],
+    "mapId": 595
+  },
+  {
+    "name": "Tears Of Guthix cavern",
+    "center": [3232, 9504],
+    "bounds": [
+      [3200, 9472],
+      [3263, 9535]
+    ],
+    "mapId": 596
+  },
+  {
+    "name": "Temple Of Ikov",
+    "center": [2648, 9740],
+    "bounds": [
+      [2632, 9728],
+      [2663, 9751]
+    ],
+    "mapId": 597
+  },
+  {
+    "name": "Temple Of Ikov",
+    "center": [2648, 9764],
+    "bounds": [
+      [2632, 9752],
+      [2663, 9775]
+    ],
+    "mapId": 598
+  },
+  {
+    "name": "Lunar Isle Mine",
+    "center": [2336, 10336],
+    "bounds": [
+      [2304, 10304],
+      [2367, 10367]
+    ],
+    "mapId": 599
+  },
+  {
+    "name": "Mine",
+    "center": [3104, 9504],
+    "bounds": [
+      [3072, 9472],
+      [3135, 9535]
+    ],
+    "mapId": 600
+  },
+  {
+    "name": "Cave",
+    "center": [2400, 10272],
+    "bounds": [
+      [2368, 10240],
+      [2431, 10303]
+    ],
+    "mapId": 601
+  },
+  {
+    "name": "Queen Black Dragon's stomach",
+    "center": [1376, 6624],
+    "bounds": [
+      [1344, 6592],
+      [1407, 6655]
+    ],
+    "mapId": 602
+  },
+  {
+    "name": "Clan Citadel",
+    "center": [4928, 4416],
+    "bounds": [
+      [3904, 3840],
+      [5951, 4991]
+    ],
+    "mapId": 603
+  },
+  {
+    "name": "Soul Wars",
+    "center": [1888, 3200],
+    "bounds": [
+      [1728, 3072],
+      [2047, 3327]
+    ],
+    "mapId": 604
+  },
+  {
+    "name": "Dungeoneering",
+    "center": [416, 3808],
+    "bounds": [
+      [64, 1920],
+      [767, 5695]
+    ],
+    "mapId": 605
+  },
+  {
+    "name": "Guthixian ruins",
+    "center": [1760, 6048],
+    "bounds": [
+      [1728, 6016],
+      [1791, 6079]
+    ],
+    "mapId": 606
+  },
+  {
+    "name": "Guthixian ruins",
+    "center": [1760, 5984],
+    "bounds": [
+      [1728, 5952],
+      [1791, 6015]
+    ],
+    "mapId": 607
+  },
+  {
+    "name": "Guthixian ruins",
+    "center": [2016, 6048],
+    "bounds": [
+      [1984, 6016],
+      [2047, 6079]
+    ],
+    "mapId": 608
+  },
+  {
+    "name": "Guthixian ruins",
+    "center": [1856, 6048],
+    "bounds": [
+      [1792, 6016],
+      [1919, 6079]
+    ],
+    "mapId": 609
+  },
+  {
+    "name": "Guthixian ruins",
+    "center": [1888, 5984],
+    "bounds": [
+      [1792, 5952],
+      [1983, 6015]
+    ],
+    "mapId": 610
+  },
+  {
+    "name": "Guthixian ruins",
+    "center": [1952, 6048],
+    "bounds": [
+      [1920, 6016],
+      [1983, 6079]
+    ],
+    "mapId": 611
+  },
+  {
+    "name": "Naragi homeworld",
+    "center": [2016, 5984],
+    "bounds": [
+      [1984, 5952],
+      [2047, 6015]
+    ],
+    "mapId": 612
+  },
+  {
+    "name": "Cave complex",
+    "center": [1056, 6240],
+    "bounds": [
+      [1024, 6208],
+      [1087, 6271]
+    ],
+    "mapId": 613
+  },
+  {
+    "name": "Ritual of the Mahjarrat",
+    "center": [992, 1056],
+    "bounds": [
+      [960, 1024],
+      [1023, 1087]
+    ],
+    "mapId": 614
+  },
+  {
+    "name": "A Void Dance",
+    "center": [992, 1120],
+    "bounds": [
+      [960, 1088],
+      [1023, 1151]
+    ],
+    "mapId": 615
+  },
+  {
+    "name": "Mr Mordaut Tribute",
+    "center": [1760, 5024],
+    "bounds": [
+      [1728, 4992],
+      [1791, 5055]
+    ],
+    "mapId": 616
+  },
+  {
+    "name": "Evil Bob Tribute",
+    "center": [1440, 4768],
+    "bounds": [
+      [1408, 4736],
+      [1471, 4799]
+    ],
+    "mapId": 617
+  },
+  {
+    "name": "Burthorpe",
+    "center": [4256, 7424],
+    "bounds": [
+      [4160, 7360],
+      [4351, 7487]
+    ],
+    "mapId": 618
+  },
+  {
+    "name": "Armadyl's Citadel",
+    "center": [3776, 4544],
+    "bounds": [
+      [3712, 4480],
+      [3839, 4607]
+    ],
+    "mapId": 619
+  },
+  {
+    "name": "Armadyl's Citadel",
+    "center": [3776, 4416],
+    "bounds": [
+      [3712, 4352],
+      [3839, 4479]
+    ],
+    "mapId": 620
+  },
+  {
+    "name": "Barrows Graveyard",
+    "center": [2400, 6048],
+    "bounds": [
+      [2368, 6016],
+      [2431, 6079]
+    ],
+    "mapId": 621
+  },
+  {
+    "name": "Myreque Hideout",
+    "center": [3508, 9836],
+    "bounds": [
+      [3496, 9824],
+      [3519, 9847]
+    ],
+    "mapId": 622
+  },
+  {
+    "name": "The Approach",
+    "center": [3968, 6272],
+    "bounds": [
+      [3904, 6208],
+      [4031, 6335]
+    ],
+    "mapId": 623
+  },
+  {
+    "name": "Cave complex",
+    "center": [1120, 6240],
+    "bounds": [
+      [1088, 6208],
+      [1151, 6271]
+    ],
+    "mapId": 624
+  },
+  {
+    "name": "The Sanctum",
+    "center": [4064, 6240],
+    "bounds": [
+      [4032, 6208],
+      [4095, 6271]
+    ],
+    "mapId": 625
+  },
+  {
+    "name": "The Pit",
+    "center": [4064, 6304],
+    "bounds": [
+      [4032, 6272],
+      [4095, 6335]
+    ],
+    "mapId": 626
+  },
+  {
+    "name": "The Cradle",
+    "center": [4256, 6240],
+    "bounds": [
+      [4224, 6208],
+      [4287, 6271]
+    ],
+    "mapId": 627
+  },
+  {
+    "name": "The Elder Halls",
+    "center": [4288, 6336],
+    "bounds": [
+      [4224, 6272],
+      [4351, 6399]
+    ],
+    "mapId": 628
+  },
+  {
+    "name": "Limbo",
+    "center": [4192, 6304],
+    "bounds": [
+      [4160, 6272],
+      [4223, 6335]
+    ],
+    "mapId": 629
+  },
+  {
+    "name": "Ashdale Caves",
+    "center": [3904, 6784],
+    "bounds": [
+      [3840, 6720],
+      [3967, 6847]
+    ],
+    "mapId": 630
+  },
+  {
+    "name": "Ashdale Sewers",
+    "center": [4160, 6784],
+    "bounds": [
+      [4096, 6720],
+      [4223, 6847]
+    ],
+    "mapId": 631
+  },
+  {
+    "name": "Kal'gerion Resource Dungeon",
+    "center": [1312, 1312],
+    "bounds": [
+      [1280, 1280],
+      [1343, 1343]
+    ],
+    "mapId": 632
+  },
+  {
+    "name": "Bandos' Arena on Yu'biusk",
+    "center": [1216, 4992],
+    "bounds": [
+      [1151, 4929],
+      [1407, 5183]
+    ],
+    "mapId": 633
+  },
+  {
+    "name": "Bandos' Arena on Yu'biusk",
+    "center": [1216, 4992],
+    "bounds": [
+      [1023, 4864],
+      [1213, 4927]
+    ],
+    "mapId": 633
+  },
+  {
+    "name": "Bandos' Arena on Yu'biusk",
+    "center": [1216, 4992],
+    "bounds": [
+      [1087, 4800],
+      [1150, 4863]
+    ],
+    "mapId": 633
+  },
+  {
+    "name": "Araxyte lair",
+    "center": [4544, 6272],
+    "bounds": [
+      [4480, 6208],
+      [4607, 6335]
+    ],
+    "mapId": 634
+  },
+  {
+    "name": "Cave complex",
+    "center": [1184, 6240],
+    "bounds": [
+      [1152, 6208],
+      [1215, 6271]
+    ],
+    "mapId": 635
+  },
+  {
+    "name": "Araxyte graveyard",
+    "center": [4704, 6240],
+    "bounds": [
+      [4672, 6208],
+      [4735, 6271]
+    ],
+    "mapId": 636
+  },
+  {
+    "name": "Fight Cauldron",
+    "center": [4512, 5280],
+    "bounds": [
+      [4480, 5248],
+      [4543, 5311]
+    ],
+    "mapId": 637
+  },
+  {
+    "name": "Silverlight Crypt",
+    "center": [2592, 5984],
+    "bounds": [
+      [2560, 5952],
+      [2623, 6015]
+    ],
+    "mapId": 638
+  },
+  {
+    "name": "Zamorakian Crypt",
+    "center": [2656, 5984],
+    "bounds": [
+      [2624, 5952],
+      [2687, 6015]
+    ],
+    "mapId": 639
+  },
+  {
+    "name": "Gorajo Hoardstalker Dungeon",
+    "center": [1312, 4640],
+    "bounds": [
+      [1280, 4608],
+      [1343, 4671]
+    ],
+    "mapId": 640
+  },
+  {
+    "name": "Edimmu Dungeon",
+    "center": [1376, 4640],
+    "bounds": [
+      [1344, 4608],
+      [1407, 4671]
+    ],
+    "mapId": 641
+  },
+  {
+    "name": "Sliske's Vault",
+    "center": [3552, 6240],
+    "bounds": [
+      [3520, 6208],
+      [3583, 6271]
+    ],
+    "mapId": 642
+  },
+  {
+    "name": "New Varrock",
+    "center": [3744, 9056],
+    "bounds": [
+      [3648, 8960],
+      [3839, 9151]
+    ],
+    "mapId": 643
+  },
+  {
+    "name": "Silverlight Crypt",
+    "center": [3552, 9056],
+    "bounds": [
+      [3520, 9024],
+      [3583, 9087]
+    ],
+    "mapId": 644
+  },
+  {
+    "name": "Mount Firewake",
+    "center": [4768, 6048],
+    "bounds": [
+      [4736, 6016],
+      [4799, 6079]
+    ],
+    "mapId": 645
+  },
+  {
+    "name": "Music maze cave",
+    "center": [1056, 6176],
+    "bounds": [
+      [1024, 6144],
+      [1087, 6207]
+    ],
+    "mapId": 646
+  },
+  {
+    "name": "Brimhaven Adamant Dungeon",
+    "center": [4512, 6060],
+    "bounds": [
+      [4480, 6016],
+      [4543, 6103]
+    ],
+    "mapId": 647
+  },
+  {
+    "name": "V's Island (interior)",
+    "center": [1376, 4192],
+    "bounds": [
+      [1344, 4160],
+      [1407, 4223]
+    ],
+    "mapId": 648
+  },
+  {
+    "name": "Mazcab",
+    "center": [4320, 832],
+    "bounds": [
+      [4096, 704],
+      [4543, 959]
+    ],
+    "mapId": 649
+  },
+  {
+    "name": "Nemi forest clearing",
+    "center": [4704, 800],
+    "bounds": [
+      [4672, 768],
+      [4735, 831]
+    ],
+    "mapId": 650
+  },
+  {
+    "name": "Capture Square",
+    "center": [160, 160],
+    "bounds": [
+      [128, 128],
+      [191, 191]
+    ],
+    "mapId": 651
+  },
+  {
+    "name": "Hallowe'en 2015",
+    "center": [5024, 768],
+    "bounds": [
+      [4928, 640],
+      [5119, 895]
+    ],
+    "mapId": 652
+  },
+  {
+    "name": "Wyverns",
+    "center": [5152, 7520],
+    "bounds": [
+      [5120, 7488],
+      [5183, 7551]
+    ],
+    "mapId": 653
+  },
+  {
+    "name": "Ripper Demons",
+    "center": [5152, 7584],
+    "bounds": [
+      [5120, 7552],
+      [5183, 7615]
+    ],
+    "mapId": 654
+  },
+  {
+    "name": "Guthixian Cache",
+    "center": [5792, 5792],
+    "bounds": [
+      [5760, 5760],
+      [5823, 5823]
+    ],
+    "mapId": 655
+  },
+  {
+    "name": "Sunken tutorial island",
+    "center": [5216, 800],
+    "bounds": [
+      [5120, 704],
+      [5311, 895]
+    ],
+    "mapId": 656
+  },
+  {
+    "name": "Cave complex",
+    "center": [1120, 6176],
+    "bounds": [
+      [1088, 6144],
+      [1151, 6207]
+    ],
+    "mapId": 657
+  },
+  {
+    "name": "Sunken Tutorial Island cavern",
+    "center": [5472, 736],
+    "bounds": [
+      [5440, 704],
+      [5503, 767]
+    ],
+    "mapId": 658
+  },
+  {
+    "name": "Nomad's Fortress",
+    "center": [4576, 6688],
+    "bounds": [
+      [4480, 6592],
+      [4671, 6783]
+    ],
+    "mapId": 659
+  },
+  {
+    "name": "Tarddiad",
+    "center": [4096, 6592],
+    "bounds": [
+      [4032, 6528],
+      [4159, 6655]
+    ],
+    "mapId": 660
+  },
+  {
+    "name": "The Heart",
+    "center": [3200, 6976],
+    "bounds": [
+      [3008, 6784],
+      [3391, 7167]
+    ],
+    "mapId": 661
+  },
+  {
+    "name": "The Arc",
+    "center": [1312, 7296],
+    "bounds": [
+      [896, 6848],
+      [1727, 7743]
+    ],
+    "mapId": 662
+  },
+  {
+    "name": "The Arc",
+    "center": [2208, 11616],
+    "bounds": [
+      [1600, 11008],
+      [2815, 12223]
+    ],
+    "mapId": 663
+  },
+  {
+    "name": "RuneFest Treasure Island",
+    "center": [3552, 11552],
+    "bounds": [
+      [3392, 11392],
+      [3711, 11711]
+    ],
+    "mapId": 665
+  },
+  {
+    "name": "North Falador",
+    "center": [4544, 11552],
+    "bounds": [
+      [4416, 11456],
+      [4671, 11647]
+    ],
+    "mapId": 666
+  },
+  {
+    "name": "Shattered Worlds",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 667
+  },
+  {
+    "name": "Heist Lobby",
+    "center": [2592, 1056],
+    "bounds": [
+      [2560, 1024],
+      [2623, 1087]
+    ],
+    "mapId": 668
+  },
+  {
+    "name": "Music maze cave",
+    "center": [1184, 6176],
+    "bounds": [
+      [1152, 6144],
+      [1215, 6207]
+    ],
+    "mapId": 669
+  },
+  {
+    "name": "Shifting tombs",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 670
+  },
+  {
+    "name": "Sunken pyramid",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 671
+  },
+  {
+    "name": "Sophanem Slayer Dungeon",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 672
+  },
+  {
+    "name": "Sophanem Slayer Dungeon",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 673
+  },
+  {
+    "name": "Deep Sea Fishing Hub",
+    "center": [2144, 7136],
+    "bounds": [
+      [2048, 7040],
+      [2239, 7231]
+    ],
+    "mapId": 674
+  },
+  {
+    "name": "Tutorial Island",
+    "center": [96, 96],
+    "bounds": [
+      [64, 64],
+      [127, 127]
+    ],
+    "mapId": 675
+  },
+  {
+    "name": "Underwater Area",
+    "center": [4352, 6848],
+    "bounds": [
+      [4288, 6784],
+      [4415, 6911]
+    ],
+    "mapId": 676
+  },
+  {
+    "name": "Hall of Memories",
+    "center": [2208, 9120],
+    "bounds": [
+      [2176, 9088],
+      [2239, 9151]
+    ],
+    "mapId": 677
+  },
+  {
+    "name": "Aminishi Dungeon",
+    "center": [4640, 9120],
+    "bounds": [
+      [4480, 8960],
+      [4799, 9279]
+    ],
+    "mapId": 678
+  },
+  {
+    "name": "Empty Throne Room",
+    "center": [2848, 12640],
+    "bounds": [
+      [2816, 12608],
+      [2879, 12671]
+    ],
+    "mapId": 679
+  },
+  {
+    "name": "Cave complex",
+    "center": [1248, 6176],
+    "bounds": [
+      [1216, 6144],
+      [1279, 6207]
+    ],
+    "mapId": 680
+  },
+  {
+    "name": "Varrock Dig Site dungeon",
+    "center": [3360, 9760],
+    "bounds": [
+      [3328, 9728],
+      [3391, 9791]
+    ],
+    "mapId": 681
+  },
+  {
+    "name": "Meiyerditch Daeyalt Mine",
+    "center": [2272, 4640],
+    "bounds": [
+      [2240, 4608],
+      [2303, 4671]
+    ],
+    "mapId": 682
+  },
+  {
+    "name": "Dondakan's Gold Mine",
+    "center": [2560, 4960],
+    "bounds": [
+      [2496, 4928],
+      [2623, 4991]
+    ],
+    "mapId": 683
+  },
+  {
+    "name": "Tarshak's Sanctum",
+    "center": [1184, 4192],
+    "bounds": [
+      [1152, 4160],
+      [1215, 4223]
+    ],
+    "mapId": 684
+  },
+  {
+    "name": "Tutorial Island",
+    "center": [3808, 4256],
+    "bounds": [
+      [3712, 4160],
+      [3903, 4351]
+    ],
+    "mapId": 685
+  },
+  {
+    "name": "Tutorial Island Underground",
+    "center": [3680, 4320],
+    "bounds": [
+      [3648, 4288],
+      [3711, 4351]
+    ],
+    "mapId": 686
+  },
+  {
+    "name": "The Shadow Reef",
+    "center": [5408, 9120],
+    "bounds": [
+      [5248, 8960],
+      [5567, 9279]
+    ],
+    "mapId": 687
+  },
+  {
+    "name": "Slayer Tower Resource Dungeon",
+    "center": [1184, 4640],
+    "bounds": [
+      [1152, 4608],
+      [1215, 4671]
+    ],
+    "mapId": 688
+  },
+  {
+    "name": "Dreamer's cave",
+    "center": [1056, 6112],
+    "bounds": [
+      [1024, 6080],
+      [1087, 6143]
+    ],
+    "mapId": 691
+  },
+  {
+    "name": "Dig Site: Kharid-et",
+    "center": [2380, 7500],
+    "bounds": [
+      [2431, 7552],
+      [2559, 7640]
+    ],
+    "mapId": 763
+  },
+  {
+    "name": "Dig Site: Kharid-et",
+    "center": [2380, 7500],
+    "bounds": [
+      [2431, 7360],
+      [2493, 7422]
+    ],
+    "mapId": 692
+  },
+  {
+    "name": "Dig Site: Kharid-et",
+    "center": [2380, 7596],
+    "bounds": [
+      [2239, 7570],
+      [2275, 7614]
+    ],
+    "mapId": 693
+  },
+  {
+    "name": "Dig Site: Kharid-et",
+    "center": [2656, 7584],
+    "bounds": [
+      [2624, 7552],
+      [2687, 7615]
+    ],
+    "mapId": 694
+  },
+  {
+    "name": "Dig Site: Everlight",
+    "center": [2336, 7520],
+    "bounds": [
+      [2304, 7424],
+      [2367, 7615]
+    ],
+    "mapId": 695
+  },
+  {
+    "name": "Dig Site: Infernal Source",
+    "center": [2624, 7392],
+    "bounds": [
+      [2560, 7296],
+      [2687, 7487]
+    ],
+    "mapId": 696
+  },
+  {
+    "name": "Dig Site: Infernal Source",
+    "center": [2592, 7328],
+    "bounds": [
+      [2560, 7296],
+      [2623, 7359]
+    ],
+    "mapId": 697
+  },
+  {
+    "name": "Dig Site: Infernal Source",
+    "center": [2624, 7328],
+    "bounds": [
+      [2560, 7296],
+      [2687, 7359]
+    ],
+    "mapId": 698
+  },
+  {
+    "name": "Dig Site: Stormguard - Howl's Workshop",
+    "center": [2432, 7168],
+    "bounds": [
+      [2304, 7040],
+      [2559, 7295]
+    ],
+    "mapId": 699
+  },
+  {
+    "name": "Dig Site: Stormguard Citadel",
+    "center": [2432, 7168],
+    "bounds": [
+      [2304, 7040],
+      [2559, 7295]
+    ],
+    "mapId": 700
+  },
+  {
+    "name": "Dig Site: Warforge",
+    "center": [2336, 7360],
+    "bounds": [
+      [2240, 7296],
+      [2431, 7423]
+    ],
+    "mapId": 701
+  },
+  {
+    "name": "Dreamer's cave",
+    "center": [1120, 6112],
+    "bounds": [
+      [1088, 6080],
+      [1151, 6143]
+    ],
+    "mapId": 702
+  },
+  {
+    "name": "Dig Site: Warforge",
+    "center": [2400, 7328],
+    "bounds": [
+      [2368, 7296],
+      [2431, 7359]
+    ],
+    "mapId": 703
+  },
+  {
+    "name": "Dig Site: Orthen",
+    "center": [1184, 160],
+    "bounds": [
+      [1088, 64],
+      [1279, 255]
+    ],
+    "mapId": 704
+  },
+  {
+    "name": "Dig Site: Orthen",
+    "center": [1184, 128],
+    "bounds": [
+      [1088, 64],
+      [1279, 191]
+    ],
+    "mapId": 705
+  },
+  {
+    "name": "Dig Site: Orthen",
+    "center": [1184, 160],
+    "bounds": [
+      [1088, 64],
+      [1279, 255]
+    ],
+    "mapId": 706
+  },
+  {
+    "name": "Orthen Oubliette",
+    "center": [5760, 2848],
+    "bounds": [
+      [5696, 2816],
+      [5823, 2879]
+    ],
+    "mapId": 707
+  },
+  {
+    "name": "Senntisten",
+    "center": [1824, 1216],
+    "bounds": [
+      [1600, 1024],
+      [2047, 1407]
+    ],
+    "mapId": 708
+  },
+  {
+    "name": "Senntisten Colosseum",
+    "center": [352, 160],
+    "bounds": [
+      [320, 128],
+      [383, 191]
+    ],
+    "mapId": 709
+  },
+  {
+    "name": "Senntisten sewers",
+    "center": [992, 384],
+    "bounds": [
+      [960, 320],
+      [1023, 447]
+    ],
+    "mapId": 710
+  },
+  {
+    "name": "Senntisten Asylum",
+    "center": [1984, 1472],
+    "bounds": [
+      [1920, 1408],
+      [2047, 1535]
+    ],
+    "mapId": 711
+  },
+  {
+    "name": "Senntisten",
+    "center": [1824, 1920],
+    "bounds": [
+      [1600, 1792],
+      [2047, 2047]
+    ],
+    "mapId": 712
+  },
+  {
+    "name": "Dreamer's cave",
+    "center": [1184, 6112],
+    "bounds": [
+      [1152, 6080],
+      [1215, 6143]
+    ],
+    "mapId": 713
+  },
+  {
+    "name": "The Zamorakian Undercity",
+    "center": [1728, 1664],
+    "bounds": [
+      [1600, 1536],
+      [1855, 1791]
+    ],
+    "mapId": 714
+  },
+  {
+    "name": "Crypt",
+    "center": [1952, 1568],
+    "bounds": [
+      [1920, 1536],
+      [1983, 1599]
+    ],
+    "mapId": 715
+  },
+  {
+    "name": "Rasial's Citadel",
+    "center": [864, 1760],
+    "bounds": [
+      [832, 1728],
+      [895, 1791]
+    ],
+    "mapId": 717
+  },
+  {
+    "name": "Necromantic Rune Temple",
+    "center": [1312, 1952],
+    "bounds": [
+      [1280, 1920],
+      [1343, 1983]
+    ],
+    "mapId": 718
+  },
+  {
+    "name": "Ungael",
+    "center": [2336, 4064],
+    "bounds": [
+      [2240, 3968],
+      [2431, 4159]
+    ],
+    "mapId": 719
+  },
+  {
+    "name": "The Land of Snow's Christmas Village",
+    "center": [5216, 9792],
+    "bounds": [
+      [5120, 9728],
+      [5311, 9855]
+    ],
+    "mapId": 720
+  },
+  {
+    "name": "The Land of Glades' Blooming Burrow",
+    "center": [3808, 4960],
+    "bounds": [
+      [3712, 4864],
+      [3903, 5055]
+    ],
+    "mapId": 721
+  },
+  {
+    "name": "Ungael Ritual Site",
+    "center": [5792, 6400],
+    "bounds": [
+      [5760, 6336],
+      [5823, 6463]
+    ],
+    "mapId": 722
+  },
+  {
+    "name": "Rex Matriarch lair",
+    "center": [4032, 9792],
+    "bounds": [
+      [3968, 9728],
+      [4095, 9855]
+    ],
+    "mapId": 723
+  },
+  {
+    "name": "Dreamer's cave",
+    "center": [1440, 6560],
+    "bounds": [
+      [1408, 6528],
+      [1471, 6591]
+    ],
+    "mapId": 724
+  },
+  {
+    "name": "Rex Matriarch lair",
+    "center": [3904, 9856],
+    "bounds": [
+      [3840, 9792],
+      [3967, 9919]
+    ],
+    "mapId": 725
+  },
+  {
+    "name": "Fort Forinthry Prison",
+    "center": [1952, 1696],
+    "bounds": [
+      [1920, 1664],
+      [1983, 1727]
+    ],
+    "mapId": 726
+  },
+  {
+    "name": "The Land of Harvest's Harvest Hollow",
+    "center": [672, 1728],
+    "bounds": [
+      [512, 1664],
+      [831, 1791]
+    ],
+    "mapId": 727
+  },
+  {
+    "name": "Scabarite Cavern",
+    "center": [3296, 7584],
+    "bounds": [
+      [3264, 7552],
+      [3327, 7615]
+    ],
+    "mapId": 728
+  },
+  {
+    "name": "Temple of Isolation",
+    "center": [3456, 7584],
+    "bounds": [
+      [3392, 7552],
+      [3519, 7615]
+    ],
+    "mapId": 729
+  },
+  {
+    "name": "Time Rune Temple",
+    "center": [3616, 4896],
+    "bounds": [
+      [3584, 4864],
+      [3647, 4927]
+    ],
+    "mapId": 730
+  },
+  {
+    "name": "Soul altar approach",
+    "center": [2016, 6880],
+    "bounds": [
+      [1984, 6848],
+      [2047, 6911]
+    ],
+    "mapId": 731
+  },
+  {
+    "name": "Porcelain Clay Mine",
+    "center": [2272, 7520],
+    "bounds": [
+      [2240, 7488],
+      [2303, 7551]
+    ],
+    "mapId": 732
+  },
+  {
+    "name": "Paddlington",
+    "center": [2272, 1632],
+    "bounds": [
+      [2240, 1600],
+      [2303, 1663]
+    ],
+    "mapId": 733
+  },
+  {
+    "name": "Fort Forinthry Grove Cave",
+    "center": [3872, 5088],
+    "bounds": [
+      [3840, 5056],
+      [3903, 5119]
+    ],
+    "mapId": 734
+  },
+  {
+    "name": "Dreamer's Cave",
+    "center": [1440, 6496],
+    "bounds": [
+      [1408, 6464],
+      [1471, 6527]
+    ],
+    "mapId": 735
+  },
+  {
+    "name": "Asgarnian Ice Dungeon",
+    "center": [3936, 5088],
+    "bounds": [
+      [3904, 5056],
+      [3967, 5119]
+    ],
+    "mapId": 736
+  },
+  {
+    "name": "Crafting Guild Mine",
+    "center": [2912, 6432],
+    "bounds": [
+      [2880, 6400],
+      [2943, 6463]
+    ],
+    "mapId": 737
+  },
+  {
+    "name": "Chasm",
+    "center": [1312, 6240],
+    "bounds": [
+      [1280, 6208],
+      [1343, 6271]
+    ],
+    "mapId": 738
+  },
+  {
+    "name": "Crossroad",
+    "center": [1440, 6112],
+    "bounds": [
+      [1408, 6080],
+      [1471, 6143]
+    ],
+    "mapId": 739
+  },
+  {
+    "name": "Crossroad",
+    "center": [1440, 6240],
+    "bounds": [
+      [1408, 6208],
+      [1471, 6271]
+    ],
+    "mapId": 740
+  },
+  {
+    "name": "White Wolf Mountain underground",
+    "center": [2880, 9920],
+    "bounds": [
+      [2816, 9856],
+      [2943, 9983]
+    ],
+    "mapId": 741
+  },
+  {
+    "name": "Grotworm Lair 1",
+    "center": [1144, 6368],
+    "bounds": [
+      [1072, 6336],
+      [1215, 6399]
+    ],
+    "mapId": 742
+  },
+  {
+    "name": "Grotworm Lair 2",
+    "center": [1344, 6432],
+    "bounds": [
+      [1280, 6336],
+      [1407, 6527]
+    ],
+    "mapId": 743
+  },
+  {
+    "name": "Grotworm Lair 3",
+    "center": [1140, 6488],
+    "bounds": [
+      [1064, 6448],
+      [1215, 6527]
+    ],
+    "mapId": 744
+  },
+  {
+    "name": "Queen Black Dragon's lair",
+    "center": [1440, 6368],
+    "bounds": [
+      [1408, 6336],
+      [1471, 6399]
+    ],
+    "mapId": 745
+  },
+  {
+    "name": "Kerapac's Vault",
+    "center": [1312, 6112],
+    "bounds": [
+      [1280, 6080],
+      [1343, 6143]
+    ],
+    "mapId": 746
+  },
+  {
+    "name": "Treasure chamber",
+    "center": [1248, 5920],
+    "bounds": [
+      [1216, 5888],
+      [1279, 5951]
+    ],
+    "mapId": 747
+  },
+  {
+    "name": "Big Chinchompa nest",
+    "center": [1376, 5984],
+    "bounds": [
+      [1344, 5952],
+      [1407, 6015]
+    ],
+    "mapId": 748
+  },
+  {
+    "name": "Ice cave",
+    "center": [1376, 5920],
+    "bounds": [
+      [1344, 5888],
+      [1407, 5951]
+    ],
+    "mapId": 750
+  },
+  {
+    "name": "Grassland",
+    "center": [1440, 5920],
+    "bounds": [
+      [1408, 5888],
+      [1471, 5951]
+    ],
+    "mapId": 751
+  },
+  {
+    "name": "Stronghold of Safety",
+    "center": [3136, 4256],
+    "bounds": [
+      [3072, 4224],
+      [3199, 4287]
+    ],
+    "mapId": 752
+  },
+  {
+    "name": "Grassland",
+    "center": [1376, 5856],
+    "bounds": [
+      [1344, 5824],
+      [1407, 5887]
+    ],
+    "mapId": 753
+  },
+  {
+    "name": "Grassland",
+    "center": [1440, 5856],
+    "bounds": [
+      [1408, 5824],
+      [1471, 5887]
+    ],
+    "mapId": 754
+  },
+  {
+    "name": "Old Tower Shrine Room",
+    "center": [1696, 6112],
+    "bounds": [
+      [1664, 6080],
+      [1727, 6143]
+    ],
+    "mapId": 755
+  },
+  {
+    "name": "Old Tower Stairwell",
+    "center": [1632, 6112],
+    "bounds": [
+      [1600, 6080],
+      [1663, 6143]
+    ],
+    "mapId": 756
+  },
+  {
+    "name": "Old Tower Spellcasting Chamber",
+    "center": [1632, 6176],
+    "bounds": [
+      [1600, 6144],
+      [1663, 6207]
+    ],
+    "mapId": 757
+  },
+  {
+    "name": "Old Tower Library",
+    "center": [1696, 6176],
+    "bounds": [
+      [1664, 6144],
+      [1727, 6207]
+    ],
+    "mapId": 758
+  },
+  {
+    "name": "Old Tower Studies",
+    "center": [1632, 6240],
+    "bounds": [
+      [1600, 6208],
+      [1663, 6271]
+    ],
+    "mapId": 759
+  },
+  {
+    "name": "Sewer",
+    "center": [1844, 6376],
+    "bounds": [
+      [1768, 6312],
+      [1919, 6439]
+    ],
+    "mapId": 760
+  },
+  {
+    "name": "Sewer",
+    "center": [1836, 6448],
+    "bounds": [
+      [1792, 6440],
+      [1879, 6455]
+    ],
+    "mapId": 761
+  },
+  {
+    "name": "Doric's cave",
+    "center": [1632, 5984],
+    "bounds": [
+      [1600, 5952],
+      [1663, 6015]
+    ],
+    "mapId": 762
+  }
+]

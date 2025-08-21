@@ -1,6 +1,8 @@
 import React from "react";
 
 interface EditorPanelProps {
+  children?: React.ReactNode;
+  isOpen: boolean;
   onResetRadius: () => void;
   itemsNeededValue: string;
   onItemsNeededChange: (items: string) => void;
@@ -27,7 +29,8 @@ interface EditorPanelProps {
   targetIndex: number;
   onTargetIndexChange: (index: number) => void;
   floor: number;
-  onFloorChange: (floor: number) => void;
+  onFloorIncrement: () => void;
+  onFloorDecrement: () => void;
   onClearObjectLocations: () => void;
   selectedObjectColor: string;
   onSelectedObjectColorChange: (color: string) => void;
@@ -43,14 +46,16 @@ interface EditorPanelProps {
   onSelectEditStepDescription: () => void;
   onAddNpc: () => void;
   onDeleteStep: () => void;
-  onFloorIncrement: () => void; // New prop
-  onFloorDecrement: () => void;
-
+  onAddStep: () => void;
+  onNewQuest: () => void;
+  onAddObject: () => void;
   onSubmitToGitHub: () => void;
 }
 
 export const EditorPanel = React.memo<EditorPanelProps>(
   ({
+    children,
+    isOpen,
     onResetRadius,
     itemsNeededValue,
     onItemsNeededChange,
@@ -60,7 +65,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     onAdditionalInfoChange,
     wanderRadiusInput,
     onWanderRadiusInputChange,
-    onWanderRadiusCapture,
     onApplyRadius,
     jsonString,
     onJsonChange,
@@ -69,7 +73,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     targetNameValue,
     onTargetNameChange,
     selectedStep,
-    onStepChange,
     onStepIncrement,
     onStepDecrement,
     targetType,
@@ -77,7 +80,8 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     targetIndex,
     onTargetIndexChange,
     floor,
-    onFloorChange,
+    onFloorIncrement,
+    onFloorDecrement,
     onClearObjectLocations,
     selectedObjectColor,
     onSelectedObjectColorChange,
@@ -93,13 +97,29 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     onResetNpcLocation,
     onAddNpc,
     onDeleteStep,
-    onFloorIncrement,
-    onFloorDecrement,
-
+    onAddStep,
+    onNewQuest,
+    onAddObject,
     onSubmitToGitHub,
   }) => {
+    const handleEnterAsNewline = (
+      event: React.KeyboardEvent<HTMLTextAreaElement>,
+      currentValue: string,
+      onChange: (newValue: string) => void
+    ) => {
+      if (event.key === "Enter" && !event.shiftKey) {
+        event.preventDefault();
+        const { selectionStart, selectionEnd } = event.currentTarget;
+        const newValue =
+          currentValue.substring(0, selectionStart) +
+          "\n" +
+          currentValue.substring(selectionEnd);
+        onChange(newValue);
+      }
+    };
+
     return (
-      <div className="editor-panel">
+      <div className={`editor-panel ${isOpen ? "" : "closed"}`}>
         <input
           type="file"
           id="json-file-loader"
@@ -109,150 +129,137 @@ export const EditorPanel = React.memo<EditorPanelProps>(
         />
 
         <div className="file-actions">
+          <button
+            onClick={onNewQuest}
+            className="file-loader-button button--new"
+          >
+            New Quest
+          </button>
           <button onClick={onLoadFile} className="file-loader-button">
-            Load Quest File
+            Load Quest
           </button>
           <button
             onClick={onSaveFile}
-            className="file-loader-button"
-            style={{ backgroundColor: "#d4edda" }}
+            className="file-loader-button button--save"
           >
             Save
           </button>
           <button
             onClick={onSaveAsFile}
-            className="file-loader-button"
-            style={{ backgroundColor: "#d1ecf1" }}
+            className="file-loader-button button--save-as"
           >
             Save As...
           </button>
           <button
             onClick={onSubmitToGitHub}
-            className="file-loader-button"
-            style={{ backgroundColor: "#e2e3e5", color: "#383d41" }}
+            className="file-loader-button button--submit"
           >
             Submit to GitHub
           </button>
         </div>
-        <label className="EditDescriptionLabel">
-          Edit Step Description
-          <input type="checkbox" onClick={onSelectEditStepDescription} />
-        </label>
-        <div className="step-description-display">
-          <strong>Step {selectedStep + 1}: </strong>
-          {selectEditDescription ? (
+
+        <div className="panel-section step-description-display">
+          <label className="EditDescriptionLabel">
+            <span className="description-text">
+              <strong>Step {selectedStep + 1}:</strong> {stepDescriptionValue}
+            </span>
+            <input
+              type="checkbox"
+              checked={selectEditDescription}
+              onChange={onSelectEditStepDescription}
+            />
+          </label>
+          {selectEditDescription && (
             <textarea
               value={stepDescriptionValue}
               onChange={(e) => onStepDescriptionChange(e.target.value)}
-              rows={10}
+              rows={6}
             />
-          ) : (
-            <label>{stepDescriptionValue}</label>
           )}
         </div>
 
-        <div className="item-lists-container">
+        <div className="panel-section info-grid">
           <div className="item-list">
-            <strong>Items Needed:</strong>
+            <strong>Items Needed</strong>
             <textarea
               value={itemsNeededValue}
               onChange={(e) => onItemsNeededChange(e.target.value)}
+              onKeyDown={(e) =>
+                handleEnterAsNewline(e, itemsNeededValue, onItemsNeededChange)
+              }
               rows={3}
               placeholder="One item per line..."
             />
           </div>
           <div className="item-list">
-            <strong>Items Recommended:</strong>
+            <strong>Items Recommended</strong>
             <textarea
               value={itemsRecommendedValue}
               onChange={(e) => onItemsRecommendedChange(e.target.value)}
+              onKeyDown={(e) =>
+                handleEnterAsNewline(
+                  e,
+                  itemsRecommendedValue,
+                  onItemsRecommendedChange
+                )
+              }
               rows={3}
               placeholder="One item per line..."
             />
           </div>
+          <div className="item-list full-width">
+            <strong>Additional Info</strong>
+            <textarea
+              value={additionalInfoValue}
+              onChange={(e) => onAdditionalInfoChange(e.target.value)}
+              rows={2}
+              placeholder="One line of info..."
+            />
+          </div>
         </div>
-        <div className="item-list">
-          <strong>Additional Info:</strong>
-          <textarea
-            value={additionalInfoValue}
-            onChange={(e) => onAdditionalInfoChange(e.target.value)}
-            rows={3}
-            placeholder="One line of info..."
-          />
-        </div>
-        <div className="editor-controls">
-          <div className="control-group step-control">
-            <label>Step Number:</label>
-            <div className="step-input-group">
-              <button onClick={onStepDecrement} className="step-button">
-                -
-              </button>
-              <label
-                style={{
-                  minWidth: "40px",
-                  padding: "6px 12px",
-                  textAlign: "center",
-                  backgroundColor: "#e9ecef",
-                  border: "1px solid #ced4da",
-                  borderRadius: "4px",
-                  margin: "0 4px",
-                  fontWeight: "bold",
-                  fontSize: "1rem",
-                  color: "#495057",
-                  display: "inline-block",
-                  verticalAlign: "middle",
-                }}
-              >
-                {selectedStep + 1}
-              </label>
-              <button onClick={onStepIncrement} className="step-button">
-                +
-              </button>
-              <button
-                onClick={onDeleteStep}
-                style={{
-                  width: "100%",
-                  backgroundColor: "#f8d7da",
-                  color: "#721c24",
-                  marginTop: "4px",
-                  border: "1px solid #f5c6cb",
-                  marginLeft: "10px",
-                }}
-              >
-                Delete Current Step
-              </button>
+
+        <div className="panel-section">
+          <div className="editor-controls-grid">
+            <div className="control-group">
+              <label>Step Number</label>
+              <div className="step-input-group">
+                <button onClick={onStepDecrement} className="step-button">
+                  -
+                </button>
+                <div className="step-display-label">{selectedStep + 1}</div>
+                <button onClick={onStepIncrement} className="step-button">
+                  +
+                </button>
+              </div>
+            </div>
+
+            <div className="control-group">
+              <label>Floor</label>
+              <div className="step-input-group">
+                <button onClick={onFloorDecrement} className="step-button">
+                  -
+                </button>
+                <div className="step-display-label">{floor}</div>
+                <button onClick={onFloorIncrement} className="step-button">
+                  +
+                </button>
+              </div>
             </div>
           </div>
+
+          <div className="step-action-buttons">
+            <button onClick={onAddStep} className="button--add">
+              Add Step
+            </button>
+            <button onClick={onDeleteStep} className="button--delete">
+              Delete Step
+            </button>
+          </div>
+        </div>
+
+        <div className="panel-section editor-controls-grid">
           <div className="control-group">
-            <label>Floor:</label>
-            {/* ✅ NEW UI FOR FLOOR CONTROL */}
-            <div className="step-input-group">
-              <button onClick={onFloorDecrement} className="step-button">
-                -
-              </button>
-              <label
-                style={{
-                  minWidth: "40px",
-                  padding: "6px 12px",
-                  textAlign: "center",
-                  backgroundColor: "#e9ecef",
-                  border: "1px solid #ced4da",
-                  borderRadius: "4px",
-                  margin: "0 4px",
-                  fontWeight: "bold",
-                  fontSize: "1rem",
-                  color: "#495057",
-                  display: "inline-block",
-                  verticalAlign: "middle",
-                }}
-              >
-                {floor}
-              </label>
-              <button onClick={onFloorIncrement} className="step-button">
-                +
-              </button>
-            </div>
-            <label>Target Type:</label>
+            <label>Target Type</label>
             <select
               value={targetType}
               onChange={(e) =>
@@ -263,68 +270,20 @@ export const EditorPanel = React.memo<EditorPanelProps>(
               <option value="object">Object</option>
             </select>
           </div>
-          {targetType === "npc" && (
-            <div className="control-group">
-              <button
-                onClick={onResetNpcLocation}
-                style={{ width: "100%", backgroundColor: "#ffdddd" }}
-              >
-                Reset NPC Location
-              </button>
-              <button
-                onClick={onAddNpc}
-                style={{
-                  width: "100%",
-                  backgroundColor: "#ddffdd",
-                  marginTop: "4px",
-                }}
-              >
-                Add New NPC
-              </button>
-            </div>
-          )}
-          {targetType === "object" && (
-            <>
-              <div className="control-group">
-                <label>Object Color:</label>
-                <input
-                  type="color"
-                  value={selectedObjectColor}
-                  onChange={(e) => onSelectedObjectColorChange(e.target.value)}
-                  style={{ width: "100%", height: "30px" }}
-                />
-              </div>
-              <div className="control-group">
-                <label>Object Number:</label>
-                <input
-                  type="text"
-                  placeholder="Optional"
-                  value={objectNumberLabel}
-                  onChange={(e) => onObjectNumberLabelChange(e.target.value)}
-                />
-              </div>
-              <div className="control-group">
-                <button
-                  onClick={onClearObjectLocations}
-                  style={{ width: "100%", backgroundColor: "#ffdddd" }}
-                >
-                  Clear Object Locations
-                </button>
-              </div>
-            </>
-          )}
+
           <div className="control-group">
-            <label>Target Index:</label>
+            <label>Target Index</label>
             <input
               type="number"
               value={targetIndex + 1}
               onChange={(e) =>
-                onTargetIndexChange(parseInt(e.target.value, 10))
+                onTargetIndexChange(parseInt(e.target.value, 10) - 1)
               }
             />
           </div>
-          <div className="control-group">
-            <label>Name:</label>
+
+          <div className="control-group full-width-control">
+            <label>Name</label>
             <input
               type="text"
               value={targetNameValue}
@@ -333,38 +292,93 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             />
           </div>
         </div>
+        {children}
+        {targetType === "npc" && (
+          <div className="panel-section">
+            <strong>NPC Tools</strong>
+            <div className="button-group">
+              <button onClick={onResetNpcLocation} className="button--delete">
+                Reset NPC Location
+              </button>
+              <button onClick={onAddNpc} className="button--add">
+                Add New NPC
+              </button>
+            </div>
+          </div>
+        )}
+
+        {targetType === "object" && (
+          <div className="panel-section editor-controls-grid">
+            <div className="control-group">
+              <label>Object Color</label>
+              <label className="color-picker-label">
+                <div
+                  className="color-picker-swatch"
+                  style={{ backgroundColor: selectedObjectColor }}
+                />
+                <input
+                  type="color"
+                  value={selectedObjectColor}
+                  onChange={(e) => onSelectedObjectColorChange(e.target.value)}
+                  className="color-input-hidden"
+                />
+              </label>
+            </div>
+            <div className="control-group">
+              <label>Object Number</label>
+              <input
+                type="text"
+                placeholder="Optional"
+                value={objectNumberLabel}
+                onChange={(e) => onObjectNumberLabelChange(e.target.value)}
+              />
+            </div>
+            <div className="control-group full-width">
+              <div className="button-group">
+                <button
+                  onClick={onClearObjectLocations}
+                  className="button--delete"
+                >
+                  Clear Object Locations
+                </button>
+                <button onClick={onAddObject} className="button--add">
+                  Add New Object
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         {(targetType === "npc" || targetType === "object") && (
-          <div className="tool-section">
+          <div className="panel-section tool-section">
             <strong>Area/Radius Tools</strong>
             <div className="tool-controls">
               {targetType === "npc" && (
-                <>
-                  <label>Radius:</label>
-                  <input
-                    type="number"
-                    value={wanderRadiusInput}
-                    onChange={(e) =>
-                      onWanderRadiusInputChange(parseInt(e.target.value, 10))
-                    }
-                  />
-                  <button onClick={onSetRadiusMode} style={{ width: "100%" }}>
-                    Set Area by Corners
-                  </button>
-                  <button onClick={onApplyRadius}>Apply to Center</button>
-                </>
+                <div className="radius-control-group">
+                  <div className="radius-input-group">
+                    <label>Radius:</label>
+                    <input
+                      type="number"
+                      value={wanderRadiusInput}
+                      onChange={(e) =>
+                        onWanderRadiusInputChange(parseInt(e.target.value, 10))
+                      }
+                    />
+                    <button onClick={onApplyRadius}>Apply to Center</button>
+                  </div>
+                  <button onClick={onSetRadiusMode}>Set Area by Corners</button>
+                </div>
               )}
               {targetType === "object" && (
                 <button onClick={onSetRadiusMode}>Set Area by Corners</button>
               )}
-              <button
-                onClick={onResetRadius}
-                style={{ backgroundColor: "#ffdddd" }}
-              >
+              <button onClick={onResetRadius} className="button--delete">
                 Reset Area
               </button>
             </div>
           </div>
         )}
+
         <textarea
           value={jsonString}
           onChange={(e) => onJsonChange(e.target.value)}
