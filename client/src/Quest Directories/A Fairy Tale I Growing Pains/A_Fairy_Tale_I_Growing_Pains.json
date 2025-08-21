@@ -67,7 +67,7 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Frizzy",
+            "npcName": "Frizzy Skernip",
             "npcLocation": {
               "lat": 3260,
               "lng": 3059
@@ -269,13 +269,9 @@
             "name": "",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
-              },
-              {
                 "lat": 3169,
                 "lng": 3201,
-                "color": "#b129d6",
+                "color": "#0b53f9",
                 "numberLabel": ""
               }
             ],
@@ -288,7 +284,9 @@
                 "lat": 3171,
                 "lng": 3205
               }
-            }
+            },
+            "color": "#0b53f9",
+            "numberLabel": ""
           }
         ]
       },
@@ -595,11 +593,10 @@
     {
       "stepDescription": "Run around to the back, north, of Draynor Manor within the fenced area, and click the gravestone slightly west of the Gallows to dig up a skull.",
       "itemsNeeded": [
-        "Secateurs",
-        "requested items"
+        "none"
       ],
       "itemsRecommended": [
-        "Teleport to Barrows or Burgh de Rott"
+        "none"
       ],
       "highlights": {
         "npc": [
@@ -655,7 +652,7 @@
       ]
     },
     {
-      "stepDescription": "Return to Malignius. (Chat 2)",
+      "stepDescription": "Return the skull to Malignius Mortifer. (Chat 2)",
       "itemsNeeded": [
         "none"
       ],
@@ -705,17 +702,17 @@
       ]
     },
     {
-      "stepDescription": "Fetch the items that Malignius requested (they will be listed in your quest journal). Bring multiple of any edible item, or bring a filled druid pouch to ward off ghasts.",
+      "stepDescription": "Fetch the items that Malignius requested . Bring multiple of any edible item, or bring a filled druid pouch to ward off ghasts.",
       "itemsNeeded": [
-        "Magic secateurs"
+        "none"
       ],
       "itemsRecommended": [
-        "Combat gear"
+        "none"
       ],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Malignius Mortifer",
             "npcLocation": {
               "lat": 0,
               "lng": 0
@@ -735,20 +732,15 @@
         "object": [
           {
             "name": "Tanglefoot",
-            "objectLocation": [
-              {
-                "lat": 4398,
-                "lng": 2326
-              }
-            ],
+            "objectLocation": [],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 4396,
-                "lng": 2324
+                "lat": 0,
+                "lng": 0
               },
               "topRight": {
-                "lat": 4400,
-                "lng": 2328
+                "lat": 0,
+                "lng": 0
               }
             }
           }
@@ -756,21 +748,22 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        "Equip your magic secateurs and kill Tanglefoot. Off-hand weaponry will work here, but will only deal as much as the secateurs would."
+        "Make sure to clean any requested herbs.",
+        "Items will be listed in your quest journal."
       ]
     },
     {
-      "stepDescription": "Make sure to clean any requested herbs.",
+      "stepDescription": "Talk to the Nature Spirit in Mort Myre Swamp to receive magic secateurs.",
       "itemsNeeded": [
-        "none"
+        "secateurs"
       ],
       "itemsRecommended": [
-        "none"
+        "Teleport to Barrows or Burgh de Rott for quick access to Nature Grotto"
       ],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Fairy Godfather",
             "npcLocation": {
               "lat": 0,
               "lng": 0
@@ -811,62 +804,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Talk to the Nature Spirit in Mort Myre Swamp to receive magic secateurs.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Fairy Godfather",
-            "npcLocation": {
-              "lat": 4430,
-              "lng": 2443
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 4429,
-                "lng": 2442
-              },
-              "topRight": {
-                "lat": 4432,
-                "lng": 2445
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "Fetch the items that Malignius requested . Bring multiple of any edible item, or bring a filled druid pouch to ward off ghasts."
       ]
     },
     {
