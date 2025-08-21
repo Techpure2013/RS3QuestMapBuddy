@@ -1,17 +1,5 @@
 #How to Install
-cd into client and server run
-```
-npm install
-```
-```
-cd ..
-```
-```
-npm install
-```
-```
-npm run start
-```
-#Main features so far
-connects to runescape quest buddy via Websockets.
-Ability to view location coordinates in server console.
+1.) When you open it up, open a terminal type ```npm install``` in the root of the project
+2.) ```cd client``` and ```npm install```
+3.) ```cd ..``` and ```cd server``` and ```npm install```
+4.) ```cd ..``` and ```npm run start``` 
