@@ -1,5 +1,26 @@
-#How to Install
-1.) When you open it up, open a terminal type ```npm install``` in the root of the project
-2.) ```cd client``` and ```npm install```
-3.) ```cd ..``` and ```cd server``` and ```npm install```
-4.) ```cd ..``` and ```npm run start``` 
+⚙️ Installation
+
+
+Clone the repository and install dependencies for the root, client, and server:
+
+# Clone the repo
+
+```git clone https://github.com/Techpure2013/RS3QuestMapBuddy.git```
+```cd RS3QuestMapBuddy```
+
+# Install root dependencies
+Install in the root directory /RS3QuestMapBuddy
+
+```npm install```
+
+# Install client dependencies
+Install in the /RS3QuestMapBuddy/client folder
+
+```cd client```
+```npm install```
+
+# Install server dependencies
+Install in the /RS3QuestMapBuddy/server
+
+```cd server```
+```npm install```
