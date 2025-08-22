@@ -305,58 +305,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "East of the room, read the message in the bottle for the key and open the door.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Brynna",
-            "npcLocation": {
-              "lat": 794,
-              "lng": 5213
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 793,
-                "lng": 5212
-              },
-              "topRight": {
-                "lat": 795,
-                "lng": 5214
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "East of the room, read the message in the bottle for the key and open the door."
       ]
     },
     {
@@ -366,114 +315,27 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Brynna",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 792,
+              "lng": 5215
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "Shrimp ( Old Lumbridge )",
-            "objectLocation": [
-              {
                 "lat": 789,
-                "lng": 5213
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 785,
                 "lng": 5212
               },
               "topRight": {
-                "lat": 791,
-                "lng": 5216
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Catch two raw shrimps.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 795,
+                "lng": 5218
               }
             }
           }
         ],
         "object": [
           {
-            "name": "Seaweed ( Old Lumbridge )",
-            "objectLocation": [
-              {
-                "lat": 791,
-                "lng": 5208
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 792,
-                "lng": 5209
-              }
-            }
-          },
-          {
-            "name": "Dead Tree ( Old Lumbridge )",
-            "objectLocation": [
-              {
-                "lat": 791,
-                "lng": 5210
-              },
-              {
-                "lat": 791,
-                "lng": 5211
-              },
-              {
-                "lat": 792,
-                "lng": 5211
-              },
-              {
-                "lat": 792,
-                "lng": 5210
-              }
-            ],
+            "name": "",
+            "objectLocation": [],
             "objectRadius": {
               "bottomLeft": {
                 "lat": 0,
@@ -518,23 +380,60 @@
         ],
         "object": [
           {
-            "name": "Boulder ( Old Lumbridge )",
+            "name": "Dead Tree ( Beneath Cursed Tides )",
             "objectLocation": [
               {
-                "lat": 793,
-                "lng": 5212
+                "lat": 792,
+                "lng": 5210
+              },
+              {
+                "lat": 792,
+                "lng": 5211
+              },
+              {
+                "lat": 791,
+                "lng": 5211
+              },
+              {
+                "lat": 791,
+                "lng": 5210
+              },
+              {
+                "lat": 792,
+                "lng": 5207
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 785,
-                "lng": 5210
+                "lat": 790,
+                "lng": 5209
               },
               "topRight": {
-                "lat": 787,
+                "lat": 793,
                 "lng": 5212
               }
-            }
+            },
+            "color": "#104af9",
+            "numberLabel": ""
+          },
+          {
+            "name": "New Object",
+            "object": [
+              {
+                "name": "",
+                "objectLocation": [],
+                "objectRadius": {
+                  "bottomLeft": {
+                    "lat": 0,
+                    "lng": 0
+                  },
+                  "topRight": {
+                    "lat": 0,
+                    "lng": 0
+                  }
+                }
+              }
+            ]
           }
         ]
       },
@@ -544,7 +443,88 @@
       ]
     },
     {
-      "stepDescription": "Interact with the boulder.",
+      "stepDescription": "Catch Two Raw Shrimp.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "additionalStepInformation": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "Raw Shrimp ( Beneath Cursed Tides )",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 791,
+                "lng": 5209,
+                "color": "#47c247",
+                "numberLabel": ""
+              },
+              {
+                "lat": 790,
+                "lng": 5204,
+                "color": "#47c247",
+                "numberLabel": ""
+              },
+              {
+                "lat": 785,
+                "lng": 5204,
+                "color": "#47c247",
+                "numberLabel": ""
+              },
+              {
+                "lat": 785,
+                "lng": 5210,
+                "color": "#47c247",
+                "numberLabel": ""
+              },
+              {
+                "lat": 792,
+                "lng": 5201,
+                "color": "#47c247",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 785,
+                "lng": 5201
+              },
+              "topRight": {
+                "lat": 793,
+                "lng": 5211
+              }
+            },
+            "color": "#47c247",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0
+    },
+    {
+      "stepDescription": "Interact with the boulder. ",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -569,29 +549,33 @@
         ],
         "object": [
           {
-            "name": "Steam Vent ( Old Lumbridge )",
+            "name": "Boulder ( Beneath Cursed Tides )",
             "objectLocation": [
               {
                 "lat": 786,
-                "lng": 5208
+                "lng": 5208,
+                "color": "#156fe5",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 785,
+                "lng": 5207
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 787,
+                "lng": 5209
               }
-            }
+            },
+            "color": "#156fe5",
+            "numberLabel": ""
           }
         ]
       },
       "floor": 0,
       "additionalStepInformation": [
-        "Boil 1 shrimp again to burn it. (Keep one boiled shrimp)"
+        ""
       ]
     },
     {
@@ -601,10 +585,10 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Brynna",
+            "npcName": "",
             "npcLocation": {
-              "lat": 794,
-              "lng": 5213
+              "lat": 0,
+              "lng": 0
             },
             "wanderRadius": {
               "bottomLeft": {
@@ -620,92 +604,33 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Steam Vent ( Beneath Cursed Tides )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 786,
+                "lng": 5210,
+                "color": "#156fe5",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 785,
+                "lng": 5209
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 787,
+                "lng": 5211
               }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Boil 1 shrimp again to burn it. (Keep one boiled shrimp)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
             },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "West Gate One ( Old Lumbridge )",
-            "objectLocation": [
-              {
-                "lat": 787,
-                "lng": 5200
-              },
-              {
-                "lat": 787,
-                "lng": 5201
-              },
-              {
-                "lat": 788,
-                "lng": 5201
-              },
-              {
-                "lat": 788,
-                "lng": 5200
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
+            "color": "#156fe5",
+            "numberLabel": ""
           }
         ]
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
+        "Boil 1 shrimp again to burn it. (Keep one boiled shrimp)"
       ]
     },
     {
@@ -715,19 +640,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Master Chef ( Old Lumbridge )",
+            "npcName": "Brynna",
             "npcLocation": {
-              "lat": 781,
-              "lng": 5187
+              "lat": 792,
+              "lng": 5215
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 779,
-                "lng": 5185
+                "lat": 789,
+                "lng": 5212
               },
               "topRight": {
-                "lat": 782,
-                "lng": 5189
+                "lat": 795,
+                "lng": 5218
               }
             }
           }
@@ -766,57 +691,6 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Large Jellyfish ( Old Lumbridge )",
-            "npcLocation": {
-              "lat": 771,
-              "lng": 5191
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 770,
-                "lng": 5190
-              },
-              "topRight": {
-                "lat": 772,
-                "lng": 5192
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Go to the building to the west and talk to Lev, the master chef.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
             "npcName": "",
             "npcLocation": {
               "lat": 0,
@@ -836,25 +710,85 @@
         ],
         "object": [
           {
-            "name": "Tasty Seaweed",
+            "name": "West Gate ( Beneath Cursed Tides )",
             "objectLocation": [
               {
-                "lat": 770,
-                "lng": 5192
+                "lat": 0,
+                "lng": 0
               },
               {
-                "lat": 769,
-                "lng": 5192
+                "lat": 788,
+                "lng": 5200,
+                "color": "#156fe5",
+                "numberLabel": ""
               },
               {
-                "lat": 769,
-                "lng": 5193
+                "lat": 788,
+                "lng": 5201,
+                "color": "#156fe5",
+                "numberLabel": ""
               },
               {
-                "lat": 770,
-                "lng": 5193
+                "lat": 787,
+                "lng": 5201,
+                "color": "#156fe5",
+                "numberLabel": ""
+              },
+              {
+                "lat": 787,
+                "lng": 5200,
+                "color": "#156fe5",
+                "numberLabel": ""
               }
             ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 786,
+                "lng": 5199
+              },
+              "topRight": {
+                "lat": 789,
+                "lng": 5202
+              }
+            },
+            "color": "#156fe5",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Go to the building to the west and talk to Lev, the master chef.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Master Chef ( Beneath Cursed Tides )",
+            "npcLocation": {
+              "lat": 780,
+              "lng": 5187
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 777,
+                "lng": 5184
+              },
+              "topRight": {
+                "lat": 783,
+                "lng": 5190
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [],
             "objectRadius": {
               "bottomLeft": {
                 "lat": 0,
@@ -864,7 +798,9 @@
                 "lat": 0,
                 "lng": 0
               }
-            }
+            },
+            "color": "#156fe5",
+            "numberLabel": ""
           }
         ]
       },
@@ -880,19 +816,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Master Chef ( Old Lumbridge )",
+            "npcName": "Large Jellyfish",
             "npcLocation": {
-              "lat": 781,
-              "lng": 5187
+              "lat": 771,
+              "lng": 5192
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 779,
-                "lng": 5185
+                "lat": 770,
+                "lng": 5191
               },
               "topRight": {
-                "lat": 782,
-                "lng": 5189
+                "lat": 772,
+                "lng": 5193
               }
             }
           }

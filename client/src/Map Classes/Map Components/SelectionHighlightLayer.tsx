@@ -235,15 +235,15 @@ export const SelectionHighlightLayer: React.FC<
 
     if (geometry.type === "object" && geometry.objectArray) {
       geometry.objectArray.forEach((obj) => {
-        // --- FIX #3: Loop through each location and use its specific data ---
-        obj.objectLocation.forEach((loc) => {
+        // --- FIX: Default to [] if objectLocation is missing ---
+        (obj.objectLocation ?? []).forEach((loc) => {
           if (loc.lat !== 0 || loc.lng !== 0) {
             const visualCenter = convertStoredToVisual(loc);
             const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
 
             const pointStyle = {
               ...tileStyle,
-              color: loc.color || "#FF00FF", // Use the location's color
+              color: loc.color || "#FF00FF",
               fillColor: loc.color || "#FF00FF",
             };
             L.rectangle(tileBounds, pointStyle).addTo(layerRef.current!);
@@ -262,7 +262,6 @@ export const SelectionHighlightLayer: React.FC<
             }
           }
         });
-        // --------------------------------------------------------------------
 
         if (
           obj.objectRadius &&
