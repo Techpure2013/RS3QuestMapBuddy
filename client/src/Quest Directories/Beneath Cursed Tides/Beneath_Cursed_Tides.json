@@ -155,7 +155,7 @@
       ]
     },
     {
-      "stepDescription": "Make your way to Mudskipper Point. The fastest route is via fairy ring AIQ. Alternatively, you can run south from the Port Sarim lodestone.",
+      "stepDescription": "Make your way to Mudskipper Point.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -258,7 +258,7 @@
       ]
     },
     {
-      "stepDescription": "If you have completed the Freeing Pirate Pete Recipe for Disaster subquest, or have built any kind of diving suit in the Aquarium. (Chat 1•1•2•1)",
+      "stepDescription": "East of the room, read the message in the bottle for the key and open the door.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -305,7 +305,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        "East of the room, read the message in the bottle for the key and open the door."
+        ""
       ]
     },
     {
@@ -1830,12 +1830,12 @@
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 740,
+                "lng": 5477
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 742,
+                "lng": 5479
               }
             },
             "color": "#fb00ff",
