@@ -53,7 +53,7 @@
       ]
     },
     {
-      "stepDescription": "Items needed: Bowstring and mithril 2h sword",
+      "stepDescription": "Head to Doric's hut north of the Falador lodestone and use a mithril 2h sword on the whetstone outside of the hut then  Use a bowstring on the slender blade.",
       "itemsNeeded": [
         "Bowstring and mithril 2h sword"
       ],
@@ -80,74 +80,31 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Whetstone",
             "objectLocation": [
               {
                 "lat": 0,
                 "lng": 0
+              },
+              {
+                "lat": 3443,
+                "lng": 2952,
+                "color": "#00FF00",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3442,
+                "lng": 2951
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3444,
+                "lng": 2952
               }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Head to Doric's hut north of the Falador lodestone and use a mithril 2h sword on the whetstone outside of the hut.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Whestone",
-            "npcLocation": {
-              "lat": 3443,
-              "lng": 2952
             },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "W",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
+            "color": "#00FF00",
+            "numberLabel": ""
           }
         ]
       },
@@ -157,58 +114,7 @@
       ]
     },
     {
-      "stepDescription": "Use a bowstring on the slender blade.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Return to the monk. (Chat 1)",
+      "stepDescription": "Return to the monk. (Chat 1) then use the orb on the large pouch",
       "itemsNeeded": [
         "Large pouch"
       ],
@@ -257,29 +163,29 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
+        "Bank anything you have, except for the large pouch."
       ]
     },
     {
-      "stepDescription": "Items needed: Large pouch",
+      "stepDescription": "Reach Entrana either through the Abyss.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Mage of Zamorak",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3558,
+              "lng": 3106
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3554,
+                "lng": 3102
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3562,
+                "lng": 3110
               }
             }
           }
@@ -308,270 +214,9 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Use the orb on a large pouch.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Bank anything you have, except for the large pouch.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Reach Entrana either through the Abyss or by using a Law altar teleport.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Note: A wicked hood will not work here.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "If entering through the Abyss: Enter the Abyss north of Edgeville, then make your way to the Law rift. Dismiss any Summoning familiar. Leave the Law Altar by using the portal.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Law Altar",
-            "npcLocation": {
-              "lat": 3381,
-              "lng": 2857
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3378,
-                "lng": 2854
-              },
-              "topRight": {
-                "lat": 3384,
-                "lng": 2860
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              },
-              {
-                "lat": 3381,
-                "lng": 2857,
-                "color": "#00FF00",
-                "numberLabel": ""
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            },
-            "color": "#00FF00",
-            "numberLabel": ""
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "If entering through the Abyss: Enter the Abyss north of Edgeville, then make your way to the Law rift. Dismiss any Summoning familiar. Leave the Law Altar by using the portal.",
+        "Alternatively you can use the Law Altar Teleport",
+        "Note: A wicked hood will not work here."
       ]
     },
     {
@@ -583,8 +228,8 @@
           {
             "npcName": "",
             "npcLocation": {
-              "lat": 3349,
-              "lng": 2852
+              "lat": 0,
+              "lng": 0
             },
             "wanderRadius": {
               "bottomLeft": {
@@ -600,23 +245,27 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Entrana Church",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 3349,
+                "lng": 2851,
+                "color": "#00ff88",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3341,
+                "lng": 2840
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3356,
+                "lng": 2856
               }
-            }
+            },
+            "color": "#00ff88",
+            "numberLabel": ""
           }
         ]
       },
@@ -634,57 +283,6 @@
           {
             "npcName": "",
             "npcLocation": {
-              "lat": 3349,
-              "lng": 2852
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Watch the cutscene.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
               "lat": 0,
               "lng": 0
             },
@@ -702,29 +300,43 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Entrana Prayer Altar",
             "objectLocation": [
               {
                 "lat": 0,
                 "lng": 0
+              },
+              {
+                "lat": 3349,
+                "lng": 2852,
+                "color": "#00ff88",
+                "numberLabel": ""
+              },
+              {
+                "lat": 3348,
+                "lng": 2852,
+                "color": "#00ff88",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3347,
+                "lng": 2851
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3350,
+                "lng": 2853
               }
-            }
+            },
+            "color": "#00ff88",
+            "numberLabel": ""
           }
         ]
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
+        "Watch the cutscene."
       ]
     },
     {
@@ -843,12 +455,12 @@
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 7650,
+                "lng": 3847
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 7654,
+                "lng": 3851
               }
             }
           }
@@ -936,58 +548,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "A wicked hood will work now.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "A wicked hood will work now."
       ]
     },
     {
@@ -1038,24 +599,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "(Chat 2) if The Slug Menace has not yet been started.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "(Chat 2) if The Slug Menace has not yet been started."
       ]
     },
     {
