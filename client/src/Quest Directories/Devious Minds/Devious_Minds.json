@@ -8,19 +8,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Monk (Devious Minds)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3495,
+              "lng": 3399
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3489,
+                "lng": 3393
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3501,
+                "lng": 3405
               }
             }
           }
@@ -112,10 +112,10 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Whestone",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3443,
+              "lng": 2952
             },
             "wanderRadius": {
               "bottomLeft": {
@@ -131,7 +131,7 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "W",
             "objectLocation": [
               {
                 "lat": 0,
@@ -216,19 +216,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Monk (Devious Minds)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3492,
+              "lng": 3401
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3487,
+                "lng": 3396
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3497,
+                "lng": 3406
               }
             }
           }
@@ -522,19 +522,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Law Altar",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3381,
+              "lng": 2857
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3378,
+                "lng": 2854
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3384,
+                "lng": 2860
               }
             }
           }
@@ -546,6 +546,12 @@
               {
                 "lat": 0,
                 "lng": 0
+              },
+              {
+                "lat": 3381,
+                "lng": 2857,
+                "color": "#00FF00",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
@@ -557,7 +563,9 @@
                 "lat": 0,
                 "lng": 0
               }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           }
         ]
       },
@@ -575,8 +583,8 @@
           {
             "npcName": "",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3349,
+              "lng": 2852
             },
             "wanderRadius": {
               "bottomLeft": {
@@ -626,8 +634,8 @@
           {
             "npcName": "",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3349,
+              "lng": 2852
             },
             "wanderRadius": {
               "bottomLeft": {
@@ -726,19 +734,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "High Priest",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3349,
+              "lng": 2851
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3346,
+                "lng": 2848
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3352,
+                "lng": 2854
               }
             }
           }
@@ -777,19 +785,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Monk (Devious Minds)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 7652,
+              "lng": 3849
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 7647,
+                "lng": 3844
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 7657,
+                "lng": 3854
               }
             }
           }
@@ -828,10 +836,10 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Dead Monk",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 7652,
+              "lng": 3849
             },
             "wanderRadius": {
               "bottomLeft": {
@@ -879,30 +887,36 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "High Priest",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3349,
+              "lng": 2851
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3346,
+                "lng": 2848
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3352,
+                "lng": 2854
               }
             }
           }
         ],
         "object": [
           {
-            "name": "",
+            "name": "High Priest Andronikos",
             "objectLocation": [
               {
                 "lat": 0,
                 "lng": 0
+              },
+              {
+                "lat": 3348,
+                "lng": 2851,
+                "color": "#00FF00",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
@@ -914,7 +928,9 @@
                 "lat": 0,
                 "lng": 0
               }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           }
         ]
       },
@@ -981,19 +997,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Sir Tiffy Cashien",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3373,
+              "lng": 2997
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3372,
+                "lng": 2996
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3374,
+                "lng": 2998
               }
             }
           }
