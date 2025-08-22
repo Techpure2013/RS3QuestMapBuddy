@@ -384,23 +384,27 @@
             "objectLocation": [
               {
                 "lat": 792,
-                "lng": 5210
+                "lng": 5210,
+                "color": "#fc1db5",
+                "numberLabel": ""
               },
               {
                 "lat": 792,
-                "lng": 5211
+                "lng": 5211,
+                "color": "#fc1db5",
+                "numberLabel": ""
               },
               {
                 "lat": 791,
-                "lng": 5211
+                "lng": 5211,
+                "color": "#fc1db5",
+                "numberLabel": ""
               },
               {
                 "lat": 791,
-                "lng": 5210
-              },
-              {
-                "lat": 792,
-                "lng": 5207
+                "lng": 5210,
+                "color": "#fc1db5",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
@@ -413,11 +417,11 @@
                 "lng": 5212
               }
             },
-            "color": "#104af9",
+            "color": "#fc1db5",
             "numberLabel": ""
           },
           {
-            "name": "New Object",
+            "name": "Seaweed ( Beneath Cursed Tides )",
             "object": [
               {
                 "name": "",
@@ -433,7 +437,27 @@
                   }
                 }
               }
-            ]
+            ],
+            "color": "#3d0dfd",
+            "objectLocation": [
+              {
+                "lat": 792,
+                "lng": 5207,
+                "color": "#3d0dfd",
+                "numberLabel": ""
+              }
+            ],
+            "numberLabel": "",
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 790,
+                "lng": 5206
+              },
+              "topRight": {
+                "lat": 793,
+                "lng": 5208
+              }
+            }
           }
         ]
       },
@@ -816,7 +840,7 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Large Jellyfish",
+            "npcName": "Large Jellyfish ( Beneath Cursed Tides )",
             "npcLocation": {
               "lat": 771,
               "lng": 5192
@@ -886,27 +910,127 @@
         ],
         "object": [
           {
-            "name": "Large Table ( Old Lumbridge )",
+            "name": "Tasty Seaweed",
             "objectLocation": [
               {
-                "lat": 780,
-                "lng": 5184
+                "lat": 0,
+                "lng": 0
               },
               {
-                "lat": 779,
-                "lng": 5184
+                "lat": 770,
+                "lng": 5192,
+                "color": "#00FF00",
+                "numberLabel": ""
+              },
+              {
+                "lat": 770,
+                "lng": 5193,
+                "color": "#00FF00",
+                "numberLabel": ""
+              },
+              {
+                "lat": 769,
+                "lng": 5192,
+                "color": "#00FF00",
+                "numberLabel": ""
+              },
+              {
+                "lat": 769,
+                "lng": 5193,
+                "color": "#00FF00",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
+                "lat": 768,
+                "lng": 5191
+              },
+              "topRight": {
+                "lat": 771,
+                "lng": 5194
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to the master chef again.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Master Chef ( Beneath Cursed Tides )",
+            "npcLocation": {
+              "lat": 781,
+              "lng": 5187
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 779,
+                "lng": 5185
+              },
+              "topRight": {
+                "lat": 783,
+                "lng": 5189
+              }
+            }
+          }
+        ],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Prepare the large table 3 times by matching the 3 tastes with 3 ingredients. (large table is in the same house)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": [
+          {
+            "name": "Master Chef's Table ( Beneath Cursed Tides )",
+            "objectLocation": [
+              {
                 "lat": 0,
                 "lng": 0
               },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
+              {
+                "lat": 780,
+                "lng": 5184,
+                "color": "#ee00ff",
+                "numberLabel": ""
+              },
+              {
+                "lat": 779,
+                "lng": 5184,
+                "color": "#ee00ff",
+                "numberLabel": ""
               }
-            }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 779,
+                "lng": 5184
+              },
+              "topRight": {
+                "lat": 781,
+                "lng": 5185
+              }
+            },
+            "color": "#ee00ff",
+            "numberLabel": ""
           }
         ]
       },
@@ -918,500 +1042,85 @@
       ]
     },
     {
-      "stepDescription": "Talk to the master chef again.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "West Door ( Master Chef House )",
-            "objectLocation": [
-              {
-                "lat": 786,
-                "lng": 5184
-              },
-              {
-                "lat": 786,
-                "lng": 5183
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          },
-          {
-            "name": "Small House",
-            "objectLocation": [
-              {
-                "lat": 815,
-                "lng": 5199
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 815,
-                "lng": 5191
-              },
-              "topRight": {
-                "lat": 821,
-                "lng": 5200
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "Climb down the ladder."
-      ]
-    },
-    {
-      "stepDescription": "Prepare the large table 3 times by matching the 3 tastes with 3 ingredients. (large table is in the same house)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Mining Instructor ( Old Lumbridge )",
-            "npcLocation": {
-              "lat": 728,
-              "lng": 5455
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 726,
-                "lng": 5453
-              },
-              "topRight": {
-                "lat": 729,
-                "lng": 5457
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Recipe Number And Recipe Solution",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "Soggy Copper Ore",
-            "objectLocation": [
-              {
-                "lat": 726,
-                "lng": 5450
-              },
-              {
-                "lat": 727,
-                "lng": 5449
-              },
-              {
-                "lat": 727,
-                "lng": 5450
-              },
-              {
-                "lat": 728,
-                "lng": 5450
-              },
-              {
-                "lat": 728,
-                "lng": 5449
-              },
-              {
-                "lat": 730,
-                "lng": 5448
-              },
-              {
-                "lat": 730,
-                "lng": 5449
-              },
-              {
-                "lat": 731,
-                "lng": 5449
-              },
-              {
-                "lat": 731,
-                "lng": 5448
-              },
-              {
-                "lat": 731,
-                "lng": 5450
-              },
-              {
-                "lat": 732,
-                "lng": 5451
-              },
-              {
-                "lat": 731,
-                "lng": 5451
-              },
-              {
-                "lat": 731,
-                "lng": 5452
-              },
-              {
-                "lat": 732,
-                "lng": 5452
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          },
-          {
-            "name": "Soggy Tin Ore",
-            "objectLocation": [
-              {
-                "lat": 723,
-                "lng": 5461
-              },
-              {
-                "lat": 724,
-                "lng": 5463
-              },
-              {
-                "lat": 724,
-                "lng": 5465
-              },
-              {
-                "lat": 723,
-                "lng": 5465
-              },
-              {
-                "lat": 723,
-                "lng": 5466
-              },
-              {
-                "lat": 724,
-                "lng": 5466
-              },
-              {
-                "lat": 722,
-                "lng": 5463
-              },
-              {
-                "lat": 721,
-                "lng": 5463
-              },
-              {
-                "lat": 721,
-                "lng": 5462
-              },
-              {
-                "lat": 722,
-                "lng": 5462
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "First: Sweet, Sour, Spicy -> 1 up, 2 up, 3 up",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "Furnace ( Old Lumbridge )",
-            "objectLocation": [
-              {
-                "lat": 719,
-                "lng": 5453
-              },
-              {
-                "lat": 718,
-                "lng": 5453
-              },
-              {
-                "lat": 719,
-                "lng": 5454
-              },
-              {
-                "lat": 718,
-                "lng": 5455
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "Right click and close the doors."
-      ]
-    },
-    {
-      "stepDescription": "Second: Mellow, Sour, Bitter -> 2 down, 2 up, 3 down",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "Pump ( Old Lumbridge )",
-            "objectLocation": [
-              {
-                "lat": 721,
-                "lng": 5455
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "Retrieve the bronzish bar from the furnace."
-      ]
-    },
-    {
-      "stepDescription": "Third: Spicy, Salty, Bitter -> 3 up, 1 down, 3 down",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "Anvil ( Old Lumbridge )",
-            "objectLocation": [
-              {
-                "lat": 722,
-                "lng": 5458
-              },
-              {
-                "lat": 720,
-                "lng": 5458
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
       "stepDescription": "Continue through the west door to the small house in the north.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "Mining Instructor ( Old Lumbridge )",
-            "npcLocation": {
-              "lat": 728,
-              "lng": 5455
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 726,
-                "lng": 5453
-              },
-              "topRight": {
-                "lat": 729,
-                "lng": 5457
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
-            "name": "",
+            "name": "West Door ( Beneath Cursed Tides )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 786,
+                "lng": 5184,
+                "color": "#ee00ff",
+                "numberLabel": ""
+              },
+              {
+                "lat": 786,
+                "lng": 5183,
+                "color": "#ee00ff",
+                "numberLabel": ""
+              },
+              {
+                "lat": 818,
+                "lng": 5196,
+                "color": "#ff0088",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
+                "lat": 785,
+                "lng": 5182
+              },
+              "topRight": {
+                "lat": 787,
+                "lng": 5184
+              }
+            },
+            "color": "#ff0088",
+            "numberLabel": ""
+          },
+          {
+            "name": "Small House ( Beneath Cursed Tides )",
+            "objectLocation": [
+              {
                 "lat": 0,
                 "lng": 0
               },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
+              {
+                "lat": 818,
+                "lng": 5196,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 786,
+                "lng": 5183,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 786,
+                "lng": 5184,
+                "color": "#ff0088",
+                "numberLabel": ""
               }
-            }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 814,
+                "lng": 5190
+              },
+              "topRight": {
+                "lat": 822,
+                "lng": 5201
+              }
+            },
+            "color": "#ff0088",
+            "numberLabel": ""
           }
         ]
       },
@@ -1446,35 +1155,31 @@
         ],
         "object": [
           {
-            "name": "East Gate ( Old Lumbridge )",
+            "name": "Ladder Down ( Beneath Cursed Tides )",
             "objectLocation": [
               {
-                "lat": 726,
-                "lng": 5469
+                "lat": 0,
+                "lng": 0
               },
               {
-                "lat": 726,
-                "lng": 5470
-              },
-              {
-                "lat": 725,
-                "lng": 5470
-              },
-              {
-                "lat": 725,
-                "lng": 5469
+                "lat": 815,
+                "lng": 5199,
+                "color": "#ff0088",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 815,
+                "lng": 5198
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 816,
+                "lng": 5200
               }
-            }
+            },
+            "color": "#ff0088",
+            "numberLabel": ""
           }
         ]
       },
@@ -1490,19 +1195,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": " Vannaka ( Old Lumbridge )",
+            "npcName": "Dezzick, The Mining Instructor",
             "npcLocation": {
-              "lat": 732,
-              "lng": 5482
+              "lat": 728,
+              "lng": 5455
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 729,
-                "lng": 5480
+                "lat": 725,
+                "lng": 5452
               },
               "topRight": {
-                "lat": 734,
-                "lng": 5483
+                "lat": 731,
+                "lng": 5458
               }
             }
           }
@@ -1560,60 +1265,180 @@
         ],
         "object": [
           {
-            "name": "Mice Gate ( Old Lumbridge )",
+            "name": "Soggy Copper Ore",
             "objectLocation": [
               {
-                "lat": 734,
-                "lng": 5483
+                "lat": 0,
+                "lng": 0
               },
               {
-                "lat": 742,
-                "lng": 5485
+                "lat": 726,
+                "lng": 5450,
+                "color": "#ff0088",
+                "numberLabel": ""
               },
               {
-                "lat": 741,
-                "lng": 5486
+                "lat": 727,
+                "lng": 5449,
+                "color": "#ff0088",
+                "numberLabel": ""
               },
               {
-                "lat": 741,
-                "lng": 5485
+                "lat": 727,
+                "lng": 5450,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 728,
+                "lng": 5450,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 728,
+                "lng": 5449,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 730,
+                "lng": 5448,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 730,
+                "lng": 5449,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 731,
+                "lng": 5449,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 731,
+                "lng": 5450,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 731,
+                "lng": 5451,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 732,
+                "lng": 5452,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 731,
+                "lng": 5452,
+                "color": "#ff0088",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 724,
+                "lng": 5448
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 733,
+                "lng": 5453
               }
-            }
+            },
+            "color": "#ff0088",
+            "numberLabel": ""
           },
           {
-            "name": "Sword and Shield ( Old Lumbridge )",
+            "name": "Soggy Tin Ore",
             "objectLocation": [
               {
-                "lat": 741,
-                "lng": 5478
+                "lat": 721,
+                "lng": 5462,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 722,
+                "lng": 5463,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 721,
+                "lng": 5463,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 722,
+                "lng": 5462,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 724,
+                "lng": 5463,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 723,
+                "lng": 5461,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 723,
+                "lng": 5465,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 724,
+                "lng": 5466,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 723,
+                "lng": 5466,
+                "color": "#ff0088",
+                "numberLabel": ""
+              },
+              {
+                "lat": 724,
+                "lng": 5465,
+                "color": "#ff0088",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 720,
+                "lng": 5460
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 725,
+                "lng": 5467
               }
-            }
+            },
+            "color": "#ff0088",
+            "numberLabel": ""
           }
         ]
       },
       "floor": 0,
       "additionalStepInformation": [
-        "Click on the rats and other elements bouncing on the screen once it begins."
+        ""
       ]
     },
     {
@@ -1642,80 +1467,37 @@
         ],
         "object": [
           {
-            "name": "Ladder ( Old Lumbridge )",
+            "name": "Furnace ( Beneath Cursed Tides )",
             "objectLocation": [
               {
-                "lat": 749,
-                "lng": 5486
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 718,
+                "lng": 5454,
+                "color": "#ff0088",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 718,
+                "lng": 5453
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 719,
+                "lng": 5455
               }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Right click and close the doors.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Financial Advisor ( Old Lumbridge )",
-            "npcLocation": {
-              "lat": 820,
-              "lng": 5235
             },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
+            "color": "#ff0088",
+            "numberLabel": ""
           }
         ]
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
+        "Right click and close the doors after you add the ores to the furnace."
       ]
     },
     {
@@ -1744,23 +1526,31 @@
         ],
         "object": [
           {
-            "name": "Vault ( Old Lumbridge )",
+            "name": "Pump",
             "objectLocation": [
               {
-                "lat": 820,
-                "lng": 5229
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 721,
+                "lng": 5455,
+                "color": "#ff0088",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 721,
+                "lng": 5454
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 722,
+                "lng": 5456
               }
-            }
+            },
+            "color": "#ff0088",
+            "numberLabel": ""
           }
         ]
       },
@@ -1774,44 +1564,34 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "Financial Advisor ( Old Lumbridge )",
-            "npcLocation": {
-              "lat": 820,
-              "lng": 5235
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
-            "name": "",
+            "name": "Furnace",
             "objectLocation": [
               {
                 "lat": 0,
                 "lng": 0
+              },
+              {
+                "lat": 718,
+                "lng": 5454,
+                "color": "#00FF00",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 718,
+                "lng": 5453
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 719,
+                "lng": 5455
               }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           }
         ]
       },
@@ -1847,6 +1627,161 @@
         ],
         "object": [
           {
+            "name": "Anvil's ( Beneath Cursed Tides )",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 722,
+                "lng": 5458,
+                "color": "#00FF00",
+                "numberLabel": ""
+              },
+              {
+                "lat": 720,
+                "lng": 5458,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to the mining instructor again.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Dezzick, The Mining Instructor",
+            "npcLocation": {
+              "lat": 727,
+              "lng": 5455
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 724,
+                "lng": 5452
+              },
+              "topRight": {
+                "lat": 730,
+                "lng": 5458
+              }
+            }
+          }
+        ],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Continue through the east gate.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": [
+          {
+            "name": "East Gate ( Beneath Cursed Tides )",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 726,
+                "lng": 5469,
+                "color": "#fb00ff",
+                "numberLabel": ""
+              },
+              {
+                "lat": 726,
+                "lng": 5470,
+                "color": "#fb00ff",
+                "numberLabel": ""
+              },
+              {
+                "lat": 725,
+                "lng": 5470,
+                "color": "#fb00ff",
+                "numberLabel": ""
+              },
+              {
+                "lat": 725,
+                "lng": 5469,
+                "color": "#fb00ff",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 724,
+                "lng": 5468
+              },
+              "topRight": {
+                "lat": 726,
+                "lng": 5471
+              }
+            },
+            "color": "#fb00ff",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Vannaka, the combat instructor. (Chat 1•2)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Vannaka",
+            "npcLocation": {
+              "lat": 732,
+              "lng": 5482
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 729,
+                "lng": 5479
+              },
+              "topRight": {
+                "lat": 735,
+                "lng": 5485
+              }
+            }
+          }
+        ],
+        "object": [
+          {
             "name": "",
             "objectLocation": [
               {
@@ -1869,13 +1804,324 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        "Read the friend list."
+        ""
       ]
     },
     {
-      "stepDescription": "Talk to the mining instructor again.",
+      "stepDescription": "Open the gate and click on the sword in the middle of the room to begin combat training.",
       "itemsNeeded": [],
       "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": [
+          {
+            "name": "Sword ( Beneath Cursed Tides )",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 741,
+                "lng": 5478,
+                "color": "#fb00ff",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#fb00ff",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        "Click on the rats and other elements bouncing on the screen once it begins."
+      ]
+    },
+    {
+      "stepDescription": "Exit the cage and climb the ladder to the north-east.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "Ladder Up ( Beneath Cursed Tides )",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 749,
+                "lng": 5486,
+                "color": "#fb00ff",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#fb00ff",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to the financial advisor. (Chat 1)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Financial Advisor ( Crassian )",
+            "npcLocation": {
+              "lat": 819,
+              "lng": 5234
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 816,
+                "lng": 5231
+              },
+              "topRight": {
+                "lat": 822,
+                "lng": 5237
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Enter the vault (the code is 139).",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": [
+          {
+            "name": "Vault ( Beneath Cursed Tides )",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 820,
+                "lng": 5229,
+                "color": "#fb00ff",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 819,
+                "lng": 5229
+              },
+              "topRight": {
+                "lat": 821,
+                "lng": 5229
+              }
+            },
+            "color": "#fb00ff",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to the financial advisor then leave through the 2 doors to the east.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Financial Advisor ( Crassian )",
+            "npcLocation": {
+              "lat": 819,
+              "lng": 5234
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 816,
+                "lng": 5231
+              },
+              "topRight": {
+                "lat": 822,
+                "lng": 5237
+              }
+            }
+          }
+        ],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Head south to the church through double doors",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": [
+          {
+            "name": "Church ( Beneath Cursed Tides )",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 803,
+                "lng": 5234,
+                "color": "#fb00ff",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 799,
+                "lng": 5231
+              },
+              "topRight": {
+                "lat": 806,
+                "lng": 5239
+              }
+            },
+            "color": "#fb00ff",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Brother Brace and Read the friend list given to you.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Brother Brace ( Crassian )",
+            "npcLocation": {
+              "lat": 803,
+              "lng": 5233
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 800,
+                "lng": 5230
+              },
+              "topRight": {
+                "lat": 806,
+                "lng": 5236
+              }
+            }
+          }
+        ],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "One of the five fish will tell you where the book is. Search for it.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
       "highlights": {
         "npc": [
           {
@@ -1964,558 +2210,11 @@
             }
           }
         ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "One of the five fish will tell you where the book is. Search for it."
-      ]
-    },
-    {
-      "stepDescription": "Continue through the east gate.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Brother Brace",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 802,
-                "lng": 5234
-              },
-              "topRight": {
-                "lat": 804,
-                "lng": 5235
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Talk to Vannaka, the combat instructor. (Chat 1•2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Wizard Terrova",
-            "npcLocation": {
-              "lat": 787,
-              "lng": 5250
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 786,
-                "lng": 5249
-              },
-              "topRight": {
-                "lat": 787,
-                "lng": 5251
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "Attack a chicken."
-      ]
-    },
-    {
-      "stepDescription": "Open the gate and click on the sword in the middle of the room to begin combat training.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Wizard Terrova",
-            "npcLocation": {
-              "lat": 787,
-              "lng": 5250
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 786,
-                "lng": 5249
-              },
-              "topRight": {
-                "lat": 787,
-                "lng": 5251
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Click on the rats and other elements bouncing on the screen.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Exit the cage and climb the ladder to the north-east.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Fishy business",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Talk to the financial advisor. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Wizard Myrtle ( Old Lumbridge )",
-            "npcLocation": {
-              "lat": 778,
-              "lng": 5238
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 777,
-                "lng": 5237
-              },
-              "topRight": {
-                "lat": 779,
-                "lng": 5239
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Enter the vault (the code is 139).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Talk to the financial advisor.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
         "object": []
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Leave through the 2 doors to the east",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Head south to the church through double doors",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Talk to Brother Brace.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Read the friend list",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "There will be 2 fish just east of the bank and 3 fish back through the 2 doors leading through the bank",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "One of the five fish will tell you where the book is. Search for it.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "There will be 2 fish just east of the bank and 3 fish back through the 2 doors leading through the bank"
       ]
     },
     {
@@ -2527,7 +2226,25 @@
         "none"
       ],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Brother Brace ( Crassian )",
+            "npcLocation": {
+              "lat": 803,
+              "lng": 5233
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 800,
+                "lng": 5230
+              },
+              "topRight": {
+                "lat": 806,
+                "lng": 5236
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -2536,7 +2253,42 @@
       ]
     },
     {
-      "stepDescription": "Go through the south door to the south-east building and talk to Wizard Terrova. (Chat 1•1)",
+      "stepDescription": "Go through the south door to the south-east building and talk to Wizard Terrova. (Chat 1•1) then attack a chicken.",
+      "itemsNeeded": [
+        "none"
+      ],
+      "itemsRecommended": [
+        "none"
+      ],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "New NPC",
+            "npcLocation": {
+              "lat": 785,
+              "lng": 5251
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 782,
+                "lng": 5248
+              },
+              "topRight": {
+                "lat": 788,
+                "lng": 5254
+              }
+            }
+          }
+        ],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "When you walk out the door a cutscene will start. Pick any option during the cutscene.",
       "itemsNeeded": [
         "none"
       ],
@@ -2553,7 +2305,7 @@
       ]
     },
     {
-      "stepDescription": "Attack a chicken.",
+      "stepDescription": "",
       "itemsNeeded": [
         "none"
       ],
@@ -2570,7 +2322,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the wizard.",
+      "stepDescription": "Every time a Crassian shows up click on them to repel them and continue to channel the spell. Watch the spell because the channeling location changes horizontally.",
       "itemsNeeded": [
         "none"
       ],
@@ -2587,7 +2339,7 @@
       ]
     },
     {
-      "stepDescription": "Commotion in the ocean",
+      "stepDescription": "Click Hector Vivian to finish him.",
       "itemsNeeded": [
         "none"
       ],
@@ -2595,58 +2347,25 @@
         "none"
       ],
       "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Pick any option during the cutscene.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Channel the spell while repelling Crassians.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Finish Hector Vivian.",
-      "itemsNeeded": [
-        "none"
-      ],
-      "itemsRecommended": [
-        "none"
-      ],
-      "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Hector Vivian",
+            "npcLocation": {
+              "lat": 778,
+              "lng": 5240
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 776,
+                "lng": 5238
+              },
+              "topRight": {
+                "lat": 780,
+                "lng": 5242
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -2663,7 +2382,25 @@
         "none"
       ],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Wizard Myrtle",
+            "npcLocation": {
+              "lat": 3113,
+              "lng": 3003
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3111,
+                "lng": 3001
+              },
+              "topRight": {
+                "lat": 3115,
+                "lng": 3005
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,

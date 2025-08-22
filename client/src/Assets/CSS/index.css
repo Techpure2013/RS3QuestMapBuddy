@@ -567,3 +567,34 @@ button:hover {
   background-color: #007bff;
   color: white;
 }
+.target-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #1f2937;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.target-list li {
+  padding: 6px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #374151;
+  color: #f9fafb;
+}
+
+.target-list li:last-child {
+  border-bottom: none;
+}
+
+.target-list li:hover {
+  background-color: #374151;
+}
+
+.target-list li.active {
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+}

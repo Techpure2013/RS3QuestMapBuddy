@@ -2,6 +2,7 @@ import React from "react";
 
 interface EditorPanelProps {
   children?: React.ReactNode;
+  questJson: any;
   isOpen: boolean;
   onResetRadius: () => void;
   itemsNeededValue: string;
@@ -50,11 +51,14 @@ interface EditorPanelProps {
   onNewQuest: () => void;
   onAddObject: () => void;
   onSubmitToGitHub: () => void;
+  onDeleteNpc: () => void;
+  onDeleteObject: () => void;
 }
 
 export const EditorPanel = React.memo<EditorPanelProps>(
   ({
     children,
+    questJson,
     isOpen,
     onResetRadius,
     itemsNeededValue,
@@ -101,6 +105,8 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     onNewQuest,
     onAddObject,
     onSubmitToGitHub,
+    onDeleteNpc,
+    onDeleteObject,
   }) => {
     const handleEnterAsNewline = (
       event: React.KeyboardEvent<HTMLTextAreaElement>,
@@ -271,15 +277,24 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             </select>
           </div>
 
-          <div className="control-group">
-            <label>Target Index</label>
-            <input
-              type="number"
-              value={targetIndex + 1}
-              onChange={(e) =>
-                onTargetIndexChange(parseInt(e.target.value, 10) - 1)
-              }
-            />
+          <div className="control-group full-width-control">
+            <label>{targetType === "npc" ? "NPCs" : "Objects"}</label>
+            <ul className="target-list">
+              {(
+                questJson?.questSteps[selectedStep]?.highlights?.[targetType] ||
+                []
+              ).map((item: any, index: number) => (
+                <li
+                  key={index}
+                  className={index === targetIndex ? "active" : ""}
+                  onClick={() => onTargetIndexChange(index)}
+                >
+                  {targetType === "npc"
+                    ? item.npcName || `NPC ${index + 1}`
+                    : item.name || `Object ${index + 1}`}
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="control-group full-width-control">
@@ -302,6 +317,9 @@ export const EditorPanel = React.memo<EditorPanelProps>(
               </button>
               <button onClick={onAddNpc} className="button--add">
                 Add New NPC
+              </button>
+              <button onClick={onDeleteNpc} className="button--delete">
+                Delete NPC
               </button>
             </div>
           </div>
@@ -343,6 +361,9 @@ export const EditorPanel = React.memo<EditorPanelProps>(
                 </button>
                 <button onClick={onAddObject} className="button--add">
                   Add New Object
+                </button>
+                <button onClick={onDeleteObject} className="button--delete">
+                  Delete Object
                 </button>
               </div>
             </div>

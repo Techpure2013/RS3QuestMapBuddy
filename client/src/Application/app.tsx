@@ -172,8 +172,17 @@ const App: React.FC = () => {
     } else {
       setTargetIndex(0);
     }
-  }, [questJson, selectedStep]);
+  }, [selectedStep]);
+  useEffect(() => {
+    if (!questJson) return;
+    const step = questJson.questSteps[selectedStep];
+    if (!step) return;
 
+    const arr = step.highlights?.[targetType] || [];
+    if (targetIndex >= arr.length) {
+      setTargetIndex(Math.max(0, arr.length - 1));
+    }
+  }, [questJson, selectedStep, targetType, targetIndex]);
   useEffect(() => {
     if (targetType === "object") {
       setCaptureMode("multi-point");
@@ -183,6 +192,43 @@ const App: React.FC = () => {
   }, [targetType]);
 
   // --- HANDLERS ---
+  const handleDeleteNpc = () => {
+    if (!questJson || targetType !== "npc") return;
+
+    const nextState = produce(questJson, (draft) => {
+      const step = draft.questSteps[selectedStep];
+      if (!step?.highlights?.npc) return;
+
+      // Remove the NPC at targetIndex
+      step.highlights.npc.splice(targetIndex, 1);
+
+      // Clamp targetIndex so it doesn’t go out of range
+      if (targetIndex >= step.highlights.npc.length) {
+        setTargetIndex(Math.max(0, step.highlights.npc.length - 1));
+      }
+    });
+
+    updateQuestState(nextState);
+  };
+
+  const handleDeleteObject = () => {
+    if (!questJson || targetType !== "object") return;
+
+    const nextState = produce(questJson, (draft) => {
+      const step = draft.questSteps[selectedStep];
+      if (!step?.highlights?.object) return;
+
+      // Remove the Object at targetIndex
+      step.highlights.object.splice(targetIndex, 1);
+
+      // Clamp targetIndex so it doesn’t go out of range
+      if (targetIndex >= step.highlights.object.length) {
+        setTargetIndex(Math.max(0, step.highlights.object.length - 1));
+      }
+    });
+
+    updateQuestState(nextState);
+  };
   const handleSelectedObjectColorChange = (newColor: string) => {
     setSelectedObjectColor(newColor);
     if (questJson && targetType === "object") {
@@ -313,28 +359,17 @@ const App: React.FC = () => {
       if (!step.highlights.object) step.highlights.object = [];
       step.highlights.object.push({
         name: "New Object",
-        object: [
-          {
-            name: "",
-            objectLocation: [],
-            objectRadius: {
-              bottomLeft: {
-                lat: 0,
-                lng: 0,
-              },
-              topRight: {
-                lat: 0,
-                lng: 0,
-              },
-            },
-          },
-        ],
+        objectLocation: [{ lat: 0, lng: 0 }], // ✅ always initialize
+        objectRadius: {
+          bottomLeft: { lat: 0, lng: 0 },
+          topRight: { lat: 0, lng: 0 },
+        },
       });
       newIndex = step.highlights.object.length - 1;
     });
     updateQuestState(nextState);
     setTargetType("object");
-    setTargetIndex(newIndex);
+    setTargetIndex(newIndex); // ✅ jump to the new object
   };
   const handleAddStep = () => {
     if (!questJson) return;
@@ -505,32 +540,17 @@ const App: React.FC = () => {
     if (!questJson) return;
     const nextState = produce(questJson, (draft) => {
       const step = draft.questSteps[selectedStep];
-      if (!step.highlights) step.highlights = {};
-      if (!step.highlights[targetType]) step.highlights[targetType] = [];
-      if (!step.highlights[targetType][targetIndex]) {
-        if (targetType === "npc") {
-          step.highlights.npc[targetIndex] = {
-            npcName: "",
-            npcLocation: { lat: 0, lng: 0 },
-            wanderRadius: {
-              bottomLeft: { lat: 0, lng: 0 },
-              topRight: { lat: 0, lng: 0 },
-            },
-          };
-        } else {
-          step.highlights.object[targetIndex] = {
-            name: "",
-            objectLocation: [],
-            objectRadius: {
-              bottomLeft: { lat: 0, lng: 0 },
-              topRight: { lat: 0, lng: 0 },
-            },
-          };
-        }
-      }
+      if (!step.highlights) return;
+      if (!step.highlights[targetType]) return;
+
       const target = step.highlights[targetType][targetIndex];
-      if (targetType === "npc") target.npcName = newName;
-      else target.name = newName;
+      if (!target) return; // ✅ Don’t create a new one here
+
+      if (targetType === "npc") {
+        target.npcName = newName;
+      } else {
+        target.name = newName;
+      }
     });
     updateQuestState(nextState);
   };
@@ -894,6 +914,7 @@ const App: React.FC = () => {
   return (
     <div style={{ height: "100%", width: "100%" }}>
       <EditorPanel
+        questJson={questJson}
         isOpen={isPanelOpen}
         onSubmitToGitHub={handleSubmitToGitHub}
         onResetRadius={handleResetRadius}
@@ -948,6 +969,8 @@ const App: React.FC = () => {
         onAddStep={handleAddStep}
         onNewQuest={handleNewQuest}
         onAddObject={handleAddObject}
+        onDeleteNpc={handleDeleteNpc}
+        onDeleteObject={handleDeleteObject}
       >
         <div className="panel-section">
           <NpcSearch
