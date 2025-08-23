@@ -598,3 +598,33 @@ button:hover {
   color: white;
   font-weight: bold;
 }
+.image-paste-target {
+  border: 2px dashed #4b5563;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 8px;
+  outline: none; /* Removes focus ring */
+}
+
+.image-paste-target:hover,
+.image-paste-target:focus {
+  border-color: #3b82f6;
+  color: #f9fafb;
+}
+
+.image-paste-target.pasting {
+  border-color: #15803d;
+  background-color: rgba(21, 128, 61, 0.2);
+  color: #f9fafb;
+}
+
+.image-paste-target.disabled {
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: #374151;
+  color: #6b7280;
+}

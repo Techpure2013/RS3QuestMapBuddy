@@ -461,7 +461,7 @@
       ]
     },
     {
-      "stepDescription": "Carnillean's Side",
+      "stepDescription": "Carnillean's Side - Additional Info Reveals The Details",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -508,7 +508,8 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
+        "In Carnillean's Side, You will have to fight an enemy.",
+        "In Hazeel Cults Side Starts at step 10, You do not have to fight an enemy."
       ]
     },
     {
@@ -616,7 +617,9 @@
     {
       "stepDescription": "Go south and talk to Alomone, and then kill him.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "Combat Gear"
+      ],
       "highlights": {
         "npc": [
           {
@@ -712,58 +715,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "To get a second platebody to keep, kill him twice. When talking to Ceril to turn in the quest, drop one on the floor before starting the conversation, and later drop the (remaining) platebody before searching the wardrobe.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "To get a second platebody to keep, kill him twice. When talking to Ceril to turn in the quest, drop one on the floor before starting the conversation, and later drop the (remaining) platebody before searching the wardrobe."
       ]
     },
     {
@@ -1477,7 +1429,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
+        "The Safer of the sides for skillers."
       ]
     },
     {

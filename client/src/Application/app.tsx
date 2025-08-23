@@ -1,5 +1,10 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { MapContainer, TileLayer, useMapEvents } from "react-leaflet";
+import {
+  parseWikiImageUrl,
+  resizeImage,
+  resizeImageBlob,
+} from "Map Classes/Map Components/imageUtils";
 import "leaflet/dist/leaflet.css";
 import "./../Assets/CSS/index.css";
 import "./../Assets/CSS/leafless.css";
@@ -29,6 +34,23 @@ import MapAreaFlyToHandler from "./../Map Classes/Map Components/MapAreaFlyToHan
 interface QuestData {
   questName: string;
   questSteps: any[];
+}
+
+interface QuestImageData {
+  step: number;
+  src: string;
+  height: number;
+  width: number;
+  stepDescription: string;
+}
+
+interface QuestImageFile {
+  name: string;
+  images: QuestImageData[];
+}
+
+interface ChatheadOverrides {
+  [key: string]: string;
 }
 interface MapArea {
   mapId: number;
@@ -76,12 +98,31 @@ const App: React.FC = () => {
   );
   const [stepDescriptionEdit, setStepDescriptionEdit] =
     useState<boolean>(false);
+  const [chatheadOverrides, setChatheadOverrides] = useState<ChatheadOverrides>(
+    {}
+  );
+  const [isAlt1Environment, setIsAlt1Environment] = useState(false);
+  // --- FIX: Initialize state with the correct QuestImageFile[] type ---
+  const [questImageList, setQuestImageList] = useState<QuestImageFile[]>([]);
+
+  const [chatheadOverridesString, setChatheadOverridesString] = useState("");
+  const [questImageListString, setQuestImageListString] = useState("");
+
+  // --- NEW: State for file and directory handles ---
+  const [chatheadOverridesFileHandle, setChatheadOverridesFileHandle] =
+    useState<FileSystemFileHandle | null>(null);
+  const [questImageListFileHandle, setQuestImageListFileHandle] =
+    useState<FileSystemFileHandle | null>(null);
+  const [imageDirectoryHandle, setImageDirectoryHandle] = useState<any | null>(
+    null
+  ); // Directory handle
 
   // --- DERIVED VALUES ---
   const selectionGeometry = useMemo<SelectionGeometry>(() => {
-    if (!questJson) return { type: "none" };
+    // Guard against incomplete questJson
+    if (!questJson?.questSteps?.[selectedStep]) return { type: "none" };
+
     const step = questJson.questSteps[selectedStep];
-    if (!step) return { type: "none" };
 
     if (targetType === "npc") {
       return { type: "npc", npcArray: step.highlights?.npc || [] };
@@ -90,6 +131,7 @@ const App: React.FC = () => {
     }
     return { type: "none" };
   }, [questJson, selectedStep, targetType]);
+
   const highlightGeometry = useMemo<SelectionGeometry>(() => {
     if (!highlightedNpc) {
       return { type: "none" };
@@ -101,7 +143,6 @@ const App: React.FC = () => {
         {
           npcName: highlightedNpc.name,
           npcLocation: { lat: highlightedNpc.lat, lng: highlightedNpc.lng },
-          // The highlight layer expects a wanderRadius, so we provide a dummy one
           wanderRadius: {
             bottomLeft: { lat: 0, lng: 0 },
             topRight: { lat: 0, lng: 0 },
@@ -110,8 +151,11 @@ const App: React.FC = () => {
       ],
     };
   }, [highlightedNpc]);
+
   const targetNameValue = useMemo(() => {
-    if (!questJson) return "";
+    // Guard against incomplete questJson
+    if (!questJson?.questSteps?.[selectedStep]) return "";
+
     const target =
       questJson.questSteps[selectedStep]?.highlights[targetType]?.[targetIndex];
     if (!target) return "";
@@ -128,16 +172,21 @@ const App: React.FC = () => {
     questJson?.questSteps[selectedStep]?.additionalStepInformation?.join(
       "\n"
     ) || "";
+
   const currentTargetObjectData = useMemo(() => {
-    if (questJson && targetType === "object") {
+    // Guard against incomplete questJson
+    if (!questJson?.questSteps?.[selectedStep]) {
+      return { color: selectedObjectColor, numberLabel: objectNumberLabel };
+    }
+
+    if (targetType === "object") {
       const target =
         questJson.questSteps[selectedStep]?.highlights.object?.[targetIndex];
       return {
         color: target?.color || selectedObjectColor,
-        numberLabel: target?.numberLabel || "", // Use the object's label or an empty string
+        numberLabel: target?.numberLabel || "",
       };
     }
-    // Default values when not targeting an object
     return { color: selectedObjectColor, numberLabel: objectNumberLabel };
   }, [
     questJson,
@@ -147,6 +196,7 @@ const App: React.FC = () => {
     selectedObjectColor,
     objectNumberLabel,
   ]);
+
   // --- EFFECTS ---
   //THIS IS THE SINGLE SOURCE OF TRUTH FOR STEP CHANGES
   useEffect(() => {
@@ -174,6 +224,12 @@ const App: React.FC = () => {
     }
   }, [selectedStep]);
   useEffect(() => {
+    if (window.alt1) {
+      console.log("Alt1 environment detected. Disabling direct save buttons.");
+      setIsAlt1Environment(true);
+    }
+  }, []);
+  useEffect(() => {
     if (!questJson) return;
     const step = questJson.questSteps[selectedStep];
     if (!step) return;
@@ -192,6 +248,249 @@ const App: React.FC = () => {
   }, [targetType]);
 
   // --- HANDLERS ---
+
+  // --- NEW: Generic download fallback function ---
+  const downloadBlob = (blob: Blob, fileName: string) => {
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.download = fileName;
+    link.href = url;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    alert(
+      `Direct save failed. Downloading ${fileName} instead. Please save it to the correct location.`
+    );
+  };
+
+  // --- REVISED: Generic file save function with fallback ---
+  const saveContentToFileHandle = async (
+    handle: FileSystemFileHandle | null,
+    content: string,
+    fileName: string // Pass filename for the fallback
+  ) => {
+    const blob = new Blob([content], { type: "application/json" });
+    if (!handle) {
+      downloadBlob(blob, fileName);
+      return;
+    }
+    try {
+      const writable = await handle.createWritable();
+      await writable.write(blob);
+      await writable.close();
+    } catch (err) {
+      console.error("Direct save failed, falling back to download:", err);
+      downloadBlob(blob, fileName);
+    }
+  };
+
+  // --- REVISED: Chathead save handler ---
+  const handleSaveChatheadOverrides = () => {
+    saveContentToFileHandle(
+      chatheadOverridesFileHandle,
+      chatheadOverridesString,
+      "chatheadOverrides.json"
+    );
+  };
+
+  // --- REVISED: Image list save handler ---
+  const handleSaveQuestImageList = () => {
+    saveContentToFileHandle(
+      questImageListFileHandle,
+      questImageListString,
+      "QuestImageList.json"
+    );
+  };
+  const handleSaveChatheadOverridesAs = () => {
+    const blob = new Blob([chatheadOverridesString], {
+      type: "application/json",
+    });
+    downloadBlob(blob, "chatheadOverrides.json");
+  };
+
+  const handleSaveQuestImageListAs = () => {
+    const blob = new Blob([questImageListString], {
+      type: "application/json",
+    });
+    downloadBlob(blob, "QuestImageList.json");
+  };
+  // --- REVISED: Core image processing function with fallback ---
+  const processAndSaveImage = async (imageBlob: Blob) => {
+    if (!questJson) {
+      alert("Please load a quest first.");
+      return;
+    }
+    if (!imageDirectoryHandle) {
+      alert("Please select an image save directory first.");
+      return;
+    }
+
+    try {
+      const {
+        blob: resizedBlob,
+        width,
+        height,
+      } = await resizeImageBlob(imageBlob, 512);
+      const stepDescription =
+        questJson.questSteps[selectedStep]?.stepDescription;
+      if (!stepDescription) {
+        alert("Current step has no description to link the image to.");
+        return;
+      }
+
+      const fileName = `${questJson.questName}_step_${selectedStep + 1}.webp`;
+
+      // --- TRY direct save, CATCH to download ---
+      try {
+        const fileHandle = await imageDirectoryHandle.getFileHandle(fileName, {
+          create: true,
+        });
+        const writable = await fileHandle.createWritable();
+        await writable.write(resizedBlob);
+        await writable.close();
+      } catch (err) {
+        console.error(
+          "Direct image save failed, falling back to download:",
+          err
+        );
+        downloadBlob(resizedBlob, fileName);
+      }
+      // --- End of save logic ---
+
+      const imagePath = `${fileName}`;
+
+      const nextState = produce(questImageList, (draft: QuestImageFile[]) => {
+        let questEntry = draft.find((q) => q.name === questJson.questName);
+        const newImageObject: QuestImageData = {
+          step: selectedStep + 1,
+          src: imagePath,
+          height,
+          width,
+          stepDescription,
+        };
+
+        if (questEntry) {
+          const existingImageIndex = questEntry.images.findIndex(
+            (img) => img.stepDescription === stepDescription
+          );
+          if (existingImageIndex > -1) {
+            questEntry.images[existingImageIndex] = newImageObject;
+          } else {
+            questEntry.images.push(newImageObject);
+          }
+        } else {
+          draft.push({
+            name: questJson.questName,
+            images: [newImageObject],
+          });
+        }
+      });
+
+      setQuestImageList(nextState);
+      const newString = JSON.stringify(nextState, null, 2);
+      setQuestImageListString(newString);
+      // Auto-save the JSON file (which now also has a fallback)
+      saveContentToFileHandle(
+        questImageListFileHandle,
+        newString,
+        "QuestImageList.json"
+      );
+    } catch (error) {
+      console.error("Failed to process and save image:", error);
+      alert(`Failed to process image. See console for details.`);
+    }
+  };
+
+  // This is the new handler for the paste component
+  const handleImagePaste = async (pastedBlob: Blob) => {
+    await processAndSaveImage(pastedBlob);
+  };
+
+  // This is the UPDATED handler for the URL input
+  const handleAddStepImage = async (url: string) => {
+    if (!url) return;
+    try {
+      // Fetch the URL to get a blob, then process it
+      const response = await fetch(parseWikiImageUrl(url));
+      if (!response.ok) {
+        throw new Error(`Failed to fetch image: ${response.statusText}`);
+      }
+      const imageBlob = await response.blob();
+      await processAndSaveImage(imageBlob);
+    } catch (error) {
+      console.error("Failed to add step image from URL:", error);
+      alert(`Failed to add step image from URL. See console for details.`);
+    }
+  };
+
+  // --- Chathead override handlers ---
+  const handleLoadChatheadOverrides = async () => {
+    try {
+      const [handle] = await window.showOpenFilePicker({
+        types: [
+          {
+            description: "JSON Files",
+            accept: { "application/json": [".json"] },
+          },
+        ],
+      });
+      const file = await handle.getFile();
+      const text = await file.text();
+      setChatheadOverrides(JSON.parse(text));
+      setChatheadOverridesString(text);
+      setChatheadOverridesFileHandle(handle);
+    } catch (err) {
+      console.error("Error loading chathead overrides:", err);
+    }
+  };
+
+  const handleAddChatheadOverride = (name: string, url: string) => {
+    if (!name || !url) return;
+    const nextState = produce(chatheadOverrides, (draft) => {
+      draft[name] = url;
+    });
+    setChatheadOverrides(nextState);
+    const newString = JSON.stringify(nextState, null, 2);
+    setChatheadOverridesString(newString);
+    saveContentToFileHandle(
+      chatheadOverridesFileHandle,
+      newString,
+      "chatheadOverrides.json"
+    );
+  };
+
+  // --- Quest image list handlers ---
+  const handleLoadQuestImageList = async () => {
+    try {
+      const [handle] = await window.showOpenFilePicker({
+        types: [
+          {
+            description: "JSON Files",
+            accept: { "application/json": [".json"] },
+          },
+        ],
+      });
+      const file = await handle.getFile();
+      const text = await file.text();
+      setQuestImageList(JSON.parse(text));
+      setQuestImageListString(text);
+      setQuestImageListFileHandle(handle);
+    } catch (err) {
+      console.error("Error loading quest image list:", err);
+    }
+  };
+
+  const handleSelectImageDirectory = async () => {
+    try {
+      const handle = await window.showDirectoryPicker();
+      setImageDirectoryHandle(handle);
+      alert(`Image directory set to: ${handle.name}`);
+    } catch (err) {
+      console.error("Error selecting directory:", err);
+    }
+  };
+
   const handleDeleteNpc = () => {
     if (!questJson || targetType !== "npc") return;
 
@@ -971,6 +1270,18 @@ const App: React.FC = () => {
         onAddObject={handleAddObject}
         onDeleteNpc={handleDeleteNpc}
         onDeleteObject={handleDeleteObject}
+        onAddChatheadOverride={handleAddChatheadOverride}
+        onAddStepImage={handleAddStepImage}
+        onLoadChatheadOverrides={handleLoadChatheadOverrides}
+        onSaveChatheadOverrides={handleSaveChatheadOverrides}
+        onLoadQuestImageList={handleLoadQuestImageList}
+        onSaveQuestImageList={handleSaveQuestImageList}
+        onSelectImageDirectory={handleSelectImageDirectory}
+        imageDirectoryName={imageDirectoryHandle?.name || ""}
+        onImagePaste={handleImagePaste}
+        onSaveChatheadOverridesAs={handleSaveChatheadOverridesAs}
+        onSaveQuestImageListAs={handleSaveQuestImageListAs}
+        isAlt1Environment={isAlt1Environment}
       >
         <div className="panel-section">
           <NpcSearch

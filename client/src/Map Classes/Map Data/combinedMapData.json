@@ -306,6 +306,15 @@
     "mapId": 37
   },
   {
+    "name": "Grand Library ( Indoor )",
+    "center": [2078, 6752],
+    "bounds": [
+      [2047, 6721],
+      [2109, 6783]
+    ],
+    "mapId": 764
+  },
+  {
     "name": "Maze",
     "center": [2912, 4576],
     "bounds": [

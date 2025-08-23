@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
+import { resizeImageToDataUrl } from "./imageDisplayUtils"; // Use the new display-specific utility
 import chatheadOverrides from "./../Map Data/chatheadOverrides.json";
 
 // --- FIX #2: Define the structure for an individual object location ---
@@ -96,47 +97,6 @@ const getChatheadUrl = (npcName: string) => {
   const formatted = npcName.replace(/\s+/g, "_");
   return `https://runescape.wiki/images/${formatted}_chathead.png`;
 };
-const resizeImage = (imageUrl: string, maxSize: number): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.crossOrigin = "Anonymous";
-
-    img.onload = () => {
-      const canvas = document.createElement("canvas");
-      const ctx = canvas.getContext("2d");
-
-      if (!ctx) {
-        return reject(new Error("Could not get canvas context"));
-      }
-
-      let width = img.width;
-      let height = img.height;
-
-      if (width > height) {
-        if (width > maxSize) {
-          height *= maxSize / width;
-          width = maxSize;
-        }
-      } else {
-        if (height > maxSize) {
-          width *= maxSize / height;
-          height = maxSize;
-        }
-      }
-
-      canvas.width = width;
-      canvas.height = height;
-      ctx.drawImage(img, 0, 0, width, height);
-      resolve(canvas.toDataURL("image/png"));
-    };
-
-    img.onerror = (err) => {
-      reject(new Error("Failed to load image for resizing"));
-    };
-
-    img.src = imageUrl;
-  });
-};
 
 const createChatheadIcon = (resizedDataUrl: string) => {
   const displaySize = 48;
@@ -219,7 +179,7 @@ export const SelectionHighlightLayer: React.FC<
           const chatheadUrl =
             npc.chatheadOverride || getChatheadUrl(npc.npcName);
 
-          resizeImage(chatheadUrl, 40)
+          resizeImageToDataUrl(chatheadUrl, 40)
             .then((resizedDataUrl) => {
               const marker = L.marker([tileCenter.lat, tileCenter.lng], {
                 icon: createChatheadIcon(resizedDataUrl),

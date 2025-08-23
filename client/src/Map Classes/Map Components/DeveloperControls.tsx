@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { ImagePasteTarget } from "./ImagePasteTarget";
 
 interface EditorPanelProps {
   children?: React.ReactNode;
@@ -53,6 +54,20 @@ interface EditorPanelProps {
   onSubmitToGitHub: () => void;
   onDeleteNpc: () => void;
   onDeleteObject: () => void;
+  onAddChatheadOverride: (name: string, url: string) => void;
+  onAddStepImage: (url: string) => void;
+  onLoadChatheadOverrides: () => void;
+  onSaveChatheadOverrides: () => void;
+  onLoadQuestImageList: () => void;
+  onSaveQuestImageList: () => void;
+  onSelectImageDirectory: () => void;
+  imageDirectoryName: string;
+  onImagePaste: (imageBlob: Blob) => void;
+  // --- NEW: Add Save As props ---
+  onSaveChatheadOverridesAs: () => void;
+  onSaveQuestImageListAs: () => void;
+  //Alt1 Detection
+  isAlt1Environment: boolean;
 }
 
 export const EditorPanel = React.memo<EditorPanelProps>(
@@ -107,7 +122,25 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     onSubmitToGitHub,
     onDeleteNpc,
     onDeleteObject,
+    onAddChatheadOverride,
+    onAddStepImage,
+    onLoadChatheadOverrides,
+    onSaveChatheadOverrides,
+    onLoadQuestImageList,
+    onSaveQuestImageList,
+    onSelectImageDirectory,
+    imageDirectoryName,
+    onImagePaste,
+    // --- NEW: Destructure Save As props ---
+    onSaveChatheadOverridesAs,
+    onSaveQuestImageListAs,
+    isAlt1Environment,
   }) => {
+    const [chatheadName, setChatheadName] = useState("");
+    const [chatheadUrl, setChatheadUrl] = useState("");
+    const [stepImageUrl, setStepImageUrl] = useState("");
+    const [isAssetToolsOpen, setIsAssetToolsOpen] = useState(false);
+
     const handleEnterAsNewline = (
       event: React.KeyboardEvent<HTMLTextAreaElement>,
       currentValue: string,
@@ -122,6 +155,17 @@ export const EditorPanel = React.memo<EditorPanelProps>(
           currentValue.substring(selectionEnd);
         onChange(newValue);
       }
+    };
+
+    const handleAddChathead = () => {
+      onAddChatheadOverride(chatheadName, chatheadUrl);
+      setChatheadName("");
+      setChatheadUrl("");
+    };
+
+    const handleAddImage = () => {
+      onAddStepImage(stepImageUrl);
+      setStepImageUrl("");
     };
 
     return (
@@ -147,6 +191,12 @@ export const EditorPanel = React.memo<EditorPanelProps>(
           <button
             onClick={onSaveFile}
             className="file-loader-button button--save"
+            disabled={isAlt1Environment}
+            title={
+              isAlt1Environment
+                ? "Direct save is disabled in Alt1. Use 'Save As'."
+                : ""
+            }
           >
             Save
           </button>
@@ -307,6 +357,118 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             />
           </div>
         </div>
+
+        <div className="panel-section">
+          <label className="EditDescriptionLabel">
+            <strong>Asset Creation Tools</strong>
+            <input
+              type="checkbox"
+              checked={isAssetToolsOpen}
+              onChange={() => setIsAssetToolsOpen(!isAssetToolsOpen)}
+            />
+          </label>
+
+          {isAssetToolsOpen && (
+            <div style={{ marginTop: "10px" }}>
+              <div className="panel-section">
+                <div className="button-group">
+                  <button onClick={onLoadChatheadOverrides}>
+                    Load Chathead JSON
+                  </button>
+                  <button
+                    onClick={onSaveChatheadOverrides}
+                    disabled={isAlt1Environment}
+                    title={
+                      isAlt1Environment
+                        ? "Direct save is disabled in Alt1. Use 'Save As'."
+                        : ""
+                    }
+                  >
+                    Save
+                  </button>
+                  {/* --- NEW: Save As button for chatheads --- */}
+                  <button onClick={onSaveChatheadOverridesAs}>Save As</button>
+                </div>
+                <div className="control-group">
+                  <label>Chathead Override Name</label>
+                  <input
+                    type="text"
+                    value={chatheadName}
+                    onChange={(e) => setChatheadName(e.target.value)}
+                    placeholder="e.g., Master Chef ( Beneath Cursed Tides )"
+                  />
+                </div>
+                <div className="control-group">
+                  <label>Chathead Image URL</label>
+                  <input
+                    type="text"
+                    value={chatheadUrl}
+                    onChange={(e) => setChatheadUrl(e.target.value)}
+                    placeholder="Paste wiki URL here"
+                  />
+                </div>
+                <button onClick={handleAddChathead} className="button--add">
+                  Add/Update Chathead Override
+                </button>
+              </div>
+
+              <div className="panel-section">
+                <div className="button-group">
+                  <button onClick={onLoadQuestImageList}>
+                    Load Quest Image List JSON
+                  </button>
+                  <button
+                    onClick={onSaveQuestImageList}
+                    disabled={isAlt1Environment}
+                    title={
+                      isAlt1Environment
+                        ? "Direct save is disabled in Alt1. Use 'Save As'."
+                        : ""
+                    }
+                  >
+                    Save
+                  </button>
+                  {/* --- NEW: Save As button for image list --- */}
+                  <button onClick={onSaveQuestImageListAs}>Save As</button>
+                </div>
+                <button
+                  onClick={onSelectImageDirectory}
+                  style={{ width: "100%", marginTop: "8px" }}
+                >
+                  {imageDirectoryName
+                    ? `Saving to: ${imageDirectoryName}`
+                    : "Select Image Save Directory"}
+                </button>
+                <ImagePasteTarget
+                  onImagePaste={onImagePaste}
+                  disabled={!imageDirectoryName}
+                />
+                <div className="control-group">
+                  <label>Or Add Step Image from URL</label>
+                  <input
+                    type="text"
+                    value={stepImageUrl}
+                    onChange={(e) => setStepImageUrl(e.target.value)}
+                    placeholder="Paste image URL here"
+                  />
+                </div>
+                <button
+                  onClick={handleAddImage}
+                  className="button--add"
+                  disabled={!imageDirectoryName}
+                  title={
+                    !imageDirectoryName
+                      ? "Please select an image directory first"
+                      : ""
+                  }
+                >
+                  Add Image from URL
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
         {children}
         {targetType === "npc" && (
           <div className="panel-section">
