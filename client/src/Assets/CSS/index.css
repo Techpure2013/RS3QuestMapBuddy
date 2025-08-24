@@ -20,7 +20,12 @@ body,
   height: 100%;
   width: 100%;
 }
-
+.grid-toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 80px; /* Position it to the left of the floor buttons */
+  z-index: 1000;
+}
 /* ==========================================================================
    Editor Panel
    ========================================================================== */

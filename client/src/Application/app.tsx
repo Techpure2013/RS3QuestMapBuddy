@@ -24,7 +24,7 @@ import { produce } from "immer";
 import StepSnapHandler from "Map Classes/Map Components/StepSnapHandler";
 import { SelectionHighlightLayer } from "./../Map Classes/Map Components/SelectionHighlightLayer";
 import type { SelectionGeometry } from "./../Map Classes/Map Components/SelectionHighlightLayer";
-import { IconSettings } from "@tabler/icons-react";
+import { IconGridDots, IconSettings } from "@tabler/icons-react";
 import { NpcSearch } from "Map Classes/Map Components/NpcSearch";
 import type { Npc } from "./../Map Classes/Map Components/NpcSearch";
 import NpcFlyToHandler from "./../Map Classes/Map Components/NpcFlyToHandler";
@@ -116,7 +116,7 @@ const App: React.FC = () => {
   const [imageDirectoryHandle, setImageDirectoryHandle] = useState<any | null>(
     null
   ); // Directory handle
-
+  const [showGrids, setShowGrids] = useState(true);
   // --- DERIVED VALUES ---
   const selectionGeometry = useMemo<SelectionGeometry>(() => {
     // Guard against incomplete questJson
@@ -246,7 +246,10 @@ const App: React.FC = () => {
       setCaptureMode("single");
     }
   }, [targetType]);
-
+  // --- TOGGLES ---
+  const toggleShowGrids = () => {
+    setShowGrids((prev) => !prev);
+  };
   // --- HANDLERS ---
 
   // --- NEW: Generic download fallback function ---
@@ -856,6 +859,8 @@ const App: React.FC = () => {
 
   const handleAddNpc = () => {
     if (!questJson) return;
+    // --- FIX: Introduce a variable to hold the new index ---
+    let newIndex = 0;
     const nextState = produce(questJson, (draft) => {
       const step = draft.questSteps[selectedStep];
       if (!step.highlights) step.highlights = {};
@@ -868,10 +873,13 @@ const App: React.FC = () => {
           topRight: { lat: 0, lng: 0 },
         },
       });
-      setTargetIndex(step.highlights.npc.length - 1);
-      setTargetType("npc");
+      // --- FIX: Capture the index of the newly added NPC ---
+      newIndex = step.highlights.npc.length - 1;
     });
     updateQuestState(nextState);
+    // --- FIX: Set the target type and index AFTER the state has been updated ---
+    setTargetType("npc");
+    setTargetIndex(newIndex);
   };
 
   const handleResetNpcLocation = () => {
@@ -1313,7 +1321,12 @@ const App: React.FC = () => {
       >
         <MapClickHandler />
         <ZoomHandler />
-        <ChunkGridLayer />
+        {showGrids && (
+          <>
+            <ChunkGridLayer />
+          </>
+        )}
+        <GridLayer />
         <div className="cursor-coordinates-box">
           <div className="coordinate-row">
             <span>Zoom: {Math.round(zoom)}</span>
@@ -1323,6 +1336,15 @@ const App: React.FC = () => {
               <IconSettings />
             </span>
           </div>
+        </div>
+        <div className="grid-toggle-container">
+          <button
+            className="floor-button"
+            onClick={toggleShowGrids}
+            title="Toggle Grids"
+          >
+            <IconGridDots size={20} />
+          </button>
         </div>
         <div className="floorButtonContainer">
           <div className="floorButtonContainer">
@@ -1359,7 +1381,12 @@ const App: React.FC = () => {
           ))}
         </>
         <MapAreaFlyToHandler selectedArea={selectedArea} />
-        <StepSnapHandler questJson={questJson} selectedStep={selectedStep} />
+        <StepSnapHandler
+          questJson={questJson}
+          selectedStep={selectedStep}
+          targetIndex={targetIndex}
+          targetType={targetType}
+        />
         <NpcFlyToHandler
           highlightedNpc={highlightedNpc}
           onFloorChange={handleFloorChange}
@@ -1367,7 +1394,7 @@ const App: React.FC = () => {
         <SelectionHighlightLayer
           geometry={highlightedNpc ? highlightGeometry : selectionGeometry}
         />
-        <GridLayer />
+
         <HighlightLayer onCursorMove={handleCursorMove} />
       </MapContainer>
     </div>

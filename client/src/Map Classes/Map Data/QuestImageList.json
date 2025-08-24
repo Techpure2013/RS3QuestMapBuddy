@@ -3447,7 +3447,29 @@
   },
   {
     "name": "Beneath Scabaras' Sands",
-    "images": []
+    "images": [
+      {
+        "step": 20,
+        "src": "Beneath Scabaras' Sands_step_20.webp",
+        "height": 118,
+        "width": 167,
+        "stepDescription": "Click the golden scarab to release it."
+      },
+      {
+        "step": 26,
+        "src": "Beneath Scabaras' Sands_step_26.webp",
+        "height": 841,
+        "width": 651,
+        "stepDescription": "Go back down the steps to find a scarab named Fear. You need to interact with Fear to scare them up the steps to Scabaras. Make sure to guide them up the left side of the step as they will get stuck on the right."
+      },
+      {
+        "step": 20,
+        "src": "Beneath Scabaras' Sands_step_20.webp",
+        "height": 684,
+        "width": 746,
+        "stepDescription": "Follow the path of the golden scarab, clicking on it at intermediate stops, until you reach the Scabarite Cavern."
+      }
+    ]
   },
   {
     "name": "Between a Rock",
@@ -10479,7 +10501,9 @@
   },
   {
     "name": "Recruitment Drive",
-    "images": [5]
+    "images": [
+      5
+    ]
   },
   {
     "name": "Regicide",
@@ -15176,7 +15200,6 @@
     "name": "Pharaoh's Folly",
     "images": []
   },
-
   {
     "name": "Eclipse of the Heart",
     "images": []

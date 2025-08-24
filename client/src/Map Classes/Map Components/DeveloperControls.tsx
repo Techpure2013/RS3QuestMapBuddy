@@ -357,7 +357,22 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             />
           </div>
         </div>
-
+        {targetType === "npc" && (
+          <div className="panel-section">
+            <strong>NPC Tools</strong>
+            <div className="button-group">
+              <button onClick={onResetNpcLocation} className="button--delete">
+                Reset NPC Location
+              </button>
+              <button onClick={onAddNpc} className="button--add">
+                Add New NPC
+              </button>
+              <button onClick={onDeleteNpc} className="button--delete">
+                Delete NPC
+              </button>
+            </div>
+          </div>
+        )}
         <div className="panel-section">
           <label className="EditDescriptionLabel">
             <strong>Asset Creation Tools</strong>
@@ -470,22 +485,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
         </div>
 
         {children}
-        {targetType === "npc" && (
-          <div className="panel-section">
-            <strong>NPC Tools</strong>
-            <div className="button-group">
-              <button onClick={onResetNpcLocation} className="button--delete">
-                Reset NPC Location
-              </button>
-              <button onClick={onAddNpc} className="button--add">
-                Add New NPC
-              </button>
-              <button onClick={onDeleteNpc} className="button--delete">
-                Delete NPC
-              </button>
-            </div>
-          </div>
-        )}
 
         {targetType === "object" && (
           <div className="panel-section editor-controls-grid">
