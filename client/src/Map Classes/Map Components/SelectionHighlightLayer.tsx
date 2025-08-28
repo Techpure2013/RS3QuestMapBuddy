@@ -66,10 +66,12 @@ const getTileBoundsFromVisualCenter = (visualCenter: {
   lat: number;
   lng: number;
 }): L.LatLngBounds => {
-  const interval = 1;
   const y = visualCenter.lat;
   const x = visualCenter.lng;
-  return L.latLngBounds([y, x], [y + interval, x + interval]);
+  // Calculate corners by subtracting/adding 0.5 from the center
+  const southWest = L.latLng(y - 0.5, x - 0.5);
+  const northEast = L.latLng(y + 0.5, x + 0.5);
+  return L.latLngBounds(southWest, northEast);
 };
 
 const getChatheadUrl = (npcName: string): string => {

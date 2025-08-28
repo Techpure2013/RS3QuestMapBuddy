@@ -19,9 +19,6 @@ interface ObjectSearchProps {
   onClearAreaSearchResults: () => void;
 }
 
-// This will store the loaded index file so we only fetch it once.
-let nameIndexCache: Record<string, string[]> | null = null;
-
 export const ObjectSearch: React.FC<ObjectSearchProps> = ({
   onObjectSelect,
   onObjectHighlight,
@@ -30,96 +27,90 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
   areaSearchResults,
   onClearAreaSearchResults,
 }) => {
-  // --- NEW: State to control which search UI is shown ---
   const [searchMode, setSearchMode] = useState<"name" | "area">("name");
-
   const [searchTerm, setSearchTerm] = useState("");
   const [allMatches, setAllMatches] = useState<MapObject[]>([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [isLoading, setIsLoading] = useState(false);
   const [showCycler, setShowCycler] = useState(false);
 
+  // --- RESTORED: Cache for the letter-based name search ---
+  const [dataCache, setDataCache] = useState<Record<string, MapObject[]>>({});
+
   // Highlight the current object when the index changes (for cycler view)
   useEffect(() => {
     if (showCycler && currentIndex >= 0 && allMatches[currentIndex]) {
       onObjectHighlight(allMatches[currentIndex]);
     } else if (showCycler) {
-      // Only clear the highlight if the cycler is active but has no valid index
       onObjectHighlight(null);
     }
   }, [currentIndex, allMatches, onObjectHighlight, showCycler]);
 
   // Listen for results from the area search
   useEffect(() => {
-    if (areaSearchResults.length > 0) {
+    if (searchMode === "area" && areaSearchResults.length > 0) {
       setAllMatches(areaSearchResults);
       setCurrentIndex(0);
     }
-  }, [areaSearchResults]);
+  }, [areaSearchResults, searchMode]);
 
-  const handleSearch = async () => {
-    // ... (This function remains exactly the same as before)
+  // --- RESTORED: The original, working name search logic ---
+  const handleNameSearch = async () => {
     if (searchTerm.length < 3) {
       setAllMatches([]);
       setCurrentIndex(-1);
       onObjectHighlight(null);
       return;
     }
-    setIsLoading(true);
-    onClearAreaSearchResults();
-    try {
-      if (!nameIndexCache) {
-        const response = await fetch("/object_name_index.json");
-        if (!response.ok) throw new Error("Name index not found");
-        nameIndexCache = await response.json();
-      }
-      const prefix = searchTerm.substring(0, 3).toLowerCase();
-      const chunksToFetch = nameIndexCache[prefix] || [];
-      if (chunksToFetch.length === 0) {
+
+    onClearAreaSearchResults(); // Ensure area results are cleared
+    const firstLetter = searchTerm[0].toUpperCase();
+    let searchData: MapObject[] = [];
+
+    if (dataCache[firstLetter]) {
+      searchData = dataCache[firstLetter];
+    } else {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`/Objects_By_Letter/${firstLetter}.json`);
+        if (!response.ok) throw new Error("File not found");
+        const jsonData: MapObject[] = await response.json();
+        setDataCache((prev) => ({ ...prev, [firstLetter]: jsonData }));
+        searchData = jsonData;
+      } catch (error) {
+        console.error("Failed to fetch object data:", error);
         setAllMatches([]);
         setCurrentIndex(-1);
         return;
+      } finally {
+        setIsLoading(false);
       }
-      const promises = chunksToFetch.map((chunkId) =>
-        fetch(`/Objects_By_Chunk/${chunkId}.json`).then((res) =>
-          res.ok ? res.json() : Promise.resolve([])
-        )
-      );
-      const chunkResults = await Promise.all(promises);
-      const allObjectsInChunks: MapObject[] = chunkResults.flat();
-      const finalResults = allObjectsInChunks.filter((obj) =>
-        obj.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setAllMatches(finalResults);
-      setCurrentIndex(finalResults.length > 0 ? 0 : -1);
-    } catch (error) {
-      console.error("Failed to perform name search:", error);
-      setAllMatches([]);
-      setCurrentIndex(-1);
-    } finally {
-      setIsLoading(false);
     }
+
+    const results = searchData.filter((obj) =>
+      obj.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setAllMatches(results);
+    setCurrentIndex(results.length > 0 ? 0 : -1);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      handleSearch();
+      handleNameSearch(); // Call the restored name search function
     }
   };
 
-  // --- NEW: Function to handle switching modes ---
   const handleModeChange = (mode: "name" | "area") => {
     setSearchMode(mode);
-    // Clear all previous results and state when switching
     setSearchTerm("");
     setAllMatches([]);
     setCurrentIndex(-1);
     onClearAreaSearchResults();
-    onToggleAreaSearch(false); // Ensure listening mode is off
+    onToggleAreaSearch(false);
   };
 
-  // ... (handleNext, handlePrevious, handleChoose functions remain the same)
   const handleNext = () => {
     if (allMatches.length === 0) return;
     setCurrentIndex((prev) => (prev + 1) % allMatches.length);
@@ -143,7 +134,6 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
     <div className="search-container">
       <strong>Object Search</strong>
 
-      {/* --- NEW: The Mode Switcher UI --- */}
       <div className="search-mode-switcher">
         <button
           className={`switcher-button ${searchMode === "name" ? "active" : ""}`}
@@ -159,7 +149,6 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
         </button>
       </div>
 
-      {/* --- NEW: Conditionally Render Search Controls --- */}
       {searchMode === "name" && (
         <input
           type="text"
@@ -174,7 +163,7 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
       {searchMode === "area" && (
         <button
           onClick={() => onToggleAreaSearch(true)}
-          className="search-input" /* Reuse style for consistency */
+          className="search-input"
           style={{
             outline: isAreaSearchActive ? "2px solid #3b82f6" : "none",
             textAlign: "center",
@@ -204,7 +193,31 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
 
       {allMatches.length > 0 && showCycler && (
         <div className="npc-cycler">
-          {/* ... (cycler JSX remains the same) */}
+          <div
+            className="npc-cycler-info"
+            title={allMatches[currentIndex]?.name}
+          >
+            <span
+              style={{
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {allMatches[currentIndex]?.name} (F
+              {allMatches[currentIndex]?.floor})
+            </span>
+            <span>
+              {currentIndex + 1} of {allMatches.length}
+            </span>
+          </div>
+          <div className="npc-cycler-buttons">
+            <button onClick={handlePrevious}>Previous</button>
+            <button onClick={handleNext}>Next</button>
+          </div>
+          <button onClick={handleChoose} className="button--add">
+            Choose this Object
+          </button>
         </div>
       )}
 
