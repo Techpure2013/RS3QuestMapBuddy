@@ -1,0 +1,1 @@
+[{"id": 95078, "name": "Exit", "file": "60-100.json", "lng": 3865, "lat": 6434, "floor": 1, "rotation": 2, "center": [3865.5, 6434.5], "hash": 2870300896, "is_members": true, "actions": ["Leave"], "models": [{"type": 10, "values": [66751]}], "action_cursors_0": 57}]

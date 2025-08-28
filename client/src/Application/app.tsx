@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { MapContainer, TileLayer, useMapEvents } from "react-leaflet";
 import {
   parseWikiImageUrl,
-  resizeImage,
   resizeImageBlob,
 } from "Map Classes/Map Components/imageUtils";
 import "leaflet/dist/leaflet.css";
@@ -21,16 +20,21 @@ import { useSocket } from "./../Entrance/Entrance Components/SocketProvider";
 import ChunkGridLayer from "Map Classes/Map Components/ChunkGrid";
 import { EditorPanel } from "./../Map Classes/Map Components/DeveloperControls";
 import { produce } from "immer";
-import StepSnapHandler from "Map Classes/Map Components/StepSnapHandler";
+import StepSnapHandler from "./../Map Classes/Map Components/StepSnapHandler";
 import { SelectionHighlightLayer } from "./../Map Classes/Map Components/SelectionHighlightLayer";
 import type { SelectionGeometry } from "./../Map Classes/Map Components/SelectionHighlightLayer";
 import { IconGridDots, IconSettings } from "@tabler/icons-react";
-import { NpcSearch } from "Map Classes/Map Components/NpcSearch";
+import { NpcSearch } from "./../Map Classes/Map Components/NpcSearch";
 import type { Npc } from "./../Map Classes/Map Components/NpcSearch";
 import NpcFlyToHandler from "./../Map Classes/Map Components/NpcFlyToHandler";
-import MapAreaLayer from "Map Classes/Map Components/MapAreaLayer";
 import { MapAreaSearch } from "./../Map Classes/Map Components/MapAreaSearch";
 import MapAreaFlyToHandler from "./../Map Classes/Map Components/MapAreaFlyToHandler";
+import { ObjectSearch } from "./../Map Classes/Map Components/ObjectSearch";
+import type { MapObject } from "./../Map Classes/Map Components/ObjectSearch";
+import ObjectFlyToHandler from "./../Map Classes/Map Components/ObjectFlyToHandler";
+import SelectedObjectFlyToHandler from "./../Map Classes/Map Components/SelectedObjectFlyToHandler";
+
+// --- INTERFACES ---
 interface QuestData {
   questName: string;
   questSteps: any[];
@@ -72,6 +76,11 @@ const App: React.FC = () => {
   let socket = useSocket();
 
   // --- STATE ---
+  const [selectedObjectFromSearch, setSelectedObjectFromSearch] =
+    useState<MapObject | null>(null);
+  const [highlightedObject, setHighlightedObject] = useState<MapObject | null>(
+    null
+  );
   const [selectedArea, setSelectedArea] = useState<MapArea | null>(null);
   const [highlightedNpc, setHighlightedNpc] = useState<Npc | null>(null);
   const [map, setMap] = useState<L.Map | null>(null);
@@ -102,28 +111,25 @@ const App: React.FC = () => {
     {}
   );
   const [isAlt1Environment, setIsAlt1Environment] = useState(false);
-  // --- FIX: Initialize state with the correct QuestImageFile[] type ---
   const [questImageList, setQuestImageList] = useState<QuestImageFile[]>([]);
-
   const [chatheadOverridesString, setChatheadOverridesString] = useState("");
   const [questImageListString, setQuestImageListString] = useState("");
-
-  // --- NEW: State for file and directory handles ---
   const [chatheadOverridesFileHandle, setChatheadOverridesFileHandle] =
     useState<FileSystemFileHandle | null>(null);
   const [questImageListFileHandle, setQuestImageListFileHandle] =
     useState<FileSystemFileHandle | null>(null);
   const [imageDirectoryHandle, setImageDirectoryHandle] = useState<any | null>(
     null
-  ); // Directory handle
+  );
   const [showGrids, setShowGrids] = useState(true);
+  // --- NEW: State for area search mode ---
+  const [isObjectAreaSearch, setIsObjectAreaSearch] = useState(false);
+  const [areaSearchResults, setAreaSearchResults] = useState<MapObject[]>([]);
+
   // --- DERIVED VALUES ---
   const selectionGeometry = useMemo<SelectionGeometry>(() => {
-    // Guard against incomplete questJson
     if (!questJson?.questSteps?.[selectedStep]) return { type: "none" };
-
     const step = questJson.questSteps[selectedStep];
-
     if (targetType === "npc") {
       return { type: "npc", npcArray: step.highlights?.npc || [] };
     } else if (targetType === "object") {
@@ -133,29 +139,68 @@ const App: React.FC = () => {
   }, [questJson, selectedStep, targetType]);
 
   const highlightGeometry = useMemo<SelectionGeometry>(() => {
-    if (!highlightedNpc) {
-      return { type: "none" };
-    }
-    // Create a geometry object for the single highlighted NPC
-    return {
-      type: "npc",
-      npcArray: [
-        {
-          npcName: highlightedNpc.name,
-          npcLocation: { lat: highlightedNpc.lat, lng: highlightedNpc.lng },
-          wanderRadius: {
-            bottomLeft: { lat: 0, lng: 0 },
-            topRight: { lat: 0, lng: 0 },
+    if (selectedObjectFromSearch) {
+      return {
+        type: "object",
+        objectArray: [
+          {
+            name: selectedObjectFromSearch.name,
+            objectLocation: [
+              {
+                lat: selectedObjectFromSearch.lat,
+                lng: selectedObjectFromSearch.lng,
+                isSelected: true,
+              },
+            ],
+            objectRadius: {
+              bottomLeft: { lat: 0, lng: 0 },
+              topRight: { lat: 0, lng: 0 },
+            },
           },
-        },
-      ],
-    };
-  }, [highlightedNpc]);
+        ],
+      };
+    }
+    if (highlightedNpc) {
+      return {
+        type: "npc",
+        npcArray: [
+          {
+            npcName: highlightedNpc.name,
+            npcLocation: { lat: highlightedNpc.lat, lng: highlightedNpc.lng },
+            wanderRadius: {
+              bottomLeft: { lat: 0, lng: 0 },
+              topRight: { lat: 0, lng: 0 },
+            },
+          },
+        ],
+      };
+    }
+    if (highlightedObject) {
+      return {
+        type: "object",
+        objectArray: [
+          {
+            name: highlightedObject.name,
+            objectLocation: [
+              {
+                lat: highlightedObject.lat,
+                lng: highlightedObject.lng,
+                color: "#00FFFF",
+              },
+            ],
+            objectRadius: {
+              bottomLeft: { lat: 0, lng: 0 },
+              topRight: { lat: 0, lng: 0 },
+            },
+          },
+        ],
+      };
+    }
+    return { type: "none" };
+  }, [selectedObjectFromSearch, highlightedNpc, highlightedObject]);
 
   const targetNameValue = useMemo(() => {
-    // Guard against incomplete questJson
     if (!questJson?.questSteps?.[selectedStep]) return "";
-
     const target =
       questJson.questSteps[selectedStep]?.highlights[targetType]?.[targetIndex];
     if (!target) return "";
@@ -174,11 +219,9 @@ const App: React.FC = () => {
     ) || "";
 
   const currentTargetObjectData = useMemo(() => {
-    // Guard against incomplete questJson
     if (!questJson?.questSteps?.[selectedStep]) {
       return { color: selectedObjectColor, numberLabel: objectNumberLabel };
     }
-
     if (targetType === "object") {
       const target =
         questJson.questSteps[selectedStep]?.highlights.object?.[targetIndex];
@@ -198,12 +241,10 @@ const App: React.FC = () => {
   ]);
 
   // --- EFFECTS ---
-  //THIS IS THE SINGLE SOURCE OF TRUTH FOR STEP CHANGES
   useEffect(() => {
     if (!questJson) return;
     const step = questJson.questSteps[selectedStep];
     if (!step) return;
-
     const hasValidNpcs =
       step.highlights?.npc?.some(
         (npc: any) => npc.npcLocation?.lat !== 0 || npc.npcLocation?.lng !== 0
@@ -212,7 +253,6 @@ const App: React.FC = () => {
       step.highlights?.object?.some((obj: any) =>
         obj.objectLocation?.some((loc: any) => loc.lat !== 0 || loc.lng !== 0)
       ) || false;
-
     if (hasValidNpcs) {
       setTargetType("npc");
       setTargetIndex(0);
@@ -222,23 +262,24 @@ const App: React.FC = () => {
     } else {
       setTargetIndex(0);
     }
-  }, [selectedStep]);
+  }, [selectedStep, questJson]);
+
   useEffect(() => {
     if (window.alt1) {
-      console.log("Alt1 environment detected. Disabling direct save buttons.");
       setIsAlt1Environment(true);
     }
   }, []);
+
   useEffect(() => {
     if (!questJson) return;
     const step = questJson.questSteps[selectedStep];
     if (!step) return;
-
     const arr = step.highlights?.[targetType] || [];
     if (targetIndex >= arr.length) {
       setTargetIndex(Math.max(0, arr.length - 1));
     }
   }, [questJson, selectedStep, targetType, targetIndex]);
+
   useEffect(() => {
     if (targetType === "object") {
       setCaptureMode("multi-point");
@@ -246,13 +287,10 @@ const App: React.FC = () => {
       setCaptureMode("single");
     }
   }, [targetType]);
-  // --- TOGGLES ---
-  const toggleShowGrids = () => {
-    setShowGrids((prev) => !prev);
-  };
-  // --- HANDLERS ---
 
-  // --- NEW: Generic download fallback function ---
+  // --- HANDLERS ---
+  const toggleShowGrids = () => setShowGrids((prev) => !prev);
+
   const downloadBlob = (blob: Blob, fileName: string) => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
@@ -267,11 +305,10 @@ const App: React.FC = () => {
     );
   };
 
-  // --- REVISED: Generic file save function with fallback ---
   const saveContentToFileHandle = async (
     handle: FileSystemFileHandle | null,
     content: string,
-    fileName: string // Pass filename for the fallback
+    fileName: string
   ) => {
     const blob = new Blob([content], { type: "application/json" });
     if (!handle) {
@@ -288,7 +325,6 @@ const App: React.FC = () => {
     }
   };
 
-  // --- REVISED: Chathead save handler ---
   const handleSaveChatheadOverrides = () => {
     saveContentToFileHandle(
       chatheadOverridesFileHandle,
@@ -297,7 +333,6 @@ const App: React.FC = () => {
     );
   };
 
-  // --- REVISED: Image list save handler ---
   const handleSaveQuestImageList = () => {
     saveContentToFileHandle(
       questImageListFileHandle,
@@ -305,6 +340,7 @@ const App: React.FC = () => {
       "QuestImageList.json"
     );
   };
+
   const handleSaveChatheadOverridesAs = () => {
     const blob = new Blob([chatheadOverridesString], {
       type: "application/json",
@@ -318,7 +354,7 @@ const App: React.FC = () => {
     });
     downloadBlob(blob, "QuestImageList.json");
   };
-  // --- REVISED: Core image processing function with fallback ---
+
   const processAndSaveImage = async (imageBlob: Blob) => {
     if (!questJson) {
       alert("Please load a quest first.");
@@ -328,7 +364,6 @@ const App: React.FC = () => {
       alert("Please select an image save directory first.");
       return;
     }
-
     try {
       const {
         blob: resizedBlob,
@@ -341,10 +376,7 @@ const App: React.FC = () => {
         alert("Current step has no description to link the image to.");
         return;
       }
-
       const fileName = `${questJson.questName}_step_${selectedStep + 1}.webp`;
-
-      // --- TRY direct save, CATCH to download ---
       try {
         const fileHandle = await imageDirectoryHandle.getFileHandle(fileName, {
           create: true,
@@ -359,10 +391,7 @@ const App: React.FC = () => {
         );
         downloadBlob(resizedBlob, fileName);
       }
-      // --- End of save logic ---
-
       const imagePath = `${fileName}`;
-
       const nextState = produce(questImageList, (draft: QuestImageFile[]) => {
         let questEntry = draft.find((q) => q.name === questJson.questName);
         const newImageObject: QuestImageData = {
@@ -372,7 +401,6 @@ const App: React.FC = () => {
           width,
           stepDescription,
         };
-
         if (questEntry) {
           const existingImageIndex = questEntry.images.findIndex(
             (img) => img.stepDescription === stepDescription
@@ -389,11 +417,9 @@ const App: React.FC = () => {
           });
         }
       });
-
       setQuestImageList(nextState);
       const newString = JSON.stringify(nextState, null, 2);
       setQuestImageListString(newString);
-      // Auto-save the JSON file (which now also has a fallback)
       saveContentToFileHandle(
         questImageListFileHandle,
         newString,
@@ -405,16 +431,41 @@ const App: React.FC = () => {
     }
   };
 
-  // This is the new handler for the paste component
+  const handleObjectHighlight = (obj: MapObject | null) => {
+    setHighlightedObject(obj);
+  };
+
+  const handleObjectSearchSelect = (chosenObject: MapObject) => {
+    setSelectedObjectFromSearch(chosenObject);
+    if (!questJson || targetType !== "object") {
+      alert("Please select 'Object' as the target type first to edit.");
+      return;
+    }
+    const nextState = produce(questJson, (draft) => {
+      const target =
+        draft.questSteps[selectedStep]?.highlights.object?.[targetIndex];
+      if (target) {
+        target.name = chosenObject.name;
+        if (!target.objectLocation || target.objectLocation.length === 0) {
+          target.objectLocation = [];
+        }
+        target.objectLocation[0] = {
+          lat: chosenObject.lat,
+          lng: chosenObject.lng,
+        };
+        draft.questSteps[selectedStep].floor = chosenObject.floor;
+      }
+    });
+    updateQuestState(nextState);
+  };
+
   const handleImagePaste = async (pastedBlob: Blob) => {
     await processAndSaveImage(pastedBlob);
   };
 
-  // This is the UPDATED handler for the URL input
   const handleAddStepImage = async (url: string) => {
     if (!url) return;
     try {
-      // Fetch the URL to get a blob, then process it
       const response = await fetch(parseWikiImageUrl(url));
       if (!response.ok) {
         throw new Error(`Failed to fetch image: ${response.statusText}`);
@@ -427,7 +478,6 @@ const App: React.FC = () => {
     }
   };
 
-  // --- Chathead override handlers ---
   const handleLoadChatheadOverrides = async () => {
     try {
       const [handle] = await window.showOpenFilePicker({
@@ -463,7 +513,6 @@ const App: React.FC = () => {
     );
   };
 
-  // --- Quest image list handlers ---
   const handleLoadQuestImageList = async () => {
     try {
       const [handle] = await window.showOpenFilePicker({
@@ -496,41 +545,30 @@ const App: React.FC = () => {
 
   const handleDeleteNpc = () => {
     if (!questJson || targetType !== "npc") return;
-
     const nextState = produce(questJson, (draft) => {
       const step = draft.questSteps[selectedStep];
       if (!step?.highlights?.npc) return;
-
-      // Remove the NPC at targetIndex
       step.highlights.npc.splice(targetIndex, 1);
-
-      // Clamp targetIndex so it doesn’t go out of range
       if (targetIndex >= step.highlights.npc.length) {
         setTargetIndex(Math.max(0, step.highlights.npc.length - 1));
       }
     });
-
     updateQuestState(nextState);
   };
 
   const handleDeleteObject = () => {
     if (!questJson || targetType !== "object") return;
-
     const nextState = produce(questJson, (draft) => {
       const step = draft.questSteps[selectedStep];
       if (!step?.highlights?.object) return;
-
-      // Remove the Object at targetIndex
       step.highlights.object.splice(targetIndex, 1);
-
-      // Clamp targetIndex so it doesn’t go out of range
       if (targetIndex >= step.highlights.object.length) {
         setTargetIndex(Math.max(0, step.highlights.object.length - 1));
       }
     });
-
     updateQuestState(nextState);
   };
+
   const handleSelectedObjectColorChange = (newColor: string) => {
     setSelectedObjectColor(newColor);
     if (questJson && targetType === "object") {
@@ -558,6 +596,7 @@ const App: React.FC = () => {
       updateQuestState(nextState);
     }
   };
+
   const handleFloorChange = useCallback(
     (newFloor: number) => {
       if (HandleFloorIncreaseDecrease(newFloor)) {
@@ -574,28 +613,26 @@ const App: React.FC = () => {
     },
     [questJson, selectedStep]
   );
+
   const handleNpcSearchSelect = (chosenNpc: Npc) => {
     if (!questJson) return;
-
     const nextState = produce(questJson, (draft) => {
       const target =
         draft.questSteps[selectedStep]?.highlights.npc?.[targetIndex];
       if (target) {
         target.npcName = chosenNpc.name;
         target.npcLocation = { lat: chosenNpc.lat, lng: chosenNpc.lng };
-        // Also update the step's floor to match the NPC's floor
         draft.questSteps[selectedStep].floor = chosenNpc.floor;
       }
     });
-
     updateQuestState(nextState);
-    setHighlightedNpc(null); // Clear the temporary highlight
+    setHighlightedNpc(null);
   };
 
-  // This function's only job is to set the state.
   const handleNpcHighlight = (npc: Npc | null) => {
     setHighlightedNpc(npc);
   };
+
   const handleNewQuest = () => {
     const newQuestTemplate: QuestData = {
       questName: "New Quest",
@@ -609,19 +646,10 @@ const App: React.FC = () => {
             npc: [
               {
                 npcName: "",
-                npcLocation: {
-                  lat: 0,
-                  lng: 0,
-                },
+                npcLocation: { lat: 0, lng: 0 },
                 wanderRadius: {
-                  bottomLeft: {
-                    lat: 0,
-                    lng: 0,
-                  },
-                  topRight: {
-                    lat: 0,
-                    lng: 0,
-                  },
+                  bottomLeft: { lat: 0, lng: 0 },
+                  topRight: { lat: 0, lng: 0 },
                 },
               },
             ],
@@ -630,14 +658,8 @@ const App: React.FC = () => {
                 name: "",
                 objectLocation: [],
                 objectRadius: {
-                  bottomLeft: {
-                    lat: 0,
-                    lng: 0,
-                  },
-                  topRight: {
-                    lat: 0,
-                    lng: 0,
-                  },
+                  bottomLeft: { lat: 0, lng: 0 },
+                  topRight: { lat: 0, lng: 0 },
                 },
               },
             ],
@@ -650,8 +672,9 @@ const App: React.FC = () => {
     setSelectedStep(0);
     setTargetIndex(0);
     setTargetType("npc");
-    setFileHandle(null); // This is an unsaved file
+    setFileHandle(null);
   };
+
   const handleAddObject = () => {
     if (!questJson) return;
     let newIndex = 0;
@@ -661,7 +684,7 @@ const App: React.FC = () => {
       if (!step.highlights.object) step.highlights.object = [];
       step.highlights.object.push({
         name: "New Object",
-        objectLocation: [{ lat: 0, lng: 0 }], // ✅ always initialize
+        objectLocation: [{ lat: 0, lng: 0 }],
         objectRadius: {
           bottomLeft: { lat: 0, lng: 0 },
           topRight: { lat: 0, lng: 0 },
@@ -671,8 +694,9 @@ const App: React.FC = () => {
     });
     updateQuestState(nextState);
     setTargetType("object");
-    setTargetIndex(newIndex); // ✅ jump to the new object
+    setTargetIndex(newIndex);
   };
+
   const handleAddStep = () => {
     if (!questJson) return;
     const newStepObject = {
@@ -684,73 +708,47 @@ const App: React.FC = () => {
         npc: [
           {
             npcName: "",
-            npcLocation: {
-              lat: 0,
-              lng: 0,
-            },
+            npcLocation: { lat: 0, lng: 0 },
             wanderRadius: {
-              bottomLeft: {
-                lat: 0,
-                lng: 0,
-              },
-              topRight: {
-                lat: 0,
-                lng: 0,
-              },
+              bottomLeft: { lat: 0, lng: 0 },
+              topRight: { lat: 0, lng: 0 },
             },
           },
         ],
         object: [
           {
             name: "",
-            objectLocation: [
-              {
-                lat: 0,
-                lng: 0,
-              },
-            ],
+            objectLocation: [{ lat: 0, lng: 0 }],
             objectRadius: {
-              bottomLeft: {
-                lat: 0,
-                lng: 0,
-              },
-              topRight: {
-                lat: 0,
-                lng: 0,
-              },
+              bottomLeft: { lat: 0, lng: 0 },
+              topRight: { lat: 0, lng: 0 },
             },
           },
         ],
       },
-      floor: floor, // Default to the current floor
+      floor: floor,
     };
     const nextState = produce(questJson, (draft) => {
       draft.questSteps.splice(selectedStep + 1, 0, newStepObject);
     });
     updateQuestState(nextState);
-    setSelectedStep(selectedStep + 1); // Jump to the new step
+    setSelectedStep(selectedStep + 1);
   };
-  const handleSubmitToGitHub = async () => {
-    if (!questJson) {
-      return;
-    }
 
+  const handleSubmitToGitHub = async () => {
+    if (!questJson) return;
     try {
       const response = await fetch("http://localhost:42069/api/submit-pr", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userID: UserID || "anonymous-user",
           questJson: questJson,
         }),
       });
-
       const data = await response.json();
-
       if (response.ok && data.success) {
-        window.open(data.prUrl, "_blank"); // Open the PR in a new tab
+        window.open(data.prUrl, "_blank");
       } else {
         throw new Error(data.error || "An unknown error occurred.");
       }
@@ -758,28 +756,25 @@ const App: React.FC = () => {
       console.error("Failed to submit PR:", err);
     }
   };
+
   const updateQuestState = (newQuestState: QuestData) => {
     setQuestJson(newQuestState);
     setJsonString(JSON.stringify(newQuestState, null, 2));
   };
-  const handleDeleteStep = () => {
-    if (!questJson || questJson.questSteps.length <= 1) {
-      return;
-    }
 
+  const handleDeleteStep = () => {
+    if (!questJson || questJson.questSteps.length <= 1) return;
     const nextState = produce(questJson, (draft) => {
-      // Remove one element at the current selectedStep index
       draft.questSteps.splice(selectedStep, 1);
     });
-
     updateQuestState(nextState);
-
-    // Adjust the selectedStep index if we deleted the last item in the array
     if (selectedStep >= nextState.questSteps.length) {
       setSelectedStep(nextState.questSteps.length - 1);
     }
   };
+
   const handleSetRadiusMode = () => setCaptureMode("radius");
+
   const handleJsonTextChange = (text: string) => {
     setJsonString(text);
     try {
@@ -789,9 +784,11 @@ const App: React.FC = () => {
       /* ignore invalid json */
     }
   };
+
   const handleAreaSelect = (area: MapArea) => {
     setSelectedArea(area);
   };
+
   const handleStepDescriptionView = () =>
     setStepDescriptionEdit((prev) => !prev);
 
@@ -803,7 +800,7 @@ const App: React.FC = () => {
     );
     if (newStepIndex !== selectedStep) {
       const newStepData = questJson.questSteps[newStepIndex];
-      setFloor(newStepData.floor ?? 0); // ✅ Sync floor view to new step's data
+      setFloor(newStepData.floor ?? 0);
       setSelectedStep(newStepIndex);
     }
   };
@@ -813,7 +810,7 @@ const App: React.FC = () => {
     const newStepIndex = Math.max(selectedStep - 1, 0);
     if (newStepIndex !== selectedStep) {
       const newStepData = questJson.questSteps[newStepIndex];
-      setFloor(newStepData.floor ?? 0); // ✅ Sync floor view to new step's data
+      setFloor(newStepData.floor ?? 0);
       setSelectedStep(newStepIndex);
     }
   };
@@ -841,13 +838,9 @@ const App: React.FC = () => {
   const handleTargetNameChange = (newName: string) => {
     if (!questJson) return;
     const nextState = produce(questJson, (draft) => {
-      const step = draft.questSteps[selectedStep];
-      if (!step.highlights) return;
-      if (!step.highlights[targetType]) return;
-
-      const target = step.highlights[targetType][targetIndex];
-      if (!target) return; // ✅ Don’t create a new one here
-
+      const target =
+        draft.questSteps[selectedStep].highlights[targetType][targetIndex];
+      if (!target) return;
       if (targetType === "npc") {
         target.npcName = newName;
       } else {
@@ -859,7 +852,6 @@ const App: React.FC = () => {
 
   const handleAddNpc = () => {
     if (!questJson) return;
-    // --- FIX: Introduce a variable to hold the new index ---
     let newIndex = 0;
     const nextState = produce(questJson, (draft) => {
       const step = draft.questSteps[selectedStep];
@@ -873,11 +865,9 @@ const App: React.FC = () => {
           topRight: { lat: 0, lng: 0 },
         },
       });
-      // --- FIX: Capture the index of the newly added NPC ---
       newIndex = step.highlights.npc.length - 1;
     });
     updateQuestState(nextState);
-    // --- FIX: Set the target type and index AFTER the state has been updated ---
     setTargetType("npc");
     setTargetIndex(newIndex);
   };
@@ -900,15 +890,10 @@ const App: React.FC = () => {
 
   const handleApplyRadius = () => {
     if (!questJson || targetType !== "npc") return;
-
     const target =
       questJson.questSteps[selectedStep].highlights.npc[targetIndex];
     const center = target?.npcLocation;
-
-    if (!center || (center.lat === 0 && center.lng === 0)) {
-      return;
-    }
-
+    if (!center || (center.lat === 0 && center.lng === 0)) return;
     const radius = wanderRadiusInput;
     const nextState = produce(questJson, (draft) => {
       const draftTarget =
@@ -920,19 +905,17 @@ const App: React.FC = () => {
     });
     updateQuestState(nextState);
   };
+
   const handleResetRadius = () => {
     if (!questJson) return;
-
     const nextState = produce(questJson, (draft) => {
       const target =
         draft.questSteps[selectedStep].highlights[targetType][targetIndex];
       if (!target) return;
-
       const emptyRadius = {
         bottomLeft: { lat: 0, lng: 0 },
         topRight: { lat: 0, lng: 0 },
       };
-
       if (targetType === "npc") {
         target.wanderRadius = emptyRadius;
       } else {
@@ -956,6 +939,7 @@ const App: React.FC = () => {
 
   const handleFloorIncrement = () => handleFloorChange(floor + 1);
   const handleFloorDecrement = () => handleFloorChange(floor - 1);
+
   const handleDataCaptured = (data: any) => {
     if (!questJson) return;
     const nextState = produce(questJson, (draft) => {
@@ -964,16 +948,13 @@ const App: React.FC = () => {
       step.floor = floor;
       const highlightTarget = step.highlights[targetType][targetIndex];
       if (!highlightTarget) return;
-
       if (data.type === "single") {
         if (targetType === "npc") {
           highlightTarget.npcLocation = data.payload;
         }
       } else if (data.type === "multi-point") {
         if (targetType === "object") {
-          // Save the location array
           highlightTarget.objectLocation = data.payload;
-          // ALSO save the color and number to the parent object
           highlightTarget.color = selectedObjectColor;
           highlightTarget.numberLabel = objectNumberLabel;
         }
@@ -990,7 +971,7 @@ const App: React.FC = () => {
     });
     updateQuestState(nextState);
   };
-  // --- FILE HANDLERS ---
+
   const handleFileLoadFromInput = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -1031,26 +1012,20 @@ const App: React.FC = () => {
   };
 
   const handleSaveFile = async () => {
-    // If there's no file handle, we must use "Save As".
     if (!fileHandle) {
       handleSaveAsFile();
       return;
     }
-
-    // This is the modern API that fails in Alt1.
-    // Will Fail in Alt1 but Succeed in regular browsers
     try {
       const writable = await fileHandle.createWritable();
       await writable.write(jsonString);
       await writable.close();
       alert(`Saved changes to ${fileHandle.name}`);
     } catch (err) {
-      // This catch block will execute when the DOMException occurs in Alt1.
       console.error(
         "File System Access API failed, falling back to download:",
         err
       );
-
       handleSaveAsFile();
     }
   };
@@ -1071,7 +1046,6 @@ const App: React.FC = () => {
     URL.revokeObjectURL(url);
   };
 
-  // --- MAP COMPONENTS ---
   const snapToTileCoordinate = (latlng: L.LatLng) => {
     const visualCenterX = Math.floor(latlng.lng - 0.5) + 0.5;
     const visualCenterY = Math.floor(latlng.lat + 0.5) - 0.5;
@@ -1084,7 +1058,6 @@ const App: React.FC = () => {
     useMapEvents({
       click: (e) => {
         const snappedCoord = snapToTileCoordinate(e.latlng);
-
         switch (captureMode) {
           case "single":
             handleDataCaptured({ type: "single", payload: snappedCoord });
@@ -1099,19 +1072,12 @@ const App: React.FC = () => {
                 (loc: { lat: number; lng: number }) =>
                   loc.lat === snappedCoord.lat && loc.lng === snappedCoord.lng
               );
-
-              if (isDuplicate) {
-                return;
-              }
-
-              // --- FIX #1: Create the new point with all necessary data ---
+              if (isDuplicate) return;
               const newPoint = {
                 ...snappedCoord,
                 color: selectedObjectColor,
                 numberLabel: objectNumberLabel,
               };
-              // -----------------------------------------------------------
-
               const newLocations = [...currentLocations, newPoint];
               handleDataCaptured({
                 type: "multi-point",
@@ -1128,7 +1094,6 @@ const App: React.FC = () => {
             const maxLat = Math.max(firstCorner.lat, snappedCoord.lat);
             const minLng = Math.min(firstCorner.lng, snappedCoord.lng);
             const maxLng = Math.max(firstCorner.lng, snappedCoord.lng);
-
             const radiusPayload = {
               bottomLeft: { lat: minLat, lng: minLng },
               topRight: { lat: maxLat, lng: maxLng },
@@ -1157,6 +1122,59 @@ const App: React.FC = () => {
             });
             setCaptureMode("single");
             break;
+        }
+
+        // --- NEW: Handle Object Area Search ---
+        if (isObjectAreaSearch) {
+          console.log("Area search click detected at:", snappedCoord);
+          const searchRadius = 10; // 10 tiles in each direction
+          const bounds = {
+            minLng: snappedCoord.lng - searchRadius,
+            maxLng: snappedCoord.lng + searchRadius,
+            minLat: snappedCoord.lat - searchRadius,
+            maxLat: snappedCoord.lat + searchRadius,
+          };
+
+          // BROAD PHASE: Calculate which chunks the search area overlaps with
+          const chunksToFetch = new Set<string>();
+          const chunkSize = 64;
+          const startChunkX = Math.floor(bounds.minLng / chunkSize);
+          const endChunkX = Math.floor(bounds.maxLng / chunkSize);
+          const startChunkY = Math.floor(bounds.minLat / chunkSize);
+          const endChunkY = Math.floor(bounds.maxLat / chunkSize);
+
+          for (let x = startChunkX; x <= endChunkX; x++) {
+            for (let y = startChunkY; y <= endChunkY; y++) {
+              chunksToFetch.add(`chunk_${x}_${y}`);
+            }
+          }
+
+          // Fetch all required chunk files concurrently
+          const promises = Array.from(chunksToFetch).map((chunkId) =>
+            fetch(`/Objects_By_Chunks/${chunkId}.json`).then((res) =>
+              // Gracefully handle chunks with no objects (404)
+              res.ok ? res.json() : Promise.resolve([])
+            )
+          );
+
+          Promise.all(promises).then((results) => {
+            const allObjectsInChunks = results.flat();
+
+            // NARROW PHASE: Filter objects to be within the precise bounds
+            const finalResults = allObjectsInChunks.filter(
+              (obj: MapObject) =>
+                obj.lng >= bounds.minLng &&
+                obj.lng <= bounds.maxLng &&
+                obj.lat >= bounds.minLat &&
+                obj.lat <= bounds.maxLat
+            );
+
+            console.log(`Found ${finalResults.length} objects in the area.`);
+            setAreaSearchResults(finalResults);
+          });
+
+          // Deactivate area search mode after the click
+          setIsObjectAreaSearch(false);
         }
       },
     });
@@ -1298,6 +1316,16 @@ const App: React.FC = () => {
           />
         </div>
         <div className="panel-section">
+          <ObjectSearch
+            onObjectSelect={handleObjectSearchSelect}
+            onObjectHighlight={handleObjectHighlight}
+            isAreaSearchActive={isObjectAreaSearch}
+            onToggleAreaSearch={setIsObjectAreaSearch}
+            areaSearchResults={areaSearchResults}
+            onClearAreaSearchResults={() => setAreaSearchResults([])}
+          />
+        </div>
+        <div className="panel-section">
           <MapAreaSearch onAreaSelect={handleAreaSelect} />
         </div>
       </EditorPanel>
@@ -1321,11 +1349,7 @@ const App: React.FC = () => {
       >
         <MapClickHandler />
         <ZoomHandler />
-        {showGrids && (
-          <>
-            <ChunkGridLayer />
-          </>
-        )}
+        {showGrids && <ChunkGridLayer />}
         <GridLayer />
         <div className="cursor-coordinates-box">
           <div className="coordinate-row">
@@ -1347,21 +1371,19 @@ const App: React.FC = () => {
           </button>
         </div>
         <div className="floorButtonContainer">
-          <div className="floorButtonContainer">
-            <button
-              className="floor-button floor-button--up"
-              onClick={handleFloorIncrement}
-            >
-              ↑
-            </button>
-            <div className="floor-display">Floor {floor}</div>
-            <button
-              className="floor-button floor-button--down"
-              onClick={handleFloorDecrement}
-            >
-              ↓
-            </button>
-          </div>
+          <button
+            className="floor-button floor-button--up"
+            onClick={handleFloorIncrement}
+          >
+            ↑
+          </button>
+          <div className="floor-display">Floor {floor}</div>
+          <button
+            className="floor-button floor-button--down"
+            onClick={handleFloorDecrement}
+          >
+            ↓
+          </button>
         </div>
         <>
           {layers.map((layer) => (
@@ -1391,10 +1413,21 @@ const App: React.FC = () => {
           highlightedNpc={highlightedNpc}
           onFloorChange={handleFloorChange}
         />
-        <SelectionHighlightLayer
-          geometry={highlightedNpc ? highlightGeometry : selectionGeometry}
+        <ObjectFlyToHandler
+          highlightedObject={highlightedObject}
+          onFloorChange={handleFloorChange}
         />
-
+        <SelectedObjectFlyToHandler
+          selectedObject={selectedObjectFromSearch}
+          onFloorChange={handleFloorChange}
+        />
+        <SelectionHighlightLayer
+          geometry={
+            selectedObjectFromSearch || highlightedNpc || highlightedObject
+              ? highlightGeometry
+              : selectionGeometry
+          }
+        />
         <HighlightLayer onCursorMove={handleCursorMove} />
       </MapContainer>
     </div>

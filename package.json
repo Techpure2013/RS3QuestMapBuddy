@@ -13,9 +13,11 @@
   "type": "commonjs",
   "devDependencies": {
     "@types/node": "^22.13.4",
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "copy-webpack-plugin": "^13.0.1"
   },
   "dependencies": {
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "use-debounce": "^10.0.5"
   }
 }

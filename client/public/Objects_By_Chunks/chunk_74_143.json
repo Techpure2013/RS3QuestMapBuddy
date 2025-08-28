@@ -1,0 +1,1 @@
+[{"id": 111709, "name": "Treasure chest", "file": "74-143.json", "lng": 4743, "lat": 9166, "floor": 1, "rotation": 2, "center": [4743.5, 9166.5], "hash": 3438441780, "actions": ["Search", "Toggle auto-collect", "Teleport"], "models": [{"type": 10, "values": [49777, 44837]}], "action_cursors_0": 56, "morphs_1": {"unk1": 2888040447, "unk2": [93017], "unk3": 93019}}]

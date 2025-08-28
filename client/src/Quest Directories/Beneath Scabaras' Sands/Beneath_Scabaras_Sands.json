@@ -1291,7 +1291,7 @@
           {
             "npcName": "Golden Scarab ( Beneath Cursed Sands )",
             "npcLocation": {
-              "lat": 2894,
+              "lat": 2895,
               "lng": 3207
             },
             "wanderRadius": {
@@ -1924,44 +1924,52 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
-            "name": "",
+            "name": "Dwellberry Bushes",
             "objectLocation": [
               {
                 "lat": 0,
                 "lng": 0
+              },
+              {
+                "lat": 7566,
+                "lng": 3413,
+                "color": "#00FF00",
+                "numberLabel": ""
+              },
+              {
+                "lat": 7565,
+                "lng": 3414,
+                "color": "#00FF00",
+                "numberLabel": ""
+              },
+              {
+                "lat": 7567,
+                "lng": 3408,
+                "color": "#00FF00",
+                "numberLabel": ""
+              },
+              {
+                "lat": 7566,
+                "lng": 3407,
+                "color": "#00FF00",
+                "numberLabel": ""
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 7565,
+                "lng": 3407
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 7568,
+                "lng": 3414
               }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           }
         ]
       },
@@ -2028,19 +2036,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Melancholy ( Beneath Scabaras Sand)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 7596,
+              "lng": 3476
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 7595,
+                "lng": 3475
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 7597,
+                "lng": 3477
               }
             }
           }
@@ -2079,19 +2087,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Grief ( Beneath Scabaras Sand)",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 7570,
+              "lng": 3462
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 7567,
+                "lng": 3459
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 7573,
+                "lng": 3465
               }
             }
           }
@@ -2120,58 +2128,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Keep stamping out Grief until it transforms into into a level 146 enemy that must be defeated.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        ""
+        "Keep stamping out Grief until it transforms into into a level 146 enemy that must be defeated."
       ]
     },
     {
@@ -2181,19 +2138,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Scabaras",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3081,
+              "lng": 3207
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3079,
+                "lng": 3205
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3083,
+                "lng": 3209
               }
             }
           }

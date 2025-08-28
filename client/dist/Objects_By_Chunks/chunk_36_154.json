@@ -1,0 +1,1 @@
+[{"id": 3223, "name": "Cave Stairs", "file": "36-154.json", "lng": 2304, "lat": 9915, "floor": 0, "rotation": 2, "center": [2304.5, 9915.5], "hash": 1773690479, "actions": ["Ascend"], "models": [{"type": 0, "values": [96151]}], "probably_morphFloor": true}]

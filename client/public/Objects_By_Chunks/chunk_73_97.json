@@ -1,0 +1,1 @@
+[{"id": 91553, "name": "Rope", "file": "73-97.json", "lng": 4703, "lat": 6238, "floor": 1, "rotation": 2, "center": [4703.5, 6238.5], "hash": 2314568429, "actions": ["Climb"], "models": [{"type": 10, "values": [96921]}], "action_cursors_0": 181}]

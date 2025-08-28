@@ -633,3 +633,91 @@ button:hover {
   border-color: #374151;
   color: #6b7280;
 }
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-input {
+  width: 100%;
+  background-color: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  color: #f9fafb;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+
+.search-loading {
+  padding: 10px;
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+  background-color: #1f2937;
+  border-radius: 4px;
+}
+
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #1f2937;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  max-height: 200px; /* Or whatever height you prefer */
+  overflow-y: auto;
+}
+
+.search-results li {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #374151;
+  color: #d1d5db;
+  transition: background-color 0.2s ease;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results li:hover {
+  background-color: #374151;
+  color: #f9fafb;
+}
+/* ==========================================================================
+   Search Mode Switcher
+   ========================================================================== */
+.search-mode-switcher {
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #4b5563;
+}
+
+.switcher-button {
+  flex: 1; /* Each button takes up half the space */
+  padding: 8px 10px;
+  border: none;
+  background-color: #374151; /* Inactive color */
+  color: #d1d5db;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.switcher-button:first-child {
+  border-right: 1px solid #4b5563;
+}
+
+.switcher-button:hover {
+  background-color: #4b5563;
+}
+
+.switcher-button.active {
+  background-color: #2563eb; /* Active color */
+  color: white;
+  font-weight: bold;
+}

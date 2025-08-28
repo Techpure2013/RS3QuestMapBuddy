@@ -1,0 +1,1 @@
+[{"id": 10229, "name": "Ladder", "file": "45-69.json", "lng": 2899, "lat": 4446, "floor": 1, "rotation": 2, "center": [2899.5, 4446.5], "hash": 673571486, "actions": ["Climb up"], "models": [{"type": 10, "values": [114252]}], "action_cursors_0": 52}]

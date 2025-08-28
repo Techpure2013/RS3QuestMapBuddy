@@ -1,0 +1,1 @@
+[{"id": 111440, "name": "Shackle Platform", "file": "74-140.json", "lng": 4751, "lat": 8990, "floor": 1, "rotation": 1, "length": 4, "center": [4751.5, 8992.0], "hash": 2789290749, "actions": ["Jump"], "models": [{"type": 10, "values": [48089]}], "action_cursors_0": 55}]

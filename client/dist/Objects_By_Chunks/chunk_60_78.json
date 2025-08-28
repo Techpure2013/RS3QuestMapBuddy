@@ -1,0 +1,1 @@
+[{"id": 129647, "name": "Tree", "file": "60-78.json", "lng": 3856, "lat": 5051, "floor": 0, "rotation": 0, "center": [3856.5, 5051.5], "hash": 1733152142, "actions": ["Chop down"], "models": [{"type": 10, "values": [121483]}], "material_replacements": "[[13437,18092],[13436,18093]]", "treerockordoor_BD": true, "action_cursors_0": 59, "dummy_bc": true}]

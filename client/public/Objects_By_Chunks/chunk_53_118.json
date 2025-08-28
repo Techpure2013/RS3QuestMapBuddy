@@ -1,0 +1,1 @@
+[{"id": 132065, "name": "Old boat", "file": "53-118.json", "lng": 3400, "lat": 7572, "floor": 0, "rotation": 3, "width": 2, "length": 4, "center": [3401.0, 7574.0], "hash": 505677114, "actions": ["Travel"], "models": [{"type": 10, "values": [24503, 24504, 24510]}]}]

@@ -1,0 +1,1 @@
+[{"id": 111713, "name": "Door", "file": "74-142.json", "lng": 4742, "lat": 9126, "floor": 1, "rotation": 1, "length": 3, "center": [4742.5, 9127.5], "hash": 4283495201, "actions": ["Enter", "Escape"], "models": [{"type": 10, "values": [47130]}], "action_cursors_0": 57}]

@@ -1,0 +1,1 @@
+[{"id": 11398, "name": "Our lives", "file": "28-80.json", "lng": 1824, "lat": 5166, "floor": 2, "rotation": 3, "width": 2, "length": 2, "center": [1825.0, 5167.0], "hash": 2417472492, "actions": ["Read", "Leave"], "models": [{"type": 10, "values": [16788]}], "action_cursors_0": 50, "action_cursors_1": 57}]

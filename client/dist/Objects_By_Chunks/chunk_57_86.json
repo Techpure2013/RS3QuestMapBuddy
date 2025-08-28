@@ -1,0 +1,1 @@
+[{"id": 48190, "name": "Obelisk", "file": "57-86.json", "lng": 3709, "lat": 5565, "floor": 0, "rotation": 0, "width": 3, "length": 3, "center": [3710.5, 5566.5], "hash": 1923582213, "actions": ["Leave"], "models": [{"type": 10, "values": [51804]}], "action_cursors_0": 57}]

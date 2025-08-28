@@ -1,0 +1,1 @@
+[{"id": 82923, "name": "Tunnel", "file": "29-93.json", "lng": 1880, "lat": 5985, "floor": 1, "rotation": 3, "width": 2, "center": [1881.0, 5985.5], "hash": 2191366820, "actions": ["Enter"], "models": [{"type": 10, "values": [84084]}], "action_cursors_0": 57}]

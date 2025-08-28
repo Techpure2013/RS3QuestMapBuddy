@@ -1,0 +1,11104 @@
+[
+  {
+    "id": 86831,
+    "name": "Unicorn tile",
+    "file": "1-13.json",
+    "lng": 95,
+    "lat": 838,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      95.5,
+      838.5
+    ],
+    "hash": 876140276,
+    "models": [
+      {
+        "type": 22,
+        "values": [
+          89053
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 86831,
+    "name": "Unicorn tile",
+    "file": "1-13.json",
+    "lng": 98,
+    "lat": 842,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      98.5,
+      842.5
+    ],
+    "hash": 876140276,
+    "models": [
+      {
+        "type": 22,
+        "values": [
+          89053
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "15-150.json",
+    "lng": 1014,
+    "lat": 9621,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1014.5,
+      9621.5
+    ],
+    "hash": 554110753,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "15-150.json",
+    "lng": 1020,
+    "lat": 9615,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1020.5,
+      9615.5
+    ],
+    "hash": 213950506,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 103204,
+    "name": "Unusual shape",
+    "file": "15-85.json",
+    "lng": 985,
+    "lat": 5472,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 2,
+    "center": [
+      986.5,
+      5473.0
+    ],
+    "hash": 1496563117,
+    "is_members": true,
+    "actions": [
+      "Search"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          50039
+        ]
+      }
+    ],
+    "action_cursors_0": 56
+  },
+  {
+    "id": 77873,
+    "name": "Unlit beacon",
+    "file": "16-20.json",
+    "lng": 1048,
+    "lat": 1340,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      1049.5,
+      1341.5
+    ],
+    "hash": 3403783472,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          77969
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 65
+  },
+  {
+    "id": 101622,
+    "name": "Upways room door",
+    "file": "16-74.json",
+    "lng": 1041,
+    "lat": 4750,
+    "floor": 1,
+    "rotation": 3,
+    "center": [
+      1041.5,
+      4750.5
+    ],
+    "hash": 525714484,
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          64603
+        ]
+      }
+    ],
+    "material_replacements": "[[2075,3171]]"
+  },
+  {
+    "id": 118962,
+    "name": "Urn",
+    "file": "17-1.json",
+    "lng": 1110,
+    "lat": 117,
+    "floor": 3,
+    "rotation": 3,
+    "center": [
+      1110.5,
+      117.5
+    ],
+    "hash": 1204546210,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          120529
+        ]
+      }
+    ]
+  },
+  {
+    "id": 118963,
+    "name": "Urn",
+    "file": "17-1.json",
+    "lng": 1110,
+    "lat": 114,
+    "floor": 3,
+    "rotation": 2,
+    "center": [
+      1110.5,
+      114.5
+    ],
+    "hash": 1369009282,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          120530
+        ]
+      }
+    ]
+  },
+  {
+    "id": 118963,
+    "name": "Urn",
+    "file": "17-1.json",
+    "lng": 1128,
+    "lat": 111,
+    "floor": 3,
+    "rotation": 2,
+    "center": [
+      1128.5,
+      111.5
+    ],
+    "hash": 2565924297,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          120530
+        ]
+      }
+    ]
+  },
+  {
+    "id": 118963,
+    "name": "Urn",
+    "file": "17-1.json",
+    "lng": 1128,
+    "lat": 123,
+    "floor": 3,
+    "rotation": 2,
+    "center": [
+      1128.5,
+      123.5
+    ],
+    "hash": 3087846448,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          120530
+        ]
+      }
+    ]
+  },
+  {
+    "id": 118964,
+    "name": "Urn",
+    "file": "17-1.json",
+    "lng": 1110,
+    "lat": 108,
+    "floor": 3,
+    "rotation": 3,
+    "center": [
+      1110.5,
+      108.5
+    ],
+    "hash": 1862825717,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          120531
+        ]
+      }
+    ]
+  },
+  {
+    "id": 118964,
+    "name": "Urn",
+    "file": "17-1.json",
+    "lng": 1128,
+    "lat": 120,
+    "floor": 3,
+    "rotation": 1,
+    "center": [
+      1128.5,
+      120.5
+    ],
+    "hash": 2349634603,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          120531
+        ]
+      }
+    ]
+  },
+  {
+    "id": 118965,
+    "name": "Urn",
+    "file": "17-1.json",
+    "lng": 1110,
+    "lat": 123,
+    "floor": 3,
+    "rotation": 2,
+    "center": [
+      1110.5,
+      123.5
+    ],
+    "hash": 3846111351,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          120532
+        ]
+      }
+    ]
+  },
+  {
+    "id": 118965,
+    "name": "Urn",
+    "file": "17-1.json",
+    "lng": 1128,
+    "lat": 117,
+    "floor": 3,
+    "rotation": 3,
+    "center": [
+      1128.5,
+      117.5
+    ],
+    "hash": 2980489119,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          120532
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-26.json",
+    "lng": 1122,
+    "lat": 1722,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1122.5,
+      1722.5
+    ],
+    "hash": 2691056579,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-26.json",
+    "lng": 1126,
+    "lat": 1727,
+    "floor": 2,
+    "rotation": 3,
+    "center": [
+      1126.5,
+      1727.5
+    ],
+    "hash": 4057097375,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-26.json",
+    "lng": 1129,
+    "lat": 1726,
+    "floor": 2,
+    "rotation": 1,
+    "center": [
+      1129.5,
+      1726.5
+    ],
+    "hash": 3331550978,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-26.json",
+    "lng": 1130,
+    "lat": 1713,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1130.5,
+      1713.5
+    ],
+    "hash": 2852940125,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-26.json",
+    "lng": 1130,
+    "lat": 1715,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1130.5,
+      1715.5
+    ],
+    "hash": 1192841159,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-26.json",
+    "lng": 1132,
+    "lat": 1710,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1132.5,
+      1710.5
+    ],
+    "hash": 3287009309,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-26.json",
+    "lng": 1143,
+    "lat": 1723,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1143.5,
+      1723.5
+    ],
+    "hash": 2572432229,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-26.json",
+    "lng": 1148,
+    "lat": 1723,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1148.5,
+      1723.5
+    ],
+    "hash": 726291977,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-26.json",
+    "lng": 1149,
+    "lat": 1724,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1149.5,
+      1724.5
+    ],
+    "hash": 100195079,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-27.json",
+    "lng": 1136,
+    "lat": 1760,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1136.5,
+      1760.5
+    ],
+    "hash": 1638996110,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-27.json",
+    "lng": 1136,
+    "lat": 1761,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1136.5,
+      1761.5
+    ],
+    "hash": 1713914863,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "17-27.json",
+    "lng": 1125,
+    "lat": 1730,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1125.5,
+      1730.5
+    ],
+    "hash": 2988674935,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126572,
+    "name": "Unlit candle",
+    "file": "17-27.json",
+    "lng": 1148,
+    "lat": 1758,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      1148.5,
+      1758.5
+    ],
+    "hash": 2819888918,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130031
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126572,
+    "name": "Unlit candle",
+    "file": "17-27.json",
+    "lng": 1149,
+    "lat": 1758,
+    "floor": 1,
+    "rotation": 3,
+    "center": [
+      1149.5,
+      1758.5
+    ],
+    "hash": 768834740,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130031
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126572,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1113,
+    "lat": 1799,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      1113.5,
+      1799.5
+    ],
+    "hash": 2667186477,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130031
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126572,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1114,
+    "lat": 1798,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      1114.5,
+      1798.5
+    ],
+    "hash": 366657506,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130031
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126572,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1116,
+    "lat": 1802,
+    "floor": 1,
+    "rotation": 1,
+    "center": [
+      1116.5,
+      1802.5
+    ],
+    "hash": 2447337706,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130031
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126572,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1108,
+    "lat": 1803,
+    "floor": 3,
+    "rotation": 1,
+    "center": [
+      1108.5,
+      1803.5
+    ],
+    "hash": 1391268948,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130031
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126572,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1115,
+    "lat": 1799,
+    "floor": 3,
+    "rotation": 1,
+    "center": [
+      1115.5,
+      1799.5
+    ],
+    "hash": 1758648279,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130031
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126572,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1115,
+    "lat": 1801,
+    "floor": 3,
+    "rotation": 1,
+    "center": [
+      1115.5,
+      1801.5
+    ],
+    "hash": 4103153346,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130031
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126574,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1115,
+    "lat": 1802,
+    "floor": 1,
+    "rotation": 1,
+    "center": [
+      1115.5,
+      1802.5
+    ],
+    "hash": 2457678538,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130034
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126574,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1109,
+    "lat": 1803,
+    "floor": 3,
+    "rotation": 1,
+    "center": [
+      1109.5,
+      1803.5
+    ],
+    "hash": 1285632591,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130034
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126574,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1115,
+    "lat": 1800,
+    "floor": 3,
+    "rotation": 1,
+    "center": [
+      1115.5,
+      1800.5
+    ],
+    "hash": 1285632591,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130034
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126576,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1112,
+    "lat": 1802,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      1112.5,
+      1802.5
+    ],
+    "hash": 2729993736,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130029
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126576,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1115,
+    "lat": 1800,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      1115.5,
+      1800.5
+    ],
+    "hash": 2015217029,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130029
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126576,
+    "name": "Unlit candle",
+    "file": "17-28.json",
+    "lng": 1114,
+    "lat": 1800,
+    "floor": 3,
+    "rotation": 1,
+    "center": [
+      1114.5,
+      1800.5
+    ],
+    "hash": 4237177963,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130029
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "18-26.json",
+    "lng": 1156,
+    "lat": 1725,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1156.5,
+      1725.5
+    ],
+    "hash": 2532321979,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "18-26.json",
+    "lng": 1159,
+    "lat": 1727,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1159.5,
+      1727.5
+    ],
+    "hash": 1086690260,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "18-27.json",
+    "lng": 1163,
+    "lat": 1736,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1163.5,
+      1736.5
+    ],
+    "hash": 812884920,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "18-27.json",
+    "lng": 1166,
+    "lat": 1728,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1166.5,
+      1728.5
+    ],
+    "hash": 656690074,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "18-27.json",
+    "lng": 1166,
+    "lat": 1737,
+    "floor": 2,
+    "rotation": 1,
+    "center": [
+      1166.5,
+      1737.5
+    ],
+    "hash": 1292126974,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126570,
+    "name": "Unlit candle",
+    "file": "18-27.json",
+    "lng": 1167,
+    "lat": 1737,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      1167.5,
+      1737.5
+    ],
+    "hash": 283545550,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130032
+        ]
+      }
+    ]
+  },
+  {
+    "id": 42930,
+    "name": "Uninviting hole",
+    "file": "23-75.json",
+    "lng": 1527,
+    "lat": 4831,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1527.5,
+      4831.5
+    ],
+    "hash": 1583147706,
+    "actions": [
+      "Enter"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          46615
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 57
+  },
+  {
+    "id": 42931,
+    "name": "Uninviting hole",
+    "file": "24-75.json",
+    "lng": 1547,
+    "lat": 4830,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1547.5,
+      4830.5
+    ],
+    "hash": 1826247268,
+    "actions": [
+      "Enter"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          46615
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 57
+  },
+  {
+    "id": 42932,
+    "name": "Uninviting hole",
+    "file": "24-75.json",
+    "lng": 1548,
+    "lat": 4826,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1548.5,
+      4826.5
+    ],
+    "hash": 2570038208,
+    "actions": [
+      "Enter"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          46615
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 57
+  },
+  {
+    "id": 49297,
+    "name": "Unholy font",
+    "file": "3-80.json",
+    "lng": 213,
+    "lat": 5131,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      213.5,
+      5131.5
+    ],
+    "hash": 2655272721,
+    "actions": [
+      "Recharge-stats"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          52888
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 49297,
+    "name": "Unholy font",
+    "file": "3-80.json",
+    "lng": 218,
+    "lat": 5131,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      218.5,
+      5131.5
+    ],
+    "hash": 2655272721,
+    "actions": [
+      "Recharge-stats"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          52888
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 95637,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1924,
+    "lat": 4468,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1924.5,
+      4468.5
+    ],
+    "hash": 1140479101,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334036991,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95637,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1927,
+    "lat": 4439,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1927.5,
+      4439.5
+    ],
+    "hash": 1960957402,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334036991,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95637,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1943,
+    "lat": 4430,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1943.5,
+      4430.5
+    ],
+    "hash": 2923722327,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334036991,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95637,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1953,
+    "lat": 4471,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1953.5,
+      4471.5
+    ],
+    "hash": 4094396220,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334036991,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95637,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1970,
+    "lat": 4434,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1970.5,
+      4434.5
+    ],
+    "hash": 714703931,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334036991,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95637,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1977,
+    "lat": 4455,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1977.5,
+      4455.5
+    ],
+    "hash": 783164593,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334036991,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95638,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1924,
+    "lat": 4471,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1924.5,
+      4471.5
+    ],
+    "hash": 1140479101,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334102527,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95638,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1949,
+    "lat": 4470,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1949.5,
+      4470.5
+    ],
+    "hash": 1140479101,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334102527,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95638,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1961,
+    "lat": 4450,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1961.5,
+      4450.5
+    ],
+    "hash": 1960957402,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334102527,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95638,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1970,
+    "lat": 4461,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1970.5,
+      4461.5
+    ],
+    "hash": 1140479101,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334102527,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95639,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1931,
+    "lat": 4431,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1931.5,
+      4431.5
+    ],
+    "hash": 3272607387,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334168063,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95639,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1933,
+    "lat": 4469,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1933.5,
+      4469.5
+    ],
+    "hash": 1960957402,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334168063,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95639,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1941,
+    "lat": 4452,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1941.5,
+      4452.5
+    ],
+    "hash": 1960957402,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334168063,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95639,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1951,
+    "lat": 4423,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1951.5,
+      4423.5
+    ],
+    "hash": 547958691,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334168063,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95639,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1955,
+    "lat": 4444,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1955.5,
+      4444.5
+    ],
+    "hash": 783164593,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334168063,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95639,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1972,
+    "lat": 4428,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1972.5,
+      4428.5
+    ],
+    "hash": 3171724483,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334168063,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95640,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1924,
+    "lat": 4436,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1924.5,
+      4436.5
+    ],
+    "hash": 2923722327,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334233599,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95640,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1938,
+    "lat": 4450,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1938.5,
+      4450.5
+    ],
+    "hash": 547958691,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334233599,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95640,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1952,
+    "lat": 4451,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1952.5,
+      4451.5
+    ],
+    "hash": 1140479101,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334233599,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95640,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1954,
+    "lat": 4428,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1954.5,
+      4428.5
+    ],
+    "hash": 1960957402,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334233599,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95640,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1957,
+    "lat": 4470,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1957.5,
+      4470.5
+    ],
+    "hash": 783164593,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334233599,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95640,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1968,
+    "lat": 4430,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1968.5,
+      4430.5
+    ],
+    "hash": 2923722327,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334233599,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95640,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1974,
+    "lat": 4456,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1974.5,
+      4456.5
+    ],
+    "hash": 4094396220,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334233599,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95641,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1926,
+    "lat": 4467,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1926.5,
+      4467.5
+    ],
+    "hash": 4094396220,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334299135,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95641,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1929,
+    "lat": 4435,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1929.5,
+      4435.5
+    ],
+    "hash": 1960957402,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334299135,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95641,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1940,
+    "lat": 4455,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1940.5,
+      4455.5
+    ],
+    "hash": 2573203440,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334299135,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95641,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1947,
+    "lat": 4428,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1947.5,
+      4428.5
+    ],
+    "hash": 2923722327,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334299135,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95641,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1956,
+    "lat": 4469,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1956.5,
+      4469.5
+    ],
+    "hash": 4094396220,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334299135,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95641,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1958,
+    "lat": 4446,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1958.5,
+      4446.5
+    ],
+    "hash": 2923722327,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334299135,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95641,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1975,
+    "lat": 4457,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1975.5,
+      4457.5
+    ],
+    "hash": 783164593,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334299135,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95641,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1976,
+    "lat": 4429,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1976.5,
+      4429.5
+    ],
+    "hash": 2443123768,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334299135,
+      "unk2": [
+        95726,
+        95728,
+        95631
+      ],
+      "unk3": 95634
+    }
+  },
+  {
+    "id": 95642,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1924,
+    "lat": 4469,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1924.5,
+      4469.5
+    ],
+    "hash": 651177509,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334364671,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95642,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1928,
+    "lat": 4439,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1928.5,
+      4439.5
+    ],
+    "hash": 1922618460,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334364671,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95642,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1933,
+    "lat": 4455,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1933.5,
+      4455.5
+    ],
+    "hash": 3412986895,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334364671,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95642,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1943,
+    "lat": 4428,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1943.5,
+      4428.5
+    ],
+    "hash": 3412986895,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334364671,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95642,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1952,
+    "lat": 4471,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1952.5,
+      4471.5
+    ],
+    "hash": 2434923876,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334364671,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95642,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1959,
+    "lat": 4453,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1959.5,
+      4453.5
+    ],
+    "hash": 2090852174,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334364671,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95642,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1971,
+    "lat": 4434,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1971.5,
+      4434.5
+    ],
+    "hash": 4064178120,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334364671,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95642,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1971,
+    "lat": 4462,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1971.5,
+      4462.5
+    ],
+    "hash": 2090852174,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334364671,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95643,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1932,
+    "lat": 4435,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1932.5,
+      4435.5
+    ],
+    "hash": 3456345220,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334430207,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95643,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1939,
+    "lat": 4457,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1939.5,
+      4457.5
+    ],
+    "hash": 2090852174,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334430207,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95643,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1948,
+    "lat": 4424,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1948.5,
+      4424.5
+    ],
+    "hash": 651177509,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334430207,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95643,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1961,
+    "lat": 4449,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1961.5,
+      4449.5
+    ],
+    "hash": 599623342,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334430207,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95643,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1970,
+    "lat": 4459,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1970.5,
+      4459.5
+    ],
+    "hash": 651177509,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334430207,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95644,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1924,
+    "lat": 4434,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1924.5,
+      4434.5
+    ],
+    "hash": 3412986895,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334495743,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95644,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1930,
+    "lat": 4465,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1930.5,
+      4465.5
+    ],
+    "hash": 2788850883,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334495743,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95644,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1940,
+    "lat": 4450,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1940.5,
+      4450.5
+    ],
+    "hash": 1266966249,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334495743,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95644,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1952,
+    "lat": 4423,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1952.5,
+      4423.5
+    ],
+    "hash": 1266966249,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334495743,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95644,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1952,
+    "lat": 4449,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1952.5,
+      4449.5
+    ],
+    "hash": 3412986895,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334495743,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95644,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1959,
+    "lat": 4470,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1959.5,
+      4470.5
+    ],
+    "hash": 298561410,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334495743,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95644,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1971,
+    "lat": 4428,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1971.5,
+      4428.5
+    ],
+    "hash": 112514460,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334495743,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95644,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1979,
+    "lat": 4457,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1979.5,
+      4457.5
+    ],
+    "hash": 4235562408,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334495743,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95645,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1925,
+    "lat": 4438,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1925.5,
+      4438.5
+    ],
+    "hash": 2090852174,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334561279,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95645,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1926,
+    "lat": 4465,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1926.5,
+      4465.5
+    ],
+    "hash": 1166235131,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334561279,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95645,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1936,
+    "lat": 4450,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1936.5,
+      4450.5
+    ],
+    "hash": 1266966249,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334561279,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95645,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1954,
+    "lat": 4429,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1954.5,
+      4429.5
+    ],
+    "hash": 3456345220,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334561279,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95645,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1957,
+    "lat": 4447,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1957.5,
+      4447.5
+    ],
+    "hash": 298561410,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334561279,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95645,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1957,
+    "lat": 4469,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1957.5,
+      4469.5
+    ],
+    "hash": 3412986895,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334561279,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95645,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1968,
+    "lat": 4431,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1968.5,
+      4431.5
+    ],
+    "hash": 3412986895,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334561279,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95646,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1927,
+    "lat": 4468,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1927.5,
+      4468.5
+    ],
+    "hash": 1266966249,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334626815,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95646,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1930,
+    "lat": 4434,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1930.5,
+      4434.5
+    ],
+    "hash": 3412986895,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334626815,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95646,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1938,
+    "lat": 4453,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1938.5,
+      4453.5
+    ],
+    "hash": 685188407,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334626815,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95646,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1946,
+    "lat": 4428,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1946.5,
+      4428.5
+    ],
+    "hash": 298561410,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334626815,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95646,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1953,
+    "lat": 4452,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1953.5,
+      4452.5
+    ],
+    "hash": 1965069934,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334626815,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95646,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1957,
+    "lat": 4465,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1957.5,
+      4465.5
+    ],
+    "hash": 2788850883,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334626815,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95646,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1973,
+    "lat": 4464,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1973.5,
+      4464.5
+    ],
+    "hash": 2434923876,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334626815,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95646,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1977,
+    "lat": 4429,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1977.5,
+      4429.5
+    ],
+    "hash": 1266966249,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334626815,
+      "unk2": [
+        95729,
+        95731,
+        95632
+      ],
+      "unk3": 95635
+    }
+  },
+  {
+    "id": 95647,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1924,
+    "lat": 4470,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1924.5,
+      4470.5
+    ],
+    "hash": 287485739,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334692351,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95647,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1936,
+    "lat": 4457,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1936.5,
+      4457.5
+    ],
+    "hash": 2798877802,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334692351,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95647,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1949,
+    "lat": 4471,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1949.5,
+      4471.5
+    ],
+    "hash": 287485739,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334692351,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95647,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1961,
+    "lat": 4451,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1961.5,
+      4451.5
+    ],
+    "hash": 641281676,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334692351,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95647,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1971,
+    "lat": 4457,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1971.5,
+      4457.5
+    ],
+    "hash": 287485739,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334692351,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95647,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1972,
+    "lat": 4434,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1972.5,
+      4434.5
+    ],
+    "hash": 3318542022,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334692351,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95648,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1932,
+    "lat": 4434,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1932.5,
+      4434.5
+    ],
+    "hash": 641281676,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334757887,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95648,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1933,
+    "lat": 4470,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1933.5,
+      4470.5
+    ],
+    "hash": 4193330570,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334757887,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95648,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1940,
+    "lat": 4457,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1940.5,
+      4457.5
+    ],
+    "hash": 1265458752,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334757887,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95648,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1950,
+    "lat": 4423,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1950.5,
+      4423.5
+    ],
+    "hash": 2445868493,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334757887,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95648,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1950,
+    "lat": 4466,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1950.5,
+      4466.5
+    ],
+    "hash": 287485739,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334757887,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95648,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1954,
+    "lat": 4453,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1954.5,
+      4453.5
+    ],
+    "hash": 287485739,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334757887,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95648,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1978,
+    "lat": 4431,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1978.5,
+      4431.5
+    ],
+    "hash": 641281676,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334757887,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95648,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1979,
+    "lat": 4459,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1979.5,
+      4459.5
+    ],
+    "hash": 641281676,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334757887,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95649,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1924,
+    "lat": 4435,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1924.5,
+      4435.5
+    ],
+    "hash": 4238118145,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334823423,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95649,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1927,
+    "lat": 4465,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1927.5,
+      4465.5
+    ],
+    "hash": 2088165351,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334823423,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95649,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1939,
+    "lat": 4450,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1939.5,
+      4450.5
+    ],
+    "hash": 2088165351,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334823423,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95649,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1954,
+    "lat": 4427,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1954.5,
+      4427.5
+    ],
+    "hash": 340723616,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334823423,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95649,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1956,
+    "lat": 4470,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1956.5,
+      4470.5
+    ],
+    "hash": 641281676,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334823423,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95649,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1970,
+    "lat": 4428,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1970.5,
+      4428.5
+    ],
+    "hash": 3560480112,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334823423,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95650,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1927,
+    "lat": 4467,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1927.5,
+      4467.5
+    ],
+    "hash": 2798877802,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334888959,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95650,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1929,
+    "lat": 4434,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1929.5,
+      4434.5
+    ],
+    "hash": 2798877802,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334888959,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95650,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1935,
+    "lat": 4450,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1935.5,
+      4450.5
+    ],
+    "hash": 1920062709,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334888959,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95650,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1947,
+    "lat": 4429,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1947.5,
+      4429.5
+    ],
+    "hash": 2088165351,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334888959,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95650,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1958,
+    "lat": 4447,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1958.5,
+      4447.5
+    ],
+    "hash": 2088165351,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334888959,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95650,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1959,
+    "lat": 4469,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1959.5,
+      4469.5
+    ],
+    "hash": 641281676,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334888959,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95650,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1975,
+    "lat": 4456,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1975.5,
+      4456.5
+    ],
+    "hash": 4238118145,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334888959,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95650,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1976,
+    "lat": 4428,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1976.5,
+      4428.5
+    ],
+    "hash": 2127197893,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334888959,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95651,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1926,
+    "lat": 4468,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1926.5,
+      4468.5
+    ],
+    "hash": 2088165351,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334954495,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95651,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1930,
+    "lat": 4435,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1930.5,
+      4435.5
+    ],
+    "hash": 641281676,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334954495,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95651,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1938,
+    "lat": 4452,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1938.5,
+      4452.5
+    ],
+    "hash": 522560569,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334954495,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95651,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1946,
+    "lat": 4429,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1946.5,
+      4429.5
+    ],
+    "hash": 641281676,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334954495,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95651,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1951,
+    "lat": 4471,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1951.5,
+      4471.5
+    ],
+    "hash": 2798877802,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334954495,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95651,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1957,
+    "lat": 4446,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1957.5,
+      4446.5
+    ],
+    "hash": 2798877802,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334954495,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95651,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1974,
+    "lat": 4435,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1974.5,
+      4435.5
+    ],
+    "hash": 2798877802,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334954495,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95651,
+    "name": "Urn",
+    "file": "30-69.json",
+    "lng": 1974,
+    "lat": 4457,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1974.5,
+      4457.5
+    ],
+    "hash": 641281676,
+    "actions": [
+      "Search",
+      "Check for snakes"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ],
+    "action_cursors_0": 56,
+    "morphs_1": {
+      "unk1": 334954495,
+      "unk2": [
+        95732,
+        95734,
+        95633
+      ],
+      "unk3": 95636
+    }
+  },
+  {
+    "id": 95727,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1935,
+    "lat": 4501,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1935.5,
+      4501.5
+    ],
+    "hash": 2753003688,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95727,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1945,
+    "lat": 4505,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1945.5,
+      4505.5
+    ],
+    "hash": 2122754263,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95727,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1961,
+    "lat": 4531,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1961.5,
+      4531.5
+    ],
+    "hash": 2753003688,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95727,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1971,
+    "lat": 4535,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1971.5,
+      4535.5
+    ],
+    "hash": 1215576100,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102698
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95730,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1939,
+    "lat": 4505,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1939.5,
+      4505.5
+    ],
+    "hash": 758512155,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95730,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1945,
+    "lat": 4496,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1945.5,
+      4496.5
+    ],
+    "hash": 2915429636,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95730,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1945,
+    "lat": 4506,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1945.5,
+      4506.5
+    ],
+    "hash": 2915429636,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95730,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1950,
+    "lat": 4502,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1950.5,
+      4502.5
+    ],
+    "hash": 758512155,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95730,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1950,
+    "lat": 4505,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1950.5,
+      4505.5
+    ],
+    "hash": 2915429636,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95730,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1965,
+    "lat": 4535,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1965.5,
+      4535.5
+    ],
+    "hash": 758512155,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95730,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1971,
+    "lat": 4526,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1971.5,
+      4526.5
+    ],
+    "hash": 2604105207,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95730,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1971,
+    "lat": 4536,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1971.5,
+      4536.5
+    ],
+    "hash": 2604105207,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95730,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1976,
+    "lat": 4532,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1976.5,
+      4532.5
+    ],
+    "hash": 758512155,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95730,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1976,
+    "lat": 4535,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1976.5,
+      4535.5
+    ],
+    "hash": 2915429636,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102701
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95733,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1937,
+    "lat": 4506,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1937.5,
+      4506.5
+    ],
+    "hash": 3636462527,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95733,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1947,
+    "lat": 4506,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1947.5,
+      4506.5
+    ],
+    "hash": 3636462527,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95733,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1950,
+    "lat": 4501,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1950.5,
+      4501.5
+    ],
+    "hash": 3636462527,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95733,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1950,
+    "lat": 4504,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1950.5,
+      4504.5
+    ],
+    "hash": 3636462527,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95733,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1963,
+    "lat": 4536,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1963.5,
+      4536.5
+    ],
+    "hash": 38874048,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95733,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1973,
+    "lat": 4536,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1973.5,
+      4536.5
+    ],
+    "hash": 38874048,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95733,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1976,
+    "lat": 4531,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1976.5,
+      4531.5
+    ],
+    "hash": 3636462527,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95733,
+    "name": "Urn",
+    "file": "30-70.json",
+    "lng": 1976,
+    "lat": 4534,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1976.5,
+      4534.5
+    ],
+    "hash": 3636462527,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102704
+        ]
+      }
+    ]
+  },
+  {
+    "id": 82997,
+    "name": "Unidentified corpse",
+    "file": "31-93.json",
+    "lng": 2026,
+    "lat": 5999,
+    "floor": 2,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2027.0,
+      6000.0
+    ],
+    "hash": 459659306,
+    "actions": [
+      "Investigate"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          84071
+        ]
+      }
+    ]
+  },
+  {
+    "id": 93481,
+    "name": "Unstable rift",
+    "file": "34-142.json",
+    "lng": 2203,
+    "lat": 9129,
+    "floor": 3,
+    "rotation": 0,
+    "width": 8,
+    "length": 8,
+    "center": [
+      2207.0,
+      9133.0
+    ],
+    "hash": 732590864,
+    "is_members": true,
+    "actions": [
+      "Offer memory",
+      "Exit cache"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          99777
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 111375,
+    "name": "Unstable rift",
+    "file": "34-142.json",
+    "lng": 2204,
+    "lat": 9134,
+    "floor": 1,
+    "rotation": 0,
+    "width": 8,
+    "length": 8,
+    "center": [
+      2208.0,
+      9138.0
+    ],
+    "hash": 94272068,
+    "is_members": true,
+    "actions": [
+      "Offer-memory"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          99777
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 112646,
+    "name": "Under the bed",
+    "file": "34-57.json",
+    "lng": 2198,
+    "lat": 3695,
+    "floor": 1,
+    "rotation": 1,
+    "center": [
+      2198.5,
+      3695.5
+    ],
+    "hash": 3529799971,
+    "is_members": true,
+    "actions": [
+      "Explore"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          3951
+        ]
+      }
+    ],
+    "morphs_2": "{\"unk1\":2789998591,\"unk2\":112665,\"unk3\":[112665],\"unk4\":112647}"
+  },
+  {
+    "id": 113047,
+    "name": "Uncommon gem rock",
+    "file": "35-122.json",
+    "lng": 2274,
+    "lat": 7858,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      2274.5,
+      7858.5
+    ],
+    "hash": 1938073405,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73989,
+          73999,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113047,
+    "name": "Uncommon gem rock",
+    "file": "35-122.json",
+    "lng": 2278,
+    "lat": 7858,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      2278.5,
+      7858.5
+    ],
+    "hash": 1093068832,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73989,
+          73999,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113048,
+    "name": "Uncommon gem rock",
+    "file": "35-122.json",
+    "lng": 2276,
+    "lat": 7861,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      2276.5,
+      7861.5
+    ],
+    "hash": 858630778,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73994,
+          74013,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113049,
+    "name": "Uncommon gem rock",
+    "file": "35-122.json",
+    "lng": 2272,
+    "lat": 7858,
+    "floor": 0,
+    "rotation": 3,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2273.0,
+      7859.0
+    ],
+    "hash": 3738847169,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          74154,
+          74165,
+          73986
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 92256,
+    "name": "Undirected combat portal",
+    "file": "35-51.json",
+    "lng": 2284,
+    "lat": 3302,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      2284.5,
+      3302.5
+    ],
+    "hash": 878052970,
+    "actions": [
+      "Attune"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          98511
+        ]
+      }
+    ],
+    "color_replacements": "[[127,39905],[61,39888]]",
+    "material_replacements": "[[5071,5072]]",
+    "morphs_2": "{\"unk1\":2993487871,\"unk2\":92257,\"unk3\":[92257,92258,92259,92260,92261,92262,92263,92264,92265,92266,92267,92268,92269,92270,92271,92272,92273,92274,92275,92276,92277,101720,101721,101722,101723,103489,109485,111309,111430,111763,2101,32442,114742,114743,118584,119700,121018,121369,121770,122069,124361,127134,128509,130661,130972],\"unk4\":133706}",
+    "probably_morphFloor": true
+  },
+  {
+    "id": 92239,
+    "name": "Undirected skill portal",
+    "file": "35-52.json",
+    "lng": 2281,
+    "lat": 3333,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      2281.5,
+      3333.5
+    ],
+    "hash": 2597600808,
+    "actions": [
+      "Tune"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          98274
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 1642004479,
+      "unk2": [
+        92241,
+        92242,
+        92243,
+        92244,
+        92245,
+        92246,
+        92247,
+        92248,
+        92249,
+        92250,
+        92251,
+        92252,
+        98306,
+        99425,
+        100858,
+        109556,
+        110588,
+        111299
+      ],
+      "unk3": 117415
+    }
+  },
+  {
+    "id": 92240,
+    "name": "Undirected skill portal",
+    "file": "35-52.json",
+    "lng": 2281,
+    "lat": 3329,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      2281.5,
+      3329.5
+    ],
+    "hash": 2597600808,
+    "actions": [
+      "Tune"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          98274
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 1642070015,
+      "unk2": [
+        92241,
+        92242,
+        92243,
+        92244,
+        92245,
+        92246,
+        92247,
+        92248,
+        92249,
+        92250,
+        92251,
+        92252,
+        98306,
+        99425,
+        100858,
+        109556,
+        110588,
+        111299
+      ],
+      "unk3": 117415
+    }
+  },
+  {
+    "id": 117178,
+    "name": "Urn",
+    "file": "36-113.json",
+    "lng": 2344,
+    "lat": 7246,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      2344.5,
+      7246.5
+    ],
+    "hash": 4045914419,
+    "actions": [
+      "Inspect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          88291
+        ]
+      }
+    ]
+  },
+  {
+    "id": 18418,
+    "name": "Underground lair",
+    "file": "36-79.json",
+    "lng": 2348,
+    "lat": 5065,
+    "floor": 0,
+    "rotation": 3,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2349.0,
+      5066.0
+    ],
+    "hash": 2402860242,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          18364
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 18418,
+    "name": "Underground lair",
+    "file": "36-79.json",
+    "lng": 2348,
+    "lat": 5073,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2349.0,
+      5074.0
+    ],
+    "hash": 376986557,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          18364
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 18418,
+    "name": "Underground lair",
+    "file": "36-79.json",
+    "lng": 2354,
+    "lat": 5065,
+    "floor": 0,
+    "rotation": 2,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2355.0,
+      5066.0
+    ],
+    "hash": 1322771400,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          18364
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 18418,
+    "name": "Underground lair",
+    "file": "36-79.json",
+    "lng": 2354,
+    "lat": 5073,
+    "floor": 0,
+    "rotation": 1,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2355.0,
+      5074.0
+    ],
+    "hash": 3616998567,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          18364
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 117178,
+    "name": "Urn",
+    "file": "37-110.json",
+    "lng": 2420,
+    "lat": 7093,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      2420.5,
+      7093.5
+    ],
+    "hash": 2695463208,
+    "actions": [
+      "Inspect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          88291
+        ]
+      }
+    ]
+  },
+  {
+    "id": 117178,
+    "name": "Urn",
+    "file": "38-112.json",
+    "lng": 2485,
+    "lat": 7222,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      2485.5,
+      7222.5
+    ],
+    "hash": 2081094088,
+    "actions": [
+      "Inspect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          88291
+        ]
+      }
+    ]
+  },
+  {
+    "id": 117178,
+    "name": "Urn",
+    "file": "38-112.json",
+    "lng": 2488,
+    "lat": 7210,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      2488.5,
+      7210.5
+    ],
+    "hash": 1909750070,
+    "actions": [
+      "Inspect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          88291
+        ]
+      }
+    ]
+  },
+  {
+    "id": 77873,
+    "name": "Unlit beacon",
+    "file": "38-84.json",
+    "lng": 2456,
+    "lat": 5436,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      2457.5,
+      5437.5
+    ],
+    "hash": 3403783472,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          77969
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 65
+  },
+  {
+    "id": 117178,
+    "name": "Urn",
+    "file": "39-111.json",
+    "lng": 2550,
+    "lat": 7131,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      2550.5,
+      7131.5
+    ],
+    "hash": 1420848109,
+    "actions": [
+      "Inspect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          88291
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3214,
+    "name": "Underground pass exit",
+    "file": "39-151.json",
+    "lng": 2497,
+    "lat": 9714,
+    "floor": 0,
+    "rotation": 1,
+    "width": 4,
+    "length": 4,
+    "center": [
+      2499.0,
+      9716.0
+    ],
+    "hash": 3652257143,
+    "is_members": true,
+    "actions": [
+      "Leave"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          70036
+        ]
+      }
+    ],
+    "material_replacements": "[[1512,1492],[1529,1470]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 57
+  },
+  {
+    "id": 903,
+    "name": "Unicorn's head",
+    "file": "40-20.json",
+    "lng": 2565,
+    "lat": 1341,
+    "floor": 1,
+    "rotation": 1,
+    "center": [
+      2565.5,
+      1341.5
+    ],
+    "hash": 1114941489,
+    "models": [
+      {
+        "type": 4,
+        "values": [
+          2073
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9301,
+    "name": "Underwall tunnel",
+    "file": "40-48.json",
+    "lng": 2575,
+    "lat": 3108,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      2575.5,
+      3108.5
+    ],
+    "hash": 737436468,
+    "actions": [
+      "Climb-under"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          11692
+        ]
+      },
+      {
+        "type": 22,
+        "values": [
+          49679
+        ]
+      }
+    ],
+    "dummy_45": 13
+  },
+  {
+    "id": 9302,
+    "name": "Underwall tunnel",
+    "file": "40-48.json",
+    "lng": 2575,
+    "lat": 3111,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      2575.5,
+      3111.5
+    ],
+    "hash": 1429160572,
+    "actions": [
+      "Climb-into"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          11692
+        ]
+      },
+      {
+        "type": 22,
+        "values": [
+          49679
+        ]
+      }
+    ],
+    "action_cursors_0": 57,
+    "dummy_45": 13
+  },
+  {
+    "id": 124785,
+    "name": "Unlocked Ogre chest",
+    "file": "41-146.json",
+    "lng": 2637,
+    "lat": 9398,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "center": [
+      2638.0,
+      9398.5
+    ],
+    "hash": 610299471,
+    "actions": [
+      "Search"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          36968
+        ]
+      }
+    ],
+    "morphs_2": "{\"unk1\":4294904532,\"unk2\":3378,\"unk3\":[3377,3377,3377,3377,3377,3377,3377,3377,3377,3377,3377,3377,3377,3377,3377],\"unk4\":3377}",
+    "action_cursors_0": 56
+  },
+  {
+    "id": 27075,
+    "name": "Ugly flowerbed",
+    "file": "41-51.json",
+    "lng": 2628,
+    "lat": 3308,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "center": [
+      2629.5,
+      3308.5
+    ],
+    "hash": 3896540167,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29005
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 864747519,
+      "unk2": [
+        27073,
+        27073,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27074,
+        32767,
+        32767,
+        32767,
+        32767,
+        27074,
+        32767,
+        32767,
+        32767,
+        32767
+      ],
+      "unk3": 27074
+    }
+  },
+  {
+    "id": 27075,
+    "name": "Ugly flowerbed",
+    "file": "41-51.json",
+    "lng": 2639,
+    "lat": 3308,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "center": [
+      2640.5,
+      3308.5
+    ],
+    "hash": 2508663634,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29005
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 864747519,
+      "unk2": [
+        27073,
+        27073,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27073,
+        32767,
+        32767,
+        32767,
+        32767,
+        27074,
+        32767,
+        32767,
+        32767,
+        32767,
+        27074,
+        32767,
+        32767,
+        32767,
+        32767
+      ],
+      "unk3": 27074
+    }
+  },
+  {
+    "id": 4181,
+    "name": "Unicorn's head",
+    "file": "41-57.json",
+    "lng": 2632,
+    "lat": 3660,
+    "floor": 2,
+    "rotation": 3,
+    "center": [
+      2632.5,
+      3660.5
+    ],
+    "hash": 2020578563,
+    "actions": [
+      "Study"
+    ],
+    "models": [
+      {
+        "type": 4,
+        "values": [
+          2073
+        ]
+      }
+    ],
+    "action_cursors_0": 50
+  },
+  {
+    "id": 47744,
+    "name": "Unicorn sculpture",
+    "file": "41-88.json",
+    "lng": 2664,
+    "lat": 5672,
+    "floor": 0,
+    "rotation": 3,
+    "length": 2,
+    "center": [
+      2664.5,
+      5673.0
+    ],
+    "hash": 110797210,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          51185
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9309,
+    "name": "Underwall tunnel",
+    "file": "41-99.json",
+    "lng": 2628,
+    "lat": 6382,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      2628.5,
+      6382.5
+    ],
+    "hash": 4266285323,
+    "actions": [
+      "Climb-into"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          11692
+        ]
+      },
+      {
+        "type": 22,
+        "values": [
+          49679
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 57,
+    "dummy_45": 13
+  },
+  {
+    "id": 9310,
+    "name": "Underwall tunnel",
+    "file": "41-99.json",
+    "lng": 2628,
+    "lat": 6384,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      2628.5,
+      6384.5
+    ],
+    "hash": 2157017155,
+    "actions": [
+      "Climb-into"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          11692
+        ]
+      },
+      {
+        "type": 22,
+        "values": [
+          49679
+        ]
+      }
+    ],
+    "action_cursors_0": 57,
+    "dummy_45": 13
+  },
+  {
+    "id": 44206,
+    "name": "Underground pass exit",
+    "file": "43-160.json",
+    "lng": 2755,
+    "lat": 10258,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      2756.5,
+      10259.0
+    ],
+    "hash": 1190237829,
+    "actions": [
+      "Leave"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          47954
+        ]
+      }
+    ],
+    "action_cursors_0": 57
+  },
+  {
+    "id": 38455,
+    "name": "Unlit beacon",
+    "file": "43-99.json",
+    "lng": 2803,
+    "lat": 6396,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      2804.5,
+      6397.5
+    ],
+    "hash": 1609575520,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "material_replacements": "[[12159,11800],[12160,11802],[12161,11803],[12162,11804]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 7,
+    "morphs_1": {
+      "unk1": 887291903,
+      "unk2": [
+        38429,
+        38430,
+        38431,
+        38432,
+        38441
+      ],
+      "unk3": 38442
+    }
+  },
+  {
+    "id": 113047,
+    "name": "Uncommon gem rock",
+    "file": "44-25.json",
+    "lng": 2854,
+    "lat": 1649,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      2854.5,
+      1649.5
+    ],
+    "hash": 3738125568,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73989,
+          73999,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113048,
+    "name": "Uncommon gem rock",
+    "file": "44-25.json",
+    "lng": 2854,
+    "lat": 1647,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      2854.5,
+      1647.5
+    ],
+    "hash": 1419006560,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73994,
+          74013,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113049,
+    "name": "Uncommon gem rock",
+    "file": "44-25.json",
+    "lng": 2854,
+    "lat": 1657,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2855.0,
+      1658.0
+    ],
+    "hash": 2407573171,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          74154,
+          74165,
+          73986
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113107,
+    "name": "Uncommon gem rock",
+    "file": "44-25.json",
+    "lng": 2854,
+    "lat": 1645,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      2854.5,
+      1645.5
+    ],
+    "hash": 1294778877,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73989,
+          73999,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,17],[3135,17],[3127,23],[2109,11],[3143,19],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10867],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113108,
+    "name": "Uncommon gem rock",
+    "file": "44-25.json",
+    "lng": 2854,
+    "lat": 1643,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      2854.5,
+      1643.5
+    ],
+    "hash": 251055862,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73994,
+          74013,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,17],[3135,17],[3127,23],[2109,11],[3143,19],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10867],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113109,
+    "name": "Uncommon gem rock",
+    "file": "44-25.json",
+    "lng": 2854,
+    "lat": 1654,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2855.0,
+      1655.0
+    ],
+    "hash": 994105994,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          74154,
+          74165,
+          73986
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,1056],[3135,2075],[3127,3098],[2109,4115],[3143,3100],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10867],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113167,
+    "name": "Uncommon gem rock",
+    "file": "44-25.json",
+    "lng": 2854,
+    "lat": 1641,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      2854.5,
+      1641.5
+    ],
+    "hash": 2201211060,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73989,
+          73999,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,1056],[3135,2075],[3127,3098],[2109,4115],[3143,3100],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10872],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113168,
+    "name": "Uncommon gem rock",
+    "file": "44-25.json",
+    "lng": 2854,
+    "lat": 1639,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      2854.5,
+      1639.5
+    ],
+    "hash": 3061944706,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73994,
+          74013,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,1056],[3135,2075],[3127,3098],[2109,4115],[3143,3100],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10872],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113169,
+    "name": "Uncommon gem rock",
+    "file": "44-25.json",
+    "lng": 2854,
+    "lat": 1651,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2855.0,
+      1652.0
+    ],
+    "hash": 4143799980,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          74154,
+          74165,
+          73986
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,1056],[3135,2075],[3127,3098],[2109,4115],[3143,3100],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10872],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 53596,
+    "name": "Undergrowth",
+    "file": "45-49.json",
+    "lng": 2887,
+    "lat": 3154,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      2887.5,
+      3154.5
+    ],
+    "hash": 95370083,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          1707
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 53596,
+    "name": "Undergrowth",
+    "file": "45-49.json",
+    "lng": 2898,
+    "lat": 3164,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      2898.5,
+      3164.5
+    ],
+    "hash": 3188967071,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          1707
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 53596,
+    "name": "Undergrowth",
+    "file": "45-49.json",
+    "lng": 2908,
+    "lat": 3164,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      2908.5,
+      3164.5
+    ],
+    "hash": 2152693256,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          1707
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 67495,
+    "name": "Untidy Shelves",
+    "file": "45-53.json",
+    "lng": 2926,
+    "lat": 3448,
+    "floor": 1,
+    "rotation": 0,
+    "length": 2,
+    "center": [
+      2926.5,
+      3449.0
+    ],
+    "hash": 767980764,
+    "actions": [
+      "Search"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          38117,
+          37856
+        ]
+      }
+    ],
+    "action_cursors_0": 56
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "45-55.json",
+    "lng": 2932,
+    "lat": 3538,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      2932.5,
+      3538.5
+    ],
+    "hash": 52891130,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "45-55.json",
+    "lng": 2932,
+    "lat": 3539,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      2932.5,
+      3539.5
+    ],
+    "hash": 52891130,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "45-55.json",
+    "lng": 2932,
+    "lat": 3540,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      2932.5,
+      3540.5
+    ],
+    "hash": 52891130,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "45-55.json",
+    "lng": 2932,
+    "lat": 3541,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      2932.5,
+      3541.5
+    ],
+    "hash": 52891130,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "45-55.json",
+    "lng": 2933,
+    "lat": 3538,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      2933.5,
+      3538.5
+    ],
+    "hash": 3132665745,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "45-55.json",
+    "lng": 2933,
+    "lat": 3539,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      2933.5,
+      3539.5
+    ],
+    "hash": 3132665745,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "45-55.json",
+    "lng": 2933,
+    "lat": 3540,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      2933.5,
+      3540.5
+    ],
+    "hash": 3132665745,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "45-55.json",
+    "lng": 2933,
+    "lat": 3541,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      2933.5,
+      3541.5
+    ],
+    "hash": 3132665745,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 38456,
+    "name": "Unlit beacon",
+    "file": "45-55.json",
+    "lng": 2940,
+    "lat": 3565,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      2941.5,
+      3566.5
+    ],
+    "hash": 3807759981,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "material_replacements": "[[12159,11800],[12160,11802],[12161,11803],[12162,11804]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887357439,
+      "unk2": [
+        38429,
+        38430,
+        38431,
+        38432,
+        38441
+      ],
+      "unk3": 38442
+    }
+  },
+  {
+    "id": 38458,
+    "name": "Unlit beacon",
+    "file": "45-57.json",
+    "lng": 2940,
+    "lat": 3683,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 3,
+    "center": [
+      2941.5,
+      3684.5
+    ],
+    "hash": 1881192307,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "material_replacements": "[[12159,11800],[12160,11802],[12161,11803],[12162,11804]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887488511,
+      "unk2": [
+        38429,
+        38430,
+        38431,
+        38432,
+        38441
+      ],
+      "unk3": 38442
+    }
+  },
+  {
+    "id": 38459,
+    "name": "Unlit beacon",
+    "file": "45-58.json",
+    "lng": 2937,
+    "lat": 3773,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      2938.5,
+      3774.5
+    ],
+    "hash": 1120449503,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "morphs_1": {
+      "unk1": 887554047,
+      "unk2": [
+        38433,
+        38434,
+        38435,
+        38436,
+        38443
+      ],
+      "unk3": 38444
+    }
+  },
+  {
+    "id": 12460,
+    "name": "Underwater Cavern Entrance",
+    "file": "46-148.json",
+    "lng": 2949,
+    "lat": 9516,
+    "floor": 1,
+    "rotation": 3,
+    "center": [
+      2949.5,
+      9516.5
+    ],
+    "hash": 311391888,
+    "actions": [
+      "Enter"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          13744
+        ]
+      }
+    ],
+    "color_replacements": "[[7442,9521],[7446,9525],[7322,9529],[7326,9533],[7331,9538],[7335,9542]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 57
+  },
+  {
+    "id": 12461,
+    "name": "Underwater Cavern Entrance",
+    "file": "46-148.json",
+    "lng": 2950,
+    "lat": 9516,
+    "floor": 1,
+    "rotation": 3,
+    "center": [
+      2950.5,
+      9516.5
+    ],
+    "hash": 424968947,
+    "actions": [
+      "Enter"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          13744
+        ]
+      }
+    ],
+    "color_replacements": "[[7442,9521],[7446,9525],[7322,9529],[7326,9533],[7331,9538],[7335,9542]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 57
+  },
+  {
+    "id": 12462,
+    "name": "Underwater Cavern Entrance",
+    "file": "46-148.json",
+    "lng": 2950,
+    "lat": 9519,
+    "floor": 1,
+    "rotation": 1,
+    "center": [
+      2950.5,
+      9519.5
+    ],
+    "hash": 993565950,
+    "actions": [
+      "Exit"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          13744
+        ]
+      }
+    ],
+    "color_replacements": "[[7442,9521],[7446,9525],[7322,9529],[7326,9533],[7331,9538],[7335,9542]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 57
+  },
+  {
+    "id": 12463,
+    "name": "Underwater Cavern Entrance",
+    "file": "46-148.json",
+    "lng": 2949,
+    "lat": 9519,
+    "floor": 1,
+    "rotation": 1,
+    "center": [
+      2949.5,
+      9519.5
+    ],
+    "hash": 1333866478,
+    "actions": [
+      "Exit"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          13744
+        ]
+      }
+    ],
+    "color_replacements": "[[7442,9521],[7446,9525],[7322,9529],[7326,9533],[7331,9538],[7335,9542]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 57
+  },
+  {
+    "id": 9309,
+    "name": "Underwall tunnel",
+    "file": "46-51.json",
+    "lng": 2948,
+    "lat": 3310,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      2948.5,
+      3310.5
+    ],
+    "hash": 4266285323,
+    "actions": [
+      "Climb-into"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          11692
+        ]
+      },
+      {
+        "type": 22,
+        "values": [
+          49679
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 57,
+    "dummy_45": 13
+  },
+  {
+    "id": 9310,
+    "name": "Underwall tunnel",
+    "file": "46-51.json",
+    "lng": 2948,
+    "lat": 3312,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      2948.5,
+      3312.5
+    ],
+    "hash": 2157017155,
+    "actions": [
+      "Climb-into"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          11692
+        ]
+      },
+      {
+        "type": 22,
+        "values": [
+          49679
+        ]
+      }
+    ],
+    "action_cursors_0": 57,
+    "dummy_45": 13
+  },
+  {
+    "id": 38455,
+    "name": "Unlit beacon",
+    "file": "46-54.json",
+    "lng": 2968,
+    "lat": 3516,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      2969.5,
+      3517.5
+    ],
+    "hash": 1609575520,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "material_replacements": "[[12159,11800],[12160,11802],[12161,11803],[12162,11804]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 7,
+    "morphs_1": {
+      "unk1": 887291903,
+      "unk2": [
+        38429,
+        38430,
+        38431,
+        38432,
+        38441
+      ],
+      "unk3": 38442
+    }
+  },
+  {
+    "id": 38457,
+    "name": "Unlit beacon",
+    "file": "46-56.json",
+    "lng": 2944,
+    "lat": 3618,
+    "floor": 0,
+    "rotation": 2,
+    "width": 3,
+    "length": 3,
+    "center": [
+      2945.5,
+      3619.5
+    ],
+    "hash": 1109162030,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "material_replacements": "[[12159,11800],[12160,11802],[12161,11803],[12162,11804]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887422975,
+      "unk2": [
+        38429,
+        38430,
+        38431,
+        38432,
+        38441
+      ],
+      "unk3": 38442
+    }
+  },
+  {
+    "id": 38460,
+    "name": "Unlit beacon",
+    "file": "46-59.json",
+    "lng": 2946,
+    "lat": 3836,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      2947.5,
+      3837.5
+    ],
+    "hash": 4228754038,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887619583,
+      "unk2": [
+        38433,
+        38434,
+        38435,
+        38436,
+        38443
+      ],
+      "unk3": 38444
+    }
+  },
+  {
+    "id": 38461,
+    "name": "Unlit beacon",
+    "file": "46-61.json",
+    "lng": 2964,
+    "lat": 3931,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 3,
+    "center": [
+      2965.5,
+      3932.5
+    ],
+    "hash": 19820697,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887685119,
+      "unk2": [
+        38433,
+        38434,
+        38435,
+        38436,
+        38443
+      ],
+      "unk3": 38444
+    }
+  },
+  {
+    "id": 38454,
+    "name": "Unlit beacon",
+    "file": "47-54.json",
+    "lng": 3034,
+    "lat": 3518,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3035.5,
+      3519.5
+    ],
+    "hash": 3400735450,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887226367,
+      "unk2": [
+        38437,
+        38438,
+        38439,
+        38440,
+        38445
+      ],
+      "unk3": 38446
+    }
+  },
+  {
+    "id": 903,
+    "name": "Unicorn's head",
+    "file": "47-61.json",
+    "lng": 3038,
+    "lat": 3951,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      3038.5,
+      3951.5
+    ],
+    "hash": 742923745,
+    "models": [
+      {
+        "type": 4,
+        "values": [
+          2073
+        ]
+      }
+    ]
+  },
+  {
+    "id": 64669,
+    "name": "Unstable floor",
+    "file": "47-78.json",
+    "lng": 3032,
+    "lat": 5038,
+    "floor": 1,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3033.5,
+      5039.5
+    ],
+    "hash": 4126910899,
+    "actions": [
+      "Run across"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          17827
+        ]
+      }
+    ],
+    "action_cursors_0": 181
+  },
+  {
+    "id": 64669,
+    "name": "Unstable floor",
+    "file": "47-78.json",
+    "lng": 3042,
+    "lat": 5028,
+    "floor": 1,
+    "rotation": 1,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3043.5,
+      5029.5
+    ],
+    "hash": 3463398287,
+    "actions": [
+      "Run across"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          17827
+        ]
+      }
+    ],
+    "action_cursors_0": 181
+  },
+  {
+    "id": 64669,
+    "name": "Unstable floor",
+    "file": "47-78.json",
+    "lng": 3052,
+    "lat": 5018,
+    "floor": 1,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3053.5,
+      5019.5
+    ],
+    "hash": 4126910899,
+    "actions": [
+      "Run across"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          17827
+        ]
+      }
+    ],
+    "action_cursors_0": 181
+  },
+  {
+    "id": 127139,
+    "name": "Underworld portal",
+    "file": "48-51.json",
+    "lng": 3104,
+    "lat": 3313,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      3104.5,
+      3313.5
+    ],
+    "hash": 543904614,
+    "actions": [
+      "Enter"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          129386
+        ]
+      }
+    ],
+    "morphs_2": "{\"unk1\":3509452799,\"unk2\":127141,\"unk3\":[],\"unk4\":127140}",
+    "action_cursors_0": 57
+  },
+  {
+    "id": 38453,
+    "name": "Unlit beacon",
+    "file": "48-54.json",
+    "lng": 3087,
+    "lat": 3516,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3088.5,
+      3517.5
+    ],
+    "hash": 1406179329,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887160831,
+      "unk2": [
+        38437,
+        38438,
+        38439,
+        38440,
+        38445
+      ],
+      "unk3": 38446
+    }
+  },
+  {
+    "id": 9311,
+    "name": "Underwall tunnel",
+    "file": "49-54.json",
+    "lng": 3139,
+    "lat": 3516,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      3139.5,
+      3516.5
+    ],
+    "hash": 2785579230,
+    "actions": [
+      "Climb-into"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          7766
+        ]
+      }
+    ],
+    "action_cursors_0": 57,
+    "dummy_45": 13
+  },
+  {
+    "id": 9312,
+    "name": "Underwall tunnel",
+    "file": "49-54.json",
+    "lng": 3143,
+    "lat": 3514,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      3143.5,
+      3514.5
+    ],
+    "hash": 1555437839,
+    "actions": [
+      "Climb-into"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          7766
+        ]
+      }
+    ],
+    "action_cursors_0": 57,
+    "dummy_45": 7
+  },
+  {
+    "id": 110293,
+    "name": "Unclaimed clue scrolls",
+    "file": "49-54.json",
+    "lng": 3164,
+    "lat": 3495,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      3164.5,
+      3495.5
+    ],
+    "hash": 230184212,
+    "is_members": true,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          7984
+        ]
+      }
+    ]
+  },
+  {
+    "id": 110294,
+    "name": "Unclaimed clue scrolls",
+    "file": "49-54.json",
+    "lng": 3164,
+    "lat": 3489,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      3164.5,
+      3489.5
+    ],
+    "hash": 2848380881,
+    "is_members": true,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          7985
+        ]
+      }
+    ]
+  },
+  {
+    "id": 38452,
+    "name": "Unlit beacon",
+    "file": "49-55.json",
+    "lng": 3170,
+    "lat": 3536,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3171.5,
+      3537.5
+    ],
+    "hash": 2506955186,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887095295,
+      "unk2": [
+        38437,
+        38438,
+        38439,
+        38440,
+        38445
+      ],
+      "unk3": 38446
+    }
+  },
+  {
+    "id": 5112,
+    "name": "Urns",
+    "file": "50-53.json",
+    "lng": 3260,
+    "lat": 3400,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      3260.5,
+      3400.5
+    ],
+    "hash": 2738972148,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63534
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5124,
+    "name": "Urns",
+    "file": "50-53.json",
+    "lng": 3260,
+    "lat": 3401,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      3260.5,
+      3401.5
+    ],
+    "hash": 2336549268,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63494
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5124,
+    "name": "Urns",
+    "file": "50-53.json",
+    "lng": 3263,
+    "lat": 3399,
+    "floor": 1,
+    "rotation": 3,
+    "center": [
+      3263.5,
+      3399.5
+    ],
+    "hash": 3507165439,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63494
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5125,
+    "name": "Urns",
+    "file": "50-53.json",
+    "lng": 3260,
+    "lat": 3398,
+    "floor": 1,
+    "rotation": 3,
+    "center": [
+      3260.5,
+      3398.5
+    ],
+    "hash": 68052099,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63480
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5125,
+    "name": "Urns",
+    "file": "50-53.json",
+    "lng": 3262,
+    "lat": 3399,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      3262.5,
+      3399.5
+    ],
+    "hash": 1581356520,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63480
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7529,
+    "name": "Urns",
+    "file": "50-53.json",
+    "lng": 3261,
+    "lat": 3403,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      3261.5,
+      3403.5
+    ],
+    "hash": 163959294,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63509
+        ]
+      }
+    ]
+  },
+  {
+    "id": 38451,
+    "name": "Unlit beacon",
+    "file": "50-55.json",
+    "lng": 3236,
+    "lat": 3527,
+    "floor": 0,
+    "rotation": 2,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3237.5,
+      3528.5
+    ],
+    "hash": 2082384027,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887029759,
+      "unk2": [
+        38437,
+        38438,
+        38439,
+        38440,
+        38445
+      ],
+      "unk3": 38446
+    }
+  },
+  {
+    "id": 113047,
+    "name": "Uncommon gem rock",
+    "file": "51-51.json",
+    "lng": 3298,
+    "lat": 3314,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      3298.5,
+      3314.5
+    ],
+    "hash": 1938073405,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73989,
+          73999,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113047,
+    "name": "Uncommon gem rock",
+    "file": "51-51.json",
+    "lng": 3302,
+    "lat": 3314,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      3302.5,
+      3314.5
+    ],
+    "hash": 1093068832,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73989,
+          73999,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113048,
+    "name": "Uncommon gem rock",
+    "file": "51-51.json",
+    "lng": 3300,
+    "lat": 3317,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      3300.5,
+      3317.5
+    ],
+    "hash": 858630778,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73994,
+          74013,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113049,
+    "name": "Uncommon gem rock",
+    "file": "51-51.json",
+    "lng": 3296,
+    "lat": 3314,
+    "floor": 0,
+    "rotation": 3,
+    "width": 2,
+    "length": 2,
+    "center": [
+      3297.0,
+      3315.0
+    ],
+    "hash": 3738847169,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          74154,
+          74165,
+          73986
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,41899],[54858,41889],[54991,41879],[54856,41869]]",
+    "material_replacements": "[[322,10865],[1304,10837]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 38450,
+    "name": "Unlit beacon",
+    "file": "51-54.json",
+    "lng": 3311,
+    "lat": 3514,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3312.5,
+      3515.5
+    ],
+    "hash": 3573641885,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 886964223,
+      "unk2": [
+        38437,
+        38438,
+        38439,
+        38440,
+        38445
+      ],
+      "unk3": 38446
+    }
+  },
+  {
+    "id": 38449,
+    "name": "Unlit beacon",
+    "file": "52-54.json",
+    "lng": 3343,
+    "lat": 3510,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3344.5,
+      3511.5
+    ],
+    "hash": 1984484005,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 886898687,
+      "unk2": [
+        82329,
+        82330,
+        82331,
+        82332,
+        82333
+      ],
+      "unk3": 82334
+    }
+  },
+  {
+    "id": 38448,
+    "name": "Unlit beacon",
+    "file": "53-54.json",
+    "lng": 3392,
+    "lat": 3464,
+    "floor": 1,
+    "rotation": 0,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3393.5,
+      3465.5
+    ],
+    "hash": 703871460,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          111490
+        ]
+      }
+    ],
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 886833151,
+      "unk2": [
+        101928,
+        101929,
+        101930,
+        101931,
+        112052
+      ],
+      "unk3": 112053
+    }
+  },
+  {
+    "id": 4490,
+    "name": "Uncooking pot",
+    "file": "53-74.json",
+    "lng": 3420,
+    "lat": 4778,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      3421.0,
+      4779.0
+    ],
+    "hash": 1871006220,
+    "actions": [
+      "Uncook-with"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          5504,
+          5505
+        ]
+      }
+    ],
+    "color_replacements": "[[5053,40654],[53,43061],[4533,41275]]"
+  },
+  {
+    "id": 4490,
+    "name": "Uncooking pot",
+    "file": "53-74.json",
+    "lng": 3422,
+    "lat": 4774,
+    "floor": 0,
+    "rotation": 1,
+    "width": 2,
+    "length": 2,
+    "center": [
+      3423.0,
+      4775.0
+    ],
+    "hash": 4195554520,
+    "actions": [
+      "Uncook-with"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          5504,
+          5505
+        ]
+      }
+    ],
+    "color_replacements": "[[5053,40654],[53,43061],[4533,41275]]"
+  },
+  {
+    "id": 38460,
+    "name": "Unlit beacon",
+    "file": "53-79.json",
+    "lng": 3419,
+    "lat": 5116,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3420.5,
+      5117.5
+    ],
+    "hash": 3850073067,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887619583,
+      "unk2": [
+        38433,
+        38434,
+        38435,
+        38436,
+        38443
+      ],
+      "unk3": 38444
+    }
+  },
+  {
+    "id": 64067,
+    "name": "Urn",
+    "file": "54-149.json",
+    "lng": 3493,
+    "lat": 9570,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      3493.5,
+      9570.5
+    ],
+    "hash": 996597797,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8821
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  },
+  {
+    "id": 101927,
+    "name": "Unicorn's head",
+    "file": "54-54.json",
+    "lng": 3477,
+    "lat": 3485,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      3477.5,
+      3485.5
+    ],
+    "hash": 1738593577,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          111427
+        ]
+      }
+    ]
+  },
+  {
+    "id": 95360,
+    "name": "Uncomfortable bench",
+    "file": "54-97.json",
+    "lng": 3483,
+    "lat": 6238,
+    "floor": 0,
+    "rotation": 2,
+    "width": 2,
+    "center": [
+      3484.0,
+      6238.5
+    ],
+    "hash": 1572688061,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          88742
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5112,
+    "name": "Urns",
+    "file": "58-141.json",
+    "lng": 3772,
+    "lat": 9032,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      3772.5,
+      9032.5
+    ],
+    "hash": 2738972148,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63534
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5124,
+    "name": "Urns",
+    "file": "58-141.json",
+    "lng": 3772,
+    "lat": 9033,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      3772.5,
+      9033.5
+    ],
+    "hash": 2336549268,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63494
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5124,
+    "name": "Urns",
+    "file": "58-141.json",
+    "lng": 3775,
+    "lat": 9031,
+    "floor": 1,
+    "rotation": 3,
+    "center": [
+      3775.5,
+      9031.5
+    ],
+    "hash": 3507165439,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63494
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5125,
+    "name": "Urns",
+    "file": "58-141.json",
+    "lng": 3772,
+    "lat": 9030,
+    "floor": 1,
+    "rotation": 3,
+    "center": [
+      3772.5,
+      9030.5
+    ],
+    "hash": 68052099,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63480
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5125,
+    "name": "Urns",
+    "file": "58-141.json",
+    "lng": 3774,
+    "lat": 9031,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      3774.5,
+      9031.5
+    ],
+    "hash": 1581356520,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63480
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7529,
+    "name": "Urns",
+    "file": "58-141.json",
+    "lng": 3773,
+    "lat": 9035,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      3773.5,
+      9035.5
+    ],
+    "hash": 163959294,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          63509
+        ]
+      }
+    ]
+  },
+  {
+    "id": 66271,
+    "name": "Unstable rock",
+    "file": "58-73.json",
+    "lng": 3735,
+    "lat": 4702,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      3736.5,
+      4703.0
+    ],
+    "hash": 133268968,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          30288
+        ]
+      }
+    ]
+  },
+  {
+    "id": 66271,
+    "name": "Unstable rock",
+    "file": "58-73.json",
+    "lng": 3739,
+    "lat": 4702,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      3740.5,
+      4703.0
+    ],
+    "hash": 133268968,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          30288
+        ]
+      }
+    ]
+  },
+  {
+    "id": 132662,
+    "name": "Unfinished carrot boat",
+    "file": "58-77.json",
+    "lng": 3765,
+    "lat": 4978,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      3765.5,
+      4978.5
+    ],
+    "hash": 811989658,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          136133,
+          136145
+        ]
+      }
+    ]
+  },
+  {
+    "id": 132663,
+    "name": "Unfinished carrot boat",
+    "file": "58-77.json",
+    "lng": 3766,
+    "lat": 4977,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      3766.5,
+      4977.5
+    ],
+    "hash": 4201859469,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          136134,
+          136145
+        ]
+      }
+    ]
+  },
+  {
+    "id": 38449,
+    "name": "Unlit beacon",
+    "file": "59-119.json",
+    "lng": 3791,
+    "lat": 7670,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      3792.5,
+      7671.5
+    ],
+    "hash": 227237176,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 886898687,
+      "unk2": [
+        82329,
+        82330,
+        82331,
+        82332,
+        82333
+      ],
+      "unk3": 82334
+    }
+  },
+  {
+    "id": 95966,
+    "name": "Undead dairy cow",
+    "file": "59-141.json",
+    "lng": 3776,
+    "lat": 9053,
+    "floor": 0,
+    "rotation": 0,
+    "length": 2,
+    "center": [
+      3776.5,
+      9054.0
+    ],
+    "hash": 4208979886,
+    "actions": [
+      "Milk"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          102935
+        ]
+      }
+    ],
+    "dummy_45": 7
+  },
+  {
+    "id": 903,
+    "name": "Unicorn's head",
+    "file": "59-66.json",
+    "lng": 3788,
+    "lat": 4271,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      3788.5,
+      4271.5
+    ],
+    "hash": 197829045,
+    "models": [
+      {
+        "type": 4,
+        "values": [
+          2073
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12095,
+    "name": "Undo Lever",
+    "file": "64-87.json",
+    "lng": 4099,
+    "lat": 5592,
+    "floor": 0,
+    "rotation": 0,
+    "length": 2,
+    "center": [
+      4099.5,
+      5593.0
+    ],
+    "hash": 2797452778,
+    "actions": [
+      "Pull"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          57550
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "66-115.json",
+    "lng": 4254,
+    "lat": 7415,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4254.5,
+      7415.5
+    ],
+    "hash": 2558314255,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "66-115.json",
+    "lng": 4254,
+    "lat": 7416,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4254.5,
+      7416.5
+    ],
+    "hash": 1658046659,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "66-115.json",
+    "lng": 4255,
+    "lat": 7415,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4255.5,
+      7415.5
+    ],
+    "hash": 2558314255,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "66-115.json",
+    "lng": 4255,
+    "lat": 7416,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4255.5,
+      7416.5
+    ],
+    "hash": 1658046659,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "66-115.json",
+    "lng": 4256,
+    "lat": 7415,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4256.5,
+      7415.5
+    ],
+    "hash": 2558314255,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "66-115.json",
+    "lng": 4256,
+    "lat": 7416,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4256.5,
+      7416.5
+    ],
+    "hash": 1658046659,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "66-115.json",
+    "lng": 4257,
+    "lat": 7415,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4257.5,
+      7415.5
+    ],
+    "hash": 2558314255,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 9399,
+    "name": "Unferth's patch",
+    "file": "66-115.json",
+    "lng": 4257,
+    "lat": 7416,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4257.5,
+      7416.5
+    ],
+    "hash": 1658046659,
+    "actions": [
+      "Rake"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          8226
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 726859775,
+      "unk2": [
+        9402,
+        9401,
+        9400,
+        9403,
+        9404,
+        9405,
+        9406,
+        9407
+      ],
+      "unk3": 9408
+    }
+  },
+  {
+    "id": 38456,
+    "name": "Unlit beacon",
+    "file": "66-115.json",
+    "lng": 4284,
+    "lat": 7405,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      4285.5,
+      7406.5
+    ],
+    "hash": 1045354158,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "material_replacements": "[[12159,11800],[12160,11802],[12161,11803],[12162,11804]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887357439,
+      "unk2": [
+        38429,
+        38430,
+        38431,
+        38432,
+        38441
+      ],
+      "unk3": 38442
+    }
+  },
+  {
+    "id": 97912,
+    "name": "Unlit beacon",
+    "file": "66-12.json",
+    "lng": 4225,
+    "lat": 817,
+    "floor": 0,
+    "rotation": 2,
+    "width": 3,
+    "length": 3,
+    "center": [
+      4226.5,
+      818.5
+    ],
+    "hash": 2842756091,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          105307
+        ]
+      }
+    ],
+    "morphs_2": "{\"unk1\":1886584831,\"unk2\":97914,\"unk3\":[97914,97914,97914,97914,97914],\"unk4\":97913}",
+    "probably_morphFloor": true
+  },
+  {
+    "id": 54009,
+    "name": "Unfinished bridge",
+    "file": "7-66.json",
+    "lng": 502,
+    "lat": 4280,
+    "floor": 0,
+    "rotation": 2,
+    "width": 3,
+    "length": 2,
+    "center": [
+      503.5,
+      4281.0
+    ],
+    "hash": 4154562107,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59041
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54009,
+    "name": "Unfinished bridge",
+    "file": "7-66.json",
+    "lng": 503,
+    "lat": 4231,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4232.0
+    ],
+    "hash": 3426057223,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59041
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54009,
+    "name": "Unfinished bridge",
+    "file": "7-66.json",
+    "lng": 503,
+    "lat": 4246,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4247.0
+    ],
+    "hash": 408973561,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59041
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54009,
+    "name": "Unfinished bridge",
+    "file": "7-66.json",
+    "lng": 503,
+    "lat": 4262,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4263.0
+    ],
+    "hash": 1087359116,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59041
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54009,
+    "name": "Unfinished bridge",
+    "file": "7-67.json",
+    "lng": 503,
+    "lat": 4296,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4297.0
+    ],
+    "hash": 1087359116,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59041
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54009,
+    "name": "Unfinished bridge",
+    "file": "7-67.json",
+    "lng": 503,
+    "lat": 4310,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4311.0
+    ],
+    "hash": 408973561,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59041
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54009,
+    "name": "Unfinished bridge",
+    "file": "7-67.json",
+    "lng": 503,
+    "lat": 4324,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4325.0
+    ],
+    "hash": 1087359116,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59041
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54010,
+    "name": "Unfinished bridge",
+    "file": "7-68.json",
+    "lng": 502,
+    "lat": 4408,
+    "floor": 0,
+    "rotation": 2,
+    "width": 3,
+    "length": 2,
+    "center": [
+      503.5,
+      4409.0
+    ],
+    "hash": 3189469689,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59047
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54010,
+    "name": "Unfinished bridge",
+    "file": "7-68.json",
+    "lng": 503,
+    "lat": 4359,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4360.0
+    ],
+    "hash": 616110910,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59047
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54010,
+    "name": "Unfinished bridge",
+    "file": "7-68.json",
+    "lng": 503,
+    "lat": 4374,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4375.0
+    ],
+    "hash": 2385777301,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59047
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54010,
+    "name": "Unfinished bridge",
+    "file": "7-68.json",
+    "lng": 503,
+    "lat": 4390,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4391.0
+    ],
+    "hash": 3895153886,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59047
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54010,
+    "name": "Unfinished bridge",
+    "file": "7-69.json",
+    "lng": 503,
+    "lat": 4424,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4425.0
+    ],
+    "hash": 3895153886,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59047
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54010,
+    "name": "Unfinished bridge",
+    "file": "7-69.json",
+    "lng": 503,
+    "lat": 4438,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4439.0
+    ],
+    "hash": 2385777301,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59047
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54010,
+    "name": "Unfinished bridge",
+    "file": "7-69.json",
+    "lng": 503,
+    "lat": 4452,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4453.0
+    ],
+    "hash": 3895153886,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59047
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54011,
+    "name": "Unfinished bridge",
+    "file": "7-70.json",
+    "lng": 502,
+    "lat": 4536,
+    "floor": 0,
+    "rotation": 2,
+    "width": 3,
+    "length": 2,
+    "center": [
+      503.5,
+      4537.0
+    ],
+    "hash": 1292837486,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59053
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54011,
+    "name": "Unfinished bridge",
+    "file": "7-70.json",
+    "lng": 503,
+    "lat": 4487,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4488.0
+    ],
+    "hash": 1989920850,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59053
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54011,
+    "name": "Unfinished bridge",
+    "file": "7-70.json",
+    "lng": 503,
+    "lat": 4502,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4503.0
+    ],
+    "hash": 3286496799,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59053
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54011,
+    "name": "Unfinished bridge",
+    "file": "7-70.json",
+    "lng": 503,
+    "lat": 4518,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4519.0
+    ],
+    "hash": 2605469290,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59053
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54011,
+    "name": "Unfinished bridge",
+    "file": "7-71.json",
+    "lng": 503,
+    "lat": 4552,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4553.0
+    ],
+    "hash": 2605469290,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59053
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54011,
+    "name": "Unfinished bridge",
+    "file": "7-71.json",
+    "lng": 503,
+    "lat": 4566,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4567.0
+    ],
+    "hash": 3286496799,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59053
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54011,
+    "name": "Unfinished bridge",
+    "file": "7-71.json",
+    "lng": 503,
+    "lat": 4580,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4581.0
+    ],
+    "hash": 2605469290,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59053
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54012,
+    "name": "Unfinished bridge",
+    "file": "7-72.json",
+    "lng": 502,
+    "lat": 4664,
+    "floor": 0,
+    "rotation": 2,
+    "width": 3,
+    "length": 2,
+    "center": [
+      503.5,
+      4665.0
+    ],
+    "hash": 3628610929,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59045
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54012,
+    "name": "Unfinished bridge",
+    "file": "7-72.json",
+    "lng": 503,
+    "lat": 4615,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4616.0
+    ],
+    "hash": 1122656182,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59045
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54012,
+    "name": "Unfinished bridge",
+    "file": "7-72.json",
+    "lng": 503,
+    "lat": 4630,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4631.0
+    ],
+    "hash": 2091794258,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59045
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54012,
+    "name": "Unfinished bridge",
+    "file": "7-72.json",
+    "lng": 503,
+    "lat": 4646,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4647.0
+    ],
+    "hash": 447838489,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59045
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54012,
+    "name": "Unfinished bridge",
+    "file": "7-73.json",
+    "lng": 503,
+    "lat": 4680,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4681.0
+    ],
+    "hash": 447838489,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59045
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54012,
+    "name": "Unfinished bridge",
+    "file": "7-73.json",
+    "lng": 503,
+    "lat": 4694,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4695.0
+    ],
+    "hash": 2091794258,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59045
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 54012,
+    "name": "Unfinished bridge",
+    "file": "7-73.json",
+    "lng": 503,
+    "lat": 4708,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4709.0
+    ],
+    "hash": 447838489,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          59045
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 39872,
+    "name": "Unfinished bridge",
+    "file": "7-74.json",
+    "lng": 502,
+    "lat": 4792,
+    "floor": 0,
+    "rotation": 2,
+    "width": 3,
+    "length": 2,
+    "center": [
+      503.5,
+      4793.0
+    ],
+    "hash": 729488847,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          61601
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 39872,
+    "name": "Unfinished bridge",
+    "file": "7-74.json",
+    "lng": 503,
+    "lat": 4743,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4744.0
+    ],
+    "hash": 284162035,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          61601
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 39872,
+    "name": "Unfinished bridge",
+    "file": "7-74.json",
+    "lng": 503,
+    "lat": 4758,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4759.0
+    ],
+    "hash": 2792987211,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          61601
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 39872,
+    "name": "Unfinished bridge",
+    "file": "7-74.json",
+    "lng": 503,
+    "lat": 4774,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4775.0
+    ],
+    "hash": 4275446334,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          61601
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 39872,
+    "name": "Unfinished bridge",
+    "file": "7-75.json",
+    "lng": 503,
+    "lat": 4808,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4809.0
+    ],
+    "hash": 4275446334,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          61601
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 39872,
+    "name": "Unfinished bridge",
+    "file": "7-75.json",
+    "lng": 503,
+    "lat": 4822,
+    "floor": 0,
+    "rotation": 1,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4823.0
+    ],
+    "hash": 2792987211,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          61601
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 39872,
+    "name": "Unfinished bridge",
+    "file": "7-75.json",
+    "lng": 503,
+    "lat": 4836,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      504.5,
+      4837.0
+    ],
+    "hash": 4275446334,
+    "actions": [
+      "Jump",
+      "Repair"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          61601
+        ]
+      }
+    ],
+    "action_cursors_0": 55,
+    "action_cursors_1": 174
+  },
+  {
+    "id": 38455,
+    "name": "Unlit beacon",
+    "file": "70-181.json",
+    "lng": 4504,
+    "lat": 11644,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      4505.5,
+      11645.5
+    ],
+    "hash": 2202743971,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "material_replacements": "[[12159,11800],[12160,11802],[12161,11803],[12162,11804]]",
+    "probably_morphFloor": true,
+    "action_cursors_0": 65,
+    "dummy_45": 7,
+    "morphs_1": {
+      "unk1": 887291903,
+      "unk2": [
+        38429,
+        38430,
+        38431,
+        38432,
+        38441
+      ],
+      "unk3": 38442
+    }
+  },
+  {
+    "id": 4181,
+    "name": "Unicorn's head",
+    "file": "70-92.json",
+    "lng": 4505,
+    "lat": 5900,
+    "floor": 2,
+    "rotation": 3,
+    "center": [
+      4505.5,
+      5900.5
+    ],
+    "hash": 2020578563,
+    "actions": [
+      "Study"
+    ],
+    "models": [
+      {
+        "type": 4,
+        "values": [
+          2073
+        ]
+      }
+    ],
+    "action_cursors_0": 50
+  },
+  {
+    "id": 112646,
+    "name": "Under the bed",
+    "file": "71-113.json",
+    "lng": 4566,
+    "lat": 7279,
+    "floor": 1,
+    "rotation": 1,
+    "center": [
+      4566.5,
+      7279.5
+    ],
+    "hash": 1272515678,
+    "is_members": true,
+    "actions": [
+      "Explore"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          3951
+        ]
+      }
+    ],
+    "morphs_2": "{\"unk1\":2789998591,\"unk2\":112665,\"unk3\":[112665],\"unk4\":112647}"
+  },
+  {
+    "id": 38454,
+    "name": "Unlit beacon",
+    "file": "71-181.json",
+    "lng": 4570,
+    "lat": 11646,
+    "floor": 0,
+    "rotation": 3,
+    "width": 3,
+    "length": 3,
+    "center": [
+      4571.5,
+      11647.5
+    ],
+    "hash": 4255423876,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887226367,
+      "unk2": [
+        38437,
+        38438,
+        38439,
+        38440,
+        38445
+      ],
+      "unk3": 38446
+    }
+  },
+  {
+    "id": 101205,
+    "name": "Underworld root",
+    "file": "72-103.json",
+    "lng": 4653,
+    "lat": 6620,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      4653.5,
+      6620.5
+    ],
+    "hash": 2688624722,
+    "is_members": true,
+    "actions": [
+      "Chop"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          110366
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 59
+  },
+  {
+    "id": 101207,
+    "name": "Underworld root",
+    "file": "72-103.json",
+    "lng": 4653,
+    "lat": 6621,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      4653.5,
+      6621.5
+    ],
+    "hash": 3201441123,
+    "is_members": true,
+    "actions": [
+      "Chop"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          110368
+        ]
+      }
+    ],
+    "probably_morphFloor": true,
+    "action_cursors_0": 59
+  },
+  {
+    "id": 113004,
+    "name": "Underworld rock",
+    "file": "72-103.json",
+    "lng": 4643,
+    "lat": 6627,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4643.5,
+      6627.5
+    ],
+    "hash": 1173642497,
+    "is_members": true,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          110355
+        ]
+      }
+    ],
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113005,
+    "name": "Underworld rock",
+    "file": "72-103.json",
+    "lng": 4642,
+    "lat": 6608,
+    "floor": 0,
+    "rotation": 3,
+    "width": 2,
+    "length": 2,
+    "center": [
+      4643.0,
+      6609.0
+    ],
+    "hash": 2379098391,
+    "is_members": true,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          110356
+        ]
+      }
+    ],
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113005,
+    "name": "Underworld rock",
+    "file": "72-103.json",
+    "lng": 4646,
+    "lat": 6626,
+    "floor": 0,
+    "rotation": 2,
+    "width": 2,
+    "length": 2,
+    "center": [
+      4647.0,
+      6627.0
+    ],
+    "hash": 3418695396,
+    "is_members": true,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          110356
+        ]
+      }
+    ],
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113006,
+    "name": "Underworld rock",
+    "file": "72-103.json",
+    "lng": 4639,
+    "lat": 6625,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4639.5,
+      6625.5
+    ],
+    "hash": 1319795202,
+    "is_members": true,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          110357
+        ]
+      }
+    ],
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113006,
+    "name": "Underworld rock",
+    "file": "72-103.json",
+    "lng": 4651,
+    "lat": 6611,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      4651.5,
+      6611.5
+    ],
+    "hash": 2088112646,
+    "is_members": true,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          110357
+        ]
+      }
+    ],
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113007,
+    "name": "Underworld rock",
+    "file": "72-103.json",
+    "lng": 4648,
+    "lat": 6607,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      4649.0,
+      6608.0
+    ],
+    "hash": 2133296961,
+    "is_members": true,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          110358
+        ]
+      }
+    ],
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 113008,
+    "name": "Underworld rock",
+    "file": "72-103.json",
+    "lng": 4646,
+    "lat": 6611,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      4646.5,
+      6611.5
+    ],
+    "hash": 1022165333,
+    "is_members": true,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          110359
+        ]
+      }
+    ],
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 38453,
+    "name": "Unlit beacon",
+    "file": "72-181.json",
+    "lng": 4623,
+    "lat": 11644,
+    "floor": 0,
+    "rotation": 0,
+    "width": 3,
+    "length": 3,
+    "center": [
+      4624.5,
+      11645.5
+    ],
+    "hash": 1406179329,
+    "members_actions": [
+      "Add-logs"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          127792
+        ]
+      }
+    ],
+    "action_cursors_0": 65,
+    "dummy_45": 11,
+    "morphs_1": {
+      "unk1": 887160831,
+      "unk2": [
+        38437,
+        38438,
+        38439,
+        38440,
+        38445
+      ],
+      "unk3": 38446
+    }
+  },
+  {
+    "id": 92239,
+    "name": "Undirected skill portal",
+    "file": "77-98.json",
+    "lng": 4969,
+    "lat": 6277,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      4969.5,
+      6277.5
+    ],
+    "hash": 2597600808,
+    "actions": [
+      "Tune"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          98274
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 1642004479,
+      "unk2": [
+        92241,
+        92242,
+        92243,
+        92244,
+        92245,
+        92246,
+        92247,
+        92248,
+        92249,
+        92250,
+        92251,
+        92252,
+        98306,
+        99425,
+        100858,
+        109556,
+        110588,
+        111299
+      ],
+      "unk3": 117415
+    }
+  },
+  {
+    "id": 92240,
+    "name": "Undirected skill portal",
+    "file": "77-98.json",
+    "lng": 4969,
+    "lat": 6273,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      4969.5,
+      6273.5
+    ],
+    "hash": 2597600808,
+    "actions": [
+      "Tune"
+    ],
+    "models": [
+      {
+        "type": 0,
+        "values": [
+          98274
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 1642070015,
+      "unk2": [
+        92241,
+        92242,
+        92243,
+        92244,
+        92245,
+        92246,
+        92247,
+        92248,
+        92249,
+        92250,
+        92251,
+        92252,
+        98306,
+        99425,
+        100858,
+        109556,
+        110588,
+        111299
+      ],
+      "unk3": 117415
+    }
+  },
+  {
+    "id": 903,
+    "name": "Unicorn's head",
+    "file": "81-12.json",
+    "lng": 5196,
+    "lat": 815,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      5196.5,
+      815.5
+    ],
+    "hash": 2565177422,
+    "models": [
+      {
+        "type": 4,
+        "values": [
+          2073
+        ]
+      }
+    ]
+  },
+  {
+    "id": 128719,
+    "name": "Unwrapped presents",
+    "file": "81-153.json",
+    "lng": 5206,
+    "lat": 9822,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      5206.5,
+      9822.5
+    ],
+    "hash": 3114908308,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          132111
+        ]
+      }
+    ]
+  },
+  {
+    "id": 128720,
+    "name": "Unwrapped presents",
+    "file": "81-153.json",
+    "lng": 5206,
+    "lat": 9823,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      5206.5,
+      9823.5
+    ],
+    "hash": 864239047,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          132112
+        ]
+      }
+    ]
+  },
+  {
+    "id": 128721,
+    "name": "Unwrapped presents",
+    "file": "81-153.json",
+    "lng": 5205,
+    "lat": 9823,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      5205.5,
+      9823.5
+    ],
+    "hash": 3517119478,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          132113
+        ]
+      }
+    ]
+  },
+  {
+    "id": 128722,
+    "name": "Unwrapped presents",
+    "file": "81-153.json",
+    "lng": 5207,
+    "lat": 9822,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      5207.5,
+      9822.5
+    ],
+    "hash": 2563568499,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          132114
+        ]
+      }
+    ]
+  },
+  {
+    "id": 93481,
+    "name": "Unstable rift",
+    "file": "90-90.json",
+    "lng": 5788,
+    "lat": 5788,
+    "floor": 2,
+    "rotation": 0,
+    "width": 8,
+    "length": 8,
+    "center": [
+      5792.0,
+      5792.0
+    ],
+    "hash": 1351519417,
+    "is_members": true,
+    "actions": [
+      "Offer memory",
+      "Exit cache"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          99777
+        ]
+      }
+    ],
+    "probably_morphFloor": true
+  }
+]

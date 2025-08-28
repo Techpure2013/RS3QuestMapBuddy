@@ -1,0 +1,1 @@
+[{"id": 10417, "name": "Cave exit", "file": "52-148.json", "lng": 3347, "lat": 9533, "floor": 0, "rotation": 2, "width": 3, "length": 2, "center": [3348.5, 9534.0], "hash": 507901087, "actions": ["Leave"], "models": [{"type": 10, "values": [37205]}], "action_cursors_0": 57}]

@@ -1,0 +1,1 @@
+[{"id": 102358, "name": "Stairs", "file": "66-123.json", "lng": 4257, "lat": 7894, "floor": 1, "rotation": 0, "center": [4257.5, 7894.5], "hash": 609452546, "is_members": true, "actions": ["Climb down"], "models": [{"type": 10, "values": [111516]}], "action_cursors_0": 53}]

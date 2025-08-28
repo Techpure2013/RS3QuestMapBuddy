@@ -1,0 +1,1 @@
+[{"id": 113695, "name": "Cliff face", "file": "84-34.json", "lng": 5437, "lat": 2217, "floor": 0, "rotation": 3, "length": 2, "center": [5437.5, 2218.0], "hash": 3336374561, "actions": ["Traverse"], "models": [{"type": 10, "values": [48020]}], "action_cursors_0": 181, "dummy_45": 10}]

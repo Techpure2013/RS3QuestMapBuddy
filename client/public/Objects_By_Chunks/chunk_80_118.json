@@ -1,0 +1,1 @@
+[{"id": 100254, "name": "Dark Tunnel", "file": "80-118.json", "lng": 5160, "lat": 7591, "floor": 0, "rotation": 3, "center": [5160.5, 7591.5], "hash": 2352953225, "actions": ["Exit"], "models": [{"type": 0, "values": [107768]}], "probably_morphFloor": true, "action_cursors_0": 57}]

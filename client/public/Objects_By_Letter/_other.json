@@ -1,0 +1,1913 @@
+[
+  {
+    "id": 127396,
+    "name": "[ph]",
+    "file": "1-10.json",
+    "lng": 114,
+    "lat": 673,
+    "floor": 0,
+    "rotation": 0,
+    "width": 5,
+    "length": 5,
+    "center": [
+      116.5,
+      675.5
+    ],
+    "hash": 393614337,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          81362
+        ]
+      }
+    ]
+  },
+  {
+    "id": 101015,
+    "name": "3 Ancient stones",
+    "file": "15-64.json",
+    "lng": 977,
+    "lat": 4130,
+    "floor": 0,
+    "rotation": 0,
+    "length": 2,
+    "center": [
+      977.5,
+      4131.0
+    ],
+    "hash": 3640871741,
+    "is_members": true,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          110276
+        ]
+      }
+    ]
+  },
+  {
+    "id": 126840,
+    "name": "???",
+    "file": "17-27.json",
+    "lng": 1116,
+    "lat": 1754,
+    "floor": 1,
+    "rotation": 0,
+    "width": 14,
+    "length": 6,
+    "center": [
+      1123.0,
+      1757.0
+    ],
+    "hash": 1054125882,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          130182
+        ]
+      }
+    ]
+  },
+  {
+    "id": 72406,
+    "name": ".",
+    "file": "22-95.json",
+    "lng": 1445,
+    "lat": 6123,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      1445.5,
+      6123.5
+    ],
+    "hash": 3899500545,
+    "is_members": true,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          69672
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 830865407,
+      "unk2": [
+        72405
+      ],
+      "unk3": 72404
+    }
+  },
+  {
+    "id": 72410,
+    "name": ".",
+    "file": "22-95.json",
+    "lng": 1432,
+    "lat": 6104,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      1432.5,
+      6104.5
+    ],
+    "hash": 154686068,
+    "is_members": true,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          69672
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 830930943,
+      "unk2": [
+        72409
+      ],
+      "unk3": 72408
+    }
+  },
+  {
+    "id": 72414,
+    "name": ".",
+    "file": "22-95.json",
+    "lng": 1429,
+    "lat": 6116,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      1429.5,
+      6116.5
+    ],
+    "hash": 2675182445,
+    "is_members": true,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          69672
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 830996479,
+      "unk2": [
+        72413
+      ],
+      "unk3": 72412
+    }
+  },
+  {
+    "id": 72418,
+    "name": ".",
+    "file": "22-95.json",
+    "lng": 1446,
+    "lat": 6112,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      1446.5,
+      6112.5
+    ],
+    "hash": 2436020528,
+    "is_members": true,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          69672
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 831062015,
+      "unk2": [
+        72417
+      ],
+      "unk3": 72416
+    }
+  },
+  {
+    "id": 45802,
+    "name": "<col=ffff00>Death</col>",
+    "file": "30-82.json",
+    "lng": 1971,
+    "lat": 5301,
+    "floor": 0,
+    "rotation": 2,
+    "width": 2,
+    "length": 3,
+    "center": [
+      1972.0,
+      5302.5
+    ],
+    "hash": 775318278,
+    "actions": [
+      "Talk to",
+      "Reclaim items",
+      "Death event"
+    ],
+    "members_actions": [
+      "Get task",
+      "Rewards"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          97698,
+          97661
+        ]
+      }
+    ],
+    "color_replacements": "[[10304,8419],[10291,8392],[10295,8412]]",
+    "action_cursors_0": 44,
+    "morphs_1": {
+      "unk1": 2760900607,
+      "unk2": [
+        87831
+      ],
+      "unk3": 87832
+    }
+  },
+  {
+    "id": 15664,
+    "name": "18lb shot",
+    "file": "32-92.json",
+    "lng": 2086,
+    "lat": 5901,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      2086.5,
+      5901.5
+    ],
+    "hash": 1531636132,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 15665,
+    "name": "22lb shot",
+    "file": "32-92.json",
+    "lng": 2086,
+    "lat": 5895,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      2086.5,
+      5895.5
+    ],
+    "hash": 3009247493,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 15664,
+    "name": "18lb shot",
+    "file": "32-94.json",
+    "lng": 2086,
+    "lat": 6029,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      2086.5,
+      6029.5
+    ],
+    "hash": 1531636132,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 15665,
+    "name": "22lb shot",
+    "file": "32-94.json",
+    "lng": 2086,
+    "lat": 6023,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      2086.5,
+      6023.5
+    ],
+    "hash": 3009247493,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 73570,
+    "name": "<col=ff9040>Necklace</col>",
+    "file": "40-51.json",
+    "lng": 2573,
+    "lat": 3274,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      2573.5,
+      3274.5
+    ],
+    "hash": 3564166737,
+    "actions": [
+      "Take"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          71569
+        ]
+      }
+    ],
+    "action_cursors_0": 45,
+    "morphs_1": {
+      "unk1": 853803007,
+      "unk2": [],
+      "unk3": 73571
+    }
+  },
+  {
+    "id": 73572,
+    "name": "<col=ff9040>Money pouch</col>",
+    "file": "40-51.json",
+    "lng": 2574,
+    "lat": 3270,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      2574.5,
+      3270.5
+    ],
+    "hash": 1207754138,
+    "actions": [
+      "Take"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          71578
+        ]
+      }
+    ],
+    "action_cursors_0": 45,
+    "morphs_1": {
+      "unk1": 853868543,
+      "unk2": [],
+      "unk3": 73573
+    }
+  },
+  {
+    "id": 112947,
+    "name": "'Perfect' gold rock",
+    "file": "42-151.json",
+    "lng": 2737,
+    "lat": 9683,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      2737.5,
+      9683.5
+    ],
+    "hash": 2245609914,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73989,
+          74113,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,7901],[54858,7891],[54991,7878],[54856,7853]]",
+    "material_replacements": "[[322,10865],[1304,10884]]",
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 112948,
+    "name": "'Perfect' gold rock",
+    "file": "42-151.json",
+    "lng": 2733,
+    "lat": 9695,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      2733.5,
+      9695.5
+    ],
+    "hash": 2884899284,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73994,
+          74121,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,7901],[54858,7891],[54991,7878],[54856,7853]]",
+    "material_replacements": "[[322,10865],[1304,10884]]",
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 112949,
+    "name": "'Perfect' gold rock",
+    "file": "42-151.json",
+    "lng": 2735,
+    "lat": 9694,
+    "floor": 0,
+    "rotation": 2,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2736.0,
+      9695.0
+    ],
+    "hash": 1782699643,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          74154,
+          74198,
+          73986
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,7901],[54858,7891],[54991,7878],[54856,7853]]",
+    "material_replacements": "[[322,10865],[1304,10884]]",
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 112949,
+    "name": "'Perfect' gold rock",
+    "file": "42-151.json",
+    "lng": 2740,
+    "lat": 9684,
+    "floor": 0,
+    "rotation": 1,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2741.0,
+      9685.0
+    ],
+    "hash": 705257224,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          74154,
+          74198,
+          73986
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,7901],[54858,7891],[54991,7878],[54856,7853]]",
+    "material_replacements": "[[322,10865],[1304,10884]]",
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 112947,
+    "name": "'Perfect' gold rock",
+    "file": "44-25.json",
+    "lng": 2836,
+    "lat": 1624,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      2836.5,
+      1624.5
+    ],
+    "hash": 3501899468,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73989,
+          74113,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,7901],[54858,7891],[54991,7878],[54856,7853]]",
+    "material_replacements": "[[322,10865],[1304,10884]]",
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 112948,
+    "name": "'Perfect' gold rock",
+    "file": "44-25.json",
+    "lng": 2836,
+    "lat": 1622,
+    "floor": 0,
+    "rotation": 0,
+    "center": [
+      2836.5,
+      1622.5
+    ],
+    "hash": 1944228749,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          73994,
+          74121,
+          73987
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,7901],[54858,7891],[54991,7878],[54856,7853]]",
+    "material_replacements": "[[322,10865],[1304,10884]]",
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 112949,
+    "name": "'Perfect' gold rock",
+    "file": "44-25.json",
+    "lng": 2836,
+    "lat": 1626,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      2837.0,
+      1627.0
+    ],
+    "hash": 389432227,
+    "actions": [
+      "Mine",
+      "Prospect"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          74154,
+          74198,
+          73986
+        ]
+      }
+    ],
+    "color_replacements": "[[2116,2346],[3135,3366],[3127,3359],[2109,2341],[3143,2221],[54994,7901],[54858,7891],[54991,7878],[54856,7853]]",
+    "material_replacements": "[[322,10865],[1304,10884]]",
+    "action_cursors_0": 58,
+    "action_cursors_3": 56
+  },
+  {
+    "id": 15664,
+    "name": "18lb shot",
+    "file": "44-55.json",
+    "lng": 2861,
+    "lat": 3550,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      2861.5,
+      3550.5
+    ],
+    "hash": 2303925888,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 15665,
+    "name": "22lb shot",
+    "file": "44-55.json",
+    "lng": 2861,
+    "lat": 3544,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      2861.5,
+      3544.5
+    ],
+    "hash": 1549165308,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 93957,
+    "name": "4 poster bed",
+    "file": "46-97.json",
+    "lng": 2978,
+    "lat": 6233,
+    "floor": 1,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      2979.5,
+      6234.0
+    ],
+    "hash": 2385641547,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          99507
+        ]
+      }
+    ]
+  },
+  {
+    "id": 93957,
+    "name": "4 poster bed",
+    "file": "46-97.json",
+    "lng": 2979,
+    "lat": 6218,
+    "floor": 1,
+    "rotation": 3,
+    "width": 3,
+    "length": 2,
+    "center": [
+      2980.5,
+      6219.0
+    ],
+    "hash": 833049643,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          99507
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15664,
+    "name": "18lb shot",
+    "file": "5-18.json",
+    "lng": 365,
+    "lat": 1182,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      365.5,
+      1182.5
+    ],
+    "hash": 1531636132,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 15665,
+    "name": "22lb shot",
+    "file": "5-18.json",
+    "lng": 365,
+    "lat": 1176,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      365.5,
+      1176.5
+    ],
+    "hash": 3009247493,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 18302,
+    "name": "<col=ffff00>Guard</col>",
+    "file": "52-56.json",
+    "lng": 3385,
+    "lat": 3614,
+    "floor": 0,
+    "rotation": 1,
+    "width": 2,
+    "center": [
+      3386.0,
+      3614.5
+    ],
+    "hash": 1905876067,
+    "actions": [
+      "Talk-to"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          62809
+        ]
+      }
+    ],
+    "action_cursors_0": 44
+  },
+  {
+    "id": 111764,
+    "name": "<col=ffff00>Guard</col>",
+    "file": "52-60.json",
+    "lng": 3352,
+    "lat": 3872,
+    "floor": 0,
+    "rotation": 3,
+    "width": 2,
+    "center": [
+      3353.0,
+      3872.5
+    ],
+    "hash": 3277883466,
+    "actions": [
+      "Talk-to"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          62809
+        ]
+      }
+    ],
+    "action_cursors_0": 44
+  },
+  {
+    "id": 96180,
+    "name": "'Memories of Freneskae'",
+    "file": "58-142.json",
+    "lng": 3722,
+    "lat": 9110,
+    "floor": 1,
+    "rotation": 1,
+    "center": [
+      3722.5,
+      9110.5
+    ],
+    "hash": 2754890490,
+    "actions": [
+      "Deface"
+    ],
+    "models": [
+      {
+        "type": 4,
+        "values": [
+          103083
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 1791623167,
+      "unk2": [
+        96181
+      ],
+      "unk3": 96182
+    }
+  },
+  {
+    "id": 96183,
+    "name": "'Zemouregal on Ice'",
+    "file": "58-142.json",
+    "lng": 3729,
+    "lat": 9110,
+    "floor": 1,
+    "rotation": 1,
+    "center": [
+      3729.5,
+      9110.5
+    ],
+    "hash": 2371368785,
+    "actions": [
+      "Deface"
+    ],
+    "models": [
+      {
+        "type": 4,
+        "values": [
+          103085
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 1791688703,
+      "unk2": [
+        96184
+      ],
+      "unk3": 96185
+    }
+  },
+  {
+    "id": 96186,
+    "name": "'Embers of War'",
+    "file": "58-142.json",
+    "lng": 3725,
+    "lat": 9110,
+    "floor": 1,
+    "rotation": 1,
+    "center": [
+      3725.5,
+      9110.5
+    ],
+    "hash": 690402708,
+    "actions": [
+      "Deface"
+    ],
+    "models": [
+      {
+        "type": 4,
+        "values": [
+          103087
+        ]
+      }
+    ],
+    "morphs_1": {
+      "unk1": 1791754239,
+      "unk2": [
+        96187
+      ],
+      "unk3": 96188
+    }
+  },
+  {
+    "id": 100774,
+    "name": "2001 Elvarg statue",
+    "file": "59-180.json",
+    "lng": 3802,
+    "lat": 11542,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      3803.0,
+      11543.0
+    ],
+    "hash": 2775125725,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108409,
+          108419
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100776,
+    "name": "2002 King Black Dragon statue",
+    "file": "59-180.json",
+    "lng": 3802,
+    "lat": 11550,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      3803.0,
+      11551.0
+    ],
+    "hash": 3224117945,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108412,
+          108419
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100778,
+    "name": "2003 mage arena staff barrel statue",
+    "file": "59-180.json",
+    "lng": 3797,
+    "lat": 11539,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      3797.5,
+      11539.5
+    ],
+    "hash": 1148646625,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108405,
+          108417
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100780,
+    "name": "2004 Dad statue",
+    "file": "59-180.json",
+    "lng": 3788,
+    "lat": 11540,
+    "floor": 0,
+    "rotation": 1,
+    "width": 2,
+    "length": 2,
+    "center": [
+      3789.0,
+      11541.0
+    ],
+    "hash": 3179858886,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108424,
+          108419
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100782,
+    "name": "2005 Dharok statue",
+    "file": "59-180.json",
+    "lng": 3797,
+    "lat": 11554,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      3797.5,
+      11554.5
+    ],
+    "hash": 1897322584,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108408,
+          108417
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100784,
+    "name": "2006 Pyramid Plunder mummy statue",
+    "file": "59-180.json",
+    "lng": 3792,
+    "lat": 11541,
+    "floor": 0,
+    "rotation": 1,
+    "center": [
+      3792.5,
+      11541.5
+    ],
+    "hash": 183245660,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108414,
+          108417
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100786,
+    "name": "2007 Fremennik Longboat statue",
+    "file": "59-180.json",
+    "lng": 3802,
+    "lat": 11537,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 3,
+    "center": [
+      3803.0,
+      11538.5
+    ],
+    "hash": 621108945,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108413,
+          108420
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100788,
+    "name": "2008 Summoning altar statue",
+    "file": "59-180.json",
+    "lng": 3792,
+    "lat": 11552,
+    "floor": 0,
+    "rotation": 3,
+    "center": [
+      3792.5,
+      11552.5
+    ],
+    "hash": 3511457218,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108423,
+          108417
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100790,
+    "name": "2009 Evil Tree statue",
+    "file": "59-180.json",
+    "lng": 3788,
+    "lat": 11552,
+    "floor": 0,
+    "rotation": 3,
+    "width": 2,
+    "length": 2,
+    "center": [
+      3789.0,
+      11553.0
+    ],
+    "hash": 3349474614,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108410,
+          108419
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100792,
+    "name": "2010 Nomad statue",
+    "file": "59-180.json",
+    "lng": 3797,
+    "lat": 11557,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      3797.5,
+      11557.5
+    ],
+    "hash": 2341815454,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108416,
+          108417
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100794,
+    "name": "2011 Nex statue",
+    "file": "59-180.json",
+    "lng": 3797,
+    "lat": 11536,
+    "floor": 0,
+    "rotation": 2,
+    "center": [
+      3797.5,
+      11536.5
+    ],
+    "hash": 634455609,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108415,
+          108417
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100796,
+    "name": "2012 Queen Black Dragon statue",
+    "file": "59-180.json",
+    "lng": 3785,
+    "lat": 11546,
+    "floor": 0,
+    "rotation": 2,
+    "width": 2,
+    "length": 2,
+    "center": [
+      3786.0,
+      11547.0
+    ],
+    "hash": 2083786229,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108422,
+          108419
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100798,
+    "name": "2013 World Event statue",
+    "file": "59-180.json",
+    "lng": 3792,
+    "lat": 11546,
+    "floor": 0,
+    "rotation": 1,
+    "width": 2,
+    "length": 3,
+    "center": [
+      3793.0,
+      11547.5
+    ],
+    "hash": 1864110100,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108426,
+          108420
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100800,
+    "name": "2014 Prifddinas statue",
+    "file": "59-180.json",
+    "lng": 3802,
+    "lat": 11546,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 2,
+    "center": [
+      3803.0,
+      11547.0
+    ],
+    "hash": 755270300,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108421,
+          108419
+        ]
+      }
+    ]
+  },
+  {
+    "id": 100802,
+    "name": "2015 Tuska statue",
+    "file": "59-180.json",
+    "lng": 3802,
+    "lat": 11554,
+    "floor": 0,
+    "rotation": 0,
+    "width": 2,
+    "length": 3,
+    "center": [
+      3803.0,
+      11555.5
+    ],
+    "hash": 2170122319,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108425,
+          108420
+        ]
+      }
+    ]
+  },
+  {
+    "id": 106357,
+    "name": "15th Anniversary cake",
+    "file": "59-180.json",
+    "lng": 3811,
+    "lat": 11536,
+    "floor": 0,
+    "rotation": 2,
+    "width": 2,
+    "length": 2,
+    "center": [
+      3812.0,
+      11537.0
+    ],
+    "hash": 2758555584,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          108394
+        ]
+      }
+    ]
+  },
+  {
+    "id": 106208,
+    "name": "\"\"",
+    "file": "61-104.json",
+    "lng": 3927,
+    "lat": 6665,
+    "floor": 0,
+    "rotation": 3,
+    "length": 2,
+    "center": [
+      3927.5,
+      6666.0
+    ],
+    "hash": 2543857833,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          116361
+        ]
+      }
+    ],
+    "material_replacements": "[[1304,8225]]"
+  },
+  {
+    "id": 106208,
+    "name": "\"\"",
+    "file": "61-104.json",
+    "lng": 3927,
+    "lat": 6697,
+    "floor": 0,
+    "rotation": 3,
+    "length": 2,
+    "center": [
+      3927.5,
+      6698.0
+    ],
+    "hash": 2543857833,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          116361
+        ]
+      }
+    ],
+    "material_replacements": "[[1304,8225]]"
+  },
+  {
+    "id": 62445,
+    "name": "<col=ffff00>Infinity",
+    "file": "63-82.json",
+    "lng": 4095,
+    "lat": 5272,
+    "floor": 1,
+    "rotation": 0,
+    "width": 2,
+    "length": 3,
+    "center": [
+      4096.0,
+      5273.5
+    ],
+    "hash": 2442761721,
+    "is_members": true,
+    "actions": [
+      "Talk-to",
+      "Dancefloor-check"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          27687
+        ]
+      }
+    ],
+    "action_cursors_0": 44,
+    "dummy_45": 11
+  },
+  {
+    "id": 15664,
+    "name": "18lb shot",
+    "file": "65-115.json",
+    "lng": 4205,
+    "lat": 7390,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      4205.5,
+      7390.5
+    ],
+    "hash": 1531636132,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 15665,
+    "name": "22lb shot",
+    "file": "65-115.json",
+    "lng": 4205,
+    "lat": 7384,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      4205.5,
+      7384.5
+    ],
+    "hash": 3009247493,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4305,
+    "lat": 6860,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4305.5,
+      6860.5
+    ],
+    "hash": 1679612977,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4306,
+    "lat": 6859,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4306.5,
+      6859.5
+    ],
+    "hash": 1679612977,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4308,
+    "lat": 6853,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4308.5,
+      6853.5
+    ],
+    "hash": 1679612977,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4308,
+    "lat": 6864,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4308.5,
+      6864.5
+    ],
+    "hash": 1679612977,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4313,
+    "lat": 6848,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4313.5,
+      6848.5
+    ],
+    "hash": 1679612977,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4314,
+    "lat": 6870,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4314.5,
+      6870.5
+    ],
+    "hash": 1679612977,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4322,
+    "lat": 6848,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4322.5,
+      6848.5
+    ],
+    "hash": 1679612977,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4323,
+    "lat": 6851,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4323.5,
+      6851.5
+    ],
+    "hash": 1679612977,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4323,
+    "lat": 6867,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4323.5,
+      6867.5
+    ],
+    "hash": 1791148909,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4327,
+    "lat": 6864,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4327.5,
+      6864.5
+    ],
+    "hash": 4278937817,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4329,
+    "lat": 6855,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4329.5,
+      6855.5
+    ],
+    "hash": 1679612977,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 111131,
+    "name": "'Rum' barrel",
+    "file": "67-107.json",
+    "lng": 4329,
+    "lat": 6863,
+    "floor": 1,
+    "rotation": 0,
+    "center": [
+      4329.5,
+      6863.5
+    ],
+    "hash": 4134819426,
+    "actions": [
+      "Drink 'rum'"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          29943,
+          30183
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15664,
+    "name": "18lb shot",
+    "file": "67-115.json",
+    "lng": 4333,
+    "lat": 7390,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      4333.5,
+      7390.5
+    ],
+    "hash": 1531636132,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 15665,
+    "name": "22lb shot",
+    "file": "67-115.json",
+    "lng": 4333,
+    "lat": 7384,
+    "floor": 1,
+    "rotation": 2,
+    "center": [
+      4333.5,
+      7384.5
+    ],
+    "hash": 3009247493,
+    "actions": [
+      "Throw"
+    ],
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          15388
+        ]
+      }
+    ],
+    "action_cursors_0": 177
+  },
+  {
+    "id": 130885,
+    "name": "[PH] Barrier Source",
+    "file": "85-30.json",
+    "lng": 5453,
+    "lat": 1947,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      5453.5,
+      1947.5
+    ],
+    "hash": 2505892480,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          134251,
+          134253
+        ]
+      }
+    ],
+    "has_animated_texture": true
+  },
+  {
+    "id": 130885,
+    "name": "[PH] Barrier Source",
+    "file": "85-30.json",
+    "lng": 5465,
+    "lat": 1947,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      5465.5,
+      1947.5
+    ],
+    "hash": 2505892480,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          134251,
+          134253
+        ]
+      }
+    ],
+    "has_animated_texture": true
+  },
+  {
+    "id": 130885,
+    "name": "[PH] Barrier Source",
+    "file": "85-30.json",
+    "lng": 5477,
+    "lat": 1947,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      5477.5,
+      1947.5
+    ],
+    "hash": 2505892480,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          134251,
+          134253
+        ]
+      }
+    ],
+    "has_animated_texture": true
+  },
+  {
+    "id": 130885,
+    "name": "[PH] Barrier Source",
+    "file": "85-30.json",
+    "lng": 5489,
+    "lat": 1947,
+    "floor": 2,
+    "rotation": 0,
+    "center": [
+      5489.5,
+      1947.5
+    ],
+    "hash": 2505892480,
+    "models": [
+      {
+        "type": 10,
+        "values": [
+          134251,
+          134253
+        ]
+      }
+    ],
+    "has_animated_texture": true
+  }
+]

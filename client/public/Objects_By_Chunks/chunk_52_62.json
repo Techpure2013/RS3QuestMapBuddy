@@ -1,0 +1,1 @@
+[{"id": 124614, "name": "Stepping stone", "file": "52-62.json", "lng": 3365, "lat": 3971, "floor": 0, "rotation": 3, "length": 2, "center": [3365.5, 3972.0], "hash": 1008552083, "actions": ["Jump"], "models": [{"type": 10, "values": [67768]}], "material_replacements": "[[8868,11042]]", "action_cursors_0": 181, "dummy_45": 10}]

@@ -8226,7 +8226,15 @@
   },
   {
     "name": "Hero's Welcome",
-    "images": []
+    "images": [
+      {
+        "step": 19,
+        "src": "Hero's Welcome_step_19.webp",
+        "height": 334,
+        "width": 512,
+        "stepDescription": "Solve the map fragments."
+      }
+    ]
   },
   {
     "name": "Holy Grail",

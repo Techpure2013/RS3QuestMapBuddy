@@ -1,11 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: "./src/Entrance/index.tsx", // Entry point for your application
   output: {
     filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/", // Required for `webpack-dev-server`
+    publicPath: "./", // Required for `webpack-dev-server`
   },
   mode: "development", // Use 'production' for a production build
   externals: ["sharp", "canvas", "electron/common"],
@@ -44,9 +45,18 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/Entrance/index.html", // Path to your HTML file
-      filename: "index.html", // Output file name in the dist folder
+      template: "./src/Entrance/index.html",
+      filename: "index.html",
       inject: true,
+    }),
+    // --- 2. ADD THE PLUGIN CONFIGURATION HERE ---
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "public"), // Source: your public folder
+          to: path.resolve(__dirname, "dist"), // Destination: your build folder
+        },
+      ],
     }),
   ],
   devServer: {

@@ -1,0 +1,1 @@
+[{"id": 89159, "name": "Surface tunnel", "file": "27-81.json", "lng": 1747, "lat": 5241, "floor": 0, "rotation": 2, "width": 2, "length": 5, "center": [1748.0, 5243.5], "hash": 1226044675, "actions": ["Exit", "Quick exit"], "models": [{"type": 10, "values": [93360]}], "probably_morphFloor": true, "action_cursors_0": 57}]
