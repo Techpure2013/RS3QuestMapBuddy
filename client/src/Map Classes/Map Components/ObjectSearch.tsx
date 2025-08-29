@@ -54,7 +54,6 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
     }
   }, [areaSearchResults, searchMode]);
 
-  // --- RESTORED: The original, working name search logic ---
   const handleNameSearch = async () => {
     if (searchTerm.length < 3) {
       setAllMatches([]);
@@ -63,7 +62,7 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
       return;
     }
 
-    onClearAreaSearchResults(); // Ensure area results are cleared
+    onClearAreaSearchResults();
     const firstLetter = searchTerm[0].toUpperCase();
     let searchData: MapObject[] = [];
 
