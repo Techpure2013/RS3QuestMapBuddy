@@ -63,10 +63,8 @@ interface EditorPanelProps {
   onSelectImageDirectory: () => void;
   imageDirectoryName: string;
   onImagePaste: (imageBlob: Blob) => void;
-  // --- NEW: Add Save As props ---
   onSaveChatheadOverridesAs: () => void;
   onSaveQuestImageListAs: () => void;
-  //Alt1 Detection
   isAlt1Environment: boolean;
 }
 
@@ -131,7 +129,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     onSelectImageDirectory,
     imageDirectoryName,
     onImagePaste,
-    // --- NEW: Destructure Save As props ---
     onSaveChatheadOverridesAs,
     onSaveQuestImageListAs,
     isAlt1Environment,
@@ -140,6 +137,7 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     const [chatheadUrl, setChatheadUrl] = useState("");
     const [stepImageUrl, setStepImageUrl] = useState("");
     const [isAssetToolsOpen, setIsAssetToolsOpen] = useState(false);
+    const [isImportantFilesOpen, setIsImportantFilesOpen] = useState(true);
 
     const handleEnterAsNewline = (
       event: React.KeyboardEvent<HTMLTextAreaElement>,
@@ -177,6 +175,41 @@ export const EditorPanel = React.memo<EditorPanelProps>(
           style={{ display: "none" }}
           onChange={onFileLoadFromInput}
         />
+
+        <div className="panel-section important-files">
+          <label className="collapsible-header">
+            <strong>Important Files</strong>
+            <input
+              type="checkbox"
+              checked={isImportantFilesOpen}
+              onChange={() => setIsImportantFilesOpen(!isImportantFilesOpen)}
+            />
+          </label>
+          {isImportantFilesOpen && (
+            <div className="collapsible-content">
+              <p>
+                Load these files to enable direct saving and full asset
+                functionality unless you are.
+              </p>
+              <div className="button-group">
+                <button onClick={onLoadChatheadOverrides}>
+                  Load Chathead JSON
+                </button>
+                <button onClick={onLoadQuestImageList}>
+                  Load Quest Image List JSON
+                </button>
+                <button
+                  onClick={onSelectImageDirectory}
+                  style={{ width: "100%", marginTop: "8px" }}
+                >
+                  {imageDirectoryName
+                    ? `Saving to: ${imageDirectoryName}`
+                    : "Select Image Save Directory"}
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
 
         <div className="file-actions">
           <button
@@ -387,9 +420,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             <div style={{ marginTop: "10px" }}>
               <div className="panel-section">
                 <div className="button-group">
-                  <button onClick={onLoadChatheadOverrides}>
-                    Load Chathead JSON
-                  </button>
                   <button
                     onClick={onSaveChatheadOverrides}
                     disabled={isAlt1Environment}
@@ -401,7 +431,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
                   >
                     Save
                   </button>
-                  {/* --- NEW: Save As button for chatheads --- */}
                   <button onClick={onSaveChatheadOverridesAs}>Save As</button>
                 </div>
                 <div className="control-group">
@@ -429,9 +458,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
 
               <div className="panel-section">
                 <div className="button-group">
-                  <button onClick={onLoadQuestImageList}>
-                    Load Quest Image List JSON
-                  </button>
                   <button
                     onClick={onSaveQuestImageList}
                     disabled={isAlt1Environment}
@@ -443,17 +469,9 @@ export const EditorPanel = React.memo<EditorPanelProps>(
                   >
                     Save
                   </button>
-                  {/* --- NEW: Save As button for image list --- */}
                   <button onClick={onSaveQuestImageListAs}>Save As</button>
                 </div>
-                <button
-                  onClick={onSelectImageDirectory}
-                  style={{ width: "100%", marginTop: "8px" }}
-                >
-                  {imageDirectoryName
-                    ? `Saving to: ${imageDirectoryName}`
-                    : "Select Image Save Directory"}
-                </button>
+
                 <ImagePasteTarget
                   onImagePaste={onImagePaste}
                   disabled={!imageDirectoryName}

@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "./", // Required for `webpack-dev-server`
+    publicPath: "/RS3QuestBuddy/", // Required for `webpack-dev-server`
   },
   mode: "development", // Use 'production' for a production build
   externals: ["sharp", "canvas", "electron/common"],

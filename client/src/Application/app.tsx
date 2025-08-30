@@ -127,18 +127,48 @@ const App: React.FC = () => {
   const [areaSearchResults, setAreaSearchResults] = useState<MapObject[]>([]);
 
   // --- DERIVED VALUES ---
+  const convertManualCoordToVisual = (coord: { lat: number; lng: number }) => {
+    // Correction for hand-placed points: -0.5 lat, +0.5 lng
+    return { lat: coord.lat - 0.5 + 0.5, lng: coord.lng + 0.5 + 0.5 };
+  };
+
+  const convertSearchedCoordToVisual = (coord: {
+    lat: number;
+    lng: number;
+  }) => {
+    // Correction for searched points: -0.5 lat, -0.5 lng
+    return { lat: coord.lat - 0.5 + 0.5, lng: coord.lng - 0.5 + 0.5 };
+  };
+
+  // --- Replace the selectionGeometry useMemo hook ---
   const selectionGeometry = useMemo<SelectionGeometry>(() => {
     if (!questJson?.questSteps?.[selectedStep]) return { type: "none" };
     const step = questJson.questSteps[selectedStep];
+
+    // This data is ALWAYS hand-placed, so we use the manual conversion.
     if (targetType === "npc") {
-      return { type: "npc", npcArray: step.highlights?.npc || [] };
+      const convertedNpcs = (step.highlights?.npc || []).map((npc: any) => ({
+        ...npc,
+        npcLocation: convertManualCoordToVisual(npc.npcLocation),
+      }));
+      return { type: "npc", npcArray: convertedNpcs };
     } else if (targetType === "object") {
-      return { type: "object", objectArray: step.highlights?.object || [] };
+      const convertedObjects = (step.highlights?.object || []).map(
+        (obj: any) => ({
+          ...obj,
+          objectLocation: obj.objectLocation.map((loc: any) =>
+            convertManualCoordToVisual(loc)
+          ),
+        })
+      );
+      return { type: "object", objectArray: convertedObjects };
     }
     return { type: "none" };
   }, [questJson, selectedStep, targetType]);
 
+  // --- Replace the highlightGeometry useMemo hook ---
   const highlightGeometry = useMemo<SelectionGeometry>(() => {
+    // This data is ALWAYS from a search, so we use the searched conversion.
     if (selectedObjectFromSearch) {
       return {
         type: "object",
@@ -146,11 +176,7 @@ const App: React.FC = () => {
           {
             name: selectedObjectFromSearch.name,
             objectLocation: [
-              {
-                lat: selectedObjectFromSearch.lat,
-                lng: selectedObjectFromSearch.lng,
-                isSelected: true,
-              },
+              convertSearchedCoordToVisual(selectedObjectFromSearch),
             ],
             objectRadius: {
               bottomLeft: { lat: 0, lng: 0 },
@@ -166,7 +192,7 @@ const App: React.FC = () => {
         npcArray: [
           {
             npcName: highlightedNpc.name,
-            npcLocation: { lat: highlightedNpc.lat, lng: highlightedNpc.lng },
+            npcLocation: convertSearchedCoordToVisual(highlightedNpc),
             wanderRadius: {
               bottomLeft: { lat: 0, lng: 0 },
               topRight: { lat: 0, lng: 0 },
@@ -183,8 +209,7 @@ const App: React.FC = () => {
             name: highlightedObject.name,
             objectLocation: [
               {
-                lat: highlightedObject.lat,
-                lng: highlightedObject.lng,
+                ...convertSearchedCoordToVisual(highlightedObject),
                 color: "#00FFFF",
               },
             ],
@@ -376,7 +401,39 @@ const App: React.FC = () => {
         alert("Current step has no description to link the image to.");
         return;
       }
-      const fileName = `${questJson.questName}_step_${selectedStep + 1}.webp`;
+
+      // --- NEW LOGIC: Determine the next unique filename ---
+      const currentStepNumber = selectedStep + 1;
+      let newImageIndex = 1; // Default to 1 for the first image of a step
+
+      const questImages = questImageList.find(
+        (q) => q.name === questJson.questName
+      );
+
+      if (questImages) {
+        // Find all images for this specific step
+        const imagesForThisStep = questImages.images.filter(
+          (img) => img.step === currentStepNumber
+        );
+
+        if (imagesForThisStep.length > 0) {
+          // Find the highest existing suffix (e.g., from ..._1.webp, ..._2.webp)
+          const maxSuffix = Math.max(
+            0,
+            ...imagesForThisStep.map((img) => {
+              // Use regex to extract the number suffix before the extension
+              const match = img.src.match(/_(\d+)\.webp$/);
+              return match ? parseInt(match[1], 10) : 0;
+            })
+          );
+          // The new index is one higher than the max found
+          newImageIndex = maxSuffix + 1;
+        }
+      }
+
+      const fileName = `${questJson.questName}_step_${currentStepNumber}_${newImageIndex}.webp`;
+      // --- END OF NEW LOGIC ---
+
       try {
         const fileHandle = await imageDirectoryHandle.getFileHandle(fileName, {
           create: true,
@@ -391,32 +448,30 @@ const App: React.FC = () => {
         );
         downloadBlob(resizedBlob, fileName);
       }
+
       const imagePath = `${fileName}`;
       const nextState = produce(questImageList, (draft: QuestImageFile[]) => {
         let questEntry = draft.find((q) => q.name === questJson.questName);
         const newImageObject: QuestImageData = {
-          step: selectedStep + 1,
+          step: currentStepNumber,
           src: imagePath,
           height,
           width,
           stepDescription,
         };
+
         if (questEntry) {
-          const existingImageIndex = questEntry.images.findIndex(
-            (img) => img.stepDescription === stepDescription
-          );
-          if (existingImageIndex > -1) {
-            questEntry.images[existingImageIndex] = newImageObject;
-          } else {
-            questEntry.images.push(newImageObject);
-          }
+          // --- MODIFIED: Always add a new image, never replace ---
+          questEntry.images.push(newImageObject);
         } else {
+          // This is a new quest, create its entry
           draft.push({
             name: questJson.questName,
             images: [newImageObject],
           });
         }
       });
+
       setQuestImageList(nextState);
       const newString = JSON.stringify(nextState, null, 2);
       setQuestImageListString(newString);
@@ -889,20 +944,60 @@ const App: React.FC = () => {
   };
 
   const handleApplyRadius = () => {
-    if (!questJson || targetType !== "npc") return;
-    const target =
-      questJson.questSteps[selectedStep].highlights.npc[targetIndex];
-    const center = target?.npcLocation;
-    if (!center || (center.lat === 0 && center.lng === 0)) return;
+    if (!questJson) return;
+
+    const step = questJson.questSteps[selectedStep];
+    if (!step) return;
+
+    // Get the current target (either NPC or Object)
+    const target = step.highlights[targetType]?.[targetIndex];
+    if (!target) return;
+
+    let center;
+    // Determine the center coordinate based on the target type
+    if (targetType === "npc") {
+      center = target.npcLocation;
+    } else {
+      // For objects, we'll center the radius on the first location point
+      center = target.objectLocation?.[0];
+    }
+
+    // Ensure we have a valid center point to work with
+    if (!center || (center.lat === 0 && center.lng === 0)) {
+      alert("Please place the NPC or Object before applying a radius.");
+      return;
+    }
+
     const radius = wanderRadiusInput;
+
+    // 1. Convert the STORED coordinate to the final VISUAL CENTER on the map.
+    //    This MUST match the conversion you use for displaying the icon.
+    const visualCenterLat = center.lat;
+    const visualCenterLng = center.lng + 1;
+
+    // 2. Calculate the VISUAL CORNERS of the radius box.
+    //    To cover full tiles, we expand from the visual center by (radius + 0.5).
+    const expansion = radius + 0.5;
+    const minLat = visualCenterLat - expansion;
+    const maxLat = visualCenterLat + expansion;
+    const minLng = visualCenterLng - expansion;
+    const maxLng = visualCenterLng + expansion;
+
     const nextState = produce(questJson, (draft) => {
+      // Get a mutable reference to the target in the draft state
       const draftTarget =
-        draft.questSteps[selectedStep].highlights.npc[targetIndex];
-      draftTarget.wanderRadius = {
-        bottomLeft: { lat: center.lat - radius, lng: center.lng - radius },
-        topRight: { lat: center.lat + radius, lng: center.lng + radius },
+        draft.questSteps[selectedStep].highlights[targetType][targetIndex];
+
+      // Determine which property to update ('wanderRadius' or 'objectRadius')
+      const radiusKey = targetType === "npc" ? "wanderRadius" : "objectRadius";
+
+      // 3. Store these final visual corner coordinates directly.
+      draftTarget[radiusKey] = {
+        bottomLeft: { lat: minLat, lng: minLng },
+        topRight: { lat: maxLat, lng: maxLng },
       };
     });
+
     updateQuestState(nextState);
   };
 
@@ -1088,16 +1183,44 @@ const App: React.FC = () => {
           case "radius":
             if (!firstCorner) {
               setFirstCorner(snappedCoord);
+              // Optional: Add a temporary marker here to show the first corner
               return;
             }
-            const minLat = Math.min(firstCorner.lat, snappedCoord.lat);
-            const maxLat = Math.max(firstCorner.lat, snappedCoord.lat);
-            const minLng = Math.min(firstCorner.lng, snappedCoord.lng);
-            const maxLng = Math.max(firstCorner.lng, snappedCoord.lng);
-            const radiusPayload = {
-              bottomLeft: { lat: minLat, lng: minLng },
-              topRight: { lat: maxLat, lng: maxLng },
+
+            // We now have two STORED center coordinates: `firstCorner` and `snappedCoord`.
+            // We must convert them to the VISUAL boundaries of the tiles they represent.
+
+            // First corner tile's visual boundaries (lng + 1 for visual space)
+            const firstVisualBL = {
+              lat: firstCorner.lat - 0.5,
+              lng: firstCorner.lng + 0.5,
             };
+            const firstVisualTR = {
+              lat: firstCorner.lat + 0.5,
+              lng: firstCorner.lng + 1.5,
+            };
+
+            // Second corner tile's visual boundaries
+            const secondVisualBL = {
+              lat: snappedCoord.lat - 0.5,
+              lng: snappedCoord.lng + 0.5,
+            };
+            const secondVisualTR = {
+              lat: snappedCoord.lat + 0.5,
+              lng: snappedCoord.lng + 1.5,
+            };
+
+            // Now, find the min/max of these VISUAL boundaries to create the final box.
+            const finalMinLat = Math.min(firstVisualBL.lat, secondVisualBL.lat);
+            const finalMaxLat = Math.max(firstVisualTR.lat, secondVisualTR.lat);
+            const finalMinLng = Math.min(firstVisualBL.lng, secondVisualBL.lng);
+            const finalMaxLng = Math.max(firstVisualTR.lng, secondVisualTR.lng);
+
+            const radiusPayload = {
+              bottomLeft: { lat: finalMinLat, lng: finalMinLng },
+              topRight: { lat: finalMaxLat, lng: finalMaxLng },
+            };
+
             handleDataCaptured({ type: "radius", payload: radiusPayload });
             setFirstCorner(null);
             setCaptureMode(targetType === "object" ? "multi-point" : "single");
@@ -1408,6 +1531,7 @@ const App: React.FC = () => {
           selectedStep={selectedStep}
           targetIndex={targetIndex}
           targetType={targetType}
+          onFloorChange={handleFloorChange}
         />
         <NpcFlyToHandler
           highlightedNpc={highlightedNpc}

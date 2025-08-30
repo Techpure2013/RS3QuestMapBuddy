@@ -107,7 +107,40 @@ body,
   padding: 12px;
   border-radius: 5px;
 }
+/* --- Styles for the new Important Files section --- */
+.important-files {
+  border: 2px solid #f0e68c; /* Gold border to draw attention */
+  background-color: #2a2a22; /* Slightly different background */
+  border-radius: 4px;
+  margin-bottom: 12px;
+  padding: 0; /* Remove default panel-section padding */
+}
 
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none; /* Prevents text selection on click */
+}
+
+.collapsible-header strong {
+  color: #f0e68c;
+}
+
+.collapsible-content {
+  padding: 0 12px 12px 12px;
+  border-top: 1px solid #444;
+}
+
+.collapsible-content p {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+}
 /* --- File Action Buttons --- */
 .file-actions {
   display: grid;
@@ -632,6 +665,11 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.3);
   border-color: #374151;
   color: #6b7280;
+}
+.image-paste-target.dragging-over {
+  border-color: #2196f3; /* A bright blue to indicate a valid drop target */
+  background-color: #2a3a4a;
+  color: #fff;
 }
 .search-container {
   display: flex;

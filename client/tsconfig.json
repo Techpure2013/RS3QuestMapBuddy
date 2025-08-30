@@ -16,6 +16,9 @@
       "src/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": [
+    "src", // This includes all .ts and .tsx files in your src folder
+    "src/types/**/*.d.ts"
+  ],
   "allowTsInNodeModules": true
 }

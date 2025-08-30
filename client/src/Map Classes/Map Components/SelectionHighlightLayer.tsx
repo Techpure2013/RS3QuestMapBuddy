@@ -4,16 +4,14 @@ import L from "leaflet";
 import { resizeImageToDataUrl } from "./imageDisplayUtils";
 import chatheadOverrides from "./../Map Data/chatheadOverrides.json";
 
-// Define the structure for an individual object location
+// ... (Interfaces remain the same)
 interface ObjectLocation {
   lat: number;
   lng: number;
   color?: string;
   numberLabel?: string;
-  // isSelected logic has been removed for now to focus on the image issue
 }
 
-// Define the main geometry prop structure
 export interface SelectionGeometry {
   type: "npc" | "object" | "none";
   npcArray?: {
@@ -28,6 +26,7 @@ export interface SelectionGeometry {
   objectArray?: {
     name: string;
     objectLocation: ObjectLocation[];
+    imageOverride?: string;
     objectRadius: {
       bottomLeft: { lat: number; lng: number };
       topRight: { lat: number; lng: number };
@@ -39,7 +38,7 @@ interface SelectionHighlightLayerProps {
   geometry: SelectionGeometry;
 }
 
-// --- STYLES ---
+// ... (Styles remain the same)
 const radiusStyle = {
   color: "#00FFFF",
   weight: 2,
@@ -56,10 +55,9 @@ const tileStyle = {
 
 // --- HELPER FUNCTIONS ---
 
-const convertStoredToVisual = (coord: { lat: number; lng: number }) => {
-  const visualY = coord.lat - 0.5;
-  const visualX = coord.lng + 0.5;
-  return { lat: visualY, lng: visualX };
+// This function is now ONLY used for converting the corners of radius areas.
+const convertRadiusCornerToVisual = (coord: { lat: number; lng: number }) => {
+  return { lat: coord.lat + 0.5, lng: coord.lng + 0.5 };
 };
 
 const getTileBoundsFromVisualCenter = (visualCenter: {
@@ -68,38 +66,38 @@ const getTileBoundsFromVisualCenter = (visualCenter: {
 }): L.LatLngBounds => {
   const y = visualCenter.lat;
   const x = visualCenter.lng;
-  // Calculate corners by subtracting/adding 0.5 from the center
   const southWest = L.latLng(y - 0.5, x - 0.5);
   const northEast = L.latLng(y + 0.5, x + 0.5);
   return L.latLngBounds(southWest, northEast);
 };
 
-const getChatheadUrl = (npcName: string): string => {
+// ... (getImageUrl, createChatheadIcon, createObjectIcon functions are unchanged)
+const getImageUrl = (
+  name: string,
+  type: "npc" | "object",
+  explicitOverride?: string
+): string => {
+  if (explicitOverride) {
+    return explicitOverride.includes("/images/")
+      ? explicitOverride.split("?")[0]
+      : `https://runescape.wiki/images/${explicitOverride.replace(
+          /\s+/g,
+          "_"
+        )}.png`;
+  }
   const key = Object.keys(chatheadOverrides).find(
-    (k) => k.toLowerCase() === npcName.toLowerCase()
+    (k) => k.toLowerCase() === name.toLowerCase()
   );
   if (key) {
-    let url = (chatheadOverrides as any)[key];
-    if (url.includes("/images/")) return url;
-    if (url.includes("#/media/File:")) {
-      const match = url.match(/File:(.*?)(?:$|#|\/)/);
-      if (match && match[1]) {
-        return `https://runescape.wiki/images/${match[1].replace(/ /g, "_")}`;
-      }
-    }
-    if (url.includes("/w/")) {
-      const parts = url.split("/w/");
-      if (parts[1]) {
-        return `https://runescape.wiki/images/${parts[1].replace(
-          / /g,
-          "_"
-        )}_chathead.png`;
-      }
-    }
-    return url;
+    const url = (chatheadOverrides as any)[key];
+    return url.split("?")[0];
   }
-  const formatted = npcName.replace(/\s+/g, "_");
-  return `https://runescape.wiki/images/${formatted}_chathead.png`;
+  const formattedName = name.replace(/\s+/g, "_");
+  if (type === "npc") {
+    return `https://runescape.wiki/images/${formattedName}_chathead.png`;
+  } else {
+    return `https://runescape.wiki/images/${formattedName}.png`;
+  }
 };
 
 const createChatheadIcon = (resizedDataUrl: string) => {
@@ -116,34 +114,6 @@ const createChatheadIcon = (resizedDataUrl: string) => {
   });
 };
 
-// --- THIS IS THE CORRECTED FUNCTION ---
-const generateObjectImageUrl = (name: string): string => {
-  // This robust function mimics the successful logic of getChatheadUrl
-  // It can handle full URLs or just object names
-  console.log(name);
-  if (name.includes("#/media/File:")) {
-    const match = name.match(/File:(.*?)(?:$|#|\/)/);
-    if (match && match[1]) {
-      console.log(match);
-      return `https://runescape.wiki/images/${match[1].replace(/ /g, "_")}`;
-    }
-  }
-  if (name.includes("/images/")) {
-    return name.split("?")[0]; // Clean up potential query params
-  }
-  if (name.includes("/w/")) {
-    const pageName = name.split("/w/")[1].split("#")[0];
-    // The key difference: fallback to .png, not _chathead.png
-    return `https://runescape.wiki/images/${pageName.replace(/ /g, "_")}.png`;
-  }
-
-  // Standard case: format the name and add the .png suffix
-  const formatted = name.replace(/\s+/g, "_");
-  console.log(formatted);
-  return `https://runescape.wiki/images/${formatted}.png`;
-};
-// ------------------------------------
-
 const createObjectIcon = (resizedDataUrl: string) => {
   const displaySize = 48;
   return L.divIcon({
@@ -159,7 +129,6 @@ const createObjectIcon = (resizedDataUrl: string) => {
 };
 
 // --- MAIN COMPONENT ---
-
 export const SelectionHighlightLayer: React.FC<
   SelectionHighlightLayerProps
 > = ({ geometry }) => {
@@ -174,105 +143,97 @@ export const SelectionHighlightLayer: React.FC<
 
     if (geometry.type === "none") return;
 
-    // --- NPC RENDERING LOGIC (Unchanged) ---
+    // --- NPC & OBJECT RENDERING LOGIC ---
+    // This logic now assumes it receives CORRECT visual center coordinates from App.tsx
+    const renderPoints = (
+      points: any[],
+      type: "npc" | "object",
+      name: string,
+      override?: string
+    ) => {
+      points.forEach((point) => {
+        if (point.lat === 0 && point.lng === 0) return;
+
+        const visualCenter = point; // Use the coordinate directly
+        const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
+
+        const imageUrl = getImageUrl(name, type, override);
+        resizeImageToDataUrl(imageUrl, 40)
+          .then((resizedDataUrl) => {
+            const icon =
+              type === "npc"
+                ? createChatheadIcon(resizedDataUrl)
+                : createObjectIcon(resizedDataUrl);
+            const marker = L.marker([visualCenter.lat, visualCenter.lng], {
+              icon,
+            }).bindPopup(`<b>${name}</b>`);
+            layerRef.current?.addLayer(marker);
+          })
+          .catch(() => {
+            const pointStyle = {
+              ...tileStyle,
+              color: point.color || "#00FF00",
+              fillColor: point.color || "#00FF00",
+            };
+            L.rectangle(tileBounds, pointStyle).addTo(layerRef.current!);
+
+            if (point.numberLabel) {
+              const labelIcon = L.divIcon({
+                className: "object-number-label",
+                html: `<div>${point.numberLabel}</div>`,
+                iconSize: [32, 32],
+                iconAnchor: [16, 16],
+              });
+              L.marker([visualCenter.lat, visualCenter.lng], {
+                icon: labelIcon,
+              }).addTo(layerRef.current!);
+            }
+          });
+      });
+    };
+
     if (geometry.type === "npc" && geometry.npcArray) {
       geometry.npcArray.forEach((npc) => {
+        renderPoints(
+          [npc.npcLocation],
+          "npc",
+          npc.npcName,
+          npc.chatheadOverride
+        );
         if (
           npc.wanderRadius &&
           (npc.wanderRadius.bottomLeft.lat !== 0 ||
             npc.wanderRadius.topRight.lat !== 0)
         ) {
-          const bl = convertStoredToVisual(npc.wanderRadius.bottomLeft);
-          const tr = convertStoredToVisual(npc.wanderRadius.topRight);
+          const bl = npc.wanderRadius.bottomLeft;
+          const tr = npc.wanderRadius.topRight;
+
           const bounds = L.latLngBounds(
-            [tr.lat + 1, bl.lng],
-            [bl.lat, tr.lng + 1]
+            [bl.lat, bl.lng], // bottom-left corner
+            [tr.lat, tr.lng] // top-right corner
           );
+
           L.rectangle(bounds, radiusStyle).addTo(layerRef.current!);
-        }
-
-        if (npc.npcLocation.lat !== 0 || npc.npcLocation.lng !== 0) {
-          const visualCenter = convertStoredToVisual(npc.npcLocation);
-          const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
-          const tileCenter = tileBounds.getCenter();
-
-          if (!npc.npcName) {
-            L.rectangle(tileBounds, tileStyle).addTo(layerRef.current!);
-            return;
-          }
-
-          const chatheadUrl =
-            npc.chatheadOverride || getChatheadUrl(npc.npcName);
-          resizeImageToDataUrl(chatheadUrl, 40)
-            .then((resizedDataUrl) => {
-              const marker = L.marker([tileCenter.lat, tileCenter.lng], {
-                icon: createChatheadIcon(resizedDataUrl),
-              }).bindPopup(`<b>${npc.npcName}</b>`);
-              layerRef.current?.addLayer(marker);
-            })
-            .catch(() => {
-              L.rectangle(tileBounds, tileStyle).addTo(layerRef.current!);
-            });
         }
       });
     }
 
-    // --- OBJECT RENDERING LOGIC (Uses the new URL generator) ---
     if (geometry.type === "object" && geometry.objectArray) {
       geometry.objectArray.forEach((obj) => {
-        (obj.objectLocation ?? []).forEach((loc) => {
-          if (loc.lat !== 0 || loc.lng !== 0) {
-            // --- FIX IS HERE ---
-            // We no longer convert the object's location.
-            // We use it directly because it's already pre-offset.
-            const visualCenter = loc;
-            // -------------------
-
-            // The rest of the logic can now use the correct visualCenter
-            const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
-            const imageUrl = generateObjectImageUrl(obj.name);
-
-            resizeImageToDataUrl(imageUrl, 40)
-              .then((resizedDataUrl) => {
-                const marker = L.marker([visualCenter.lat, visualCenter.lng], {
-                  icon: createObjectIcon(resizedDataUrl),
-                }).bindPopup(`<b>${obj.name}</b>`);
-                layerRef.current?.addLayer(marker);
-              })
-              .catch(() => {
-                const pointStyle = {
-                  ...tileStyle,
-                  color: loc.color || "#00FF00",
-                  fillColor: loc.color || "#00FF00",
-                };
-                L.rectangle(tileBounds, pointStyle).addTo(layerRef.current!);
-
-                if (loc.numberLabel) {
-                  const labelIcon = L.divIcon({
-                    className: "object-number-label",
-                    html: `<div>${loc.numberLabel}</div>`,
-                    iconSize: [32, 32],
-                    iconAnchor: [16, 16],
-                  });
-                  L.marker([visualCenter.lat, visualCenter.lng], {
-                    icon: labelIcon,
-                  }).addTo(layerRef.current!);
-                }
-              });
-          }
-        });
-
+        renderPoints(obj.objectLocation, "object", obj.name, obj.imageOverride);
         if (
           obj.objectRadius &&
           (obj.objectRadius.bottomLeft.lat !== 0 ||
             obj.objectRadius.topRight.lat !== 0)
         ) {
-          const bl = convertStoredToVisual(obj.objectRadius.bottomLeft);
-          const tr = convertStoredToVisual(obj.objectRadius.topRight);
+          const bl = obj.objectRadius.bottomLeft;
+          const tr = obj.objectRadius.topRight;
+
           const bounds = L.latLngBounds(
-            [tr.lat + 1, bl.lng],
-            [bl.lat, tr.lng + 1]
+            [bl.lat, bl.lng], // bottom-left corner
+            [tr.lat, tr.lng] // top-right corner
           );
+
           L.rectangle(bounds, radiusStyle).addTo(layerRef.current!);
         }
       });

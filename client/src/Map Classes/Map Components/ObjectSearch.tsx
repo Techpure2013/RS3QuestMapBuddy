@@ -8,6 +8,7 @@ export interface MapObject {
   lng: number;
   lat: number;
   floor: number;
+  center: [number, number];
 }
 
 interface ObjectSearchProps {

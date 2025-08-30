@@ -1,71 +1,64 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
-import { LatLngTuple } from "leaflet";
+import type { LatLngTuple } from "leaflet";
 
 interface StepSnapHandlerProps {
   questJson: any;
   selectedStep: number;
-  // --- NEW: Add props to know which target is active ---
   targetIndex: number;
   targetType: "npc" | "object";
+  onFloorChange: (floor: number) => void;
 }
 
 const StepSnapHandler: React.FC<StepSnapHandlerProps> = ({
   questJson,
   selectedStep,
-  // --- NEW: Destructure the new props ---
   targetIndex,
   targetType,
+  onFloorChange,
 }) => {
   const map = useMap();
+  const lastStepRef = useRef<number>(selectedStep);
 
   useEffect(() => {
+    // Only run when the step actually changes
+    if (lastStepRef.current === selectedStep) return;
+    lastStepRef.current = selectedStep;
+
     if (!questJson) return;
 
-    const step = questJson.questSteps[selectedStep];
+    const step = questJson.questSteps?.[selectedStep];
     if (!step?.highlights) return;
 
-    const targetZoom = 4;
+    const target = step.highlights[targetType]?.[targetIndex];
+    if (!target) return;
+
     let snapLocation: LatLngTuple | null = null;
 
-    // --- REVISED LOGIC ---
-    // 1. Get the specific target based on the current index and type
-    const currentTarget = step.highlights[targetType]?.[targetIndex];
-
-    if (!currentTarget) return; // No target at this index, so do nothing.
-
-    // 2. Check if THIS SPECIFIC target has a valid location
-    if (
-      targetType === "npc" &&
-      currentTarget.npcLocation &&
-      (currentTarget.npcLocation.lat !== 0 ||
-        currentTarget.npcLocation.lng !== 0)
-    ) {
-      snapLocation = [
-        currentTarget.npcLocation.lat,
-        currentTarget.npcLocation.lng,
-      ];
-    } else if (
-      targetType === "object" &&
-      currentTarget.objectLocation?.length > 0
-    ) {
-      // For objects, snap to the first valid location in its own array
-      const firstLoc = currentTarget.objectLocation.find(
+    if (targetType === "npc") {
+      const loc = target.npcLocation;
+      if (loc && (loc.lat !== 0 || loc.lng !== 0)) {
+        snapLocation = [loc.lat, loc.lng];
+      }
+    } else if (targetType === "object") {
+      const firstValid = target.objectLocation?.find(
         (loc: any) => loc.lat !== 0 || loc.lng !== 0
       );
-      if (firstLoc) {
-        snapLocation = [firstLoc.lat, firstLoc.lng];
+      if (firstValid) {
+        snapLocation = [firstValid.lat, firstValid.lng];
       }
     }
 
-    // 3. Only fly if the CURRENT target has a location.
-    // This prevents flying away when a new, empty NPC is added.
     if (snapLocation) {
-      map.flyTo(snapLocation, targetZoom, {
-        duration: 0.5, // smooth animation
-      });
+      // Sync floor if available
+      if (typeof step.floor === "number") {
+        onFloorChange(step.floor);
+      }
+
+      // Fly smoothly to the target
+      map.flyTo(snapLocation, 4, { duration: 0.5 });
     }
-  }, [questJson, selectedStep, targetIndex, targetType, map]); // Add dependencies
+  }, [selectedStep, questJson, targetIndex, targetType, map, onFloorChange]);
 
   return null;
 };
