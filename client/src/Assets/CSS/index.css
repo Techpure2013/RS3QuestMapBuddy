@@ -759,3 +759,77 @@ button:hover {
   color: white;
   font-weight: bold;
 }
+.target-list li {
+  /* Remove padding from the li itself */
+  padding: 0;
+  cursor: default; /* The li is no longer the main clickable element */
+  border-bottom: 1px solid #374151;
+}
+
+.target-list li:last-child {
+  border-bottom: none;
+}
+
+/* NEW: Style the clickable header within the list item */
+.target-item-header {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #f9fafb;
+}
+
+.target-list li:hover .target-item-header {
+  background-color: #374151;
+}
+
+.target-list li.active .target-item-header {
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px 3px 0 0; /* Round top corners when active */
+}
+
+/* --- NEW: Nested Object Location Sub-list --- */
+.location-sublist {
+  list-style: none;
+  padding: 5px;
+  margin: 0 5px 5px 5px;
+  background-color: #111827; /* Darker background for contrast */
+  border-radius: 0 0 4px 4px;
+}
+
+.location-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  border-radius: 3px;
+}
+
+.location-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.location-coords {
+  color: #9ca3af;
+}
+
+.location-delete-btn {
+  background-color: #b91c1c; /* Slightly less intense red */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  flex-shrink: 0; /* Prevent the button from shrinking */
+}
+
+.location-delete-btn:hover {
+  background-color: #ef4444;
+}

@@ -33,7 +33,7 @@ interface EditorPanelProps {
   floor: number;
   onFloorIncrement: () => void;
   onFloorDecrement: () => void;
-  onClearObjectLocations: () => void;
+  onDeleteObjectLocation: (locationIndex: number) => void;
   selectedObjectColor: string;
   onSelectedObjectColorChange: (color: string) => void;
   onSetRadiusMode: () => void;
@@ -99,7 +99,7 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     floor,
     onFloorIncrement,
     onFloorDecrement,
-    onClearObjectLocations,
+    onDeleteObjectLocation,
     selectedObjectColor,
     onSelectedObjectColorChange,
     onSetRadiusMode,
@@ -370,11 +370,42 @@ export const EditorPanel = React.memo<EditorPanelProps>(
                 <li
                   key={index}
                   className={index === targetIndex ? "active" : ""}
-                  onClick={() => onTargetIndexChange(index)}
                 >
-                  {targetType === "npc"
-                    ? item.npcName || `NPC ${index + 1}`
-                    : item.name || `Object ${index + 1}`}
+                  <div
+                    className="target-item-header"
+                    onClick={() => onTargetIndexChange(index)}
+                  >
+                    <span>
+                      {targetType === "npc"
+                        ? item.npcName || `NPC ${index + 1}`
+                        : item.name || `Object ${index + 1}`}
+                    </span>
+                  </div>
+
+                  {/* --- NESTED LOCATION LIST RENDERED HERE --- */}
+                  {targetType === "object" && index === targetIndex && (
+                    <ul className="location-sublist">
+                      {(item.objectLocation || []).map(
+                        (loc: any, locIndex: number) => (
+                          <li key={locIndex} className="location-item">
+                            <span className="location-coords">
+                              {`{${loc.lat}, ${loc.lng}}`}
+                            </span>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation(); // Prevents re-selecting the parent
+                                onDeleteObjectLocation(locIndex);
+                              }}
+                              className="location-delete-btn"
+                              title="Delete this location"
+                            >
+                              &times;
+                            </button>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
@@ -532,12 +563,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             </div>
             <div className="control-group full-width">
               <div className="button-group">
-                <button
-                  onClick={onClearObjectLocations}
-                  className="button--delete"
-                >
-                  Clear Object Locations
-                </button>
                 <button onClick={onAddObject} className="button--add">
                   Add New Object
                 </button>

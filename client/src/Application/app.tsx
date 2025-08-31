@@ -297,7 +297,7 @@ const App: React.FC = () => {
     } else {
       setTargetIndex(0);
     }
-  }, [selectedStep, questJson]);
+  }, [selectedStep]);
 
   useEffect(() => {
     if (window.alt1) {
@@ -995,13 +995,13 @@ const App: React.FC = () => {
     updateQuestState(nextState);
   };
 
-  const handleClearObjectLocations = () => {
+  const handleDeleteObjectLocation = (locationIndexToDelete: number) => {
     if (!questJson || targetType !== "object") return;
     const nextState = produce(questJson, (draft) => {
       const target =
-        draft.questSteps[selectedStep].highlights.object[targetIndex];
-      if (target) {
-        target.objectLocation = [];
+        draft.questSteps[selectedStep]?.highlights.object?.[targetIndex];
+      if (target?.objectLocation) {
+        target.objectLocation.splice(locationIndexToDelete, 1);
       }
     });
     updateQuestState(nextState);
@@ -1372,7 +1372,7 @@ const App: React.FC = () => {
         targetIndex={targetIndex}
         onTargetIndexChange={setTargetIndex}
         floor={floor}
-        onClearObjectLocations={handleClearObjectLocations}
+        onDeleteObjectLocation={handleDeleteObjectLocation}
         selectedObjectColor={currentTargetObjectData.color}
         onSelectedObjectColorChange={handleSelectedObjectColorChange}
         objectNumberLabel={currentTargetObjectData.numberLabel}
