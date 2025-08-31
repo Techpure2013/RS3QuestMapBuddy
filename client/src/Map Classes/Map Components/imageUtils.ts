@@ -21,27 +21,45 @@ export const resizeImageBlob = (
  * @returns A direct URL to the image file.
  */
 export const parseWikiImageUrl = (url: string): string => {
-  // --- NEW: Priority 1: Check for direct image links first ---
-  // If the URL already ends in a standard image format, use it directly.
-  const directImageRegex = /\.(png|jpg|jpeg|gif|webp)(\?.*)?$/i;
-  if (directImageRegex.test(url)) {
-    return url.split("?")[0]; // Still good to strip query params for consistency
-  }
-
-  // --- Fallback: Try to parse special wiki page URLs ---
   try {
+    // Decode URL to handle special characters like ' and ()
     const decodedUrl = decodeURIComponent(url);
 
-    // Handle URLs with #/media/File:
+    // --- Priority 1: Handle complex URLs with a #/media/File: fragment ---
+    // Example: ".../w/PageName#/media/File:FileName.png"
+    // This is the most common format for copy-pasting from the wiki.
     if (decodedUrl.includes("#/media/File:")) {
-      const fileName = decodedUrl.split("File:")[1].split("/")[0];
+      // Isolate the part after "File:"
+      let fileName = decodedUrl.split("File:")[1];
+
+      // Clean up junk at the end (e.g., "/2" or "?width=123")
+      // We split by "/" and take the first part, then by "?" and take the first part.
+      fileName = fileName.split("/")[0].split("?")[0];
+
+      // The wiki file system uses underscores for spaces.
       const sanitizedFileName = fileName.replace(/ /g, "_");
       return `https://runescape.wiki/images/${sanitizedFileName}`;
     }
 
-    // Handle simple /w/ URLs (often for chatheads)
+    // --- Priority 2: Handle direct links to /images/ or /w/File: ---
+    // Example: ".../images/FileName.png" or ".../w/File:FileName.png"
+    if (decodedUrl.includes("/images/") || decodedUrl.includes("/w/File:")) {
+      // Get the last part of the URL path
+      const fileName = decodedUrl.split("/").pop()?.split("?")[0] || "";
+
+      // If it's a /w/File: link, remove the "File:" prefix
+      const cleanFileName = fileName.startsWith("File:")
+        ? fileName.substring(5)
+        : fileName;
+
+      const sanitizedFileName = cleanFileName.replace(/ /g, "_");
+      return `https://runescape.wiki/images/${sanitizedFileName}`;
+    }
+
+    // --- Priority 3: Handle simple /w/ page links (fallback for chatheads) ---
+    // Example: ".../w/King_Roald"
     if (decodedUrl.includes("/w/")) {
-      const pageName = decodedUrl.split("/w/")[1].split("#")[0];
+      const pageName = decodedUrl.split("/w/")[1].split("#")[0].split("?")[0];
       const sanitizedPageName = pageName.replace(/ /g, "_");
       return `https://runescape.wiki/images/${sanitizedPageName}_chathead.png`;
     }
@@ -49,7 +67,8 @@ export const parseWikiImageUrl = (url: string): string => {
     console.error("Could not parse wiki URL, returning original.", url, e);
   }
 
-  // If all parsing fails, return the original URL and hope for the best.
+  // --- Final Fallback ---
+  // If no rules match, return the original URL and let it fail visibly.
   return url;
 };
 

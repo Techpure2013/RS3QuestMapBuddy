@@ -2,70 +2,60 @@
   "questName": "Between a Rock",
   "questSteps": [
     {
-      "stepDescription": "If you haven't yet completed The Giant Dwarf quest, you will need to talk to the dwarven boatman to visit Keldagrim for the first time, after which you can take the mine carts from Grand Exchange to the city; the boatman is at the entrance upon first crossing the water.",
+      "stepDescription": "If you haven't yet completed The Giant Dwarf quest, you will need to talk to or use \"Cross-river\" option on the Dwarven Ferryman to cross the river in Keldagrim.",
       "itemsNeeded": [
-        "asDasd"
+        ""
       ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "",
+            "npcName": "Dwarven Ferryman (east)",
             "npcLocation": {
-              "lat": 3298,
-              "lng": 3008
+              "lat": 10128,
+              "lng": 2839
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3283,
-                "lng": 3030
+                "lat": 10127,
+                "lng": 2838
               },
               "topRight": {
-                "lat": 3287,
-                "lng": 3034
+                "lat": 10129,
+                "lng": 2839
               }
             }
           }
         ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 3285,
-                "lng": 3031,
-                "color": "#e100ff",
-                "numberLabel": "2"
-              },
-              {
-                "lat": 3284,
-                "lng": 3030,
-                "color": "#e100ff",
-                "numberLabel": "2"
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 3283,
-                "lng": 3029
-              },
-              "topRight": {
-                "lat": 3285,
-                "lng": 3030
-              }
-            }
-          }
-        ]
+        "object": []
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Dondakan about cannonballs in the Keldagrim south-west mine. (Chat 2\u20221\u20221\u2022\u2713\u20223)",
+      "stepDescription": "Talk to Dondakan about cannonballs in the Keldagrim south-west mine. (Chat 2•1•1•✓•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Dondakan the Dwarf",
+            "npcLocation": {
+              "lat": 10168,
+              "lng": 2824
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 10166,
+                "lng": 2822
+              },
+              "topRight": {
+                "lat": 10170,
+                "lng": 2826
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -76,33 +66,65 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Dwarven Engineer",
+            "npcLocation": {
+              "lat": 10198,
+              "lng": 2871
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 10196,
+                "lng": 2869
+              },
+              "topRight": {
+                "lat": 10200,
+                "lng": 2873
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Teleport to the Falador Lodestone and run north-east to the Dwarven Mine (stay outside), or teleport using your skull sceptre and run west.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "Talk to Rolad, who is located in the most north-eastern building near the ladder to the mines. North-East of the Invention Guild. ",
+      "itemsNeeded": [
+        "A few empty backpack spaces"
+      ],
+      "itemsRecommended": [
+        "A weapon of any kind to kill low-level scorpions and mining gear",
+        "skull sceptre"
+      ],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Rolad",
+            "npcLocation": {
+              "lat": 3452,
+              "lng": 3022
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Rolad, who is located in the most north-eastern building near the ladder to the mines. There is a pause in the dialogue; be sure to finish the whole conversation.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "There is a pause in the dialogue; be sure to finish the whole conversation."
+      ]
     },
     {
       "stepDescription": "Go down the ladder to enter the Dwarven Mine.",
@@ -110,7 +132,35 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Ladder",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3450,
+                "lng": 3017,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3449,
+                "lng": 3016
+              },
+              "topRight": {
+                "lat": 3450,
+                "lng": 3018
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -204,7 +254,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Dondakan and use the golden cannonball on him. (Chat 1\u20221\u20222)",
+      "stepDescription": "Return to Dondakan and use the golden cannonball on him. (Chat 1•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

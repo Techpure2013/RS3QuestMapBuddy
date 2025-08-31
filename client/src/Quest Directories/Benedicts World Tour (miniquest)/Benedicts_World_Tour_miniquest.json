@@ -23,12 +23,12 @@
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3384.5,
-                "lng": 3205.5
+                "lat": 3386,
+                "lng": 3205
               },
               "topRight": {
-                "lat": 3387.5,
-                "lng": 3207.5
+                "lat": 3387,
+                "lng": 3206
               }
             }
           }
@@ -61,12 +61,12 @@
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 3495.5,
-                "lng": 3200.5
+                "lat": 3496,
+                "lng": 3200
               },
               "topRight": {
-                "lat": 3498.5,
-                "lng": 3203.5
+                "lat": 3498,
+                "lng": 3202
               }
             },
             "color": "#00FF00",
@@ -100,12 +100,12 @@
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 3169.5,
-                "lng": 3283.5
+                "lat": 3171,
+                "lng": 3283
               },
               "topRight": {
-                "lat": 3171.5,
-                "lng": 3286.5
+                "lat": 3172,
+                "lng": 3285
               }
             },
             "color": "#00FF00",
@@ -139,12 +139,12 @@
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 3230.5,
-                "lng": 3366.5
+                "lat": 3231,
+                "lng": 3366
               },
               "topRight": {
-                "lat": 3233.5,
-                "lng": 3368.5
+                "lat": 3233,
+                "lng": 3367
               }
             },
             "color": "#00FF00",
@@ -180,12 +180,12 @@
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 3496.5,
-                "lng": 2850.5
+                "lat": 3497,
+                "lng": 2850
               },
               "topRight": {
-                "lat": 3498.5,
-                "lng": 2852.5
+                "lat": 3498,
+                "lng": 2851
               }
             },
             "color": "#00FF00",
@@ -219,12 +219,12 @@
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 3479.5,
-                "lng": 2463.5
+                "lat": 3480,
+                "lng": 2463
               },
               "topRight": {
-                "lat": 3482.5,
-                "lng": 2466.5
+                "lat": 3482,
+                "lng": 2465
               }
             },
             "color": "#00FF00",
@@ -258,12 +258,12 @@
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 3114.5,
-                "lng": 2431.5
+                "lat": 3115,
+                "lng": 2431
               },
               "topRight": {
-                "lat": 3118.5,
-                "lng": 2433.5
+                "lat": 3117,
+                "lng": 2432
               }
             },
             "color": "#00FF00",
@@ -297,12 +297,12 @@
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 6099.5,
-                "lng": 3989.5
+                "lat": 6099,
+                "lng": 3989
               },
               "topRight": {
-                "lat": 6101.5,
-                "lng": 3992.5
+                "lat": 6101,
+                "lng": 3991
               }
             },
             "color": "#00FF00",
@@ -319,7 +319,35 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Cinnamon (Benedict's World Tour)",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 5455,
+                "lng": 4630,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 5454,
+                "lng": 4629
+              },
+              "topRight": {
+                "lat": 5457,
+                "lng": 4631
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 3,
       "additionalStepInformation": []
@@ -330,7 +358,35 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Toy ship (Benedict's World Tour)",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3110,
+                "lng": 2983,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3109,
+                "lng": 2982
+              },
+              "topRight": {
+                "lat": 3111,
+                "lng": 2984
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -341,9 +397,37 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Money pouch (Benedict's World Tour)",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3407,
+                "lng": 2701,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3406,
+                "lng": 2700
+              },
+              "topRight": {
+                "lat": 3407,
+                "lng": 2702
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
-      "floor": 0,
+      "floor": 3,
       "additionalStepInformation": []
     },
     {
@@ -352,29 +436,113 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Pipe (Benedict's World Tour)",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3229,
+                "lng": 3205,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3228,
+                "lng": 3204
+              },
+              "topRight": {
+                "lat": 3230,
+                "lng": 3205
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 2,
+      "additionalStepInformation": []
+    },
+    {
+      "stepDescription": "Teleport to Anachronia lodestone to collect the foot slightly south-east of the lodestone.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": [
+          {
+            "name": "Foot (Benedict's World Tour)",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 2337,
+                "lng": 5433,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 2336,
+                "lng": 5432
+              },
+              "topRight": {
+                "lat": 2339,
+                "lng": 5434
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Teleport to the Lumbridge lodestone, head south, through the cemetery and on the bridge, right-click teleport with Wizard Chambers and collect the Foot.",
+      "stepDescription": "Head north of the Menaphos gates to pass through the world window and continue slightly north to collect the frogburger.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Head south through the world window and continue slightly north to collect the Frogburger.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Frogburger (Benedict's World Tour)",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 798,
+                "lng": 4311,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 797,
+                "lng": 4310
+              },
+              "topRight": {
+                "lat": 799,
+                "lng": 4312
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -385,9 +553,37 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Monocle (Benedict's World Tour)",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3341,
+                "lng": 2962,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3340,
+                "lng": 2961
+              },
+              "topRight": {
+                "lat": 3341,
+                "lng": 2962
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
-      "floor": 0,
+      "floor": 3,
       "additionalStepInformation": []
     },
     {
@@ -396,7 +592,35 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Scarf (Benedict's World Tour)",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3461,
+                "lng": 3394,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3460,
+                "lng": 3393
+              },
+              "topRight": {
+                "lat": 3462,
+                "lng": 3395
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -407,7 +631,35 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Surgical mask (Benedict's World Tour)",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 2689,
+                "lng": 2475,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 2688,
+                "lng": 2474
+              },
+              "topRight": {
+                "lat": 2690,
+                "lng": 2476
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []

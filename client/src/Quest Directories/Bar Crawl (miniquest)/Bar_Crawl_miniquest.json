@@ -22,12 +22,12 @@
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3569.5,
-                "lng": 2542.5
+                "lat": 3570,
+                "lng": 2542
               },
               "topRight": {
-                "lat": 3572.5,
-                "lng": 2545.5
+                "lat": 3572,
+                "lng": 2543
               }
             }
           }
@@ -53,12 +53,12 @@
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3488.5,
-                "lng": 2479.5
+                "lat": 3489,
+                "lng": 2479
               },
               "topRight": {
-                "lat": 3491.5,
-                "lng": 2482.5
+                "lat": 3491,
+                "lng": 2481
               }
             }
           }
@@ -77,19 +77,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Bartender",
+            "npcName": "Bartender (Forester's Arms)",
             "npcLocation": {
               "lat": 3493,
               "lng": 2690
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3490.5,
-                "lng": 2688.5
+                "lat": 3490,
+                "lng": 2688
               },
               "topRight": {
-                "lat": 3495.5,
-                "lng": 2691.5
+                "lat": 3495,
+                "lng": 2690
               }
             }
           }
@@ -106,19 +106,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Bartender",
+            "npcName": "Bartender (Flying Horse Inn)",
             "npcLocation": {
               "lat": 3319,
               "lng": 2573
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3318.5,
-                "lng": 2571.5
+                "lat": 3319,
+                "lng": 2571
               },
               "topRight": {
-                "lat": 3319.5,
-                "lng": 2575.5
+                "lat": 3319,
+                "lng": 2574
               }
             }
           }
@@ -135,19 +135,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Bartender",
+            "npcName": "Bartender (Dragon Inn)",
             "npcLocation": {
               "lat": 3077,
               "lng": 2553
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3076.5,
-                "lng": 2553.5
+                "lat": 3077,
+                "lng": 2552
               },
               "topRight": {
-                "lat": 3078.5,
-                "lng": 2556.5
+                "lat": 3078,
+                "lng": 2554
               }
             }
           }
@@ -164,19 +164,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Bartender",
+            "npcName": "Bartender (Dead Man's Chest)",
             "npcLocation": {
               "lat": 3155,
               "lng": 2794
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3154.5,
-                "lng": 2793.5
+                "lat": 3154,
+                "lng": 2793
               },
               "topRight": {
-                "lat": 3155.5,
-                "lng": 2798.5
+                "lat": 3155,
+                "lng": 2797
               }
             }
           }
@@ -185,6 +185,55 @@
       },
       "floor": 0,
       "additionalStepInformation": []
+    },
+    {
+      "stepDescription": "Go through the gate in northeast Brimhaven and run over to the Karamja Spirits Bar on the other side of the volcano at Musa Point.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "additionalStepInformation": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Zembo",
+            "npcLocation": {
+              "lat": 3143,
+              "lng": 2923
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3142,
+                "lng": 2922
+              },
+              "topRight": {
+                "lat": 3143,
+                "lng": 2926
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0
     },
     {
       "stepDescription": "Home Teleport to Varrock and visit the Blue Moon Inn. Talk to the Bartender. (Chat 4)",
@@ -216,25 +265,74 @@
       "additionalStepInformation": []
     },
     {
+      "stepDescription": "Home teleport to Port Sarim or take the ship from Musa Point, Karamja and visit the Rusty Anchor.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "additionalStepInformation": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Bartender (Rusty Anchor)",
+            "npcLocation": {
+              "lat": 3256,
+              "lng": 3044
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3255,
+                "lng": 3043
+              },
+              "topRight": {
+                "lat": 3258,
+                "lng": 3044
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0
+    },
+    {
       "stepDescription": "Home Teleport to Fort Forinthry and visit the Jolly Boar Inn. Talk to the Bartender. (Chat 4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Barbarian Guard",
+            "npcName": "Bartender (Jolly Boar Inn)",
             "npcLocation": {
-              "lat": 3571,
-              "lng": 2543
+              "lat": 3488,
+              "lng": 3274
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3568,
-                "lng": 2541
+                "lat": 3487,
+                "lng": 3273
               },
               "topRight": {
-                "lat": 3574,
-                "lng": 2544
+                "lat": 3488,
+                "lng": 3279
               }
             }
           }
@@ -249,7 +347,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Emily",
+            "npcLocation": {
+              "lat": 3370,
+              "lng": 2953
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3367,
+                "lng": 2952
+              },
+              "topRight": {
+                "lat": 3374,
+                "lng": 2959
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -260,7 +376,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Barbarian Guard",
+            "npcLocation": {
+              "lat": 3571,
+              "lng": 2543
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3570,
+                "lng": 2542
+              },
+              "topRight": {
+                "lat": 3572,
+                "lng": 2544
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
