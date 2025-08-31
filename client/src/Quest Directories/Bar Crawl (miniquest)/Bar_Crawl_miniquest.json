@@ -2,9 +2,16 @@
   "questName": "Bar Crawl (miniquest)",
   "questSteps": [
     {
-      "stepDescription": "Talk to Barbarian guard located east of Barbarian assault. (Chat 1\u20222\u2022\u2713)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "Talk to Barbarian guard located east of Barbarian assault. (Chat 1•2•✓)",
+      "itemsNeeded": [
+        "208 gold coins",
+        "Barcrawl card "
+      ],
+      "itemsRecommended": [
+        "Unlocked multiple lodestones on the lodestone network",
+        "Grand seed pod",
+        "Games necklace"
+      ],
       "highlights": {
         "npc": [
           {
@@ -15,12 +22,12 @@
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3568,
-                "lng": 2541
+                "lat": 3569.5,
+                "lng": 2542.5
               },
               "topRight": {
-                "lat": 3574,
-                "lng": 2544
+                "lat": 3572.5,
+                "lng": 2545.5
               }
             }
           }
@@ -33,98 +40,35 @@
       ]
     },
     {
-      "stepDescription": "Bars are marked with Pub on the world map. It may be helpful to turn off other map icons so that it is easier to locate the bars during the miniquest.",
-      "itemsNeeded": [
-        "208 gold coins",
-        "Barcrawl card"
-      ],
-      "itemsRecommended": [
-        "Unlocked multiple lodestones on the lodestone network",
-        "Grand seed pod",
-        "Games necklace,"
-      ],
+      "stepDescription": "Go to the 2nd floor[US] of the Grand Tree, and talk to Blurberry. (Chat ~)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
             "npcName": "Blurberry",
             "npcLocation": {
-              "lat": 3489,
+              "lat": 3490,
               "lng": 2480
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3486,
-                "lng": 2479
+                "lat": 3488.5,
+                "lng": 2479.5
               },
               "topRight": {
-                "lat": 3490,
-                "lng": 2483
+                "lat": 3491.5,
+                "lng": 2482.5
               }
             }
           }
         ],
         "object": []
       },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Visiting the bars \nItems needed: 208 gold coins, Barcrawl card \nItems recommended: Unlocked multiple lodestones on the lodestone network, Grand seed pod, Games necklace,",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Bartender ( Seers Village )",
-            "npcLocation": {
-              "lat": 3493,
-              "lng": 2690
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3491,
-                "lng": 2688
-              },
-              "topRight": {
-                "lat": 3496,
-                "lng": 2690
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Go to the 2nd floor[US] of the Grand Tree, and talk to Blurberry. (Chat ~) You can use Home Teleport to Al Kharid and then take the Gnome Glider to the Tree Gnome Stronghold, Ardougne lodestone and run north-west, or Eagles' Peak lodestone with 61 Agility and head east.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Talk to the Bartender ( Flying Horse Inn )",
-            "npcLocation": {
-              "lat": 3319,
-              "lng": 2571
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "floor": 1,
+      "additionalStepInformation": [
+        " You can use Home Teleport to Al Kharid and then take the Gnome Glider to the Tree Gnome Stronghold, Ardougne lodestone and run north-west, or Eagles' Peak lodestone with 61 Agility and head east."
+      ]
     },
     {
       "stepDescription": "Home Teleport to Seers' Village, and then visit the Forester's Arms. Talk to the Bartender. (Chat 3)",
@@ -133,19 +77,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Bartender ( Dragon Inn )",
+            "npcName": "Bartender",
             "npcLocation": {
-              "lat": 3078,
-              "lng": 2576
+              "lat": 3493,
+              "lng": 2690
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3077,
-                "lng": 2575
+                "lat": 3490.5,
+                "lng": 2688.5
               },
               "topRight": {
-                "lat": 3078,
-                "lng": 2577
+                "lat": 3495.5,
+                "lng": 2691.5
               }
             }
           }
@@ -162,19 +106,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Bartender ( Dead Man's Chest )",
+            "npcName": "Bartender",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3319,
+              "lng": 2573
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3318.5,
+                "lng": 2571.5
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 3319.5,
+                "lng": 2575.5
               }
             }
           }
@@ -191,19 +135,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Zambo",
+            "npcName": "Bartender",
             "npcLocation": {
-              "lat": 3143,
-              "lng": 2924
+              "lat": 3077,
+              "lng": 2553
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3142,
-                "lng": 2917
+                "lat": 3076.5,
+                "lng": 2553.5
               },
               "topRight": {
-                "lat": 3147,
-                "lng": 2929
+                "lat": 3078.5,
+                "lng": 2556.5
               }
             }
           }
@@ -220,77 +164,19 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Bartender ( Rusty Anchor )",
+            "npcName": "Bartender",
             "npcLocation": {
-              "lat": 3256,
-              "lng": 3044
+              "lat": 3155,
+              "lng": 2794
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3255,
-                "lng": 3043
+                "lat": 3154.5,
+                "lng": 2793.5
               },
               "topRight": {
-                "lat": 3258,
-                "lng": 3045
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Go through the gate in northeast Brimhaven and run over to the Karamja Spirits Bar on the other side of the volcano at Musa Point. Talk to Zambo. (Chat 3)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Bartender ( Blue Moon Inn )",
-            "npcLocation": {
-              "lat": 3399,
-              "lng": 3225
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3397,
-                "lng": 3224
-              },
-              "topRight": {
-                "lat": 3402,
-                "lng": 3226
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Home teleport to Port Sarim or take the ship from Musa Point, and visit the Rusty Anchor to the northeast. Talk to the Bartender. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Bartender ( Jolly Boar Inn )",
-            "npcLocation": {
-              "lat": 3488,
-              "lng": 3278
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3487,
-                "lng": 3273
-              },
-              "topRight": {
-                "lat": 3488,
-                "lng": 3279
+                "lat": 3155.5,
+                "lng": 2798.5
               }
             }
           }

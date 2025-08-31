@@ -4,7 +4,7 @@ import L from "leaflet";
 import { resizeImageToDataUrl } from "./imageDisplayUtils";
 import chatheadOverrides from "./../Map Data/chatheadOverrides.json";
 
-// ... (Interfaces remain the same)
+// --- INTERFACES ---
 interface ObjectLocation {
   lat: number;
   lng: number;
@@ -38,7 +38,7 @@ interface SelectionHighlightLayerProps {
   geometry: SelectionGeometry;
 }
 
-// ... (Styles remain the same)
+// --- STYLES ---
 const radiusStyle = {
   color: "#00FFFF",
   weight: 2,
@@ -55,23 +55,20 @@ const tileStyle = {
 
 // --- HELPER FUNCTIONS ---
 
-// This function is now ONLY used for converting the corners of radius areas.
-const convertRadiusCornerToVisual = (coord: { lat: number; lng: number }) => {
-  return { lat: coord.lat + 0.5, lng: coord.lng + 0.5 };
-};
-
+/**
+ * Creates the bounds for a 1x1 tile based on its visual center coordinate.
+ * This matches the logic in HighlightLayer.tsx.
+ */
 const getTileBoundsFromVisualCenter = (visualCenter: {
   lat: number;
   lng: number;
 }): L.LatLngBounds => {
+  const interval = 1;
   const y = visualCenter.lat;
   const x = visualCenter.lng;
-  const southWest = L.latLng(y - 0.5, x - 0.5);
-  const northEast = L.latLng(y + 0.5, x + 0.5);
-  return L.latLngBounds(southWest, northEast);
+  return L.latLngBounds([y, x], [y + interval, x + interval]);
 };
 
-// ... (getImageUrl, createChatheadIcon, createObjectIcon functions are unchanged)
 const getImageUrl = (
   name: string,
   type: "npc" | "object",
@@ -143,8 +140,7 @@ export const SelectionHighlightLayer: React.FC<
 
     if (geometry.type === "none") return;
 
-    // --- NPC & OBJECT RENDERING LOGIC ---
-    // This logic now assumes it receives CORRECT visual center coordinates from App.tsx
+    // This logic assumes it receives CORRECT visual center coordinates from App.tsx
     const renderPoints = (
       points: any[],
       type: "npc" | "object",
@@ -152,9 +148,11 @@ export const SelectionHighlightLayer: React.FC<
       override?: string
     ) => {
       points.forEach((point) => {
-        if (point.lat === 0 && point.lng === 0) return;
+        // Check against the visual representation of the default stored coordinate {lat: 0, lng: 0}
+        // This prevents rendering unplaced items at the map's offset origin.
+        if (point.lat === -16.5 && point.lng === 16.5) return;
 
-        const visualCenter = point; // Use the coordinate directly
+        const visualCenter = point;
         const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
 
         const imageUrl = getImageUrl(name, type, override);
@@ -164,9 +162,12 @@ export const SelectionHighlightLayer: React.FC<
               type === "npc"
                 ? createChatheadIcon(resizedDataUrl)
                 : createObjectIcon(resizedDataUrl);
-            const marker = L.marker([visualCenter.lat, visualCenter.lng], {
-              icon,
-            }).bindPopup(`<b>${name}</b>`);
+            const marker = L.marker(
+              [visualCenter.lat + 0.5, visualCenter.lng + 0.5],
+              {
+                icon,
+              }
+            ).bindPopup(`<b>${name}</b>`);
             layerRef.current?.addLayer(marker);
           })
           .catch(() => {
@@ -205,14 +206,15 @@ export const SelectionHighlightLayer: React.FC<
           (npc.wanderRadius.bottomLeft.lat !== 0 ||
             npc.wanderRadius.topRight.lat !== 0)
         ) {
-          const bl = npc.wanderRadius.bottomLeft;
-          const tr = npc.wanderRadius.topRight;
+          const topLeftVisualCenter = npc.wanderRadius.bottomLeft;
 
+          const bottomRightVisualCenter = npc.wanderRadius.topRight;
+
+          // The coordinates are already the final visual corners. Draw them directly.
           const bounds = L.latLngBounds(
-            [bl.lat, bl.lng], // bottom-left corner
-            [tr.lat, tr.lng] // top-right corner
+            [bottomRightVisualCenter.lat + 0.5, topLeftVisualCenter.lng + 0.5],
+            [topLeftVisualCenter.lat - 0.5, bottomRightVisualCenter.lng + 1.5]
           );
-
           L.rectangle(bounds, radiusStyle).addTo(layerRef.current!);
         }
       });
@@ -226,14 +228,14 @@ export const SelectionHighlightLayer: React.FC<
           (obj.objectRadius.bottomLeft.lat !== 0 ||
             obj.objectRadius.topRight.lat !== 0)
         ) {
-          const bl = obj.objectRadius.bottomLeft;
-          const tr = obj.objectRadius.topRight;
+          const topLeftVisualCenter = obj.objectRadius.bottomLeft;
+
+          const bottomRightVisualCenter = obj.objectRadius.topRight;
 
           const bounds = L.latLngBounds(
-            [bl.lat, bl.lng], // bottom-left corner
-            [tr.lat, tr.lng] // top-right corner
+            [bottomRightVisualCenter.lat + 0.5, topLeftVisualCenter.lng + 0.5],
+            [topLeftVisualCenter.lat - 0.5, bottomRightVisualCenter.lng + 1.5]
           );
-
           L.rectangle(bounds, radiusStyle).addTo(layerRef.current!);
         }
       });

@@ -21,8 +21,15 @@ export const resizeImageBlob = (
  * @returns A direct URL to the image file.
  */
 export const parseWikiImageUrl = (url: string): string => {
+  // --- NEW: Priority 1: Check for direct image links first ---
+  // If the URL already ends in a standard image format, use it directly.
+  const directImageRegex = /\.(png|jpg|jpeg|gif|webp)(\?.*)?$/i;
+  if (directImageRegex.test(url)) {
+    return url.split("?")[0]; // Still good to strip query params for consistency
+  }
+
+  // --- Fallback: Try to parse special wiki page URLs ---
   try {
-    // Decode URL to handle encoded characters like '
     const decodedUrl = decodeURIComponent(url);
 
     // Handle URLs with #/media/File:
@@ -32,28 +39,17 @@ export const parseWikiImageUrl = (url: string): string => {
       return `https://runescape.wiki/images/${sanitizedFileName}`;
     }
 
-    // Handle direct /images/ URLs that might have query params
-    if (decodedUrl.includes("/images/")) {
-      const baseUrl = decodedUrl.split("?")[0];
-      if (
-        /\.(png|jpg|jpeg|gif|webp)$/i.test(baseUrl) ||
-        !baseUrl.includes(".")
-      ) {
-        return baseUrl.endsWith(".png") ? baseUrl : `${baseUrl}.png`;
-      }
-    }
-
-    // Fallback for simple /w/ URLs
+    // Handle simple /w/ URLs (often for chatheads)
     if (decodedUrl.includes("/w/")) {
       const pageName = decodedUrl.split("/w/")[1].split("#")[0];
       const sanitizedPageName = pageName.replace(/ /g, "_");
       return `https://runescape.wiki/images/${sanitizedPageName}_chathead.png`;
     }
   } catch (e) {
-    console.error("Could not parse wiki URL", e);
+    console.error("Could not parse wiki URL, returning original.", url, e);
   }
 
-  // If all else fails, return the original URL and hope for the best
+  // If all parsing fails, return the original URL and hope for the best.
   return url;
 };
 

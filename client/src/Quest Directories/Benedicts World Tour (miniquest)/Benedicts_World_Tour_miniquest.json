@@ -2,22 +2,37 @@
   "questName": "Benedicts World Tour (miniquest)",
   "questSteps": [
     {
-      "stepDescription": "Recommended Items: Skeletal horror teleport, invitation box or Dig Site pendant, Wicked hood, Ring of duelling (needs at least 2 charges), Access to fairy rings, Access to gnome gliders (The Grand Tree) or spirit trees (Tree Gnome Village), Archaeology journal",
+      "stepDescription": "Talk to Benedict north-west of the Varrock Lodestone. (Chat ✓) Also located at the step is an F2P, and a P2P Table of items.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "Skeletal horror teleport",
+        "invitation box or Dig Site pendant",
+        "Wicked hood",
+        "Ring of duelling (needs at least 2 charges)",
+        "Access to fairy rings",
+        "Access to gnome gliders (The Grand Tree) or spirit trees (Tree Gnome Village)",
+        "Archaeology journal"
+      ],
       "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Benedict north-west of the Varrock Lodestone. (Chat \u2713) Also located at the step is an F2P, and a P2P Table of items.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Benedict",
+            "npcLocation": {
+              "lat": 3386,
+              "lng": 3206
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3384.5,
+                "lng": 3205.5
+              },
+              "topRight": {
+                "lat": 3387.5,
+                "lng": 3207.5
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -29,9 +44,37 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Fox Pelt",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3497,
+                "lng": 3201,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3495.5,
+                "lng": 3200.5
+              },
+              "topRight": {
+                "lat": 3498.5,
+                "lng": 3203.5
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
-      "floor": 0,
+      "floor": 3,
       "additionalStepInformation": []
     },
     {
@@ -40,9 +83,37 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Toffee Apple",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3171,
+                "lng": 3284,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3169.5,
+                "lng": 3283.5
+              },
+              "topRight": {
+                "lat": 3171.5,
+                "lng": 3286.5
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
-      "floor": 0,
+      "floor": 2,
       "additionalStepInformation": []
     },
     {
@@ -51,21 +122,40 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Package ( Benedicts World Tour )",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3232,
+                "lng": 3367,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3230.5,
+                "lng": 3366.5
+              },
+              "topRight": {
+                "lat": 3233.5,
+                "lng": 3368.5
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Run north around the whirligig pool to cross the fallen palm tree which has no agility requirement if you are below 65 agility.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Run north around the whirligig pool to cross the fallen palm tree which has no agility requirement if you are below 65 agility."
+      ]
     },
     {
       "stepDescription": "Glide from Al Kharid or teleport to White Wolf Mountain and collect the Raw fish-like thing, which is right next to the glider. (Chat 2)",
@@ -73,7 +163,35 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Raw Fish Like Thing",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3497,
+                "lng": 2851,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3496.5,
+                "lng": 2850.5
+              },
+              "topRight": {
+                "lat": 3498.5,
+                "lng": 2852.5
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -84,9 +202,37 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Flask of Tea",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3481,
+                "lng": 2464,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3479.5,
+                "lng": 2463.5
+              },
+              "topRight": {
+                "lat": 3482.5,
+                "lng": 2466.5
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
-      "floor": 0,
+      "floor": 2,
       "additionalStepInformation": []
     },
     {
@@ -95,7 +241,35 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Sweets ( Benedict's World Tour )",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 3116,
+                "lng": 2431,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3114.5,
+                "lng": 2431.5
+              },
+              "topRight": {
+                "lat": 3118.5,
+                "lng": 2433.5
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -106,7 +280,35 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Crystal (Benedict's World Tour)",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              },
+              {
+                "lat": 6100,
+                "lng": 3990,
+                "color": "#00FF00",
+                "numberLabel": ""
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 6099.5,
+                "lng": 3989.5
+              },
+              "topRight": {
+                "lat": 6101.5,
+                "lng": 3992.5
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -119,7 +321,7 @@
         "npc": [],
         "object": []
       },
-      "floor": 0,
+      "floor": 3,
       "additionalStepInformation": []
     },
     {

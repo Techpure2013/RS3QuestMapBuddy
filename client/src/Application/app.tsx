@@ -128,18 +128,28 @@ const App: React.FC = () => {
 
   // --- DERIVED VALUES ---
   const convertManualCoordToVisual = (coord: { lat: number; lng: number }) => {
-    // Correction for hand-placed points: -0.5 lat, +0.5 lng
-    return { lat: coord.lat - 0.5 + 0.5, lng: coord.lng + 0.5 + 0.5 };
+    const visualY = coord.lat - 0.5;
+    const visualX = coord.lng + 0.5;
+    return { lat: visualY, lng: visualX };
   };
 
-  const convertSearchedCoordToVisual = (coord: {
+  const convertSearchedObjectCoordToVisual = (coord: {
     lat: number;
     lng: number;
   }) => {
     // Correction for searched points: -0.5 lat, -0.5 lng
-    return { lat: coord.lat - 0.5 + 0.5, lng: coord.lng - 0.5 + 0.5 };
+    const visualY = coord.lat - 0.5;
+    const visualX = coord.lng - 0.5;
+    return { lat: visualY, lng: visualX };
   };
-
+  const convertSearchedNPCCoordToVisual = (coord: {
+    lat: number;
+    lng: number;
+  }) => {
+    const visualY = coord.lat - 0.5;
+    const visualX = coord.lng + 0.5;
+    return { lat: visualY, lng: visualX };
+  };
   // --- Replace the selectionGeometry useMemo hook ---
   const selectionGeometry = useMemo<SelectionGeometry>(() => {
     if (!questJson?.questSteps?.[selectedStep]) return { type: "none" };
@@ -176,7 +186,7 @@ const App: React.FC = () => {
           {
             name: selectedObjectFromSearch.name,
             objectLocation: [
-              convertSearchedCoordToVisual(selectedObjectFromSearch),
+              convertSearchedObjectCoordToVisual(selectedObjectFromSearch),
             ],
             objectRadius: {
               bottomLeft: { lat: 0, lng: 0 },
@@ -192,7 +202,7 @@ const App: React.FC = () => {
         npcArray: [
           {
             npcName: highlightedNpc.name,
-            npcLocation: convertSearchedCoordToVisual(highlightedNpc),
+            npcLocation: convertSearchedNPCCoordToVisual(highlightedNpc),
             wanderRadius: {
               bottomLeft: { lat: 0, lng: 0 },
               topRight: { lat: 0, lng: 0 },
@@ -209,7 +219,7 @@ const App: React.FC = () => {
             name: highlightedObject.name,
             objectLocation: [
               {
-                ...convertSearchedCoordToVisual(highlightedObject),
+                ...convertSearchedObjectCoordToVisual(highlightedObject),
                 color: "#00FFFF",
               },
             ],
@@ -944,60 +954,25 @@ const App: React.FC = () => {
   };
 
   const handleApplyRadius = () => {
-    if (!questJson) return;
+    if (!questJson || targetType !== "npc") return;
 
-    const step = questJson.questSteps[selectedStep];
-    if (!step) return;
+    const target =
+      questJson.questSteps[selectedStep].highlights.npc[targetIndex];
+    const center = target?.npcLocation;
 
-    // Get the current target (either NPC or Object)
-    const target = step.highlights[targetType]?.[targetIndex];
-    if (!target) return;
-
-    let center;
-    // Determine the center coordinate based on the target type
-    if (targetType === "npc") {
-      center = target.npcLocation;
-    } else {
-      // For objects, we'll center the radius on the first location point
-      center = target.objectLocation?.[0];
-    }
-
-    // Ensure we have a valid center point to work with
     if (!center || (center.lat === 0 && center.lng === 0)) {
-      alert("Please place the NPC or Object before applying a radius.");
       return;
     }
 
     const radius = wanderRadiusInput;
-
-    // 1. Convert the STORED coordinate to the final VISUAL CENTER on the map.
-    //    This MUST match the conversion you use for displaying the icon.
-    const visualCenterLat = center.lat;
-    const visualCenterLng = center.lng + 1;
-
-    // 2. Calculate the VISUAL CORNERS of the radius box.
-    //    To cover full tiles, we expand from the visual center by (radius + 0.5).
-    const expansion = radius + 0.5;
-    const minLat = visualCenterLat - expansion;
-    const maxLat = visualCenterLat + expansion;
-    const minLng = visualCenterLng - expansion;
-    const maxLng = visualCenterLng + expansion;
-
     const nextState = produce(questJson, (draft) => {
-      // Get a mutable reference to the target in the draft state
       const draftTarget =
-        draft.questSteps[selectedStep].highlights[targetType][targetIndex];
-
-      // Determine which property to update ('wanderRadius' or 'objectRadius')
-      const radiusKey = targetType === "npc" ? "wanderRadius" : "objectRadius";
-
-      // 3. Store these final visual corner coordinates directly.
-      draftTarget[radiusKey] = {
-        bottomLeft: { lat: minLat, lng: minLng },
-        topRight: { lat: maxLat, lng: maxLng },
+        draft.questSteps[selectedStep].highlights.npc[targetIndex];
+      draftTarget.wanderRadius = {
+        bottomLeft: { lat: center.lat - radius, lng: center.lng - radius },
+        topRight: { lat: center.lat + radius, lng: center.lng + radius },
       };
     });
-
     updateQuestState(nextState);
   };
 
@@ -1192,22 +1167,22 @@ const App: React.FC = () => {
 
             // First corner tile's visual boundaries (lng + 1 for visual space)
             const firstVisualBL = {
-              lat: firstCorner.lat - 0.5,
-              lng: firstCorner.lng + 0.5,
+              lat: firstCorner.lat,
+              lng: firstCorner.lng,
             };
             const firstVisualTR = {
-              lat: firstCorner.lat + 0.5,
-              lng: firstCorner.lng + 1.5,
+              lat: firstCorner.lat,
+              lng: firstCorner.lng,
             };
 
             // Second corner tile's visual boundaries
             const secondVisualBL = {
-              lat: snappedCoord.lat - 0.5,
-              lng: snappedCoord.lng + 0.5,
+              lat: snappedCoord.lat,
+              lng: snappedCoord.lng,
             };
             const secondVisualTR = {
-              lat: snappedCoord.lat + 0.5,
-              lng: snappedCoord.lng + 1.5,
+              lat: snappedCoord.lat,
+              lng: snappedCoord.lng,
             };
 
             // Now, find the min/max of these VISUAL boundaries to create the final box.
