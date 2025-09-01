@@ -33,8 +33,13 @@ import { ObjectSearch } from "./../Map Classes/Map Components/ObjectSearch";
 import type { MapObject } from "./../Map Classes/Map Components/ObjectSearch";
 import ObjectFlyToHandler from "./../Map Classes/Map Components/ObjectFlyToHandler";
 import SelectedObjectFlyToHandler from "./../Map Classes/Map Components/SelectedObjectFlyToHandler";
+import { TargetFlyToHandler } from "Map Classes/Map Components/TargetFlyToHandler";
 
 // --- INTERFACES ---
+interface ClipboardItem {
+  type: "npc" | "object" | "npc-list" | "object-list" | "none";
+  data: any | any[] | null;
+}
 interface QuestData {
   questName: string;
   questSteps: any[];
@@ -76,6 +81,10 @@ const App: React.FC = () => {
   let socket = useSocket();
 
   // --- STATE ---
+  const [clipboard, setClipboard] = useState<ClipboardItem>({
+    type: "none",
+    data: null,
+  });
   const [selectedObjectFromSearch, setSelectedObjectFromSearch] =
     useState<MapObject | null>(null);
   const [highlightedObject, setHighlightedObject] = useState<MapObject | null>(
@@ -166,9 +175,13 @@ const App: React.FC = () => {
       const convertedObjects = (step.highlights?.object || []).map(
         (obj: any) => ({
           ...obj,
-          objectLocation: obj.objectLocation.map((loc: any) =>
-            convertManualCoordToVisual(loc)
-          ),
+          objectLocation: (obj.objectLocation || []).map((loc: any) => ({
+            ...loc,
+            // Use the flag to decide which function to call
+            ...(loc.isSearched
+              ? convertSearchedObjectCoordToVisual(loc)
+              : convertManualCoordToVisual(loc)),
+          })),
         })
       );
       return { type: "object", objectArray: convertedObjects };
@@ -176,7 +189,6 @@ const App: React.FC = () => {
     return { type: "none" };
   }, [questJson, selectedStep, targetType]);
 
-  // --- Replace the highlightGeometry useMemo hook ---
   const highlightGeometry = useMemo<SelectionGeometry>(() => {
     // This data is ALWAYS from a search, so we use the searched conversion.
     if (selectedObjectFromSearch) {
@@ -324,6 +336,77 @@ const App: React.FC = () => {
   }, [targetType]);
 
   // --- HANDLERS ---
+  const handleCopyTargetList = () => {
+    if (!questJson) return;
+    const listToCopy =
+      questJson.questSteps[selectedStep]?.highlights?.[targetType];
+
+    if (listToCopy && listToCopy.length > 0) {
+      // Deep copy the entire array
+      const copiedData = JSON.parse(JSON.stringify(listToCopy));
+      setClipboard({
+        type: `${targetType}-list`, // e.g., "npc-list"
+        data: copiedData,
+      });
+      console.log(`Copied ${copiedData.length} ${targetType}s to clipboard.`);
+    } else {
+      console.log(`There are no ${targetType}s in this step to copy.`);
+    }
+  };
+  const handlePasteTargetList = () => {
+    if (!clipboard.type.endsWith("-list")) {
+      console.log("Clipboard does not contain a list.");
+      return;
+    }
+
+    // Extract base type ("npc" or "object") from clipboard type ("npc-list")
+    const clipboardBaseType = clipboard.type.replace("-list", "");
+
+    const nextState = produce(questJson, (draft) => {
+      if (draft) {
+        // Replace the entire array for the corresponding type in the current step
+        draft.questSteps[selectedStep].highlights[clipboardBaseType] =
+          clipboard.data;
+      }
+    });
+    updateQuestState(nextState);
+    console.log(`Pasted ${clipboard.data.length} ${clipboardBaseType}s.`);
+  };
+  const handleCopyTarget = () => {
+    if (!questJson) return;
+    const itemToCopy =
+      questJson.questSteps[selectedStep]?.highlights?.[targetType]?.[
+        targetIndex
+      ];
+
+    if (itemToCopy) {
+      // Use JSON stringify/parse for a deep copy to prevent reference issues
+      const copiedData = JSON.parse(JSON.stringify(itemToCopy));
+      setClipboard({
+        type: targetType,
+        data: copiedData,
+      });
+      console.log(
+        `Copied ${targetType}: ${copiedData.name || copiedData.npcName}`
+      );
+    }
+  };
+  const handlePasteTarget = () => {
+    if (clipboard.type === "none" || clipboard.type !== targetType) {
+      console.log(
+        `Cannot paste. Clipboard is empty or type mismatch (Clipboard: ${clipboard.type}, Target: ${targetType})`
+      );
+      return;
+    }
+
+    const nextState = produce(questJson, (draft) => {
+      if (draft) {
+        draft.questSteps[selectedStep].highlights[targetType][targetIndex] =
+          clipboard.data;
+      }
+    });
+    updateQuestState(nextState);
+  };
   const toggleShowGrids = () => setShowGrids((prev) => !prev);
 
   const downloadBlob = (blob: Blob, fileName: string) => {
@@ -335,7 +418,7 @@ const App: React.FC = () => {
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
-    alert(
+    console.log(
       `Direct save failed. Downloading ${fileName} instead. Please save it to the correct location.`
     );
   };
@@ -392,11 +475,11 @@ const App: React.FC = () => {
 
   const processAndSaveImage = async (imageBlob: Blob) => {
     if (!questJson) {
-      alert("Please load a quest first.");
+      console.log("Please load a quest first.");
       return;
     }
     if (!imageDirectoryHandle) {
-      alert("Please select an image save directory first.");
+      console.log("Please select an image save directory first.");
       return;
     }
     try {
@@ -408,7 +491,7 @@ const App: React.FC = () => {
       const stepDescription =
         questJson.questSteps[selectedStep]?.stepDescription;
       if (!stepDescription) {
-        alert("Current step has no description to link the image to.");
+        console.log("Current step has no description to link the image to.");
         return;
       }
 
@@ -492,7 +575,7 @@ const App: React.FC = () => {
       );
     } catch (error) {
       console.error("Failed to process and save image:", error);
-      alert(`Failed to process image. See console for details.`);
+      console.log(`Failed to process image. See console for details.`);
     }
   };
 
@@ -501,7 +584,8 @@ const App: React.FC = () => {
   };
 
   const handleObjectSearchSelect = (chosenObject: MapObject) => {
-    setSelectedObjectFromSearch(chosenObject);
+    handleFloorChange(chosenObject.floor);
+
     if (!questJson || targetType !== "object") {
       alert("Please select 'Object' as the target type first to edit.");
       return;
@@ -511,17 +595,26 @@ const App: React.FC = () => {
         draft.questSteps[selectedStep]?.highlights.object?.[targetIndex];
       if (target) {
         target.name = chosenObject.name;
-        if (!target.objectLocation || target.objectLocation.length === 0) {
-          target.objectLocation = [];
-        }
-        target.objectLocation[0] = {
-          lat: chosenObject.lat,
-          lng: chosenObject.lng,
-        };
+        target.objectLocation = [
+          {
+            lat: chosenObject.lat,
+            lng: chosenObject.lng,
+            color: "#FFFFFF",
+            numberLabel: "",
+            isSearched: true,
+          },
+        ];
         draft.questSteps[selectedStep].floor = chosenObject.floor;
       }
     });
     updateQuestState(nextState);
+
+    // CHANGE: Clear the temporary highlight after making a selection.
+    // WHY: This is the crucial fix. By setting `highlightedObject` to null,
+    // we ensure that the second, temporary highlight layer becomes empty
+    // immediately after the object is added to the permanent selection layer.
+    // This prevents the object from being rendered twice.
+    setHighlightedObject(null);
   };
 
   const handleImagePaste = async (pastedBlob: Blob) => {
@@ -539,7 +632,9 @@ const App: React.FC = () => {
       await processAndSaveImage(imageBlob);
     } catch (error) {
       console.error("Failed to add step image from URL:", error);
-      alert(`Failed to add step image from URL. See console for details.`);
+      console.log(
+        `Failed to add step image from URL. See console for details.`
+      );
     }
   };
 
@@ -602,7 +697,7 @@ const App: React.FC = () => {
     try {
       const handle = await window.showDirectoryPicker();
       setImageDirectoryHandle(handle);
-      alert(`Image directory set to: ${handle.name}`);
+      console.log(`Image directory set to: ${handle.name}`);
     } catch (err) {
       console.error("Error selecting directory:", err);
     }
@@ -749,7 +844,7 @@ const App: React.FC = () => {
       if (!step.highlights.object) step.highlights.object = [];
       step.highlights.object.push({
         name: "New Object",
-        objectLocation: [{ lat: 0, lng: 0 }],
+        objectLocation: [],
         objectRadius: {
           bottomLeft: { lat: 0, lng: 0 },
           topRight: { lat: 0, lng: 0 },
@@ -1090,7 +1185,7 @@ const App: React.FC = () => {
       const writable = await fileHandle.createWritable();
       await writable.write(jsonString);
       await writable.close();
-      alert(`Saved changes to ${fileHandle.name}`);
+      console.log(`Saved changes to ${fileHandle.name}`);
     } catch (err) {
       console.error(
         "File System Access API failed, falling back to download:",
@@ -1128,6 +1223,50 @@ const App: React.FC = () => {
     useMapEvents({
       click: (e) => {
         const snappedCoord = snapToTileCoordinate(e.latlng);
+        if (isObjectAreaSearch) {
+          console.log("Area search click detected at:", snappedCoord);
+          const searchRadius = 10;
+          const bounds = {
+            minLng: snappedCoord.lng - searchRadius,
+            maxLng: snappedCoord.lng + searchRadius,
+            minLat: snappedCoord.lat - searchRadius,
+            maxLat: snappedCoord.lat + searchRadius,
+          };
+
+          const chunksToFetch = new Set<string>();
+          const chunkSize = 64;
+          const startChunkX = Math.floor(bounds.minLng / chunkSize);
+          const endChunkX = Math.floor(bounds.maxLng / chunkSize);
+          const startChunkY = Math.floor(bounds.minLat / chunkSize);
+          const endChunkY = Math.floor(bounds.maxLat / chunkSize);
+
+          for (let x = startChunkX; x <= endChunkX; x++) {
+            for (let y = startChunkY; y <= endChunkY; y++) {
+              chunksToFetch.add(`chunk_${x}_${y}`);
+            }
+          }
+
+          const promises = Array.from(chunksToFetch).map((chunkId) =>
+            fetch(`/Objects_By_Chunks/${chunkId}.json`).then((res) =>
+              res.ok ? res.json() : Promise.resolve([])
+            )
+          );
+
+          Promise.all(promises).then((results) => {
+            const allObjectsInChunks = results.flat();
+            const finalResults = allObjectsInChunks.filter(
+              (obj: MapObject) =>
+                obj.lng >= bounds.minLng &&
+                obj.lng <= bounds.maxLng &&
+                obj.lat >= bounds.minLat &&
+                obj.lat <= bounds.maxLat
+            );
+            setAreaSearchResults(finalResults);
+          });
+
+          setIsObjectAreaSearch(false);
+          return; // <-- This is the most important part!
+        }
         switch (captureMode) {
           case "single":
             handleDataCaptured({ type: "single", payload: snappedCoord });
@@ -1147,6 +1286,7 @@ const App: React.FC = () => {
                 ...snappedCoord,
                 color: selectedObjectColor,
                 numberLabel: objectNumberLabel,
+                isSearched: false,
               };
               const newLocations = [...currentLocations, newPoint];
               handleDataCaptured({
@@ -1220,59 +1360,6 @@ const App: React.FC = () => {
             });
             setCaptureMode("single");
             break;
-        }
-
-        // --- NEW: Handle Object Area Search ---
-        if (isObjectAreaSearch) {
-          console.log("Area search click detected at:", snappedCoord);
-          const searchRadius = 10; // 10 tiles in each direction
-          const bounds = {
-            minLng: snappedCoord.lng - searchRadius,
-            maxLng: snappedCoord.lng + searchRadius,
-            minLat: snappedCoord.lat - searchRadius,
-            maxLat: snappedCoord.lat + searchRadius,
-          };
-
-          // BROAD PHASE: Calculate which chunks the search area overlaps with
-          const chunksToFetch = new Set<string>();
-          const chunkSize = 64;
-          const startChunkX = Math.floor(bounds.minLng / chunkSize);
-          const endChunkX = Math.floor(bounds.maxLng / chunkSize);
-          const startChunkY = Math.floor(bounds.minLat / chunkSize);
-          const endChunkY = Math.floor(bounds.maxLat / chunkSize);
-
-          for (let x = startChunkX; x <= endChunkX; x++) {
-            for (let y = startChunkY; y <= endChunkY; y++) {
-              chunksToFetch.add(`chunk_${x}_${y}`);
-            }
-          }
-
-          // Fetch all required chunk files concurrently
-          const promises = Array.from(chunksToFetch).map((chunkId) =>
-            fetch(`/Objects_By_Chunks/${chunkId}.json`).then((res) =>
-              // Gracefully handle chunks with no objects (404)
-              res.ok ? res.json() : Promise.resolve([])
-            )
-          );
-
-          Promise.all(promises).then((results) => {
-            const allObjectsInChunks = results.flat();
-
-            // NARROW PHASE: Filter objects to be within the precise bounds
-            const finalResults = allObjectsInChunks.filter(
-              (obj: MapObject) =>
-                obj.lng >= bounds.minLng &&
-                obj.lng <= bounds.maxLng &&
-                obj.lat >= bounds.minLat &&
-                obj.lat <= bounds.maxLat
-            );
-
-            console.log(`Found ${finalResults.length} objects in the area.`);
-            setAreaSearchResults(finalResults);
-          });
-
-          // Deactivate area search mode after the click
-          setIsObjectAreaSearch(false);
         }
       },
     });
@@ -1406,6 +1493,12 @@ const App: React.FC = () => {
         onSaveChatheadOverridesAs={handleSaveChatheadOverridesAs}
         onSaveQuestImageListAs={handleSaveQuestImageListAs}
         isAlt1Environment={isAlt1Environment}
+        clipboard={clipboard}
+        onCopyTarget={handleCopyTarget}
+        onPasteTarget={handlePasteTarget}
+        // ADD: Pass the new list handlers to the panel
+        onCopyTargetList={handleCopyTargetList}
+        onPasteTargetList={handlePasteTargetList}
       >
         <div className="panel-section">
           <NpcSearch
@@ -1508,25 +1601,22 @@ const App: React.FC = () => {
           targetType={targetType}
           onFloorChange={handleFloorChange}
         />
+        <TargetFlyToHandler
+          questJson={questJson}
+          selectedStep={selectedStep}
+          targetType={targetType}
+          targetIndex={targetIndex}
+          floor={floor} // <-- PASS THE PROP HERE
+          onFloorChange={handleFloorChange}
+        />
         <NpcFlyToHandler
           highlightedNpc={highlightedNpc}
           onFloorChange={handleFloorChange}
         />
-        <ObjectFlyToHandler
-          highlightedObject={highlightedObject}
-          onFloorChange={handleFloorChange}
-        />
-        <SelectedObjectFlyToHandler
-          selectedObject={selectedObjectFromSearch}
-          onFloorChange={handleFloorChange}
-        />
-        <SelectionHighlightLayer
-          geometry={
-            selectedObjectFromSearch || highlightedNpc || highlightedObject
-              ? highlightGeometry
-              : selectionGeometry
-          }
-        />
+        <ObjectFlyToHandler highlightedObject={highlightedObject} />
+        <SelectedObjectFlyToHandler selectedObject={selectedObjectFromSearch} />
+        <SelectionHighlightLayer geometry={selectionGeometry} />
+        <SelectionHighlightLayer geometry={highlightGeometry} />
         <HighlightLayer onCursorMove={handleCursorMove} />
       </MapContainer>
     </div>

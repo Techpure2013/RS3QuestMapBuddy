@@ -315,6 +315,15 @@
     "mapId": 764
   },
   {
+    "name": "Wise Old Man POH",
+    "center": [3802, 5724],
+    "bounds": [
+      [3782, 5703],
+      [3822, 5743]
+    ],
+    "mapId": 764
+  },
+  {
     "name": "Maze",
     "center": [2912, 4576],
     "bounds": [

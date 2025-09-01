@@ -140,80 +140,49 @@ export const SelectionHighlightLayer: React.FC<
 
     if (geometry.type === "none") return;
 
-    // This logic assumes it receives CORRECT visual center coordinates from App.tsx
-    const renderPoints = (
-      points: any[],
-      type: "npc" | "object",
-      name: string,
-      override?: string
-    ) => {
-      points.forEach((point) => {
-        // Check against the visual representation of the default stored coordinate {lat: 0, lng: 0}
-        // This prevents rendering unplaced items at the map's offset origin.
+    // CHANGE: The generic `renderPoints` function has been removed.
+    // WHY: NPCs and Objects have different fallback rendering logic when an
+    // image fails to load. Handling them in separate blocks is cleaner and
+    // prevents applying object-specific styles (like custom colors) to NPCs.
+
+    if (geometry.type === "npc" && geometry.npcArray) {
+      geometry.npcArray.forEach((npc) => {
+        const point = npc.npcLocation;
         if (point.lat === -16.5 && point.lng === 16.5) return;
 
         const visualCenter = point;
         const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
+        const imageUrl = getImageUrl(npc.npcName, "npc", npc.chatheadOverride);
 
-        const imageUrl = getImageUrl(name, type, override);
         resizeImageToDataUrl(imageUrl, 40)
           .then((resizedDataUrl) => {
-            const icon =
-              type === "npc"
-                ? createChatheadIcon(resizedDataUrl)
-                : createObjectIcon(resizedDataUrl);
+            const icon = createChatheadIcon(resizedDataUrl);
             const marker = L.marker(
               [visualCenter.lat + 0.5, visualCenter.lng + 0.5],
-              {
-                icon,
-              }
-            ).bindPopup(`<b>${name}</b>`);
+              { icon }
+            ).bindPopup(`<b>${npc.npcName}</b>`);
             layerRef.current?.addLayer(marker);
           })
           .catch(() => {
-            const pointStyle = {
-              ...tileStyle,
-              color: point.color || "#00FF00",
-              fillColor: point.color || "#00FF00",
-            };
-            L.rectangle(tileBounds, pointStyle).addTo(layerRef.current!);
-
-            if (point.numberLabel) {
-              const labelIcon = L.divIcon({
-                className: "object-number-label",
-                html: `<div>${point.numberLabel}</div>`,
-                iconSize: [32, 32],
-                iconAnchor: [16, 16],
-              });
-              L.marker([visualCenter.lat, visualCenter.lng], {
-                icon: labelIcon,
-              }).addTo(layerRef.current!);
-            }
+            // NPC Fallback: Always draw a default green square.
+            L.rectangle(tileBounds, tileStyle).addTo(layerRef.current!);
           });
-      });
-    };
 
-    if (geometry.type === "npc" && geometry.npcArray) {
-      geometry.npcArray.forEach((npc) => {
-        renderPoints(
-          [npc.npcLocation],
-          "npc",
-          npc.npcName,
-          npc.chatheadOverride
-        );
+        // Wander radius logic (unchanged)
         if (
           npc.wanderRadius &&
           (npc.wanderRadius.bottomLeft.lat !== 0 ||
             npc.wanderRadius.topRight.lat !== 0)
         ) {
-          const topLeftVisualCenter = npc.wanderRadius.bottomLeft;
-
-          const bottomRightVisualCenter = npc.wanderRadius.topRight;
-
-          // The coordinates are already the final visual corners. Draw them directly.
           const bounds = L.latLngBounds(
-            [bottomRightVisualCenter.lat + 0.5, topLeftVisualCenter.lng + 0.5],
-            [topLeftVisualCenter.lat - 0.5, bottomRightVisualCenter.lng + 1.5]
+            [
+              npc.wanderRadius.topRight.lat + 0.5,
+              npc.wanderRadius.bottomLeft.lng + 0.5,
+            ],
+            [
+              npc.wanderRadius.bottomLeft.lat - 0.5,
+              npc.wanderRadius.topRight.lng + 1.5,
+            ]
           );
           L.rectangle(bounds, radiusStyle).addTo(layerRef.current!);
         }
@@ -222,19 +191,62 @@ export const SelectionHighlightLayer: React.FC<
 
     if (geometry.type === "object" && geometry.objectArray) {
       geometry.objectArray.forEach((obj) => {
-        renderPoints(obj.objectLocation, "object", obj.name, obj.imageOverride);
+        // Loop through each location for the object
+        obj.objectLocation.forEach((point) => {
+          if (point.lat === -16.5 && point.lng === 16.5) return;
+
+          const visualCenter = point;
+          const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
+          const imageUrl = getImageUrl(obj.name, "object", obj.imageOverride);
+
+          resizeImageToDataUrl(imageUrl, 40)
+            .then((resizedDataUrl) => {
+              const icon = createObjectIcon(resizedDataUrl);
+              const marker = L.marker(
+                [visualCenter.lat + 0.5, visualCenter.lng + 0.5],
+                { icon }
+              ).bindPopup(`<b>${obj.name}</b>`);
+              layerRef.current?.addLayer(marker);
+            })
+            .catch(() => {
+              // OBJECT Fallback: Use the custom color and number label.
+              // This is the logic that was missing and is now correctly applied.
+              const pointStyle = {
+                ...tileStyle,
+                color: point.color || "#00FF00",
+                fillColor: point.color || "#00FF00",
+              };
+              L.rectangle(tileBounds, pointStyle).addTo(layerRef.current!);
+
+              if (point.numberLabel) {
+                const labelIcon = L.divIcon({
+                  className: "object-number-label",
+                  html: `<div>${point.numberLabel}</div>`,
+                  iconSize: [32, 32],
+                  iconAnchor: [16, 16],
+                });
+                L.marker([visualCenter.lat + 0.5, visualCenter.lng + 0.5], {
+                  icon: labelIcon,
+                }).addTo(layerRef.current!);
+              }
+            });
+        });
+
+        // Object radius logic (unchanged)
         if (
           obj.objectRadius &&
           (obj.objectRadius.bottomLeft.lat !== 0 ||
             obj.objectRadius.topRight.lat !== 0)
         ) {
-          const topLeftVisualCenter = obj.objectRadius.bottomLeft;
-
-          const bottomRightVisualCenter = obj.objectRadius.topRight;
-
           const bounds = L.latLngBounds(
-            [bottomRightVisualCenter.lat + 0.5, topLeftVisualCenter.lng + 0.5],
-            [topLeftVisualCenter.lat - 0.5, bottomRightVisualCenter.lng + 1.5]
+            [
+              obj.objectRadius.topRight.lat + 0.5,
+              obj.objectRadius.bottomLeft.lng + 0.5,
+            ],
+            [
+              obj.objectRadius.bottomLeft.lat - 0.5,
+              obj.objectRadius.topRight.lng + 1.5,
+            ]
           );
           L.rectangle(bounds, radiusStyle).addTo(layerRef.current!);
         }

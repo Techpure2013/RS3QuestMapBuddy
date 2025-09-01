@@ -66,11 +66,22 @@ interface EditorPanelProps {
   onSaveChatheadOverridesAs: () => void;
   onSaveQuestImageListAs: () => void;
   isAlt1Environment: boolean;
+  clipboard: { type: string; data: any | null };
+  onCopyTarget: () => void;
+  onPasteTarget: () => void;
+  // ADD: New props for list copy/paste
+  onCopyTargetList: () => void;
+  onPasteTargetList: () => void;
 }
 
 export const EditorPanel = React.memo<EditorPanelProps>(
   ({
     children,
+    clipboard,
+    onCopyTarget,
+    onPasteTarget,
+    onCopyTargetList,
+    onPasteTargetList,
     questJson,
     isOpen,
     onResetRadius,
@@ -410,7 +421,44 @@ export const EditorPanel = React.memo<EditorPanelProps>(
               ))}
             </ul>
           </div>
-
+          <div className="control-group full-width-control">
+            <div className="button-group">
+              <button onClick={onCopyTargetList}>Copy List</button>
+              <button
+                onClick={onPasteTargetList}
+                disabled={!clipboard.type.endsWith("-list")}
+                title={
+                  !clipboard.type.endsWith("-list")
+                    ? "Clipboard does not contain a list"
+                    : "Replace current list with clipboard"
+                }
+              >
+                Paste List
+              </button>
+            </div>
+          </div>
+          <div className="control-group full-width-control">
+            <div className="button-group">
+              <button onClick={onCopyTarget}>Copy Selected</button>
+              <button
+                onClick={onPasteTarget}
+                disabled={
+                  clipboard.type === "none" ||
+                  clipboard.type.endsWith("-list") ||
+                  clipboard.type !== targetType
+                }
+                title={
+                  clipboard.type === "none"
+                    ? "Clipboard is empty"
+                    : clipboard.type !== targetType
+                    ? `Cannot paste ${clipboard.type} over ${targetType}`
+                    : "Paste from clipboard"
+                }
+              >
+                Paste Over Selected
+              </button>
+            </div>
+          </div>
           <div className="control-group full-width-control">
             <label>Name</label>
             <input
