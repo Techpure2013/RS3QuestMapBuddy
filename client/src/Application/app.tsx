@@ -524,7 +524,14 @@ const App: React.FC = () => {
         }
       }
 
-      const fileName = `${questJson.questName}_step_${currentStepNumber}_${newImageIndex}.webp`;
+      const fileName = `${questJson.questName
+        .normalize("NFKC")
+        .replace(" ", "")
+        .replace(" ", "")
+        .replace(" ", "")
+        .replace(" ", "")
+        .replace(" ", "")
+        .replace(":", "")}_step_${currentStepNumber}_${newImageIndex}.webp`;
       // --- END OF NEW LOGIC ---
 
       try {

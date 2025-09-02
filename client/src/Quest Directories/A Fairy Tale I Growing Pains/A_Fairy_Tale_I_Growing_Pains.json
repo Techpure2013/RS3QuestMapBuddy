@@ -1,8 +1,8 @@
 {
-  "questName": "A Fairy Tale I Growing Pains",
+  "questName": "A Fairy Tale I: Growing Pains",
   "questSteps": [
     {
-      "stepDescription": "Talk to Martin the Master Gardener in Draynor Village. (Chat 2\u20221\u2022\u2713\u20221)",
+      "stepDescription": "Talk to Martin the Master Gardener in Draynor Village. (Chat 2•1•✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -161,13 +161,8 @@
     },
     {
       "stepDescription": "Equip your Dramen Staff and head to the Lumbridge Swamp to enter the Lost City shed.",
-      "itemsNeeded": [
-        "Dramen Staff"
-      ],
-      "itemsRecommended": [
-        "Teleport to Lumbridge",
-        "Water Altar Teleport"
-      ],
+      "itemsNeeded": ["Dramen Staff"],
+      "itemsRecommended": ["Teleport to Lumbridge", "Water Altar Teleport"],
       "highlights": {
         "npc": [
           {
@@ -190,13 +185,14 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Zanaris Shed",
             "objectLocation": [
               {
                 "lat": 3169,
                 "lng": 3201,
-                "color": "#0b53f9",
-                "numberLabel": ""
+                "color": "#347d71",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -209,7 +205,7 @@
                 "lng": 3205
               }
             },
-            "color": "#0b53f9",
+            "color": "#347d71",
             "numberLabel": ""
           }
         ]
@@ -292,9 +288,7 @@
     },
     {
       "stepDescription": "Travel to The Dark Wizards' Tower (west of Falador).",
-      "itemsNeeded": [
-        "Combat Equipment"
-      ],
+      "itemsNeeded": ["Combat Equipment"],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -303,32 +297,11 @@
             "name": "The Dark Wizards' Tower",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
-              },
-              {
-                "lat": 3335,
-                "lng": 2906,
-                "color": "#8c00ff",
-                "numberLabel": ""
-              },
-              {
-                "lat": 3334,
-                "lng": 2907,
-                "color": "#8c00ff",
-                "numberLabel": ""
-              },
-              {
                 "lat": 3335,
                 "lng": 2907,
-                "color": "#8c00ff",
-                "numberLabel": ""
-              },
-              {
-                "lat": 3334,
-                "lng": 2906,
-                "color": "#8c00ff",
-                "numberLabel": ""
+                "color": "#438d86",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -340,7 +313,9 @@
                 "lat": 3340,
                 "lng": 2912
               }
-            }
+            },
+            "color": "#438d86",
+            "numberLabel": ""
           }
         ]
       },
@@ -406,9 +381,7 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [
-        "(Chat 1) if Swan Song has been completed."
-      ]
+      "additionalStepInformation": ["(Chat 1) if Swan Song has been completed."]
     },
     {
       "stepDescription": "Run around to the back, north, of Draynor Manor within the fenced area, and click the gravestone slightly west of the Gallows to dig up a skull.",
@@ -436,12 +409,8 @@
         ],
         "object": [
           {
-            "name": "",
+            "name": "Skull",
             "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              },
               {
                 "lat": 3384,
                 "lng": 3105,
@@ -466,7 +435,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Malignius. (Chat 2) or (Chat 1) if Swan Song has been started.",
+      "stepDescription": "Return to Malignius. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -507,95 +476,30 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Fetch the items that Malignius requested (they will be listed in your quest journal). Bring multiple of any edible item, or bring a filled druid pouch to ward off ghasts.",
-      "itemsNeeded": [
-        "Magic secateurs"
-      ],
-      "itemsRecommended": [
-        "Combat gear"
-      ],
-      "highlights": {
-        "npc": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "(Chat 1) if Swan Song has been started."
-      ]
-    },
-    {
-      "stepDescription": "Fetch the items that Malignius requested . Bring multiple of any edible item, or bring a filled druid pouch to ward off ghasts.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Malignius Mortifer",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "Tanglefoot",
-            "objectLocation": [],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "Make sure to clean any requested herbs.",
-        "Items will be listed in your quest journal."
-      ]
+      "additionalStepInformation": ["(Chat 1) if Swan Song has been started."]
     },
     {
       "stepDescription": "Talk to the Nature Spirit in Mort Myre Swamp to receive magic secateurs.",
-      "itemsNeeded": [
-        "secateurs"
-      ],
+      "itemsNeeded": ["secateurs"],
       "itemsRecommended": [
         "Teleport to Barrows or Burgh de Rott for quick access to Nature Grotto"
       ],
       "highlights": {
         "npc": [
           {
-            "npcName": "Fairy Godfather",
+            "npcName": "Nature Spirit",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 5338,
+              "lng": 2272
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5336,
+                "lng": 2270
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5340,
+                "lng": 2274
               }
             }
           }
@@ -613,7 +517,32 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Dungeon entrance map icon",
+            "objectLocation": [
+              {
+                "lat": 4380,
+                "lng": 2393,
+                "color": "#00FF00",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 4378,
+                "lng": 2392
+              },
+              "topRight": {
+                "lat": 4382,
+                "lng": 2394
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -624,7 +553,32 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Shady Grove Area",
+            "objectLocation": [
+              {
+                "lat": 4397,
+                "lng": 2326,
+                "color": "#4d8f79",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 4393,
+                "lng": 2322
+              },
+              "topRight": {
+                "lat": 4402,
+                "lng": 2330
+              }
+            },
+            "color": "#4d8f79",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -634,7 +588,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Tanglefoot",
+            "npcLocation": {
+              "lat": 4397,
+              "lng": 2326
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 4393,
+                "lng": 2322
+              },
+              "topRight": {
+                "lat": 4403,
+                "lng": 2330
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -646,7 +618,32 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Queen's secateurs",
+            "objectLocation": [
+              {
+                "lat": 4398,
+                "lng": 2327,
+                "color": "#4d8f79",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#4d8f79",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -656,7 +653,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Fairy Godfather",
+            "npcLocation": {
+              "lat": 4430,
+              "lng": 2443
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 4429,
+                "lng": 2441
+              },
+              "topRight": {
+                "lat": 4432,
+                "lng": 2444
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,

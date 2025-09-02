@@ -2130,7 +2130,80 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Drunk zombie",
+            "objectLocation": [
+              {
+                "lat": 5865,
+                "lng": 3032,
+                "color": "#09d2ec",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#09d2ec",
+            "numberLabel": ""
+          },
+          {
+            "name": "Drunk zombie",
+            "objectLocation": [
+              {
+                "lat": 5867,
+                "lng": 3040,
+                "color": "#09d2ec",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#09d2ec",
+            "numberLabel": ""
+          },
+          {
+            "name": "New Object",
+            "objectLocation": [
+              {
+                "lat": 5861,
+                "lng": 3031,
+                "color": "#09d2ec",
+                "numberLabel": "Notice",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Notice",
+            "color": "#09d2ec"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -2141,7 +2214,104 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Undead Arm",
+            "objectLocation": [
+              {
+                "lat": 5864,
+                "lng": 3045,
+                "color": "#09d2ec",
+                "numberLabel": "Undead Arm",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Undead Arm",
+            "color": "#09d2ec"
+          },
+          {
+            "name": "Undead Arm",
+            "objectLocation": [
+              {
+                "lat": 5867,
+                "lng": 3051,
+                "color": "#09d2ec",
+                "numberLabel": "Undead Arm",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Undead Arm",
+            "color": "#09d2ec"
+          },
+          {
+            "name": "Undead Arm",
+            "objectLocation": [
+              {
+                "lat": 5863,
+                "lng": 3051,
+                "color": "#09d2ec",
+                "numberLabel": "Undead Arm",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Undead Arm",
+            "color": "#09d2ec"
+          },
+          {
+            "name": "New Object",
+            "objectLocation": [
+              {
+                "lat": 5861,
+                "lng": 3046,
+                "color": "#1809ec",
+                "numberLabel": "Notice",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Notice",
+            "color": "#1809ec"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -2152,7 +2322,104 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Unfinished Barrelchest",
+            "objectLocation": [
+              {
+                "lat": 5847,
+                "lng": 3053,
+                "color": "#09ecc6",
+                "numberLabel": "Unf Barrelchest",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#09ecc6",
+            "numberLabel": "Unf Barrelchest"
+          },
+          {
+            "name": "Unfinished Barrelchest",
+            "objectLocation": [
+              {
+                "lat": 5847,
+                "lng": 3050,
+                "color": "#ec09e5",
+                "numberLabel": "Unf Barrelchest",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#09ecc6",
+            "numberLabel": "Unf Barrelchest"
+          },
+          {
+            "name": "Unfinished Barrelchest",
+            "objectLocation": [
+              {
+                "lat": 5847,
+                "lng": 3047,
+                "color": "#1809ec",
+                "numberLabel": "Unf Barrelchest",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Unf Barrelchest",
+            "color": "#ec09e5"
+          },
+          {
+            "name": "Noticeboard",
+            "objectLocation": [
+              {
+                "lat": 5852,
+                "lng": 3054,
+                "color": "#09ecc6",
+                "numberLabel": "Notice",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Notice",
+            "color": "#09ecc6"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -2174,7 +2441,32 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Signal Point",
+            "objectLocation": [
+              {
+                "lat": 5835,
+                "lng": 3013,
+                "color": "#097eec",
+                "numberLabel": "Notice",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 5834,
+                "lng": 3012
+              },
+              "topRight": {
+                "lat": 5837,
+                "lng": 3013
+              }
+            },
+            "color": "#097eec",
+            "numberLabel": "Notice"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -2186,18 +2478,18 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Bill Teach (Outside Bloodspatter Island)",
+            "npcName": "Bill Teach",
             "npcLocation": {
-              "lat": 5790,
-              "lng": 3039
+              "lat": 5787,
+              "lng": 3038
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 5788,
+                "lat": 5786,
                 "lng": 3037
               },
               "topRight": {
-                "lat": 5793,
+                "lat": 5787,
                 "lng": 3039
               }
             }
@@ -2205,7 +2497,7 @@
         ],
         "object": []
       },
-      "floor": 0,
+      "floor": 1,
       "additionalStepInformation": []
     },
     {
@@ -2213,25 +2505,7 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "Bill Teach (Basement of Harpoon Joe)",
-            "npcLocation": {
-              "lat": 9395,
-              "lng": 3667
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 9393,
-                "lng": 3666
-              },
-              "topRight": {
-                "lat": 9396,
-                "lng": 3668
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": []
       },
       "floor": 0,
@@ -2254,7 +2528,30 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Lever",
+            "objectLocation": [
+              {
+                "lat": 5851,
+                "lng": 3060,
+                "color": "#FFFFFF",
+                "numberLabel": "",
+                "isSearched": true
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -2265,29 +2562,116 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Conveyor Belt",
+            "objectLocation": [
+              {
+                "lat": 5854,
+                "lng": 3057,
+                "color": "#097eec",
+                "numberLabel": "Conveyor",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#097eec",
+            "numberLabel": "Conveyor"
+          },
+          {
+            "name": "Conveyor Belt",
+            "objectLocation": [
+              {
+                "lat": 5855,
+                "lng": 3059,
+                "color": "#097eec",
+                "numberLabel": "Conveyor",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#097eec",
+            "numberLabel": "Conveyor"
+          },
+          {
+            "name": "Conveyor Belt",
+            "objectLocation": [
+              {
+                "lat": 5856,
+                "lng": 3061,
+                "color": "#097eec",
+                "numberLabel": "Conveyor",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Conveyor",
+            "color": "#097eec"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Jump over the destroyed wall between the conveyor lines, and head east through the door opening to the docks.",
+      "stepDescription": "Jump over the destroyed wall between the conveyor lines, and head east through the door opening to the docks. Climb-down the ladder at the end of the dock.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Climb-down the ladder at the end of the dock.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Ladder",
+            "objectLocation": [
+              {
+                "lat": 5860,
+                "lng": 3088,
+                "color": "#097eec",
+                "numberLabel": "Conveyor",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#097eec",
+            "numberLabel": "Conveyor"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -2298,7 +2682,32 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Zomboat",
+            "objectLocation": [
+              {
+                "lat": 5864,
+                "lng": 3084,
+                "color": "#097eec",
+                "numberLabel": "Conveyor",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 5862,
+                "lng": 3083
+              },
+              "topRight": {
+                "lat": 5865,
+                "lng": 3086
+              }
+            },
+            "color": "#097eec",
+            "numberLabel": "Conveyor"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -2312,28 +2721,37 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Don't forget to repair your boat when it gets to about 25% health - it is not instant.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Don't forget to repair your boat when it gets to about 25% health - it is not instant."
+      ]
     },
     {
       "stepDescription": "After you sink all of the other boats, talk to Bill Teach on his ship.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Bill Teach",
+            "npcLocation": {
+              "lat": 5787,
+              "lng": 3038
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5786,
+                "lng": 3037
+              },
+              "topRight": {
+                "lat": 5787,
+                "lng": 3039
+              }
+            }
+          }
+        ],
         "object": []
       },
-      "floor": 0,
+      "floor": 1,
       "additionalStepInformation": []
     },
     {
@@ -2342,7 +2760,32 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Chair",
+            "objectLocation": [
+              {
+                "lat": 2995,
+                "lng": 3668,
+                "color": "#097eec",
+                "numberLabel": "Conveyor",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 2993,
+                "lng": 3666
+              },
+              "topRight": {
+                "lat": 2996,
+                "lng": 3668
+              }
+            },
+            "color": "#097eec",
+            "numberLabel": "Conveyor"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
