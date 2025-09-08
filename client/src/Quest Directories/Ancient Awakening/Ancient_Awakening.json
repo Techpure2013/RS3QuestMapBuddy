@@ -2,7 +2,7 @@
   "questName": "Ancient Awakening",
   "questSteps": [
     {
-      "stepDescription": "Talk to Overseer Siv in Fort Forinthry. (Chat 2\u2022\u2713\u2022~)",
+      "stepDescription": "Talk to Overseer Siv in Fort Forinthry. (Chat 2•✓•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -272,7 +272,7 @@
       ]
     },
     {
-      "stepDescription": "Read mysterious letter.",
+      "stepDescription": "Go back to Fort Forinthry, continue Ancient Awakening at the Town Hall.\nTalk to anyone in the Town Hall.\nLeave through the marker at the entrance to the Town Hall. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -301,12 +301,11 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        "Talk to anyone in the Town Hall.",
-        "Leave through the marker at the entrance to the Town Hall. (Chat 1)"
+        ""
       ]
     },
     {
-      "stepDescription": "Go back to Fort Forinthry, continue Ancient Awakening at the Town Hall.",
+      "stepDescription": "Go to the Grove east of the fort and interact with the rowboat to travel to Ungael. (Chat 1)",
       "itemsNeeded": [
         "Combat Gear",
         "Food",
@@ -345,7 +344,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to anyone in the Town Hall.",
+      "stepDescription": "Kill all of the attacking monsters.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -378,7 +377,7 @@
       ]
     },
     {
-      "stepDescription": "Leave through the Ancient Awakening at the entrance to the Town Hall. (Chat 1)",
+      "stepDescription": "Talk to the team and make your way north-east up the path.\nInteract with the Ruins Entrance.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -409,38 +408,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to the Grove east of the fort and interact with the rowboat to travel to Ungael. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Imposing Statue",
-            "objectLocation": [
-              {
-                "lat": 4066,
-                "lng": 2340
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 4065,
-                "lng": 2337
-              },
-              "topRight": {
-                "lat": 4068,
-                "lng": 2341
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Kill the zombie warriors.",
+      "stepDescription": "Go up the stairs to the west, interact with the tower entrance. (Chat 1) Watch the cutscene.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -477,7 +445,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to the team and make your way north-east up the path.",
+      "stepDescription": "Defeat 12 waves of Zemouregal's minions. After each wave of enemies, you have to activate necrotic energy and sometimes choose a power-up for one of your allies. Attached Images to step shows power ups and wave information.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -512,7 +480,7 @@
       ]
     },
     {
-      "stepDescription": "Interact with the Ruins Entrance.",
+      "stepDescription": "Talk to Aster. (Chat ~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -541,7 +509,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Inspect the Imposing Statue at the end of the path.",
+      "stepDescription": "Interact with the doorway to the south.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -572,7 +540,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go up the stairs to the west, interact with the tower entrance. (Chat 1)",
+      "stepDescription": "Walk west, then south, then interact with runic projector.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -603,18 +571,21 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Watch the cutscene.",
+      "stepDescription": "Collect three motes of energy by finding one by searching bookcase in the north. Searching ruined pillar in the south-west. Go north to catch the mote just outside the tower.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "Mote 1",
+            "name": "Mote of energy",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
+                "lat": 4044,
+                "lng": 2330,
+                "color": "#00FF00",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -626,14 +597,19 @@
                 "lat": 4045,
                 "lng": 2331
               }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           },
           {
-            "name": "Mote 2",
+            "name": "Mote of energy",
             "objectLocation": [
               {
                 "lat": 4034,
-                "lng": 2320
+                "lng": 2320,
+                "color": "#00FF00",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -645,38 +621,43 @@
                 "lat": 4035,
                 "lng": 2321
               }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           },
           {
-            "name": "Mote 3",
+            "name": "Mote of energy",
             "objectLocation": [
               {
-                "lat": 4035,
-                "lng": 2321
+                "lat": 4048,
+                "lng": 2327,
+                "color": "#00FF00",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 4035,
-                "lng": 2321
+                "lat": 4047,
+                "lng": 2326
               },
               "topRight": {
-                "lat": 4035,
-                "lng": 2321
+                "lat": 4049,
+                "lng": 2328
               }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           }
         ]
       },
       "floor": 0,
       "additionalStepInformation": [
-        "Searching bookcase in the north.",
-        "Searching ruined pillar in the southwest.",
-        "Go north to catch the mote just outside the tower."
+        ""
       ]
     },
     {
-      "stepDescription": "Face Zemouregal's minions (12 waves). After each wave of enemies, you have to activate necrotic energy and sometimes choose a power-up for one of your allies. The last wave is the undead giant. See the full guide for details on all waves and power-ups.",
+      "stepDescription": "Interact with the runic projector.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -707,7 +688,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Watch the cutscene.",
+      "stepDescription": "Listen to the archivist. (Chat ~•2•3•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -736,14 +717,14 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Aster. (Chat ~)",
+      "stepDescription": "Inspect the mysterious device to the south-east.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "Mysterious Device",
+            "name": "Mysterious device",
             "objectLocation": [
               {
                 "lat": 4033,
@@ -767,18 +748,21 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Interact with the doorway to the south.",
+      "stepDescription": "Return to Fort Forinthry and continue via the marker in front of the Town Hall and talk to anyone in the Town Hall.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "Fort Forinthry Town Hall ( Ancient Awakening )",
+            "name": "Continue icon",
             "objectLocation": [
               {
-                "lat": 3561,
-                "lng": 3302
+                "lat": 3562,
+                "lng": 3303,
+                "color": "#367870",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -787,127 +771,19 @@
                 "lng": 3301
               },
               "topRight": {
-                "lat": 3562,
+                "lat": 3563,
                 "lng": 3304
               }
-            }
+            },
+            "color": "#367870",
+            "numberLabel": ""
           }
         ]
       },
       "floor": 0,
       "additionalStepInformation": [
-        "Talk to anyone in the Town Hall."
+        ""
       ]
-    },
-    {
-      "stepDescription": "Walk west, then south, then interact with runic projector.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Collect three motes of energy from:",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Searching bookcase in the north.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Searching ruined pillar in the southwest.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Go north to catch the mote just outside the tower.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Interact with the runic projector.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Listen to the Archivist. (Chat ~\u20222\u20223\u20224\u20221)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Inspect the mysterious device to the south-east.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Return to Fort Forinthry and continue via the Ancient Awakening in front of the Town Hall.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to anyone in the Town Hall.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
     },
     {
       "stepDescription": "Quest Complete!!",

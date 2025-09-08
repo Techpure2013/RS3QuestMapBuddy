@@ -2,12 +2,12 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { MapContainer, TileLayer, useMapEvents } from "react-leaflet";
 import {
   parseWikiImageUrl,
-  resizeImageBlob,
+  processImageBlobToWebp,
 } from "Map Classes/Map Components/imageUtils";
 import "leaflet/dist/leaflet.css";
 import "./../Assets/CSS/index.css";
 import "./../Assets/CSS/leafless.css";
-import { LatLngBounds } from "leaflet";
+import { latLng, LatLngBounds } from "leaflet";
 import {
   bounds,
   gameMapOptions,
@@ -137,6 +137,13 @@ const App: React.FC = () => {
 
   // --- DERIVED VALUES ---
   const convertManualCoordToVisual = (coord: { lat: number; lng: number }) => {
+    if (
+      !coord ||
+      typeof coord.lat !== "number" ||
+      typeof coord.lng !== "number"
+    ) {
+      return undefined;
+    }
     const visualY = coord.lat - 0.5;
     const visualX = coord.lng + 0.5;
     return { lat: visualY, lng: visualX };
@@ -147,6 +154,13 @@ const App: React.FC = () => {
     lng: number;
   }) => {
     // Correction for searched points: -0.5 lat, -0.5 lng
+    if (
+      !coord ||
+      typeof coord.lat !== "number" ||
+      typeof coord.lng !== "number"
+    ) {
+      return undefined;
+    }
     const visualY = coord.lat - 0.5;
     const visualX = coord.lng - 0.5;
     return { lat: visualY, lng: visualX };
@@ -155,6 +169,13 @@ const App: React.FC = () => {
     lat: number;
     lng: number;
   }) => {
+    if (
+      !coord ||
+      typeof coord.lat !== "number" ||
+      typeof coord.lng !== "number"
+    ) {
+      return undefined;
+    }
     const visualY = coord.lat - 0.5;
     const visualX = coord.lng + 0.5;
     return { lat: visualY, lng: visualX };
@@ -166,23 +187,38 @@ const App: React.FC = () => {
 
     // This data is ALWAYS hand-placed, so we use the manual conversion.
     if (targetType === "npc") {
-      const convertedNpcs = (step.highlights?.npc || []).map((npc: any) => ({
-        ...npc,
-        npcLocation: convertManualCoordToVisual(npc.npcLocation),
-      }));
+      const convertedNpcs = (step.highlights?.npc || [])
+        .map((npc: any) => {
+          const visualLocation = convertManualCoordToVisual(npc.npcLocation);
+          if (!visualLocation) return null;
+          return { ...npc, npcLocation: visualLocation };
+        })
+        .filter(Boolean);
       return { type: "npc", npcArray: convertedNpcs };
     } else if (targetType === "object") {
       const convertedObjects = (step.highlights?.object || []).map(
-        (obj: any) => ({
-          ...obj,
-          objectLocation: (obj.objectLocation || []).map((loc: any) => ({
-            ...loc,
-            // Use the flag to decide which function to call
-            ...(loc.isSearched
-              ? convertSearchedObjectCoordToVisual(loc)
-              : convertManualCoordToVisual(loc)),
-          })),
-        })
+        (obj: any) => {
+          const validLocations = (obj.objectLocation || [])
+            .map((loc: any) => {
+              const conversionFn = loc.isSearched
+                ? convertSearchedObjectCoordToVisual
+                : convertManualCoordToVisual;
+              const visualCoords = conversionFn(loc);
+              if (!visualCoords) {
+                return null; // Mark for removal
+              }
+              return {
+                ...loc,
+                lat: visualCoords.lat,
+                lng: visualCoords.lng,
+              };
+            })
+            .filter(Boolean); // Remove null entries
+          return {
+            ...obj,
+            objectLocation: validLocations,
+          };
+        }
       );
       return { type: "object", objectArray: convertedObjects };
     }
@@ -483,11 +519,13 @@ const App: React.FC = () => {
       return;
     }
     try {
+      // CHANGE: Call the new function that conditionally resizes and converts to WebP.
       const {
-        blob: resizedBlob,
+        blob: processedBlob,
         width,
         height,
-      } = await resizeImageBlob(imageBlob, 512);
+      } = await processImageBlobToWebp(imageBlob);
+
       const stepDescription =
         questJson.questSteps[selectedStep]?.stepDescription;
       if (!stepDescription) {
@@ -495,35 +533,32 @@ const App: React.FC = () => {
         return;
       }
 
-      // --- NEW LOGIC: Determine the next unique filename ---
       const currentStepNumber = selectedStep + 1;
-      let newImageIndex = 1; // Default to 1 for the first image of a step
+      let newImageIndex = 1;
 
       const questImages = questImageList.find(
         (q) => q.name === questJson.questName
       );
 
       if (questImages) {
-        // Find all images for this specific step
         const imagesForThisStep = questImages.images.filter(
           (img) => img.step === currentStepNumber
         );
 
         if (imagesForThisStep.length > 0) {
-          // Find the highest existing suffix (e.g., from ..._1.webp, ..._2.webp)
           const maxSuffix = Math.max(
             0,
             ...imagesForThisStep.map((img) => {
-              // Use regex to extract the number suffix before the extension
-              const match = img.src.match(/_(\d+)\.webp$/);
+              // Look for either .webp or .png to be safe
+              const match = img.src.match(/_(\d+)\.(webp|png)$/);
               return match ? parseInt(match[1], 10) : 0;
             })
           );
-          // The new index is one higher than the max found
           newImageIndex = maxSuffix + 1;
         }
       }
 
+      // CHANGE: Ensure the file is saved with the .webp extension.
       const fileName = `${questJson.questName
         .normalize("NFKC")
         .replace(" ", "")
@@ -532,21 +567,20 @@ const App: React.FC = () => {
         .replace(" ", "")
         .replace(" ", "")
         .replace(":", "")}_step_${currentStepNumber}_${newImageIndex}.webp`;
-      // --- END OF NEW LOGIC ---
 
       try {
         const fileHandle = await imageDirectoryHandle.getFileHandle(fileName, {
           create: true,
         });
         const writable = await fileHandle.createWritable();
-        await writable.write(resizedBlob);
+        await writable.write(processedBlob);
         await writable.close();
       } catch (err) {
         console.error(
           "Direct image save failed, falling back to download:",
           err
         );
-        downloadBlob(resizedBlob, fileName);
+        downloadBlob(processedBlob, fileName);
       }
 
       const imagePath = `${fileName}`;
@@ -561,10 +595,8 @@ const App: React.FC = () => {
         };
 
         if (questEntry) {
-          // --- MODIFIED: Always add a new image, never replace ---
           questEntry.images.push(newImageObject);
         } else {
-          // This is a new quest, create its entry
           draft.push({
             name: questJson.questName,
             images: [newImageObject],

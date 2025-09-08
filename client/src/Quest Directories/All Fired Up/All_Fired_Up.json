@@ -2,7 +2,7 @@
   "questName": "All Fired Up",
   "questSteps": [
     {
-      "stepDescription": "Talk to King Roald in Varrock Palace. (Chat 3\u20221\u2022\u2713)",
+      "stepDescription": "Talk to King Roald in Varrock Palace. (Chat 3•1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -60,67 +60,37 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Location of the first beacon",
-      "itemsNeeded": [
-        "20 Regular Logs"
-      ],
+      "stepDescription": "Place the logs in the nearby beacon then light it.",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "Paterdomus Beacon",
+            "name": "Beacon",
             "objectLocation": [
               {
-                "lat": 3462,
-                "lng": 3396
-              },
-              {
                 "lat": 3461,
-                "lng": 3396
+                "lng": 3396,
+                "color": "#00FF00",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 3460,
-                "lng": 3395
+                "lat": 3459,
+                "lng": 3396
               },
               "topRight": {
-                "lat": 3463,
-                "lng": 3397
+                "lat": 3464,
+                "lng": 3403
               }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           }
         ]
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Place the logs in the nearby beacon then light it.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Blaze Sharpeye",
-            "npcLocation": {
-              "lat": 3469,
-              "lng": 3393
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3467,
-                "lng": 3393
-              },
-              "topRight": {
-                "lat": 3469,
-                "lng": 3396
-              }
-            }
-          }
-        ],
-        "object": []
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -128,30 +98,66 @@
     {
       "stepDescription": "Talk to Blaze Sharpeye again. (Chat 2)",
       "itemsNeeded": [
-        "20 regular logs"
+        ""
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Blaze Sharpeye",
+            "npcLocation": {
+              "lat": 3468,
+              "lng": 3394
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3467,
+                "lng": 3393
+              },
+              "topRight": {
+                "lat": 3469,
+                "lng": 3395
+              }
+            }
+          }
+        ],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": []
+    },
+    {
+      "stepDescription": "Chop 20 logs or buy them from the Grand Exchange and light the beacon north-west of the Odd Old Man with twenty logs of the same type.",
+      "itemsNeeded": [
+        "20 Logs of Same Type"
       ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "Odd Man Beacon",
+            "name": "Old man beacon",
             "objectLocation": [
               {
                 "lat": 3511,
-                "lng": 3343
+                "lng": 3343,
+                "color": "#00FF00",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 3510,
-                "lng": 3342
+                "lat": 3509,
+                "lng": 3341
               },
               "topRight": {
-                "lat": 3512,
-                "lng": 3344
+                "lat": 3513,
+                "lng": 3345
               }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           }
         ]
       },
@@ -159,7 +165,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Chop 20 logs on the way to Squire Fyre if you don't already have them.",
+      "stepDescription": "Go back and talk to Blaze again. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -188,46 +194,48 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Light the beacon west-north-west of the Odd Old Man with twenty logs of the same type.",
+      "stepDescription": "Add-logs to the beacon (requires 5 logs). (Chat 1)",
       "itemsNeeded": [
         "5 Logs"
       ],
       "itemsRecommended": [],
+      "additionalStepInformation": [],
       "highlights": {
-        "npc": [
+        "npc": [],
+        "object": [
           {
-            "name": "Paterdomus Beacon",
+            "name": "Beacon",
             "objectLocation": [
               {
-                "lat": 3462,
-                "lng": 3396
-              },
-              {
                 "lat": 3461,
-                "lng": 3396
+                "lng": 3396,
+                "color": "#00FF00",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
               "bottomLeft": {
                 "lat": 3460,
-                "lng": 3395
+                "lng": 3396
               },
               "topRight": {
-                "lat": 3463,
-                "lng": 3397
+                "lat": 3464,
+                "lng": 3403
               }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           }
-        ],
-        "object": []
+        ]
       },
-      "floor": 0,
-      "additionalStepInformation": []
+      "floor": 0
     },
     {
-      "stepDescription": "Location of Squire Fyre's beacon",
+      "stepDescription": "Talk to Blaze. (Chat ~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
+      "additionalStepInformation": [],
       "highlights": {
         "npc": [
           {
@@ -250,11 +258,10 @@
         ],
         "object": []
       },
-      "floor": 0,
-      "additionalStepInformation": []
+      "floor": 0
     },
     {
-      "stepDescription": "Go back to Blaze and talk to him. (Chat 1)",
+      "stepDescription": "Talk to King Roald. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -277,39 +284,6 @@
             }
           }
         ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Use five logs on the nearby beacon. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Blaze. (Chat ~)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to King Roald. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
         "object": []
       },
       "floor": 0,

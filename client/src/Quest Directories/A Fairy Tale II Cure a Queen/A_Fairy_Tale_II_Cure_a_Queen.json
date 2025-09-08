@@ -2,7 +2,7 @@
   "questName": "A Fairy Tale II Cure a Queen",
   "questSteps": [
     {
-      "stepDescription": "Talk to Martin the Master Gardener in the Draynor Market. (Chat 2\u2022\u2713)",
+      "stepDescription": "Talk to Martin the Master Gardener in the Draynor Market. (Chat 2•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -71,19 +71,24 @@
             "objectLocation": [
               {
                 "lat": 4466,
-                "lng": 2384
+                "lng": 2384,
+                "color": "#26896f",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 4465,
-                "lng": 2383
+                "lat": 4462,
+                "lng": 2378
               },
               "topRight": {
-                "lat": 4467,
-                "lng": 2385
+                "lat": 4474,
+                "lng": 2389
               }
-            }
+            },
+            "color": "#26896f",
+            "numberLabel": ""
           }
         ]
       },
@@ -98,7 +103,7 @@
         "npc": [],
         "object": [
           {
-            "name": "Fairy Nuffs House",
+            "name": "Healing_certificate_(1)",
             "objectLocation": [
               {
                 "lat": 4471,
@@ -139,7 +144,7 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Fairy Chef",
+            "npcName": "Fairy chef",
             "npcLocation": {
               "lat": 4440,
               "lng": 2381
@@ -162,14 +167,14 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Read the rune temple sign, on the ground south of the Cosmic Altar.\nTalk to the Fairy Godfather (located in the Throne Room) about the Queen being missing. (Chat 1\u20221\u20221)",
+      "stepDescription": "Read the rune temple sign, on the ground south of the Cosmic Altar.\nTalk to the Fairy Godfather (located in the Throne Room) about the Queen being missing. (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "Rune Temple Sign",
+            "name": "Rune_temple_sign",
             "objectLocation": [
               {
                 "lat": 4369,
@@ -199,7 +204,7 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Fairy Co-ordinator",
+            "npcName": "Co-ordinator",
             "npcLocation": {
               "lat": 4451,
               "lng": 2451
@@ -256,13 +261,38 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Fairy ring",
+            "objectLocation": [
+              {
+                "lat": 4434,
+                "lng": 2411,
+                "color": "#26896f",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 4432,
+                "lng": 2409
+              },
+              "topRight": {
+                "lat": 4436,
+                "lng": 2413
+              }
+            },
+            "color": "#26896f",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "In the Fairy Resistance Hideout, talk to Fairy Nuff and Fairy Very Wise in the northeastern clearing.\nGo back (via the fairy ring) and pickpocket the Fairy Godfather for the queen's secateurs (may take several attempts). The Fairy Godfather, Fat Rocco and Slim Louie may need to be looking the other way. (ie. Stand east of him and wait until he looks west and both his guards are looking north).",
+      "stepDescription": "In the Fairy Resistance Hideout, talk to Fairy Nuff and Fairy Very Wise in the northeastern clearing.\n",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -308,9 +338,12 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go back to the hideout with the fairy ring (\"Fairy Resistance HQ\").",
+      "stepDescription": "Go back (via the fairy ring) and pickpocket the Fairy Godfather for the queen's secateurs (may take several attempts). For a helpful hint look at Additional Info.",
       "itemsNeeded": [],
       "itemsRecommended": [],
+      "additionalStepInformation": [
+        "The Fairy Godfather, Fat Rocco and Slim Louie may need to be looking the other way. (ie. Stand east of him and wait until he looks west and both his guards are looking north)."
+      ],
       "highlights": {
         "npc": [
           {
@@ -331,11 +364,66 @@
             }
           }
         ],
-        "object": []
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0
+    },
+    {
+      "stepDescription": "Go back to the hideout with the fairy ring (\"Fairy Resistance HQ\").",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": [
+          {
+            "name": "Fairy ring",
+            "objectLocation": [
+              {
+                "lat": 4434,
+                "lng": 2411,
+                "color": "#26896f",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 4432,
+                "lng": 2409
+              },
+              "topRight": {
+                "lat": 4436,
+                "lng": 2413
+              }
+            },
+            "color": "#26896f",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": [
-        " The Fairy Godfather, Fat Rocco and Slim Louie may need to be looking the other way. (ie. Stand east of him and wait until he looks west and both his guards are looking north)."
+        ""
       ]
     },
     {
@@ -375,7 +463,7 @@
         "npc": [],
         "object": [
           {
-            "name": "Fairy Headquarters Fairy Ring",
+            "name": "Fairy ring",
             "objectLocation": [
               {
                 "lat": 4426,
@@ -399,14 +487,17 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Wait 2 minutes and pick a starflower.",
-      "itemsNeeded": [],
+      "stepDescription": "Wait 2 minutes and pick a starflower then use it on a vial of water for a magic essence (unf) potion.",
+      "itemsNeeded": [
+        "Vial of Water",
+        "Nuffs Certificate"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "Starflower",
+            "name": "Star Flower",
             "objectLocation": [
               {
                 "lat": 4840,
@@ -430,7 +521,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Make sure you have armour required to fight one or multiple Goraks.",
+      "stepDescription": "Go back to a fairy ring and use the code DIR. Make sure you have armour required to fight one or multiple Goraks to get a Gorak Claw. Once obtained use it on the magic essence (unf) potion for a Magic Essence Potion. ",
       "itemsNeeded": [
         "Combat Gear",
         "Food"
@@ -442,7 +533,7 @@
         "npc": [],
         "object": [
           {
-            "name": "Gorak 1 (Gorak Plane)",
+            "name": "Gorak",
             "objectLocation": [
               {
                 "lat": 5350,
@@ -461,26 +552,7 @@
             }
           },
           {
-            "name": "Gorak 2 (Gorak Plane)",
-            "objectLocation": [
-              {
-                "lat": 5347,
-                "lng": 3032
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 5346,
-                "lng": 3031
-              },
-              "topRight": {
-                "lat": 5348,
-                "lng": 3033
-              }
-            }
-          },
-          {
-            "name": "Gorak 3 (Gorak Plane)",
+            "name": "Gorak",
             "objectLocation": [
               {
                 "lat": 5345,
@@ -499,7 +571,7 @@
             }
           },
           {
-            "name": "Gorak 4 (Gorak Plane)",
+            "name": "Gorak",
             "objectLocation": [
               {
                 "lat": 5344,
@@ -518,7 +590,7 @@
             }
           },
           {
-            "name": "Gorak 5 (Gorak Plane)",
+            "name": "Gorak",
             "objectLocation": [
               {
                 "lat": 5347,
@@ -537,7 +609,7 @@
             }
           },
           {
-            "name": "Gorak 6 (Gorak Plane)",
+            "name": "Gorak",
             "objectLocation": [
               {
                 "lat": 5350,
@@ -556,7 +628,7 @@
             }
           },
           {
-            "name": "Gorak 7 (Gorak Plane)",
+            "name": "Gorak",
             "objectLocation": [
               {
                 "lat": 5347,
@@ -575,26 +647,7 @@
             }
           },
           {
-            "name": "Gorak 8 (Gorak Plane)",
-            "objectLocation": [
-              {
-                "lat": 5362,
-                "lng": 3037
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 5361,
-                "lng": 3036
-              },
-              "topRight": {
-                "lat": 5363,
-                "lng": 3038
-              }
-            }
-          },
-          {
-            "name": "Gorak 9 (Gorak Plane)",
+            "name": "Gorak",
             "objectLocation": [
               {
                 "lat": 5362,
@@ -613,26 +666,7 @@
             }
           },
           {
-            "name": "Gorak 10 (Gorak Plane)",
-            "objectLocation": [
-              {
-                "lat": 5349,
-                "lng": 3034
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          },
-          {
-            "name": "Gorak 11 (Gorak Plane)",
+            "name": "Gorak",
             "objectLocation": [
               {
                 "lat": 5353,
@@ -651,23 +685,28 @@
             }
           },
           {
-            "name": "Gorak 12 (Gorak Plane)",
+            "name": "Gorak",
             "objectLocation": [
               {
-                "lat": 5349,
-                "lng": 3034
+                "lat": 5343,
+                "lng": 3032,
+                "color": "#26896f",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5342,
+                "lng": 3031
               },
               "topRight": {
-                "lat": 0,
-                "lng": 0
+                "lat": 5344,
+                "lng": 3033
               }
-            }
+            },
+            "color": "#26896f",
+            "numberLabel": ""
           }
         ]
       },
@@ -678,154 +717,64 @@
       ]
     },
     {
-      "stepDescription": "Go back to a fairy ring and use the code DIR.",
-      "itemsNeeded": [
-        "Starflower",
-        "Vial of Water"
-      ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Kill Goraks until you get Gorak claws.",
-      "itemsNeeded": [
-        "Gorak Powder",
-        "Unf Potion"
-      ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Grind the gorak claw.",
-      "itemsNeeded": [
-        "Nuff's certificate"
-      ],
+      "stepDescription": "Go back to the Resistance Hideout by equipping your Dramen staff and go to each of these codes in this order to reach the hideout: AIR, DLR, DJQ (right-click fairy ring to \"select Destination\" for quicker travel), AJS",
+      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "Fairy Headquarters Fairy Ring",
+            "name": "Fairy ring",
             "objectLocation": [
               {
-                "lat": 4426,
-                "lng": 2253
+                "lat": 5348,
+                "lng": 3037,
+                "color": "#26896f",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
               "bottomLeft": {
-                "lat": 4425,
-                "lng": 2252
+                "lat": 5347,
+                "lng": 3036
               },
               "topRight": {
-                "lat": 4427,
-                "lng": 2254
+                "lat": 5349,
+                "lng": 3038
               }
-            }
+            },
+            "color": "#26896f",
+            "numberLabel": ""
           }
         ]
       },
       "floor": 0,
       "additionalStepInformation": [
-        "You still need to have Nuff's certificate in your inventory for it to work.",
-        "by selecting the \"Fairy Resistance HQ\" option 4 times in the travel log."
+        "by selecting the \"Fairy Resistance HQ\" option 4 times in the travel log. You still need to have Nuff's certificate in your inventory for it to work."
       ]
     },
     {
-      "stepDescription": "Use the starflower on the vial of water.",
-      "itemsNeeded": [],
+      "stepDescription": "Talk to Fairy Nuff before giving the queen the magic essence or it wont work.",
+      "itemsNeeded": [
+        "Magic Essence Potion"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
             "npcName": "Fairy Nuff",
             "npcLocation": {
-              "lat": 4457,
-              "lng": 2280
+              "lat": 4456,
+              "lng": 2281
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 4456,
+                "lat": 4454,
                 "lng": 2279
               },
               "topRight": {
                 "lat": 4458,
-                "lng": 2281
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Use the Gorak claw powder on the Magic essence (unf).",
-      "itemsNeeded": [
-        "Magic Esssence Potion"
-      ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Stretcher Fairy HQ",
-            "objectLocation": [
-              {
-                "lat": 4453,
-                "lng": 2281
-              },
-              {
-                "lat": 4452,
-                "lng": 2281
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 4451,
-                "lng": 2281
-              },
-              "topRight": {
-                "lat": 4453,
-                "lng": 2282
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Go back to the Resistance Hideout by equipping your Dramen staff and go to each of these codes in this order to reach the hideout: AIR, DLR, DJQ (right-click fairy ring to \"select Destination\" for quicker travel), and finally AJS or by selecting the \"Fairy Resistance HQ\" option 4 times in the travel log. You still need to have Nuff's certificate in your inventory for it to work.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Fairy Queen",
-            "npcLocation": {
-              "lat": 4454,
-              "lng": 2282
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 4453,
-                "lng": 2281
-              },
-              "topRight": {
-                "lat": 4455,
                 "lng": 2283
               }
             }
@@ -837,22 +786,29 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Fairy Nuff before giving the queen the magic essence or it wont work.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "At the Resistance Hideout, right-click use the magic essence on the queen, laying on the stretcher near Fairy Nuff.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Fairy Queen",
+            "npcLocation": {
+              "lat": 4453,
+              "lng": 2281
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 4452,
+                "lng": 2280
+              },
+              "topRight": {
+                "lat": 4454,
+                "lng": 2282
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -863,7 +819,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Fairy Queen",
+            "npcLocation": {
+              "lat": 4454,
+              "lng": 2280
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 4453,
+                "lng": 2279
+              },
+              "topRight": {
+                "lat": 4455,
+                "lng": 2281
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,

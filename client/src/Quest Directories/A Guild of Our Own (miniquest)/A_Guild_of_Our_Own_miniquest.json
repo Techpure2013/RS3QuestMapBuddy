@@ -2,7 +2,7 @@
   "questName": "A Guild of Our Own (miniquest)",
   "questSteps": [
     {
-      "stepDescription": "Talk to Darren Lightfinger just inside of the Thieves' Guild in Lumbridge. (Chat \u2713)",
+      "stepDescription": "Talk to Darren Lightfinger just inside of the Thieves' Guild in Lumbridge. (Chat ✓)",
       "itemsNeeded": [
         "Onion",
         "Irit Potion(unf)",
@@ -155,7 +155,10 @@
     },
     {
       "stepDescription": "If it does not work, talk to Darren Lightfinger about a disguise, and then talk to Robin again.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Lockpick",
+        "Black Jack"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
@@ -180,41 +183,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Make sure to bring your lockpick.",
-      "itemsNeeded": [
-        "Lockpick",
-        "Blackjack"
-      ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Building South East Ardougne",
-            "objectLocation": [
-              {
-                "lat": 3289,
-                "lng": 2678
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 3287,
-                "lng": 2677
-              },
-              "topRight": {
-                "lat": 3293,
-                "lng": 2681
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Bring a lockpick and a Black Jack for the upcoming steps."
+      ]
     },
     {
       "stepDescription": "In a building south-east of Ardougne market, pickpocket the Registrar for a key.",

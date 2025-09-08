@@ -1,18 +1,18 @@
 /**
- * Resizes an image from a Blob, converts it to WebP, and returns a new Blob.
+ * Processes an image from a Blob, conditionally resizes it if it's too large,
+ * and converts it to a high-quality WebP Blob.
  * @param imageBlob The image Blob to process.
- * @param maxSize The maximum width or height of the resized image.
- * @returns A promise that resolves with the resized WebP Blob, original width, and original height.
+ * @returns A promise that resolves with the WebP Blob, original width, and original height.
  */
-export const resizeImageBlob = (
-  imageBlob: Blob,
-  maxSize: number
+export const processImageBlobToWebp = (
+  imageBlob: Blob
 ): Promise<{ blob: Blob; width: number; height: number }> => {
   const objectUrl = URL.createObjectURL(imageBlob);
-  // Reuse the existing resize logic, but revoke the object URL after
-  return resizeImage(objectUrl, maxSize).finally(() =>
-    URL.revokeObjectURL(objectUrl)
-  );
+  // Use the new processing logic and revoke the object URL after
+  return processAndConvertToWebp(objectUrl, {
+    maxWidth: 1500,
+    maxHeight: 1000,
+  }).finally(() => URL.revokeObjectURL(objectUrl));
 };
 
 // src/utils/imageUtils.ts
@@ -69,14 +69,15 @@ export const parseWikiImageUrl = (url: string): string => {
 };
 
 /**
- * Fetches an image, resizes it, and converts it to a WebP Blob.
+ * Fetches an image, resizes it only if it exceeds max dimensions,
+ * and converts it to a high-quality WebP Blob.
  * @param imageUrl The URL of the image to process.
- * @param maxSize The maximum width or height of the resized image.
+ * @param options An object with maxWidth and maxHeight.
  * @returns A promise that resolves with the image Blob, original width, and original height.
  */
-export const resizeImage = (
+export const processAndConvertToWebp = (
   imageUrl: string,
-  maxSize: number
+  options: { maxWidth: number; maxHeight: number }
 ): Promise<{ blob: Blob; width: number; height: number }> => {
   return new Promise((resolve, reject) => {
     const img = new Image();
@@ -93,33 +94,34 @@ export const resizeImage = (
       const originalWidth = img.width;
       const originalHeight = img.height;
 
-      let width = originalWidth;
-      let height = originalHeight;
+      let drawWidth = originalWidth;
+      let drawHeight = originalHeight;
 
-      // Maintain aspect ratio
-      if (width > height) {
-        if (width > maxSize) {
-          height *= maxSize / width;
-          width = maxSize;
-        }
-      } else {
-        if (height > maxSize) {
-          width *= maxSize / height;
-          height = maxSize;
-        }
+      // Check if the image exceeds the maximum dimensions
+      if (
+        originalWidth > options.maxWidth ||
+        originalHeight > options.maxHeight
+      ) {
+        const widthRatio = options.maxWidth / originalWidth;
+        const heightRatio = options.maxHeight / originalHeight;
+        // Use the smaller ratio to ensure the image fits within both dimensions
+        const scaleRatio = Math.min(widthRatio, heightRatio);
+
+        drawWidth = originalWidth * scaleRatio;
+        drawHeight = originalHeight * scaleRatio;
       }
 
-      canvas.width = width;
-      canvas.height = height;
-      ctx.drawImage(img, 0, 0, width, height);
+      canvas.width = drawWidth;
+      canvas.height = drawHeight;
+      ctx.drawImage(img, 0, 0, drawWidth, drawHeight);
 
-      // Convert canvas to a .webp Blob
+      // Convert canvas to a .webp Blob at maximum quality
       canvas.toBlob(
         (blob) => {
           if (blob) {
             resolve({
               blob,
-              width: originalWidth,
+              width: originalWidth, // Still report original dimensions
               height: originalHeight,
             });
           } else {
@@ -127,13 +129,13 @@ export const resizeImage = (
           }
         },
         "image/webp",
-        0.9 // Quality setting for WebP
+        1.0 // Use maximum quality for WebP
       );
     };
 
     img.onerror = (err) => {
-      console.error("Failed to load image for resizing:", imageUrl, err);
-      reject(new Error("Failed to load image for resizing"));
+      console.error("Failed to load image for processing:", imageUrl, err);
+      reject(new Error("Failed to load image for processing"));
     };
 
     // Use the parsed URL

@@ -2,13 +2,13 @@
   "questName": "A Void Dance",
   "questSteps": [
     {
-      "stepDescription": "Speak with Commodore Tyr at the Void Knights' Outpost. (Chat \u2713\u20221\u20221\u20222\u20223)",
+      "stepDescription": "Speak with Commodore Tyr at the Void Knights' Outpost. (Chat ✓•1•1•2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Commodore Tyr",
+            "npcName": "Tyr",
             "npcLocation": {
               "lat": 2666,
               "lng": 2673
@@ -37,7 +37,7 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Captain Korasi",
+            "npcName": "Korasi",
             "npcLocation": {
               "lat": 2666,
               "lng": 2671
@@ -60,13 +60,13 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "The path to take during this part of the quest.",
+      "stepDescription": "Head to the Port Sarim docks and speak to Korasi. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Korasi (Port Sarim)",
+            "npcName": "Korasi",
             "npcLocation": {
               "lat": 3206,
               "lng": 3028
@@ -89,7 +89,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "The barrels should be kicked into the positions as shown.",
+      "stepDescription": "Right-click talk to Captain Tobias (in the blue sailor outfit), just north of Korasi. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -118,7 +118,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head to the Port Sarim docks and speak to Korasi. (Chat 2)",
+      "stepDescription": "Speak with Gerrant in the fishing shop. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -144,17 +144,19 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "if Heroes' Quest is complete (Chat 2)"
+      ]
     },
     {
-      "stepDescription": "Right-click talk to Captain Tobias (in the blue sailor outfit), just north of Korasi. (Chat 2)",
+      "stepDescription": "Follow the path pictured right, searching the bushes, plants, and stones. Finally check the mound.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "First Location ( Plant )",
+            "name": "Plant",
             "objectLocation": [
               {
                 "lat": 3226,
@@ -173,7 +175,7 @@
             }
           },
           {
-            "name": "Second Location ( Rocks )",
+            "name": "Rocks",
             "objectLocation": [
               {
                 "lat": 3238,
@@ -192,7 +194,7 @@
             }
           },
           {
-            "name": "Third Location ( Plant )",
+            "name": "Plant",
             "objectLocation": [
               {
                 "lat": 3247,
@@ -211,7 +213,7 @@
             }
           },
           {
-            "name": "Fourth Location ( Bush )",
+            "name": "Bush",
             "objectLocation": [
               {
                 "lat": 3255,
@@ -230,7 +232,7 @@
             }
           },
           {
-            "name": "Fifth Location ( Rocks )",
+            "name": "Rocks",
             "objectLocation": [
               {
                 "lat": 3264,
@@ -249,7 +251,7 @@
             }
           },
           {
-            "name": "Sixth Location ( Plant )",
+            "name": "Plant",
             "objectLocation": [
               {
                 "lat": 3267,
@@ -268,7 +270,7 @@
             }
           },
           {
-            "name": "Seventh Location ( Bush )",
+            "name": "Bush",
             "objectLocation": [
               {
                 "lat": 3266,
@@ -287,7 +289,7 @@
             }
           },
           {
-            "name": "Eighth Location ( Mound )",
+            "name": "Mound (A Void Dance)",
             "objectLocation": [
               {
                 "lat": 3260,
@@ -311,7 +313,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Speak with Gerrant in the fishing shop. (Chat 1)",
+      "stepDescription": "Return to Captain Korasi at the docks. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -340,7 +342,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Or, if Heroes' Quest is complete (Chat 2)",
+      "stepDescription": "Talk to the Bartender in Port Sarim's pub.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -369,7 +371,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Follow the path pictured right, searching the bushes, plants, and stones.",
+      "stepDescription": "Search the piles of junk on the floor for a key.\nGo down the trapdoor in the north-west corner of the pub.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -380,7 +382,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Finally check the mound.",
+      "stepDescription": "Inspect the suspicious-looking wall on the north side wall.\nOpen the door to the room south.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -411,29 +413,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Captain Korasi at the docks. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to the Bartender in Port Sarim's pub.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Search the piles of junk on the floor for a key.",
+      "stepDescription": "Complete the puzzle using the steps in Additional Info.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -442,8 +422,9 @@
       },
       "floor": 0,
       "additionalStepInformation": [
+        "",
         "Kick the barrel south of you twice (Barrel #1)",
-        "Walk 1 east, kick the barrel south of you (Barrel #2)",
+        "Walk 1 south, then 1 east, kick the barrel south of you (Barrel #2)",
         "Walk 1 south, kick the barrel west of you (Barrel #1)",
         "Walk 1 west, kick the barrel south of you (Barrel #3)",
         "Walk 1 south-west, kick the barrel west of you (Barrel #8)",
@@ -456,35 +437,26 @@
         "Kick the south-westernmost barrel south (Barrel #15)",
         "Kick the southernmost center barrel to the east twice (Barrel #10)",
         "Walk 1 east and 2 north, kick the barrel north twice (Barrel #4)",
-        "Walk 1 north and 1 north-west and kick the barrel east (Barrel #4)"
+        "Walk 1 north and 1 north-west and kick the barrel east (Barrel #4)",
+        "Walk to the east side of the southern middle barrel, kick it west, then kick it north twice from the south side. (Barrel #9)",
+        "Refer to image pictured right to move the empty barrel out."
       ]
     },
     {
-      "stepDescription": "Go down the trapdoor in the north-west corner of the pub.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Inspect the suspicious-looking wall on the north side wall.",
+      "stepDescription": "After completing the puzzle, leave the room.\nSpeak with the Bartender again. (Chat ~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Bartender",
+            "npcName": "Bartender (Rusty Anchor)",
             "npcLocation": {
               "lat": 3257,
               "lng": 3044
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3256,
+                "lat": 3255,
                 "lng": 3043
               },
               "topRight": {
@@ -500,13 +472,13 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Open the door to the room south.",
+      "stepDescription": "Speak to Korasi on the dock. (Chat 3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Korasi (Port Sarim)",
+            "npcName": "Korasi",
             "npcLocation": {
               "lat": 3206,
               "lng": 3028
@@ -518,7 +490,7 @@
               },
               "topRight": {
                 "lat": 3207,
-                "lng": 3028
+                "lng": 3029
               }
             }
           }
@@ -526,57 +498,30 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Complete the puzzle (follow the steps below, or alternatively, use the image on the right to position the barrels in order to push out the barrow along the red-line path):",
+      "stepDescription": "Travel to Musa Point by paying Captain Tobias, just north of Korasi.\nSpeak with Zembo in the pub. (Chat 3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Captain Tobias",
+            "npcName": "Zembo",
             "npcLocation": {
-              "lat": 3217,
-              "lng": 3025
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3216,
-                "lng": 3024
-              },
-              "topRight": {
-                "lat": 3218,
-                "lng": 3026
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Kick the barrel south of you twice (Barrel #1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Zambo",
-            "npcLocation": {
-              "lat": 3145,
-              "lng": 2924
+              "lat": 3143,
+              "lng": 2923
             },
             "wanderRadius": {
               "bottomLeft": {
                 "lat": 3142,
-                "lng": 2917
+                "lng": 2922
               },
               "topRight": {
-                "lat": 3147,
-                "lng": 2929
+                "lat": 3144,
+                "lng": 2928
               }
             }
           }
@@ -587,25 +532,25 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Walk 1 east, kick the barrel south of you (Barrel #2)",
+      "stepDescription": "Speak with Shopkeeper Kofi in the general store directly west of the pub.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Kofi",
+            "npcName": "Shopkeeper_Kofi",
             "npcLocation": {
-              "lat": 3150,
-              "lng": 2903
+              "lat": 3148,
+              "lng": 2904
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3144,
-                "lng": 2900
+                "lat": 3145,
+                "lng": 2901
               },
               "topRight": {
-                "lat": 3152,
-                "lng": 2904
+                "lat": 3151,
+                "lng": 2907
               }
             }
           }
@@ -616,18 +561,21 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Walk 1 south, kick the barrel west of you (Barrel #1)",
+      "stepDescription": "Take-from the table in the south-west corner of the shop. Use the chisel on the plank to make a jointed plank and a jointed log. Use the jointed plank on the jointed log to make a joist.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "Kofi's Table",
+            "name": "Kofi Table",
             "objectLocation": [
               {
                 "lat": 3144,
-                "lng": 2900
+                "lng": 2900,
+                "color": "#00FF00",
+                "numberLabel": "",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -639,40 +587,9 @@
                 "lat": 3145,
                 "lng": 2901
               }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "Use the chisel on the plank and then the jointed plank on the jointed log."
-      ]
-    },
-    {
-      "stepDescription": "Walk 1 west, kick the barrel south of you (Barrel #3)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Kofi's Shop Joint",
-            "objectLocation": [
-              {
-                "lat": 3152,
-                "lng": 2900
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 3151,
-                "lng": 2899
-              },
-              "topRight": {
-                "lat": 3153,
-                "lng": 2901
-              }
-            }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
           }
         ]
       },
@@ -680,25 +597,63 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Walk 1 south-west, kick the barrel west of you (Barrel #8)",
+      "stepDescription": "Use the joist on the Shop wall on the north end of the shop.\n",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": [
+          {
+            "name": "Shop Section",
+            "objectLocation": [
+              {
+                "lat": 3152,
+                "lng": 2900,
+                "color": "#00FF00",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3151,
+                "lng": 2900
+              },
+              "topRight": {
+                "lat": 3152,
+                "lng": 2901
+              }
+            },
+            "color": "#00FF00",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        ""
+      ]
+    },
+    {
+      "stepDescription": "Talk to Kofi for a cutscene.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Kofi",
+            "npcName": "Shopkeeper_Kofi",
             "npcLocation": {
-              "lat": 3150,
-              "lng": 2903
+              "lat": 3149,
+              "lng": 2904
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3144,
-                "lng": 2900
+                "lat": 3146,
+                "lng": 2901
               },
               "topRight": {
                 "lat": 3152,
-                "lng": 2904
+                "lng": 2907
               }
             }
           }
@@ -709,18 +664,21 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Walk 1 north-west, kick the barrel east of you twice (Barrel #1)",
+      "stepDescription": "Follow the trail just like the one at Port Sarim.\nAfter Korasi and Jessika appear, search the mound again to get wood shards.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": [
           {
-            "name": "1st Location ( Karamja )",
+            "name": "Shrub",
             "objectLocation": [
               {
                 "lat": 3160,
-                "lng": 2884
+                "lng": 2884,
+                "color": "#00FF00",
+                "numberLabel": "Shrub",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -732,14 +690,19 @@
                 "lat": 3161,
                 "lng": 2885
               }
-            }
+            },
+            "numberLabel": "Shrub",
+            "color": "#00FF00"
           },
           {
-            "name": "2nd Location ( Karamja )",
+            "name": "Shrub",
             "objectLocation": [
               {
                 "lat": 3167,
-                "lng": 2893
+                "lng": 2893,
+                "color": "#00FF00",
+                "numberLabel": "Shrub",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -751,14 +714,19 @@
                 "lat": 3168,
                 "lng": 2894
               }
-            }
+            },
+            "numberLabel": "Shrub",
+            "color": "#00FF00"
           },
           {
-            "name": "3rd Location ( Karamja )",
+            "name": "Succulent",
             "objectLocation": [
               {
                 "lat": 3161,
-                "lng": 2894
+                "lng": 2894,
+                "color": "#00FF00",
+                "numberLabel": "Succulent",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -770,14 +738,19 @@
                 "lat": 3162,
                 "lng": 2895
               }
-            }
+            },
+            "numberLabel": "Succulent",
+            "color": "#00FF00"
           },
           {
-            "name": "4th Location ( Karamja )",
+            "name": "Shrub",
             "objectLocation": [
               {
                 "lat": 3163,
-                "lng": 2903
+                "lng": 2903,
+                "color": "#00FF00",
+                "numberLabel": "Shrub",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -789,14 +762,19 @@
                 "lat": 3164,
                 "lng": 2903
               }
-            }
+            },
+            "numberLabel": "Shrub",
+            "color": "#00FF00"
           },
           {
-            "name": "5th Location ( Karamja )",
+            "name": "Log ",
             "objectLocation": [
               {
                 "lat": 3160,
-                "lng": 2908
+                "lng": 2908,
+                "color": "#00FF00",
+                "numberLabel": "Log",
+                "isSearched": false
               }
             ],
             "objectRadius": {
@@ -808,10 +786,12 @@
                 "lat": 3161,
                 "lng": 2908
               }
-            }
+            },
+            "numberLabel": "Log",
+            "color": "#00FF00"
           },
           {
-            "name": "Mound Location ( Karamja )",
+            "name": "Mound (A Void Dance)",
             "objectLocation": [
               {
                 "lat": 3156,
@@ -835,41 +815,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Walk 1 north-west, kick the barrel north of you (Barrel #7)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Mound Location ( Karamja )",
-            "objectLocation": [
-              {
-                "lat": 3156,
-                "lng": 2908
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 3156,
-                "lng": 2907
-              },
-              "topRight": {
-                "lat": 3157,
-                "lng": 2909
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "Finish dialogue with them. (Chat 3)",
-        ""
-      ]
-    },
-    {
-      "stepDescription": "Walk 1 north, kick the barrel west of you twice (Barrel #12)",
+      "stepDescription": "Finish dialogue with them. (Chat 3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -880,16 +826,16 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Walk 1 west, kick the barrel south of you thrice (Barrel #13)",
+      "stepDescription": "With at least 16 free inventory spaces, head to Rimmington. Ask Rommik in the crafting shop about the waxwood. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Rommik",
+            "npcName": "New NPC",
             "npcLocation": {
-              "lat": 3196,
-              "lng": 2944
+              "lat": 0,
+              "lng": 0
             },
             "wanderRadius": {
               "bottomLeft": {
@@ -898,7 +844,7 @@
               },
               "topRight": {
                 "lat": 3199,
-                "lng": 2949
+                "lng": 2946
               }
             }
           }
@@ -906,18 +852,63 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [
-        "Go to western-most building in Rimmington (Chemists's House, long with a green Taskmaster asterisk in it)."
-      ]
+      "additionalStepInformation": []
     },
     {
-      "stepDescription": "Walk 1 west, kick the barrel south of you (Barrel #14)",
+      "stepDescription": "Speak with Zambo in the pub. (Chat 3)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": []
+    },
+    {
+      "stepDescription": "Go to westernmost building in Rimmington (Chemists's House, long with a green Taskmaster asterisk in it).",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": [
+          {
+            "name": " Chemists House",
+            "objectLocation": [
+              {
+                "lat": 3211,
+                "lng": 2931,
+                "color": "#3b887f",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3207,
+                "lng": 2924
+              },
+              "topRight": {
+                "lat": 3213,
+                "lng": 2938
+              }
+            },
+            "color": "#3b887f",
+            "numberLabel": ""
+          }
+        ]
+      },
+      "floor": 0,
+      "additionalStepInformation": []
+    },
+    {
+      "stepDescription": "Inside, on the Eastern wall, talk to Korasi (Chat 3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Korasi ( Chemist House )",
+            "npcName": "Korasi",
             "npcLocation": {
               "lat": 3209,
               "lng": 2938
@@ -940,7 +931,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Run around to the other side of the crates (3 east, 1 south), kick the barrel west of you twice (Barrel #8)",
+      "stepDescription": "Talk to the Chemist. (Chat 3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -948,623 +939,21 @@
           {
             "npcName": "Chemist",
             "npcLocation": {
-              "lat": 3210,
-              "lng": 2931
+              "lat": 3211,
+              "lng": 2930
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 3207,
+                "lat": 3209,
                 "lng": 2928
               },
               "topRight": {
-                "lat": 3213,
-                "lng": 2938
+                "lat": 3212,
+                "lng": 2934
               }
             }
           }
         ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Kick the south-westernmost barrel south (Barrel #15)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Kick the southernmost center barrel to the east twice (Barrel #10)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Walk 1 east and 2 north, kick the barrel north twice (Barrel #4)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Walk 1 north and 1 north-west and kick the barrel east (Barrel #4)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Sir Tiffy Cashien",
-            "npcLocation": {
-              "lat": 3373,
-              "lng": 2995
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3372,
-                "lng": 2994
-              },
-              "topRight": {
-                "lat": 3374,
-                "lng": 2996
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Walk to the east side of the southern middle barrel, kick it west, then kick it north twice from the south side. (Barrel #9)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Ali Tist",
-            "npcLocation": {
-              "lat": 3351,
-              "lng": 3009
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3349,
-                "lng": 3008
-              },
-              "topRight": {
-                "lat": 3352,
-                "lng": 3010
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "Attempt-puzzle with the puzzle box."
-      ]
-    },
-    {
-      "stepDescription": "After completing the puzzle, leave the room.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Sir Tiffy Cashien",
-            "npcLocation": {
-              "lat": 3373,
-              "lng": 2995
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3372,
-                "lng": 2994
-              },
-              "topRight": {
-                "lat": 3374,
-                "lng": 2996
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Speak with the Bartender again. (Chat ~)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Sir Tiffy Cashien",
-            "npcLocation": {
-              "lat": 3373,
-              "lng": 2995
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3372,
-                "lng": 2994
-              },
-              "topRight": {
-                "lat": 3374,
-                "lng": 2996
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "[At some circumstances you may still be stuck inside the room even after the empty barrel is out, you may hop worlds and climb down the trapdoor again.]",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Sir Tiffy Cashien",
-            "npcLocation": {
-              "lat": 3373,
-              "lng": 2995
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3372,
-                "lng": 2994
-              },
-              "topRight": {
-                "lat": 3374,
-                "lng": 2996
-              }
-            }
-          },
-          {
-            "npcName": "Ali Tist",
-            "npcLocation": {
-              "lat": 3351,
-              "lng": 3009
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3349,
-                "lng": 3008
-              },
-              "topRight": {
-                "lat": 3352,
-                "lng": 3010
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "The path to take during this part of the quest",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Sir Amik Varze",
-            "npcLocation": {
-              "lat": 3340,
-              "lng": 2961
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3336,
-                "lng": 2958
-              },
-              "topRight": {
-                "lat": 3341,
-                "lng": 2962
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Speak to Korasi on the dock. (Chat 3)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Ali Tist",
-            "npcLocation": {
-              "lat": 3351,
-              "lng": 3009
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3349,
-                "lng": 3008
-              },
-              "topRight": {
-                "lat": 3352,
-                "lng": 3010
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Travel to Musa Point by paying Captain Tobias, just north of Korasi.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Sir Tiffy Cashien",
-            "npcLocation": {
-              "lat": 3373,
-              "lng": 2995
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3372,
-                "lng": 2994
-              },
-              "topRight": {
-                "lat": 3374,
-                "lng": 2996
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Speak with Zambo in the pub. (Chat 3)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Dig 1",
-            "objectLocation": [
-              {
-                "lat": 3385,
-                "lng": 2894
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 3384,
-                "lng": 2893
-              },
-              "topRight": {
-                "lat": 3386,
-                "lng": 2895
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Speak with Shopkeeper Kofi in the general store directly west of the pub.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Dig 2",
-            "objectLocation": [
-              {
-                "lat": 3271,
-                "lng": 2967
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 3270,
-                "lng": 2966
-              },
-              "topRight": {
-                "lat": 3272,
-                "lng": 2968
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Take-from the table in the south-west corner of the shop.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Dig 3",
-            "objectLocation": [
-              {
-                "lat": 3290,
-                "lng": 3036
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 3290,
-                "lng": 3035
-              },
-              "topRight": {
-                "lat": 3291,
-                "lng": 3036
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Use the chisel on the plank and then the jointed plank on the jointed log.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Dig 4",
-            "objectLocation": [
-              {
-                "lat": 3497,
-                "lng": 3054
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 3496,
-                "lng": 3053
-              },
-              "topRight": {
-                "lat": 3498,
-                "lng": 3054
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Use the joist on the Shop wall on the north end of the shop.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Dig 5",
-            "objectLocation": [
-              {
-                "lat": 3517,
-                "lng": 3012
-              },
-              {
-                "lat": 3517,
-                "lng": 3013
-              },
-              {
-                "lat": 3518,
-                "lng": 3013
-              },
-              {
-                "lat": 3518,
-                "lng": 3012
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 3516,
-                "lng": 3011
-              },
-              "topRight": {
-                "lat": 3519,
-                "lng": 3014
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Kofi for a cutscene.",
-      "itemsNeeded": [
-        "Combat equipment for future steps"
-      ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": [
-          {
-            "name": "Dig 5",
-            "objectLocation": [
-              {
-                "lat": 3517,
-                "lng": 3012
-              },
-              {
-                "lat": 3517,
-                "lng": 3013
-              },
-              {
-                "lat": 3518,
-                "lng": 3013
-              },
-              {
-                "lat": 3518,
-                "lng": 3012
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 3516,
-                "lng": 3011
-              },
-              "topRight": {
-                "lat": 3519,
-                "lng": 3014
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Follow the trail just like the one at Port Sarim.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "Korasi (Blackknights Hatch)",
-            "npcLocation": {
-              "lat": 3517,
-              "lng": 3014
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3516,
-                "lng": 3013
-              },
-              "topRight": {
-                "lat": 3518,
-                "lng": 3014
-              }
-            }
-          }
-        ],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "After Korasi and Jessika appear, search the mound again to get wood shards.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Finish dialogue with them. (Chat 3)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "With at least 16 free inventory spaces, head to Rimmington.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Ask Rommik in the crafting shop about the waxwood. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Go to westernmost building in Rimmington (Chemists's House, long with a green Taskmaster asterisk in it).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Inside, on the Eastern wall, talk to Korasi (Chat 3).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to the Chemist. (Chat 3\u20221)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
         "object": []
       },
       "floor": 0,
@@ -1582,19 +971,6 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "If you have not completed Slug Menace. Use the following chat option when you talk to Sir Tiffy on steps 57 and 60. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": [
-        "thing to remember the enemies in this next room can drain your prayer points to heal themselves."
-      ]
-    },
-    {
       "stepDescription": "Accept Jessika's offer to teleport you to Falador Park. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
@@ -1606,47 +982,56 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Sir Tiffy Cashien. (Chat 1 or 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "South of the east Falador bank, talk to Ali Tist. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Attempt-puzzle with the puzzle box.",
+      "stepDescription": "Talk to Sir Tiffy Cashien. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
-            "npcName": "Commodore Tyr",
+            "npcName": "Sir Tiffy Cashien",
             "npcLocation": {
-              "lat": 2666,
-              "lng": 2673
+              "lat": 3373,
+              "lng": 2996
             },
             "wanderRadius": {
               "bottomLeft": {
-                "lat": 2665,
-                "lng": 2672
+                "lat": 3373,
+                "lng": 2995
               },
               "topRight": {
-                "lat": 2667,
-                "lng": 2674
+                "lat": 3374,
+                "lng": 2997
+              }
+            }
+          }
+        ],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        "(Chat 2) if Slug Menace has been completed."
+      ]
+    },
+    {
+      "stepDescription": "South of the east Falador bank, talk to Ali Tist. (Chat 2) Attempt-puzzle with the puzzle box.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Ali Tist",
+            "npcLocation": {
+              "lat": 3349,
+              "lng": 3010
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3346,
+                "lng": 3007
+              },
+              "topRight": {
+                "lat": 3352,
+                "lng": 3013
               }
             }
           }
@@ -1661,25 +1046,34 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Sir Tiffy Cashien",
+            "npcLocation": {
+              "lat": 3373,
+              "lng": 2996
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3373,
+                "lng": 2995
+              },
+              "topRight": {
+                "lat": 3374,
+                "lng": 2996
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "(Chat 2) If The Slug Menace has not yet been started."
+      ]
     },
     {
-      "stepDescription": "(Chat 2) If The Slug Menace has not yet been started.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Propose a solution to open the box. (Chat ~\u2022~\u2022~)",
+      "stepDescription": "Propose a solution to open the box. (Chat ~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1694,21 +1088,59 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Ali Tist",
+            "npcLocation": {
+              "lat": 3349,
+              "lng": 3010
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3347,
+                "lng": 3008
+              },
+              "topRight": {
+                "lat": 3351,
+                "lng": 3012
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "(Chat 2) If The Slug Menace has not yet been started."
+      ]
     },
     {
-      "stepDescription": "(Chat 2) If The Slug Menace has not yet been started.\nOn the 3rd floor[US] of the western tower of White Knights' Castle, talk to Sir Amik Varze. (Chat 2)",
+      "stepDescription": "On the 3rd floor[US] of the western tower of White Knights' Castle, talk to Sir Amik Varze. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Sir Amik Varze",
+            "npcLocation": {
+              "lat": 3336,
+              "lng": 2960
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3335,
+                "lng": 2957
+              },
+              "topRight": {
+                "lat": 3341,
+                "lng": 2962
+              }
+            }
+          }
+        ],
         "object": []
       },
-      "floor": 0,
+      "floor": 2,
       "additionalStepInformation": []
     },
     {
@@ -1716,33 +1148,198 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Ali Tist",
+            "npcLocation": {
+              "lat": 3349,
+              "lng": 3010
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3347,
+                "lng": 3008
+              },
+              "topRight": {
+                "lat": 3351,
+                "lng": 3012
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Speak with Sir Tiffy to get a commorb. (Chat 1 or 2)",
+      "stepDescription": "Speak with Sir Tiffy to get a commorb. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Sir Tiffy Cashien",
+            "npcLocation": {
+              "lat": 3373,
+              "lng": 2996
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3373,
+                "lng": 2995
+              },
+              "topRight": {
+                "lat": 3374,
+                "lng": 2996
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "(Chat 2) If Slug Menace has been completed."
+      ]
     },
     {
-      "stepDescription": "You can right click the clue scroll to dig.",
+      "stepDescription": "You can right click the clue scroll to dig. Clue Locations are in the Additional Info Section.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Clue #1",
+            "objectLocation": [
+              {
+                "lat": 3385,
+                "lng": 2894,
+                "color": "#2bb6a6",
+                "numberLabel": "Dig Spot 1",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Dig Spot 1",
+            "color": "#2bb6a6"
+          },
+          {
+            "name": "Clue #2",
+            "objectLocation": [
+              {
+                "lat": 3271,
+                "lng": 2967,
+                "color": "#2bb6a6",
+                "numberLabel": "Dig Spot 2",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#2bb6a6",
+            "numberLabel": "Dig Spot 2"
+          },
+          {
+            "name": "Clue #3",
+            "objectLocation": [
+              {
+                "lat": 3290,
+                "lng": 3036,
+                "color": "#2bb6a6",
+                "numberLabel": "Search Spot 3",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#2bb6a6",
+            "numberLabel": "Search Spot 3"
+          },
+          {
+            "name": "Clue #4",
+            "objectLocation": [
+              {
+                "lat": 3497,
+                "lng": 3054,
+                "color": "#2bb6a6",
+                "numberLabel": "Dig Spot 4",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Dig Spot 4",
+            "color": "#2bb6a6"
+          },
+          {
+            "name": "Clue #5",
+            "objectLocation": [
+              {
+                "lat": 3518,
+                "lng": 3014,
+                "color": "#2bb6a6",
+                "numberLabel": "Dig Spot 5",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#2bb6a6",
+            "numberLabel": "Dig Spot 5"
+          }
+        ]
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Clue #1- South of the wheat field, west of Falador, south of Taverley, and north of Nora T. Hagg's house.",
+        "Clue #2- Go east of the Crafting Guild and find the man wandering with a walking stick around the area. Use an onion on him then select #3 wave (Chat 3) to receive another clue. (There is an onion field nearby if you need one.)",
+        "Clue #3- Enter the farmhouse south of Falador and search the crate just beside the lobby entrance to receive another clue.",
+        "Clue #4- Go to the Edgeville Monastery. Dig on the red flower north of the north-eastern fountain.",
+        "Clue #5- Go to the hatchway south-west of the Black Knights' Fortress and try to enter it."
+      ]
     },
     {
       "stepDescription": "Try to enter the hatchway to enter the hideout.",
@@ -1750,7 +1347,32 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Hatchway",
+            "objectLocation": [
+              {
+                "lat": 3518,
+                "lng": 3013,
+                "color": "#2f8466",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3516,
+                "lng": 3011
+              },
+              "topRight": {
+                "lat": 3519,
+                "lng": 3014
+              }
+            },
+            "color": "#2f8466",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -1760,7 +1382,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Korasi",
+            "npcLocation": {
+              "lat": 3517,
+              "lng": 3014
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3516,
+                "lng": 3011
+              },
+              "topRight": {
+                "lat": 3519,
+                "lng": 3014
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -1771,7 +1411,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Korasi",
+            "npcLocation": {
+              "lat": 5644,
+              "lng": 4383
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5643,
+                "lng": 4382
+              },
+              "topRight": {
+                "lat": 5645,
+                "lng": 4384
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -1783,7 +1441,30 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Low box",
+            "objectLocation": [
+              {
+                "lat": 5651,
+                "lng": 4378,
+                "color": "#FFFFFF",
+                "numberLabel": "",
+                "isSearched": true
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 5650,
+                "lng": 4377
+              },
+              "topRight": {
+                "lat": 5651,
+                "lng": 4378
+              }
+            }
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -1794,7 +1475,30 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Low box",
+            "objectLocation": [
+              {
+                "lat": 5651,
+                "lng": 4378,
+                "color": "#FFFFFF",
+                "numberLabel": "",
+                "isSearched": true
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 5650,
+                "lng": 4377
+              },
+              "topRight": {
+                "lat": 5651,
+                "lng": 4378
+              }
+            }
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -1804,7 +1508,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Jessika",
+            "npcLocation": {
+              "lat": 5644,
+              "lng": 4382
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5643,
+                "lng": 4381
+              },
+              "topRight": {
+                "lat": 5645,
+                "lng": 4383
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -1816,7 +1538,32 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Work Direction",
+            "objectLocation": [
+              {
+                "lat": 5646,
+                "lng": 4380,
+                "color": "#2d7a7a",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 5642,
+                "lng": 4379
+              },
+              "topRight": {
+                "lat": 5652,
+                "lng": 4380
+              }
+            },
+            "color": "#2d7a7a",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -1826,7 +1573,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Korasi",
+            "npcLocation": {
+              "lat": 5644,
+              "lng": 4383
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5643,
+                "lng": 4382
+              },
+              "topRight": {
+                "lat": 5645,
+                "lng": 4384
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -1838,7 +1603,52 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Guarded door",
+            "objectLocation": [
+              {
+                "lat": 5653,
+                "lng": 4380,
+                "color": "#FFFFFF",
+                "numberLabel": "",
+                "isSearched": true
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          },
+          {
+            "name": "Guarded door",
+            "objectLocation": [
+              {
+                "lat": 5653,
+                "lng": 4381,
+                "color": "#FFFFFF",
+                "numberLabel": "",
+                "isSearched": true
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 5652,
+                "lng": 4379
+              },
+              "topRight": {
+                "lat": 5653,
+                "lng": 4380
+              }
+            }
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -1848,7 +1658,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Korasi",
+            "npcLocation": {
+              "lat": 5656,
+              "lng": 4381
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5655,
+                "lng": 4380
+              },
+              "topRight": {
+                "lat": 5657,
+                "lng": 4382
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -1859,18 +1687,93 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Needed: Combat equipment thing to remember \nthe enemies in this room can drain your prayer points to heal themselves.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "indentured worker",
+            "npcLocation": {
+              "lat": 5664,
+              "lng": 4375
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          },
+          {
+            "npcName": "indentured worker",
+            "npcLocation": {
+              "lat": 5666,
+              "lng": 4375
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          },
+          {
+            "npcName": "indentured worker",
+            "npcLocation": {
+              "lat": 5666,
+              "lng": 4384
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          },
+          {
+            "npcName": "indentured worker",
+            "npcLocation": {
+              "lat": 5664,
+              "lng": 4384
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          },
+          {
+            "npcName": "Area",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5662,
+                "lng": 4374
+              },
+              "topRight": {
+                "lat": 5668,
+                "lng": 4385
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -1878,21 +1781,43 @@
     },
     {
       "stepDescription": "Use the key on the next door. Kill both Black Knight Guardians.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Combat equipment"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Thing to remember the enemies in this room can drain your prayer points to heal themselves."
+      ]
     },
     {
-      "stepDescription": "Talk to the pest cage (void leech). (Chat 4\u2022~)",
+      "stepDescription": "Talk to the pest cage (void leech). (Chat 4•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Void leech",
+            "npcLocation": {
+              "lat": 5679,
+              "lng": 4380
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5678,
+                "lng": 4379
+              },
+              "topRight": {
+                "lat": 5679,
+                "lng": 4381
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -1914,7 +1839,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Tyr",
+            "npcLocation": {
+              "lat": 2667,
+              "lng": 2675
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 2666,
+                "lng": 2674
+              },
+              "topRight": {
+                "lat": 2668,
+                "lng": 2676
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,

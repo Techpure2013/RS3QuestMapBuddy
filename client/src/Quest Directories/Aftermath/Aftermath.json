@@ -31,7 +31,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Enter Senntisten. If Zamorak, Lord of Chaos is currently the newest boss, use the Fateful portal in War's Retreat.",
+      "stepDescription": "Enter Senntisten through the ancient door at the Varrock Dig Site.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -62,7 +62,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Alternatively, enter through the Ancient door at the Varrock Dig Site.",
+      "stepDescription": "Once inside, enter the Zamorakian Undercity by using the nearby pulley lift (a few steps east of the larger-looking pulley used to enter and exit Senntisten). (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -93,7 +93,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Once inside, enter the undercity by using the nearby pulley lift (a few steps east of the larger-looking pulley lift used to enter/exit Senntisten).",
+      "stepDescription": "Talk to Sir Cadian close to the entry.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -122,7 +122,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Sir Cadian.",
+      "stepDescription": "Clear the Zamorakian Undercity on any difficulty.\nPlayers who have already cleared it may skip this step.",
       "itemsNeeded": [
         "Best Combat Gear",
         "Potions",
@@ -137,7 +137,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Clear The Zamorakian Undercity on any difficulty.",
+      "stepDescription": "Talk to Adrasteia in the library on the 2nd floor[US]. She is not in the throne room.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -166,7 +166,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Players who have already cleared it may skip this step.",
+      "stepDescription": "Go to the throne room on the 3rd floor[US] and talk to Saradomin. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -195,7 +195,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Adrasteia in the library and talk to her.",
+      "stepDescription": "Talk to anyone again to continue the dialogue. (Chat ~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -224,7 +224,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to the 3rd floor[US] and talk to Saradomin.",
+      "stepDescription": "Travel to the Kharid-et Dig Site and talk to Dr Nabanik. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -253,7 +253,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to anyone again to continue the dialogue.",
+      "stepDescription": "Talk to Nex, Trindine, Wahisietel, or Azzanadra.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -264,7 +264,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Travel to the Kharid-et Dig Site and talk to Dr Nabanik.",
+      "stepDescription": "Talk to Armadyl in his tower south of Falador.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -293,7 +293,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Nex, Trindine, Wahisietel, or Azzanadra.",
+      "stepDescription": "Talk to Adrasteia in the library on the 2nd floor[US], not the one in the throne room. (Chat ~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -319,28 +319,6 @@
         "object": []
       },
       "floor": 1,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Armadyl at his tower south of Falador.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Return to Adrasteia in the library and talk to her.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
       "additionalStepInformation": []
     },
     {
