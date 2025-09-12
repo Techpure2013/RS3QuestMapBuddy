@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
 import { resizeImageToDataUrl } from "./imageDisplayUtils";
 import chatheadOverrides from "./../Map Data/chatheadOverrides.json";
+import { isEqual } from "lodash";
 
 // --- INTERFACES ---
 interface ObjectLocation {
@@ -36,51 +37,17 @@ export interface SelectionGeometry {
 
 interface SelectionHighlightLayerProps {
   geometry: SelectionGeometry;
+  pane: string; // The name of the map pane to render on.
 }
 
-// --- STYLES ---
-const radiusStyle = {
-  color: "#00FFFF",
-  weight: 2,
-  opacity: 0.9,
-  fillOpacity: 0.3,
-  interactive: false,
-};
-
-const tileStyle = {
-  ...radiusStyle,
-  color: "#00FF00",
-  fillOpacity: 0.7,
-};
-
 // --- HELPER FUNCTIONS ---
-
-/**
- * Creates the bounds for a 1x1 tile based on its visual center coordinate.
- * This matches the logic in HighlightLayer.tsx.
- */
-const getTileBoundsFromVisualCenter = (visualCenter: {
-  lat: number;
-  lng: number;
-}): L.LatLngBounds => {
-  const interval = 1;
-  const y = visualCenter.lat;
-  const x = visualCenter.lng;
-  return L.latLngBounds([y, x], [y + interval, x + interval]);
-};
-
 const getImageUrl = (
   name: string,
   type: "npc" | "object",
   explicitOverride?: string
 ): string => {
   if (explicitOverride) {
-    return explicitOverride.includes("/images/")
-      ? explicitOverride.split("?")[0]
-      : `https://runescape.wiki/images/${explicitOverride.replace(
-          /\s+/g,
-          "_"
-        )}.png`;
+    return explicitOverride;
   }
   const key = Object.keys(chatheadOverrides).find(
     (k) => k.toLowerCase() === name.toLowerCase()
@@ -111,14 +78,15 @@ const createChatheadIcon = (resizedDataUrl: string) => {
   });
 };
 
-const createObjectIcon = (resizedDataUrl: string) => {
+const createObstacleIcon = (resizedDataUrl: string) => {
   const displaySize = 48;
   return L.divIcon({
-    className: "object-icon",
+    className: "obstacle-icon",
     html: `
-      <div style="width:${displaySize}px; height:${displaySize}px; display:flex; align-items:center; justify-content:center; background-color:rgba(0,0,0,0.5); border-radius:8px; border:1px solid #888; box-sizing:border-box;">
-        <img src="${resizedDataUrl}" style="max-width:90%; max-height:90%; object-fit:contain;" />
-      </div>`,
+      <div class="obstacle-icon-frame">
+        <img src="${resizedDataUrl}" class="obstacle-icon-image" />
+      </div>
+    `,
     iconSize: [displaySize, displaySize],
     iconAnchor: [displaySize / 2, displaySize / 2],
     popupAnchor: [0, -displaySize / 2],
@@ -126,13 +94,40 @@ const createObjectIcon = (resizedDataUrl: string) => {
 };
 
 // --- MAIN COMPONENT ---
-export const SelectionHighlightLayer: React.FC<
+const SelectionHighlightLayerComponent: React.FC<
   SelectionHighlightLayerProps
-> = ({ geometry }) => {
+> = ({ geometry, pane }) => {
   const map = useMap();
   const layerRef = useRef<L.LayerGroup | null>(null);
+  const [zoom, setZoom] = useState(map.getZoom());
 
   useEffect(() => {
+    const handleZoom = () => setZoom(map.getZoom());
+    map.on("zoomend", handleZoom);
+    return () => {
+      map.off("zoomend", handleZoom);
+    };
+  }, [map]);
+
+  useEffect(() => {
+    // Define styles dynamically within the effect to use the `pane` prop.
+    const radiusStyle = {
+      color: "#00FFFF",
+      weight: 2,
+      opacity: 0.9,
+      fillOpacity: 0.3,
+      interactive: false,
+      pane: pane,
+    };
+
+    const tileStyle = {
+      color: "#00FF00",
+      weight: 1,
+      fillColor: "#00FF00",
+      fillOpacity: 0.7,
+      pane: pane,
+    };
+
     if (!layerRef.current) {
       layerRef.current = new L.LayerGroup().addTo(map);
     }
@@ -140,35 +135,28 @@ export const SelectionHighlightLayer: React.FC<
 
     if (geometry.type === "none") return;
 
-    // CHANGE: The generic `renderPoints` function has been removed.
-    // WHY: NPCs and Objects have different fallback rendering logic when an
-    // image fails to load. Handling them in separate blocks is cleaner and
-    // prevents applying object-specific styles (like custom colors) to NPCs.
-
     if (geometry.type === "npc" && geometry.npcArray) {
       geometry.npcArray.forEach((npc) => {
         const point = npc.npcLocation;
         if (point.lat === -16.5 && point.lng === 16.5) return;
-
         const visualCenter = point;
-        const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
+        const tileBounds = L.latLngBounds(
+          [visualCenter.lat, visualCenter.lng],
+          [visualCenter.lat + 1, visualCenter.lng + 1]
+        );
         const imageUrl = getImageUrl(npc.npcName, "npc", npc.chatheadOverride);
-
         resizeImageToDataUrl(imageUrl, 40)
           .then((resizedDataUrl) => {
             const icon = createChatheadIcon(resizedDataUrl);
             const marker = L.marker(
               [visualCenter.lat + 0.5, visualCenter.lng + 0.5],
-              { icon }
+              { icon, pane: pane }
             ).bindPopup(`<b>${npc.npcName}</b>`);
             layerRef.current?.addLayer(marker);
           })
           .catch(() => {
-            // NPC Fallback: Always draw a default green square.
             L.rectangle(tileBounds, tileStyle).addTo(layerRef.current!);
           });
-
-        // Wander radius logic (unchanged)
         if (
           npc.wanderRadius &&
           (npc.wanderRadius.bottomLeft.lat !== 0 ||
@@ -190,49 +178,40 @@ export const SelectionHighlightLayer: React.FC<
     }
 
     if (geometry.type === "object" && geometry.objectArray) {
+      const iconLayer = L.layerGroup().addTo(layerRef.current);
+      const fallbackLayer = L.layerGroup().addTo(layerRef.current);
+      const radiusLayer = L.layerGroup().addTo(layerRef.current);
+
+      const fallbackPoints = new Map<string, ObjectLocation>();
+      const allPoints = geometry.objectArray.flatMap((obj) =>
+        obj.objectLocation.map((loc) => ({
+          ...loc,
+          objName: obj.name,
+          imageOverride: obj.imageOverride,
+        }))
+      );
+
+      allPoints.forEach((point) => {
+        if (point.lat === -16.5 && point.lng === 16.5) return;
+
+        if (point.imageOverride) {
+          resizeImageToDataUrl(point.imageOverride, 48).then(
+            (resizedDataUrl) => {
+              const icon = createObstacleIcon(resizedDataUrl);
+              L.marker([point.lat + 0.5, point.lng + 0.5], {
+                icon,
+                pane: pane,
+              })
+                .bindPopup(`<b>${point.objName}</b>`)
+                .addTo(iconLayer);
+            }
+          );
+        } else {
+          fallbackPoints.set(`${point.lng},${point.lat}`, point);
+        }
+      });
+
       geometry.objectArray.forEach((obj) => {
-        // Loop through each location for the object
-        obj.objectLocation.forEach((point) => {
-          if (point.lat === -16.5 && point.lng === 16.5) return;
-
-          const visualCenter = point;
-          const tileBounds = getTileBoundsFromVisualCenter(visualCenter);
-          const imageUrl = getImageUrl(obj.name, "object", obj.imageOverride);
-
-          resizeImageToDataUrl(imageUrl, 40)
-            .then((resizedDataUrl) => {
-              const icon = createObjectIcon(resizedDataUrl);
-              const marker = L.marker(
-                [visualCenter.lat + 0.5, visualCenter.lng + 0.5],
-                { icon }
-              ).bindPopup(`<b>${obj.name}</b>`);
-              layerRef.current?.addLayer(marker);
-            })
-            .catch(() => {
-              // OBJECT Fallback: Use the custom color and number label.
-              // This is the logic that was missing and is now correctly applied.
-              const pointStyle = {
-                ...tileStyle,
-                color: point.color || "#00FF00",
-                fillColor: point.color || "#00FF00",
-              };
-              L.rectangle(tileBounds, pointStyle).addTo(layerRef.current!);
-
-              if (point.numberLabel) {
-                const labelIcon = L.divIcon({
-                  className: "object-number-label",
-                  html: `<div>${point.numberLabel}</div>`,
-                  iconSize: [32, 32],
-                  iconAnchor: [16, 16],
-                });
-                L.marker([visualCenter.lat + 0.5, visualCenter.lng + 0.5], {
-                  icon: labelIcon,
-                }).addTo(layerRef.current!);
-              }
-            });
-        });
-
-        // Object radius logic (unchanged)
         if (
           obj.objectRadius &&
           (obj.objectRadius.bottomLeft.lat !== 0 ||
@@ -248,11 +227,161 @@ export const SelectionHighlightLayer: React.FC<
               obj.objectRadius.topRight.lng + 1.5,
             ]
           );
-          L.rectangle(bounds, radiusStyle).addTo(layerRef.current!);
+          L.rectangle(bounds, radiusStyle).addTo(radiusLayer);
         }
       });
+
+      const unvisited = new Set(fallbackPoints.keys());
+      while (unvisited.size > 0) {
+        const startKey = unvisited.values().next().value;
+        const startPoint = fallbackPoints.get(startKey)!;
+
+        const targetStyleKey = `${startPoint.color || "path"}_${
+          startPoint.numberLabel || ""
+        }`;
+
+        const currentIsland: ObjectLocation[] = [];
+        const queue = [startKey];
+        unvisited.delete(startKey);
+
+        while (queue.length > 0) {
+          const currentKey = queue.shift()!;
+          const currentPoint = fallbackPoints.get(currentKey)!;
+          currentIsland.push(currentPoint);
+
+          const { lng, lat } = currentPoint;
+          const neighbors = [
+            `${lng},${lat - 1}`,
+            `${lng},${lat + 1}`,
+            `${lng - 1},${lat}`,
+            `${lng + 1},${lat}`,
+          ];
+
+          neighbors.forEach((neighborKey) => {
+            if (unvisited.has(neighborKey)) {
+              const neighborPoint = fallbackPoints.get(neighborKey)!;
+              const neighborStyleKey = `${neighborPoint.color || "path"}_${
+                neighborPoint.numberLabel || ""
+              }`;
+              if (neighborStyleKey === targetStyleKey) {
+                unvisited.delete(neighborKey);
+                queue.push(neighborKey);
+              }
+            }
+          });
+        }
+
+        const islandCoordSet = new Set(
+          currentIsland.map((loc) => `${loc.lng},${loc.lat}`)
+        );
+        const groupLabel = startPoint.numberLabel || "";
+
+        const isAction = !!groupLabel;
+        const baseColor =
+          startPoint.color || (isAction ? "#A855F7" : "#C77C48");
+
+        const fillStyle = {
+          stroke: false,
+          fill: true,
+          fillColor: baseColor,
+          fillOpacity: 0.85,
+          pane: pane,
+        };
+
+        const borderInlineStyle = {
+          color: baseColor,
+          weight: 2,
+          opacity: 1.0,
+          pane: pane,
+        };
+
+        const borderCasingStyle = {
+          color: "#000000",
+          weight: 4,
+          opacity: 0.6,
+          pane: pane,
+        };
+
+        currentIsland.forEach((point) => {
+          const tileBounds = L.latLngBounds(
+            [point.lat, point.lng],
+            [point.lat + 1, point.lng + 1]
+          );
+          L.rectangle(tileBounds, fillStyle).addTo(fallbackLayer);
+        });
+
+        currentIsland.forEach((point) => {
+          const { lat, lng } = point;
+          const tl = L.latLng(lat, lng),
+            tr = L.latLng(lat, lng + 1);
+          const bl = L.latLng(lat + 1, lng),
+            br = L.latLng(lat + 1, lng + 1);
+
+          if (!islandCoordSet.has(`${lng},${lat - 1}`)) {
+            L.polyline([tl, tr], borderCasingStyle).addTo(fallbackLayer);
+            L.polyline([tl, tr], borderInlineStyle).addTo(fallbackLayer);
+          }
+          if (!islandCoordSet.has(`${lng},${lat + 1}`)) {
+            L.polyline([bl, br], borderCasingStyle).addTo(fallbackLayer);
+            L.polyline([bl, br], borderInlineStyle).addTo(fallbackLayer);
+          }
+          if (!islandCoordSet.has(`${lng - 1},${lat}`)) {
+            L.polyline([tl, bl], borderCasingStyle).addTo(fallbackLayer);
+            L.polyline([tl, bl], borderInlineStyle).addTo(fallbackLayer);
+          }
+          if (!islandCoordSet.has(`${lng + 1},${lat}`)) {
+            L.polyline([tr, br], borderCasingStyle).addTo(fallbackLayer);
+            L.polyline([tr, br], borderInlineStyle).addTo(fallbackLayer);
+          }
+        });
+
+        if (groupLabel) {
+          const centerLat =
+            currentIsland.reduce((sum, loc) => sum + loc.lat, 0) /
+            currentIsland.length;
+          const centerLng =
+            currentIsland.reduce((sum, loc) => sum + loc.lng, 0) /
+            currentIsland.length;
+
+          const tileSizeAtZoom0 =
+            map.project([1, 1], 0).x - map.project([0, 0], 0).x;
+          const currentTileSize = tileSizeAtZoom0 * Math.pow(2, zoom);
+          const dynamicFontSize = Math.max(
+            8,
+            Math.min(16, currentTileSize / 4.5)
+          );
+
+          const labelIcon = L.divIcon({
+            className: "object-label-icon",
+            iconSize: [currentTileSize, currentTileSize],
+            iconAnchor: [currentTileSize / 2, currentTileSize / 2],
+            html: `
+              <div class="object-label-container">
+                <span class="object-label-text" style="font-size: ${dynamicFontSize}px;">
+                  ${groupLabel}
+                </span>
+              </div>
+            `,
+          });
+          L.marker([centerLat + 0.5, centerLng + 0.5], {
+            icon: labelIcon,
+            interactive: false,
+            pane: "selectionLabelPane", // Use the dedicated top-most pane for labels.
+          }).addTo(fallbackLayer);
+        }
+      }
     }
-  }, [geometry, map]);
+  }, [geometry, map, zoom, pane]);
 
   return null;
 };
+
+export const SelectionHighlightLayer = React.memo(
+  SelectionHighlightLayerComponent,
+  (prevProps, nextProps) => {
+    return (
+      isEqual(prevProps.geometry, nextProps.geometry) &&
+      prevProps.pane === nextProps.pane
+    );
+  }
+);

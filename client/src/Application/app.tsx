@@ -34,12 +34,16 @@ import type { MapObject } from "./../Map Classes/Map Components/ObjectSearch";
 import ObjectFlyToHandler from "./../Map Classes/Map Components/ObjectFlyToHandler";
 import SelectedObjectFlyToHandler from "./../Map Classes/Map Components/SelectedObjectFlyToHandler";
 import { TargetFlyToHandler } from "Map Classes/Map Components/TargetFlyToHandler";
-
+import { MapUIOverlay } from "Map Classes/Map Components/MapUIOverlay";
+import { CustomMapPanes } from "Map Classes/Map Components/CustomMapPanes";
+import html2canvas from "html2canvas";
+// ADD: Import the new CaptureHandler
 // --- INTERFACES ---
 interface ClipboardItem {
   type: "npc" | "object" | "npc-list" | "object-list" | "none";
   data: any | any[] | null;
 }
+
 interface QuestData {
   questName: string;
   questSteps: any[];
@@ -68,7 +72,52 @@ interface MapArea {
   name: string;
 }
 type FileSystemFileHandle = any;
+const convertManualCoordToVisual = (coord: { lat: number; lng: number }) => {
+  if (
+    !coord ||
+    typeof coord.lat !== "number" ||
+    typeof coord.lng !== "number"
+  ) {
+    return undefined;
+  }
+  const visualY = coord.lat - 0.5;
+  const visualX = coord.lng + 0.5;
+  return { lat: visualY, lng: visualX };
+};
 
+const convertSearchedObjectCoordToVisual = (coord: {
+  lat: number;
+  lng: number;
+}) => {
+  if (
+    !coord ||
+    typeof coord.lat !== "number" ||
+    typeof coord.lng !== "number"
+  ) {
+    return undefined;
+  }
+  const visualY = coord.lat - 0.5;
+  const visualX = coord.lng - 0.5;
+  return { lat: visualY, lng: visualX };
+};
+
+const convertSearchedNPCCoordToVisual = (coord: {
+  lat: number;
+  lng: number;
+}) => {
+  if (
+    !coord ||
+    typeof coord.lat !== "number" ||
+    typeof coord.lng !== "number"
+  ) {
+    return undefined;
+  }
+  const visualY = coord.lat - 0.5;
+  const visualX = coord.lng + 0.5;
+  return { lat: visualY, lng: visualX };
+};
+const MAP_OPTIONS = gameMapOptions();
+const MAP_BOUNDS: LatLngBounds = bounds();
 const App: React.FC = () => {
   const { UserID, QuestName, level, z, x, y } = useParams<{
     UserID: string;
@@ -92,13 +141,9 @@ const App: React.FC = () => {
   );
   const [selectedArea, setSelectedArea] = useState<MapArea | null>(null);
   const [highlightedNpc, setHighlightedNpc] = useState<Npc | null>(null);
-  const [map, setMap] = useState<L.Map | null>(null);
   const [isPanelOpen, setIsPanelOpen] = useState(true);
   const [selectedObjectColor, setSelectedObjectColor] = useState("#00FF00");
   const [floor, setFloor] = useState(level ? parseInt(level, 10) : 0);
-  const [zoom, setZoom] = useState(z ? parseInt(z, 10) : 2);
-  const [cursorX, setCursorX] = useState(x ? parseInt(x, 10) : 3288);
-  const [cursorY, setCursorY] = useState(y ? parseInt(y, 10) : 3023);
   const [questJson, setQuestJson] = useState<QuestData | null>(null);
   const [jsonString, setJsonString] = useState("");
   const [selectedStep, setSelectedStep] = useState(0);
@@ -135,51 +180,6 @@ const App: React.FC = () => {
   const [isObjectAreaSearch, setIsObjectAreaSearch] = useState(false);
   const [areaSearchResults, setAreaSearchResults] = useState<MapObject[]>([]);
 
-  // --- DERIVED VALUES ---
-  const convertManualCoordToVisual = (coord: { lat: number; lng: number }) => {
-    if (
-      !coord ||
-      typeof coord.lat !== "number" ||
-      typeof coord.lng !== "number"
-    ) {
-      return undefined;
-    }
-    const visualY = coord.lat - 0.5;
-    const visualX = coord.lng + 0.5;
-    return { lat: visualY, lng: visualX };
-  };
-
-  const convertSearchedObjectCoordToVisual = (coord: {
-    lat: number;
-    lng: number;
-  }) => {
-    // Correction for searched points: -0.5 lat, -0.5 lng
-    if (
-      !coord ||
-      typeof coord.lat !== "number" ||
-      typeof coord.lng !== "number"
-    ) {
-      return undefined;
-    }
-    const visualY = coord.lat - 0.5;
-    const visualX = coord.lng - 0.5;
-    return { lat: visualY, lng: visualX };
-  };
-  const convertSearchedNPCCoordToVisual = (coord: {
-    lat: number;
-    lng: number;
-  }) => {
-    if (
-      !coord ||
-      typeof coord.lat !== "number" ||
-      typeof coord.lng !== "number"
-    ) {
-      return undefined;
-    }
-    const visualY = coord.lat - 0.5;
-    const visualX = coord.lng + 0.5;
-    return { lat: visualY, lng: visualX };
-  };
   // --- Replace the selectionGeometry useMemo hook ---
   const selectionGeometry = useMemo<SelectionGeometry>(() => {
     if (!questJson?.questSteps?.[selectedStep]) return { type: "none" };
@@ -300,7 +300,6 @@ const App: React.FC = () => {
     questJson?.questSteps[selectedStep]?.additionalStepInformation?.join(
       "\n"
     ) || "";
-
   const currentTargetObjectData = useMemo(() => {
     if (!questJson?.questSteps?.[selectedStep]) {
       return { color: selectedObjectColor, numberLabel: objectNumberLabel };
@@ -648,11 +647,6 @@ const App: React.FC = () => {
     });
     updateQuestState(nextState);
 
-    // CHANGE: Clear the temporary highlight after making a selection.
-    // WHY: This is the crucial fix. By setting `highlightedObject` to null,
-    // we ensure that the second, temporary highlight layer becomes empty
-    // immediately after the object is added to the permanent selection layer.
-    // This prevents the object from being rendered twice.
     setHighlightedObject(null);
   };
 
@@ -1258,9 +1252,12 @@ const App: React.FC = () => {
     return { lat: storedLat, lng: storedLng };
   };
 
-  const MapClickHandler = () => {
+  const MapClickHandler = ({ disabled }: { disabled: boolean }) => {
     useMapEvents({
       click: (e) => {
+        if (disabled) {
+          return;
+        }
         const snappedCoord = snapToTileCoordinate(e.latlng);
         if (isObjectAreaSearch) {
           console.log("Area search click detected at:", snappedCoord);
@@ -1404,18 +1401,6 @@ const App: React.FC = () => {
     });
     return null;
   };
-
-  const ZoomHandler = () => {
-    const map = useMapEvents({ zoom: () => setZoom(map.getZoom()) });
-    return null;
-  };
-
-  const handleCursorMove = useCallback((x: number, y: number) => {
-    setCursorX(x - 0.5);
-    setCursorY(y + 0.5);
-  }, []);
-
-  const bound: LatLngBounds = bounds();
   const layers = useMemo(
     () => [
       {
@@ -1428,7 +1413,8 @@ const App: React.FC = () => {
         className: "map-topdown",
         updateWhenZooming: false,
         updateInterval: 100,
-        keepBuffer: 8,
+        keepBuffer: 100,
+        updateWhenIdle: true,
       },
       {
         name: "Walls",
@@ -1441,7 +1427,7 @@ const App: React.FC = () => {
         opacity: 0.6,
         className: "map-walls",
         updateInterval: 50,
-        keepBuffer: 8,
+        keepBuffer: 100,
       },
       {
         name: "Collision",
@@ -1454,7 +1440,7 @@ const App: React.FC = () => {
         opacity: 0.6,
         className: "map-collision",
         updateInterval: 100,
-        keepBuffer: 8,
+        keepBuffer: 100,
       },
     ],
     [floor]
@@ -1567,30 +1553,21 @@ const App: React.FC = () => {
         {isPanelOpen ? "‹" : "›"}
       </button>
       <MapContainer
-        crs={gameMapOptions().crs}
-        bounds={bound}
+        crs={MAP_OPTIONS.crs}
+        bounds={MAP_BOUNDS}
         id="map"
-        zoom={zoom}
-        maxBounds={gameMapOptions().maxBounds}
-        zoomSnap={gameMapOptions().zoomSnap}
+        zoom={z ? parseInt(z, 10) : MAP_OPTIONS.minZoom}
+        maxBounds={MAP_OPTIONS.maxBounds}
+        zoomSnap={MAP_OPTIONS.zoomSnap}
         zoomControl={false}
         dragging={true}
         center={[3288, 3023]}
       >
-        <MapClickHandler />
-        <ZoomHandler />
+        <MapClickHandler disabled={false} />
+
         {showGrids && <ChunkGridLayer />}
         <GridLayer />
-        <div className="cursor-coordinates-box">
-          <div className="coordinate-row">
-            <span>Zoom: {Math.round(zoom)}</span>
-            <span>X: {cursorX}</span>
-            <span>Y: {cursorY}</span>
-            <span>
-              <IconSettings />
-            </span>
-          </div>
-        </div>
+        <CustomMapPanes />
         <div className="grid-toggle-container">
           <button
             className="floor-button"
@@ -1628,7 +1605,7 @@ const App: React.FC = () => {
               updateWhenZooming={layer.updateWhenZooming}
               updateInterval={layer.updateInterval}
               noWrap={true}
-              bounds={bound}
+              bounds={MAP_BOUNDS}
             />
           ))}
         </>
@@ -1654,9 +1631,15 @@ const App: React.FC = () => {
         />
         <ObjectFlyToHandler highlightedObject={highlightedObject} />
         <SelectedObjectFlyToHandler selectedObject={selectedObjectFromSearch} />
-        <SelectionHighlightLayer geometry={selectionGeometry} />
-        <SelectionHighlightLayer geometry={highlightGeometry} />
-        <HighlightLayer onCursorMove={handleCursorMove} />
+        <SelectionHighlightLayer
+          geometry={selectionGeometry}
+          pane="selectionPane"
+        />
+        <SelectionHighlightLayer
+          geometry={highlightGeometry}
+          pane="highlightPane"
+        />
+        <MapUIOverlay />
       </MapContainer>
     </div>
   );

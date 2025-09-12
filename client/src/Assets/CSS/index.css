@@ -1,3 +1,5 @@
+/* src/Assets/CSS/index.css */
+
 /* ==========================================================================
    Global Styles
    ========================================================================== */
@@ -266,7 +268,6 @@ body,
 }
 
 .color-input-hidden {
-  /* Hide the actual input but keep it functional */
   opacity: 0;
   position: absolute;
   width: 0;
@@ -460,18 +461,6 @@ button:hover {
   pointer-events: none;
   text-align: center;
 }
-.object-number-label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  text-shadow: 0 0 3px black, 0 0 3px black;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
 .floorButtonContainer {
   position: fixed;
   top: 20px;
@@ -550,25 +539,53 @@ button:hover {
 .map-walls {
   filter: saturate(1.7);
 }
-/* --- Improved Map Area Label Styling --- */
-.map-area-label div {
-  /* --- FIX: Add transform to perfectly center the label --- */
-  transform: translate(-50%, -50%);
 
+/* ==========================================================================
+   Map Area & Search Styling
+   ========================================================================== */
+.map-label-icon {
+  background: transparent;
+  border: none;
+}
+.map-label-container {
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-  white-space: nowrap;
   border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.map-label-text {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
   text-shadow: 1px 1px 2px black;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 90%;
+}
+.map-area-search-container {
+  position: relative;
+}
+.leaflet-tooltip.map-area-label-fixed-size {
+  box-shadow: none;
+  border: none;
+  background: none;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
-
-/* Styling for the interactive tooltips */
 .leaflet-tooltip {
   background-color: rgba(0, 0, 0, 0.8) !important;
   border: 1px solid rgba(255, 255, 255, 0.7) !important;
@@ -576,11 +593,6 @@ button:hover {
   box-shadow: none !important;
   font-weight: bold;
 }
-/* For the new Map Area Search dropdown */
-.map-area-search-container {
-  position: relative; /* Needed for the results list positioning */
-}
-
 .search-results-list {
   position: absolute;
   width: 100%;
@@ -592,15 +604,13 @@ button:hover {
   margin: 4px 0 0 0;
   max-height: 200px;
   overflow-y: auto;
-  z-index: 100; /* Ensure it appears above other elements */
+  z-index: 100;
 }
-
 .search-results-list li {
   padding: 8px 12px;
   cursor: pointer;
   color: #ddd;
 }
-
 .search-results-list li:hover {
   background-color: #007bff;
   color: white;
@@ -615,188 +625,35 @@ button:hover {
   max-height: 150px;
   overflow-y: auto;
 }
-
 .target-list li {
-  padding: 6px 10px;
-  cursor: pointer;
+  padding: 0;
+  cursor: default;
   border-bottom: 1px solid #374151;
-  color: #f9fafb;
 }
-
 .target-list li:last-child {
   border-bottom: none;
 }
-
-.target-list li:hover {
-  background-color: #374151;
-}
-
-.target-list li.active {
-  background-color: #2563eb;
-  color: white;
-  font-weight: bold;
-}
-.image-paste-target {
-  border: 2px dashed #4b5563;
-  border-radius: 5px;
-  padding: 20px;
-  text-align: center;
-  color: #9ca3af;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  margin-top: 8px;
-  outline: none; /* Removes focus ring */
-}
-
-.image-paste-target:hover,
-.image-paste-target:focus {
-  border-color: #3b82f6;
-  color: #f9fafb;
-}
-
-.image-paste-target.pasting {
-  border-color: #15803d;
-  background-color: rgba(21, 128, 61, 0.2);
-  color: #f9fafb;
-}
-
-.image-paste-target.disabled {
-  cursor: not-allowed;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: #374151;
-  color: #6b7280;
-}
-.image-paste-target.dragging-over {
-  border-color: #2196f3; /* A bright blue to indicate a valid drop target */
-  background-color: #2a3a4a;
-  color: #fff;
-}
-.search-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.search-input {
-  width: 100%;
-  background-color: #374151;
-  border: 1px solid #4b5563;
-  border-radius: 4px;
-  color: #f9fafb;
-  padding: 8px;
-  box-sizing: border-box;
-  font-size: 0.9rem;
-}
-
-.search-loading {
-  padding: 10px;
-  text-align: center;
-  color: #9ca3af;
-  font-style: italic;
-  background-color: #1f2937;
-  border-radius: 4px;
-}
-
-.search-results {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: #1f2937;
-  border: 1px solid #4b5563;
-  border-radius: 4px;
-  max-height: 200px; /* Or whatever height you prefer */
-  overflow-y: auto;
-}
-
-.search-results li {
-  padding: 8px 12px;
-  cursor: pointer;
-  border-bottom: 1px solid #374151;
-  color: #d1d5db;
-  transition: background-color 0.2s ease;
-}
-
-.search-results li:last-child {
-  border-bottom: none;
-}
-
-.search-results li:hover {
-  background-color: #374151;
-  color: #f9fafb;
-}
-/* ==========================================================================
-   Search Mode Switcher
-   ========================================================================== */
-.search-mode-switcher {
-  display: flex;
-  width: 100%;
-  border-radius: 5px;
-  overflow: hidden;
-  border: 1px solid #4b5563;
-}
-
-.switcher-button {
-  flex: 1; /* Each button takes up half the space */
-  padding: 8px 10px;
-  border: none;
-  background-color: #374151; /* Inactive color */
-  color: #d1d5db;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-size: 0.9rem;
-}
-
-.switcher-button:first-child {
-  border-right: 1px solid #4b5563;
-}
-
-.switcher-button:hover {
-  background-color: #4b5563;
-}
-
-.switcher-button.active {
-  background-color: #2563eb; /* Active color */
-  color: white;
-  font-weight: bold;
-}
-.target-list li {
-  /* Remove padding from the li itself */
-  padding: 0;
-  cursor: default; /* The li is no longer the main clickable element */
-  border-bottom: 1px solid #374151;
-}
-
-.target-list li:last-child {
-  border-bottom: none;
-}
-
-/* NEW: Style the clickable header within the list item */
 .target-item-header {
   padding: 8px 12px;
   cursor: pointer;
   color: #f9fafb;
 }
-
 .target-list li:hover .target-item-header {
   background-color: #374151;
 }
-
 .target-list li.active .target-item-header {
   background-color: #2563eb;
   color: white;
   font-weight: bold;
-  border-radius: 3px 3px 0 0; /* Round top corners when active */
+  border-radius: 3px 3px 0 0;
 }
-
-/* --- NEW: Nested Object Location Sub-list --- */
 .location-sublist {
   list-style: none;
   padding: 5px;
   margin: 0 5px 5px 5px;
-  background-color: #111827; /* Darker background for contrast */
+  background-color: #111827;
   border-radius: 0 0 4px 4px;
 }
-
 .location-item {
   display: flex;
   justify-content: space-between;
@@ -806,17 +663,14 @@ button:hover {
   font-size: 0.85rem;
   border-radius: 3px;
 }
-
 .location-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-
 .location-coords {
   color: #9ca3af;
 }
-
 .location-delete-btn {
-  background-color: #b91c1c; /* Slightly less intense red */
+  background-color: #b91c1c;
   color: white;
   border: none;
   border-radius: 50%;
@@ -827,9 +681,161 @@ button:hover {
   cursor: pointer;
   font-weight: bold;
   padding: 0;
-  flex-shrink: 0; /* Prevent the button from shrinking */
+  flex-shrink: 0;
 }
-
 .location-delete-btn:hover {
   background-color: #ef4444;
+}
+.image-paste-target {
+  border: 2px dashed #4b5563;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 8px;
+  outline: none;
+}
+.image-paste-target:hover,
+.image-paste-target:focus {
+  border-color: #3b82f6;
+  color: #f9fafb;
+}
+.image-paste-target.pasting {
+  border-color: #15803d;
+  background-color: rgba(21, 128, 61, 0.2);
+  color: #f9fafb;
+}
+.image-paste-target.disabled {
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: #374151;
+  color: #6b7280;
+}
+.image-paste-target.dragging-over {
+  border-color: #2196f3;
+  background-color: #2a3a4a;
+  color: #fff;
+}
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.search-input {
+  width: 100%;
+  background-color: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  color: #f9fafb;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+.search-loading {
+  padding: 10px;
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+  background-color: #1f2937;
+  border-radius: 4px;
+}
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #1f2937;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.search-results li {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #374151;
+  color: #d1d5db;
+  transition: background-color 0.2s ease;
+}
+.search-results li:last-child {
+  border-bottom: none;
+}
+.search-results li:hover {
+  background-color: #374151;
+  color: #f9fafb;
+}
+.search-mode-switcher {
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #4b5563;
+}
+.switcher-button {
+  flex: 1;
+  padding: 8px 10px;
+  border: none;
+  background-color: #374151;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.9rem;
+}
+.switcher-button:first-child {
+  border-right: 1px solid #4b5563;
+}
+.switcher-button:hover {
+  background-color: #4b5563;
+}
+.switcher-button.active {
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Custom Pasted Obstacle Icon
+   ========================================================================== */
+.obstacle-icon-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #2d3748;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.obstacle-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Custom Object Text Label (divIcon method)
+   ========================================================================== */
+.object-label-icon {
+  background: transparent;
+  border: none;
+  pointer-events: none;
+}
+.object-label-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.object-label-text {
+  color: white;
+  font-weight: bold;
+  /* CHANGE: A multi-layered shadow creates a beautiful glow effect. */
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.7);
+  line-height: 1.1;
+  word-wrap: break-word;
 }

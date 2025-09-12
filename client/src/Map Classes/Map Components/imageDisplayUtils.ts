@@ -4,8 +4,8 @@ import { parseWikiImageUrl } from "./imageUtils";
 // ========================================================================
 // Caching Layer
 // WHY: To prevent repeated network requests for images that we know don't
-// exist (resulting in 404 errors). This significantly cleans up the
-// console and improves performance.
+// exist (resulting in 404 errors) or have already been loaded. This
+// significantly cleans up the console and improves performance.
 
 // Stores successful results: Map<imageUrl, dataUrl>
 const successCache = new Map<string, string>();

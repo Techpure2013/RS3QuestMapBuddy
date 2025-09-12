@@ -1,86 +1,112 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
 
 const ChunkGridLayer: React.FC = () => {
   const map = useMap();
+  // Use a ref to store the state of drawn chunks to avoid re-renders.
+  const drawnChunksRef = useRef<Map<string, L.LayerGroup>>(new Map());
 
   useEffect(() => {
-    // Create a custom Leaflet layer for the grid
-    const gridLayer = L.layerGroup();
+    const gridLayer = L.layerGroup().addTo(map);
 
     const updateGrid = () => {
-      gridLayer.clearLayers();
-
       const bounds = map.getBounds();
       const zoom = map.getZoom();
       const chunkSize = 64;
 
-      // Only show the grid at zoom level 2 and above
-      if (zoom < 1) return;
+      if (zoom < 1) {
+        // If zoomed out too far, clear everything and stop.
+        gridLayer.clearLayers();
+        drawnChunksRef.current.clear();
+        return;
+      }
 
-      // Get the bounds of the map in terms of map coordinates
-      const startX = Math.floor(bounds.getWest() / chunkSize) * chunkSize;
-      const endX = Math.ceil(bounds.getEast() / chunkSize) * chunkSize;
-      const startY = Math.floor(bounds.getSouth() / chunkSize) * chunkSize;
-      const endY = Math.ceil(bounds.getNorth() / chunkSize) * chunkSize;
+      // --- New High-Performance "Diffing" Logic ---
 
-      // Loop through the chunks and create grid lines and labels
-      for (let x = startX; x <= endX; x += chunkSize) {
-        for (let y = startY; y <= endY; y += chunkSize) {
-          // Create a rectangle for the chunk
+      const requiredChunks = new Set<string>();
+      const drawnChunks = drawnChunksRef.current;
+
+      // 1. Calculate all chunks that SHOULD be visible.
+      const startX = Math.floor(bounds.getWest() / chunkSize);
+      const endX = Math.ceil(bounds.getEast() / chunkSize);
+      const startY = Math.floor(bounds.getSouth() / chunkSize);
+      const endY = Math.ceil(bounds.getNorth() / chunkSize);
+
+      for (let x = startX; x < endX; x++) {
+        for (let y = startY; y < endY; y++) {
+          requiredChunks.add(`${x}_${y}`);
+        }
+      }
+
+      // 2. REMOVE chunks that are no longer in view.
+      for (const chunkId of drawnChunks.keys()) {
+        if (!requiredChunks.has(chunkId)) {
+          const chunkLayer = drawnChunks.get(chunkId);
+          if (chunkLayer) {
+            gridLayer.removeLayer(chunkLayer);
+          }
+          drawnChunks.delete(chunkId);
+        }
+      }
+
+      // 3. ADD new chunks that have entered the view.
+      for (const chunkId of requiredChunks) {
+        if (!drawnChunks.has(chunkId)) {
+          const [x, y] = chunkId.split("_").map(Number);
+          const chunkLayer = L.layerGroup();
+
+          const realX = x * chunkSize;
+          const realY = y * chunkSize;
+
+          // Create the rectangle for this new chunk
           const rectangle = L.rectangle(
             [
-              [y, x],
-              [y + chunkSize, x + chunkSize],
+              [realY, realX],
+              [realY + chunkSize, realX + chunkSize],
             ],
             {
               color: "white",
               weight: 1,
-              fillOpacity: 0, // No fill, just the border
+              fillOpacity: 0,
+              interactive: false,
             }
           );
+          chunkLayer.addLayer(rectangle);
 
-          // Add the rectangle to the grid layer
-          gridLayer.addLayer(rectangle);
-
-          // Add a label for the chunk
+          // Create the label for this new chunk
           const label = L.divIcon({
             className: "chunk-label",
-            html: `<div style="color: white; font-size: 20px; font-weight: bold;">${
-              x / chunkSize
-            }, ${y / chunkSize}</div>`,
+            html: `<div style="color: white; font-size: 20px; font-weight: bold;">${x}, ${y}</div>`,
           });
+          const labelMarker = L.marker(
+            [realY + chunkSize / 2, realX + chunkSize / 2],
+            { icon: label, interactive: false }
+          );
+          chunkLayer.addLayer(labelMarker);
 
-          const labelMarker = L.marker([y + chunkSize / 2, x + chunkSize / 2], {
-            icon: label,
-          });
-
-          // Add the label to the grid layer
-          gridLayer.addLayer(labelMarker);
+          // Add the new composite layer to the main grid and track it.
+          gridLayer.addLayer(chunkLayer);
+          drawnChunks.set(chunkId, chunkLayer);
         }
       }
     };
 
-    // Add the grid layer to the map
-    gridLayer.addTo(map);
-
-    // Update the grid whenever the map moves or zooms
-    map.on("move", updateGrid);
-    map.on("zoom", updateGrid);
+    // Use 'moveend' to only update after panning is complete.
+    map.on("moveend", updateGrid);
+    map.on("zoomend", updateGrid);
 
     // Initial grid update
     updateGrid();
 
-    // Cleanup event listeners and remove the grid layer on unmount
     return () => {
-      map.off("move", updateGrid);
-      map.off("zoom", updateGrid);
+      map.off("moveend", updateGrid);
+      map.off("zoomend", updateGrid);
       map.removeLayer(gridLayer);
     };
   }, [map]);
 
-  return null; // This component does not render anything directly
+  return null;
 };
 
 export default ChunkGridLayer;

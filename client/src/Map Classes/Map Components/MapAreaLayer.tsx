@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useMap, Rectangle, Marker, Tooltip } from "react-leaflet";
+// src/Map Classes/Map Components/MapAreaLayer.tsx
+
+import React, { useEffect, useRef } from "react";
+import { useMap } from "react-leaflet";
 import L from "leaflet";
 import allMapAreasData from "./../Map Data/combinedMapData.json";
 
@@ -12,24 +14,10 @@ interface MapArea {
 
 const allMapAreas: MapArea[] = allMapAreasData as MapArea[];
 
-const DETAIL_VISIBILITY_ZOOM = 0;
-const REGION_WIDTH_THRESHOLD = 1000;
+// The zoom level at which labels will appear.
+const LABEL_VISIBILITY_ZOOM_THRESHOLD = 0;
 
-// --- STYLES ---
-const activePathOptions = {
-  color: "#00FFFF",
-  weight: 3,
-  fillOpacity: 0,
-  opacity: 1.0,
-};
-const subtleLocationOptions = {
-  color: "#00FFFF",
-  weight: 1,
-  fillOpacity: 0,
-  opacity: 0.3,
-};
-const subtleRegionOptions = { ...subtleLocationOptions, dashArray: "5, 10" };
-
+// This helper function remains the same.
 const convertStoredToVisual = (coord: { lat: number; lng: number }) => {
   const visualY = coord.lat - 0.5;
   const visualX = coord.lng + 0.5;
@@ -38,37 +26,42 @@ const convertStoredToVisual = (coord: { lat: number; lng: number }) => {
 
 const MapAreaLayer: React.FC = () => {
   const map = useMap();
-  const [zoom, setZoom] = useState(map.getZoom());
-  const [hoveredAreaId, setHoveredAreaId] = useState<number | null>(null);
-  const [activeRegion, setActiveRegion] = useState<MapArea | null>(null);
+  const layerRef = useRef<L.LayerGroup | null>(null);
 
   useEffect(() => {
-    const updateZoom = () => setZoom(map.getZoom());
-    map.on("zoomend", updateZoom);
-    return () => {
-      map.off("zoomend", updateZoom);
-    };
-  }, [map]);
+    // Initialize the layer group on the map once.
+    if (!layerRef.current) {
+      layerRef.current = new L.LayerGroup().addTo(map);
+    }
 
-  const validMapAreas = allMapAreas.filter(
-    (area) =>
-      area.name &&
-      area.name !== "Loading..." &&
-      area.bounds[0][0] !== 0 &&
-      area.bounds[0][0] < area.bounds[1][0]
-  );
+    const redrawLabels = () => {
+      // Clear previous labels before redrawing
+      layerRef.current?.clearLayers();
 
-  return (
-    <>
-      {validMapAreas.map((area) => {
+      const currentZoom = map.getZoom();
+
+      // Only show labels if zoom threshold is met
+      if (currentZoom < LABEL_VISIBILITY_ZOOM_THRESHOLD) {
+        return;
+      }
+
+      // This is the magic number. It counteracts the map's scaling.
+      // At zoom 0, scale is 1. At zoom 1, map doubles, so we halve the text size.
+      const scaleFactor = 1 / Math.pow(2, currentZoom);
+
+      const validMapAreas = allMapAreas.filter(
+        (area) =>
+          area.name &&
+          area.name !== "Loading..." &&
+          area.bounds[0][0] !== 0 &&
+          area.bounds[0][0] < area.bounds[1][0]
+      );
+
+      validMapAreas.forEach((area) => {
         const bottomLeft = { lat: area.bounds[0][1], lng: area.bounds[0][0] };
         const topRight = { lat: area.bounds[1][1], lng: area.bounds[1][0] };
 
-        const snappedCenter = {
-          lat: Math.floor((bottomLeft.lat + topRight.lat) / 2) + 0.5,
-          lng: Math.floor((bottomLeft.lng + topRight.lng) / 2) + 0.5,
-        };
-
+        // We still calculate the visual bounds to get width, height, and center.
         const visualBounds = L.latLngBounds(
           [
             convertStoredToVisual(bottomLeft).lat + 1,
@@ -80,74 +73,47 @@ const MapAreaLayer: React.FC = () => {
           ]
         );
 
-        const markerPosition: L.LatLngTuple = [
-          convertStoredToVisual(snappedCenter).lat,
-          convertStoredToVisual(snappedCenter).lng,
-        ];
+        const center = visualBounds.getCenter();
+        const width = visualBounds.getEast() - visualBounds.getWest();
+        const height = visualBounds.getNorth() - visualBounds.getSouth();
 
-        const areaWidth = topRight.lng - bottomLeft.lng;
-        const isRegion = areaWidth > REGION_WIDTH_THRESHOLD;
-        const isHovered = hoveredAreaId === area.mapId;
+        // Create the custom HTML icon. Its container will scale with the map.
+        const labelIcon = L.divIcon({
+          className: "map-label-icon", // Base class, transparent background
+          iconSize: [width, height], // The icon's size in MAP UNITS
+          html: `
+            <div class="map-label-container">
+              <span class="map-label-text" style="transform: scale(${scaleFactor});">
+                ${area.name}
+              </span>
+            </div>
+          `,
+        });
 
-        let isContained = false;
-        if (activeRegion && !isRegion) {
-          const locCenter = area.center;
-          const regionBounds = activeRegion.bounds;
-          isContained =
-            locCenter[0] >= regionBounds[0][0] &&
-            locCenter[0] <= regionBounds[1][0] &&
-            locCenter[1] >= regionBounds[0][1] &&
-            locCenter[1] <= regionBounds[1][1];
-        }
+        // Add a marker using this icon to the layer group
+        L.marker(center, { icon: labelIcon, interactive: false }).addTo(
+          layerRef.current!
+        );
+      });
+    };
 
-        // --- FIX #1: The component is now always visible unless contained ---
-        const isVisible = !isContained;
+    // Initial draw
+    redrawLabels();
 
-        let pathOptions = subtleLocationOptions;
-        if (isHovered) {
-          pathOptions = activePathOptions;
-        } else if (isRegion) {
-          pathOptions = subtleRegionOptions;
-        }
+    // Redraw whenever the map zoom changes
+    map.on("zoomend", redrawLabels);
 
-        // --- FIX #2: The text label is the only thing that depends on zoom level ---
-        const showMarkerLabel = isHovered && zoom >= DETAIL_VISIBILITY_ZOOM;
+    // Cleanup function to remove the layer and event listeners
+    return () => {
+      map.off("zoomend", redrawLabels);
+      if (layerRef.current) {
+        map.removeLayer(layerRef.current);
+        layerRef.current = null;
+      }
+    };
+  }, [map]); // This effect runs only once on component mount.
 
-        return isVisible ? (
-          <Rectangle
-            key={`${area.name}-${area.mapId}`}
-            bounds={visualBounds}
-            pathOptions={pathOptions}
-            eventHandlers={{
-              mouseover: () => {
-                setHoveredAreaId(area.mapId);
-                if (isRegion) setActiveRegion(area);
-              },
-              mouseout: () => {
-                setHoveredAreaId(null);
-                if (isRegion) setActiveRegion(null);
-              },
-            }}
-          >
-            {/* The tooltip appears on hover at any zoom */}
-            {isHovered && <Tooltip sticky>{area.name}</Tooltip>}
-
-            {/* The main label only appears when hovered AND zoomed in */}
-            {showMarkerLabel && (
-              <Marker
-                position={markerPosition}
-                icon={L.divIcon({
-                  className: "map-area-label",
-                  html: `<div>${area.name}</div>`,
-                  iconAnchor: [0, 0],
-                })}
-              />
-            )}
-          </Rectangle>
-        ) : null;
-      })}
-    </>
-  );
+  return null; // This component renders nothing itself.
 };
 
 export default MapAreaLayer;

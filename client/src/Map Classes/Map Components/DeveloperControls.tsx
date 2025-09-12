@@ -250,6 +250,7 @@ export const EditorPanel = React.memo<EditorPanelProps>(
           >
             Save As...
           </button>
+
           <button
             onClick={onSubmitToGitHub}
             className="file-loader-button button--submit"
