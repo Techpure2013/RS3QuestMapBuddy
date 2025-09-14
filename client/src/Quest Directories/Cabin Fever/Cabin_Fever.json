@@ -13,7 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Bill Teach in the inn. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Bill Teach in the inn. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -46,7 +46,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Search the repair locker, take 4 ropes.",
+      "stepDescription": "Search the following places in Additional Info.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -54,18 +54,10 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Search the gun locker, take 1 fuse.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Search the repair locker, take 4 ropes.",
+        "Search the Gun Locker, take 1 fuse."
+      ]
     },
     {
       "stepDescription": "Climb the ladder, then climb the net next to the mast.",
@@ -79,7 +71,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Use rope on the sail.",
+      "stepDescription": "Use rope on the sail. Add fuse on the powder barrel on the eastern ship. Light the fuse (you may fail and have to retry).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -87,29 +79,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Use the fuse on their powder barrel.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Light the fuse.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "The same actions of climbing and using the rope are used to change ships every time."
+      ]
     },
     {
       "stepDescription": "Climb their mast and use a rope on their sail.",
@@ -145,7 +117,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Take from the repair locker: 6 planks 30 tacks 3 swamp paste\nRepair the leaky holes and waterproof them.",
+      "stepDescription": "Take from the repair locker items are listed in Additional Info then repair the leaky holes and waterproof them.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -153,10 +125,14 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "6 planks",
+        "30 tacks",
+        "3 swamp paste"
+      ]
     },
     {
-      "stepDescription": "Talk to Bill.",
+      "stepDescription": "Climb up the ladder and talk to Bill.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -164,10 +140,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Be sure to finish all the dialogue else you won't be able to proceed."
+      ]
     },
     {
-      "stepDescription": "Swing back over to the enemy ship (use rope on hoisted sail)",
+      "stepDescription": "Swing back over to the enemy ship by using rope on their hoisted sail.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -175,7 +153,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Climb down their ladder.",
@@ -211,7 +191,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Bill.",
+      "stepDescription": "Climb up ladder and talk to Bill.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -222,7 +202,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Search the gun locker, take a cannon barrel.",
+      "stepDescription": "Climb down the ladder and search the gun locker and take a cannon barrel.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -255,7 +235,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Search the gun locker. Take a ramrod, some fuses, and some cannon canisters.",
+      "stepDescription": "Climb down the ladder and search the gun locker for the following items in Additional Info. Take a few more than usual.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -263,10 +243,14 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "ramrod",
+        "Some fuses",
+        "Some cannon canisters."
+      ]
     },
     {
-      "stepDescription": "Take some powder from the barrel next to the cannon.",
+      "stepDescription": "In the Additional Info section is the procedure to load and fire the cannon. If you make a mistake, you can empty-out the cannon. You will still need to clean it with the ramrod",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -274,73 +258,15 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Use gunpowder on the cannon.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Then the ramrod.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Then the canister.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Then a fuse.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Fire! the cannon. Check your chat log to see if you hit or not. If you missed, you must repeat these steps.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Use the ramrod on the cannon again to clean it.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Take-powder from the powder barrel next to the cannon on the deck.",
+        "Use gunpowder on the cannon.",
+        "Then the ramrod.",
+        "Then a canister.",
+        "Then a fuse.",
+        "Fire! the cannon. Check your chat log to see if you hit or not.",
+        "Use the ramrod on the cannon again to clean it."
+      ]
     },
     {
       "stepDescription": "Talk to Bill.",
@@ -354,7 +280,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Search the gun locker and take at least 5 cannonballs and fuses.",
+      "stepDescription": "Search the gun locker and take at least 5 cannonballs and 5 fuses.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -365,7 +291,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Fire the cannon with cannonballs until you put three holes in the enemy's ship. This is done with the same sequence above, except instead of a canister, a cannonball is used instead. You will likely have to fire it more than three times and possibly repair it multiple times using cannon barrels from the gun locker. If the cannon blows up while firing, take another cannon barrel from the gun locker and repair the cannon again.",
+      "stepDescription": "Fire the cannon as before, substituting the canister for a cannon ball, until you put three holes in the enemy's ship.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -374,6 +300,55 @@
       },
       "floor": 0,
       "additionalStepInformation": []
+    },
+    {
+      "stepDescription": "Talk to Bill after quest is completed to claim another reward.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "additionalStepInformation": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "",
+            "npcLocation": {
+              "lat": 0,
+              "lng": 0
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ],
+        "object": [
+          {
+            "name": "",
+            "objectLocation": [
+              {
+                "lat": 0,
+                "lng": 0
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            }
+          }
+        ]
+      },
+      "floor": 0
     },
     {
       "stepDescription": "Quest complete!",

@@ -901,20 +901,20 @@ const App: React.FC = () => {
         npc: [
           {
             npcName: "",
-            npcLocation: { lat: 0, lng: 0 },
+            npcLocation: {},
             wanderRadius: {
-              bottomLeft: { lat: 0, lng: 0 },
-              topRight: { lat: 0, lng: 0 },
+              bottomLeft: {},
+              topRight: {},
             },
           },
         ],
         object: [
           {
             name: "",
-            objectLocation: [{ lat: 0, lng: 0 }],
+            objectLocation: [],
             objectRadius: {
-              bottomLeft: { lat: 0, lng: 0 },
-              topRight: { lat: 0, lng: 0 },
+              bottomLeft: {},
+              topRight: {},
             },
           },
         ],

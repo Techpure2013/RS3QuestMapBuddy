@@ -16,7 +16,12 @@ export const CustomMapPanes: React.FC = () => {
       highlightPane.style.zIndex = "590"; // Below markers
       highlightPane.style.pointerEvents = "none";
     }
-
+    map.createPane("selectionRadiusPane");
+    const selectionRadiusPane = map.getPane("selectionRadiusPane");
+    if (selectionRadiusPane) {
+      selectionRadiusPane.style.zIndex = "640"; // Just below selectionPane
+      selectionRadiusPane.style.pointerEvents = "none";
+    }
     // --- Pane for foreground selections (the primary active item) ---
     map.createPane("selectionPane");
     const selectionPane = map.getPane("selectionPane");
