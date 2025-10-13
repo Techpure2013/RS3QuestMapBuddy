@@ -1,1 +1,0 @@
-[{"id": 11356, "name": "Portal Home", "file": "41-81.json", "lng": 2678, "lat": 5214, "floor": 2, "rotation": 3, "width": 2, "center": [2679.0, 5214.5], "hash": 860855381, "actions": ["Enter"], "models": [{"type": 10, "values": [11231]}], "color_replacements": "[[50072,103],[49948,107],[49953,111],[49829,115],[49705,119]]", "action_cursors_0": 57}]

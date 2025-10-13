@@ -1,1 +1,0 @@
-[{"id": 130673, "name": "Ledge", "file": "86-23.json", "lng": 5518, "lat": 1504, "floor": 1, "rotation": 1, "length": 3, "center": [5518.5, 1505.5], "hash": 2216744823, "actions": ["Jump down"], "models": [{"type": 10, "values": [133757]}], "action_cursors_0": 181, "dummy_45": 11}]

@@ -1,1 +1,0 @@
-[{"id": 13879, "name": "Exit", "file": "46-81.json", "lng": 2967, "lat": 5212, "floor": 1, "rotation": 2, "center": [2967.5, 5212.5], "hash": 3938504878, "actions": ["Use"], "models": [{"type": 10, "values": [14238]}], "color_replacements": "[[33668,920],[32786,916],[32910,912],[32906,908],[33030,904],[33666,900]]", "probably_morphFloor": true, "action_cursors_0": 46}]

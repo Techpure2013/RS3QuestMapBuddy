@@ -1,1 +1,0 @@
-[{"id": 87998, "name": "Rope", "file": "37-94.json", "lng": 2400, "lat": 6054, "floor": 1, "rotation": 2, "center": [2400.5, 6054.5], "hash": 3796347932, "is_members": true, "actions": ["Climb"], "models": [{"type": 10, "values": [91396]}], "action_cursors_0": 181}]

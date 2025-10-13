@@ -1,1 +1,0 @@
-[{"id": 73674, "name": "Portal", "file": "21-83.json", "lng": 1372, "lat": 5314, "floor": 0, "rotation": 2, "width": 5, "center": [1374.5, 5314.5], "hash": 1399385181, "is_members": true, "actions": ["Enter"], "models": [{"type": 10, "values": [71657, 71658]}], "probably_morphFloor": true, "action_cursors_0": 57}]

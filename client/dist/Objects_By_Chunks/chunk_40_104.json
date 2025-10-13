@@ -1,1 +1,0 @@
-[{"id": 109322, "name": "The First Gate", "file": "40-104.json", "lng": 2588, "lat": 6656, "floor": 1, "rotation": 2, "width": 4, "center": [2590.0, 6656.5], "hash": 2630397758, "is_members": true, "actions": ["Enter"], "models": [{"type": 10, "values": [118812]}], "action_cursors_0": 57}]

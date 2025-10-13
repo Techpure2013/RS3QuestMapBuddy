@@ -1,1 +1,0 @@
-[{"id": 120047, "name": "Gate", "file": "5-2.json", "lng": 367, "lat": 156, "floor": 0, "rotation": 3, "width": 7, "length": 3, "center": [370.5, 157.5], "hash": 109877940, "actions": ["Exit"], "models": [{"type": 10, "values": [122265]}], "action_cursors_0": 57}]

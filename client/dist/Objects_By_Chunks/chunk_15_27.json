@@ -1,1 +1,0 @@
-[{"id": 127269, "name": "Overworld portal", "file": "15-27.json", "lng": 1020, "lat": 1755, "floor": 1, "rotation": 2, "width": 5, "length": 5, "center": [1022.5, 1757.5], "hash": 3903940311, "actions": ["Enter"], "models": [{"type": 10, "values": [129384]}], "action_cursors_0": 57}]

@@ -1,1 +1,0 @@
-[{"id": 103969, "name": "The Well of Spirits", "file": "22-114.json", "lng": 1414, "lat": 7348, "floor": 0, "rotation": 3, "width": 4, "length": 4, "center": [1416.0, 7350.0], "hash": 3764298798, "actions": ["Travel"], "models": [{"type": 10, "values": [113407]}], "has_animated_texture": true, "dummy_45": 7}]
