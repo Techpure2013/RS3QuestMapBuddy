@@ -71,23 +71,10 @@ const createChatheadIcon = (resizedDataUrl: string) =>
 
 const createObstacleIcon = (resizedDataUrl: string) => {
   const displaySize = 48;
-  // Define styles that will be applied to the div.
-  const style = `
-    width: ${displaySize}px;
-    height: ${displaySize}px;
-    background-image: url('${resizedDataUrl}');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 8px;
-    border: 2px solid #a3a3a3;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
-    background-color: rgba(0,0,0,0.5);
-  `;
-
+  const style = `width: ${displaySize}px; height: ${displaySize}px; background-image: url('${resizedDataUrl}'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 8px; border: 2px solid #a3a3a3; box-shadow: 0 1px 4px rgba(0,0,0,0.4); background-color: rgba(0,0,0,0.5);`;
   return L.divIcon({
-    className: "obstacle-icon", // Keep a base class if needed for global CSS
-    html: `<div style="${style}"></div>`, // Apply the styles directly to the div
+    className: "obstacle-icon",
+    html: `<div style="${style}"></div>`,
     iconSize: [displaySize, displaySize],
     iconAnchor: [displaySize / 2, displaySize / 2],
     popupAnchor: [0, -displaySize / 2],
@@ -105,14 +92,13 @@ const SelectionHighlightLayerComponent: React.FC<
   useEffect(() => {
     const handleZoom = () => setZoom(map.getZoom());
     map.on("zoomend", handleZoom);
-    // FIX IS HERE: Added curly braces to ensure the cleanup function returns void.
     return () => {
       map.off("zoomend", handleZoom);
     };
   }, [map]);
 
   useEffect(() => {
-    let isActive = true; // Guard against race conditions from stale renders
+    let isActive = true;
 
     if (!layerRef.current) {
       layerRef.current = new L.LayerGroup().addTo(map);
@@ -123,6 +109,7 @@ const SelectionHighlightLayerComponent: React.FC<
     if (geometry.type === "none") {
       return;
     }
+
     const radiusStyle = {
       color: "#00FFFF",
       weight: 2,
@@ -131,6 +118,7 @@ const SelectionHighlightLayerComponent: React.FC<
       interactive: false,
       pane: "selectionRadiusPane",
     };
+
     if (geometry.type === "npc" && geometry.npcArray) {
       geometry.npcArray.forEach((npc) => {
         const point = npc.npcLocation;
@@ -184,14 +172,6 @@ const SelectionHighlightLayerComponent: React.FC<
     }
 
     if (geometry.type === "object" && geometry.objectArray) {
-      const radiusStyle = {
-        color: "#00FFFF",
-        weight: 2,
-        opacity: 0.9,
-        fillOpacity: 0.3,
-        interactive: false,
-        pane,
-      };
       const fallbackPoints = new Map<string, ObjectLocation>();
       const promises: Promise<void>[] = [];
 
@@ -367,7 +347,7 @@ const SelectionHighlightLayerComponent: React.FC<
             L.marker([centerLat + 0.5, centerLng + 0.5], {
               icon: labelIcon,
               interactive: false,
-              pane: "selectionRadiusPane",
+              pane: "selectionLabelPane",
             }).addTo(fallbackLayer);
           }
         }

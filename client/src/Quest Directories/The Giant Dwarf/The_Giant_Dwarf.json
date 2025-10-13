@@ -35,7 +35,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "After the cutscene, you should spawn in the same room with Commander Veldaban. The chat instance should end with you accepting the quest . (Chat \u2713)",
+      "stepDescription": "After the cutscene, you should spawn in the same room with Commander Veldaban. The chat instance should end with you accepting the quest . (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -123,7 +123,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Vermundi. (Chat 2\u20221)",
+      "stepDescription": "Talk to Vermundi. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -189,29 +189,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Santiri's location",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Thurgo's location",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Go to the North-West corner and talk to Santiri. (Chat 2\u20222\u20222)",
+      "stepDescription": "Go to the North-West corner and talk to Santiri. (Chat 2•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -299,7 +277,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Thurgo in his small hut (fairy ring AIQ), south of Port Sarim, and north of Mudskipper Point. (Chat 2\u20222\u20222\u20221)",
+      "stepDescription": "Talk to Thurgo in his small hut (fairy ring AIQ), south of Port Sarim, and north of Mudskipper Point. (Chat 2•2•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -310,7 +288,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "If The Knight's Sword is complete (Chat 2\u20222\u20221)",
+      "stepDescription": "If The Knight's Sword is complete (Chat 2•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -321,7 +299,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Have an iron bar to give to Thurgo (or access your metal bank via the anvil next to Thurgo to obtain one which is stored in it).",
+      "stepDescription": "Have an iron bar to give to Thurgo either from your inventory or metal bank.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -329,7 +307,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "With the 4 items, talk to Riki the sculptor's model near Blasidar the sculptor.",
@@ -354,17 +334,6 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "In the event you do not possess the ore or bars the secretary or director assigns as your task, you do not have to accept it, simply cancel the dialogue and request another task. This may make you have to do more than 4 tasks though as you may lose favour declining too many tasks.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Run west to the marketplace building and up the stairs.",
       "itemsNeeded": [],
       "itemsRecommended": [],
@@ -376,7 +345,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to any secretary (yellow is closest to metal bank) - your character's gender may disqualify your eligibility to work for that colour of company, consequently try another colour. (Chat 3\u2022~)",
+      "stepDescription": "Talk to any secretary (yellow is closest to metal bank) - your character's gender may disqualify your eligibility to work for that colour of company, consequently try another colour. (Chat 3•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -384,21 +353,15 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Fetch them the required ore (must be un-noted).",
+        " Repeat with the same secretary for a total of 4 tasks.",
+        "In the event you do not possess the ore or bars the secretary or director assigns as your task, you do not have to accept it, simply cancel the dialogue and request another task.",
+        "This may make you have to do more than 4 tasks though as you may lose favour declining too many tasks."
+      ]
     },
     {
-      "stepDescription": "Fetch them the required ore (must be un-noted). Repeat with the same secretary for a total of 4 tasks.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to the director. (Chat 3\u2022~)",
+      "stepDescription": "Talk to the director. (Chat 3•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -420,7 +383,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the director. (Chat 2\u20223\u20221\u20221)",
+      "stepDescription": "Talk to the director. (Chat 2•3•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -431,7 +394,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Commander Veldaban in Black Guard headquarters, where you started the quest (west of the palace and west of the bank). (Chat 1\u20222\u20222)",
+      "stepDescription": "Return to Commander Veldaban in Black Guard headquarters, where you started the quest (west of the palace and west of the bank). (Chat 1•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

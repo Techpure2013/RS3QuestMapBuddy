@@ -2,17 +2,6 @@
   "questName": "Recipe for Disaster Freeing King Awowogei",
   "questSteps": [
     {
-      "stepDescription": "The completion of this subquest will require players to have a ninja greegree, zombie greegree, and gorilla greegree as well as a monkeyspeak amulet.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Inspect King Awowogei in the Lumbridge castle dining room.",
       "itemsNeeded": [],
       "itemsRecommended": [],
@@ -21,7 +10,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "The completion of this subquest will require players to have a ninja greegree, zombie greegree, and gorilla greegree as well as a monkeyspeak amulet."
+      ]
     },
     {
       "stepDescription": "Travel to Ape Atoll. Head to the south-easternmost building in Marim.",
@@ -120,10 +111,14 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Each of the three following can be done in any order. ",
+        "The wise monkeys will eat any red bananas or tchiki nuts you have if you return to them and you may burn the dish or accidentally eat it while handling it. ",
+        "Therefore, it is a good idea to collect more than one of each."
+      ]
     },
     {
-      "stepDescription": "Note: Each of the three following can be done in any order. The wise monkeys will eat any red bananas or tchiki nuts you have if you return to them and you may burn the dish or accidentally eat it while handling it. Therefore, it is a good idea to collect more than one of each.",
+      "stepDescription": "Head to Crash Island and enter the pit east of Lumdo. (Chat 1) ",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -131,18 +126,10 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Head to Crash Island and enter the pit east of Lumdo. (Chat 1) Lower level combat players may find it useful to turn on Protect from Melee before entering the pit and also having an emergency teleport. Anti-poison is also useful.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Lower level combat players may find it useful to turn on Protect from Melee before entering the pit and also having an emergency teleport.",
+        "Anti-poison is also useful for quick because of the Jungle Spiders."
+      ]
     },
     {
       "stepDescription": "Kill a snake to get a snake corpse. Optionally, collect multiple in the event you burn the dish.",
@@ -244,7 +231,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Grind it with a Pestle and mortar. Tool belt pestle works. Once the previous one is ground, you can collect another.",
+      "stepDescription": "Grind it with a Pestle and mortar which is already in your toolbelt. Once the previous one is ground, you can collect another.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -266,17 +253,6 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "If below level 70 Cooking, make sure to have the boost at this part.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Use the snake corpse on either the red banana slices or the tchiki monkey nut paste to prepare a raw stuffed snake.",
       "itemsNeeded": [],
       "itemsRecommended": [],
@@ -285,7 +261,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If below level 70 Cooking, make sure to have the boost at this part."
+      ]
     },
     {
       "stepDescription": "Enter the trapdoor near the eastern wall of the temple.",

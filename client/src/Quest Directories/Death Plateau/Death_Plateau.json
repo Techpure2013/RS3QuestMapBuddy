@@ -2,7 +2,7 @@
   "questName": "Death Plateau",
   "questSteps": [
     {
-      "stepDescription": "Items needed: 1 Free inventory space",
+      "stepDescription": "Talk to Commander Denulth who is located north east of the Burthorpe Lodestone, south of the agility course. (Chat 1•✓)",
       "itemsNeeded": [
         "1 Free inventory space"
       ],
@@ -83,20 +83,13 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items recommended: A weapon",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Go to Burthorpe and speak to Dunstan outside the house to the south-east of Denulth to add spikes to the climbing boots. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "Combat Equipment"
+      ],
+      "itemsRecommended": [
+        ""
+      ],
       "highlights": {
         "npc": [],
         "object": []
@@ -215,18 +208,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Commander Denulth.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Watch or skip the cutscene.",
+      "stepDescription": "Talk to Commander Denulth then watch or skip the cutscene.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

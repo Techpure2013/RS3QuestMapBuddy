@@ -13,34 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the Cook in the Lumbridge Castle. (Chat 3\u20221\u20222\u20223\u20225)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: 1 fishbowl, 1 needle, 3 bronze wire, Weapon",
-      "itemsNeeded": [
-        "1 fishbowl",
-        "1 needle",
-        "3 bronze wire",
-        "Weapon"
-      ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Bank any Summoning pouches or Pets.",
+      "stepDescription": "Talk to the Cook in the Lumbridge Castle. (Chat 3•1•2•3•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -52,17 +25,24 @@
     },
     {
       "stepDescription": "Talk to Murphy on the docks of Port Khazard. (Chat 1)",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "1 Fishbowl",
+        "1 Needle",
+        "3 Bronze Eire",
+        "Your Choice of Weapon"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Bank any Summoning pouches or Pets."
+      ]
     },
     {
-      "stepDescription": "With your fishbowl, talk to him again. (Chat 1\u20222)",
+      "stepDescription": "With your fishbowl, talk to him again. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -84,7 +64,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Whilst weighing under 27kg (exactly 27 works), having your needle and bronze wire, ask Murphy to go diving. (Chat 1\u20221) There is a bank deposit box right next to Murphy.",
+      "stepDescription": "Whilst weighing less than or equal to 27kg while also having your needle and bronze wire, ask Murphy to go diving. (Chat 1•1) ",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -92,10 +72,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "There is a bank deposit box right next to Murphy."
+      ]
     },
     {
-      "stepDescription": "Pick some kelp (your inventory is hidden). It is advised to obtain multiple in the event you burn the fishcake.",
+      "stepDescription": "Pick some kelp. It is advised to obtain multiple in the event you burn the fishcake.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -103,7 +85,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Your inventory is hidden."
+      ]
     },
     {
       "stepDescription": "Swim north and talk to Nung.",
@@ -150,7 +134,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Nung with the five hides, your needle, and three bronze wire.\nTalk to Nung again.",
+      "stepDescription": "Return to Nung with the five hides, your needle, and three bronze wire then talk to Nung again.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -216,17 +200,6 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Note: Do NOT cook the crab meat.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Head back to the kitchen in Lumbridge Castle.",
       "itemsNeeded": [],
       "itemsRecommended": [],
@@ -235,7 +208,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Grind the kelp, crab meat and raw cod.",
@@ -246,7 +221,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Do NOT cook the crab meat."
+      ]
     },
     {
       "stepDescription": "Slice the bread to get breadcrumbs. If, at any point whilst preparing the ingredients, the message \"Nothing interesting happens\" shows up, talk to the Cook.",
@@ -293,7 +270,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Right-click Use fishcake on Pirate Pete. If the fishcake is eaten, you need to re-obtain all of the ingredients. The crab pen is permanently open, so there is no need to kill mudskippers again.",
+      "stepDescription": "Right-click Use fishcake on Pirate Pete. If the fishcake is eaten, you need to re-obtain all of the ingredients.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -301,7 +278,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "The crab pen is permanently open, so there is no need to kill mudskippers again."
+      ]
     },
     {
       "stepDescription": "Subquest complete!",

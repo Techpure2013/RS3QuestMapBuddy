@@ -13,31 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the Cook in the Lumbridge Castle kitchen. (Chat 4\u20225\u20222)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: Pot of cream, bucket of milk, and sweetcorn",
-      "itemsNeeded": [],
-      "itemsRecommended": [
-        "Empty pot"
-      ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items recommended: Empty pot",
+      "stepDescription": "Talk to the Cook in the Lumbridge Castle kitchen. (Chat 4•5•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -49,8 +25,14 @@
     },
     {
       "stepDescription": "Use pot of cream with a bucket of milk.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "Pot of cream",
+        "bucket of milk",
+        "Sweetcorn"
+      ],
+      "itemsRecommended": [
+        ""
+      ],
       "highlights": {
         "npc": [],
         "object": []
@@ -59,7 +41,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Locate a windmill (Taverley windmill doesn't work) and pick up an empty pot on the 1st floor[US]",
+      "stepDescription": "Locate a windmill and pick up an empty pot on the 1st floor[US]",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -67,7 +49,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Taverley windmill doesn't work."
+      ]
     },
     {
       "stepDescription": "Put sweetcorn into the hopper on the 3rd floor[US].",
@@ -103,7 +87,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to the Kharazi Jungle with a machete and hatchet (toolbelt works for both) or use CJS if unlocked.",
+      "stepDescription": "Go to the Kharazi Jungle with a machete and hatchet or use CJS if unlocked.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -111,24 +95,15 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Have Radimus notes with you for this if Legends' Quest isn't completed.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Have Radimus notes with you for this if Legends' Quest isn't completed."
+      ]
     },
     {
       "stepDescription": "Head southwest of the pool to the beach to find five vanilla plants.",
       "itemsNeeded": [],
       "itemsRecommended": [
-        "Dragonfire protection"
+        ""
       ],
       "highlights": {
         "npc": [],
@@ -149,7 +124,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items recommended: Dragonfire protection",
+      "stepDescription": "Go to Draynor Village and talk to the Wise Old Man. (Chat 4•2•4•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -157,10 +132,13 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Go get a Anti-Dragonfire Shield because you'll be fighting a dragon but thats totally OPTIONAL.",
+        "Bring a single Dramen Branch for later steps."
+      ]
     },
     {
-      "stepDescription": "Go to Draynor Village and talk to the Wise Old Man. (Chat 4\u20222\u20224\u20222)",
+      "stepDescription": "Head to Zanaris. Use a raw chicken on Chicken shrine.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -168,18 +146,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Head to Zanaris. Use a raw chicken on Chicken shrine. (Kill a chicken near the shrine for a raw chicken if you need one).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Kill a chicken near the shrine for a raw chicken if you need one."
+      ]
     },
     {
       "stepDescription": "Head north and kill the Evil Chicken.",
@@ -217,7 +186,7 @@
     {
       "stepDescription": "Head south and kill a black dragon",
       "itemsNeeded": [
-        "1 dramen branch"
+        ""
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -228,7 +197,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Take the dragon token it drops (right-click the loot pile, as area loot won't show it)",
+      "stepDescription": "Take the dragon token it drops",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -236,25 +205,13 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Right-click the loot pile, as area loot won't show it"
+      ]
     },
     {
       "stepDescription": "Use the egg on the brulee.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: 1 dramen branch",
-      "itemsNeeded": [
-        "Ice gloves",
-        "1 antifire or super antifire"
-      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -272,18 +229,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If you do not have Dramen branches, cut one from the dramen tree in the Entrana Dungeon.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you do not have Dramen branches, cut one from the dramen tree in the Entrana Dungeon."
+      ]
     },
     {
       "stepDescription": "Add the cinnamon to the brulee.",
@@ -297,26 +245,20 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: Ice gloves, 1 antifire or super antifire",
-      "itemsNeeded": [],
+      "stepDescription": "",
+      "itemsNeeded": [
+        "Ice gloves",
+        "1 antifire or super antifire"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Wear your ice gloves, then either equip an anti-dragon shield or have an antifire or super antifire in your inventory before proceeding.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Wear your ice gloves, then either equip an anti-dragon shield or have an antifire or super antifire in your inventory before proceeding."
+      ]
     },
     {
       "stepDescription": "Rub the dragon token in either Lumbridge or Zanaris.",
@@ -330,7 +272,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Ask the Fairy Dragon to flamb\u00e9 the brulee. (Chat 1)",
+      "stepDescription": "Ask the Fairy Dragon to flambé the brulee. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

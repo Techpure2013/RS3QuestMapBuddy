@@ -2,35 +2,13 @@
   "questName": "Plague's End",
   "questSteps": [
     {
-      "stepDescription": "Items needed: Mourner gear",
-      "itemsNeeded": [],
+      "stepDescription": "Talk to Arianwyn in Lletya. (Chat 1•✓•1•1)",
+      "itemsNeeded": [
+        "Mourner gear"
+      ],
       "itemsRecommended": [
         "Combat equipment"
       ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items recommended: Combat equipment",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Arianwyn in Lletya. (Chat 1\u2022\u2713\u20221\u20221)",
-      "itemsNeeded": [
-        "One free inventory space"
-      ],
-      "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": []
@@ -50,19 +28,10 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: One free inventory space",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Open northern door. (Chat 3\u20222\u20221)",
-      "itemsNeeded": [],
+      "stepDescription": "Open northern door. (Chat 3•2•1)",
+      "itemsNeeded": [
+        "One free inventory space"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -162,18 +131,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head south-east back downstairs and talk to Iestin Edern. (Chat 1\u20222)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: Three empty inventory slots",
+      "stepDescription": "Head south-east back downstairs and talk to Iestin Edern. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -185,7 +143,9 @@
     },
     {
       "stepDescription": "Talk to Councillor Halgrive outside the East Ardougne church (south west of lodestone), located just west of the main square. (Chat 1)",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Three empty inventory slots"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -195,7 +155,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Bravek in the upper floor of West Ardougne Civic Office. (Chat 1\u20222\u20222)",
+      "stepDescription": "Talk to Bravek in the upper floor of West Ardougne Civic Office. (Chat 1•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -217,7 +177,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the 6 people on the list:",
+      "stepDescription": "Talk to the 6 people listed in Additional Info",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -225,40 +185,27 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Ted or Martha Rehnison - In a building north of the civic office. (Chat 1)",
+        "Jethick - On the eastern side of the large paved area outside the civic office. (Chat 1)",
+        "Nurse Sarah - In a building south-west of the church. (Chat 1)",
+        "Carla - In an open area, north of the graveyard to the west of the church. (Chat 1)",
+        "Koftik - Entrance to the Underground Pass. (Chat 1)",
+        "Elena - Found in the house just west of the log balance in the northern part of East Ardougne (from the lodestone run south-west and then take log balance to cross the river). (Chat 1)"
+      ]
     },
     {
-      "stepDescription": "Ted or Martha Rehnison - In a building north of the civic office. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Jethick - On the eastern side of the large paved area outside the civic office. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Nurse Sarah - In a building south-west of the church. (Chat 1)",
-      "itemsNeeded": [],
+      "stepDescription": "Go to the church in West Ardougne.",
+      "itemsNeeded": [
+        "Mourner gear"
+      ],
       "itemsRecommended": [
-        "1 free inventory slot needed",
+        "1 Free Inventory slot needed",
         "crystal teleport seeds",
-        "Halgrive's proclamation",
-        "combat equipment",
-        "food",
-        "and 10 magic logs in the bank."
+        "Halgrive's Proclamation",
+        "Combat Equipment",
+        "Food",
+        "10 Magic Logs in the bank"
       ],
       "highlights": {
         "npc": [],
@@ -268,73 +215,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Carla - In an open area, north of the graveyard to the west of the church. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Koftik - Entrance to the Underground Pass. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Elena - Found in the house just west of the log balance in the northern part of East Ardougne (from the lodestone run south-west and then take log balance to cross the river). (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: Mourner gear",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items recommended: 1 free inventory slot needed, crystal teleport seeds, Halgrive's proclamation, combat equipment, food, and 10 magic logs in the bank.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Go to the church in West Ardougne.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to any of the 6 NPCs at the church (not the priest). (Chat 1\u20225)",
+      "stepDescription": "Talk to any of the 6 NPCs at the church (not the priest). (Chat 1•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -356,7 +237,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Kick down door and kill the mourners. (If door is not closed, transport away and come back. No mourner gear needed.)",
+      "stepDescription": "Kick down door and kill the mourners.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -364,7 +245,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If door is not closed, transport away and come back. No mourner gear needed."
+      ]
     },
     {
       "stepDescription": "Open trapdoor in north-west corner and kill the mourners.",
@@ -378,7 +261,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Defeat then talk to Head Mourner. (Chat 1\u20222\u20223\u2022~)",
+      "stepDescription": "Defeat then talk to Head Mourner. (Chat 1•2•3•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -411,18 +294,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head to the entrance of King Lathas' Castle.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Sir Edmond at the entrance. (Chat 1)",
+      "stepDescription": "Head to the entrance of King Lathas' Castle and talk to Sir Edmond at the entrance. (Chat 1).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -488,11 +360,9 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Iestin Edern. (Chat 3\u20222\u20221)",
+      "stepDescription": "Talk to Iestin Edern. (Chat 3•2•1)",
       "itemsNeeded": [
-        "10 Magic logs\nThe blue symbols you need to inspect are on the walls",
-        "near the floor",
-        "in Lletya. Ground level:"
+        ""
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -547,7 +417,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Gwir for 2 items. (Chat 1\u20223) then (Chat 1\u20224\u20222)",
+      "stepDescription": "Talk to Gwir for 2 items. (Chat 1•3) then (Chat 1•4•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -558,84 +428,23 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: 10 Magic logs'\nThe blue symbols you need to inspect are on the walls, near the floor, in Lletya. Ground level:",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Clothing store, upstairs, west wall",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Ranging shop (south west building), along western wall",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Southern building, south wall",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Bank, east wall, south of the table",
-      "itemsNeeded": [],
-      "itemsRecommended": [
-        "Plant cure",
-        "Meilyr potion recipe (to avoid banking later)"
+      "stepDescription": "The blue symbols you need to inspect are on the walls, near the floor, in Lletya. Ground level and Upper Level ( up the central stairs ) list in Additional Info for locations",
+      "itemsNeeded": [
+        " 10 Magic logs"
       ],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Upper level (stairs in centre of Lletya):",
-      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Outside altar room, north wall",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Ranging shop (south west building), along western wall",
+        "Southern building, south wall.",
+        "Bank, east wall, south of the table.",
+        "Up the central stairs, outside altar room, north wall. ( Upper Level )",
+        "Up the clothing store stairs, west wall. ( Upper Level )"
+      ]
     },
     {
       "stepDescription": "Head to the centre of Lletya and build the statue hotspot.",
@@ -649,7 +458,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Climb upstairs.",
+      "stepDescription": "Head upstairs and speak to Kelyn. (Chat 4).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -660,153 +469,40 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Speak to Kelyn. (Chat 4)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Finding Lady Trahaearn",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: Rune bar, combat equipment, 1 empty summoning pouch, 200 spirit shards, 1 gold charm, 1 green charm, 1 crimson charm, 1 blue charm, and 1 Amlodd charm",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items recommended: Plant cure, Meilyr potion recipe (to avoid banking later)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Make your way to the Well of Voyage:",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Exit Lletya, pass tree (north-west).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Step-over tripwire (west).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Enter dense forest (west).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Jump leaves (north).",
+      "stepDescription": "Make your way to the Well of Voyage",
       "itemsNeeded": [
-        "Plant cure",
-        "Meilyr potion recipe"
+        "Rune bar",
+        "Combat Equipment",
+        "1 Empty Summoning Pouch",
+        "200 Spirit Shards",
+        "1 Gold Charm",
+        "1 Green Charm",
+        "1 Crimson Charm",
+        "1 Blue Charm",
+        "1 Amlodd Charm"
       ],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "Plant Cure",
+        "Meilyr Potion Recipe"
+      ],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Exit Lletya, pass tree (north-west).",
+        "Step-over tripwire (west).",
+        "Enter dense forest (west).",
+        "Jump leaves (north).",
+        "Head east until you find a cave entrance and enter it.",
+        "Head east, mine cracked wall (south of the well).",
+        "Enter tunnel.",
+        "Kill 3 level 70 automatons (each automaton uses a different side of the combat triangle)."
+      ]
     },
     {
-      "stepDescription": "Head east until you find a cave entrance and enter it.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Head east, mine cracked wall (south of the well).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Enter tunnel.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Kill 3 level 70 automatons (each automaton uses a different side of the combat triangle).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Wake Lady Trahaearn. (Chat 1\u20223\u20223)",
+      "stepDescription": "Wake Lady Trahaearn. (Chat 1•3•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -839,18 +535,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Summon Amlodd pouch. (Chat 1\u20223)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: Plant cure, Meilyr potion recipe",
+      "stepDescription": "Summon Amlodd pouch. (Chat 1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -862,7 +547,10 @@
     },
     {
       "stepDescription": "Home teleport to Tirannwn Lodestone.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Plant Cure",
+        "Meilyr Potion Recipe"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -872,7 +560,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Pick a blue mushroom (you must have the Meilyr potion recipe in order to pick the mushrooms).",
+      "stepDescription": "Pick a blue mushroom.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -880,7 +568,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "You must have the Meilyr Potion Recipe in order to pick the mushrooms."
+      ]
     },
     {
       "stepDescription": "Pick a red mushroom (north-east of the lodestone, these mushrooms are for later).",
@@ -919,7 +609,7 @@
       "stepDescription": "Enter dense forest two times (north - do not pass the third one).",
       "itemsNeeded": [],
       "itemsRecommended": [
-        "Ring of kinship"
+        ""
       ],
       "highlights": {
         "npc": [],
@@ -973,7 +663,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to Lletya.",
+      "stepDescription": "Make your way to the Poison Waste 2 Options to go. Fairy Ring to DLR or exit Lletya and head past the tree north west and Head far south to the large swamp area.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -981,29 +671,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Exit Lletya, pass tree (north-west).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Head far south to the large swamp area, past the magic trees.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Jump the small rocks to the island and continue, referencing the map captioned right (read map from right to left)",
@@ -1017,7 +687,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Elf Hermit. (Chat 2\u20222\u20221\u20223\u20224)",
+      "stepDescription": "Talk to Elf Hermit. (Chat 2•2•1•3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1028,31 +698,15 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: blue Isafdar mushroom, red Isafdar mushroom, super defence (3)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items recommended: Ring of kinship",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Grind your red and blue Isafdar mushrooms.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "Grind your Red and Blue Isafdar Mushrooms.",
+      "itemsNeeded": [
+        "Blue Isafdar Mushroom",
+        "Red Isafdar",
+        "Super Defence (3)"
+      ],
+      "itemsRecommended": [
+        "Ring of kinship"
+      ],
       "highlights": {
         "npc": [],
         "object": []
@@ -1171,18 +825,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Prepare for combat (fire-based spells preferred).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Return to Lletya.",
+      "stepDescription": "Return to Lletya and prepare for combat ( Fire based spells recommended ).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1226,7 +869,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Lord Crwys to begin stage 1.",
+      "stepDescription": "Talk to Lord Crwys to begin stage 1. I recommend to read the Additional Info section before starting but if you just wanna \"Yeet\" into it go for it gamer.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1234,62 +877,24 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Direct Light into the centre (place/rotate mirrors as needed). Puzzle Solutions start Left to Right at Step.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "For stages 1\u20135, It is best to work in reverse with the mirrors' beam (predicting the beam of light from the Seren seal) up until the stages with locked mirrors.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Use Protect/Deflect Magic and keep moving when Dark Lord is alive. You can either kill the enemies between puzzles or tank their hits.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Each puzzle completed saves, so you can leave for more food and come back between puzzles/fights.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Direct Light into the centre (place/rotate mirrors as needed). Puzzle Solutions start Left to Right at Step.",
+        "For stages 1–5, It is best to work in reverse with the mirrors' beam (predicting the beam of light from the Seren seal) up until the stages with locked mirrors.",
+        "3 stages before the boss fight.",
+        "Use Protect/Deflect Magic and keep moving when Dark Lord is alive. You can either kill the enemies between puzzles or tank their hits.",
+        "Each puzzle completed saves, so you can leave for more food and come back between puzzles/fights."
+      ]
     },
     {
       "stepDescription": "After directing the beam into the Crwys Crystal, there will be some dialogue.",
       "itemsNeeded": [],
       "itemsRecommended": [],
+      "additionalStepInformation": [],
       "highlights": {
         "npc": [],
         "object": []
       },
-      "floor": 0,
-      "additionalStepInformation": []
+      "floor": 0
     },
     {
       "stepDescription": "Quest complete!",

@@ -2,7 +2,7 @@
   "questName": "Fight Arena",
   "questSteps": [
     {
-      "stepDescription": "Talk to Lady Servil west of the Monastery which is south of Ardougne. (Chat \u2713)",
+      "stepDescription": "Talk to Lady Servil west of the Monastery which is south of Ardougne. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -57,7 +57,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Angor from the bar to the west of the western jail entrance, to buy a bottle of Khali brew for five coins. (Chat 2)",
+      "stepDescription": "Talk to Angor, the bartender west of the western jail entrance, to buy a bottle of Khali brew for five coins. (Chat 2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -91,7 +91,10 @@
     },
     {
       "stepDescription": "Kill the Khazard ogre.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Combat Equipment",
+        "Food"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],

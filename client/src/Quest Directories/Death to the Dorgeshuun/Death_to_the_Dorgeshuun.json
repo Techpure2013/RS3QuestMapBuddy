@@ -3,7 +3,9 @@
   "questSteps": [
     {
       "stepDescription": "Go to the Lumbridge castle cellar. Take a light source.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Light Source"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -35,7 +37,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Mistag and ask about the favour. (Chat 1\u2022\u2713\u20224)",
+      "stepDescription": "Talk to Mistag and ask about the favour. (Chat 1•✓•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -43,10 +45,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Alternatively to leave mines, right click on Mistag and use \"Follow\"."
+      ]
     },
     {
-      "stepDescription": "Alternatively to leave mines, right click on Mistag and use \"Follow\".",
+      "stepDescription": "Return to the Lumbridge Castle cellar, talk to Zanik. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -54,29 +58,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Return to the Lumbridge Castle cellar, talk to Zanik. (Chat 1\u20221)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If you lose Zanik at any time, she can be found back in the Lumbridge Castle cellar. You will need to dismiss any pets or followers to have Zanik follow you.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you lose Zanik at any time, she can be found back in the Lumbridge Castle cellar. You will need to dismiss any pets or followers to have Zanik follow you."
+      ]
     },
     {
       "stepDescription": "Talk to the Cook inside Lumbridge Castle.",
@@ -164,18 +148,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Make sure to not click while Zanik walks off the bridge of the east side. She starts a dialog that is easy to click away from accidentally",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Make sure to not click while Zanik walks off the bridge of the east side. She starts a dialog that is easy to click away from accidentally"
+      ]
     },
     {
       "stepDescription": "Talk to Father Aereck in the church.(Chat 4)",
@@ -208,10 +183,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If she doesn't have the talk option, teleport away and talk to her in the Lumbridge Castle basement."
+      ]
     },
     {
-      "stepDescription": "If she doesn't have the talk option, teleport away and talk to her in the Lumbridge Castle basement.",
+      "stepDescription": "After the cutscene equip H.A.M Robes and climb down the old mine entrance west of the cow field to enter the hideout.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -222,29 +199,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "After the cutscene, put on your set of H.A.M. robes and head to the H.A.M. hideout.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Open, then climb down the old mine entrance west of the cow field to enter the hideout.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk with Johanhus Ulsbrecht (In the southern room) about the cave goblins. (Chat 4\u20223)",
+      "stepDescription": "Talk with Johanhus Ulsbrecht (In the southern room) about the cave goblins. (Chat 4•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -274,18 +229,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "In the following section, if any of the guards catch you, you will be sent to jail, which is located on the floor above. Do not worry though; Zanik will pick-lock the door to the jail, but you will have to kill the guards with Zanik all over again.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If any of the guards catch you in the following steps, you will be sent to jail, which is located on the floor above. Dont fret; Zanik will pick-lock the door to the jail, but you will have to kill the guards with Zanik all over again."
+      ]
     },
     {
       "stepDescription": "Walk past the first guard (Zanik shoots him).",
@@ -442,17 +388,6 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "If you have finished the Tears of Guthix quest, you can teleport there with her using a games necklace.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Climb down the trapdoor in the Lumbridge castle, and squeeze through the hole in the cellar wall.",
       "itemsNeeded": [],
       "itemsRecommended": [],
@@ -461,7 +396,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you have finished the Tears of Guthix quest, you can teleport there with her using a games necklace."
+      ]
     },
     {
       "stepDescription": "Squeeze through the hole to the south, and run south across the stepping stones.",
@@ -505,18 +442,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Green tears empty your bowl.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Green tears empty your bowl."
+      ]
     },
     {
       "stepDescription": "Talk to Zanik. (Chat 1)",
@@ -530,63 +458,26 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Prepare for the fight against Sigmund and his guards. (but keep the H.A.M robes with you)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Lodestone to Lumbridge, enter the castle cellar, and have Zanik follow you. (Chat 1)",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Prepare for Combat",
+        "H.A.M Robes"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
-      "stepDescription": "Head to Seth Groats's farm, on the east bank of the river and near the north end of the cow paddock.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Unequip any weapons or shields.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Equip full H.A.M. set.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Search one of the empty crates by the tree. (Chat 1\u20221)",
-      "itemsNeeded": [],
+      "stepDescription": "Equip H.A.M robes and head to Seth Groats's farm, on the east bank of the river and near the north end of the cow paddock. Search one of the empty crates by the tree. (Chat 1•1)",
+      "itemsNeeded": [
+        ""
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -607,29 +498,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go west and walk up to Sigmund, instead of immediately clicking to attack him. You must trigger the dialogue with Sigmund in order to have Zanik attack him, which is needed to complete the quest.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Kill the guards first. This allows Zanik to attack Sigmund who will then switch to Protect from Missiles.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Kill Sigmund, who uses the Protect from Missiles prayer. If he's protecting against your attack style, avoid him so he switches back to Protect from Missile.",
+      "stepDescription": "Go west and walk up to Sigmund. Dont attack. Once fight begins kill guards first then Sigmund.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -659,18 +528,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Note: If you forgot your lightsource, it is ok. You will be given a lit torch upon completing the cutscene.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you forgot your lightsource, it is ok. You will be given a lit torch upon completing the cutscene."
+      ]
     },
     {
       "stepDescription": "Quest complete!",

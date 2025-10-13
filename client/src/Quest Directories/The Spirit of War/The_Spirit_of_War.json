@@ -2,7 +2,7 @@
   "questName": "The Spirit of War",
   "questSteps": [
     {
-      "stepDescription": "Interact with Kharen on the docks in the north-western City of Um, close to the transportation icon. (Chat \u2713)",
+      "stepDescription": "Interact with Kharen on the docks in the north-western City of Um, close to the transportation icon. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -24,7 +24,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Find four Wayward Souls. They are ghastly sphere shapes floating above the Lake Mnemosyne in each of the four corners of the map. Some may be a good distance away from the coastline.",
+      "stepDescription": "Find four Wayward Souls.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -32,21 +32,15 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "They are ghastly sphere shapes floating above the Lake Mnemosyne in each of the four corners of the map.",
+        "Some may be a good distance away from the coastline.",
+        "Dive and Surge can be used to speed up movement. ",
+        "The Mobile perk (must be on an armour piece, as both hands must be free) and using a powerburst of acceleration will also help."
+      ]
     },
     {
-      "stepDescription": "Dive and Surge can be used to speed up movement. The Mobile perk (must be on an armour piece, as both hands must be free) and using a powerburst of acceleration will also help.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Return back to the docks and disembark in the dock south of Kharen. (Or teleport out of the rowboat.)\nPrepare for combat and don't forget to re-equip your weapons.",
+      "stepDescription": "Return back to the docks and disembark in the dock south of Kharen or teleport. Prepare for combat and don't forget to re-equip your weapons.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

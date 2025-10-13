@@ -2,7 +2,7 @@
   "questName": "The Tale of the Muspah",
   "questSteps": [
     {
-      "stepDescription": "Talk to Erjolf on the mountain north-east of Rellekka. (Fairy ring DKS) (Chat \u2713\u20221)",
+      "stepDescription": "Talk to Erjolf on the mountain north-east of Rellekka. (Fairy ring DKS) (Chat ✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -35,7 +35,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Erjolf about his progress and offer to help. (Chat 2\u20222\u20222)",
+      "stepDescription": "Talk to Erjolf about his progress and offer to help. (Chat 2•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -68,28 +68,6 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "The cave is navigable by jumping the flat rocks. Click Block-stream on the ice mounds by each cave water exit to block the streams. You may also unblock-stream where necessary. The lit rafts will melt the icicles when pushed near them.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Side of ice to melt",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "You have to set 5 rafts alight quickly from the northern shore of the pool. Light them from a spot such that when they float south, they end up across the east side of the frozen armour and are blocked from leaving the cave by a rock.",
       "itemsNeeded": [],
       "itemsRecommended": [],
@@ -98,7 +76,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "The cave is navigable by jumping the flat rocks. ",
+        "Click Block-stream on the ice mounds by each cave water exit to block the streams.",
+        "You may also unblock-stream where necessary.",
+        "The lit rafts will melt the icicles when pushed near them."
+      ]
     },
     {
       "stepDescription": "You have to set 3 rafts alight quickly from the northern shore of the pool. Light them on 3 spots that, when they float south, they end up on the north side of the frozen armour.",
@@ -131,21 +114,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "You'll need to light the rafts in the western stream, not against the pool shore."
+      ]
     },
     {
-      "stepDescription": "You'll need to light the rafts in the western stream, not against the pool shore.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Erjolf. (Chat 2\u20221)",
+      "stepDescription": "Talk to Erjolf. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -167,7 +141,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Ascend the steps to the icy platform, head north-east and speak to the Natural historian. (Chat 1\u20221\u20221)",
+      "stepDescription": "Ascend the steps to the icy platform, head north-east and speak to the Natural historian. (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -178,7 +152,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Describe the creature to him. (Chat 3\u20222\u20221\u20222\u20222\u20221)",
+      "stepDescription": "Describe the creature to him. (Chat 3•2•1•2•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -189,7 +163,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Continue dialogue with the historian. (Chat 1\u20222)",
+      "stepDescription": "Continue dialogue with the historian. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -200,7 +174,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head north of Pollnivneach to a sand pile.",
+      "stepDescription": "Head north of Pollnivneach to a sand pile and dig the sand pile.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -211,7 +185,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Dig the sand pile.",
+      "stepDescription": "After Ali the Wise speaks, talk again and ask about the Muspah. (Chat 3•3•3•3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -222,22 +196,11 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "After Ali the Wise speaks, talk again and ask about the Muspah. (Chat 3\u20223\u20223\u20223\u20224)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: 4 cut sapphires, 4 water runes, and 4 cosmic runes",
+      "stepDescription": "Head back to the cave with the Muspah Fairy Ring DKS is the fastest way. ",
       "itemsNeeded": [
-        "4 cut sapphires",
-        "4 water runes",
-        "and 4 cosmic runes"
+        "4 Cut Sapphires",
+        "4 Water Runes",
+        "and 4 Cosmic Runes"
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -245,18 +208,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Head back to the Muspah cave.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        " "
+      ]
     },
     {
       "stepDescription": "If you haven't obtained sapphires yet, mine the sapphire rocks nearby.",
@@ -270,7 +224,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Cross the floating bridge. Left-click bore-sapphires on the ice block, then enchant-sapphires (Note: You do NOT need to be on the Standard Spellbook for this to work).",
+      "stepDescription": "Cross the floating bridge. Left-click bore-sapphires on the ice block, then enchant-sapphires.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -278,7 +232,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "You do NOT need to be on the Standard Spellbook for this to work."
+      ]
     },
     {
       "stepDescription": "Pick up your sapphires from the ground, or more will have to be obtained.",
@@ -292,10 +248,9 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the Muspah and offer to help. (Chat 1\u20221\u20223\u20221\u20221\u20225)",
+      "stepDescription": "Talk to the Muspah and offer to help. (Chat 1•1•3•1•1•5)",
       "itemsNeeded": [
-        "4 water runes and 4 cosmic runes",
-        "4 cut sapphires"
+        ""
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -306,19 +261,11 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: 4 water runes and 4 cosmic runes, 4 cut sapphires",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Talk to Erjolf just outside the chamber.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "4 water runes and 4 cosmic runes",
+        "4 cut sapphires"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -358,18 +305,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Dismiss any followers you have.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Dismiss any followers you have."
+      ]
     },
     {
       "stepDescription": "Slightly south, talk to Jhallan. (Chat 1)",

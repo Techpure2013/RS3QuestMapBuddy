@@ -2,53 +2,100 @@
   "questName": "Icthlarin's Little Helper",
   "questSteps": [
     {
-      "stepDescription": "Items needed: Cat and 1k coins (if taking carpet)",
+      "stepDescription": "Get to Sophanem exit gate run north and east to find the Wanderer.",
       "itemsNeeded": [
         "Cat and 1k coins (if taking carpet)"
       ],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Wanderer",
+            "npcLocation": {
+              "lat": 2847,
+              "lng": 3314
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 2846,
+                "lng": 3313
+              },
+              "topRight": {
+                "lat": 2848,
+                "lng": 3315
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "You can use the magic carpet network south of Shantay's Pass at Al Kharid to get to Nardah, and then run southwest"
+      ]
     },
     {
-      "stepDescription": "Get to Sophanem (you can use the magic carpet network south of Shantay's Pass at Al Kharid to get to Nardah, and then run southwest)",
+      "stepDescription": "Talk to the Wanderer with your cat in your backpack or while your cat is following you. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Wanderer",
+            "npcLocation": {
+              "lat": 2847,
+              "lng": 3314
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 2846,
+                "lng": 3313
+              },
+              "topRight": {
+                "lat": 2848,
+                "lng": 3315
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to the Wanderer with your cat in your backpack or while your cat is following you (the Wanderer is located a short distance north of Sophanem, east of the river but west of the Agility Pyramid). (Chat 1\u2022\u2713)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "The Wanderer is located a short distance north of Sophanem, east of the river but west of the Agility Pyramid."
+      ]
     },
     {
       "stepDescription": "Talk to her again. (Chat 4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Wanderer",
+            "npcLocation": {
+              "lat": 2847,
+              "lng": 3314
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 2846,
+                "lng": 3313
+              },
+              "topRight": {
+                "lat": 2848,
+                "lng": 3315
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Open the northern door on the southern pyramid (picture of a cat).",
+      "stepDescription": "Open the northern door on the southern pyramid. (picture of a cat).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -78,18 +125,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Avoid traps and aggressive monsters until you reach a pit.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Avoid traps and aggressive monsters until you reach a pit."
+      ]
     },
     {
       "stepDescription": "Jump across the pit (requires at least 20% run energy).",
@@ -127,19 +165,10 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: Combat equipment",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to the Sphinx with your cat/kitten out (if 7 is highlighted it is WRONG ITS 9.) (Chat 1\u20221\u20222\u20221)",
-      "itemsNeeded": [],
+      "stepDescription": "Talk to the Sphinx with your cat/kitten out (if 7 is highlighted it is WRONG ITS 9.) (Chat 1•1•2•1)",
+      "itemsNeeded": [
+        "Combat equipment"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -250,9 +279,7 @@
     {
       "stepDescription": "Left click the empty space with the highlighted outline of the jar to return it.",
       "itemsNeeded": [
-        "willow log",
-        "bucket of sap",
-        "salt (or an empty bucket)"
+        ""
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -274,19 +301,12 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: willow log, bucket of sap, salt (or an empty bucket)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Talk to the High Priest. (Chat 1)",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "willow log",
+        "bucket of sap",
+        "salt (or an empty bucket)"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -439,7 +459,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Use the unholy symbol on any sarcophagus. (Looting all sarcophagi is optional at this point)",
+      "stepDescription": "Use the unholy symbol on any sarcophagus.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -447,7 +467,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "looting all sarcophagi is optional at this point."
+      ]
     },
     {
       "stepDescription": "Exit the room.",

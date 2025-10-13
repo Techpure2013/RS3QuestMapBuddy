@@ -2,7 +2,7 @@
   "questName": "City of Senntisten",
   "questSteps": [
     {
-      "stepDescription": "Talk to Ariane at the entrance to the Heart of Gielinor and enter the Elder Halls. (Chat \u2713\u20221)",
+      "stepDescription": "Talk to Ariane at the entrance to the Heart of Gielinor and enter the Elder Halls. (Chat ✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -13,7 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Charos. Go through all chat options about what to do with the eggs. (Chat 1\u20222\u20223\u20224\u20225\u20224)",
+      "stepDescription": "Talk to Charos. Go through all chat options about what to do with the eggs. (Chat 1•2•3•4•5•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -57,15 +57,19 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Teleport to Port Sarim lodestone (or use the Clan Vexillum to teleport to the Falador Clan Camp) and go to Armadyl's tower. Climb to the top and talk to Armadyl.",
+      "stepDescription": "Teleport to Port Sarim lodestone and go to Armadyl's tower. Climb to the top and talk to Armadyl.",
       "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsRecommended": [
+        "Use the Clan Vexillum to teleport to the Falador Clan Camp if you are in a clan."
+      ],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Go to Burthorpe Castle and climb up the stone staircase. (Chat 1)",
@@ -145,8 +149,12 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: A mattock (tool belt works), a dragonstone, and 4 free inventory slots.",
-      "itemsNeeded": [],
+      "stepDescription": "Enter the City of Senntisten through the ancient door to the north of the Archaeology Guild.(Chat 1)",
+      "itemsNeeded": [
+        "A mattock (tool belt works)",
+        "a dragonstone",
+        "4 free inventory slots."
+      ],
       "itemsRecommended": [
         "Signs of the porter or grace of the elves for banking archaeological materials"
       ],
@@ -155,10 +163,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "See the map at this step to reference to for items, statues and other needs."
+      ]
     },
     {
-      "stepDescription": "Items recommended: Signs of the porter or grace of the elves for banking archaeological materials",
+      "stepDescription": "Excavate the forum entrance.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -169,7 +179,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "See the map section below for a helpful map of the area.",
+      "stepDescription": "Interact with the pedestal to obtain Pontifex Maximus figurine (damaged)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -180,62 +190,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Enter the City of Senntisten through the ancient door to the north of the Archaeology Guild.(Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Azzanadra.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Excavate the forum entrance. (Use your grace of the elves charges to move the materials to the material storage container if you have it. Porters also work.)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Azzanadra.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Interact with the pedestal for the damaged artefact.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Exit pulley. Talk to Intern Jimmy at the entrance to get materials.",
+      "stepDescription": "Exit pulley (Chat 1). Talk to Intern Jimmy at the entrance to get materials.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -276,18 +231,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Alternatively, you can turn off run and click on him once, following him all the way to the cathedral.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Alternatively, you can turn off run and click on him once, following him all the way to the cathedral."
+      ]
     },
     {
       "stepDescription": "Search the bookcases, chests, crates, and pews in the cathedral, including the upstairs balconies, for two light globes (see map below).",
@@ -325,48 +271,26 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: Combat gear and food",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Within the city, put light globes on the light pedestals to illuminate the immediate area. When outside of an illuminated area, you will receive stacks of Shadows of the Empire debuff. The more stacks you have, the more damage you are dealt. Standing in an illuminated area will remove stacks of the debuff. This includes stepping into houses with lights. the ward only dims the light from the globes.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Light globes will persist when teleporting out and additional light globes are spread through the west district of the city. You don't need to obtain all light globes to complete the quest, so it may be more beneficial to juggle them as you explore new areas.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "See the map for ward and objective locations.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Combat Gear",
+        "Food"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Within the city, put light globes on the light pedestals to illuminate the immediate area.",
+        "When outside of an illuminated area, you will receive stacks of Shadows of the Empire debuff.",
+        "The more stacks you have, the more damage you are dealt.",
+        "Standing in an illuminated area will remove stacks of the debuff.",
+        "This includes stepping into houses with lights. the ward only dims the light from the globes.",
+        "Light globes will persist when teleporting out and additional light globes are spread through the west district of the city.",
+        "You don't need to obtain all light globes to complete the quest, so it may be more beneficial to juggle them as you explore new areas."
+      ]
     },
     {
       "stepDescription": "Head to the blood bank (north-western building in southern section).",
@@ -421,18 +345,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "The correct house is marked with Bloodied Note on the map.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "The correct house is marked with Bloodied Note on the map."
+      ]
     },
     {
       "stepDescription": "Search the ransacked desk near the chimney for the Blood Bank Ledger.",
@@ -457,7 +372,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Search the shelves for bottles of blood: Bottle of blood (human) Bottle of blood (unicorn) Bottle of blood (dragon) Bottle of blood (aviansie)\nBe prepared for a dangerous boss fight immediately after finishing the puzzle. The Blood Warden will heal from any damage-over-time abilities. Additionally, its special attack will cause it to heal over time.",
+      "stepDescription": "Search the shelves for bottles of blood Bottles of blood are listed in Additional Info.\n ",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -465,10 +380,17 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Bottle of blood (human)",
+        "Bottle of blood (unicorn)",
+        "Bottle of blood (dragon) ",
+        "Bottle of blood (aviansie)",
+        "Be prepared for a dangerous boss fight immediately after finishing the puzzle.",
+        "The Blood Warden will heal from any damage-over-time abilities. Additionally, its special attack will cause it to heal over time."
+      ]
     },
     {
-      "stepDescription": "Inspect the blood bottle to start the puzzle, and add blood:",
+      "stepDescription": "Inspect the blood bottle to start the puzzle, and add blood Blood amounts are in Additional Info. Be prepared to fight and kill the Blood Warden.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -476,62 +398,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "2/8 human blood",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "3/8 unicorn blood",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "1/8 dragon blood",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "2/8 aviansie blood",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Kill the Blood Warden",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "2/8 human blood",
+        "3/8 unicorn blood",
+        "1/8 dragon blood",
+        "2/8 aviansie blood"
+      ]
     },
     {
       "stepDescription": "Take the ward from the pedestal.",
@@ -578,7 +450,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Take the ice ward from the pedestal inside the house to the south.",
+      "stepDescription": "Take the ice ward from the pedestal.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -622,7 +494,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Take the journal on the desk to get the Inquisition Profiles.",
+      "stepDescription": "Take the journal on the desk to get the Inquisition Profiles and read the Inquisition Profiles and complete the dialogue. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -633,18 +505,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Read the Inquisition Profiles and complete the dialogue. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Open the marked drawers as below. Start from the bottom and work your way up or zoom in for ease.",
+      "stepDescription": "Open the marked drawers as seen in the image at this step also added map at this step. Start from the bottom and work your way up or zoom in for ease.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -699,7 +560,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Find and smash the stones to reveal the gargoyles sentinels. Smash them manually to complete the final blow, or automatically if relevant perk is available.",
+      "stepDescription": "Find and smash the stones to reveal the gargoyles sentinels. Smash them manually to complete the final blow, or automatically if relevant perk is available. Locations of Gargoyles are in Additional Information.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -707,51 +568,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Directly outside the arsenal, the building with the ward.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Further west and south of the first, in a clearing in front of a house door.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "To the north in the market, the square containing the market stalls.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "West of the market, directly in front of the colosseum gateway.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Directly outside the arsenal, the building with the ward.",
+        "Further west and south of the first, in a clearing in front of a house door.",
+        "To the north in the market, the square containing the market stalls.",
+        "West of the market, slightly south of the colosseum gateway."
+      ]
     },
     {
       "stepDescription": "Return to the arsenal and take the ward from the pedestal.",
@@ -776,7 +598,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "The drawers denoted by dark cells in the following table need to be opened, forming the shape of a capital letter I:",
+      "stepDescription": "Talk to Azzanadra and complete the dialogue.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -787,15 +609,15 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Azzanadra and complete the dialogue.",
+      "stepDescription": "Quest Complete!",
       "itemsNeeded": [],
       "itemsRecommended": [],
+      "additionalStepInformation": [],
       "highlights": {
         "npc": [],
         "object": []
       },
-      "floor": 0,
-      "additionalStepInformation": []
+      "floor": 0
     }
   ]
 }

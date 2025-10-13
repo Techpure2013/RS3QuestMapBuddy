@@ -2,11 +2,29 @@
   "questName": "Bringing Home the Bacon",
   "questSteps": [
     {
-      "stepDescription": "Speak to Eli in Falador Farm north of Port Sarim. (Chat \u2713)",
+      "stepDescription": "Speak to Eli in Falador Farm north of Port Sarim. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Eli",
+            "npcLocation": {
+              "lat": 3295,
+              "lng": 3020
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3295,
+                "lng": 3019
+              },
+              "topRight": {
+                "lat": 3296,
+                "lng": 3021
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -24,26 +42,35 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Speak to Eli again.",
+      "stepDescription": "Speak to Eli again dont click to fast through cutscene or it will have to be restarted.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Eli",
+            "npcLocation": {
+              "lat": 3295,
+              "lng": 3020
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3295,
+                "lng": 3019
+              },
+              "topRight": {
+                "lat": 3296,
+                "lng": 3021
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "During the cutscene, avoid clicking too fast through the dialogue or you will have to restart the cutscene.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        ""
+      ]
     },
     {
       "stepDescription": "Build the hotspots and keep adding bacon until Eli has escorted the pigs away (focus on the middle one and they will all swarm to it).",
@@ -61,96 +88,222 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Eli",
+            "npcLocation": {
+              "lat": 5728,
+              "lng": 1054
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5727,
+                "lng": 1053
+              },
+              "topRight": {
+                "lat": 5729,
+                "lng": 1055
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "If necessary, gather 5 wheat from the field south-east of the Draynor lodestone.",
+      "stepDescription": "Talk to Martin the Master Gardener in Draynor Village. (Chat 3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Martin the Master Gardener",
+            "npcLocation": {
+              "lat": 3258,
+              "lng": 3075
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3252,
+                "lng": 3073
+              },
+              "topRight": {
+                "lat": 3260,
+                "lng": 3077
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Martin the Master Gardener in Draynor Village. (Chat #)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "(Chat 4) if Vampyre Slayer is completed.",
+        "If necessary, gather 5 wheat from the field south-east of the Draynor lodestone."
+      ]
     },
     {
       "stepDescription": "Go north-west of Martin and talk to each character (accuse each to quickly find the suspect). (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Pickpocket Dan",
+            "npcLocation": {
+              "lat": 3259,
+              "lng": 3069
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3259,
+                "lng": 3068
+              },
+              "topRight": {
+                "lat": 3259,
+                "lng": 3069
+              }
+            }
+          },
+          {
+            "npcName": "Pickpocket Chris",
+            "npcLocation": {
+              "lat": 3261,
+              "lng": 3069
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3261,
+                "lng": 3068
+              },
+              "topRight": {
+                "lat": 3261,
+                "lng": 3069
+              }
+            }
+          },
+          {
+            "npcName": "Pickpocket Edd",
+            "npcLocation": {
+              "lat": 3260,
+              "lng": 3068
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3260,
+                "lng": 3068
+              },
+              "topRight": {
+                "lat": 3260,
+                "lng": 3069
+              }
+            }
+          },
+          {
+            "npcName": "Pickpocket Andy",
+            "npcLocation": {
+              "lat": 3262,
+              "lng": 3068
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3262,
+                "lng": 3068
+              },
+              "topRight": {
+                "lat": 3262,
+                "lng": 3069
+              }
+            }
+          },
+          {
+            "npcName": "Pickpocket Bert",
+            "npcLocation": {
+              "lat": 3263,
+              "lng": 3069
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3263,
+                "lng": 3068
+              },
+              "topRight": {
+                "lat": 3263,
+                "lng": 3069
+              }
+            }
+          }
+        ],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        "View cutscene after accusing."
+      ]
+    },
+    {
+      "stepDescription": "Go back to Eli in the storm cellar and talk to him for construction materials. (Chat 1•4)",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [
+          {
+            "npcName": "Eli",
+            "npcLocation": {
+              "lat": 5728,
+              "lng": 1054
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5727,
+                "lng": 1053
+              },
+              "topRight": {
+                "lat": 5729,
+                "lng": 1055
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Continue until you have found the suspect",
+      "stepDescription": "Build the pig machine in the north of the cellar once built click a second time on the pig machine again to improve it.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "View cutscene after accusing.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Go back to Eli in the storm cellar and talk to him for construction materials. (Chat 1\u20224)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Build the pig machine in the north of the cellar.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Click a second time on the pig machine again to improve it.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Build Location ( Bringing Home the Bacon )",
+            "objectLocation": [
+              {
+                "lat": 5730,
+                "lng": 1049,
+                "color": "#458778",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 5730,
+                "lng": 1049
+              },
+              "topRight": {
+                "lat": 5733,
+                "lng": 1051
+              }
+            },
+            "color": "#458778",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -160,7 +313,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Eli",
+            "npcLocation": {
+              "lat": 5728,
+              "lng": 1054
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5727,
+                "lng": 1053
+              },
+              "topRight": {
+                "lat": 5729,
+                "lng": 1055
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -171,7 +342,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Eli",
+            "npcLocation": {
+              "lat": 5728,
+              "lng": 1054
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5727,
+                "lng": 1053
+              },
+              "topRight": {
+                "lat": 5729,
+                "lng": 1055
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -193,18 +382,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Pick 5 onions just south of Draynor Bank (these must be picked after having talked to him; you cannot use onions you already have, even if you picked them yourself).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Eli",
+            "npcLocation": {
+              "lat": 5728,
+              "lng": 1054
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5727,
+                "lng": 1053
+              },
+              "topRight": {
+                "lat": 5729,
+                "lng": 1055
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -215,30 +411,64 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Eli",
+            "npcLocation": {
+              "lat": 5728,
+              "lng": 1054
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5727,
+                "lng": 1053
+              },
+              "topRight": {
+                "lat": 5729,
+                "lng": 1055
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Pick 5 onions just south of Draynor Bank (these must be picked after having talked to him; you cannot use onions you already have, even if you picked them yourself)."
+      ]
     },
     {
-      "stepDescription": "Interact with pig machine.",
+      "stepDescription": "Interact with pig machine and watch the cutscene about the pig.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Watch the cutscene about the pig.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Build Location ( Bringing Home the Bacon )",
+            "objectLocation": [
+              {
+                "lat": 5730,
+                "lng": 1049,
+                "color": "#458778",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 5730,
+                "lng": 1049
+              },
+              "topRight": {
+                "lat": 5733,
+                "lng": 1051
+              }
+            },
+            "color": "#458778",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -248,7 +478,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Eli",
+            "npcLocation": {
+              "lat": 5728,
+              "lng": 1054
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5727,
+                "lng": 1053
+              },
+              "topRight": {
+                "lat": 5729,
+                "lng": 1055
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -260,61 +508,137 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Lumbridge Castle Courtyard",
+            "objectLocation": [
+              {
+                "lat": 3218,
+                "lng": 3221,
+                "color": "#458778",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3217,
+                "lng": 3216
+              },
+              "topRight": {
+                "lat": 3220,
+                "lng": 3228
+              }
+            },
+            "color": "#458778",
+            "numberLabel": ""
+          },
+          {
+            "name": "Varrock Marketplace",
+            "objectLocation": [
+              {
+                "lat": 3428,
+                "lng": 3212,
+                "color": "#489694",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3425,
+                "lng": 3208
+              },
+              "topRight": {
+                "lat": 3432,
+                "lng": 3215
+              }
+            },
+            "color": "#489694",
+            "numberLabel": ""
+          },
+          {
+            "name": "Falador Centre",
+            "objectLocation": [
+              {
+                "lat": 3382,
+                "lng": 2966,
+                "color": "#5fa9a0",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3378,
+                "lng": 2961
+              },
+              "topRight": {
+                "lat": 3386,
+                "lng": 2969
+              }
+            },
+            "color": "#5fa9a0",
+            "numberLabel": ""
+          },
+          {
+            "name": "Ardougne Marketplace",
+            "objectLocation": [
+              {
+                "lat": 3310,
+                "lng": 2660,
+                "color": "#3a827f",
+                "numberLabel": "",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 3296,
+                "lng": 2653
+              },
+              "topRight": {
+                "lat": 3316,
+                "lng": 2667
+              }
+            },
+            "color": "#3a827f",
+            "numberLabel": ""
+          }
+        ]
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Lumbridge Castle courtyard.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Varrock Marketplace (in the centre of the fountain).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Falador centre (near the north gate).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Ardougne Marketplace.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Lumbridge Castle courtyard.",
+        "Varrock Marketplace (in the centre of the fountain).",
+        "Falador centre (near the north gate).",
+        "Ardougne Marketplace."
+      ]
     },
     {
       "stepDescription": "Return to Eli.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Eli",
+            "npcLocation": {
+              "lat": 5728,
+              "lng": 1054
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5727,
+                "lng": 1053
+              },
+              "topRight": {
+                "lat": 5729,
+                "lng": 1055
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,

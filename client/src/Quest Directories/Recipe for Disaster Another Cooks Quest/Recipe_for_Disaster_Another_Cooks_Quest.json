@@ -2,7 +2,7 @@
   "questName": "Recipe for Disaster Another Cooks Quest",
   "questSteps": [
     {
-      "stepDescription": "Items needed: 1 Eye of newt, 1 Greenman's ale, 1 Rotten tomato, 1 Ashes, 1 Fruit blast (premade does not work)",
+      "stepDescription": "Talk to the Cook in the kitchen of Lumbridge Castle. (Chat 1•~•1•✓)",
       "itemsNeeded": [
         "1 Eye of newt",
         "1 Greenman's ale",
@@ -10,17 +10,6 @@
         "1 Ashes",
         "1 Fruit blast (premade does not work)"
       ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to the Cook in the kitchen of Lumbridge Castle. (Chat 1\u2022~\u20221\u2022\u2713)",
-      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -52,7 +41,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go through the dining hall door and complete the dialogue to unlock the rest of subquests. \nIt is recommended to inspect each character first, complete every subquest outside this instanced area and then finish all of them at once",
+      "stepDescription": "Go through the dining hall door and complete the dialogue to unlock the rest of subquests. \n",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -60,7 +49,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "It is recommended to inspect each character first, complete every subquest outside this instanced area and then finish all of them at once"
+      ]
     },
     {
       "stepDescription": "Subquest complete!",

@@ -88,5 +88,5 @@ export function gameMapOptions(): MapOptions {
   };
 }
 export function HandleFloorIncreaseDecrease(newFloor: number) {
-  return newFloor >= 0 && newFloor <= 3;
+  return newFloor >= -1 && newFloor <= 3;
 }

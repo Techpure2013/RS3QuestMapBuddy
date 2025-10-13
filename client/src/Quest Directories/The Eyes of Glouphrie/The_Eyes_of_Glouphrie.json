@@ -2,7 +2,7 @@
   "questName": "The Eyes of Glouphrie",
   "questSteps": [
     {
-      "stepDescription": "Talk to Brimstail in a cave west of the bank in the Gnome Stronghold. Look for dungeon link on mini map (Chat 1\u20221\u20221\u2022\u2713)",
+      "stepDescription": "Talk to Brimstail in a cave west of the bank in the Gnome Stronghold. Look for dungeon link on mini map (Chat 1•1•1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -35,7 +35,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Brimstail. (Chat 1\u20221)",
+      "stepDescription": "Talk to Brimstail. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -90,7 +90,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Brimstail. (Chat 1)\nTalk to him again several (3+) times to receive more discs. Use the drop trick. (Chat 1). The more discs, the more streamlined the process in the next step becomes as you require little to no converting.",
+      "stepDescription": "Talk to Brimstail. (Chat 1)\nTalk to him again several (3+) times to receive more discs. Use the drop trick.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -98,7 +98,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "The more discs, the more streamlined the process in the next step becomes as you require little to no converting."
+      ]
     },
     {
       "stepDescription": "Unlock machine to view the desired number.",
@@ -112,7 +114,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "If necessary, use the exchanger to get a disc equal to your number (refer to conversion chart below). If you have trouble converting, refer to the full guide here.",
+      "stepDescription": "If necessary, use the exchanger to get a disc equal to your number. Use the Conversion Chart at this step.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -142,10 +144,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you intend to do The Path of Glouphrie afterwards, keep the discs in your Inventory or Bank they are needed here as well."
+      ]
     },
     {
-      "stepDescription": "If you intend to do The Path of Glouphrie afterwards, keep the discs in your inventory as they are needed here as well.",
+      "stepDescription": "",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -189,7 +193,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Kill the 5 remaining evil creatures, which can be done in any order: \n(2/6) By the main gate to the stronghold (south-east from Brimstail's cave) Do not enter gate while Evil Creature is still dying.",
+      "stepDescription": "Kill the 5 remaining evil creatures, which can be done in any order. Locations to these evil creatures are in Additional Information.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -197,51 +201,13 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "(3/6) South of the spirit tree by the gnome agility course entrance.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "(4/6) In the giant tortoise pen north-west of the Grand Tree and north of the swamp.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "(5/6) Top floor of the Grand Tree, next to the small prison/by the ladder (wait for the chat response saying you killed it before using the ladder. If it doesn't count it, an evil creature should respawn at one of the locations.)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "(6/6) Near King Narnode (may need ranged or magic as it can get stuck behind a trapdoor).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "(2/6) By the main gate to the stronghold (south-east from Brimstail's cave)",
+        "(3/6) South of the spirit tree by the gnome agility course entrance.",
+        "(4/6) In the giant tortoise pen north-west of the Grand Tree and north of the swamp.",
+        "(5/6) Top floor of the Grand Tree, next to the small prison/by the ladder (wait for the chat response saying you killed it before using the ladder. If it doesn't count it, an evil creature should respawn at one of the locations.)",
+        "(6/6) Near King Narnode (may need ranged, magic or necromancy as it can get stuck behind a trapdoor). Check your quest journal if your chat log does not display 6 creatures, if it says you need to talk to the king then you are finished."
+      ]
     },
     {
       "stepDescription": "Talk to King Narnode Shareen on the ground floor of the Grand Tree.",

@@ -2,7 +2,7 @@
   "questName": "Beneath Cursed Tides",
   "questSteps": [
     {
-      "stepDescription": "Speak to Wizard Myrtle at the fountain near the entrance to the Wizards' Tower. (Fairy ring DIS) (Chat 2\u2022\u2713\u20221)",
+      "stepDescription": "Speak to Wizard Myrtle at the fountain near the entrance to the Wizards' Tower. (Fairy ring DIS) (Chat 2•✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -31,7 +31,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to the Edgeville ruins just south of the bank and speak to Vannaka. (Chat 1\u20224\u20221)",
+      "stepDescription": "Go to the Edgeville ruins just south of the bank and speak to Vannaka. (Chat 1•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -60,7 +60,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to the Wizards' Tower, and talk to Wizard Myrtle. (Chat 2\u20221)",
+      "stepDescription": "Return to the Wizards' Tower, and talk to Wizard Myrtle. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -123,7 +123,7 @@
       ]
     },
     {
-      "stepDescription": "Unequip your weapons and dismiss followers and then talk to Wizard Myrtle. (Chat 1\u20222\u20221)",
+      "stepDescription": "Unequip your weapons and dismiss followers and then talk to Wizard Myrtle. (Chat 1•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -150,7 +150,7 @@
       },
       "floor": 0,
       "additionalStepInformation": [
-        "If you have completed the Freeing Pirate Pete Recipe for Disaster subquest, or have built any kind of diving suit in the Aquarium. (Chat 1\u20221\u20222\u20221)"
+        "If you have completed the Freeing Pirate Pete Recipe for Disaster subquest, or have built any kind of diving suit in the Aquarium. (Chat 1•1•2•1)"
       ]
     },
     {
@@ -332,10 +332,6 @@
             "name": "Raw Shrimp ( Beneath Cursed Tides )",
             "objectLocation": [
               {
-                "lat": 0,
-                "lng": 0
-              },
-              {
                 "lat": 791,
                 "lng": 5209,
                 "color": "#47c247",
@@ -474,7 +470,7 @@
       ]
     },
     {
-      "stepDescription": "Talk to Brynna twice.",
+      "stepDescription": "Talk to Brynna - then burn a shrimp by re-clicking on the steam vent, and return to her to pass the test.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -606,7 +602,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to the large jellyfish south-east of the chef's house and play the music box. (Chat 2\u20223\u20221)",
+      "stepDescription": "Go to the large jellyfish south-east of the chef's house and play the music box. (Chat 2•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -895,7 +891,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Dezzick, the mining instructor. (Chat 1\u20223)",
+      "stepDescription": "Talk to Dezzick, the mining instructor. (Chat 1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1106,7 +1102,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Add the ores to furnace",
+      "stepDescription": "Add the ores to furnace and shut its door.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1377,7 +1373,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Vannaka, the combat instructor. (Chat 1\u20222)",
+      "stepDescription": "Talk to Vannaka, the combat instructor. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1750,7 +1746,7 @@
       ]
     },
     {
-      "stepDescription": "Give the book to Brother Brace.",
+      "stepDescription": "search where the fish told you to search for the book then give the book to Brother Brace.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -1779,7 +1775,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go through the south door to the south-east building and talk to Wizard Terrova. (Chat 1\u20221) then attack a chicken.",
+      "stepDescription": "Go through the south door to the south-east building and talk to Wizard Terrova. (Chat 1•1) then attack a chicken.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

@@ -2,7 +2,7 @@
   "questName": "Eagles' Peak",
   "questSteps": [
     {
-      "stepDescription": "Talk to Charlie in Ardougne Zoo. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Charlie in Ardougne Zoo. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -90,7 +90,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Shout-to Nickolaus. (Chat 1\u20221\u20221)",
+      "stepDescription": "Shout-to Nickolaus. (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -112,23 +112,12 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: 10 eagle feathers, 1 Swamp tar, 1 Yellow dye",
+      "stepDescription": "Head to the south-east corner of Varrock to the Fancy Clothes Store.",
       "itemsNeeded": [
         "10 eagle feathers",
         "1 Swamp tar",
         "1 Yellow dye"
       ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Head to the south-east corner of Varrock to the Fancy Clothes Store.",
-      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -149,7 +138,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Have the owner make you two Eagle capes and two Fake beaks. (Chat 2\u20221)",
+      "stepDescription": "Have the owner make you two Eagle capes and two Fake beaks. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -193,7 +182,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "If the puzzle gets messed up, there is a reset lever outside of the chamber.",
+      "stepDescription": "If the puzzle gets messed up, there is a reset lever outside of the chamber. Read Additional Info and use the Image at this step to solve the puzzle.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -201,150 +190,22 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Take at least 6 handfuls of bird seed from the birdseed holder near the entrance of the cave.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Put seed in feeder 1.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Pull lever 1.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Pull lever 2.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Put seed in feeder 3.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Put seed in feeder 4.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Pull lever 3.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Push up lever 2.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Put seed in feeder 5.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Pull lever 4.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Put seed in feeder 2.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Put seed in feeder 1.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Walk down the western hallway and take the golden feather.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Map Keys: Green is Levers, Yellow are Feeders, Red is Odd Bird Seed Pile.",
+        "Take at least 6 handfuls of bird seed from the birdseed holder near the entrance of the cave.",
+        "Put seed in feeder 1.",
+        "Pull lever 1.",
+        "Pull lever 2.",
+        "Put seed in feeder 3.",
+        "Put seed in feeder 4.",
+        "Pull lever 3.",
+        "Push-up lever 2.",
+        "Put seed in feeder 5.",
+        "Pull lever 4.",
+        "Put seed in feeder 2.",
+        "Put seed in feeder 1.",
+        "Walk down the western hallway and take the golden feather."
+      ]
     },
     {
       "stepDescription": "Exit the tunnel (next to the birdseed holder) and enter the middle tunnel to the west. (South of the entrance you originally used to enter the cave)",
@@ -589,7 +450,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Nickolaus. (Chat 1\u20221)",
+      "stepDescription": "Talk to Nickolaus. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

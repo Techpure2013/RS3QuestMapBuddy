@@ -2107,46 +2107,11 @@
     "name": "Boric's Task I (miniquest)",
     "images": [
       {
-        "step": "1",
-        "src": "LocToBoric.webp",
-        "width": 370,
-        "height": 264,
-        "stepDescription": "Head down the stairs behind Doric's hut to speak to Boric. (Chat 1•✓)"
-      },
-      {
-        "step": "1",
-        "src": "LocationOfBoric.webp",
-        "width": 477,
-        "height": 416,
-        "stepDescription": "Head down the stairs behind Doric's hut to speak to Boric. (Chat 1•✓)"
-      },
-      {
-        "step": "1",
-        "src": "TalkToBoric.webp",
-        "width": 384,
-        "height": 359,
-        "stepDescription": "Head down the stairs behind Doric's hut to speak to Boric. (Chat 1•✓)"
-      },
-      {
-        "step": "2",
-        "src": "CoalTruckLocation.webp",
-        "width": 424,
-        "height": 345,
+        "step": 2,
+        "src": "BoricsTaskI(miniquest)_step_2_1.webp",
+        "height": 452,
+        "width": 1267,
         "stepDescription": "Head to Seers' Village coal truck mining site, west of McGrubor's Wood."
-      },
-      {
-        "step": "2",
-        "src": "AgilityCheck.webp",
-        "width": 221,
-        "height": 98,
-        "stepDescription": "Head to Seers' Village coal truck mining site, west of McGrubor's Wood."
-      },
-      {
-        "step": "6",
-        "src": "CoalTruckandMiner.webp",
-        "width": 470,
-        "height": 415,
-        "stepDescription": "Miniquest complete!"
       }
     ]
   },
@@ -2154,95 +2119,17 @@
     "name": "Boric's Task II (miniquest)",
     "images": [
       {
-        "step": "1",
-        "src": "LocToBoric.webp",
-        "width": 370,
-        "height": 264,
-        "stepDescription": "Head down the stairs at Doric's workshop to speak to Boric. (Chat 1•✓)"
-      },
-      {
-        "step": "1",
-        "src": "LocationOfBoric.webp",
-        "width": 477,
-        "height": 416,
-        "stepDescription": "Head down the stairs at Doric's workshop to speak to Boric. (Chat 1•✓)"
-      },
-      {
-        "step": "1",
-        "src": "TalkToBoric.webp",
-        "width": 384,
-        "height": 359,
-        "stepDescription": "Head down the stairs at Doric's workshop to speak to Boric. (Chat 1•✓)"
-      },
-      {
-        "step": "2",
-        "src": "RockBrawler.webp",
-        "width": 167,
-        "height": 170,
-        "stepDescription": "Head to the following mining locations and mine any ore. Multiple ores may need to be mined. A living rock brawler will spawn, kill it. The locations are:"
-      },
-      {
-        "step": "6",
-        "src": "LumbridgeMineLocation.webp",
-        "width": 333,
-        "height": 285,
-        "stepDescription": "Lumbridge south-west mine"
-      },
-      {
-        "step": "4",
-        "src": "AlkharidMine.webp",
-        "width": 150,
-        "height": 421,
-        "stepDescription": "Al Kharid mine"
-      },
-      {
-        "step": "7",
-        "src": "AgilityPyrimidNWMineLoc.webp",
-        "width": 267,
-        "height": 482,
-        "stepDescription": "Agility Pyramid north-west mine"
-      },
-      {
-        "step": "5",
-        "src": "BrimhavenLocationMine.webp",
-        "width": 232,
-        "height": 291,
-        "stepDescription": "Karamja north-west mine"
+        "step": 2,
+        "src": "BoricsTaskII(miniquest)_step_2_1.webp",
+        "height": 637,
+        "width": 956,
+        "stepDescription": "Head to the following mining locations and mine any ore. Multiple ores may need to be mined. A living rock brawler will spawn, kill it. The locations are in Additional Info"
       }
     ]
   },
   {
     "name": "Boric's Task III (miniquest)",
-    "images": [
-      {
-        "step": "1",
-        "src": "LocToBoric.webp",
-        "width": 370,
-        "height": 264,
-        "stepDescription": "Head down the stairs at Doric's workshop to speak to Boric. (Chat 1•✓)"
-      },
-      {
-        "step": "1",
-        "src": "LocationOfBoric.webp",
-        "width": 477,
-        "height": 416,
-        "stepDescription": "Head down the stairs at Doric's workshop to speak to Boric. (Chat 1•✓)"
-      },
-      {
-        "step": "1",
-        "src": "TalkToBoric.webp",
-        "width": 384,
-        "height": 359,
-        "stepDescription": "Head down the stairs at Doric's workshop to speak to Boric. (Chat 1•✓)"
-      },
-      {
-        "step": "2",
-        "src": "talktodwarf.webp",
-        "width": 175,
-        "height": 147,
-        "stepDescription": "Head to the Mining guild. You must speak with one of the dwarfs at the guild before mining. (Chat 1)"
-      }
-    ]
+    "images": []
   },
   {
     "name": "Doric's Task I (miniquest)",
@@ -2711,6 +2598,13 @@
         "height": 380,
         "width": 411,
         "stepDescription": "You can right click the clue scroll to dig. Clue Locations are in the Additional Info Section."
+      },
+      {
+        "step": 11,
+        "src": "AVoidDance_step_11_1.webp",
+        "height": 335,
+        "width": 266,
+        "stepDescription": "Complete the puzzle using the steps in Additional Info."
       }
     ]
   },
@@ -2847,6 +2741,83 @@
     "name": "Back to my Roots",
     "images": [
       {
+        "step": "1",
+        "src": "ItemsRequired.webp",
+        "width": 165,
+        "height": 110,
+        "stepDescription": "Talk to Horacio in East Ardougne and accept the quest. (Chat 2•2•✓)"
+      },
+      {
+        "step": "1",
+        "src": "QuestStart.webp",
+        "width": 131,
+        "height": 121,
+        "stepDescription": "Talk to Horacio in East Ardougne and accept the quest. (Chat 2•2•✓)"
+      },
+      {
+        "step": "2",
+        "src": "WizardCrompLoc.webp",
+        "width": 127,
+        "height": 94,
+        "stepDescription": "Talk to Wizard Cromperty in his house to the north-east of the market. (Chat 1)"
+      },
+      {
+        "step": "2",
+        "src": "WizardCrompNpc.webp",
+        "width": 330,
+        "height": 445,
+        "stepDescription": "Talk to Wizard Cromperty in his house to the north-east of the market. (Chat 1)"
+      },
+      {
+        "step": "3",
+        "src": "RPDTEmployeesLoc.webp",
+        "width": 102,
+        "height": 108,
+        "stepDescription": "Talk to an RPDT employee south of the southern bank in Ardougne."
+      },
+      {
+        "step": "9",
+        "src": "GarthLoc.webp",
+        "width": 86,
+        "height": 84,
+        "stepDescription": "Talk to Garth, the farmer located at the fruit tree patch in Brimhaven, north of the Karamja lodestone. (Chat 2)"
+      },
+      {
+        "step": "9",
+        "src": "TalkToGarth.webp",
+        "width": 385,
+        "height": 427,
+        "stepDescription": "Talk to Garth, the farmer located at the fruit tree patch in Brimhaven, north of the Karamja lodestone. (Chat 2)"
+      },
+      {
+        "step": "10",
+        "src": "VineMaze.webp",
+        "width": 467,
+        "height": 357,
+        "stepDescription": "The path through the maze. Click to enlarge."
+      },
+      {
+        "step": "14",
+        "src": "LooseSoilDig.webp",
+        "width": 256,
+        "height": 293,
+        "stepDescription": "Once you reach the root, dig the loose soil, cut the root, then use it on your plant pot."
+      },
+      {
+        "step": "17",
+        "src": "SuccessfullRoot.webp",
+        "width": 518,
+        "height": 146,
+        "stepDescription": "Once the correct root takes, use the potted root on your empty pot to make a sealed pot."
+      },
+      {
+        "step": "18",
+        "src": "TalkToHoracio2.webp",
+        "width": 183,
+        "height": 209,
+        "stepDescription": "Return to Horacio and speak to him."
+      },
+      {
         "step": 9,
         "src": "BacktomyRoots_step_9_1.webp",
         "height": 760,
@@ -2858,6 +2829,286 @@
   {
     "name": "Back to the Freezer",
     "images": [
+      {
+        "step": "1",
+        "src": "ReqItems.webp",
+        "width": 257,
+        "height": 157,
+        "stepDescription": "Talk to Chuck in the Ardougne Zoo (Chat 1•✓)"
+      },
+      {
+        "step": "25",
+        "src": "secretbunkerpresentmap.webp",
+        "width": 456,
+        "height": 274,
+        "stepDescription": "Back to the Freezer secret bunker map images right here"
+      },
+      {
+        "step": "39",
+        "src": "secretbunkerpastmap.webp",
+        "width": 319,
+        "height": 416,
+        "stepDescription": "Operate the de-lore-ing device. Images at this step are from the (past) bunker."
+      },
+      {
+        "step": "25",
+        "src": "TheSecretBunker.webp",
+        "width": 400,
+        "height": 400,
+        "stepDescription": "Back to the Freezer secret bunker map images right here"
+      },
+      {
+        "step": "39",
+        "src": "ThePastSecretBunker.webp",
+        "width": 400,
+        "height": 400,
+        "stepDescription": "Operate the de-lore-ing device. Images at this step are from the (past) bunker."
+      },
+      {
+        "step": "39",
+        "src": "ThePastSecretBunkerContinued.webp",
+        "width": 400,
+        "height": 400,
+        "stepDescription": "Operate the de-lore-ing device. Images at this step are from the (past) bunker."
+      },
+      {
+        "step": "1",
+        "src": "TalkToChuck.webp",
+        "width": 350,
+        "height": 385,
+        "stepDescription": "Talk to Chuck in the Ardougne Zoo (Chat 1•✓)"
+      },
+      {
+        "step": "2",
+        "src": "BlueText.webp",
+        "width": 374,
+        "height": 106,
+        "stepDescription": "Note down the blue text."
+      },
+      {
+        "step": "4",
+        "src": "SkotandMundsenLoc.webp",
+        "width": 167,
+        "height": 150,
+        "stepDescription": "In the Rellekka marketplace, talk to Skot or Mundsen."
+      },
+      {
+        "step": "4",
+        "src": "MundesenOrSkot.webp",
+        "width": 351,
+        "height": 263,
+        "stepDescription": "In the Rellekka marketplace, talk to Skot or Mundsen."
+      },
+      {
+        "step": "7",
+        "src": "Dundee.webp",
+        "width": 351,
+        "height": 401,
+        "stepDescription": "South-west of Pollnivneach, talk to Dundee, who will give you a crocspeak amulet. (Chat 1)"
+      },
+      {
+        "step": "8",
+        "src": "CrocSpeak.webp",
+        "width": 210,
+        "height": 81,
+        "stepDescription": "Equip the crocspeak amulet."
+      },
+      {
+        "step": "9",
+        "src": "Croc.webp",
+        "width": 297,
+        "height": 317,
+        "stepDescription": "Just west, talk to Croc. (Chat 4)"
+      },
+      {
+        "step": "10",
+        "src": "Investigate.webp",
+        "width": 224,
+        "height": 294,
+        "stepDescription": "South-west, investigate the T.A.R.D.I.S.."
+      },
+      {
+        "step": "18",
+        "src": "EmperorWing.webp",
+        "width": 298,
+        "height": 420,
+        "stepDescription": "Talk to Emperor Wing (Chat 1•2)"
+      },
+      {
+        "step": "19",
+        "src": "TalkElon.webp",
+        "width": 179,
+        "height": 274,
+        "stepDescription": "Talk to Elon (Chat 2)"
+      },
+      {
+        "step": "20",
+        "src": "Hugh.webp",
+        "width": 166,
+        "height": 167,
+        "stepDescription": "Talk to Hugh (Chat 2)"
+      },
+      {
+        "step": "21",
+        "src": "Gordon.webp",
+        "width": 350,
+        "height": 280,
+        "stepDescription": "Talk to Gordon (Chat 2•3)"
+      },
+      {
+        "step": "22",
+        "src": "GPS.webp",
+        "width": 151,
+        "height": 88,
+        "stepDescription": "Gordon will give you a G.P.S.. If he does not, simply talk to him again."
+      },
+      {
+        "step": "27",
+        "src": "PengIntoHatch.webp",
+        "width": 223,
+        "height": 208,
+        "stepDescription": "Interact with the hatch and type in \"1234\" to enter."
+      },
+      {
+        "step": "28",
+        "src": "CupBoard.webp",
+        "width": 325,
+        "height": 219,
+        "stepDescription": "Search the interactable cupboard in the north-east room for a hat."
+      },
+      {
+        "step": "32",
+        "src": "GordonsLocker.webp",
+        "width": 350,
+        "height": 115,
+        "stepDescription": "Enter the locker room to your west and search Gordon's locker on the west side for the de-lore-ing device parts list and de-lore-ing device (incomplete)."
+      },
+      {
+        "step": "35",
+        "src": "IceShelf1.webp",
+        "width": 282,
+        "height": 191,
+        "stepDescription": "In the north-western room, Peruse the ice shelf (looks like a normal shelf) for The Penguin Book of Gielinor."
+      },
+      {
+        "step": "36",
+        "src": "IceCubeMaker.webp",
+        "width": 214,
+        "height": 183,
+        "stepDescription": "Behind you, Get Ice from the Ice Maker to take ice cubes."
+      },
+      {
+        "step": "37",
+        "src": "HammerOnCubes.webp",
+        "width": 217,
+        "height": 77,
+        "stepDescription": "Use the hammer on the ice cubes to create the flax cap-ice-i-tor."
+      },
+      {
+        "step": "38",
+        "src": "UseOnDeloringdevice.webp",
+        "width": 329,
+        "height": 42,
+        "stepDescription": "Use the flax cap-ice-i-tor on the de-lore-ing device (incomplete) for the de-lore-ing device."
+      },
+      {
+        "step": "40",
+        "src": "MonkeyWrench.webp",
+        "width": 232,
+        "height": 122,
+        "stepDescription": "Take the monkey wrench (north & slightly east), use it on the de-lore-ing device then operate the device again."
+      },
+      {
+        "step": "41",
+        "src": "CowBells.webp",
+        "width": 235,
+        "height": 152,
+        "stepDescription": "Take the penguin bongos and cowbells in the north-west corner, use either on the device, operate the device again."
+      },
+      {
+        "step": "43",
+        "src": "ManWPick.webp",
+        "width": 225,
+        "height": 241,
+        "stepDescription": "Speak to the man with a dragon pickaxe, use worthless old boots on the device, operate the device one last time."
+      },
+      {
+        "step": "44",
+        "src": "Gordon2.webp",
+        "width": 323,
+        "height": 280,
+        "stepDescription": "Talk to Gordon in the south-western room."
+      },
+      {
+        "step": "45",
+        "src": "Elon.webp",
+        "width": 252,
+        "height": 206,
+        "stepDescription": "Talk to Elon in the centre of the bunker."
+      },
+      {
+        "step": "46",
+        "src": "Fishrod.webp",
+        "width": 203,
+        "height": 182,
+        "stepDescription": "Get the fishing rod from the room south of the big door."
+      },
+      {
+        "step": "49",
+        "src": "Snowww.webp",
+        "width": 258,
+        "height": 223,
+        "stepDescription": "Gather Pure S-now in the western room - wait until you have gathered all 2,000. (Process takes no time at all)"
+      },
+      {
+        "step": "53",
+        "src": "Buzz.webp",
+        "width": 345,
+        "height": 234,
+        "stepDescription": "Talk to Buzz in the prison to the east for 21 killerwatt energy."
+      },
+      {
+        "step": "53",
+        "src": "InterDim.webp",
+        "width": 276,
+        "height": 195,
+        "stepDescription": "Talk to Buzz in the prison to the east for 21 killerwatt energy."
+      },
+      {
+        "step": "53",
+        "src": "Watts.webp",
+        "width": 258,
+        "height": 340,
+        "stepDescription": "Talk to Buzz in the prison to the east for 21 killerwatt energy."
+      },
+      {
+        "step": "64",
+        "src": "Elon.webp",
+        "width": 252,
+        "height": 206,
+        "stepDescription": "In the centre of the bunker, talk to Elon to give him all the items."
+      },
+      {
+        "step": "65",
+        "src": "Container.webp",
+        "width": 287,
+        "height": 143,
+        "stepDescription": "Fill the energy container to the north-west with your divination energy."
+      },
+      {
+        "step": "67",
+        "src": "ExamplePuzzle.webp",
+        "width": 303,
+        "height": 339,
+        "stepDescription": "Solve the puzzle, DO NOT RESET UNTIL YOU HAVE FAILED TO 10 OR ELSE YOU WILL HAVE A NEW PUZZLE TO COMPLETE. You have 10 tries to get the pattern correct. A Grey Square means a energy is in the correct spot. A White Square mean a energy is correct but in the wrong spot. GREY SQUARES DO NOT CORRELATE TO THE POSITION. Look in quest images to see and example and solution."
+      },
+      {
+        "step": "67",
+        "src": "10Chances.webp",
+        "width": 292,
+        "height": 332,
+        "stepDescription": "Solve the puzzle, DO NOT RESET UNTIL YOU HAVE FAILED TO 10 OR ELSE YOU WILL HAVE A NEW PUZZLE TO COMPLETE. You have 10 tries to get the pattern correct. A Grey Square means a energy is in the correct spot. A White Square mean a energy is correct but in the wrong spot. GREY SQUARES DO NOT CORRELATE TO THE POSITION. Look in quest images to see and example and solution."
+      },
       {
         "step": 35,
         "src": "BacktotheFreezer_step_35_1.webp",
@@ -3211,11 +3462,60 @@
     "name": "Between a Rock",
     "images": [
       {
+        "step": "1",
+        "src": "dwarvernengineerlocation.webp",
+        "width": 315,
+        "height": 323,
+        "stepDescription": "If you haven't yet completed The Giant Dwarf quest, you will need to talk to the dwarven boatman to visit Keldagrim for the first time, after which you can take the mine carts from Grand Exchange to the city; the boatman is at the entrance upon first crossing the water."
+      },
+      {
+        "step": "23",
+        "src": "Step23betweenarock.webp",
+        "width": 513,
+        "height": 334,
+        "stepDescription": "Move around the pieces, referring to finished schematics pictured right."
+      },
+      {
+        "step": 14,
+        "src": "BetweenaRock_step_14_1.webp",
+        "height": 334,
+        "width": 513,
+        "stepDescription": "Talk to the Dwarven Engineer in the west Keldagrim consortium (the same one you went to earlier) for another part of the schematics."
+      },
+      {
         "step": 18,
         "src": "BetweenaRock_step_18_1.webp",
         "height": 334,
         "width": 513,
         "stepDescription": "Click assemble on any of the pieces. Move around (and rotate if needed) the pieces, referring to finished schematics at the image at step."
+      },
+      {
+        "step": 1,
+        "src": "BetweenaRock_step_1_1.webp",
+        "height": 473,
+        "width": 946,
+        "stepDescription": "If you haven't yet completed The Giant Dwarf quest, you will need to talk to or use \"Cross-river\" option on the Dwarven Ferryman to cross the river in Keldagrim."
+      },
+      {
+        "step": 2,
+        "src": "BetweenaRock_step_2_1.webp",
+        "height": 652,
+        "width": 906,
+        "stepDescription": "Talk to Dondakan about cannonballs in the Keldagrim south-west mine. (Chat 2•1•1•✓•3)"
+      },
+      {
+        "step": 3,
+        "src": "BetweenaRock_step_3_1.webp",
+        "height": 462,
+        "width": 1178,
+        "stepDescription": "In the western half of the consortium (the big building in the centre of Keldagrim) 1st floor[US], talk to the Dwarven Engineer."
+      },
+      {
+        "step": 4,
+        "src": "BetweenaRock_step_4_1.webp",
+        "height": 580,
+        "width": 762,
+        "stepDescription": "Talk to Rolad, who is located in the most north-eastern building near the ladder to the dwarvern mines. North-East of the Invention Guild. Refer to image at the step. "
       }
     ]
   },
@@ -3263,6 +3563,13 @@
         "width": 300,
         "height": 181,
         "stepDescription": "Obtain some wolf bones. There are some wolves just south-west of Rantz, by the swamp."
+      },
+      {
+        "step": 11,
+        "src": "BigChompyBirdHunting_step_11_1.webp",
+        "height": 175,
+        "width": 1451,
+        "stepDescription": "Talk to Rantz. Take note of the specific ingredient he wants on the chompy."
       }
     ]
   },
@@ -3270,354 +3577,32 @@
     "name": "Biohazard",
     "images": [
       {
-        "step": "26",
-        "src": "HelperTable.webp",
-        "width": 350,
-        "height": 350,
-        "stepDescription": "Enter the western-most house in Rimmington and talk to the Chemist (do not mention that you have the sample or he will take it away from you, and you will be forced to go back to Elena to get a new one; Also do not give the wrong vial as it will force you to go back and get new ones). (Chat 3•2•2)"
+        "step": 7,
+        "src": "Biohazard_step_7_1.webp",
+        "height": 494,
+        "width": 908,
+        "stepDescription": "Go to the east side of Martha Rehnison's house. Take the rotten apple."
       },
       {
-        "step": "1",
-        "src": "QuestStart1.webp",
-        "width": 352,
-        "height": 187,
-        "stepDescription": "Talk to Elena in a house just west of the East Ardougne north bank, across the river. (Chat ✓)"
+        "step": 9,
+        "src": "Biohazard_step_9_1.webp",
+        "height": 597,
+        "width": 1239,
+        "stepDescription": "Go to Nurse Sarah's house in the corner, south-west of the church. Search the box on the north side of the house to obtain a doctors' gown."
       },
       {
-        "step": "1",
-        "src": "TalkToElena.webp",
-        "width": 353,
-        "height": 252,
-        "stepDescription": "Talk to Elena in a house just west of the East Ardougne north bank, across the river. (Chat ✓)"
+        "step": 10,
+        "src": "Biohazard_step_10_1.webp",
+        "height": 455,
+        "width": 392,
+        "stepDescription": "Equip the gown and go to the north-east corner of the city, and enter the Mourner Headquarters."
       },
       {
-        "step": "2",
-        "src": "TalkToJerico.webp",
-        "width": 349,
-        "height": 349,
-        "stepDescription": "Talk to Jerico, who is in the building south of the Ardougne north bank."
-      },
-      {
-        "step": "2",
-        "src": "SearchCupboard.webp",
-        "width": 352,
-        "height": 353,
-        "stepDescription": "Talk to Jerico, who is in the building south of the Ardougne north bank."
-      },
-      {
-        "step": "6",
-        "src": "BirdFeed.webp",
-        "width": 103,
-        "height": 113,
-        "stepDescription": "Use bird feed on the watchtower fence (the spears, highlighted in red on your minimap) where several Mourners are perched above."
-      },
-      {
-        "step": "2",
-        "src": "JericosHouse.webp",
-        "width": 135,
-        "height": 122,
-        "stepDescription": "Talk to Jerico, who is in the building south of the Ardougne north bank."
-      },
-      {
-        "step": "6",
-        "src": "OpenPigeonCage.webp",
-        "width": 139,
-        "height": 96,
-        "stepDescription": "Use bird feed on the watchtower fence (the spears, highlighted in red on your minimap) where several Mourners are perched above."
-      },
-      {
-        "step": "6",
-        "src": "UseBirdSeed.webp",
-        "width": 353,
-        "height": 323,
-        "stepDescription": "Use bird feed on the watchtower fence (the spears, highlighted in red on your minimap) where several Mourners are perched above."
-      },
-      {
-        "step": "7",
-        "src": "OpenPigeonCage.webp",
-        "width": 139,
-        "height": 96,
-        "stepDescription": "Open the pigeon cage."
-      },
-      {
-        "step": "8",
-        "src": "OmartLoc.webp",
-        "width": 353,
-        "height": 183,
-        "stepDescription": "Go south along the wall and talk to Omart. Make sure to finish the dialogue (Chat 1)"
-      },
-      {
-        "step": "8",
-        "src": "TalkToOmart.webp",
-        "width": 354,
-        "height": 178,
-        "stepDescription": "Go south along the wall and talk to Omart. Make sure to finish the dialogue (Chat 1)"
-      },
-      {
-        "step": "8",
-        "src": "LadderWall.webp",
-        "width": 353,
-        "height": 326,
-        "stepDescription": "Go south along the wall and talk to Omart. Make sure to finish the dialogue (Chat 1)"
-      },
-      {
-        "step": "11",
-        "src": "RottenApple.webp",
-        "width": 97,
-        "height": 87,
-        "stepDescription": "Take the rotten apple on the east outside of the house."
-      },
-      {
-        "step": "10",
-        "src": "RehnisonHouseLoc.webp",
-        "width": 319,
-        "height": 307,
-        "stepDescription": "Go to the east side of Martha Rehnison's house, highlighted in the picture (do not enter the house), north-west of where you breached the wall."
-      },
-      {
-        "step": "11",
-        "src": "Squeeeeze.webp",
-        "width": 351,
-        "height": 293,
-        "stepDescription": "Take the rotten apple on the east outside of the house."
-      },
-      {
-        "step": "13",
-        "src": "UseRottenAppleCauldron.webp",
-        "width": 307,
-        "height": 390,
-        "stepDescription": "Use the rotten apple on the cauldron in front of you."
-      },
-      {
-        "step": "14",
-        "src": "NurseSarahLoc.webp",
-        "width": 353,
-        "height": 181,
-        "stepDescription": "Go to Nurse Sarah's house in the corner, south-west of the church."
-      },
-      {
-        "step": "14",
-        "src": "NurseSarahHouse.webp",
-        "width": 351,
-        "height": 211,
-        "stepDescription": "Go to Nurse Sarah's house in the corner, south-west of the church."
-      },
-      {
-        "step": "14",
-        "src": "TalkToNurseSarah.webp",
-        "width": 352,
-        "height": 344,
-        "stepDescription": "Go to Nurse Sarah's house in the corner, south-west of the church."
-      },
-      {
-        "step": "15",
-        "src": "OpenBox1.webp",
-        "width": 353,
-        "height": 379,
-        "stepDescription": "Search the box on the north side of the house to obtain a doctors' gown."
-      },
-      {
-        "step": "15",
-        "src": "OpenBox2.webp",
-        "width": 355,
-        "height": 217,
-        "stepDescription": "Search the box on the north side of the house to obtain a doctors' gown."
-      },
-      {
-        "step": "16",
-        "src": "DoctorGown.webp",
-        "width": 116,
-        "height": 92,
-        "stepDescription": "Equip the gown."
-      },
-      {
-        "step": "21",
-        "src": "CrateLocs.webp",
-        "width": 354,
-        "height": 185,
-        "stepDescription": "Search the crates in the caged room to find the distillator."
-      },
-      {
-        "step": "17",
-        "src": "MournerHeadQuarters.webp",
-        "width": 352,
-        "height": 224,
-        "stepDescription": "Go to the north-east corner of the city, and enter the Mourner Headquarters."
-      },
-      {
-        "step": "17",
-        "src": "InsideMourner.webp",
-        "width": 230,
-        "height": 324,
-        "stepDescription": "Go to the north-east corner of the city, and enter the Mourner Headquarters."
-      },
-      {
-        "step": "18",
-        "src": "GoUpStairs.webp",
-        "width": 354,
-        "height": 196,
-        "stepDescription": "Open the door to the west and go upstairs."
-      },
-      {
-        "step": "19",
-        "src": "KillMourner.webp",
-        "width": 270,
-        "height": 184,
-        "stepDescription": "Open the door to the east and kill a Mourner to obtain a key."
-      },
-      {
-        "step": "20",
-        "src": "Key.webp",
-        "width": 101,
-        "height": 75,
-        "stepDescription": "Use the key on the gate in front of you to get into the caged room."
-      },
-      {
-        "step": "20",
-        "src": "UseKeyOnGate.webp",
-        "width": 209,
-        "height": 179,
-        "stepDescription": "Use the key on the gate in front of you to get into the caged room."
-      },
-      {
-        "step": "31",
-        "src": "Gate.webp",
-        "width": 203,
-        "height": 197,
-        "stepDescription": "Items needed: Touch paper, Plague sample, Priest gown top, Priest gown bottoms"
-      },
-      {
-        "step": "32",
-        "src": "SearchCrate.webp",
-        "width": 142,
-        "height": 136,
-        "stepDescription": "Obtain the plague sample from the bank."
-      },
-      {
-        "step": "21",
-        "src": "Distilator.webp",
-        "width": 102,
-        "height": 67,
-        "stepDescription": "Search the crates in the caged room to find the distillator."
-      },
-      {
-        "step": "23",
-        "src": "CrossLog.webp",
-        "width": 359,
-        "height": 171,
-        "stepDescription": "Talk to Elena in a house just west of the East Ardougne north bank, across the river."
-      },
-      {
-        "step": "24 ",
-        "src": "Samples.webp",
-        "width": 297,
-        "height": 43,
-        "stepDescription": ""
-      },
-      {
-        "step": "24",
-        "src": "usesampleonbank.webp",
-        "width": 350,
-        "height": 351,
-        "stepDescription": "Without teleporting, go to a bank and deposit your plague sample. Teleporting with the plague sample in your inventory will destroy it, forcing you to retrieve another sample from Elena."
-      },
-      {
-        "step": "25",
-        "src": "Teleports.webp",
-        "width": 352,
-        "height": 158,
-        "stepDescription": "Retrieve the plague sample (and the other three vials, if you banked them) from the closest bank to Rimmington and walk there (Skills necklace teleport to the Crafting Guild is the quickest. Alternatively, you can use the Clan Vexillum Teleport to the Clan Camp South of Falador)."
-      },
-      {
-        "step": "25",
-        "src": "ClanVex.webp",
-        "width": 63,
-        "height": 33,
-        "stepDescription": "Retrieve the plague sample (and the other three vials, if you banked them) from the closest bank to Rimmington and walk there (Skills necklace teleport to the Crafting Guild is the quickest. Alternatively, you can use the Clan Vexillum Teleport to the Clan Camp South of Falador)."
-      },
-      {
-        "step": "26",
-        "src": "TalkToChemist.webp",
-        "width": 353,
-        "height": 245,
-        "stepDescription": "Enter the western-most house in Rimmington and talk to the Chemist (do not mention that you have the sample or he will take it away from you, and you will be forced to go back to Elena to get a new one; Also do not give the wrong vial as it will force you to go back and get new ones). (Chat 3•2•2)"
-      },
-      {
-        "step": "27",
-        "src": "TalkToChancy.webp",
-        "width": 352,
-        "height": 206,
-        "stepDescription": "Talk to Chancy. (Chat 2)"
-      },
-      {
-        "step": "28",
-        "src": "TalkToDaVinci.webp",
-        "width": 353,
-        "height": 310,
-        "stepDescription": "Talk to Da Vinci. (Chat 1)"
-      },
-      {
-        "step": "29",
-        "src": "TalkToHops.webp",
-        "width": 354,
-        "height": 249,
-        "stepDescription": "Talk to Hops. (Chat 3)"
-      },
-      {
-        "step": "31",
-        "src": "blackRobes.webp",
-        "width": 90,
-        "height": 47,
-        "stepDescription": "Items needed: Touch paper, Plague sample, Priest gown top, Priest gown bottoms"
-      },
-      {
-        "step": "31",
-        "src": "PriestGownUse.webp",
-        "width": 353,
-        "height": 218,
-        "stepDescription": "Items needed: Touch paper, Plague sample, Priest gown top, Priest gown bottoms"
-      },
-      {
-        "step": "35",
-        "src": "TheThree.webp",
-        "width": 355,
-        "height": 104,
-        "stepDescription": "Talk to the 3 chemist's assistants at the Dancing Donkey Inn to get the vials back."
-      },
-      {
-        "step": "37",
-        "src": "BuildingSE.webp",
-        "width": 354,
-        "height": 203,
-        "stepDescription": "Go to the building south-east of the pub and go inside."
-      },
-      {
-        "step": "38",
-        "src": "TalkToGuidor.webp",
-        "width": 591,
-        "height": 525,
-        "stepDescription": "Talk to Guidor, tell him you are sent by Elena, and give him the samples. (Chat 1•2•1)"
-      },
-      {
-        "step": "40",
-        "src": "ArdyCastle.webp",
-        "width": 355,
-        "height": 310,
-        "stepDescription": "Go to Ardougne Castle, south of Elena's house, and climb either the stairs to the north or south."
-      },
-      {
-        "step": "41",
-        "src": "GoUpStairs.webp",
-        "width": 354,
-        "height": 196,
-        "stepDescription": "Talk to King Lathas, who is in the middle chamber of the 2nd floor[US] of the castle. (Chat 1)"
-      },
-      {
-        "step": "41",
-        "src": "TalkToLathas.webp",
-        "width": 354,
-        "height": 221,
-        "stepDescription": "Talk to King Lathas, who is in the middle chamber of the 2nd floor[US] of the castle. (Chat 1)"
+        "step": 23,
+        "src": "Biohazard_step_23_1.webp",
+        "height": 551,
+        "width": 625,
+        "stepDescription": "Go through the gate in the south-east corner of Varrock. Obtain a priest gown set which can be bought from the Fancy Shop."
       }
     ]
   },
@@ -3625,123 +3610,39 @@
     "name": "Birthright of the Dwarves",
     "images": [
       {
-        "step": "2",
-        "src": "Step1_QuestStart.webp",
-        "width": 907,
-        "height": 533,
-        "stepDescription": "Talk to King Veldaban on the top floor of Keldagrim Palace. (Chat 1•1•3•✓•2)"
-      },
-      {
-        "step": "2",
-        "src": "Step1_VeldaBan.webp",
-        "width": 438,
-        "height": 500,
-        "stepDescription": "Talk to King Veldaban on the top floor of Keldagrim Palace. (Chat 1•1•3•✓•2)"
-      },
-      {
-        "step": "3",
-        "src": "Step3_VaultLoc.webp",
-        "width": 242,
-        "height": 375,
-        "stepDescription": "**Items needed: 2 inventory spaces, Royal dwarven seal** \nEnter the records chamber cave to the west of the bank (along the west wall)."
-      },
-      {
-        "step": "10",
-        "src": "Step10_FurnaceLoc.webp",
-        "width": 249,
-        "height": 384,
-        "stepDescription": "Go to the western 1st floor[US] of the Consortium and search the furnace in the north-eastern room."
-      },
-      {
-        "step": "10",
-        "src": "Step10_SearchFurnace.webp",
-        "width": 454,
-        "height": 459,
-        "stepDescription": "Go to the western 1st floor[US] of the Consortium and search the furnace in the north-eastern room."
-      },
-      {
-        "step": "12",
-        "src": "Step12_TalkMeike.webp",
-        "width": 650,
-        "height": 363,
-        "stepDescription": "Go to the King's Axe Inn, south of the bank, and talk to Meike. (Chat 1•1•1•2)"
-      },
-      {
-        "step": "20",
-        "src": "Step20_Ikadia.webp",
-        "width": 441,
-        "height": 625,
-        "stepDescription": "Defeat her and talk to her again. (Chat ~•~)"
-      },
-      {
-        "step": "22",
-        "src": "Step22_watchTower.webp",
-        "width": 245,
-        "height": 372,
-        "stepDescription": "Go to the Yanille's Watchtower"
-      },
-      {
-        "step": "29",
-        "src": "Step29_caveLoc.webp",
-        "width": 404,
-        "height": 345,
-        "stepDescription": "**Items recommended: Food, sign of life, run enhancing items** \nEnter the Barendir caves southeast of west Keldagrim. The caves can be accessed by selecting \"Travel\" on the Dwarven Boatman on the eastern side of Keldagrim near the northern bridge, or selecting \"Cross-river\" on the Dwarven Ferryman to the south of western Keldagrim."
-      },
-      {
-        "step": "46",
-        "src": "Step46_ChaosDoor.webp",
-        "width": 192,
-        "height": 139,
-        "stepDescription": "Enter the eastern doorway and go up to the 2nd floor[US]."
-      },
-      {
-        "step": "19",
-        "src": "Step19_TaverlyDungeon.webp",
-        "width": 766,
-        "height": 633,
-        "stepDescription": "After she talks to you and teleports away, go to the chaos druid circle in the north-eastern corner of the dungeon and talk to her. (Chat 2)"
-      },
-      {
-        "step": "27",
-        "src": "Step27_FragmentTable.webp",
-        "width": 600,
+        "step": 20,
+        "src": "BirthrightoftheDwarves_step_20_1.webp",
         "height": 600,
-        "stepDescription": "Investigate each memory void. Based on the text that appears, use the corresponding memory fragment on the memory void following the table provided"
+        "width": 600,
+        "stepDescription": "Use the wand on the 4 floating objects then catch all 16 loose memory fragments."
       },
       {
-        "step": "40",
-        "src": "Step40_FragmentTable.webp",
-        "width": 600,
-        "height": 600,
-        "stepDescription": "Investigate each memory void. Based on the text that appears, use the corresponding memory fragment on the memory void following the table provided"
+        "step": 22,
+        "src": "BirthrightoftheDwarves_step_22_1.webp",
+        "height": 513,
+        "width": 278,
+        "stepDescription": "Enter the Barendir caves southeast of west Keldagrim."
       },
       {
-        "step": "42",
-        "src": "Step42_FragmentTable.webp",
-        "width": 600,
+        "step": 29,
+        "src": "BirthrightoftheDwarves_step_29_1.webp",
         "height": 600,
+        "width": 600,
+        "stepDescription": "Enter the cave ten after the cutscene, use the wand on the royal Red Axe standard (flag, west of Veldaban), the Zamorakian Chaplain, and the chaos dwarf standing next to him then collect all fragments"
+      },
+      {
+        "step": 31,
+        "src": "BirthrightoftheDwarves_step_31_1.webp",
+        "height": 600,
+        "width": 600,
         "stepDescription": "In the next memory, use the wand on the two trolls directly next to Grimsson and repeat the memory fragment process following the table provided"
       },
       {
-        "step": "44",
-        "src": "Step44_FragmentTable.webp",
-        "width": 600,
+        "step": 34,
+        "src": "BirthrightoftheDwarves_step_34_1.webp",
         "height": 600,
+        "width": 600,
         "stepDescription": "In the next memory, use the wand on the 3 dwarves, catch the memory fragments only when they're not labelled \"dangerous\", and repeat the process following the table provided"
-      },
-      {
-        "step": "33",
-        "src": "scavidmap.webp",
-        "width": 354,
-        "height": 288,
-        "stepDescription": "Fire the cannon. This part is not a safe death. Should you die, your gravestone will be a short walk inside the Barendir caves."
-      },
-      {
-        "step": "34",
-        "src": "Step34Watchtower.webp",
-        "width": 624,
-        "height": 659,
-        "stepDescription": "After the cutscene, stand behind the pillars to get the cannons to shoot them down, and sabotage the cannons as you progress. The first one is to the west. Do not stand near a cannon if it is about to explode, as it will hit for 5,000+ damage. Praying against range is strongly recommended."
       }
     ]
   },
@@ -3749,11 +3650,11 @@
     "name": "Blood Runs Deep",
     "images": [
       {
-        "step": "51",
-        "src": "Step51bloodrunsdeep.webp",
-        "width": 723,
-        "height": 646,
-        "stepDescription": "Follow the red line. You need to jump over some rubble, go west for a bit, enter the tunnel inside the wall (takes you to the other side) and then go south."
+        "step": 32,
+        "src": "BloodRunsDeep_step_32_1.webp",
+        "height": 698,
+        "width": 644,
+        "stepDescription": "Follow the path provided in the quest image. Steps to go through this area in Additional Info."
       }
     ]
   },
@@ -3805,6 +3706,13 @@
         "width": 512,
         "height": 334,
         "stepDescription": "Open WEST wall's SOUTH door to a safe room."
+      },
+      {
+        "step": 19,
+        "src": "BrokenHome_step_19_1.webp",
+        "height": 1401,
+        "width": 771,
+        "stepDescription": "To Complete this Pushing Puzzle follow the steps below."
       }
     ]
   },
@@ -3902,6 +3810,76 @@
         "width": 350,
         "height": 119,
         "stepDescription": "Note: For these next instructions, Lunch needs to be placed in the correct positions after Tunks. Also, you can pull the lever as many times as you like to reveal the pressure plate if you forgot."
+      },
+      {
+        "step": 12,
+        "src": "CalloftheAncestors_step_12_1.webp",
+        "height": 563,
+        "width": 663,
+        "stepDescription": "Control Lunch Headbutt the crack on the West wall."
+      },
+      {
+        "step": 13,
+        "src": "CalloftheAncestors_step_13_1.webp",
+        "height": 567,
+        "width": 651,
+        "stepDescription": "Control Tunks, Jump over the chasm. Read Additional Information for the Puzzle Pattern."
+      },
+      {
+        "step": 38,
+        "src": "CalloftheAncestors_step_38_1.webp",
+        "height": 813,
+        "width": 798,
+        "stepDescription": "Then do the same thing for the final lever."
+      },
+      {
+        "step": 37,
+        "src": "CalloftheAncestors_step_37_1.webp",
+        "height": 552,
+        "width": 642,
+        "stepDescription": "Move Tunks first, Then Lunch as before on the second lever."
+      },
+      {
+        "step": 35,
+        "src": "CalloftheAncestors_step_35_1.webp",
+        "height": 595,
+        "width": 696,
+        "stepDescription": "Remember to put Tunks on the tile first, then Lunch 2nd. Do this for both tiles."
+      },
+      {
+        "step": 32,
+        "src": "CalloftheAncestors_step_32_1.webp",
+        "height": 501,
+        "width": 564,
+        "stepDescription": "Control Tunks and step on the pressure plate (jumping chasm) revealed in the centre of the room"
+      },
+      {
+        "step": 33,
+        "src": "CalloftheAncestors_step_33_1.webp",
+        "height": 523,
+        "width": 606,
+        "stepDescription": "Control Lunch then step on the same pressure which was revealed (the bigger version)."
+      },
+      {
+        "step": 13,
+        "src": "CalloftheAncestors_step_13_2.webp",
+        "height": 583,
+        "width": 676,
+        "stepDescription": "Control Tunks, Jump over the chasm. Read Additional Information for the Puzzle Pattern."
+      },
+      {
+        "step": 12,
+        "src": "CalloftheAncestors_step_12_2.webp",
+        "height": 402,
+        "width": 505,
+        "stepDescription": "Control Lunch Headbutt the crack on the West wall. Read Additional Information for the Puzzle Pattern."
+      },
+      {
+        "step": 8,
+        "src": "CalloftheAncestors_step_8_1.webp",
+        "height": 467,
+        "width": 1102,
+        "stepDescription": "Enter Nemi Forest, to the west of Mazcab. Select the correct option on the chatbox when entering the Forest. (Chat 1)"
       }
     ]
   },
@@ -3952,7 +3930,43 @@
   },
   {
     "name": "City of Senntisten",
-    "images": []
+    "images": [
+      {
+        "step": 14,
+        "src": "CityofSenntisten_step_14_1.webp",
+        "height": 795,
+        "width": 530,
+        "stepDescription": "Enter the City of Senntisten through the ancient door to the north of the Archaeology Guild.(Chat 1)"
+      },
+      {
+        "step": 24,
+        "src": "CityofSenntisten_step_24_1.webp",
+        "height": 795,
+        "width": 530,
+        "stepDescription": "See the map for ward and objective locations."
+      },
+      {
+        "step": 43,
+        "src": "CityofSenntisten_step_43_1.webp",
+        "height": 201,
+        "width": 265,
+        "stepDescription": "Open the marked drawers as seen in the image at this step also added map at this step. Start from the bottom and work your way up or zoom in for ease."
+      },
+      {
+        "step": 43,
+        "src": "CityofSenntisten_step_43_2.webp",
+        "height": 795,
+        "width": 530,
+        "stepDescription": "Open the marked drawers as seen in the image at this step also added map at this step. Start from the bottom and work your way up or zoom in for ease."
+      },
+      {
+        "step": 47,
+        "src": "CityofSenntisten_step_47_1.webp",
+        "height": 795,
+        "width": 530,
+        "stepDescription": "The smoke ward can be found in the large building directly south of the ice ward on the map. As you approach an animation with gargoyle sentinels should play."
+      }
+    ]
   },
   {
     "name": "Clock Tower",
@@ -5010,11 +5024,11 @@
     "name": "Death to the Dorgeshuun",
     "images": [
       {
-        "step": "55",
-        "src": "Step55death.webp",
-        "width": 357,
-        "height": 521,
-        "stepDescription": "After Zanik climbs in the crate, carry it down into the trapdoor just north of the empty crates."
+        "step": 21,
+        "src": "DeathtotheDorgeshuun_step_21_1.webp",
+        "height": 641,
+        "width": 584,
+        "stepDescription": "Walk past the first guard (Zanik shoots him)."
       }
     ]
   },
@@ -5225,6 +5239,111 @@
         "width": 804,
         "height": 604,
         "stepDescription": "Run south-east to the Graveyard (refer to image at step)."
+      },
+      {
+        "step": 17,
+        "src": "DesertTreasure_step_17_1.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "Run south-east to the Graveyard (refer to image at step)."
+      },
+      {
+        "step": 29,
+        "src": "DesertTreasure_step_29_1.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "Players can enter the Smokey Well which is located west of Pollnivneach. (refer to image at step for smokey well location)"
+      },
+      {
+        "step": 30,
+        "src": "DesertTreasure_step_30_1.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "(Dungeon map at step) Once in the Dungeon there will be torches that need to be lit in each corner of the dungeon. Once a torch is lit quickly light the other torches in all corners as quick a possible. Once all torches are lit head to the center to open the chest to receive a Warm Key."
+      },
+      {
+        "step": 30,
+        "src": "DesertTreasure_step_30_2.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "Light Torches in all four corners run to the middle of the dungeon and loot the chest for a Warm Key."
+      },
+      {
+        "step": 33,
+        "src": "DesertTreasure_step_33_1.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "Go talk to Rasolo (Chat 3•1) (Refer to image at step for Rasolo's location)."
+      },
+      {
+        "step": 34,
+        "src": "DesertTreasure_step_34_1.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "Head back to the Bandit Camp. (Refer to image at next step)"
+      },
+      {
+        "step": 36,
+        "src": "DesertTreasure_step_36_1.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "Run east to Damis and kill him in both phases for the Shadow diamond. (refer to map at step for route and Safe Spot)\n"
+      },
+      {
+        "step": 37,
+        "src": "DesertTreasure_step_37_1.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "Return to the Bedabin Camp, and head directly south of Eblis to the pyramid with all Diamonds in the Inventory.\n"
+      },
+      {
+        "step": 39,
+        "src": "DesertTreasure_step_39_1.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "Run through the pyramid using the maps (refer to image's at this step). Don't stand still, or you may be transported back to the start. Also \nthere's a possibility that scarabs spawn in Azzanadra's room so... hopefully you brought a weapon, antipoison, and some more food just in case."
+      },
+      {
+        "step": 39,
+        "src": "DesertTreasure_step_39_2.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "Run through the pyramid using the maps (refer to image's at this step). Don't stand still, or you may be transported back to the start. Also \nthere's a possibility that scarabs spawn in Azzanadra's room so... hopefully you brought a weapon, antipoison, and some more food just in case."
+      },
+      {
+        "step": 39,
+        "src": "DesertTreasure_step_39_3.webp",
+        "height": 604,
+        "width": 804,
+        "stepDescription": "Run through the pyramid using the maps (refer to image's at this step). Don't stand still, or you may be transported back to the start. Also \nthere's a possibility that scarabs spawn in Azzanadra's room so... hopefully you brought a weapon, antipoison, and some more food just in case."
+      },
+      {
+        "step": 39,
+        "src": "DesertTreasure_step_39_4.webp",
+        "height": 2048,
+        "width": 2048,
+        "stepDescription": "Run through the pyramid using the maps (refer to image's at this step). Don't stand still, or you may be transported back to the start. Also \nthere's a possibility that scarabs spawn in Azzanadra's room so... hopefully you brought a weapon, antipoison, and some more food just in case."
+      },
+      {
+        "step": 39,
+        "src": "DesertTreasure_step_39_5.webp",
+        "height": 521,
+        "width": 700,
+        "stepDescription": "Run through the pyramid using the maps (refer to image's at this step). Don't stand still, or you may be transported back to the start. Also \nthere's a possibility that scarabs spawn in Azzanadra's room so... hopefully you brought a weapon, antipoison, and some more food just in case."
+      },
+      {
+        "step": 19,
+        "src": "DesertTreasure_step_19_1.webp",
+        "height": 572,
+        "width": 696,
+        "stepDescription": "Talk to the troll child near the ice gate. He may be difficult to see on high brightness settings, but he stays fixed a few squares west of the gate."
+      },
+      {
+        "step": 19,
+        "src": "DesertTreasure_step_19_2.webp",
+        "height": 572,
+        "width": 696,
+        "stepDescription": "Talk to the troll child near the ice gate Which is located at the North-West Side of the mountain. Look at image at this step to know exactly."
       }
     ]
   },
@@ -5902,6 +6021,13 @@
         "width": 423,
         "height": 227,
         "stepDescription": "Climb over it and kill Elvarg."
+      },
+      {
+        "step": 9,
+        "src": "DragonSlayer_step_9_1.webp",
+        "height": 435,
+        "width": 339,
+        "stepDescription": "Climb the ladder and kill the skeleton with the small round shield and pick up the yellow key. Use the key on the south-western most door and climb down until you get to the zombies.\n"
       }
     ]
   },
@@ -5923,7 +6049,15 @@
   },
   {
     "name": "Eagles' Peak",
-    "images": []
+    "images": [
+      {
+        "step": 17,
+        "src": "Eagles'Peak_step_17_1.webp",
+        "height": 807,
+        "width": 887,
+        "stepDescription": "If the puzzle gets messed up, there is a reset lever outside of the chamber. Read Additional Info and use the Image at this step to solve the puzzle."
+      }
+    ]
   },
   {
     "name": "Elemental Workshop I",
@@ -6853,11 +6987,11 @@
     "name": "Fur 'n Seek",
     "images": [
       {
-        "step": "3",
-        "src": "Step3Furhideskintable.webp",
-        "width": 850,
+        "step": 3,
+        "src": "Fur'nSeek_step_3_1.webp",
         "height": 650,
-        "stepDescription": "Use table provided at this step for hide/fur/skin collection"
+        "width": 850,
+        "stepDescription": "Use table provided at this step for hide/fur/skin collection or in Additional Info."
       }
     ]
   },
@@ -7110,424 +7244,25 @@
     "name": "Ghosts Ahoy",
     "images": [
       {
-        "step": "1",
-        "src": "REQITEMS.webp",
-        "width": 304,
-        "height": 215,
+        "step": 1,
+        "src": "GhostsAhoy_step_1_1.webp",
+        "height": 382,
+        "width": 749,
         "stepDescription": "Speak to Velorina at Port Phasmatys, in the northernmost building just east of the entrance. (Chat 1•1•✓)"
       },
       {
-        "step": "1",
-        "src": "RECCITEM.webp",
-        "width": 183,
-        "height": 99,
-        "stepDescription": "Speak to Velorina at Port Phasmatys, in the northernmost building just east of the entrance. (Chat 1•1•✓)"
+        "step": 21,
+        "src": "GhostsAhoy_step_21_1.webp",
+        "height": 445,
+        "width": 1112,
+        "stepDescription": "Stand under the Saradomin statue's extended arm (west-adjacent to the statue). Use the \"follow\" option on the treasure map, or walk the steps below."
       },
       {
-        "step": "1",
-        "src": "ECTOTOKENS.webp",
-        "width": 99,
-        "height": 40,
-        "stepDescription": "Speak to Velorina at Port Phasmatys, in the northernmost building just east of the entrance. (Chat 1•1•✓)"
-      },
-      {
-        "step": "1",
-        "src": "PSARIMPPHAS.webp",
-        "width": 498,
-        "height": 263,
-        "stepDescription": "Speak to Velorina at Port Phasmatys, in the northernmost building just east of the entrance. (Chat 1•1•✓)"
-      },
-      {
-        "step": "1",
-        "src": "PPHASDOCK.webp",
-        "width": 497,
-        "height": 269,
-        "stepDescription": "Speak to Velorina at Port Phasmatys, in the northernmost building just east of the entrance. (Chat 1•1•✓)"
-      },
-      {
-        "step": "1",
-        "src": "EnterPortPHas.webp",
-        "width": 521,
-        "height": 492,
-        "stepDescription": "Speak to Velorina at Port Phasmatys, in the northernmost building just east of the entrance. (Chat 1•1•✓)"
-      },
-      {
-        "step": "5",
-        "src": "VEL.webp",
-        "width": 349,
-        "height": 446,
-        "stepDescription": "Speak to Velorina. (Chat 1)"
-      },
-      {
-        "step": "2",
-        "src": "NECROVARUS_LOC.webp",
-        "width": 499,
-        "height": 254,
-        "stepDescription": "You must have the Ghostspeak amulet equipped"
-      },
-      {
-        "step": "9",
-        "src": "NECROVARUS.webp",
-        "width": 398,
-        "height": 389,
-        "stepDescription": "Run north-west to Netty's house which is on the east side of the Slayer Tower, speak to Netty in her house. (Chat 1)"
-      },
-      {
-        "step": "2",
-        "src": "SHORTCUTINFUNCTUS.webp",
-        "width": 287,
-        "height": 282,
-        "stepDescription": "You must have the Ghostspeak amulet equipped"
-      },
-      {
-        "step": "2",
-        "src": "slimepoool.webp",
-        "width": 204,
-        "height": 265,
-        "stepDescription": "You must have the Ghostspeak amulet equipped"
-      },
-      {
-        "step": "2",
-        "src": "SLIME.webp",
-        "width": 149,
-        "height": 79,
-        "stepDescription": "You must have the Ghostspeak amulet equipped"
-      },
-      {
-        "step": "9",
-        "src": "NETTY.webp",
-        "width": 381,
-        "height": 511,
-        "stepDescription": "Run north-west to Netty's house which is on the east side of the Slayer Tower, speak to Netty in her house. (Chat 1)"
-      },
-      {
-        "step": "9",
-        "src": "NETTYMAP_.webp",
-        "width": 502,
-        "height": 252,
-        "stepDescription": "Run north-west to Netty's house which is on the east side of the Slayer Tower, speak to Netty in her house. (Chat 1)"
-      },
-      {
-        "step": "10",
-        "src": "MILK.webp",
-        "width": 252,
-        "height": 133,
-        "stepDescription": "If you haven't already made nettle tea, run south of Netty's house and cut down a swamp tree for logs. Light a fire and use the Nettle-water on it to get Nettle tea. It is possible to accidentally boil your tea over."
-      },
-      {
-        "step": "10",
-        "src": "NETTEA.webp",
-        "width": 236,
-        "height": 82,
-        "stepDescription": "If you haven't already made nettle tea, run south of Netty's house and cut down a swamp tree for logs. Light a fire and use the Nettle-water on it to get Nettle tea. It is possible to accidentally boil your tea over."
-      },
-      {
-        "step": "13",
-        "src": "NETTY_AGAIN.webp",
-        "width": 456,
-        "height": 627,
-        "stepDescription": "Speak to Netty again. (Chat 1)"
-      },
-      {
-        "step": "14",
-        "src": "REPAIRMODEL.webp",
-        "width": 182,
-        "height": 82,
-        "stepDescription": "Repair the model ship with the silk."
-      },
-      {
-        "step": "16",
-        "src": "SHIPWRECK.webp",
-        "width": 567,
-        "height": 280,
-        "stepDescription": "Go inside the ship wreck just north of the allotment patches, east of the Canifis lodestone."
-      },
-      {
-        "step": "15",
-        "src": "IEMS.webp",
-        "width": 214,
-        "height": 117,
-        "stepDescription": "Items needed: dyes, combat equipment"
-      },
-      {
-        "step": "18",
-        "src": "SEARCHMAST.webp",
-        "width": 572,
-        "height": 580,
-        "stepDescription": "Wait for the \"wind speed\" to become \"low\", search the mast to determine the colours and their positions,(you need to search for 3 different results, take note if needed)."
-      },
-      {
-        "step": "18",
-        "src": "WINDSPEED_INDIDCATOR.webp",
-        "width": 241,
-        "height": 38,
-        "stepDescription": "Wait for the \"wind speed\" to become \"low\", search the mast to determine the colours and their positions,(you need to search for 3 different results, take note if needed)."
-      },
-      {
-        "step": "21",
-        "src": "OLDMKANLOC.webp",
-        "width": 239,
-        "height": 265,
-        "stepDescription": "Speak to the old man. (Chat 3)"
-      },
-      {
-        "step": "21",
-        "src": "OLSMAN.webp",
-        "width": 416,
-        "height": 456,
-        "stepDescription": "Speak to the old man. (Chat 3)"
-      },
-      {
-        "step": "22",
-        "src": "KEY.webp",
-        "width": 157,
-        "height": 89,
-        "stepDescription": "Use the key on the chest and open it for a map scrap."
-      },
-      {
-        "step": "22",
-        "src": "OPENCHEST.webp",
-        "width": 484,
-        "height": 397,
-        "stepDescription": "Use the key on the chest and open it for a map scrap."
-      },
-      {
-        "step": "22",
-        "src": "OPENINGCHEST.webp",
-        "width": 465,
-        "height": 503,
-        "stepDescription": "Use the key on the chest and open it for a map scrap."
-      },
-      {
-        "step": "22",
-        "src": "CHESTB4LOBBY.webp",
-        "width": 616,
-        "height": 563,
-        "stepDescription": "Use the key on the chest and open it for a map scrap."
-      },
-      {
-        "step": "23",
-        "src": "GANGPLANK.webp",
-        "width": 298,
-        "height": 405,
-        "stepDescription": "Go to the north-west part of the ship's deck and cross the gangplank to the rocks. Jump and cross the rocks until you find a chest, and open it for a map scrap."
-      },
-      {
-        "step": "23",
-        "src": "JUMPY.webp",
-        "width": 340,
-        "height": 389,
-        "stepDescription": "Go to the north-west part of the ship's deck and cross the gangplank to the rocks. Jump and cross the rocks until you find a chest, and open it for a map scrap."
-      },
-      {
-        "step": "23",
-        "src": "CHEST.webp",
-        "width": 334,
-        "height": 402,
-        "stepDescription": "Go to the north-west part of the ship's deck and cross the gangplank to the rocks. Jump and cross the rocks until you find a chest, and open it for a map scrap."
-      },
-      {
-        "step": "24",
-        "src": "GIANTLOBBY.webp",
-        "width": 297,
-        "height": 279,
-        "stepDescription": "Go back to the ship and climb down to the lowest level of the ship, and open a chest in the eastern end of the ship. Kill the giant lobster and search the chest again."
-      },
-      {
-        "step": "26",
-        "src": "ITEMSNEED.webp",
-        "width": 319,
-        "height": 112,
-        "stepDescription": "Items needed: spade (inventory) , treasure map"
-      },
-      {
-        "step": "24",
-        "src": "MAPP.webp",
-        "width": 148,
-        "height": 94,
-        "stepDescription": "Go back to the ship and climb down to the lowest level of the ship, and open a chest in the eastern end of the ship. Kill the giant lobster and search the chest again."
-      },
-      {
-        "step": "26",
-        "src": "TREASUREMAP.webp",
-        "width": 447,
-        "height": 330,
-        "stepDescription": "Items needed: spade (inventory) , treasure map"
-      },
-      {
-        "step": "29",
-        "src": "bookloc.webp",
-        "width": 496,
-        "height": 269,
-        "stepDescription": "The exact location of the book"
-      },
-      {
-        "step": "29",
-        "src": "SaraStat.webp",
-        "width": 463,
-        "height": 591,
-        "stepDescription": "The exact location of the book"
-      },
-      {
-        "step": "29",
-        "src": "DIGSPADE.webp",
-        "width": 180,
-        "height": 149,
-        "stepDescription": "The exact location of the book"
-      },
-      {
-        "step": "35",
-        "src": "DigForTreas.webp",
-        "width": 262,
-        "height": 278,
-        "stepDescription": "Dig at the final place you arrive at with a spade to receive the book of haricanto."
-      },
-      {
-        "step": "35",
-        "src": "HARICANTOBOOK.webp",
-        "width": 168,
-        "height": 69,
-        "stepDescription": "Dig at the final place you arrive at with a spade to receive the book of haricanto."
-      },
-      {
-        "step": "36",
-        "src": "GHOSTCAPT2.webp",
-        "width": 505,
-        "height": 275,
-        "stepDescription": "Go back to Port Phasmatys with the ghost captain."
-      },
-      {
-        "step": "36",
-        "src": "GHOSTCAPT.webp",
-        "width": 349,
-        "height": 312,
-        "stepDescription": "Go back to Port Phasmatys with the ghost captain."
-      },
-      {
-        "step": "37",
-        "src": "OAKBOWITEM.webp",
-        "width": 184,
-        "height": 69,
-        "stepDescription": "Items needed: Oak shieldbow"
-      },
-      {
-        "step": "38",
-        "src": "AKHARA.webp",
-        "width": 483,
-        "height": 689,
-        "stepDescription": "Speak to Ak-Haranu (who is not a ghost) around the docks. (Chat 1)"
-      },
-      {
-        "step": "39",
-        "src": "INNMAP.webp",
-        "width": 503,
-        "height": 271,
-        "stepDescription": "Go to the inn and speak to Robin. (Chat 2•1)"
-      },
-      {
-        "step": "39",
-        "src": "ROBIN.webp",
-        "width": 329,
-        "height": 547,
-        "stepDescription": "Go to the inn and speak to Robin. (Chat 2•1)"
-      },
-      {
-        "step": "40",
-        "src": "RDRAW.webp",
-        "width": 470,
-        "height": 317,
-        "stepDescription": "Win 4 games of Rune-Draw against him to get a signed oak shield bow. The easiest method is to choose \"draw\" until one player loses by drawing a death rune and repeating this until you have four wins total."
-      },
-      {
-        "step": "41",
-        "src": "SLIMESHEET.webp",
-        "width": 247,
-        "height": 79,
-        "stepDescription": "Speak to Ak-Haranu to get the translation manual."
-      },
-      {
-        "step": "41",
-        "src": "TRANSLATION.webp",
-        "width": 192,
-        "height": 92,
-        "stepDescription": "Speak to Ak-Haranu to get the translation manual."
-      },
-      {
-        "step": "42",
-        "src": "INNKEEP.webp",
-        "width": 529,
-        "height": 507,
-        "stepDescription": "Ask the Ghost innkeeper (Who is located in the pub) for a job to get a bed sheet. (Chat 4•1)"
-      },
-      {
-        "step": "44",
-        "src": "BEDSDHEET.webp",
-        "width": 123,
-        "height": 84,
-        "stepDescription": "Use your bucket of slime on the bedsheet or dip it into the pool of slime. Charter ships do not allow bedsheets onto the ships."
-      },
-      {
-        "step": "44",
-        "src": "SLIMESHEET.webp",
-        "width": 247,
-        "height": 79,
-        "stepDescription": "Use your bucket of slime on the bedsheet or dip it into the pool of slime. Charter ships do not allow bedsheets onto the ships."
-      },
-      {
-        "step": "45",
-        "src": "GRAVUNGAS.webp",
-        "width": 214,
-        "height": 309,
-        "stepDescription": "Speak to Gravingas west of the inn to get a petition form. (Chat 1)"
-      },
-      {
-        "step": "47",
-        "src": "PETITION.webp",
-        "width": 164,
-        "height": 81,
-        "stepDescription": "Ask the townspeople for signatures until you have 10."
-      },
-      {
-        "step": "48",
-        "src": "lmaotfisthisghost.webp",
-        "width": 240,
-        "height": 532,
-        "stepDescription": "You can get multiple signatures from the same ghost if you ask another ghost first."
-      },
-      {
-        "step": "48",
-        "src": "GHOSTLYTHINGS.webp",
-        "width": 298,
-        "height": 294,
-        "stepDescription": "You can get multiple signatures from the same ghost if you ask another ghost first."
-      },
-      {
-        "step": "51",
-        "src": "BONEKEY.webp",
-        "width": 147,
-        "height": 105,
-        "stepDescription": "Speak to Necrovarus at the Ectofuntus. Pick up the bone key he drops."
-      },
-      {
-        "step": "53",
-        "src": "SEARCHCOFF.webp",
-        "width": 461,
-        "height": 657,
-        "stepDescription": "Open and search the coffin for Necrovarus' mystical robes."
-      },
-      {
-        "step": "55",
-        "src": "ROBEES.webp",
-        "width": 143,
-        "height": 77,
-        "stepDescription": "Equip the enchanted ghostspeak amulet and speak to Necrovarus near the ectofuntus. (Chat 1)"
-      },
-      {
-        "step": "56",
-        "src": "VEL.webp",
-        "width": 349,
-        "height": 446,
-        "stepDescription": "Speak to Velorina in northern Port Phasmatys (at this point you can enter without needing to pay ecto-tokens)."
+        "step": 21,
+        "src": "GhostsAhoy_step_21_2.webp",
+        "height": 792,
+        "width": 808,
+        "stepDescription": "Stand under the Saradomin statue's extended arm (west-adjacent to the statue). Use the \"follow\" option on the treasure map, or walk the steps in Additional Information."
       }
     ]
   },
@@ -7914,7 +7649,78 @@
   },
   {
     "name": "Heart of Stone",
-    "images": []
+    "images": [
+      {
+        "step": 4,
+        "src": "HeartofStone_step_4_1.webp",
+        "height": 284,
+        "width": 348,
+        "stepDescription": "Talk to Kipple. (Chat 1•2) and solve the puzzle."
+      },
+      {
+        "step": 7,
+        "src": "HeartofStone_step_7_1.webp",
+        "height": 284,
+        "width": 348,
+        "stepDescription": "Right-click open tracker with Kipple to solve the puzzle."
+      },
+      {
+        "step": 11,
+        "src": "HeartofStone_step_11_1.webp",
+        "height": 284,
+        "width": 348,
+        "stepDescription": "Talk to Kipple and Solve the Puzzle. (Chat 1)"
+      },
+      {
+        "step": 13,
+        "src": "HeartofStone_step_13_1.webp",
+        "height": 284,
+        "width": 348,
+        "stepDescription": "Right-click open tracker with Kipple and solve the puzzle."
+      },
+      {
+        "step": 18,
+        "src": "HeartofStone_step_18_1.webp",
+        "height": 284,
+        "width": 348,
+        "stepDescription": "Talk to Kipple and solve the puzzle. (Chat 1)"
+      },
+      {
+        "step": 20,
+        "src": "HeartofStone_step_20_1.webp",
+        "height": 284,
+        "width": 348,
+        "stepDescription": "Right-click open tracker with Kipple to solve the puzzle."
+      },
+      {
+        "step": 22,
+        "src": "HeartofStone_step_22_1.webp",
+        "height": 774,
+        "width": 709,
+        "stepDescription": "Click the circuit nodes until you match the power. Note some nodes will remove power, solution to the puzzle is at this quest step."
+      },
+      {
+        "step": 24,
+        "src": "HeartofStone_step_24_1.webp",
+        "height": 284,
+        "width": 348,
+        "stepDescription": "Talk to Kipple and solve the puzzle. (Chat 1)"
+      },
+      {
+        "step": 26,
+        "src": "HeartofStone_step_26_1.webp",
+        "height": 284,
+        "width": 348,
+        "stepDescription": "ight-click open tracker with Kipple to solve the puzzle."
+      },
+      {
+        "step": 26,
+        "src": "HeartofStone_step_26_2.webp",
+        "height": 284,
+        "width": 348,
+        "stepDescription": "Right-click open tracker with Kipple to solve the puzzle."
+      }
+    ]
   },
   {
     "name": "Heartstealer",
@@ -8033,130 +7839,39 @@
     "name": "Icthlarin's Little Helper",
     "images": [
       {
-        "step": "3",
-        "src": "QuestStart.webp",
-        "width": 350,
-        "height": 197,
-        "stepDescription": "Talk to the Wanderer with your cat in your backpack or while your cat is following you (the Wanderer is located a short distance north of Sophanem, east of the river but west of the Agility Pyramid). (Chat 1•✓)"
+        "step": 1,
+        "src": "Icthlarin'sLittleHelper_step_1_1.webp",
+        "height": 379,
+        "width": 622,
+        "stepDescription": "Get to Sophanem exit gate run north and east to find the Wanderer."
       },
       {
-        "step": "5",
-        "src": "Screenshot_1.webp",
-        "width": 350,
-        "height": 161,
-        "stepDescription": "Open the northern door on the southern pyramid (picture of a cat)."
-      },
-      {
-        "step": "5",
-        "src": "Screenshot_2.webp",
-        "width": 350,
-        "height": 247,
-        "stepDescription": "Open the northern door on the southern pyramid (picture of a cat)."
-      },
-      {
-        "step": "6",
-        "src": "Screenshot_3.webp",
-        "width": 350,
-        "height": 197,
-        "stepDescription": "You will arrive inside a maze. Run past the battering rams (\"crushers\")."
-      },
-      {
-        "step": "7",
-        "src": "Screenshot_4.webp",
-        "width": 350,
-        "height": 313,
-        "stepDescription": "The path after the initial crushers is littered with pitfalls. If you look closely, there are dotted lines showing the locations of the pitfalls."
-      },
-      {
-        "step": "13",
-        "src": "Screenshot_5.webp",
-        "width": 315,
-        "height": 130,
-        "stepDescription": "Talk to the Sphinx with your cat/kitten out (if 7 is highlighted it is WRONG ITS 9.) (Chat 1•1•2•1)"
-      },
-      {
-        "step": "10",
-        "src": "Screenshot_6.webp",
-        "width": 353,
-        "height": 338,
+        "step": 8,
+        "src": "Icthlarin'sLittleHelper_step_8_1.webp",
+        "height": 264,
+        "width": 411,
         "stepDescription": "Click on the door of the western room and solve puzzle."
       },
       {
-        "step": "11",
-        "src": "Screenshot_7.webp",
-        "width": 350,
-        "height": 318,
-        "stepDescription": "You may reroll your puzzle until it looks like solution below."
+        "step": 8,
+        "src": "Icthlarin'sLittleHelper_step_8_2.webp",
+        "height": 267,
+        "width": 415,
+        "stepDescription": "Click on the door of the western room and solve puzzle."
       },
       {
-        "step": "12",
-        "src": "Screenshot_8.webp",
-        "width": 350,
-        "height": 220,
-        "stepDescription": "Items needed: Combat equipment"
+        "step": 8,
+        "src": "Icthlarin'sLittleHelper_step_8_3.webp",
+        "height": 272,
+        "width": 410,
+        "stepDescription": "Click on the door of the western room and solve puzzle."
       },
       {
-        "step": "14",
-        "src": "Screenshot_9.webp",
-        "width": 136,
-        "height": 104,
-        "stepDescription": "Talk to the High Priest, located inside the temple in the south part of the city."
-      },
-      {
-        "step": "14",
-        "src": "Screenshot_10.webp",
-        "width": 284,
-        "height": 201,
-        "stepDescription": "Talk to the High Priest, located inside the temple in the south part of the city."
-      },
-      {
-        "step": "14",
-        "src": "Screenshot_11.webp",
-        "width": 350,
-        "height": 287,
-        "stepDescription": "Talk to the High Priest, located inside the temple in the south part of the city."
-      },
-      {
-        "step": "15",
-        "src": "Screenshot_13.webp",
-        "width": 350,
-        "height": 208,
-        "stepDescription": "Examine the canopic jar in your inventory. (Take note)"
-      },
-      {
-        "step": "15",
-        "src": "Screenshot_12.webp",
-        "width": 350,
-        "height": 228,
-        "stepDescription": "Examine the canopic jar in your inventory. (Take note)"
-      },
-      {
-        "step": "7",
-        "src": "Screenshot_17.webp",
-        "width": 227,
-        "height": 380,
-        "stepDescription": "The path after the initial crushers is littered with pitfalls. If you look closely, there are dotted lines showing the locations of the pitfalls."
-      },
-      {
-        "step": "20",
-        "src": "Screenshot_21.webp",
-        "width": 350,
-        "height": 147,
-        "stepDescription": "Take the jar again."
-      },
-      {
-        "step": "21",
-        "src": "Screenshot_22.webp",
-        "width": 350,
-        "height": 199,
-        "stepDescription": "Exit the room"
-      },
-      {
-        "step": "29",
-        "src": "Screenshot_29.webp",
-        "width": 115,
-        "height": 82,
-        "stepDescription": "Talk to the Carpenter again with a willow log."
+        "step": 8,
+        "src": "Icthlarin'sLittleHelper_step_8_4.webp",
+        "height": 266,
+        "width": 409,
+        "stepDescription": "Click on the door of the western room and solve puzzle."
       }
     ]
   },
@@ -8534,151 +8249,46 @@
     "name": "King of the Dwarves",
     "images": [
       {
-        "step": "1",
-        "src": "Step1_QuestStart.webp",
-        "width": 241,
+        "step": 1,
+        "src": "KingoftheDwarves_step_1_1.webp",
         "height": 321,
+        "width": 241,
         "stepDescription": "Speak to lava-flow miner Sven standing outside of the Lava Flow Mine in Keldagrim East. (Chat 1•✓)"
       },
       {
-        "step": "1",
-        "src": "Step1_Sven.webp",
-        "width": 298,
-        "height": 307,
-        "stepDescription": "Speak to lava-flow miner Sven standing outside of the Lava Flow Mine in Keldagrim East. (Chat 1•✓)"
-      },
-      {
-        "step": "2",
-        "src": "Step2_FreeDwarvesLocs.webp",
-        "width": 245,
+        "step": 2,
+        "src": "KingoftheDwarves_step_2_1.webp",
         "height": 258,
-        "stepDescription": "Free all 6 dwarves by mining the lighter coloured rubble surrounding them (they are all close to the entrance) and take them back to Foreman Jaak."
+        "width": 245,
+        "stepDescription": "Free all 6 dwarves by mining the lighter coloured rubble surrounding them and take them back to Foreman Jaak."
       },
       {
-        "step": "2",
-        "src": "step2_PathNorth.webp",
-        "width": 626,
+        "step": 2,
+        "src": "KingoftheDwarves_step_2_2.webp",
         "height": 428,
-        "stepDescription": "Free all 6 dwarves by mining the lighter coloured rubble surrounding them (they are all close to the entrance) and take them back to Foreman Jaak."
+        "width": 626,
+        "stepDescription": "Free all 6 dwarves by mining the lighter coloured rubble surrounding them and take them back to Foreman Jaak."
       },
       {
-        "step": "5",
-        "src": "Step5_Consorsium.webp",
-        "width": 243,
+        "step": 4,
+        "src": "KingoftheDwarves_step_4_1.webp",
         "height": 379,
+        "width": 243,
         "stepDescription": "Go to the top floor of the Consortium."
       },
       {
-        "step": "14",
-        "src": "Step14_TalkHreidmar.webp",
-        "width": 611,
-        "height": 408,
-        "stepDescription": "Talk to Hreidmar outside the eastern entrance of the Consortium."
-      },
-      {
-        "step": "16",
-        "src": "Step16_BarLoc.webp",
-        "width": 237,
-        "height": 257,
-        "stepDescription": "Head to the King's Axe Inn (Keldagrim West) and talk to Luitger. (Chat 3•3)"
-      },
-      {
-        "step": "16",
-        "src": "Step16_Luitger.webp",
-        "width": 464,
-        "height": 374,
-        "stepDescription": "Head to the King's Axe Inn (Keldagrim West) and talk to Luitger. (Chat 3•3)"
-      },
-      {
-        "step": "17",
-        "src": "Step17_Klaus.webp",
-        "width": 462,
-        "height": 546,
-        "stepDescription": "Go to the Black Guard HQ (west of the bank) and talk to Klaas."
-      },
-      {
-        "step": "18",
-        "src": "Steo18_WatchTowerLoc.webp",
-        "width": 246,
-        "height": 374,
-        "stepDescription": "Go to the top of the Keldagrim Watchtower (just south of the Palace) and talk to Meike. (Chat 3•1)"
-      },
-      {
-        "step": "18",
-        "src": "Step18_TalkMeike.webp",
-        "width": 446,
-        "height": 576,
-        "stepDescription": "Go to the top of the Keldagrim Watchtower (just south of the Palace) and talk to Meike. (Chat 3•1)"
-      },
-      {
-        "step": "19",
-        "src": "Step19_LibraryLoc.webp",
-        "width": 247,
-        "height": 368,
-        "stepDescription": "Go to the library north of the Consortium in West Keldagrim."
-      },
-      {
-        "step": "26",
-        "src": "Step26_Furnace.webp",
-        "width": 246,
-        "height": 367,
-        "stepDescription": "Use the furnace (not forge) such as the one in the Consortium south of the library, if the prompt doesn't show up go to another furnace. (Chat 1•1)"
-      },
-      {
-        "step": "27",
-        "src": "Step27_RecordConsortium.webp",
-        "width": 243,
+        "step": 24,
+        "src": "KingoftheDwarves_step_24_1.webp",
         "height": 302,
+        "width": 243,
         "stepDescription": "Go to the Records Chamber (Enter Entrance in the wall, west of the Black Guard HQ)"
       },
       {
-        "step": "28",
-        "src": "Step28_TalkMeike.webp",
-        "width": 286,
-        "height": 299,
-        "stepDescription": "Talk to Meike or Veldaban."
-      },
-      {
-        "step": "30",
-        "src": "Step30_KeyCombo.webp",
-        "width": 858,
+        "step": 26,
+        "src": "KingoftheDwarves_step_26_1.webp",
         "height": 172,
-        "stepDescription": "The combination to unlock the door"
-      },
-      {
-        "step": "34",
-        "src": "Step34_DefeatColonel.webp",
-        "width": 363,
-        "height": 255,
-        "stepDescription": "Defeat Colonel Grimsson while making sure Veldaban does not die. If you leave the fight, you can restart by talking to Veldaban in the Laughing Miner pub in Keldagrim East."
-      },
-      {
-        "step": "37",
-        "src": "Step37_PrettyFlower.webp",
-        "width": 366,
-        "height": 406,
-        "stepDescription": "Head back halfway through the cavern until you come to an entrance on the east side. Enter it and speak to Pretty Flower. (Chat 2•2)"
-      },
-      {
-        "step": "38",
-        "src": "Step38_LiftRock.webp",
-        "width": 497,
-        "height": 407,
-        "stepDescription": "Lift the big rock opposite My Arm."
-      },
-      {
-        "step": "39",
-        "src": "Step39_LiftBigRock.webp",
-        "width": 346,
-        "height": 277,
-        "stepDescription": "Lift the troll named Big Rock."
-      },
-      {
-        "step": "39",
-        "src": "step39_LiftedRock.webp",
-        "width": 280,
-        "height": 274,
-        "stepDescription": "Lift the troll named Big Rock."
+        "width": 858,
+        "stepDescription": "Match up the keys with the correct keyholes Combo is in the image at this step."
       }
     ]
   },
@@ -8928,32 +8538,32 @@
     "name": "Lunar Diplomacy",
     "images": [
       {
-        "step": "1",
-        "src": "Lunar Diplomacy Step 1.webp",
-        "width": 591,
+        "step": 43,
+        "src": "LunarDiplomacy_step_43_1.webp",
+        "height": 600,
+        "width": 600,
+        "stepDescription": "Talk to Ethereal Fluke."
+      },
+      {
+        "step": 47,
+        "src": "LunarDiplomacy_step_47_1.webp",
+        "height": 713,
+        "width": 638,
+        "stepDescription": "Talk to Ethereal Numerator use the Image at this step to determine what to choose. Read the Additional Information Section to see more on this guy."
+      },
+      {
+        "step": 1,
+        "src": "LunarDiplomacy_step_1_1.webp",
         "height": 464,
+        "width": 591,
         "stepDescription": "Talk to Lokar Searunner on Rellekka's westernmost dock. (Chat 2•1•✓)"
       },
       {
-        "step": "71",
-        "src": "step71_Etheral.webp",
-        "width": 638,
-        "height": 713,
-        "stepDescription": "Click on the numbers to complete the patterns for four times. If you click on numbers without completing the dialogue, the sequence will be incorrect."
-      },
-      {
-        "step": "55",
-        "src": "Step55_BlueFlowersLunarQuest.webp",
-        "width": 1067,
+        "step": 35,
+        "src": "LunarDiplomacy_step_35_1.webp",
         "height": 689,
+        "width": 1067,
         "stepDescription": "Exit the city and run south. Dig up the blue flowers with a spade (tool belt doesn't work)."
-      },
-      {
-        "step": "66",
-        "src": "Step66__Dice.webp",
-        "width": 600,
-        "height": 600,
-        "stepDescription": "He will call out a number. You need to make the dice add up to the number he called. When you \"roll\" one of the dice, it will turn the die upside down, so each die only has two possible numbers (1 and 6, 2 and 5, 3 and 4)."
       }
     ]
   },
@@ -9481,7 +9091,29 @@
   },
   {
     "name": "Nomad's Requiem",
-    "images": []
+    "images": [
+      {
+        "step": 10,
+        "src": "Nomad'sRequiem_step_10_1.webp",
+        "height": 498,
+        "width": 765,
+        "stepDescription": "Climb down the south-eastern ladder and complete the puzzle. Click the statues in the given order in Additional Information."
+      },
+      {
+        "step": 17,
+        "src": "Nomad'sRequiem_step_17_1.webp",
+        "height": 498,
+        "width": 765,
+        "stepDescription": "Take some Elemental fuel out of the fuel hopper."
+      },
+      {
+        "step": 18,
+        "src": "Nomad'sRequiem_step_18_1.webp",
+        "height": 641,
+        "width": 1024,
+        "stepDescription": "Lure an Elemental creature out of the strange device and into the waterfall by dropping the fuel on the floor."
+      }
+    ]
   },
   {
     "name": "Observatory Quest",
@@ -9572,7 +9204,22 @@
   },
   {
     "name": "One Piercing Note",
-    "images": []
+    "images": [
+      {
+        "step": 28,
+        "src": "OnePiercingNote_step_28_1.webp",
+        "height": 453,
+        "width": 679,
+        "stepDescription": "Click move on the small candelabrum (candle holding rack in the basement) north of the Reliquary, then use a cabbage on it."
+      },
+      {
+        "step": 28,
+        "src": "OnePiercingNote_step_28_2.webp",
+        "height": 289,
+        "width": 693,
+        "stepDescription": "Click move on the small candelabrum (candle holding rack in the basement) north of the Reliquary, then use a cabbage on it."
+      }
+    ]
   },
   {
     "name": "One Small Favour",
@@ -9852,87 +9499,95 @@
     "name": "Plague's End",
     "images": [
       {
-        "step": "111",
-        "src": "CadarnSolution.webp",
-        "width": 700,
+        "step": 40,
+        "src": "Plague'sEnd_step_40_1.webp",
         "height": 700,
-        "stepDescription": "Direct Light into the centre (place/rotate mirrors as needed). Puzzle Solutions start Left to Right at Step."
+        "width": 700,
+        "stepDescription": "Make your way to the Well of Voyage"
       },
       {
-        "step": "111",
-        "src": "TrahaernSolution.webp",
-        "width": 700,
+        "step": 56,
+        "src": "Plague'sEnd_step_56_1.webp",
         "height": 700,
-        "stepDescription": "Direct Light into the centre (place/rotate mirrors as needed). Puzzle Solutions start Left to Right at Step."
-      },
-      {
-        "step": "111",
-        "src": "IowerthPuzzle.webp",
         "width": 700,
-        "height": 700,
-        "stepDescription": "Direct Light into the centre (place/rotate mirrors as needed). Puzzle Solutions start Left to Right at Step."
-      },
-      {
-        "step": "111",
-        "src": "Amlodd Solution.webp",
-        "width": 700,
-        "height": 700,
-        "stepDescription": "Direct Light into the centre (place/rotate mirrors as needed). Puzzle Solutions start Left to Right at Step."
-      },
-      {
-        "step": "111",
-        "src": "HeffinSolution.webp",
-        "width": 700,
-        "height": 700,
-        "stepDescription": "Direct Light into the centre (place/rotate mirrors as needed). Puzzle Solutions start Left to Right at Step."
-      },
-      {
-        "step": "111",
-        "src": "IthellSolution.webp",
-        "width": 700,
-        "height": 700,
-        "stepDescription": "Direct Light into the centre (place/rotate mirrors as needed). Puzzle Solutions start Left to Right at Step."
-      },
-      {
-        "step": "111",
-        "src": "MeilyrSolution.webp",
-        "width": 700,
-        "height": 700,
-        "stepDescription": "Direct Light into the centre (place/rotate mirrors as needed). Puzzle Solutions start Left to Right at Step."
-      },
-      {
-        "step": "115",
-        "src": "CrywsSolution.webp",
-        "width": 700,
-        "height": 700,
-        "stepDescription": "After directing the beam into the Crwys Crystal, there will be some dialogue."
-      },
-      {
-        "step": "1",
-        "src": "Step1_PlaguesEndQS.webp",
-        "width": 700,
-        "height": 700,
-        "stepDescription": "Items needed: Mourner gear"
-      },
-      {
-        "step": "63",
-        "src": "Step63_PlaguesEnd.webp",
-        "width": 700,
-        "height": 700,
-        "stepDescription": "Make your way to the Well of Voyage:"
-      },
-      {
-        "step": "90",
-        "src": "Step90_PlaguesEndSwamp.webp",
-        "width": 700,
-        "height": 700,
         "stepDescription": "Jump the small rocks to the island and continue, referencing the map captioned right (read map from right to left)"
+      },
+      {
+        "step": 73,
+        "src": "Plague'sEnd_step_73_1.webp",
+        "height": 700,
+        "width": 700,
+        "stepDescription": "Talk to Lord Crwys to begin stage 1. I recommend to read the Additional Info section before starting but if you just wanna \"Yeet\" into it go for it gamer."
+      },
+      {
+        "step": 73,
+        "src": "Plague'sEnd_step_73_2.webp",
+        "height": 700,
+        "width": 700,
+        "stepDescription": "Talk to Lord Crwys to begin stage 1. I recommend to read the Additional Info section before starting but if you just wanna \"Yeet\" into it go for it gamer."
+      },
+      {
+        "step": 73,
+        "src": "Plague'sEnd_step_73_3.webp",
+        "height": 700,
+        "width": 700,
+        "stepDescription": "Talk to Lord Crwys to begin stage 1. I recommend to read the Additional Info section before starting but if you just wanna \"Yeet\" into it go for it gamer."
+      },
+      {
+        "step": 73,
+        "src": "Plague'sEnd_step_73_4.webp",
+        "height": 700,
+        "width": 700,
+        "stepDescription": "Talk to Lord Crwys to begin stage 1. I recommend to read the Additional Info section before starting but if you just wanna \"Yeet\" into it go for it gamer."
+      },
+      {
+        "step": 73,
+        "src": "Plague'sEnd_step_73_5.webp",
+        "height": 700,
+        "width": 700,
+        "stepDescription": "Talk to Lord Crwys to begin stage 1. I recommend to read the Additional Info section before starting but if you just wanna \"Yeet\" into it go for it gamer."
+      },
+      {
+        "step": 73,
+        "src": "Plague'sEnd_step_73_6.webp",
+        "height": 700,
+        "width": 700,
+        "stepDescription": "Talk to Lord Crwys to begin stage 1. I recommend to read the Additional Info section before starting but if you just wanna \"Yeet\" into it go for it gamer."
+      },
+      {
+        "step": 73,
+        "src": "Plague'sEnd_step_73_7.webp",
+        "height": 700,
+        "width": 700,
+        "stepDescription": "Talk to Lord Crwys to begin stage 1. I recommend to read the Additional Info section before starting but if you just wanna \"Yeet\" into it go for it gamer."
+      },
+      {
+        "step": 73,
+        "src": "Plague'sEnd_step_73_8.webp",
+        "height": 700,
+        "width": 700,
+        "stepDescription": "Talk to Lord Crwys to begin stage 1. I recommend to read the Additional Info section before starting but if you just wanna \"Yeet\" into it go for it gamer."
       }
     ]
   },
   {
     "name": "Priest in Peril",
-    "images": []
+    "images": [
+      {
+        "step": 13,
+        "src": "PriestinPeril_step_13_1.webp",
+        "height": 364,
+        "width": 539,
+        "stepDescription": "Use the golden key on the one that has the iron key."
+      },
+      {
+        "step": 13,
+        "src": "PriestinPeril_step_13_2.webp",
+        "height": 450,
+        "width": 304,
+        "stepDescription": "Use the golden key on the one that has the iron key."
+      }
+    ]
   },
   {
     "name": "Quiet Before the Swarm",
@@ -10266,7 +9921,9 @@
   },
   {
     "name": "Recruitment Drive",
-    "images": [5]
+    "images": [
+      5
+    ]
   },
   {
     "name": "Regicide",
@@ -10701,6 +10358,48 @@
         "src": "Step31_TombEntrance.webp",
         "width": 797,
         "height": 705,
+        "stepDescription": "Rashiliyia's Tomb entrance location"
+      },
+      {
+        "step": 5,
+        "src": "ShiloVillage_step_5_1.webp",
+        "height": 705,
+        "width": 973,
+        "stepDescription": "Search the mound and select excavate. (🗨️ 1)"
+      },
+      {
+        "step": 20,
+        "src": "ShiloVillage_step_20_1.webp",
+        "height": 248,
+        "width": 494,
+        "stepDescription": "Talk to Trufitus. (🗨️ 2) Ensure Trufitus mentions the need to find the Tomb of Bervirius.\nLocation of Cairn Isle"
+      },
+      {
+        "step": 21,
+        "src": "ShiloVillage_step_21_1.webp",
+        "height": 565,
+        "width": 587,
+        "stepDescription": "Search the 'well stacked rocks' to the north to enter the Tomb of Bervirius. If you fail search again until you are able to enter. (🗨️ 1)"
+      },
+      {
+        "step": 22,
+        "src": "ShiloVillage_step_22_1.webp",
+        "height": 439,
+        "width": 448,
+        "stepDescription": "Inside, run south and search the 'tomb dolmen' to receive three items; Sword pommel, Locating Locating crystal and Bervirius Bervirius notes. Make sure to have enough inventory space otherwise you will have to reclaim the scroll using papyrus and charcoal."
+      },
+      {
+        "step": 27,
+        "src": "ShiloVillage_step_27_1.webp",
+        "height": 361,
+        "width": 654,
+        "stepDescription": "Rashiliyia's Tomb entrance location"
+      },
+      {
+        "step": 27,
+        "src": "ShiloVillage_step_27_2.webp",
+        "height": 705,
+        "width": 797,
         "stepDescription": "Rashiliyia's Tomb entrance location"
       }
     ]
@@ -11365,99 +11064,7 @@
   },
   {
     "name": "That Old Black Magic: Hermy and Bass",
-    "images": [
-      {
-        "step": "1",
-        "src": "MapOfUm.webp",
-        "width": 441,
-        "height": 453,
-        "stepDescription": "Items Recommended: Bring your best Necromancy Armour and Weapon to go into combat with Hermod (Level 732). Several Grueling Times"
-      },
-      {
-        "step": "3",
-        "src": "Hermod.webp",
-        "width": 285,
-        "height": 257,
-        "stepDescription": "Kill Hermod, the Spirit of War until you receive animated drumsticks."
-      },
-      {
-        "step": "6",
-        "src": "animated drum sticks.webp",
-        "width": 272,
-        "height": 166,
-        "stepDescription": "Talk to the The Spirit of Rhythm."
-      },
-      {
-        "step": "6",
-        "src": "SpiritofRhythmLocation.webp",
-        "width": 107,
-        "height": 75,
-        "stepDescription": "Talk to the The Spirit of Rhythm."
-      },
-      {
-        "step": "7",
-        "src": "EdTheSkeleton.webp",
-        "width": 156,
-        "height": 124,
-        "stepDescription": "Unequip weapons and talk to Ed. (Chat 1)"
-      },
-      {
-        "step": "9",
-        "src": "ManifestDrumSticks.webp",
-        "width": 238,
-        "height": 27,
-        "stepDescription": "Drumsticks work similar to a scan clue. Simply manifest with the animated drumsticks and a splash will appear at the location of a lost drum. Refer to the location maps above."
-      },
-      {
-        "step": "9",
-        "src": "ManifestedDrumSticks.webp",
-        "width": 195,
-        "height": 147,
-        "stepDescription": "Drumsticks work similar to a scan clue. Simply manifest with the animated drumsticks and a splash will appear at the location of a lost drum. Refer to the location maps above."
-      },
-      {
-        "step": "8",
-        "src": "FirstDrum.webp",
-        "width": 147,
-        "height": 116,
-        "stepDescription": "He's in the boat rental shop east of the northernmost docks."
-      },
-      {
-        "step": "8",
-        "src": "seconddrumloc.webp",
-        "width": 138,
-        "height": 126,
-        "stepDescription": "He's in the boat rental shop east of the northernmost docks."
-      },
-      {
-        "step": "8",
-        "src": "ThirdDrumLocation.webp",
-        "width": 213,
-        "height": 202,
-        "stepDescription": "He's in the boat rental shop east of the northernmost docks."
-      },
-      {
-        "step": "8",
-        "src": "fourthDrumLocation.webp",
-        "width": 152,
-        "height": 137,
-        "stepDescription": "He's in the boat rental shop east of the northernmost docks."
-      },
-      {
-        "step": "8",
-        "src": "foroutoffordrums.webp",
-        "width": 194,
-        "height": 33,
-        "stepDescription": "He's in the boat rental shop east of the northernmost docks."
-      },
-      {
-        "step": "10",
-        "src": "BacktoLadyGrey.webp",
-        "width": 191,
-        "height": 91,
-        "stepDescription": "Return to Lady Grey and talk to the The Spirit of Rhythm."
-      }
-    ]
+    "images": []
   },
   {
     "name": "The Blood Pact",
@@ -12523,6 +12130,27 @@
         "width": 623,
         "height": 705,
         "stepDescription": "Pick up an Arcenia root, one is directly to the east of the rope."
+      },
+      {
+        "step": 9,
+        "src": "TheDigSite_step_9_1.webp",
+        "height": 224,
+        "width": 400,
+        "stepDescription": "Talk to Katarina (student) in the north of the Dig Site then talk to her again."
+      },
+      {
+        "step": 13,
+        "src": "TheDigSite_step_13_1.webp",
+        "height": 224,
+        "width": 400,
+        "stepDescription": "Talk to all 3 students again."
+      },
+      {
+        "step": 15,
+        "src": "TheDigSite_step_15_1.webp",
+        "height": 224,
+        "width": 400,
+        "stepDescription": "Talk to all 3 students - Katarina will demand an opal (talk to her again). You can obtain this by panning."
       }
     ]
   },
@@ -12539,6 +12167,13 @@
         "width": 375,
         "height": 375,
         "stepDescription": "Talk to Brimstail in a cave west of the bank in the Gnome Stronghold. Look for dungeon link on mini map (Chat 1•1•1•✓)"
+      },
+      {
+        "step": 11,
+        "src": "TheEyesofGlouphrie_step_11_1.webp",
+        "height": 375,
+        "width": 375,
+        "stepDescription": "If necessary, use the exchanger to get a disc equal to your number. Use the Conversion Chart at this step."
       }
     ]
   },
@@ -12974,164 +12609,10 @@
     "name": "The Lost Tribe",
     "images": [
       {
-        "step": "1",
-        "src": "QuestStart.webp",
-        "width": 350,
-        "height": 232,
-        "stepDescription": "2nd floor[US] of Lumbridge castle, talk to Sigmund. (Chat 1•✓)"
-      },
-      {
-        "step": "1",
-        "src": "Screenshot_1.webp",
-        "width": 350,
-        "height": 321,
-        "stepDescription": "2nd floor[US] of Lumbridge castle, talk to Sigmund. (Chat 1•✓)"
-      },
-      {
-        "step": "2",
-        "src": "Screenshot_2.webp",
-        "width": 350,
-        "height": 179,
-        "stepDescription": "Talk to the following NPCs about Lumbridge cellar around the castle until one of them mentions a goblin:"
-      },
-      {
-        "step": "2",
-        "src": "Screenshot_4.webp",
-        "width": 350,
-        "height": 314,
-        "stepDescription": "Talk to the following NPCs about Lumbridge cellar around the castle until one of them mentions a goblin:"
-      },
-      {
-        "step": "2",
-        "src": "Screenshot_5.webp",
-        "width": 350,
-        "height": 391,
-        "stepDescription": "Talk to the following NPCs about Lumbridge cellar around the castle until one of them mentions a goblin:"
-      },
-      {
-        "step": "2",
-        "src": "Screenshot_6.webp",
-        "width": 350,
-        "height": 357,
-        "stepDescription": "Talk to the following NPCs about Lumbridge cellar around the castle until one of them mentions a goblin:"
-      },
-      {
-        "step": "9",
-        "src": "Screenshot_8.webp",
-        "width": 350,
-        "height": 324,
-        "stepDescription": "Descend the trapdoor in the kitchen and mine the wall rubble to the east."
-      },
-      {
-        "step": "9",
-        "src": "Screenshot_9.webp",
-        "width": 306,
-        "height": 390,
-        "stepDescription": "Descend the trapdoor in the kitchen and mine the wall rubble to the east."
-      },
-      {
-        "step": "10",
-        "src": "Screenshot_10.webp",
-        "width": 350,
-        "height": 258,
-        "stepDescription": "Squeeze through the wall and take the brooch."
-      },
-      {
-        "step": "10",
-        "src": "Screenshot_11.webp",
-        "width": 350,
-        "height": 308,
-        "stepDescription": "Squeeze through the wall and take the brooch."
-      },
-      {
-        "step": "10",
-        "src": "Screenshot_12.webp",
-        "width": 241,
-        "height": 387,
-        "stepDescription": "Squeeze through the wall and take the brooch."
-      },
-      {
-        "step": "12",
-        "src": "Screenshot_14.webp",
-        "width": 350,
-        "height": 300,
-        "stepDescription": "Talk to Reldo in Varrock Palace about the brooch. (Chat 3)"
-      },
-      {
-        "step": "13",
-        "src": "Screenshot_15.webp",
-        "width": 350,
-        "height": 188,
-        "stepDescription": "Search the northern-most bookcase on the west wall for a goblin symbol book."
-      },
-      {
-        "step": "14",
-        "src": "Screenshot_17.webp",
-        "width": 350,
-        "height": 213,
-        "stepDescription": "Read the book to the end."
-      },
-      {
-        "step": "14",
-        "src": "Screenshot_18.webp",
-        "width": 351,
-        "height": 234,
-        "stepDescription": "Read the book to the end."
-      },
-      {
-        "step": "14",
-        "src": "Screenshot_19.webp",
-        "width": 351,
-        "height": 229,
-        "stepDescription": "Read the book to the end."
-      },
-      {
-        "step": "14",
-        "src": "Screenshot_20.webp",
-        "width": 350,
-        "height": 232,
-        "stepDescription": "Read the book to the end."
-      },
-      {
-        "step": "14",
-        "src": "Screenshot_21.webp",
-        "width": 351,
-        "height": 235,
-        "stepDescription": "Read the book to the end."
-      },
-      {
-        "step": "12",
-        "src": "Screenshot_22.webp",
-        "width": 350,
-        "height": 163,
-        "stepDescription": "Talk to Reldo in Varrock Palace about the brooch. (Chat 3)"
-      },
-      {
-        "step": "15",
-        "src": "Screenshot_23.webp",
-        "width": 350,
-        "height": 152,
-        "stepDescription": "Talk to Generals Bentnoze and Wartface in Goblin Village. (Chat 2•1•3•2•3•3•1)"
-      },
-      {
-        "step": "15",
-        "src": "Screenshot_24.webp",
-        "width": 350,
-        "height": 294,
-        "stepDescription": "Talk to Generals Bentnoze and Wartface in Goblin Village. (Chat 2•1•3•2•3•3•1)"
-      },
-      {
-        "step": "15",
-        "src": "Screenshot_25.webp",
-        "width": 350,
-        "height": 256,
-        "stepDescription": "Talk to Generals Bentnoze and Wartface in Goblin Village. (Chat 2•1•3•2•3•3•1)"
-      },
-      {
-        "step": "18",
-        "src": "Screenshot_64.webp",
-        "width": 350,
-        "height": 157,
+        "step": 12,
+        "src": "TheLostTribe_step_12_1.webp",
+        "height": 591,
+        "width": 1148,
         "stepDescription": "Run through the castle cellar cave."
       }
     ]
@@ -13440,155 +12921,7 @@
   },
   {
     "name": "The Spirit of War",
-    "images": [
-      {
-        "step": "1",
-        "src": "QuestStart.webp",
-        "width": 412,
-        "height": 246,
-        "stepDescription": "Interact with Kharen on the docks in the north-western City of Um, close to the transportation icon. (Chat ✓)"
-      },
-      {
-        "step": "1",
-        "src": "TalkToKharen.webp",
-        "width": 228,
-        "height": 337,
-        "stepDescription": "Interact with Kharen on the docks in the north-western City of Um, close to the transportation icon. (Chat ✓)"
-      },
-      {
-        "step": "2",
-        "src": "EdAndKharen.webp",
-        "width": 341,
-        "height": 205,
-        "stepDescription": "Either speak to Ed to the north-east to rent a boat (Chat 1) or choose the option \"Rent boat\" on Ed."
-      },
-      {
-        "step": "2",
-        "src": "TalkToEd.webp",
-        "width": 321,
-        "height": 396,
-        "stepDescription": "Either speak to Ed to the north-east to rent a boat (Chat 1) or choose the option \"Rent boat\" on Ed."
-      },
-      {
-        "step": "3",
-        "src": "Boaty.webp",
-        "width": 381,
-        "height": 296,
-        "stepDescription": "Find four Wayward Souls. They are ghastly sphere shapes floating above the Lake Mnemosyne in each of the four corners of the map. Some may be a good distance away from the coastline."
-      },
-      {
-        "step": "3",
-        "src": "Boaty2.webp",
-        "width": 356,
-        "height": 247,
-        "stepDescription": "Find four Wayward Souls. They are ghastly sphere shapes floating above the Lake Mnemosyne in each of the four corners of the map. Some may be a good distance away from the coastline."
-      },
-      {
-        "step": "3",
-        "src": "FloatyHead.webp",
-        "width": 351,
-        "height": 329,
-        "stepDescription": "Find four Wayward Souls. They are ghastly sphere shapes floating above the Lake Mnemosyne in each of the four corners of the map. Some may be a good distance away from the coastline."
-      },
-      {
-        "step": "3",
-        "src": "FloatyHead2.webp",
-        "width": 351,
-        "height": 192,
-        "stepDescription": "Find four Wayward Souls. They are ghastly sphere shapes floating above the Lake Mnemosyne in each of the four corners of the map. Some may be a good distance away from the coastline."
-      },
-      {
-        "step": "3",
-        "src": "FloatyHead3.webp",
-        "width": 388,
-        "height": 290,
-        "stepDescription": "Find four Wayward Souls. They are ghastly sphere shapes floating above the Lake Mnemosyne in each of the four corners of the map. Some may be a good distance away from the coastline."
-      },
-      {
-        "step": "6",
-        "src": "SammyIfyouknow.webp",
-        "width": 383,
-        "height": 273,
-        "stepDescription": "Interact with Kharen. (Chat 1)"
-      },
-      {
-        "step": "6",
-        "src": "DeanIfykyk.webp",
-        "width": 371,
-        "height": 219,
-        "stepDescription": "Interact with Kharen. (Chat 1)"
-      },
-      {
-        "step": "12",
-        "src": "Dock1.webp",
-        "width": 416,
-        "height": 603,
-        "stepDescription": "Quest complete!"
-      },
-      {
-        "step": "12",
-        "src": "Dock2.webp",
-        "width": 584,
-        "height": 289,
-        "stepDescription": "Quest complete!"
-      },
-      {
-        "step": "12",
-        "src": "Dock3.webp",
-        "width": 351,
-        "height": 219,
-        "stepDescription": "Quest complete!"
-      },
-      {
-        "step": "6",
-        "src": "TalkToKharen.webp",
-        "width": 228,
-        "height": 337,
-        "stepDescription": "Interact with Kharen. (Chat 1)"
-      },
-      {
-        "step": "9",
-        "src": "Enter.webp",
-        "width": 629,
-        "height": 564,
-        "stepDescription": "Fight Hermod, the Spirit of War in story mode."
-      },
-      {
-        "step": "9",
-        "src": "F1.webp",
-        "width": 301,
-        "height": 257,
-        "stepDescription": "Fight Hermod, the Spirit of War in story mode."
-      },
-      {
-        "step": "9",
-        "src": "F2.webp",
-        "width": 345,
-        "height": 248,
-        "stepDescription": "Fight Hermod, the Spirit of War in story mode."
-      },
-      {
-        "step": "9",
-        "src": "F3.webp",
-        "width": 730,
-        "height": 504,
-        "stepDescription": "Fight Hermod, the Spirit of War in story mode."
-      },
-      {
-        "step": "9",
-        "src": "f4.webp",
-        "width": 335,
-        "height": 392,
-        "stepDescription": "Fight Hermod, the Spirit of War in story mode."
-      },
-      {
-        "step": "11",
-        "src": "TalkToKharen.webp",
-        "width": 228,
-        "height": 337,
-        "stepDescription": "Return and interact with Kharen"
-      }
-    ]
+    "images": []
   },
   {
     "name": "The Tale of the Muspah",
@@ -13599,6 +12932,34 @@
         "width": 375,
         "height": 375,
         "stepDescription": "Talk to Erjolf on the mountain north-east of Rellekka. (Fairy ring DKS) (Chat ✓•1)"
+      },
+      {
+        "step": 7,
+        "src": "TheTaleoftheMuspah_step_7_1.webp",
+        "height": 520,
+        "width": 717,
+        "stepDescription": "You have to set 5 rafts alight quickly from the northern shore of the pool. Light them from a spot such that when they float south, they end up across the east side of the frozen armour and are blocked from leaving the cave by a rock."
+      },
+      {
+        "step": 8,
+        "src": "TheTaleoftheMuspah_step_8_1.webp",
+        "height": 520,
+        "width": 660,
+        "stepDescription": "You have to set 3 rafts alight quickly from the northern shore of the pool. Light them on 3 spots that, when they float south, they end up on the north side of the frozen armour."
+      },
+      {
+        "step": 9,
+        "src": "TheTaleoftheMuspah_step_9_1.webp",
+        "height": 462,
+        "width": 509,
+        "stepDescription": "You have to set 4 rafts alight quickly from the south-east edge of the pool. Light them on a spot that, when they float west, they end up across the south side of the frozen armour."
+      },
+      {
+        "step": 10,
+        "src": "TheTaleoftheMuspah_step_10_1.webp",
+        "height": 519,
+        "width": 703,
+        "stepDescription": "You have to set 2 rafts alight from the western edges of the pool. Light them on 2 spots that, when they float east, they end up on the west side of the frozen armour."
       }
     ]
   },
@@ -14968,304 +14329,14 @@
     "images": []
   },
   {
-    "name": "A Fairy Tale I Growing Pains",
+    "name": "That Old Black Magic Hermy and Bass",
     "images": [
       {
-        "step": 7,
-        "src": "A Fairy Tale I Growing Pains_step_7_1.webp",
-        "height": 693,
-        "width": 1311,
-        "stepDescription": "Travel to The Dark Wizards' Tower (west of Falador)."
-      },
-      {
         "step": 6,
-        "src": "A Fairy Tale I Growing Pains_step_6_1.webp",
-        "height": 589,
-        "width": 992,
-        "stepDescription": "Run west to the bank. Talk to Fairy Nuff a few steps north of the bank."
-      },
-      {
-        "step": 5,
-        "src": "A Fairy Tale I Growing Pains_step_5_1.webp",
-        "height": 505,
-        "width": 697,
-        "stepDescription": "Run south (near Chaeldar, the Slayer master), talk to the Fairy Godfather about the Queen. (Chat 2) Make sure to finish the whole dialogue."
-      },
-      {
-        "step": 1,
-        "src": "A Fairy Tale I Growing Pains_step_1_1.webp",
-        "height": 711,
-        "width": 642,
-        "stepDescription": "Talk to Martin the Master Gardener in Draynor Village. (Chat 2•1•✓•1)"
-      }
-    ]
-  },
-  {
-    "name": "Benedicts World Tour (miniquest)",
-    "images": [
-      {
-        "step": 1,
-        "src": "BenedictsWorldTour(miniquest)_step_1_1.webp",
-        "height": 805,
-        "width": 648,
-        "stepDescription": "Talk to Benedict north-west of the Varrock Lodestone. (Chat ✓) Also located at the step is an F2P, and a P2P Table of items."
-      },
-      {
-        "step": 2,
-        "src": "BenedictsWorldTour(miniquest)_step_2_1.webp",
-        "height": 583,
-        "width": 364,
-        "stepDescription": "Travel to Varrock Palace. Go to the northwest staircase and then to the top floor to collect the fox pelt."
-      },
-      {
-        "step": 3,
-        "src": "BenedictsWorldTour(miniquest)_step_3_1.webp",
-        "height": 843,
-        "width": 895,
-        "stepDescription": "Head to the top of Al Kharid Palace and collect the toffee apple."
-      },
-      {
-        "step": 4,
-        "src": "BenedictsWorldTour(miniquest)_step_4_1.webp",
-        "height": 482,
-        "width": 680,
-        "stepDescription": "Teleport with your ring of duelling to Het's Oasis and go to the statue in the centre to collect the package. (Chat 1)"
-      },
-      {
-        "step": 5,
-        "src": "BenedictsWorldTour(miniquest)_step_5_1.webp",
-        "height": 325,
-        "width": 381,
-        "stepDescription": "Glide from Al Kharid or teleport to White Wolf Mountain and collect the Raw fish-like thing, which is right next to the glider. (Chat 2)"
-      },
-      {
-        "step": 6,
-        "src": "BenedictsWorldTour(miniquest)_step_6_1.webp",
-        "height": 667,
-        "width": 856,
-        "stepDescription": "Then glide (or teleport via spirit trees) to the Grand Tree and head south on the 3rd floor[US] to collect a Flask of tea. (Chat 1)"
-      },
-      {
-        "step": 7,
-        "src": "BenedictsWorldTour(miniquest)_step_7_1.webp",
-        "height": 740,
-        "width": 554,
-        "stepDescription": "Teleport with your ring of duelling to Castle wars and head north-west of the portals on the spectating wall to collect Sweets. (Chat 2)"
-      },
-      {
-        "step": 8,
-        "src": "BenedictsWorldTour(miniquest)_step_8_1.webp",
-        "height": 674,
-        "width": 695,
-        "stepDescription": "Teleport with the Wicked hood and enter the Low-level Runespan portal to collect the crystal to the south-west. (on the same island you start on)"
-      },
-      {
-        "step": 9,
-        "src": "BenedictsWorldTour(miniquest)_step_9_1.webp",
-        "height": 619,
-        "width": 633,
-        "stepDescription": "Use a Fairy Ring BIP to teleport to the Polypore dungeon, enter the dungeon entrance and go slightly east to collect cinnamon, which is next to the Neem drupe vine."
-      },
-      {
-        "step": 10,
-        "src": "BenedictsWorldTour(miniquest)_step_10_1.webp",
-        "height": 493,
-        "width": 522,
-        "stepDescription": "Use a Fairy Ring AIQ to teleport to Mudskipper point and head south-west to collect the toy ship."
-      },
-      {
-        "step": 11,
-        "src": "BenedictsWorldTour(miniquest)_step_11_1.webp",
-        "height": 384,
-        "width": 344,
-        "stepDescription": "Ardougne lodestone and head north-east to the top floor of the Sorcerer's Tower to collect a Money pouch."
-      },
-      {
-        "step": 12,
-        "src": "BenedictsWorldTour(miniquest)_step_12_1.webp",
-        "height": 600,
-        "width": 345,
-        "stepDescription": "Teleport to Lumbridge, head to the 3rd floor[US] of Lumbridge Castle and collect a Pipe by the North stairs."
-      },
-      {
-        "step": 13,
-        "src": "BenedictsWorldTour(miniquest)_step_13_1.webp",
-        "height": 523,
-        "width": 530,
-        "stepDescription": "Teleport to Anachronia lodestone to collect the foot slightly south-east of the lodestone."
-      },
-      {
-        "step": 14,
-        "src": "BenedictsWorldTour(miniquest)_step_14_1.webp",
-        "height": 599,
-        "width": 399,
-        "stepDescription": "Head north of the Menaphos gates to pass through the world window and continue slightly north to collect the frogburger."
-      },
-      {
-        "step": 1,
-        "src": "BenedictsWorldTour(miniquest)_step_1_2.webp",
-        "height": 375,
-        "width": 375,
-        "stepDescription": "Talk to Benedict north-west of the Varrock Lodestone. (Chat ✓) Also located at the step is an F2P, and a P2P Table of items."
-      },
-      {
-        "step": 1,
-        "src": "BenedictsWorldTour(miniquest)_step_1_3.webp",
-        "height": 375,
-        "width": 375,
-        "stepDescription": "Talk to Benedict north-west of the Varrock Lodestone. (Chat ✓) Also located at the step is an F2P, and a P2P Table of items."
-      },
-      {
-        "step": 15,
-        "src": "BenedictsWorldTour(miniquest)_step_15_1.webp",
-        "height": 449,
-        "width": 602,
-        "stepDescription": "Teleport to Falador and head to the west side of Falador castle and climb the stairs to the top to collect a monocle."
-      },
-      {
-        "step": 16,
-        "src": "BenedictsWorldTour(miniquest)_step_16_1.webp",
-        "height": 581,
-        "width": 948,
-        "stepDescription": "Teleport with either the Skeletal horror Teleport, an invitation box, a Fort Forinthry Teleport, or a Dig Site pendant to the digsite and head to the beacon south of Paterdomus to collect a scarf. (Chat 1)"
-      },
-      {
-        "step": 17,
-        "src": "BenedictsWorldTour(miniquest)_step_17_1.webp",
-        "height": 479,
-        "width": 556,
-        "stepDescription": "Teleport to Ashdale using the Lodestone and head directly south to collect the Surgical mask."
-      }
-    ]
-  },
-  {
-    "name": "A Fairy Tale II Cure a Queen",
-    "images": [
-      {
-        "step": 21,
-        "src": "AFairyTaleIICurea Queen_step_21_1.webp",
-        "height": 336,
-        "width": 373,
-        "stepDescription": "Talk to the Fairy Queen."
-      },
-      {
-        "step": 20,
-        "src": "AFairyTaleIICurea Queen_step_20_1.webp",
-        "height": 291,
-        "width": 313,
-        "stepDescription": "At the Resistance Hideout, right-click use the magic essence on the queen, laying on the stretcher near Fairy Nuff."
-      },
-      {
-        "step": 19,
-        "src": "AFairyTaleIICurea Queen_step_19_1.webp",
-        "height": 826,
-        "width": 815,
-        "stepDescription": "Talk to Fairy Nuff before giving the queen the magic essence or it wont work."
-      },
-      {
-        "step": 18,
-        "src": "AFairyTaleIICurea Queen_step_18_1.webp",
-        "height": 799,
-        "width": 714,
-        "stepDescription": "Go back to the Resistance Hideout by equipping your Dramen staff and go to each of these codes in this order to reach the hideout: AIR, DLR, DJQ (right-click fairy ring to \"select Destination\" for quicker travel), AJS"
-      },
-      {
-        "step": 17,
-        "src": "AFairyTaleIICurea Queen_step_17_1.webp",
-        "height": 593,
-        "width": 603,
-        "stepDescription": "Make sure you have armour required to fight one or multiple Goraks to get a Gorak Claw. Once obtained use it on the magic essence (unf) potion for a Magic Essence Potion. Go back to a fairy ring and use the code DIR."
-      },
-      {
-        "step": 1,
-        "src": "AFairyTaleIICurea Queen_step_1_1.webp",
-        "height": 615,
-        "width": 702,
-        "stepDescription": "Talk to Martin the Master Gardener in the Draynor Market. (Chat 2•✓)"
-      },
-      {
-        "step": 2,
-        "src": "AFairyTaleIICurea Queen_step_2_1.webp",
-        "height": 557,
-        "width": 617,
-        "stepDescription": "After 5 minutes have elapsed, talk to him again. (Chat 2)"
-      },
-      {
-        "step": 3,
-        "src": "AFairyTaleIICurea Queen_step_3_1.webp",
-        "height": 660,
-        "width": 1083,
-        "stepDescription": "Go to Fairy Nuff's grotto, north of the Zanaris bank."
-      },
-      {
-        "step": 4,
-        "src": "AFairyTaleIICurea Queen_step_4_1.webp",
-        "height": 365,
-        "width": 407,
-        "stepDescription": "After a short cutscene, enter the house and pick up the Healing Certificate from the floor in the south-east corner."
-      },
-      {
-        "step": 6,
-        "src": "AFairyTaleIICurea Queen_step_6_1.webp",
-        "height": 725,
-        "width": 466,
-        "stepDescription": "Use the certificate with the Fairy chef, south of the bank. She will tell you that she's seen similar inscriptions on a sign near the mysterious ruins, that is the cosmic altar, in southern Zanaris."
-      },
-      {
-        "step": 7,
-        "src": "AFairyTaleIICurea Queen_step_7_1.webp",
-        "height": 285,
-        "width": 336,
-        "stepDescription": "Read the rune temple sign, on the ground south of the Cosmic Altar.\nTalk to the Fairy Godfather (located in the Throne Room) about the Queen being missing. (Chat 1•1•1)"
-      },
-      {
-        "step": 8,
-        "src": "AFairyTaleIICurea Queen_step_8_1.webp",
-        "height": 549,
-        "width": 290,
-        "stepDescription": "Talk to the Co-ordinator just north at the crossroads. (Chat 2)"
-      },
-      {
-        "step": 9,
-        "src": "AFairyTaleIICurea Queen_step_9_1.webp",
+        "src": "ThatOldBlackMagicHermyand Bass_step_6_1.webp",
         "height": 571,
-        "width": 766,
-        "stepDescription": "Talk to Fairy Fixit near the fairy ring, south-west of the wheat field."
-      },
-      {
-        "step": 11,
-        "src": "AFairyTaleIICurea Queen_step_11_1.webp",
-        "height": 564,
-        "width": 565,
-        "stepDescription": "In the Fairy Resistance Hideout, talk to Fairy Nuff and Fairy Very Wise in the northeastern clearing.\n"
-      },
-      {
-        "step": 12,
-        "src": "AFairyTaleIICurea Queen_step_12_1.webp",
-        "height": 478,
-        "width": 439,
-        "stepDescription": "Go back (via the fairy ring) and pickpocket the Fairy Godfather for the queen's secateurs (may take several attempts). For a helpful hint look at Additional Info."
-      },
-      {
-        "step": 14,
-        "src": "AFairyTaleIICurea Queen_step_14_1.webp",
-        "height": 603,
-        "width": 565,
-        "stepDescription": "Talk to Fairy Nuff."
-      },
-      {
-        "step": 16,
-        "src": "AFairyTaleIICurea Queen_step_16_1.webp",
-        "height": 603,
-        "width": 565,
-        "stepDescription": "Wait 2 minutes and pick a starflower then use it on a vial of water for a magic essence (unf) potion."
-      },
-      {
-        "step": 16,
-        "src": "AFairyTaleIICurea Queen_step_16_2.webp",
-        "height": 388,
-        "width": 474,
-        "stepDescription": "Wait 2 minutes and pick a starflower then use it on a vial of water for a magic essence (unf) potion."
+        "width": 513,
+        "stepDescription": "Drumsticks work similar to a scan clue. Simply manifest with the animated drumsticks and a splash will appear at the location of a lost drum. Refer to drum stick locations in the images."
       }
     ]
   }

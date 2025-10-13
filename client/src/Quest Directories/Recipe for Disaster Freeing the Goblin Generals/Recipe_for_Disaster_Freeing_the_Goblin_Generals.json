@@ -2,7 +2,7 @@
   "questName": "Recipe for Disaster Freeing the Goblin Generals",
   "questSteps": [
     {
-      "stepDescription": "Inspect either General Bentnoze or General Wartface. They are located in the Lumbridge Castle banquet room.",
+      "stepDescription": "Inspect either General Bentnoze or General Wartface.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -10,7 +10,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "They are located in the Lumbridge Castle banquet room."
+      ]
     },
     {
       "stepDescription": "Head to Goblin Village and climb down the ladder in the eastern building.",
@@ -21,10 +23,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Make sure to have all your ingredients."
+      ]
     },
     {
-      "stepDescription": "Talk to Goblin Cook. (Chat 2\u20221)",
+      "stepDescription": "Talk to Goblin Cook. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -79,7 +83,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Right click Use bread on bucket, bowl, or jug of water to create soggy bread.",
+      "stepDescription": "Right click Use bread on your choosing of water source to create soggy bread.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

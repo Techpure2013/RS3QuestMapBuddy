@@ -13,7 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Gertrude. (Chat \u2713)",
+      "stepDescription": "Talk to Gertrude. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -46,7 +46,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Shilop or Wilough, giving them 100 coins. (Chat 2\u20222)",
+      "stepDescription": "Talk to Shilop or Wilough, giving them 100 coins. (Chat 2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -79,34 +79,12 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: 1 bucket of milk, 1 raw sardine, 1 doogle leaf",
+      "stepDescription": "Don't skip any dialogue for this section. Only use the pick-up option with Fluffs.",
       "itemsNeeded": [
         "1 bucket of milk",
         "1 raw sardine",
         "1 doogle leaf"
       ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Don't skip any dialogue for this section.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Only use the pick-up option with Fluffs.",
-      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -149,7 +127,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Use a doogle sardine on Fluffs (use raw sardine on doogle leaf).",
+      "stepDescription": "Use a doogle sardine on Fluffs.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -157,7 +135,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "You just combine the doogle leaf and raw sardine. You might have to talk to Gertrude."
+      ]
     },
     {
       "stepDescription": "Try to pick up Fluffs.",
@@ -171,7 +151,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Climb down the ladder and search the jiggling crate in the ruined building directly east to find three little kittens. (Note: The location of the jiggling crate is different for every player.)",
+      "stepDescription": "Climb down the ladder and search the jiggling crate in the ruined building directly east to find three little kittens.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -179,7 +159,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "The location of the jiggling crate is different for every player."
+      ]
     },
     {
       "stepDescription": "Return to Fluffs, and use the three little kittens on her.",

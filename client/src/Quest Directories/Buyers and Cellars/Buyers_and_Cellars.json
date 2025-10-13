@@ -2,11 +2,29 @@
   "questName": "Buyers and Cellars",
   "questSteps": [
     {
-      "stepDescription": "Talk to Guildmaster Darren Lightfinger in the Thieves' Guild north of the house with a furnace in Lumbridge (enter the trapdoor). (Chat 2\u20222\u2022\u2713\u20222\u20221)",
+      "stepDescription": "Talk to Guildmaster Darren Lightfinger in the Thieves' Guild north of the house with a furnace in Lumbridge (enter the trapdoor). (Chat 2•2•✓•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Darren Lightfinger",
+            "npcLocation": {
+              "lat": 5903,
+              "lng": 4661
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5902,
+                "lng": 4660
+              },
+              "topRight": {
+                "lat": 5904,
+                "lng": 4662
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -17,33 +35,60 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Chief Thief Robin",
+            "npcLocation": {
+              "lat": 5904,
+              "lng": 4662
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5903,
+                "lng": 4661
+              },
+              "topRight": {
+                "lat": 5905,
+                "lng": 4663
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Speak to Father Urhney in his house, south in the Lumbridge Swamp. (Chat 3\u20223)",
+      "stepDescription": "Speak to Father Urhney in his house, south in the Lumbridge Swamp. (Chat 3•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Father Urhney",
+            "npcLocation": {
+              "lat": 3149,
+              "lng": 3205
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3148,
+                "lng": 3203
+              },
+              "topRight": {
+                "lat": 3150,
+                "lng": 3208
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If The Restless Ghost has been completed, (Chat 4\u20223)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If The Restless Ghost has been completed, (Chat 4•3)"
+      ]
     },
     {
       "stepDescription": "Light a fire outside one of Urhney's windows.",
@@ -51,32 +96,66 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Fire Location ( Buyers and Cellars )",
+            "objectLocation": [
+              {
+                "lat": 3152,
+                "lng": 3208,
+                "color": "#a14a3a",
+                "numberLabel": "Light Fire",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Light Fire",
+            "color": "#a14a3a"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Urhney and mention the chalice then the fire. (Chat 3\u20224)",
+      "stepDescription": "Talk to Urhney and mention the chalice then the fire. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Father Urhney",
+            "npcLocation": {
+              "lat": 3149,
+              "lng": 3205
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3148,
+                "lng": 3203
+              },
+              "topRight": {
+                "lat": 3150,
+                "lng": 3208
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If The Restless Ghost has been completed, (Chat 4\u20224)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If The Restless Ghost has been completed, (Chat 4•4)"
+      ]
     },
     {
       "stepDescription": "Pickpocket Urhney quickly to get a complex key.",
@@ -95,28 +174,60 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Chalice Display Case",
+            "objectLocation": [
+              {
+                "lat": 3151,
+                "lng": 3202,
+                "color": "#a14a3a",
+                "numberLabel": "Display Case",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Display Case",
+            "color": "#a14a3a"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Darren's cellar.",
+      "stepDescription": "Return to Darren's cellar and use the chalice on him.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Use the chalice on Darren.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Darren Lightfinger",
+            "npcLocation": {
+              "lat": 5903,
+              "lng": 4661
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 5902,
+                "lng": 4660
+              },
+              "topRight": {
+                "lat": 5904,
+                "lng": 4662
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,

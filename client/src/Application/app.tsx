@@ -898,26 +898,8 @@ const App: React.FC = () => {
       itemsRecommended: [],
       additionalStepInformation: [],
       highlights: {
-        npc: [
-          {
-            npcName: "",
-            npcLocation: {},
-            wanderRadius: {
-              bottomLeft: {},
-              topRight: {},
-            },
-          },
-        ],
-        object: [
-          {
-            name: "",
-            objectLocation: [],
-            objectRadius: {
-              bottomLeft: {},
-              topRight: {},
-            },
-          },
-        ],
+        npc: [],
+        object: [],
       },
       floor: floor,
     };

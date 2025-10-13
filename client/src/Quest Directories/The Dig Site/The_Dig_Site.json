@@ -2,7 +2,24 @@
   "questName": "The Dig Site",
   "questSteps": [
     {
-      "stepDescription": "Item required: 1 free inventory space",
+      "stepDescription": "Go to the Exam Centre.",
+      "itemsNeeded": [
+        "1 free inventory space"
+      ],
+      "itemsRecommended": [
+        "Archaeology Journal"
+      ],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        "You can use your Archaeology Journal to teleport to the Guild and Run south to the Exam Centre."
+      ]
+    },
+    {
+      "stepDescription": "Speak to an examiner. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -13,7 +30,21 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to the Exam Centre. (teleport to the Archaeology Guild using the Archaeology journal.png: RS3 Inventory image of Archaeology journalArchaeology journal and run south)",
+      "stepDescription": "Talk to Seth Minas (site manager) in the Archaeology Guild. (Chat 1)  ",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        "Make sure you have the Unstamped letter otherwise the dialogue with Seth does not progress.",
+        "Grab a cup of tea from the desk in the south side of the building. It is behind Acting Guildmaster Reiniger or Drew (depends on your progress)."
+      ]
+    },
+    {
+      "stepDescription": "Talk to an examiner; you will fail the exam. (Chat ~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -24,8 +55,25 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Speak to an examiner. (Chat \u2713)",
-      "itemsNeeded": [],
+      "stepDescription": "Search the green bushes to the west of the Monolith in the middle of the Archaeology Campus until you find a teddy bear.",
+      "itemsNeeded": [
+        ""
+      ],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        "Dont be fooled by the bushes to the south near the fences."
+      ]
+    },
+    {
+      "stepDescription": "Take the panning tray from the small building south of the screening station. You need that cup of tea for the next part",
+      "itemsNeeded": [
+        ""
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -35,70 +83,20 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Seth Minas (site manager) in the Archaeology Guild. (Chat 1) Make sure you have the Unstamped letter otherwise the dialogue with Seth does not progress. Grab a cup of tea from the desk in the south side of the building. It is behind Acting Guildmaster Reiniger or Drew (depends on your progress).",
-      "itemsNeeded": [],
+      "stepDescription": "Pan the water to the east of where you found the panning tray. Someone will try to stop you. Give him the cup of tea to pan the water. (Chat 2) dont stop panning until you find the following Items in Additional Info",
+      "itemsNeeded": [
+        "Cup of Tea"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to an examiner; you will fail the exam. (Chat ~\u2022~\u2022~)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Search the green bushes to the west of the Monolith in the middle of the Archaeology Campus (not the ones to the south, near the fences) until you find a teddy bear.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Take the panning tray from the small building south of the screening station.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Pan the water to the east of where you found the panning tray. Someone will try to stop you. Give him the cup of tea to pan the water. (Chat 2)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Pan until you find a special cup. Pan until you find an uncut opal if you have not already.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Pan until you find a special cup.",
+        "Pan until you find an uncut opal if you have not already."
+      ]
     },
     {
       "stepDescription": "Pickpocket the Dig Site workman to the north (near Katarina) until you get an animal skull.",
@@ -112,7 +110,20 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Katarina (student) in the north of the Dig Site.",
+      "stepDescription": "Talk to Katarina (student) in the north of the Dig Site then talk to her again.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0,
+      "additionalStepInformation": [
+        "Students can be viewed from image at this step."
+      ]
+    },
+    {
+      "stepDescription": "Run south-east, talk to Dorian (student) then talk to him again.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -123,7 +134,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to her again.",
+      "stepDescription": "Run west, talk to Eduardo (student) then talk to him again.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -134,7 +145,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Run south-east, talk to Dorian (student)",
+      "stepDescription": "Return to an examiner for the first exam. (Chat 1) Answers are in Additional Info.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -142,84 +153,11 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to him again.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Run west, talk to Eduardo (student)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to him again.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Return to an examiner. (Chat 1)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Answer #1: The study of the earth, its contents and history.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Answer #2: All that have passed the appropriate Earth Sciences exam.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Answer #3: Proper tools must be used.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Answer #1: The study of the earth, its contents and history.",
+        "Answer #2: All that have passed the appropriate Earth Sciences exam.",
+        "Answer #3: Proper tools must be used."
+      ]
     },
     {
       "stepDescription": "Talk to all 3 students again.",
@@ -230,10 +168,14 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Talk to Katarina (student) in the central area of the dig site.",
+        "Run south-east, talk to Dorian (student).",
+        "Run west, talk to Eduardo (student) who can be found in the dig spot closest to the well."
+      ]
     },
     {
-      "stepDescription": "Return to an examiner. (Chat 1)",
+      "stepDescription": "Return to an examiner for the Second Exam. (Chat 1) Answers are in Additional Info.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -241,40 +183,11 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Answer #1: Samples taken in rough form; kept only in sealed containers.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Answer #2: Finds must be carefully handled.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Answer #3: Always handle with care; strike cleanly on its cleaving point.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Answer #1: Samples taken in rough form; kept only in sealed containers.",
+        "Answer #2: Finds must be carefully handled.",
+        "Answer #3: Always handle with care; strike cleanly on its cleaving point."
+      ]
     },
     {
       "stepDescription": "Talk to all 3 students - Katarina will demand an opal (talk to her again). You can obtain this by panning.",
@@ -285,10 +198,13 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Run south-east, talk to Dorian (student).",
+        "Run west, talk to Eduardo (student) who can be found in the dig spot closest to the well."
+      ]
     },
     {
-      "stepDescription": "Return to an examiner. (Chat 1)",
+      "stepDescription": "Return to an examiner for your Third and Final exam. (Chat 1) Answers are in Additional Info.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -296,51 +212,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Answer #1: Samples cleaned and carried only in specimen jars.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Answer #2: Brush carefully and slowly using short strokes.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Answer #3: Handle bones very carefully and keep them away from other samples.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Optional: Give Seth Minas the level 1, 2 and 3 certificates to receive a Fruit Blast or a chocolate cake.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Answer #1: Samples cleaned, and carried only in specimen jars.",
+        "Answer #2: Brush carefully and slowly using short strokes.",
+        "Answer #3: Handle bones very carefully and keep them away from other samples.",
+        "You can give Seth Minas the level 1, 2 and 3 certificates to receive a Fruit Blast or a chocolate cake."
+      ]
     },
     {
       "stepDescription": "Excavate the area on the ground named Level 3 grid (near Dorian) until you find an Ancient talisman. (see image)",
@@ -365,7 +242,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Find the winch north of Dorian (a square hole in the ground with a rope going down it, NOT the one very close to Katarina)",
+      "stepDescription": "Go to the north-eastern winch, at a dig site north from Dorian (a square hole in the ground with a rope going down it).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -377,14 +254,18 @@
     },
     {
       "stepDescription": "Operate the winch three times to hand in your invitation, attach a rope, and climb down.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Rope"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "You will need a rope. If you don't have one, you can pickpocket the Dig Site workman nearby."
+      ]
     },
     {
       "stepDescription": "Pick up an Arcenia root, one is directly to the east of the rope.",
@@ -409,15 +290,19 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Climb back up, then climb down using the winch near Katarina (You will need a rope. If you don't have one, you can pickpocket the Dig Site workman nearby)",
-      "itemsNeeded": [],
+      "stepDescription": "Climb back up, then climb down using the winch near Katarina.",
+      "itemsNeeded": [
+        "Rope"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "You will need a rope. If you don't have one, you can pickpocket the Dig Site workman nearby."
+      ]
     },
     {
       "stepDescription": "Talk to Doug Deeping to receive a chest key. (Chat 4)",
@@ -432,7 +317,9 @@
     },
     {
       "stepDescription": "Go back to the first winch operator and climb down the winch, use the key to unlock the chest in the north east room and search it for Ammonium nitrate.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Chest Key"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -443,7 +330,9 @@
     },
     {
       "stepDescription": "Use the trowel on the closed barrel directly east of the chest.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Trowel"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -454,7 +343,9 @@
     },
     {
       "stepDescription": "Use a vial on the barrel.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Vial"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -472,18 +363,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If you didn't bring charcoal, search the sack of charcoal a few steps north.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you didn't bring charcoal, search the sack of charcoal a few steps north."
+      ]
     },
     {
       "stepDescription": "Mix the nitroglycerine and ammonium nitrate together, add ground charcoal, then finally add the arcenia root.",
@@ -531,7 +413,9 @@
     },
     {
       "stepDescription": "Use the tablet on Terry Balando in the Exam Centre.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Stone Tablet"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -541,7 +425,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Quest complete!",
+      "stepDescription": "Quest Complete!",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

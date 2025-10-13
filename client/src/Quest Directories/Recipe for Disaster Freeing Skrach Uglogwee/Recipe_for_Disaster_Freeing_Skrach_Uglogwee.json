@@ -2,7 +2,7 @@
   "questName": "Recipe for Disaster Freeing Skrach Uglogwee",
   "questSteps": [
     {
-      "stepDescription": "Inspect Skrach Uglogwee. (Chat 1\u20222)",
+      "stepDescription": "Inspect Skrach Uglogwee. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -13,7 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head to Feldip Hills AKS and talk to Rantz to the north-east. (Chat 1\u20223)",
+      "stepDescription": "Head to Feldip Hills AKS and talk to Rantz to the north-east. (Chat 1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -123,7 +123,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Make a balloon toad by using the following steps (it is advised to make a few in the event you burn the raw jubbly).",
+      "stepDescription": "Make a balloon toad. Look in Additional Info if you forgot how to.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -131,18 +131,10 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Just west, fill your ogre bellows with swamp bubbles from the swamp, then use the bellows on a swamp toad.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Just west, fill your ogre bellows with swamp bubbles from the swamp, then use the bellows on a swamp toad.",
+        "it is advised to make a few in the event you burn the raw jubbly"
+      ]
     },
     {
       "stepDescription": "Directly west of the swamp pool, mine a feldip swamp rock (near AKS).",
@@ -156,7 +148,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "With the rock, toad, and a ball of wool in your inventory, use the bellows on the bloated toad again to make a balloon toad (the bellows must be filled).",
+      "stepDescription": "With the rock, toad, and a ball of wool in your inventory.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -197,10 +189,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Recommended to get 2 Jubbly Birds just incase your cooking level is low."
+      ]
     },
     {
-      "stepDescription": "Head north to the ogre spit-roast fire and cook the raw jubbly. If you burn it, you must repeat the hunting process.",
+      "stepDescription": "Head north to the ogre spit-roast fire and cook the raw jubbly. ",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -208,7 +202,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you burn it, you must repeat the hunting process."
+      ]
     },
     {
       "stepDescription": "Return to Lumbridge Castle and Use cooked jubbly on Skrach.",

@@ -24,7 +24,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Traiborn again for the first quiz. (Chat 1\u20221)",
+      "stepDescription": "Talk to Traiborn again for the first quiz. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -35,7 +35,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Traiborn again for the second quiz. (Chat 1\u20221)",
+      "stepDescription": "Talk to Traiborn again for the second quiz. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -46,7 +46,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Traiborn for the final quiz. (Chat 1\u20221)",
+      "stepDescription": "Talk to Traiborn for the final quiz. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -58,17 +58,6 @@
     },
     {
       "stepDescription": "After completing his final quiz, you receive an enchanted egg, a bucket of enchanted milk and pot of enchanted flour.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Freeing the Lumbridge Sage",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
