@@ -88,6 +88,7 @@ app.post("/api/questName", (req, res) => {
 });
 // ✅ THE DEFINITIVE GITHUB PULL REQUEST ENDPOINT
 app.post("/api/submit-pr", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a, _b;
     const { userID, questJson } = req.body;
     if (!questJson || !questJson.questName) {
         res.status(400).json({ error: "Missing or invalid quest data." });
@@ -98,60 +99,78 @@ app.post("/api/submit-pr", (req, res) => __awaiter(void 0, void 0, void 0, funct
         const repo = "RS3QuestMapBuddy";
         const baseBranch = "main";
         const submissionBranch = "quest-submissions";
-        const normalizedFolderName = normalizeNameForPath(questJson.questName);
-        const filePath = `client/src/Quest Directories/${questJson.questName}/${normalizedFolderName}.json`;
-        // STEP 1: Ensure the submission branch exists and is up-to-date.
-        try {
-            yield octokit.git.getRef({
-                owner,
-                repo,
-                ref: `heads/${submissionBranch}`,
-            });
-            yield octokit.repos.merge({
-                owner,
-                repo,
-                base: submissionBranch,
-                head: baseBranch,
-            });
-        }
-        catch (error) {
-            if (error.status === 404) {
-                const { data: refData } = yield octokit.git.getRef({
+        const normalizedQuestName = normalizeNameForPath(questJson.questName);
+        const filePath = `client/src/Quest Directories/${normalizedQuestName}/${normalizedQuestName}.json`;
+        // --- STEP 1: Check for an existing open Pull Request ---
+        // This is now the first step, as our strategy depends on it.
+        const { data: existingPrs } = yield octokit.pulls.list({
+            owner,
+            repo,
+            state: "open",
+            head: `${owner}:${submissionBranch}`,
+            base: baseBranch,
+        });
+        const hasOpenPr = existingPrs.length > 0;
+        // --- STEP 2: Synchronize the submission branch ---
+        // Get the latest commit SHA from the main branch.
+        const { data: baseBranchData } = yield octokit.git.getRef({
+            owner,
+            repo,
+            ref: `heads/${baseBranch}`,
+        });
+        const latestMainSha = baseBranchData.object.sha;
+        // If there's no open PR, we reset the submission branch to match main.
+        // This prevents the merge conflicts you were seeing.
+        if (!hasOpenPr) {
+            console.log("No open PR. Resetting submission branch to main.");
+            try {
+                // Force-update the branch to point to main's latest commit.
+                // This is safe because there are no pending changes in a PR.
+                yield octokit.git.updateRef({
                     owner,
                     repo,
-                    ref: `heads/${baseBranch}`,
-                });
-                yield octokit.git.createRef({
-                    owner,
-                    repo,
-                    ref: `refs/heads/${submissionBranch}`,
-                    sha: refData.object.sha,
+                    ref: `heads/${submissionBranch}`,
+                    sha: latestMainSha,
+                    force: true,
                 });
             }
-            else {
-                throw error;
+            catch (error) {
+                // If the branch doesn't exist, updateRef fails. We create it instead.
+                if (error.status === 422) {
+                    yield octokit.git.createRef({
+                        owner,
+                        repo,
+                        ref: `refs/heads/${submissionBranch}`,
+                        sha: latestMainSha,
+                    });
+                }
+                else {
+                    throw error; // Rethrow unexpected errors.
+                }
             }
         }
-        // ✅ STEP 2: Get the SHA of the existing file, if it exists.
+        else {
+            console.log("Open PR found. Appending commit to submission branch.");
+        }
+        // --- STEP 3: Check for the existing file to get its SHA (for updates) ---
         let existingFileSha;
         try {
             const { data: existingFile } = yield octokit.repos.getContent({
                 owner,
                 repo,
                 path: filePath,
-                ref: submissionBranch, // IMPORTANT: Check on the submission branch
+                ref: submissionBranch,
             });
             if (!Array.isArray(existingFile)) {
                 existingFileSha = existingFile.sha;
             }
         }
         catch (error) {
-            // A 404 error is expected if the file is new, so we can ignore it.
             if (error.status !== 404) {
-                throw error;
+                throw error; // Ignore 404 (file not found), but throw other errors.
             }
         }
-        // STEP 3: Commit the quest file, providing the SHA if it's an update.
+        // --- STEP 4: Commit the quest file ---
         const content = Buffer.from(JSON.stringify(questJson, null, 2)).toString("base64");
         yield octokit.repos.createOrUpdateFileContents({
             owner,
@@ -164,17 +183,11 @@ app.post("/api/submit-pr", (req, res) => __awaiter(void 0, void 0, void 0, funct
             committer: { name: "Quest Map Buddy Bot", email: "bot@example.com" },
             author: { name: userID || "Anonymous User", email: "user@example.com" },
         });
-        // STEP 4: Check for an existing PR or create a new one.
-        const { data: existingPrs } = yield octokit.pulls.list({
-            owner,
-            repo,
-            state: "open",
-            head: `${owner}:${submissionBranch}`,
-            base: baseBranch,
-        });
+        // --- STEP 5: Create a new PR or return the existing one ---
         let prUrl;
-        if (existingPrs.length > 0) {
+        if (hasOpenPr) {
             prUrl = existingPrs[0].html_url;
+            console.log(`Added commit to existing PR: ${prUrl}`);
         }
         else {
             const { data: newPr } = yield octokit.pulls.create({
@@ -183,15 +196,18 @@ app.post("/api/submit-pr", (req, res) => __awaiter(void 0, void 0, void 0, funct
                 title: "Quest Submissions Update",
                 head: submissionBranch,
                 base: baseBranch,
-                body: "This PR contains new and updated quest files from the Quest Map Buddy.",
+                body: "This PR contains new and updated quest files submitted by users.",
             });
             prUrl = newPr.html_url;
+            console.log(`Created new PR: ${prUrl}`);
         }
-        res.json({ success: true, prUrl: prUrl });
+        res.json({ success: true, prUrl });
     }
     catch (err) {
         console.error("Error creating GitHub PR:", err);
-        res.status(500).json({ success: false, error: err.message });
+        // Provide a more specific error message to the client
+        const errorMessage = ((_b = (_a = err.response) === null || _a === void 0 ? void 0 : _a.data) === null || _b === void 0 ? void 0 : _b.message) || err.message;
+        res.status(500).json({ success: false, error: errorMessage });
     }
 }));
 // --- WebSocket Handlers ---

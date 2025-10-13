@@ -2,7 +2,7 @@
   "questName": "Catapult Construction",
   "questSteps": [
     {
-      "stepDescription": "North of the Tyras camp, talk to the guard next to the catapult. (Chat \u2713\u20221\u20221\u20221)",
+      "stepDescription": "North of the Tyras camp, talk to the guard next to the catapult. (Chat ✓•1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -13,7 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to General Hining in Tyras Camp. (Chat 1\u20221\u20222)",
+      "stepDescription": "Talk to General Hining in Tyras Camp. (Chat 1•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -35,7 +35,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the Catapult engineer for schematics. (Chat 3\u20222)",
+      "stepDescription": "Talk to the Catapult engineer for schematics. (Chat 3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -153,29 +153,10 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Left rock - 5/6 green bars on Counterweight.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Right rock - 6/6 green bars on Counterweight.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Left rock - 5/6 green bars on Counterweight.",
+        "Right rock - 6/6 green bars on Counterweight."
+      ]
     },
     {
       "stepDescription": "Talk to the guard again.",
