@@ -1,1 +1,0 @@
-[{"id": 9356, "name": "Fight Cave", "file": "71-80.json", "lng": 4605, "lat": 5128, "floor": 0, "rotation": 3, "width": 4, "length": 2, "center": [4607.0, 5129.0], "hash": 2392705325, "actions": ["Enter"], "models": [{"type": 10, "values": [62770]}], "action_cursors_0": 57}]

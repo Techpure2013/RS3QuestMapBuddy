@@ -1,1 +1,0 @@
-[{"id": 90896, "name": "Ladder", "file": "64-105.json", "lng": 4151, "lat": 6775, "floor": 0, "rotation": 2, "center": [4151.5, 6775.5], "hash": 1611065448, "actions": ["Climb up"], "models": [{"type": 10, "values": [95445]}], "probably_morphFloor": true, "action_cursors_0": 52}]

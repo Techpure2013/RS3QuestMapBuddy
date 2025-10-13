@@ -1,1 +1,0 @@
-[{"id": 48189, "name": "Archway", "file": "53-88.json", "lng": 3435, "lat": 5645, "floor": 0, "rotation": 1, "center": [3435.5, 5645.5], "hash": 692253695, "actions": ["Enter"], "models": [{"type": 0, "values": [51858]}], "probably_morphFloor": true, "action_cursors_0": 57}]

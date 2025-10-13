@@ -1,1 +1,0 @@
-[{"id": 68111, "name": "Cave entrance", "file": "11-9.json", "lng": 735, "lat": 627, "floor": 1, "rotation": 0, "width": 3, "length": 3, "center": [736.5, 628.5], "hash": 3896680630, "is_members": true, "actions": ["Enter", "To TzHaar City", "To Caves"], "models": [{"type": 10, "values": [62769]}], "action_cursors_0": 57}]

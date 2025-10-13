@@ -1,1 +1,0 @@
-[{"id": 124301, "name": "Portal", "file": "23-27.json", "lng": 1530, "lat": 1751, "floor": 0, "rotation": 0, "width": 13, "length": 13, "center": [1536.5, 1757.5], "hash": 2442315311, "actions": ["Enter", "Escape"], "models": [{"type": 10, "values": [125766]}], "material_replacements": "[[14598,15034],[14592,15035],[14591,15032]]", "action_cursors_0": 57}]

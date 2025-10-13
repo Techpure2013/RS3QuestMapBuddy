@@ -1,1 +1,0 @@
-[{"id": 42892, "name": "Cave", "file": "44-161.json", "lng": 2842, "lat": 10365, "floor": 0, "rotation": 0, "width": 3, "length": 2, "center": [2843.5, 10366.0], "hash": 4016531872, "actions": ["Exit"], "models": [{"type": 10, "values": [46326]}], "color_replacements": "[[0,37988],[34818,37961],[34826,37943],[34834,37928]]", "action_cursors_0": 57}]

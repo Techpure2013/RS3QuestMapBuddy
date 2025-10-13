@@ -1,1 +1,0 @@
-[{"id": 94930, "name": "Portal", "file": "35-103.json", "lng": 2273, "lat": 6612, "floor": 0, "rotation": 0, "center": [2273.5, 6612.5], "hash": 3728505562, "is_members": true, "actions": ["Leave", "Quick-leave"], "models": [{"type": 10, "values": [91539]}], "probably_morphFloor": true, "action_cursors_0": 57}]
