@@ -17,6 +17,7 @@
     "copy-webpack-plugin": "^13.0.1"
   },
   "dependencies": {
+    "idb-keyval": "^6.2.2",
     "typescript": "^5.8.2",
     "use-debounce": "^10.0.5"
   }

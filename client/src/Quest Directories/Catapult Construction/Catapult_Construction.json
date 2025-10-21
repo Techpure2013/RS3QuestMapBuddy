@@ -6,7 +6,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Tyras Guard",
+            "npcLocation": {
+              "lat": 3183,
+              "lng": 2178
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3183,
+                "lng": 2177
+              },
+              "topRight": {
+                "lat": 3187,
+                "lng": 2182
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -17,7 +35,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "General Hining",
+            "npcLocation": {
+              "lat": 3150,
+              "lng": 2186
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3147,
+                "lng": 2184
+              },
+              "topRight": {
+                "lat": 3151,
+                "lng": 2189
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -29,7 +65,56 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Leaves Trap One ( Catapult Construction )",
+            "objectLocation": [
+              {
+                "lat": 3203,
+                "lng": 2208,
+                "color": "#bf7522",
+                "numberLabel": "Leaves Trap",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#bf2222",
+            "numberLabel": ""
+          },
+          {
+            "name": "Sticks Trap One ( Catapult Construction )",
+            "objectLocation": [
+              {
+                "lat": 3210,
+                "lng": 2180,
+                "color": "#bf7522",
+                "numberLabel": "Stick Trap",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Stick Trap",
+            "color": "#bf7522"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -39,7 +124,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Catapult engineer",
+            "npcLocation": {
+              "lat": 3202,
+              "lng": 2186
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3202,
+                "lng": 2186
+              },
+              "topRight": {
+                "lat": 3202,
+                "lng": 2187
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -61,7 +164,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Catapult engineer",
+            "npcLocation": {
+              "lat": 3202,
+              "lng": 2186
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3202,
+                "lng": 2186
+              },
+              "topRight": {
+                "lat": 3202,
+                "lng": 2187
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -72,7 +193,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Rolad",
+            "npcLocation": {
+              "lat": 3453,
+              "lng": 3021
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3452,
+                "lng": 3020
+              },
+              "topRight": {
+                "lat": 3453,
+                "lng": 3021
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -83,7 +222,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Thaki the delivery dwarf",
+            "npcLocation": {
+              "lat": 3259,
+              "lng": 3050
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3259,
+                "lng": 3050
+              },
+              "topRight": {
+                "lat": 3259,
+                "lng": 3050
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -94,7 +251,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Drunken sailor",
+            "npcLocation": {
+              "lat": 3254,
+              "lng": 3054
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3254,
+                "lng": 3054
+              },
+              "topRight": {
+                "lat": 3254,
+                "lng": 3054
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -105,7 +280,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Thaki the delivery dwarf",
+            "npcLocation": {
+              "lat": 3259,
+              "lng": 3050
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3259,
+                "lng": 3050
+              },
+              "topRight": {
+                "lat": 3259,
+                "lng": 3050
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -116,14 +309,32 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Tyras guard",
+            "npcLocation": {
+              "lat": 3183,
+              "lng": 2178
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3181,
+                "lng": 2177
+              },
+              "topRight": {
+                "lat": 3184,
+                "lng": 2182
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Copy the solution below. Use the big buttons to swap sides.",
+      "stepDescription": "Copy the solution at this step. Use the big buttons to swap sides.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -138,7 +349,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Tyras guard",
+            "npcLocation": {
+              "lat": 3183,
+              "lng": 2178
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3181,
+                "lng": 2177
+              },
+              "topRight": {
+                "lat": 3184,
+                "lng": 2182
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -150,7 +379,80 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Middle Rock",
+            "objectLocation": [
+              {
+                "lat": 3185,
+                "lng": 2200,
+                "color": "#bf7522",
+                "numberLabel": "Middle Rock",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Middle Rock",
+            "color": "#bf7522"
+          },
+          {
+            "name": "Left Rock",
+            "objectLocation": [
+              {
+                "lat": 3189,
+                "lng": 2205,
+                "color": "#bf7522",
+                "numberLabel": "Left Rock",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Left Rock",
+            "color": "#bf7522"
+          },
+          {
+            "name": "Right Rock",
+            "objectLocation": [
+              {
+                "lat": 3183,
+                "lng": 2207,
+                "color": "#bf7522",
+                "numberLabel": "Right Rock",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Right Rock",
+            "color": "#bf7522"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": [
@@ -163,7 +465,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Tyras guard",
+            "npcLocation": {
+              "lat": 3183,
+              "lng": 2178
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3181,
+                "lng": 2177
+              },
+              "topRight": {
+                "lat": 3184,
+                "lng": 2182
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,

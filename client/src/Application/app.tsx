@@ -14,7 +14,6 @@ import {
   HandleFloorIncreaseDecrease,
 } from "./../Map Classes/MapFunctions";
 import GridLayer from "./../Map Classes/Map Components/GridLayerComponent";
-import HighlightLayer from "./../Map Classes/Map Components/TileHighlighting";
 import { useParams } from "react-router-dom";
 import { useSocket } from "./../Entrance/Entrance Components/SocketProvider";
 import ChunkGridLayer from "Map Classes/Map Components/ChunkGrid";
@@ -36,8 +35,15 @@ import SelectedObjectFlyToHandler from "./../Map Classes/Map Components/Selected
 import { TargetFlyToHandler } from "Map Classes/Map Components/TargetFlyToHandler";
 import { MapUIOverlay } from "Map Classes/Map Components/MapUIOverlay";
 import { CustomMapPanes } from "Map Classes/Map Components/CustomMapPanes";
-import html2canvas from "html2canvas";
-// ADD: Import the new CaptureHandler
+import {
+  getQuestDatabaseAsJsonString,
+  loadQuestDatabase,
+} from "./../Map Classes/Map Components/DetailsLoader";
+import {
+  getFileHandle,
+  storeFileHandle,
+  verifyAndRequestPermission,
+} from "./../Map Classes/Map Components/idbHelper";
 // --- INTERFACES ---
 interface ClipboardItem {
   type: "npc" | "object" | "npc-list" | "object-list" | "none";
@@ -130,6 +136,7 @@ const App: React.FC = () => {
   let socket = useSocket();
 
   // --- STATE ---
+
   const [clipboard, setClipboard] = useState<ClipboardItem>({
     type: "none",
     data: null,
@@ -321,8 +328,40 @@ const App: React.FC = () => {
     selectedObjectColor,
     objectNumberLabel,
   ]);
-
+  const [questDetailFileHandle, setQuestDetailFileHandle] =
+    useState<FileSystemFileHandle | null>(null);
   // --- EFFECTS ---
+
+  useEffect(() => {
+    const loadPersistedHandle = async () => {
+      if (!("showOpenFilePicker" in window)) {
+        console.log("File System Access API not supported.");
+        return;
+      }
+      try {
+        const handle = await getFileHandle();
+        if (handle) {
+          setQuestDetailFileHandle(handle);
+
+          const permission = await handle.queryPermission({
+            mode: "readwrite",
+          });
+          if (permission === "granted") {
+            console.log(
+              "Restored persistent file handle with granted permission."
+            );
+          } else {
+            console.log(
+              "Restored file handle. Permission will be requested on save."
+            );
+          }
+        }
+      } catch (err) {
+        console.error("Could not load persisted file handle from DB.", err);
+      }
+    };
+    loadPersistedHandle();
+  }, []);
   useEffect(() => {
     if (!questJson) return;
     const step = questJson.questSteps[selectedStep];
@@ -371,6 +410,63 @@ const App: React.FC = () => {
   }, [targetType]);
 
   // --- HANDLERS ---
+  const handleSaveMasterQuestFile = async () => {
+    const jsonString = await getQuestDatabaseAsJsonString();
+    const blob = new Blob([jsonString], { type: "application/json" });
+
+    // If we have a file handle, try to use it for a direct save.
+    if (questDetailFileHandle) {
+      try {
+        // This function will prompt the user for permission if it's not already granted.
+        // It must be called from a user-initiated event like this button click.
+        const hasPermission = await verifyAndRequestPermission(
+          questDetailFileHandle
+        );
+        if (hasPermission) {
+          const writable = await questDetailFileHandle.createWritable();
+          await writable.write(blob);
+          await writable.close();
+          console.log(
+            `Successfully saved changes to ${questDetailFileHandle.name}`
+          );
+          return; // Stop here if save was successful
+        }
+      } catch (err) {
+        console.error("Direct save failed, falling back to download:", err);
+      }
+    }
+
+    // Fallback to the original download method if no handle or if direct save fails.
+    downloadBlob(blob, "QuestDetail.json");
+    alert(
+      "Direct save not available. Downloading a copy named QuestDetail.json. Please move it to your 'src/Map Data/' folder."
+    );
+  };
+  const handleLoadMasterFile = async () => {
+    if (!("showOpenFilePicker" in window)) {
+      alert("Your browser does not support direct file editing.");
+      return;
+    }
+    try {
+      const [handle] = await window.showOpenFilePicker({
+        types: [
+          {
+            description: "JSON Files",
+            accept: { "application/json": [".json"] },
+          },
+        ],
+      });
+      await storeFileHandle(handle); // Store it in IndexedDB
+      setQuestDetailFileHandle(handle); // Store it in state
+      console.log(`File handle for ${handle.name} stored.`);
+      // Optional: Pre-load the database after selecting the file
+      await loadQuestDatabase();
+    } catch (err) {
+      console.error(
+        "User cancelled the file open dialog or an error occurred."
+      );
+    }
+  };
   const handleCopyTargetList = () => {
     if (!questJson) return;
     const listToCopy =
@@ -705,7 +801,9 @@ const App: React.FC = () => {
       "chatheadOverrides.json"
     );
   };
-
+  const handleUpdateQuest = (updatedQuest: any) => {
+    updateQuestState(updatedQuest);
+  };
   const handleLoadQuestImageList = async () => {
     try {
       const [handle] = await window.showOpenFilePicker({
@@ -1503,9 +1601,11 @@ const App: React.FC = () => {
         clipboard={clipboard}
         onCopyTarget={handleCopyTarget}
         onPasteTarget={handlePasteTarget}
-        // ADD: Pass the new list handlers to the panel
         onCopyTargetList={handleCopyTargetList}
         onPasteTargetList={handlePasteTargetList}
+        onUpdateQuest={handleUpdateQuest}
+        onSaveMasterQuestFile={handleSaveMasterQuestFile}
+        onLoadMasterFile={handleLoadMasterFile} // Pass the new handler
       >
         <div className="panel-section">
           <NpcSearch

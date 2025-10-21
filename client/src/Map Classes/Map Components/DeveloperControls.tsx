@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ImagePasteTarget } from "./ImagePasteTarget";
+import { QuestDetailsEditor } from "./QuestDetailsEditor";
 
 interface EditorPanelProps {
   children?: React.ReactNode;
@@ -69,9 +70,11 @@ interface EditorPanelProps {
   clipboard: { type: string; data: any | null };
   onCopyTarget: () => void;
   onPasteTarget: () => void;
-  // ADD: New props for list copy/paste
   onCopyTargetList: () => void;
   onPasteTargetList: () => void;
+  onUpdateQuest: (updatedQuest: any) => void;
+  onSaveMasterQuestFile: () => void;
+  onLoadMasterFile: () => void;
 }
 
 export const EditorPanel = React.memo<EditorPanelProps>(
@@ -143,13 +146,17 @@ export const EditorPanel = React.memo<EditorPanelProps>(
     onSaveChatheadOverridesAs,
     onSaveQuestImageListAs,
     isAlt1Environment,
+    onUpdateQuest,
+    onSaveMasterQuestFile,
+    onLoadMasterFile,
   }) => {
     const [chatheadName, setChatheadName] = useState("");
     const [chatheadUrl, setChatheadUrl] = useState("");
     const [stepImageUrl, setStepImageUrl] = useState("");
     const [isAssetToolsOpen, setIsAssetToolsOpen] = useState(false);
     const [isImportantFilesOpen, setIsImportantFilesOpen] = useState(true);
-
+    const [isQuestDetailsCollapsed, setIsQuestDetailsCollapsed] =
+      useState(false);
     const handleEnterAsNewline = (
       event: React.KeyboardEvent<HTMLTextAreaElement>,
       currentValue: string,
@@ -221,7 +228,24 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             </div>
           )}
         </div>
-
+        <div className="panel-section">
+          <strong>Master Database Tools</strong>
+          <div className="button-group">
+            <button
+              onClick={onLoadMasterFile}
+              title="Select your QuestDetail.json file to enable direct saving."
+            >
+              Load Master File
+            </button>
+            <button
+              onClick={onSaveMasterQuestFile}
+              className="button--save"
+              title="Saves changes directly to the loaded file."
+            >
+              Save Master File
+            </button>
+          </div>
+        </div>
         <div className="file-actions">
           <button
             onClick={onNewQuest}
@@ -258,7 +282,14 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             Submit to GitHub
           </button>
         </div>
-
+        {questJson && (
+          <div className="panel-section">
+            <QuestDetailsEditor
+              questJson={questJson}
+              onUpdateQuest={onUpdateQuest}
+            />
+          </div>
+        )}
         <div className="panel-section step-description-display">
           <label className="EditDescriptionLabel">
             <span className="description-text">
@@ -278,7 +309,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             />
           )}
         </div>
-
         <div className="panel-section info-grid">
           <div className="item-list">
             <strong>Items Needed</strong>
@@ -318,7 +348,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             />
           </div>
         </div>
-
         <div className="panel-section">
           <div className="editor-controls-grid">
             <div className="control-group">
@@ -333,7 +362,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
                 </button>
               </div>
             </div>
-
             <div className="control-group">
               <label>Floor</label>
               <div className="step-input-group">
@@ -357,7 +385,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             </button>
           </div>
         </div>
-
         <div className="panel-section editor-controls-grid">
           <div className="control-group">
             <label>Target Type</label>
@@ -371,7 +398,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
               <option value="object">Object</option>
             </select>
           </div>
-
           <div className="control-group full-width-control">
             <label>{targetType === "npc" ? "NPCs" : "Objects"}</label>
             <ul className="target-list">
@@ -393,8 +419,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
                         : item.name || `Object ${index + 1}`}
                     </span>
                   </div>
-
-                  {/* --- NESTED LOCATION LIST RENDERED HERE --- */}
                   {targetType === "object" && index === targetIndex && (
                     <ul className="location-sublist">
                       {(item.objectLocation || []).map(
@@ -483,6 +507,44 @@ export const EditorPanel = React.memo<EditorPanelProps>(
               <button onClick={onDeleteNpc} className="button--delete">
                 Delete NPC
               </button>
+            </div>
+          </div>
+        )}
+        {targetType === "object" && (
+          <div className="panel-section editor-controls-grid">
+            <div className="control-group">
+              <label>Object Color</label>
+              <label className="color-picker-label">
+                <div
+                  className="color-picker-swatch"
+                  style={{ backgroundColor: selectedObjectColor }}
+                />
+                <input
+                  type="color"
+                  value={selectedObjectColor}
+                  onChange={(e) => onSelectedObjectColorChange(e.target.value)}
+                  className="color-input-hidden"
+                />
+              </label>
+            </div>
+            <div className="control-group">
+              <label>Object Number</label>
+              <input
+                type="text"
+                placeholder="Optional"
+                value={objectNumberLabel}
+                onChange={(e) => onObjectNumberLabelChange(e.target.value)}
+              />
+            </div>
+            <div className="control-group full-width">
+              <div className="button-group">
+                <button onClick={onAddObject} className="button--add">
+                  Add New Object
+                </button>
+                <button onClick={onDeleteObject} className="button--delete">
+                  Delete Object
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -584,45 +646,6 @@ export const EditorPanel = React.memo<EditorPanelProps>(
 
         {children}
 
-        {targetType === "object" && (
-          <div className="panel-section editor-controls-grid">
-            <div className="control-group">
-              <label>Object Color</label>
-              <label className="color-picker-label">
-                <div
-                  className="color-picker-swatch"
-                  style={{ backgroundColor: selectedObjectColor }}
-                />
-                <input
-                  type="color"
-                  value={selectedObjectColor}
-                  onChange={(e) => onSelectedObjectColorChange(e.target.value)}
-                  className="color-input-hidden"
-                />
-              </label>
-            </div>
-            <div className="control-group">
-              <label>Object Number</label>
-              <input
-                type="text"
-                placeholder="Optional"
-                value={objectNumberLabel}
-                onChange={(e) => onObjectNumberLabelChange(e.target.value)}
-              />
-            </div>
-            <div className="control-group full-width">
-              <div className="button-group">
-                <button onClick={onAddObject} className="button--add">
-                  Add New Object
-                </button>
-                <button onClick={onDeleteObject} className="button--delete">
-                  Delete Object
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-
         {(targetType === "npc" || targetType === "object") && (
           <div className="panel-section tool-section">
             <strong>Area/Radius Tools</strong>
@@ -652,7 +675,12 @@ export const EditorPanel = React.memo<EditorPanelProps>(
             </div>
           </div>
         )}
-
+        <div className="panel-section">
+          <strong>Master Database Tools</strong>
+          <button onClick={onSaveMasterQuestFile}>
+            Save Master Quest List (QuestDetail.json)
+          </button>
+        </div>
         <textarea
           value={jsonString}
           onChange={(e) => onJsonChange(e.target.value)}

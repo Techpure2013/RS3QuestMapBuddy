@@ -3917,6 +3917,20 @@
         "width": 512,
         "height": 334,
         "stepDescription": "Shoot the middle rock - 0/6 green bars on Counterweight. Move the catapult left or right so the arrow at the bottom middle aligns with the target rock."
+      },
+      {
+        "step": 12,
+        "src": "CatapultConstruction_step_12_1.webp",
+        "height": 334,
+        "width": 512,
+        "stepDescription": "Copy the solution at this step. Use the big buttons to swap sides."
+      },
+      {
+        "step": 12,
+        "src": "CatapultConstruction_step_12_2.webp",
+        "height": 334,
+        "width": 512,
+        "stepDescription": "Copy the solution at this step. Use the big buttons to swap sides."
       }
     ]
   },

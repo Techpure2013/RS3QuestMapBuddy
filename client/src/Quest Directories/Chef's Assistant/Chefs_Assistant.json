@@ -2,37 +2,50 @@
   "questName": "Chef's Assistant",
   "questSteps": [
     {
-      "stepDescription": "Head to the Cook's Guild, the building just south-west of the grand exchange entrance. Members can get there quickly using any tier 2 or higher luck ring.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "Talk to the Head chef in the Cook's Guild. (Chat 1•1•✓•2•1•2•2•1)",
+      "itemsNeeded": [
+        "Chefs Hat"
+      ],
+      "itemsRecommended": [
+        "Ring of Wealth or Ring of Fortune"
+      ],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Head chef",
+            "npcLocation": {
+              "lat": 3446,
+              "lng": 3142
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3445,
+                "lng": 3140
+              },
+              "topRight": {
+                "lat": 3449,
+                "lng": 3143
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Members can get there quickly using any tier 2 or higher luck ring and running southwest of the Grand Exchange."
+      ]
     },
     {
-      "stepDescription": "To start, talk to the Head chef in the Cook's Guild. (Chat 1\u20221\u2022\u2713\u20222\u20221\u20222\u20222\u20221)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: Logs, steel bar, bucket of milk, pot of flour, pat of butter, pot of cream, cake tin",
+      "stepDescription": "",
       "itemsNeeded": [
         "Logs",
-        "steel bar",
-        "bucket of milk",
-        "pot of flour",
-        "pat of butter",
-        "pot of cream",
-        "cake tin"
+        "Steel Bar",
+        "Bucket of Milk",
+        "Pot of Flour",
+        "Pat of Butter",
+        "Pot of Cream",
+        "Cake Tin"
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -47,7 +60,42 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Phil",
+            "npcLocation": {
+              "lat": 3366,
+              "lng": 3037
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3365,
+                "lng": 3036
+              },
+              "topRight": {
+                "lat": 3366,
+                "lng": 3037
+              }
+            }
+          },
+          {
+            "npcName": "Delphie",
+            "npcLocation": {
+              "lat": 3366,
+              "lng": 3039
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3365,
+                "lng": 3038
+              },
+              "topRight": {
+                "lat": 3366,
+                "lng": 3039
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -59,7 +107,32 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Dairy Churn ( Broken )",
+            "objectLocation": [
+              {
+                "lat": 3367,
+                "lng": 3037,
+                "color": "#e28822",
+                "numberLabel": "Broken Dairy Churn",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#e28822",
+            "numberLabel": "Broken Dairy Churn"
+          }
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []
@@ -69,7 +142,42 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Phil",
+            "npcLocation": {
+              "lat": 3366,
+              "lng": 3037
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3365,
+                "lng": 3036
+              },
+              "topRight": {
+                "lat": 3366,
+                "lng": 3037
+              }
+            }
+          },
+          {
+            "npcName": "Delphie",
+            "npcLocation": {
+              "lat": 3366,
+              "lng": 3039
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3365,
+                "lng": 3038
+              },
+              "topRight": {
+                "lat": 3366,
+                "lng": 3039
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -81,28 +189,62 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Dairy Churn",
+            "objectLocation": [
+              {
+                "lat": 3367,
+                "lng": 3037,
+                "color": "#e28822",
+                "numberLabel": "Use Bucket of Milk",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Use Bucket of Milk",
+            "color": "#e28822"
+          }
+        ]
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If not done already, make a pot of cream and a pat of butter once you're there.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If not done already, make a pot of cream and a pat of butter once you're there."
+      ]
     },
     {
       "stepDescription": "Return to the head chef in the Cook's Guild. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Head chef",
+            "npcLocation": {
+              "lat": 3446,
+              "lng": 3142
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3445,
+                "lng": 3140
+              },
+              "topRight": {
+                "lat": 3449,
+                "lng": 3143
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -114,28 +256,86 @@
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
-        "object": []
+        "object": [
+          {
+            "name": "Range",
+            "objectLocation": [
+              {
+                "lat": 3453,
+                "lng": 3143,
+                "color": "#e28822",
+                "numberLabel": "Cook",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "numberLabel": "Cook",
+            "color": "#e28822"
+          },
+          {
+            "name": "Range",
+            "objectLocation": [
+              {
+                "lat": 3453,
+                "lng": 3145,
+                "color": "#e28822",
+                "numberLabel": "Cook",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 0,
+                "lng": 0
+              },
+              "topRight": {
+                "lat": 0,
+                "lng": 0
+              }
+            },
+            "color": "#e28822",
+            "numberLabel": "Cook"
+          }
+        ]
       },
-      "floor": 0,
-      "additionalStepInformation": []
+      "floor": 1,
+      "additionalStepInformation": [
+        "Pick up cake tin if you do not already have one."
+      ]
     },
     {
-      "stepDescription": "Pick up cake tin if you do not already have one.",
+      "stepDescription": "Speak to the head chef. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Speak to the head chef. (Chat 1\u20221)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Head chef",
+            "npcLocation": {
+              "lat": 3446,
+              "lng": 3142
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3445,
+                "lng": 3140
+              },
+              "topRight": {
+                "lat": 3449,
+                "lng": 3143
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -160,27 +360,39 @@
         "Fort Forinthry Teleport"
       ],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Head chef",
+            "npcLocation": {
+              "lat": 3446,
+              "lng": 3142
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3445,
+                "lng": 3140
+              },
+              "topRight": {
+                "lat": 3449,
+                "lng": 3143
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: Cheesecake",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items recommended: Lumbridge teleport, Fort Forinthry Teleport",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "stepDescription": "Items needed: ",
+      "itemsNeeded": [
+        "Cheesecake"
+      ],
+      "itemsRecommended": [
+        "Lumbridge teleport",
+        "Fort Forinthry Teleport"
+      ],
       "highlights": {
         "npc": [],
         "object": []
@@ -193,7 +405,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Mess Sergeant Ramsey",
+            "npcLocation": {
+              "lat": 3442,
+              "lng": 2895
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3440,
+                "lng": 2894
+              },
+              "topRight": {
+                "lat": 3444,
+                "lng": 2895
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -204,7 +434,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Cook (Lumbridge)",
+            "npcLocation": {
+              "lat": 3215,
+              "lng": 3209
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3215,
+                "lng": 3207
+              },
+              "topRight": {
+                "lat": 3215,
+                "lng": 3210
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -215,7 +463,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Cook (Jolly Boar Inn)",
+            "npcLocation": {
+              "lat": 3490,
+              "lng": 3284
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3486,
+                "lng": 3282
+              },
+              "topRight": {
+                "lat": 3492,
+                "lng": 3285
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
@@ -226,7 +492,25 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Head chef",
+            "npcLocation": {
+              "lat": 3446,
+              "lng": 3142
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3445,
+                "lng": 3140
+              },
+              "topRight": {
+                "lat": 3449,
+                "lng": 3143
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,

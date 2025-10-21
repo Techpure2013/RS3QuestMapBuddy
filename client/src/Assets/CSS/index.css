@@ -839,3 +839,236 @@ button:hover {
   line-height: 1.1;
   word-wrap: break-word;
 }
+/* ==========================================================================
+   Quest Details Editor
+   ========================================================================== */
+.quest-details-editor {
+  background-color: #111827; /* A slightly darker shade */
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden; /* Important for the collapse transition */
+}
+
+/* --- Header --- */
+.quest-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #4b5563;
+}
+
+.quest-details-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #e5e7eb;
+}
+
+.quest-details-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.quest-details-actions button {
+  background-color: #374151;
+  color: #d1d5db;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.quest-details-actions button:hover {
+  background-color: #4b5563;
+  color: #f9fafb;
+}
+
+.quest-details-actions .save-button {
+  color: #4ade80;
+}
+.quest-details-actions .save-button:hover {
+  background-color: #166534;
+  color: white;
+}
+.quest-details-actions .cancel-button {
+  color: #f87171;
+}
+.quest-details-actions .cancel-button:hover {
+  background-color: #991b1b;
+  color: white;
+}
+.quest-details-actions .collapse-button {
+  font-size: 1.2rem;
+  padding: 0 8px;
+}
+
+/* --- Content Area --- */
+.quest-details-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quest-details-editor.collapsed .quest-details-content {
+  display: none;
+}
+
+/* --- Loading State --- */
+.quest-details-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+  color: #9ca3af;
+}
+
+.loading-spinner {
+  border: 4px solid #374151;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Display View --- */
+.quest-details-display .detail-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 0.9rem;
+}
+
+.quest-details-display .detail-label {
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.quest-details-display .detail-value {
+  color: #f9fafb;
+}
+
+.quest-details-display .detail-section {
+  margin-top: 10px;
+}
+.quest-details-display .detail-section h4 {
+  margin: 0 0 5px 0;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.quest-details-display .detail-section ul {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 20px;
+  color: #d1d5db;
+}
+
+/* --- Form / Editing View --- */
+.quest-details-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.form-input,
+.form-select {
+  background-color: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  color: #f9fafb;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* --- Array Field Editing --- */
+.quest-array-field h4 {
+  margin: 0 0 8px 0;
+  color: #9ca3af;
+  font-size: 1rem;
+}
+.array-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.array-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.array-input {
+  flex-grow: 1;
+  background-color: #1f2937;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  color: #f9fafb;
+  padding: 6px 8px;
+}
+.array-remove-button {
+  background-color: #991b1b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.array-add-button {
+  background-color: #166534;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start; /* Don't stretch full width */
+}
+.empty-array {
+  color: #6b7280;
+  font-style: italic;
+}

@@ -2,19 +2,41 @@
   "questName": "Children of Mah",
   "questSteps": [
     {
-      "stepDescription": "Talk to Kharshai beneath the helmet shop in Rellekka (requires completion of the Koschei's Troubles miniquest) or all the way north of Rellekka in the snowy hunter area, next to the Arctic (azure) habitat mine. (Chat 1\u2022\u2713\u20225\u20221\u20221)",
+      "stepDescription": "Most north hunter area in Rellekka, next to the Arctic (azure) habitat, east of the banite mine. (Chat 1•✓•5•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [],
+        "npc": [
+          {
+            "npcName": "Kharshai",
+            "npcLocation": {
+              "lat": 3882,
+              "lng": 2729
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3881,
+                "lng": 2728
+              },
+              "topRight": {
+                "lat": 3883,
+                "lng": 2730
+              }
+            }
+          }
+        ],
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Talk to Kharshai beneath the helmet shop in Rellekka."
+      ]
     },
     {
-      "stepDescription": "Items needed: 1 free inventory slot",
-      "itemsNeeded": [],
+      "stepDescription": "Go to the Mahjarrat Ritual Site using either methods of transport in Additional Information.",
+      "itemsNeeded": [
+        "1 free inventory slot"
+      ],
       "itemsRecommended": [
         "TokKul-Zo",
         "Dig Site pendant"
@@ -24,54 +46,14 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Kharshai can teleport you there.",
+        "DKQ, exit the glacor cave, and then go north-west.",
+        "Alternatively, use the canoe in the snowy hunter area north of Rellekka."
+      ]
     },
     {
-      "stepDescription": "Items recommended: TokKul-Zo, Dig Site pendant",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Go to the Mahjarrat Ritual Site via:",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Kharshai can teleport you there.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "DKQ, exit the glacor cave, and then go north-west.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Alternatively, use the canoe in the snowy hunter area north of Rellekka.",
+      "stepDescription": "",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -170,7 +152,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Perjour. (Chat 3\u20224)",
+      "stepDescription": "Talk to Perjour. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -203,7 +185,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Duke Sucellus to the north. (Chat 3\u20224)",
+      "stepDescription": "Talk to Duke Sucellus to the north. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -247,7 +229,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Pernix. (Chat 2\u20223\u20222\u20222)",
+      "stepDescription": "Talk to Pernix. (Chat 2•3•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -258,7 +240,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head down a flight of stairs and talk to Akthanakos. (Chat 3\u20223\u20221\u20222)",
+      "stepDescription": "Head down a flight of stairs and talk to Akthanakos. (Chat 3•3•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -302,7 +284,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Sliske. (Chat 3\u20224)",
+      "stepDescription": "Talk to Sliske. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -518,7 +500,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Seren. The third deathstone is to the east of Seren. (Chat ~\u20222)",
+      "stepDescription": "Talk to Seren. The third deathstone is to the east of Seren. (Chat ~•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -543,7 +525,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go west and talk to Zemouregal. (Chat ~\u20222\u20222\u20222)",
+      "stepDescription": "Go west and talk to Zemouregal. (Chat ~•2•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -773,5 +755,33 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Children of Mah",
+    "StartPoint": "Talk to Kharshai in the frozen region north of Rellekka or (if you've completed the Koschei's Troubles miniquest) in his cave beneath Rellekka.",
+    "MemberRequirement": "Members",
+    "OfficialLength": "Long",
+    "Requirements": [
+      "The Light Within",
+      "Dishonour among Thieves"
+    ],
+    "ItemsRequired": [
+      "Combat Equipment",
+      "Food",
+      "Potions"
+    ],
+    "Recommended": [
+      "TokKul-Zo or Portable fairy ring for quick access to fairy rings",
+      "Sixth-Age circuit for quick access to World Gate",
+      "Dig Site pendant or Archaeology journal",
+      "Shard of Zaros",
+      "Sign or Portent of life",
+      "Ancient Magicks for Increased Damage"
+    ],
+    "EnemiesToDefeat": [
+      "Bladed Muspahs ( Level 150 )",
+      "Force Muspahs ( Level 150 )",
+      "Throwing Muspahs ( Level 150 )"
+    ]
+  }
 }

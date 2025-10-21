@@ -220,7 +220,7 @@
       ]
     },
     {
-      "stepDescription": "Excavate the area on the ground named Level 3 grid (near Dorian) until you find an Ancient talisman. (see image)",
+      "stepDescription": "Excavate the area on the ground named Level 3 grid (near Dorian) until you find an Ancient talisman.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -435,5 +435,30 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "The Dig Site",
+    "StartPoint": "Talk to an Examiner in the Exam Centre, south of the Varrock Dig Site.",
+    "MemberRequirement": "Members only",
+    "OfficialLength": "Long",
+    "Requirements": [
+      "10 Agility",
+      "10 Herblore",
+      "25 Thieving"
+    ],
+    "ItemsRequired": [
+      "Charcoal ( Obtained during Quest )",
+      "Cup of tea ( Obtained during Quest )",
+      "Vial",
+      "2 ropes  (Pickpocket Dig Site workmen )",
+      "Uncut/cut opal ( Obtained during Quest )"
+    ],
+    "Recommended": [
+      "Archaeology journal from the Archaeology Guild",
+      "Methods to reduce travel time to the Varrock Dig Site: Completion of Enlightened Journey, Missing, Presumed Death for Invitation box, or a charged wicked hood."
+    ],
+    "EnemiesToDefeat": [
+      "None"
+    ]
+  }
 }
