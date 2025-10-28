@@ -1,5 +1,5 @@
 {
-  "questName": "A Fairy Tale III Battle at Ork's Rift",
+  "questName": "A Fairy Tale III: Battle at Ork's Rift",
   "questSteps": [
     {
       "stepDescription": "Use any fairy ring to travel to Zanaris. If you can start the quest, you will be redirected to the Sparse Plane. Talk to Fairy Very Wise and accept her offer (Chat 4). You no longer need nuffs certificate now.",
@@ -281,6 +281,42 @@
       "additionalStepInformation": [
         ""
       ]
+    },
+    {
+      "stepDescription": "Go to the house north-west of Zanaris bank. Use your tooth extractor on the door to pick the lock on it.",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "additionalStepInformation": [],
+      "highlights": {
+        "npc": [],
+        "object": [
+          {
+            "name": "House North of Zanaris Bank",
+            "objectLocation": [
+              {
+                "lat": 4468,
+                "lng": 2379,
+                "color": "#55998a",
+                "numberLabel": "Use Tooth Extractor",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
+              "bottomLeft": {
+                "lat": 4465,
+                "lng": 2373
+              },
+              "topRight": {
+                "lat": 4470,
+                "lng": 2379
+              }
+            },
+            "color": "#55998a",
+            "numberLabel": "Use Tooth Extractor"
+          }
+        ]
+      },
+      "floor": 0
     },
     {
       "stepDescription": "Talk to Gnarly. (Chat 4)",
@@ -1227,5 +1263,37 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "A Fairy Tale III: Battle at Ork's Rift",
+    "StartPoint": "Talk to the Fairy Queen at Fairy Resistance Hideout, reached by using the main fairy ring in Zanaris.",
+    "MemberRequirement": "Members only",
+    "OfficialLength": "Long",
+    "Requirements": [
+      "A Fairy Tale II: Cure a Queen",
+      "54 Farming",
+      "51 Thieving",
+      "36 Crafting"
+    ],
+    "ItemsRequired": [
+      "Bucket of milk",
+      "Dramen staff or Lunar staff",
+      "Secateurs (can be obtained during the quest)",
+      "Hammer (can be obtained during the quest)"
+    ],
+    "Recommended": [
+      "37 Prayer for Protect from Magic",
+      "1-3 Prayer potions",
+      "Potions that improve your combat abilities",
+      "Good weapon and armour (Dragon equipment or better)",
+      "Some food, beltfish or better",
+      "8 Willow logs (85 Firemaking required for this optional step)",
+      "4 regular planks and 8 nails of any kind to repair the bridge"
+    ],
+    "EnemiesToDefeat": [
+      "General Gromblod, General Shredflesh, and General Bre'egth (level 85)",
+      "A number of Ork warriors (level 79) (can be avoided entirely by attacking General Gromblod immediately)",
+      "Fairy Godfather (level 84)"
+    ]
+  }
 }

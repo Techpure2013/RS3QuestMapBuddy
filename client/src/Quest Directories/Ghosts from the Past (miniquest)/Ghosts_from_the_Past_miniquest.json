@@ -13,7 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Quartermaster Gully (if you have just completed Harbringer you may need to relog for the chat option to show up). (Chat 1\u2022\u2713\u20225)",
+      "stepDescription": "Talk to Quartermaster Gully. (Chat 1•✓•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -21,7 +21,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you have just completed Harbringer you may need to relog for the chat option to show up"
+      ]
     },
     {
       "stepDescription": "Climb both watchtowers on the island and talk to both skeletons of the Skulls pirate and the Skulls mercenary.",
@@ -78,5 +80,31 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Ghosts from the Past (miniquest)",
+    "StartPoint": "Speak to Quartermaster Gully on the docks near the Sarim's Revenge.",
+    "MemberRequirement": "Members only",
+    "OfficialLength": "Short",
+    "Requirements": [
+      "Impressing the Locals",
+      "Harbinger (miniquest)",
+      "Eye for an Eye (miniquest)",
+      "Jed Hunter (miniquest)",
+      "Flag Fall (miniquest)",
+      "Head of the Family (miniquest)",
+      "Spiritual Enlightenment (miniquest)",
+      "Complete the 'Meet the Assassin' voyage in player-owned port",
+      "Discover the island of Cyclosis in player-owned port"
+    ],
+    "ItemsRequired": [
+      "None"
+    ],
+    "Recommended": [
+      "None"
+    ],
+    "EnemiesToDefeat": [
+      "None"
+    ]
+  }
 }

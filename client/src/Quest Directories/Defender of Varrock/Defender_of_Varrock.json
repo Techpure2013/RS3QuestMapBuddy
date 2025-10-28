@@ -2,7 +2,7 @@
   "questName": "Defender of Varrock",
   "questSteps": [
     {
-      "stepDescription": "Dismiss any followers now.",
+      "stepDescription": "Dismiss any followers, then talk to Captain Rovin in Varrock Palace, north-west tower top floor. (Chat 1•✓•1) ",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -10,29 +10,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Talk to Captain Rovin in Varrock Palace, north-west tower top floor. (Chat 1\u2022\u2713\u20221)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If he will not give you the quest, make sure you have claimed kudos from Historian Minas at Varrock Museum.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If he will not give you the quest, make sure you have claimed kudos from Historian Minas at Varrock Museum."
+      ]
     },
     {
       "stepDescription": "Enter the graveyard then talk to Hartwin. (Chat 1)",
@@ -90,23 +70,14 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: combat equipment to kill six or more armoured zombies, blurite ore, light source and a spade.",
-      "itemsNeeded": [
-        "combat equipment to kill six or more armoured zombies",
-        "blurite ore",
-        "light source and a spade."
-      ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Run north and look over the balcony.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Combat Equipment",
+        "Food",
+        "Blurite Ore",
+        "Light Source",
+        "Spade ( One from Toolbelt does not work )"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -237,7 +208,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Ramarno. (Chat 4) If you have a redberry pie you can give it to Ramarno for 1,000 Smithing experience.",
+      "stepDescription": "Talk to Ramarno. (Chat 4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -245,7 +216,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you have a redberry pie you can give it to Ramarno for 1,000 Smithing experience"
+      ]
     },
     {
       "stepDescription": "Use blurite ore on the forge.",
@@ -281,7 +254,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Reldo in the library on the 1st floor[US]. (Chat 4) or (Chat 5) if TokTz-Ket-Dill has been completed.",
+      "stepDescription": "Talk to Reldo in the library on the 1st floor[US]. (Chat 4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -289,7 +262,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "(Chat 5) if TokTz-Ket-Dill has been completed."
+      ]
     },
     {
       "stepDescription": "Read the Varrock Census on the lectern.",
@@ -325,7 +300,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the following NPCs until one mentions they are not a blood descendant:",
+      "stepDescription": "Talk to the following NPCs in the following steps until one mentions they are not a blood descendant.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -336,7 +311,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "King Roald, southeast corner, 1st floor[US] (Chat 1) or (Chat 2) if Lord of Vampyrium has been completed.",
+      "stepDescription": "King Roald, southeast corner, 1st floor[US] (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -344,10 +319,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "(Chat 2) if Lord of Vampyrium has been completed."
+      ]
     },
     {
-      "stepDescription": "Aeonisig Raispher, next to King Roald (Chat 1\u20221)",
+      "stepDescription": "Aeonisig Raispher, next to King Roald (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -423,5 +400,37 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Defender of Varrock",
+    "StartPoint": "Talk to Captain Rovin, in the north-west tower of Varrock Palace.",
+    "MemberRequirement": "Members only",
+    "OfficialLength": "Medium to Long",
+    "Requirements": [
+      "Shield of Arrav",
+      "The Knight's Sword",
+      "Family Crest",
+      "What Lies Below",
+      "Claim Kudos from Historian Minas in Varrock Museum for completing Shield of Arrav",
+      "51 Agility",
+      "51 Hunter",
+      "59 Mining",
+      "54 Smithing"
+    ],
+    "ItemsRequired": [
+      "A light source",
+      "Blurite ore (can be obtained during the quest from the ice cave near Thurgo)",
+      "A spade (the one in your toolbelt will not work)",
+      "Armour, weapons, and supplies to survive in the Wilderness"
+    ],
+    "Recommended": [
+      "Activated Edgeville, Falador, Port Sarim and Varrock lodestones",
+      "Emergency teleport such as an ectophial, crystal teleport seed or a teleport tablet",
+      "Salve amulet (e)",
+      "A redberry pie, if you wish to gain an additional 1,000 Smithing experience"
+    ],
+    "EnemiesToDefeat": [
+      "6 Armoured zombies (level 86)"
+    ]
+  }
 }

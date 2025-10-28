@@ -1066,7 +1066,7 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 6px;
-  align-self: flex-start; /* Don't stretch full width */
+  align-self: flex-start;
 }
 .empty-array {
   color: #6b7280;

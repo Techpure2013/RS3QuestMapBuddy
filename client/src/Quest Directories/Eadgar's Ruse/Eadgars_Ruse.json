@@ -2,7 +2,7 @@
   "questName": "Eadgar's Ruse",
   "questSteps": [
     {
-      "stepDescription": "If you completed the Druidic Ritual or Death Plateau quests before they were reworked on 31 January 2012, you must complete the updated versions of those quests before starting this quest unless you go up Trollheim the way near the Fremennik Slayer Dungeon, in which case, doing the new Death Plateau is unneeded, but doing the new Druidic Ritual is still required.",
+      "stepDescription": "Start the quest by speaking to Sanfew, who lives on the east side of Taverley, south-west of the summoning shop. (Chat 2•1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -10,57 +10,15 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Getting started",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Start the quest by speaking to Sanfew, who lives on the east side of Taverley, south-west of the summoning shop. (Chat 2\u20221\u2022\u2713)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If Zogre Flesh Eaters is not complete, use the following option: (Chat 1\u2022\u2713)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: Climbing boots",
-      "itemsNeeded": [
-        "Climbing boots"
-      ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If Zogre Flesh Eaters is not complete, use the following option: (Chat 1•✓)"
+      ]
     },
     {
       "stepDescription": "Equip your climbing boots and make your way to the Troll Stronghold.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Climbing boots"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -83,13 +41,7 @@
     {
       "stepDescription": "Speak to Burntmeat.",
       "itemsNeeded": [
-        "Climbing boots",
-        "vodka",
-        "pineapple chunks",
-        "10 wheat",
-        "5 raw chickens",
-        "2 logs",
-        "ranarr potion unf"
+        ""
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -100,19 +52,16 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: Climbing boots, vodka, pineapple chunks, 10 wheat, 5 raw chickens, 2 logs, ranarr potion unf",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Walk back out of the stronghold and head east to the top of the mountain. Eadgar's Cave is on top of the mountain with the thrower trolls, the world map marks this as Trollheim.",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Climbing Boots",
+        "Vodka",
+        "Pineapple Chunks",
+        "10 Wheat",
+        "5 Raw Chicken",
+        "2 Logs",
+        "1 Ranarr Potion (unf)"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -185,18 +134,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If you haven't already, be sure to pick up the 10 wheat, 5 raw chickens, and 2 logs on your way back to Eadgar.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you haven't already, be sure to pick up the 10 wheat, 5 raw chickens, and 2 logs on your way back to Eadgar."
+      ]
     },
     {
       "stepDescription": "Head to the stronghold.",
@@ -276,10 +216,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you forgot, grab your second set of logs and ranarr potion unf on your way back to Eadgar."
+      ]
     },
     {
-      "stepDescription": "If you forgot, grab your second set of logs and ranarr potion unf on your way back to Eadgar.",
+      "stepDescription": "Search all the grassy areas near Eadgar's cave until you find a tiny Troll thistle growing in a patch of grass.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -287,29 +229,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items needed: Logs, ranarr potion unf",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Search all the grassy areas near Eadgar's cave until you find a tiny Troll thistle growing in a patch of grass (this will be the only one with a \"pick\" option; it is harder to see with low graphics settings).",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "This will be the only one with a \"pick\" option; it is harder to see with low graphics settings"
+      ]
     },
     {
       "stepDescription": "Make a fire with your remaining logs.",
@@ -320,18 +242,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Or, if you didn't bring logs, there's a fire down at the Troll Stronghold.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you didn't bring logs, there's a fire down at the Troll Stronghold."
+      ]
     },
     {
       "stepDescription": "Use the Troll thistle on the fire and then grind it.",
@@ -347,7 +260,7 @@
     {
       "stepDescription": "Use the ground thistle on ranarr potion (unf) to obtain the troll potion",
       "itemsNeeded": [
-        "Fake man"
+        ""
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -380,19 +293,10 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: Fake man",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Go back to the kitchen in the stronghold and give the dummy to Burntmeat. (Chat 1)",
-      "itemsNeeded": [],
+      "itemsNeeded": [
+        "Fake man"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -424,7 +328,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Sit at the entrance of the door & wait until the guard patrolling the northernmost lane goes south. Quickly run west down the same lane and after you turn the corner use the Surge ability and run south to the goutweed. If done correctly, you will surge through the western most guards and be able to immediately obtain a goutweed.",
+      "stepDescription": "Quick set of instructions to get the Goutweed in Additional Information. Grab 2 Goutweed if you intend to do Dream Mentor.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -432,10 +336,13 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Sit at the entrance of the door & wait until the guard patrolling the northernmost lane goes south. Quickly run west down the same lane and after you turn the corner use the Surge ability and run south to the goutweed.",
+        "If done correctly, you will surge through the western most guards and be able to immediately obtain a goutweed."
+      ]
     },
     {
-      "stepDescription": "Alternatively, use safe spots (U-shaped areas with boxes on three sides) to pass the guards.",
+      "stepDescription": "Below in Additional Information is the safe route instructions to get past the troll guards. Get 2 goutweed if you're planning on doing Dream Mentor.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -443,51 +350,11 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Run to the first safe spot, the middle safe spot in the third row of boxes from the entrance, after the trolls patrolling the first row and the eastern second row just pass you.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Wait for the troll which travels north on the western side to make the turn to the east, then run to the safe spot on the southern side of the third row.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Wait until the troll guard approaching you from the south has turned the west, then run to the crate with the goutweed. Make sure that you are standing to the side of the crate or you will get caught.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Get 2 goutweed if you're planning on doing Dream Mentor.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Run to the first safe spot, the middle safe spot in the third row of boxes from the entrance, after the trolls patrolling the first row and the eastern second row just pass you.",
+        "Wait for the troll which travels north on the western side to make the turn to the east, then run to the safe spot on the southern side of the third row.",
+        "Wait until the troll guard approaching you from the south has turned the west, then run to the crate with the goutweed. Make sure that you are standing to the side of the crate or you will get caught."
+      ]
     },
     {
       "stepDescription": "Head back to Sanfew and give him the goutweed. (Chat 2)",
@@ -511,5 +378,38 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Eadgar's Ruse",
+    "StartPoint": "Talk to Sanfew in Taverley.",
+    "MemberRequirement": "Members only",
+    "OfficialLength": "Long",
+    "Requirements": [
+      "Troll Stronghold",
+      "Death Plateau",
+      "Druidic Ritual",
+      "Rescue Mad Eadgar from the Troll Stronghold",
+      "31 Herblore"
+    ],
+    "ItemsRequired": [
+      "Climbing boots or rock climbing boots (not required if the player has completed Love Story, and has the ability to make Trollheim teleport tablets)",
+      "A bottle of vodka (can be bought along with a pineapple from Heckel Funch at the Gnome Stronghold or Grand Exchange)",
+      "Pineapple chunks (Right click on pineapple, slice, and select option for pineapple chunks.)",
+      "10 wheat (unnoted)",
+      "5 raw chickens (there are chickens in Freda's backyard)",
+      "2 logs",
+      "An unfinished ranarr potion"
+    ],
+    "Recommended": [
+      "40 Prayer or 47 Agility",
+      "Teleports to Ardougne; the Kandarin monastery Teleport can be used to teleport relatively close to the Zoo",
+      "Beware of level 77 thrower trolls",
+      "Some food if you have to run the gauntlet with thrower trolls. Access to Protect from Ranged is also helpful. Not necessary if you have the recommended agility level.",
+      "Energy potions if your agility level is low",
+      "A second pile of logs for a fire"
+    ],
+    "EnemiesToDefeat": [
+      "None"
+    ]
+  }
 }

@@ -73,8 +73,8 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
             const defaultDetails: QuestDetails = {
               Quest: questJson.questName || "",
               StartPoint: "",
-              MemberRequirement: "Free to play",
-              OfficialLength: "Short",
+              MemberRequirement: "",
+              OfficialLength: "",
               Requirements: [],
               ItemsRequired: [],
               Recommended: [],
@@ -95,8 +95,8 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
           const defaultDetails: QuestDetails = {
             Quest: questJson.questName || "",
             StartPoint: "",
-            MemberRequirement: "Free to play",
-            OfficialLength: "Short",
+            MemberRequirement: "",
+            OfficialLength: "",
             Requirements: [],
             ItemsRequired: [],
             Recommended: [],
@@ -112,8 +112,8 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
         const defaultDetails: QuestDetails = {
           Quest: "",
           StartPoint: "",
-          MemberRequirement: "Free to play",
-          OfficialLength: "Short",
+          MemberRequirement: "",
+          OfficialLength: "",
           Requirements: [],
           ItemsRequired: [],
           Recommended: [],
@@ -386,9 +386,12 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
                   >
                     <option value="Very Short">Very Short</option>
                     <option value="Short">Short</option>
+                    <option value="Short to Medium">Short to Medium</option>
                     <option value="Medium">Medium</option>
+                    <option value="Medium to Long">Medium to Long</option>
                     <option value="Long">Long</option>
                     <option value="Very Long">Very Long</option>
+                    <option value="Very Very Long">Very Very Long</option>
                   </select>
                 </div>
               </div>
