@@ -163,25 +163,7 @@
       "itemsRecommended": [],
       "additionalStepInformation": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
             "name": "",
@@ -206,5 +188,36 @@
       },
       "floor": 0
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Fate of the Gods",
+    "StartPoint": "Talk to Azzanadra at the World Gate, just north-west of the entrance to Arandar, south of the Eagles' Peak lodestone.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Long to Very Long",
+    "Requirements": [
+      "Fate of the Gods",
+      "Missing, Presumed Death",
+      "73 Agility",
+      "75 Divination",
+      "79 Magic",
+      "76 Slayer",
+      "67 Summoning"
+    ],
+    "ItemsRequired": [],
+    "Recommended": [
+      "Combat equipment and food",
+      "Restore potions or Overloads for dealing with nihils' stat-reducing magic",
+      "A fully charged engrammeter (after Mahjarrat Memories (miniquest))",
+      "A face mask or any item that acts as one, such as masked earmuffs or a Slayer helmet",
+      "Ancient magicks spell book",
+      "Ancient curses prayer book"
+    ],
+    "EnemiesToDefeat": [
+      "Shadow nihil (level 160)",
+      "Smoke nihil (level 160)",
+      "Blood nihil (level 160)",
+      "Ice nihil (level 160)",
+      "Multiple bladed, force, and throwing muspahs (level 150)"
+    ]
+  }
 }

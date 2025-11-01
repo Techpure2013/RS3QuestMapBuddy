@@ -161,28 +161,15 @@
     },
     {
       "stepDescription": "Equip your Dramen Staff and head to the Lumbridge Swamp to enter the Lost City shed.",
-      "itemsNeeded": ["Dramen Staff"],
-      "itemsRecommended": ["Teleport to Lumbridge", "Water Altar Teleport"],
+      "itemsNeeded": [
+        "Dramen Staff"
+      ],
+      "itemsRecommended": [
+        "Teleport to Lumbridge",
+        "Water Altar Teleport"
+      ],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "Fairy Nuff",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
             "name": "Zanaris Shed",
@@ -288,7 +275,9 @@
     },
     {
       "stepDescription": "Travel to The Dark Wizards' Tower (west of Falador).",
-      "itemsNeeded": ["Combat Equipment"],
+      "itemsNeeded": [
+        "Combat Equipment"
+      ],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -381,32 +370,16 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": ["(Chat 1) if Swan Song has been completed."]
+      "additionalStepInformation": [
+        "(Chat 1) if Swan Song has been completed."
+      ]
     },
     {
       "stepDescription": "Run around to the back, north, of Draynor Manor within the fenced area, and click the gravestone slightly west of the Gallows to dig up a skull.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "Nature Spirit",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
             "name": "Skull",
@@ -476,11 +449,15 @@
         ]
       },
       "floor": 0,
-      "additionalStepInformation": ["(Chat 1) if Swan Song has been started."]
+      "additionalStepInformation": [
+        "(Chat 1) if Swan Song has been started."
+      ]
     },
     {
       "stepDescription": "Talk to the Nature Spirit in Mort Myre Swamp to receive magic secateurs.",
-      "itemsNeeded": ["secateurs"],
+      "itemsNeeded": [
+        "secateurs"
+      ],
       "itemsRecommended": [
         "Teleport to Barrows or Burgh de Rott for quick access to Nature Grotto"
       ],
@@ -688,5 +665,32 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "A Fairy Tale I: Growing Pains",
+    "StartPoint": "Talk to Martin the Master Gardener in Draynor Village.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Medium",
+    "Requirements": [
+      "Lost City",
+      "Nature Spirit",
+      "Priest in Peril",
+      "The Restless Ghost"
+    ],
+    "ItemsRequired": [
+      "Dramen/Lunar staff",
+      "Secateurs (tool belt will not work)",
+      "Three or four random items assigned individually for each player"
+    ],
+    "Recommended": [
+      "Activated Ardougne, Catherby, Canifis, Draynor, Falador, Varrock and Yanille lodestone",
+      "Explorer's ring 3 or 4",
+      "Wicked hood (cosmic altar teleports inside Zanaris)",
+      "Druid pouches (to avoid getting hurt by the ghasts in the Mort Myre Swamp)",
+      "Clan vexillum (faster teleport to dark wizard tower and Malignius Mortifer)"
+    ],
+    "EnemiesToDefeat": [
+      "Tanglefoot (level 68)"
+    ]
+  }
 }

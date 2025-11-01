@@ -276,7 +276,7 @@
         "npc": [],
         "object": [
           {
-            "name": "New Object",
+            "name": "Brundt the Chieftain Boat",
             "objectLocation": [
               {
                 "lat": 5934,
@@ -434,7 +434,7 @@
         "npc": [],
         "object": [
           {
-            "name": "New Object",
+            "name": "Water-Birth Entrance",
             "objectLocation": [
               {
                 "lat": 3728,
@@ -985,7 +985,7 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Daggonoth Sentinel",
+            "npcName": "Dagannoth Sentinel",
             "npcLocation": {
               "lat": 5830,
               "lng": 4362
@@ -1002,7 +1002,7 @@
             }
           },
           {
-            "npcName": "Daggonoth Sentinel",
+            "npcName": "Dagannoth Sentinel",
             "npcLocation": {
               "lat": 5830,
               "lng": 4367
@@ -2270,5 +2270,58 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Blood Runs Deep",
+    "StartPoint": "Speak to Baba Yaga on Lunar Isle.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Long",
+    "Requirements": [
+      "Horror from the Deep",
+      "Bar Crawl (miniquest)",
+      "Dream Mentor",
+      "Eadgar's Ruse",
+      "Troll Stronghold",
+      "Death Plateau",
+      "Druidic Ritual",
+      "Rescue Mad Eadgar from the Troll Stronghold",
+      "Lunar Diplomacy",
+      "The Fremennik Trials",
+      "Lost City",
+      "Shilo Village",
+      "Jungle Potion",
+      "Glorious Memories",
+      "Mountain Daughter",
+      "The Fremennik Isles",
+      "The Fremennik Trials",
+      "Royal Trouble",
+      "Throne of Miscellania",
+      "Heroes' Quest",
+      "Shield of Arrav",
+      "Dragon Slayer",
+      "Druidic Ritual",
+      "Lost City",
+      "Merlin's Crystal",
+      "56 quest points",
+      "75 Attack",
+      "65 Slayer",
+      "75 Strength"
+    ],
+    "ItemsRequired": [
+      "Rope (obtained during the quest)",
+      "Weapons for all three combat styles",
+      "All four elemental spells: Blast, Wave, or Surge spells recommended"
+    ],
+    "Recommended": [
+      "Food",
+      "Prayer potions",
+      "Armour that provides minimal penalties to Ranged or Magic but still has good defensive properties. Hybrid armour is recommended because style switching is required",
+      "Dwarf multicannon"
+    ],
+    "EnemiesToDefeat": [
+      "At least 50 Dagannoths (level 78)",
+      "2 Dagannoth sentinels (level 98)",
+      "Dagannoth Mother (level 102)"
+    ]
+  }
 }

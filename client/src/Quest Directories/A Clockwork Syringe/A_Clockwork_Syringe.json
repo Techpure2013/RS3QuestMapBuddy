@@ -451,55 +451,6 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "New step description...",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "additionalStepInformation": [],
-      "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
-      },
-      "floor": 0
-    },
-    {
       "stepDescription": "Attempt to enter your house again and select the \"A Clockwork Syringe\" option once more. (Chat 4•1)",
       "itemsNeeded": [
         "Combat gear"
@@ -2801,5 +2752,52 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "A Clockwork Syringe",
+    "StartPoint": "Enter the portal to your player-owned house. (via a location)",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Long",
+    "Requirements": [
+      "Rocking Out",
+      "The Great Brain Robbery",
+      "Creature of Fenkenstrain",
+      "The Restless Ghost",
+      "Priest in Peril",
+      "Cabin Fever",
+      "Pirate's Treasure",
+      "Rum Deal",
+      "Zogre Flesh Eaters",
+      "Recipe for Disaster: Freeing Pirate Pete",
+      "Recipe for Disaster: Another Cook's Quest",
+      "Cook's Assistant",
+      "62 Construction",
+      "76 Defence",
+      "50 Dungeoneering",
+      "61 Slayer",
+      "74 Smithing",
+      "65 Summoning",
+      "74 Thieving"
+    ],
+    "ItemsRequired": [
+      "Diving apparatus (obtainable during quest)",
+      "Fishbowl helmet (obtainable during quest)",
+      "At least six free inventory spaces"
+    ],
+    "Recommended": [
+      "Combat gear",
+      "Prayer potions",
+      "Antipoison, prayer book with holy symbol, or a poison purge aura",
+      "Food",
+      "Ectophial",
+      "Salve amulet (e)",
+      "Dungeoneering Cape for Braindeath Island 'Rum'-geon teleport"
+    ],
+    "EnemiesToDefeat": [
+      "Level 120 foe that uses melee and ranged, and can drain your Constitution, and a multi-way combat dungeon.",
+      "3 Grimterns (level 70)",
+      "Barrelchest Mk II (level 98)",
+      "Beware of particularly strong General malpractitioners and 'rum'-pumped crabs, who hit high and are poisonous."
+    ]
+  }
 }

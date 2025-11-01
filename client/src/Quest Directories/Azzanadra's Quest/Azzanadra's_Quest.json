@@ -2217,6 +2217,17 @@
       "additionalStepInformation": []
     },
     {
+      "stepDescription": "New step description...",
+      "itemsNeeded": [],
+      "itemsRecommended": [],
+      "additionalStepInformation": [],
+      "highlights": {
+        "npc": [],
+        "object": []
+      },
+      "floor": 0
+    },
+    {
       "stepDescription": "Return to the Wizards' Tower and walk to the entrance to trigger the dialogue.",
       "itemsNeeded": [
         ""
@@ -2420,25 +2431,7 @@
       "itemsRecommended": [],
       "additionalStepInformation": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
             "name": "praetorium war table Location",
@@ -2474,48 +2467,50 @@
       "itemsRecommended": [],
       "additionalStepInformation": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
-        "object": [
-          {
-            "name": "",
-            "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              }
-            ],
-            "objectRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ]
+        "npc": [],
+        "object": []
       },
       "floor": 0
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Azzanadra's Quest",
+    "StartPoint": "Speak to Azzanadra at the Council of Burthorpe upstairs in the Burthorpe Castle.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Long",
+    "Requirements": [
+      "The Vault of Shadows",
+      "Ability to see the Shadow Realm inside Kharid-et",
+      "Raksha, The Shadow Colossus",
+      "Desperate Creatures",
+      "Desperate Measures",
+      "Desperate Times",
+      "The Needle Skips",
+      "You Are It",
+      "Complete the base camp tutorial on Anachronia",
+      "58 Agility",
+      "58 Archaeology",
+      "70 Divination"
+    ],
+    "ItemsRequired": [
+      "Slayer bell"
+    ],
+    "Recommended": [
+      "Blank observation (if Heart of Stone has been completed. Given to the player during the quest if not already owned)",
+      "Wicked hood or Traveller's necklace (for Wizards' Tower teleport)",
+      "The Heart teleport (for Heart of Gielinor quick access, requires Tales of the God Wars (miniquest); alternatively, one can use desert amulet 2, 3, or 4 to teleport to Nardah and run south-west from there)",
+      "Sixth-Age circuit (for World Gate quick access; alternatively, teleport to Eagles' Peak lodestone and run south), or five metallic dragon trinkets (rune dragon teleport, consumed)",
+      "Master archaeologist's outfit (for Kharid-et Dig Site quick access; alternatively use Archaeology journal and use the table at the Archaeology guild to teleport to Kharid-et Dig Site)",
+      "TokKul-Zo (if The Elder Kiln has been completed for TzHaar City quick access)",
+      "Falador lodestone activated (for Falador teleport)",
+      "Food (to survive the dangers of Freneskae)",
+      "Enhanced Excalibur (to survive the dangers of Freneskae)",
+      "Skeletal horror teleport, Wicked hood teleport to the Earth altar or Invitation box (for quick access to Paterdomus)",
+      "Distorted engrammeter for damage reduction.",
+      "Memory strands (for quickest access to Hall of Memories)",
+      "Ring of respawn (or Passage of the Abyss with ring of respawn charges for quick access to White Knights' Castle), or a Clan vexillum to teleport south of Falador then take the shortcut just north-west to the castle or walk through Falador's south entry.",
+      "Facemask/Slayer helmet to avoid taking damage from inhaling the volcanic ash when travelling on Freneskae"
+    ],
+    "EnemiesToDefeat": []
+  }
 }

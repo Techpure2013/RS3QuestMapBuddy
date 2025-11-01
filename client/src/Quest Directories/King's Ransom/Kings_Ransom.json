@@ -2,7 +2,7 @@
   "questName": "King's Ransom",
   "questSteps": [
     {
-      "stepDescription": "Talk to the Gossip south of the Sinclair Mansion (Fairy ring CJR). (Chat \u2713)",
+      "stepDescription": "Talk to the Gossip south of the Sinclair Mansion (Fairy ring CJR). (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -189,7 +189,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Call the Maid (Chat 4\u20222), talk to her. (Chat 4)",
+      "stepDescription": "Call the Maid (Chat 4•2), talk to her. (Chat 4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -268,7 +268,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Merlin. (Chat 3\u20221\u20222\u20223)",
+      "stepDescription": "Talk to Merlin. (Chat 3•1•2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -503,5 +503,29 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "King's Ransom",
+    "StartPoint": "Talk to Gossip, outside Sinclair Mansion.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Medium to Long",
+    "Requirements": [
+      "Holy Grail",
+      "Murder Mystery",
+      "One Small Favour"
+    ],
+    "ItemsRequired": [
+      "Granite (any size), or a ring of stone",
+      "Telekinetic Grab runes (1 air, 1 law)",
+      "Animate rock scroll",
+      "Iron chainbody",
+      "Bronze med helm"
+    ],
+    "Recommended": [
+      "Ardougne, Falador, and Camelot teleports could be useful",
+      "Weight reducing equipment such as boots of lightness",
+      "Skull of Remembrance, for a quick teleport to the Black Knights' Fortress"
+    ],
+    "EnemiesToDefeat": []
+  }
 }

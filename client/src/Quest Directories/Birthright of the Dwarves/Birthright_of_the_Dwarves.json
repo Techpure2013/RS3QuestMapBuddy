@@ -45,7 +45,7 @@
         "npc": [],
         "object": [
           {
-            "name": "New Object",
+            "name": "Records Chamber Entrance",
             "objectLocation": [
               {
                 "lat": 10212,
@@ -1720,7 +1720,7 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "New NPC",
+            "npcName": "Redaxe Director",
             "npcLocation": {
               "lat": 6258,
               "lng": 1832
@@ -1792,7 +1792,7 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Chaos Grimisson",
+            "npcName": "Chaos Grimsson",
             "npcLocation": {
               "lat": 6244,
               "lng": 1822
@@ -1941,5 +1941,49 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Birthright of the Dwarves",
+    "StartPoint": "Speak to King Veldaban on the top floor of Keldagrim Palace.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Very Long",
+    "Requirements": [
+      "King of the Dwarves",
+      "Forgiveness of a Chaos Dwarf",
+      "Forgettable Tale of a Drunken Dwarf",
+      "The Giant Dwarf",
+      "Fishing Contest",
+      "Between a Rock...",
+      "Dwarf Cannon",
+      "Fishing Contest",
+      "My Arm's Big Adventure",
+      "Eadgar's Ruse",
+      "Troll Stronghold",
+      "Death Plateau",
+      "Druidic Ritual",
+      "Rescue Mad Eadgar from the Troll Stronghold",
+      "The Feud",
+      "Jungle Potion",
+      "Work on the Tai Bwo Wannai Cleanup",
+      "80 Mining",
+      "82 Smithing",
+      "85 Strength"
+    ],
+    "ItemsRequired": [
+      "7 free inventory spaces"
+    ],
+    "Recommended": [
+      "Watchtower",
+      "The Fremennik Isles",
+      "Combat gear and food",
+      "Watchtower teleport runes, Watchtower teleport (item) tablet or Yanille lodestone (if Watchtower spell isn't unlocked)"
+    ],
+    "EnemiesToDefeat": [
+      "3 Chaos dwarf (level 108)",
+      "7 Red Axe director (levels 84-90)",
+      "Ikadia the Exile (level 126)",
+      "Hreidmar (level 111)",
+      "Colonel Grimsson (level 107 and then level 111)"
+    ]
+  }
 }

@@ -2,21 +2,11 @@
   "questName": "The Path of Glouphrie",
   "questSteps": [
     {
-      "stepDescription": "Items needed: Crystal saw or small crystal seed. It is recommended to have around 10-14 free inventory spaces to make room for crystalline disks",
+      "stepDescription": "Speak to King Bolren in the Tree Gnome Village. (Chat ✓)",
       "itemsNeeded": [
-        "Crystal saw or small crystal seed. It is recommended to have around 10-14 free inventory spaces to make room for crystalline disks"
+        "Crystal saw or small crystal seed",
+        "10-14 free inventory spaces to make room for crystalline disks"
       ],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Speak to King Bolren in the Tree Gnome Village. (Chat \u2713)",
-      "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [],
@@ -45,18 +35,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If you no longer have a key from the Waterfall Quest, go to the east side of the cave and search the off-colour crates to get one.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you no longer have a key from the Waterfall Quest, go to the east side of the cave and search the off-colour crates to get one."
+      ]
     },
     {
       "stepDescription": "Go to the west side of the cave and talk to Golrie (Chat 2)",
@@ -81,7 +62,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Search the chest to obtain crystalline disks (if you've recently completed The Eyes of Glouphrie, you'll need to put down the discs).",
+      "stepDescription": "Search the chest to obtain crystalline disks.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -89,7 +70,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you've recently completed The Eyes of Glouphrie, you'll need to put down the discs"
+      ]
     },
     {
       "stepDescription": "Talk to Golrie again. (Chat 2)",
@@ -103,7 +86,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to the eastern part of the cave and crawl through the tunnel (followers must be dismissed).",
+      "stepDescription": "Dismiss your followers if you have any and go to the eastern part of the cave and crawl through the tunnel.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -199,18 +182,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If you have a crystal saw instead of the small crystal seed, right-click revert-crystal on the singing bowl.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you have a crystal saw instead of the small crystal seed, right-click revert-crystal on the singing bowl."
+      ]
     },
     {
       "stepDescription": "Push the north-west monolith west.",
@@ -243,18 +217,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "If you are stuck, exit using either of the Tunnels.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you are stuck, exit using either of the Tunnels."
+      ]
     },
     {
       "stepDescription": "Enter the tunnel again from the other side.",
@@ -287,21 +252,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Read the lectern (Chapter 1). Doing so unlocks a music track."
+      ]
     },
     {
-      "stepDescription": "Read the lectern (Chapter 1). Doing so unlocks a music track.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Referencing the table below, insert discs on the left side of the machine to equal the values on the right side. Use Yewnock's exchanger to obtain shapes of lesser values (if you are having trouble, see the full guide here).",
+      "stepDescription": "Referencing the table at this step, insert discs on the left side of the machine to equal the values on the right side. Use Yewnock's exchanger to obtain shapes of lesser values.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -359,9 +315,7 @@
       "stepDescription": "Use the Spirit Tree to travel to the Tree Gnome Stronghold.",
       "itemsNeeded": [],
       "itemsRecommended": [
-        "Prayer potions",
-        "super energy potions",
-        "ring of duelling and earmuffs/masked earmuffs/slayer helmet."
+        ""
       ],
       "highlights": {
         "npc": [],
@@ -371,42 +325,20 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: Crossbow, mithril grapple, crystal chime, armour and food to fight 3 level 82 bosses.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Items recommended: Prayer potions, super energy potions, ring of duelling and earmuffs/masked earmuffs/slayer helmet.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Location of the Poison Waste Dungeon",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
       "stepDescription": "Climb to the 2nd floor of the Grand Tree.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
+      "itemsNeeded": [
+        "Crossbow",
+        "Mithril Grapple",
+        "Crystal Chime",
+        "Armour",
+        "Food"
+      ],
+      "itemsRecommended": [
+        "Prayer potions",
+        "Super Energy Potions",
+        "ring of dueling",
+        "Earmuffs/Mask or Slayer Helmet"
+      ],
       "highlights": {
         "npc": [],
         "object": []
@@ -426,7 +358,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Teleport to the Yanille lodestone and head south-west, travelling west along the southern wall of Castle Wars until you reach a bridge crossing a river. Alternatively, you can use the fairy ring code BKP and head north-west.",
+      "stepDescription": "Teleport to the Yanille lodestone and head south-west, travelling west along the southern wall of Castle Wars until you reach a bridge crossing a river.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -434,7 +366,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Alternatively, you can use the fairy ring code BKP and head north-west."
+      ]
     },
     {
       "stepDescription": "Just north-east of the bridge, grapple the tree to cross the river.",
@@ -492,7 +426,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Travel through the dungeon until you reach a room with 4 doors, 2 warped tortoises, and a pit in the centre. (You may want to kill a warped tortoise/terrorbird for the achievement at this point as it is convenient to do so.)",
+      "stepDescription": "Travel through the dungeon until you reach a room with 4 doors, 2 warped tortoises, and a pit in the centre.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -500,7 +434,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "You may want to kill a warped tortoise/terrorbird for the achievement at this point as it is convenient to do so."
+      ]
     },
     {
       "stepDescription": "Running through the tar will turn your run off - simply turn it back on.",
@@ -536,7 +472,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "People with sensitivity to light, seizures, or other ailments concerning flashing lights should be cautious during the escape scene (about 3\u20134 minutes). Recommended to hold spacebar and look away. You must watch the cutscene. In the event you cancel it, simply re-enter the room.",
+      "stepDescription": " Speak to Hazelmere.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -544,18 +480,10 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Speak to Hazelmere.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "People with sensitivity to light, seizures, or other ailments concerning flashing lights should be cautious during the escape scene (about 3–4 minutes).",
+        "Recommended to hold spacebar and look away. You must watch the cutscene. In the event you cancel it, simply re-enter the room."
+      ]
     },
     {
       "stepDescription": "Quest complete!",
@@ -568,5 +496,39 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "The Path of Glouphrie",
+    "StartPoint": "Talk to King Bolren in the Tree Gnome Village.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Long",
+    "Requirements": [
+      "The Eyes of Glouphrie",
+      "The Grand Tree",
+      "Tree Gnome Village",
+      "Waterfall Quest",
+      "45 Agility",
+      "47 Ranged",
+      "56 Slayer",
+      "60 Strength",
+      "56 Thieving",
+      "59 Fletching [B] (to make a mithril grapple) or kill some dried zombies"
+    ],
+    "ItemsRequired": [
+      "Small crystal seed or crystal saw (tools made from crystal tool seeds will not work)",
+      "A crossbow and mithril grapple (tool belt works)",
+      "A key (from the Waterfall Quest; can be re-obtained during the quest)"
+    ],
+    "Recommended": [
+      "Good food and armour",
+      "Super energy potions, unlimited run from the Oo'glog salt-water pool, or an explorer's ring for run recharge",
+      "Prayer or super restore potions",
+      "A cooked tangled toad legs (optional for a mint cake reward; does not have to be cooked during the quest)",
+      "Earmuffs, masked earmuffs, or a slayer helmet to reduce the strength of the terrorbirds' ranged attacks"
+    ],
+    "EnemiesToDefeat": [
+      "3 Warped terrorbirds (level 82)",
+      "Evil creature (level 0)"
+    ]
+  }
 }

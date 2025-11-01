@@ -832,10 +832,10 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "New NPC",
+            "npcName": "Rommik",
             "npcLocation": {
-              "lat": 0,
-              "lng": 0
+              "lat": 3195,
+              "lng": 2944
             },
             "wanderRadius": {
               "bottomLeft": {
@@ -1744,23 +1744,6 @@
                 "lng": 0
               }
             }
-          },
-          {
-            "npcName": "Area",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 5662,
-                "lng": 4374
-              },
-              "topRight": {
-                "lat": 5668,
-                "lng": 4385
-              }
-            }
           }
         ],
         "object": []
@@ -1863,5 +1846,44 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "A Void Dance",
+    "StartPoint": "Speak to Commodore Tyr at the Void Knights' Outpost, accessible from the squire at Port Sarim docks.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Long",
+    "Requirements": [
+      "Quiet Before the Swarm",
+      "Imp Catcher",
+      "Wanted!",
+      "The Lost Tribe",
+      "Goblin Diplomacy",
+      "Priest in Peril",
+      "Recruitment Drive",
+      "Enter the Abyss (miniquest)",
+      "Rune Mysteries",
+      "33 quest points",
+      "47 Construction",
+      "49 Herblore",
+      "46 Hunter",
+      "47 Mining",
+      "48 Summoning",
+      "54 Thieving",
+      "52 Woodcutting"
+    ],
+    "ItemsRequired": [
+      "Commorb (obtained during the quest, Commorb v2 will not work, nor will the Commorb from Wanted!)",
+      "Onion (can be obtained during the quest)",
+      "65 coins (or fewer with Karamja gloves 3, Ring of charos (a), or Amulet of glory)",
+      "16 free inventory spaces are needed for a section of the quest"
+    ],
+    "Recommended": [
+      "Explorer's ring, clan vexillum, Falador teleport tablet, or access to the Falador lodestone.",
+      "Good combat weapon (preferably magic) and food (lobsters or higher) (food is optional if one is using ice magic and/or Soul Split against the boss)"
+    ],
+    "EnemiesToDefeat": [
+      "Black Knight guardian (level 77) (heals by draining your prayer)",
+      "Black Knight guardian (level 110) (heals by draining your prayer)"
+    ]
+  }
 }

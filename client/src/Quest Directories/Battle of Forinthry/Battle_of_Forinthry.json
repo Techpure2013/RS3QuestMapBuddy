@@ -679,7 +679,7 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "Princess (Fort Forinthry)",
+            "npcName": "Princess",
             "npcLocation": {
               "lat": 3567,
               "lng": 3314
@@ -1137,5 +1137,33 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Battle of Forinthry",
+    "StartPoint": "Talk to the Raptor in Fort Forinthry.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Medium",
+    "Requirements": [
+      "Ancient Awakening",
+      "Dead and Buried",
+      "Unwelcome Guests",
+      "Murder on the Border",
+      "New Foundations",
+      "Must have built Town Hall (Tier 1)",
+      "Must have built Command Centre (Tier 1)",
+      "Must have built Workshop (Tier 1)",
+      "Must have built Chapel (Tier 1)",
+      "Must have built the eastern border wall",
+      "Must have built Grove cabin (Tier 1)",
+      "Must have built Botanist's Workbench (Tier 1)",
+      "60 Necromancy"
+    ],
+    "ItemsRequired": [],
+    "Recommended": [],
+    "EnemiesToDefeat": [
+      "Three undead giants (level 300)",
+      "Zemouregal (Leveled to Player)",
+      "Vorkath (level 789)"
+    ]
+  }
 }

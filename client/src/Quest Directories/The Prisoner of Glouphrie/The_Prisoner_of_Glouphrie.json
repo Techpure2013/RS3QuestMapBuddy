@@ -2,7 +2,7 @@
   "questName": "The Prisoner of Glouphrie",
   "questSteps": [
     {
-      "stepDescription": "Speak to Golrie in the Gnome Village Dungeon. (Chat 2\u2022\u2713\u20224) (Note: If you run into a bug where you can't click the X to close the letter without it moving your character, right-click on the X and click \"Close\" or press \"Esc\" on your keyboard to close the note.)",
+      "stepDescription": "Speak to Golrie in the Gnome Village Dungeon. (Chat 2•✓•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -10,7 +10,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you run into a bug where you can't click the X to close the letter without it moving your character, right-click on the X and click \"Close\" or press \"Esc\" on your keyboard to close the note."
+      ]
     },
     {
       "stepDescription": "After asking what is next, you will be transported to the surface for a conversation with Golrana.",
@@ -24,7 +26,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Teleport to Castle Wars (or follow Elkoy out of the maze) and head to the highlighted area north of the Observatory and south of the Ourania altar (just north-east of the crystal tree).",
+      "stepDescription": "Teleport to Castle Wars or follow Elkoy out of the maze. Head to the highlighted area north of the Observatory and south of the Ourania altar (just north-east of the crystal tree).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -32,21 +34,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Make sure to pass the Observatory on its eastern side, alternatively use a 'Chipped' Watchtower teleport to teleport directly there."
+      ]
     },
     {
-      "stepDescription": "Make sure to pass the Observatory on its eastern side, alternatively use a 'Chipped' Watchtower teleport to teleport directly there.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Make sure to dismiss your pet/follower. Talk to Golrana. (Chat 1)",
+      "stepDescription": "Make sure to dismiss your pet/follower then talk to Golrana. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -164,10 +157,12 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Note down the number and colour value for all three."
+      ]
     },
     {
-      "stepDescription": "Note down the number and colour value for all three.",
+      "stepDescription": "Once you sing all 6 desired shapes, calibrate the device then insert the correct shapes into their corresponding slots. Click the green tick mark at the bottom to complete the puzzle.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -175,10 +170,17 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "Use The Color Calculator Provided at the bottom of the page",
+        "Clear any Skybox filters to see the plain colours for this next part",
+        "To change the colour, rotate the prism near the singing bowl until it reaches the desired colour.",
+        "To change the shape, right-click fill or empty the singing bowl. Every time you fill or empty the bowl, the crystal will respectively gain or lose a side.",
+        "To finalise the crystal into the shape, sing-glass on the singing bowl.",
+        "To obtain more minute crystal seeds, search the crate just next to the bowl."
+      ]
     },
     {
-      "stepDescription": "Use The Color Calculator Provided at the top-----\nClear any Skybox filters to see the plain colours for this next part.-----\nTo change the colour, rotate the prism near the singing bowl until it reaches the desired colour.-------\nTo change the sides it goes from empty which is 1 side to full which is 6 sides. Each right-click \"Fill\" adds 1 side",
+      "stepDescription": "Climb up the ladder and talk to Golrana underneath the steps just to the east of Lletya centre. (Chat 1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -186,51 +188,9 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "To finalise the crystal into the shape, sing-glass on the singing bowl.-----\nTo obtain more minute crystal seeds, search the crate just next to the bowl.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Once you sing all 6 desired shapes, calibrate the device then insert the correct shapes into their corresponding slots.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Click the green tick mark at the bottom to complete the puzzle.",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
-    },
-    {
-      "stepDescription": "Climb up the ladder and talk to Golrana underneath the steps just to the east of Lletya centre. (Chat 1) (If you teleport to Lletya instead of leaving via the ladder, she will not appear. You can return to the lab from a trapdoor in the sheep pen in the northwest Lletya.)",
-      "itemsNeeded": [],
-      "itemsRecommended": [],
-      "highlights": {
-        "npc": [],
-        "object": []
-      },
-      "floor": 0,
-      "additionalStepInformation": []
+      "additionalStepInformation": [
+        "If you teleport to Lletya instead of leaving via the ladder, she will not appear. You can return to the lab from a trapdoor in the sheep pen in the northwest Lletya."
+      ]
     },
     {
       "stepDescription": "Once back up on the ledge, walk past the large boulder to the east, and Golrana should spot an air vent.",
@@ -277,7 +237,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Enter the prison through the metal doors. Talk to the guard. (Chat ~\u2022~)",
+      "stepDescription": "Enter the prison through the metal doors. Talk to the guard. (Chat ~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -288,7 +248,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Pick-lock on the northwest cell door. Talk to Bolrie. (Chat 1\u20222\u20223\u20223\u20221)",
+      "stepDescription": "Pick-lock on the northwest cell door. Talk to Bolrie. (Chat 1•2•3•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -364,5 +324,36 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "The Prisoner of Glouphrie",
+    "StartPoint": "Talk to Golrie in his cave beneath the Tree Gnome Village.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Medium",
+    "Requirements": [
+      "The Path of Glouphrie",
+      "The Eyes of Glouphrie",
+      "The Grand Tree",
+      "Tree Gnome Village",
+      "Waterfall Quest",
+      "Roving Elves",
+      "Regicide",
+      "Underground Pass",
+      "Biohazard",
+      "Plague City",
+      "Waterfall Quest",
+      "64 Agility",
+      "62 Construction",
+      "61 Runecrafting",
+      "64 Thieving"
+    ],
+    "ItemsRequired": [],
+    "Recommended": [
+      "Runes for Ourania teleport (optional, if you have 71 Magic and are using Lunar spells, 1 law rune, 2 astral runes, 6 earth runes or Ardougne easy tasks for Kandarin monastery Teleport)",
+      "A ring of duelling or an activated Yanille lodestone for quick access to the observatory",
+      "Rope",
+      "Chipped Watchtower teleport"
+    ],
+    "EnemiesToDefeat": []
+  }
 }

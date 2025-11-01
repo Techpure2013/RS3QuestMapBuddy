@@ -370,8 +370,8 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
                     }
                     className="form-select"
                   >
-                    <option value="Free to play">Free to play</option>
-                    <option value="Members">Members</option>
+                    <option value="Free to Play">Free to Play</option>
+                    <option value="Members Only">Members Only</option>
                   </select>
                 </div>
 

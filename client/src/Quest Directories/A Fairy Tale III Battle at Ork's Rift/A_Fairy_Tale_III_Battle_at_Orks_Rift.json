@@ -464,26 +464,33 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [
+        "npc": [],
+        "object": [
           {
-            "npcName": "Wave",
-            "npcLocation": {
-              "lat": 4237,
-              "lng": 1583
-            },
-            "wanderRadius": {
+            "name": "Yellow Flower",
+            "objectLocation": [
+              {
+                "lat": 4237,
+                "lng": 1583,
+                "color": "#f5c151",
+                "numberLabel": "Yellow Flower",
+                "isSearched": false
+              }
+            ],
+            "objectRadius": {
               "bottomLeft": {
-                "lat": 4236,
-                "lng": 1582
+                "lat": 0,
+                "lng": 0
               },
               "topRight": {
-                "lat": 4238,
-                "lng": 1584
+                "lat": 0,
+                "lng": 0
               }
-            }
+            },
+            "color": "#f5c151",
+            "numberLabel": "Yellow Flower"
           }
-        ],
-        "object": []
+        ]
       },
       "floor": 0,
       "additionalStepInformation": []

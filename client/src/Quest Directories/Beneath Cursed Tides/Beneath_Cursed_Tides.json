@@ -419,25 +419,7 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 793,
-                "lng": 5212
-              },
-              "topRight": {
-                "lat": 795,
-                "lng": 5214
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
             "name": "Steam Vent ( Beneath Cursed Tides )",
@@ -1228,33 +1210,11 @@
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "Brother Brace",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 802,
-                "lng": 5234
-              },
-              "topRight": {
-                "lat": 804,
-                "lng": 5235
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
             "name": "Anvil's ( Beneath Cursed Tides )",
             "objectLocation": [
-              {
-                "lat": 0,
-                "lng": 0
-              },
               {
                 "lat": 722,
                 "lng": 5458,
@@ -1905,5 +1865,29 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Beneath Cursed Tides",
+    "StartPoint": "Speak to Wizard Myrtle at the fountains in front of the Wizards' Tower.",
+    "MemberRequirement": "Free to Play",
+    "OfficialLength": "Medium",
+    "Requirements": [
+      "30 Attack",
+      "30 Cooking",
+      "30 Firemaking",
+      "30 Magic",
+      "30 Mining",
+      "30 Smithing",
+      "30 Strength",
+      "30 Woodcutting"
+    ],
+    "ItemsRequired": [],
+    "Recommended": [
+      "Wicked hood for teleportation (members only)",
+      "Access to the fairy ring network (members only)",
+      "Slayer cape for teleporting to Vannaka (members only)",
+      "Wilderness sword 1 or better for teleporting to Edgeville, or activated Edgeville lodestone"
+    ],
+    "EnemiesToDefeat": []
+  }
 }

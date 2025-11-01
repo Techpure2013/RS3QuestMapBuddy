@@ -516,9 +516,26 @@
       "highlights": {
         "npc": [
           {
-            "npcName": "H.A.M. Mage and H.A.M. Archer",
+            "npcName": "H.A.M. Archer",
             "npcLocation": {
-              "lat": 3496,
+              "lat": 3495,
+              "lng": 2957
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 3495,
+                "lng": 2955
+              },
+              "topRight": {
+                "lat": 3497,
+                "lng": 2959
+              }
+            }
+          },
+          {
+            "npcName": "H.A.M. Mage",
+            "npcLocation": {
+              "lat": 3497,
               "lng": 2957
             },
             "wanderRadius": {
@@ -628,25 +645,7 @@
       "itemsRecommended": [],
       "additionalStepInformation": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
             "name": "Hatch",
@@ -781,5 +780,35 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Another Slice of HAM",
+    "StartPoint": "Talk to Ambassador Alvijar, who is in Ur-tag's house in Dorgesh-Kaan.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Medium",
+    "Requirements": [
+      "Death to the Dorgeshuun",
+      "The Lost Tribe",
+      "Goblin Diplomacy",
+      "The Giant Dwarf",
+      "15 Attack",
+      "25 Prayer"
+    ],
+    "ItemsRequired": [
+      "At least 3 free inventory spaces however 8 is preferable",
+      "Magic, Ranged, or Necromancy gear to fight a level 28 HAM ranger and a level 28 HAM mage (they cannot be killed with melee weapons - they are behind an obstacle). A crossbow and 50 bronze bolts will be provided in case you forget your ranged gear.",
+      "A light source (bug lantern doesn't work)",
+      "A rope (only if you have never entered the Lumbridge Swamp Caves from the surface before)"
+    ],
+    "Recommended": [
+      "Food for lower levelled players",
+      "Water altar teleport or enlightened amulet",
+      "Molten glass and law runes in bank to make spheres post-quest"
+    ],
+    "EnemiesToDefeat": [
+      "HAM Mage (level 28)",
+      "HAM Archer (level 28)",
+      "Sigmund (level 70)"
+    ]
+  }
 }

@@ -7,25 +7,7 @@
       "itemsRecommended": [],
       "additionalStepInformation": [],
       "highlights": {
-        "npc": [
-          {
-            "npcName": "",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 0,
-                "lng": 0
-              },
-              "topRight": {
-                "lat": 0,
-                "lng": 0
-              }
-            }
-          }
-        ],
+        "npc": [],
         "object": [
           {
             "name": "",
@@ -261,5 +243,21 @@
       },
       "floor": 0
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Duck Quest",
+    "StartPoint": "Investigate a strange fishing spot on the riverbank south of Draynor Village.",
+    "MemberRequirement": "Free to Play",
+    "OfficialLength": "Short",
+    "Requirements": [],
+    "ItemsRequired": [
+      "1 Duck Food",
+      "1 Vial of Water"
+    ],
+    "Recommended": [
+      "Activated Draynor Lodestone",
+      "Activated Varrock Lodestone"
+    ],
+    "EnemiesToDefeat": []
+  }
 }

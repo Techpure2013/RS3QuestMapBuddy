@@ -765,23 +765,6 @@
                 "lng": 1493
               }
             }
-          },
-          {
-            "npcName": "Pyramid Location",
-            "npcLocation": {
-              "lat": 0,
-              "lng": 0
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 3011,
-                "lng": 3486
-              },
-              "topRight": {
-                "lat": 3040,
-                "lng": 3505
-              }
-            }
           }
         ],
         "object": []
@@ -1583,5 +1566,26 @@
       "floor": 0,
       "additionalStepInformation": []
     }
-  ]
+  ],
+  "questDetails": {
+    "Quest": "Beneath Scabaras' Sands",
+    "StartPoint": "Enter the Menaphos throne room.",
+    "MemberRequirement": "Members Only",
+    "OfficialLength": "Medium to Long",
+    "Requirements": [
+      "'Phite Club",
+      "Ode of the Devourer",
+      "87 Slayer"
+    ],
+    "ItemsRequired": [
+      "Restored Zarosian Artefact"
+    ],
+    "Recommended": [
+      "Desert Amulet 4"
+    ],
+    "EnemiesToDefeat": [
+      "Multiple Profane Scabarites (Level 125)",
+      "Grief (Level 146)"
+    ]
+  }
 }
