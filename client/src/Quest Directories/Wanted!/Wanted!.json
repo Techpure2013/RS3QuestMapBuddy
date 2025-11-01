@@ -16,7 +16,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Sir Tiffy in Falador park. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Sir Tiffy in Falador park. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -38,7 +38,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Sir Amik Varze, 3rd floor[US] of White Knights' Castle in the west wing. Decline his offer. (Chat 2\u20223)",
+      "stepDescription": "Talk to Sir Amik Varze, 3rd floor[US] of White Knights' Castle in the west wing. Decline his offer. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -60,7 +60,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Amik Varze again. (Chat 2\u20223)",
+      "stepDescription": "Talk to Amik Varze again. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -71,7 +71,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Sir Tiffy for a commorb. (Chat 1\u2022~)",
+      "stepDescription": "Return to Sir Tiffy for a commorb. (Chat 1•~)",
       "itemsNeeded": [
         "20 unnoted rune essence or pure essence"
       ],

@@ -2,12 +2,13 @@
   "questName": "Alpha vs Omega",
   "questSteps": [
     {
-      "stepDescription": "Talk to Rasial, the First Necromancer on the bridge in the City of Um. (Chat \u2713)",
+      "stepDescription": "Talk to Rasial, the First Necromancer on the bridge in the City of Um. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
+            "id": 30165,
             "npcName": "Rasial, the First Necromancer",
             "npcLocation": {
               "lat": 1776,
@@ -37,6 +38,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 30170,
             "npcName": "Kharen",
             "npcLocation": {
               "lat": 1783,
@@ -70,6 +72,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 30170,
             "npcName": "Kharen",
             "npcLocation": {
               "lat": 1783,
@@ -103,6 +106,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 30263,
             "npcName": "Rasial",
             "npcLocation": {
               "lat": 1763,
@@ -136,6 +140,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 30163,
             "npcName": "Hermod, the Spirit of War",
             "npcLocation": {
               "lat": 1762,
@@ -169,6 +174,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 30263,
             "npcName": "Rasial",
             "npcLocation": {
               "lat": 1763,
@@ -198,6 +204,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 30263,
             "npcName": "Rasial",
             "npcLocation": {
               "lat": 1763,
@@ -227,6 +234,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14385,
             "npcName": "Death",
             "npcLocation": {
               "lat": 1778,

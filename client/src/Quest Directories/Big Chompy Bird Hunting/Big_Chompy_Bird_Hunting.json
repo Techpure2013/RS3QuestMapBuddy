@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1010,
             "npcName": "Rantz",
             "npcLocation": {
               "lat": 2981,
@@ -158,6 +159,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1010,
             "npcName": "Rantz",
             "npcLocation": {
               "lat": 2981,
@@ -305,6 +307,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1010,
             "npcName": "Rantz",
             "npcLocation": {
               "lat": 2981,
@@ -336,6 +339,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1010,
             "npcName": "Rantz",
             "npcLocation": {
               "lat": 2981,
@@ -382,6 +386,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1010,
             "npcName": "Rantz",
             "npcLocation": {
               "lat": 2981,
@@ -418,6 +423,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1012,
             "npcName": "Bugs",
             "npcLocation": {
               "lat": 9391,
@@ -435,6 +441,7 @@
             }
           },
           {
+            "id": 1011,
             "npcName": "Fycie",
             "npcLocation": {
               "lat": 9393,
@@ -509,6 +516,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1010,
             "npcName": "Rantz",
             "npcLocation": {
               "lat": 2981,

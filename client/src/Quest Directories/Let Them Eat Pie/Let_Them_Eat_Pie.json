@@ -2,7 +2,7 @@
   "questName": "Let Them Eat Pie",
   "questSteps": [
     {
-      "stepDescription": "Talk to Nails Newton a few steps east of the Taverley lodestone. (Chat \u2713)",
+      "stepDescription": "Talk to Nails Newton a few steps east of the Taverley lodestone. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -200,7 +200,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to the 2nd floor[US] of the Pub and talk to Rolo the Stout. (Chat ~\u20222)",
+      "stepDescription": "Go to the 2nd floor[US] of the Pub and talk to Rolo the Stout. (Chat ~•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

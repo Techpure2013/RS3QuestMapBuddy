@@ -15,6 +15,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 384,
             "npcName": "Barbarian Guard",
             "npcLocation": {
               "lat": 3571,
@@ -46,6 +47,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 848,
             "npcName": "Blurberry",
             "npcLocation": {
               "lat": 3490,
@@ -77,6 +79,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11676,
             "npcName": "Bartender (Forester's Arms)",
             "npcLocation": {
               "lat": 3493,
@@ -106,6 +109,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11676,
             "npcName": "Bartender (Flying Horse Inn)",
             "npcLocation": {
               "lat": 3319,
@@ -135,6 +139,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11676,
             "npcName": "Bartender (Dragon Inn)",
             "npcLocation": {
               "lat": 3077,
@@ -164,6 +169,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11676,
             "npcName": "Bartender (Dead Man's Chest)",
             "npcLocation": {
               "lat": 3155,
@@ -194,6 +200,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22710,
             "npcName": "Zembo",
             "npcLocation": {
               "lat": 3143,
@@ -242,6 +249,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 29774,
             "npcName": "Emily ( Rising Sun Inn )",
             "npcLocation": {
               "lat": 3373,
@@ -272,6 +280,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11676,
             "npcName": "Bartender (Rusty Anchor)",
             "npcLocation": {
               "lat": 3256,
@@ -320,6 +329,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11676,
             "npcName": "Bartender (Jolly Boar Inn)",
             "npcLocation": {
               "lat": 3488,
@@ -349,6 +359,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 29774,
             "npcName": "Emily",
             "npcLocation": {
               "lat": 3370,
@@ -378,6 +389,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 384,
             "npcName": "Barbarian Guard",
             "npcLocation": {
               "lat": 3571,

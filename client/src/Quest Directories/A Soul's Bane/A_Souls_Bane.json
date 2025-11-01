@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 3639,
             "npcName": "Launa",
             "npcLocation": {
               "lat": 3453,
@@ -310,6 +311,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 3643,
             "npcName": "Tolna",
             "npcLocation": {
               "lat": 3453,

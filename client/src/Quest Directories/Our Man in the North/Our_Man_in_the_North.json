@@ -2,7 +2,7 @@
   "questName": "Our Man in the North",
   "questSteps": [
     {
-      "stepDescription": "Talk to Grand Vizier Hassan in the Merchant district, south of the bank deposit box. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Grand Vizier Hassan in the Merchant district, south of the bank deposit box. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -61,7 +61,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head north to talk to Commander Akhomet. (Chat 1\u20222)",
+      "stepDescription": "Head north to talk to Commander Akhomet. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -149,7 +149,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to Uzer Mastaba. After the cutscene, walk inside and speak to Senliten (fairy code DLQ). (Chat 4\u20224\u20222)",
+      "stepDescription": "Go to Uzer Mastaba. After the cutscene, walk inside and speak to Senliten (fairy code DLQ). (Chat 4•4•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

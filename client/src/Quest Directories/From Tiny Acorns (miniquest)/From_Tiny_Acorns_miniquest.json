@@ -2,7 +2,7 @@
   "questName": "From Tiny Acorns (miniquest)",
   "questSteps": [
     {
-      "stepDescription": "Talk to Darren Lightfinger in the Thieves' Guild. (Chat \u2713)",
+      "stepDescription": "Talk to Darren Lightfinger in the Thieves' Guild. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -24,7 +24,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the market guard in Varrock Square. (Chat 2\u20221)",
+      "stepDescription": "Talk to the market guard in Varrock Square. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

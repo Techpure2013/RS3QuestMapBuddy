@@ -2,7 +2,7 @@
   "questName": "Once Upon a Slime",
   "questSteps": [
     {
-      "stepDescription": "Talk to Peter, next to the well in Rimmington. (Chat 1\u20221\u2022\u2713)",
+      "stepDescription": "Talk to Peter, next to the well in Rimmington. (Chat 1•1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -68,7 +68,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Shrink Something on the Shrinking Machine. (Chat 1\u20223\u20221\u20222\u20222\u20221) (it will automatically put in the hat to shrink it)",
+      "stepDescription": "Shrink Something on the Shrinking Machine. (Chat 1•3•1•2•2•1) (it will automatically put in the hat to shrink it)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

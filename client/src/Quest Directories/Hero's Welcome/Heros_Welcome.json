@@ -2,7 +2,7 @@
   "questName": "Hero's Welcome",
   "questSteps": [
     {
-      "stepDescription": "Talk to Freya Lune or Alfrick the Planner near Rellekka docks. (Chat ~\u2022~\u2022\u2713)",
+      "stepDescription": "Talk to Freya Lune or Alfrick the Planner near Rellekka docks. (Chat ~•~•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [
         " An enchanted lyre",
@@ -148,7 +148,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Enter cave entrance and talk to V. (Chat ~\u20221\u20224)",
+      "stepDescription": "Enter cave entrance and talk to V. (Chat ~•1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

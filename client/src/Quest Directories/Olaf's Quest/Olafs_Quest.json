@@ -2,7 +2,7 @@
   "questName": "Olaf's Quest",
   "questSteps": [
     {
-      "stepDescription": "Talk to Olaf Hradson north-east of Rellekka. (Chat \u2713)",
+      "stepDescription": "Talk to Olaf Hradson north-east of Rellekka. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

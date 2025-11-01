@@ -2,9 +2,9 @@
   "questName": "Sea Slug",
   "questSteps": [
     {
-      "stepDescription": "Items needed: Swamp paste\nTalk to Caroline in Witchaven east of East Ardougne. (Chat \u2713)",
+      "stepDescription": "Items needed: Swamp paste\nTalk to Caroline in Witchaven east of East Ardougne. (Chat ✓)",
       "itemsNeeded": [
-        "Swamp paste\nTalk to Caroline in Witchaven east of East Ardougne. (Chat \u2713)"
+        "Swamp paste\nTalk to Caroline in Witchaven east of East Ardougne. (Chat ✓)"
       ],
       "itemsRecommended": [],
       "highlights": {

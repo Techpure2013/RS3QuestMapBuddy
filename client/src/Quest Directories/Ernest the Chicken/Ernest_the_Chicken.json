@@ -2,7 +2,7 @@
   "questName": "Ernest the Chicken",
   "questSteps": [
     {
-      "stepDescription": "Talk to Veronica located just outside the gate to Draynor Manor. (Chat \u2713)",
+      "stepDescription": "Talk to Veronica located just outside the gate to Draynor Manor. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -24,7 +24,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Professor Oddenstein. (Chat 1\u20222)",
+      "stepDescription": "Talk to Professor Oddenstein. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

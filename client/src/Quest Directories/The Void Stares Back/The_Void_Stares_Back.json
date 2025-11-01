@@ -2,7 +2,7 @@
   "questName": "The Void Stares Back",
   "questSteps": [
     {
-      "stepDescription": "Items needed: 3 free inventory spaces then\ntalk to Korasi in Falador Park. (Chat \u2713)",
+      "stepDescription": "Items needed: 3 free inventory spaces then\ntalk to Korasi in Falador Park. (Chat ✓)",
       "itemsNeeded": [
         "5 free inventory spaces",
         "limestone brick",
@@ -121,7 +121,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Give him the blocks in the indicated order. (Chat 3\u20221\u20225\u20222\u20224).",
+      "stepDescription": "Give him the blocks in the indicated order. (Chat 3•1•5•2•4).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -330,7 +330,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Reveal yourself and explain the danger to Lord Daquarius. Accept the allegiance. (Chat 1\u20223\u20221)",
+      "stepDescription": "Reveal yourself and explain the danger to Lord Daquarius. Accept the allegiance. (Chat 1•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

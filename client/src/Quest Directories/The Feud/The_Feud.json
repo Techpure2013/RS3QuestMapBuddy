@@ -2,7 +2,7 @@
   "questName": "The Feud",
   "questSteps": [
     {
-      "stepDescription": "Talk to Ali Morrisane in Al Kharid. (Chat 1\u20222\u2022\u2713\u20222)",
+      "stepDescription": "Talk to Ali Morrisane in Al Kharid. (Chat 1•2•✓•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -101,7 +101,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Ask Sami the Camel Man for two camels. Offer nothing, then offer 500 coins. (Chat 4\u20222\u20221\u20222\u20222)",
+      "stepDescription": "Ask Sami the Camel Man for two camels. Offer nothing, then offer 500 coins. (Chat 4•2•1•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -123,7 +123,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go south-west to a big purple tent and ask Rashid the Operator to join his gang. (Chat 1\u20222)",
+      "stepDescription": "Go south-west to a big purple tent and ask Rashid the Operator to join his gang. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -134,7 +134,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Pickpocket a villager and then return to Rashid the Operator for advice. (Chat 1\u20222)",
+      "stepDescription": "Pickpocket a villager and then return to Rashid the Operator for advice. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -299,7 +299,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Faisal the Barman. (Chat 3\u20221)",
+      "stepDescription": "Talk to Faisal the Barman. (Chat 3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -343,7 +343,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Buy red hot sauce from Isma'il the Kebab seller. (Chat 3\u20222)",
+      "stepDescription": "Buy red hot sauce from Isma'il the Kebab seller. (Chat 3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

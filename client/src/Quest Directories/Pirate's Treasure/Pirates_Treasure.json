@@ -2,7 +2,7 @@
   "questName": "Pirate's Treasure",
   "questSteps": [
     {
-      "stepDescription": "Talk to Redbeard Frank just outside Port Sarim's pub. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Redbeard Frank just outside Port Sarim's pub. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -112,7 +112,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the Customs officer to return to Port Sarim. (Chat 1\u20222\u20221)",
+      "stepDescription": "Talk to the Customs officer to return to Port Sarim. (Chat 1•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

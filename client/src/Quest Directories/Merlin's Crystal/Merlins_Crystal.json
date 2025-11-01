@@ -2,7 +2,7 @@
   "questName": "Merlin's Crystal",
   "questSteps": [
     {
-      "stepDescription": "Talk to King Arthur at Camelot. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to King Arthur at Camelot. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -13,7 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Sir Gawain nearby. (Chat 3\u20222)",
+      "stepDescription": "Talk to Sir Gawain nearby. (Chat 3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -35,7 +35,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Teleport to Catherby lodestone and hide in the crate just west of the candle-maker. (Chat 1\u20221)",
+      "stepDescription": "Teleport to Catherby lodestone and hide in the crate just west of the candle-maker. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -68,7 +68,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Morgan Le Faye. Spare Mordred's life to discover how to save Merlin. (Chat 1\u20222)",
+      "stepDescription": "Talk to Morgan Le Faye. Spare Mordred's life to discover how to save Merlin. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

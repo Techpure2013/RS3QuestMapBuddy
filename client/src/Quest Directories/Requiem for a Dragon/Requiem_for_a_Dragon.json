@@ -2,7 +2,7 @@
   "questName": "Requiem for a Dragon",
   "questSteps": [
     {
-      "stepDescription": "Talk to Aster in the Fort Forinthry Town Hall. (Chat 1\u20221\u2022\u2713)",
+      "stepDescription": "Talk to Aster in the Fort Forinthry Town Hall. (Chat 1•1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -57,7 +57,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head north-west and approach Vorkath. (Chat 2\u20222\u20222\u20222\u20221\u20222)",
+      "stepDescription": "Head north-west and approach Vorkath. (Chat 2•2•2•2•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -167,7 +167,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Listen to the Archivist about all findings. (Chat 1\u20222\u20223\u20224)",
+      "stepDescription": "Listen to the Archivist about all findings. (Chat 1•2•3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -189,7 +189,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Zemouregal. --- IF YOUR NECROMANCY LEVEL IS 120, YOU CAN SKIP MOST OF THE CONVERSATION (Chat 1\u20223\u20224) --- Otherwise, you must follow further dialogue options (Chat 3\u20221\u20221\u20223\u20224)",
+      "stepDescription": "Talk to Zemouregal. --- IF YOUR NECROMANCY LEVEL IS 120, YOU CAN SKIP MOST OF THE CONVERSATION (Chat 1•3•4) --- Otherwise, you must follow further dialogue options (Chat 3•1•1•3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -200,7 +200,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head to the City of Um and talk to Death. (Chat 1\u20223)",
+      "stepDescription": "Head to the City of Um and talk to Death. (Chat 1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -211,7 +211,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the Tree of Balance, south of the Archaeology Guild. (Chat 1\u20223)\nNeeded: Backpack space to excavate two artefacts----Recommended: Archaeology equipment",
+      "stepDescription": "Talk to the Tree of Balance, south of the Archaeology Guild. (Chat 1•3)\nNeeded: Backpack space to excavate two artefacts----Recommended: Archaeology equipment",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -266,7 +266,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head to any archaeologist's workbench to restore the damaged soul beacon. Return to the Tree of Balance with the restored soul beacon. (Chat 1\u20221\u20224\u20221\u20222\u20224)",
+      "stepDescription": "Head to any archaeologist's workbench to restore the damaged soul beacon. Return to the Tree of Balance with the restored soul beacon. (Chat 1•1•4•1•2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

@@ -2,7 +2,7 @@
   "questName": "Desperate Measures",
   "questSteps": [
     {
-      "stepDescription": "Speak to Seren on the 2nd floor[US] of Burthorpe Castle (north of the lodestone). (Chat ~\u2022\u2713\u2022~)",
+      "stepDescription": "Speak to Seren on the 2nd floor[US] of Burthorpe Castle (north of the lodestone). (Chat ~•✓•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -13,7 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head to Anachronia to speak with Mr Mordaut in the base camp. (Chat 1\u20221)",
+      "stepDescription": "Head to Anachronia to speak with Mr Mordaut in the base camp. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -79,7 +79,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Laniakea and then follow her across the bridge. After Kerapac leaves, finish the conversation with Charos. (Chat 2\u20223)",
+      "stepDescription": "Talk to Laniakea and then follow her across the bridge. After Kerapac leaves, finish the conversation with Charos. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -134,7 +134,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Charos about the artefacts. (Chat 1\u20222)",
+      "stepDescription": "Talk to Charos about the artefacts. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -442,7 +442,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Speak to Jas about Kerapac. (Chat 1\u20222\u20221\u20221)",
+      "stepDescription": "Speak to Jas about Kerapac. (Chat 1•2•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -453,7 +453,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Speak to Jas about the Needle. (Chat 5\u20222\u20222)",
+      "stepDescription": "Speak to Jas about the Needle. (Chat 5•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -464,7 +464,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Ask for Jas' help (Chat 4\u20221) then exit the dialogue. The Eye of Jas should be in your inventory.",
+      "stepDescription": "Ask for Jas' help (Chat 4•1) then exit the dialogue. The Eye of Jas should be in your inventory.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -566,7 +566,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "After the fight is complete, speak with Charos next to the lodestone. Go north past the Anachronia Agility Course and speak with Charos once more. (Chat ~) The Measure should be in your inventory after speaking to him\u2014if not, it may be in your bank; you will need to speak with Charos again before proceeding.",
+      "stepDescription": "After the fight is complete, speak with Charos next to the lodestone. Go north past the Anachronia Agility Course and speak with Charos once more. (Chat ~) The Measure should be in your inventory after speaking to him—if not, it may be in your bank; you will need to speak with Charos again before proceeding.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

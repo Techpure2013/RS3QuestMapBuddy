@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 17896,
             "npcName": "Boric",
             "npcLocation": {
               "lat": 5987,
@@ -52,6 +53,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 118,
             "npcName": "Dwarf",
             "npcLocation": {
               "lat": 3340,
@@ -119,6 +121,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 17896,
             "npcName": "Boric",
             "npcLocation": {
               "lat": 5987,

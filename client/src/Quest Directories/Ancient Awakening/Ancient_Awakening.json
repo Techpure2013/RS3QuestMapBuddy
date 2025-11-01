@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 29811,
             "npcName": "Overseer Siv",
             "npcLocation": {
               "lat": 3540,
@@ -158,6 +159,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 19480,
             "npcName": "Bill ( Ancient Awakening )",
             "npcLocation": {
               "lat": 3488,
@@ -187,6 +189,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 20846,
             "npcName": "Ellamaria",
             "npcLocation": {
               "lat": 3503,
@@ -247,6 +250,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 29808,
             "npcName": "Aster",
             "npcLocation": {
               "lat": 3356,
@@ -486,6 +490,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 29808,
             "npcName": "Aster ( Ungael )",
             "npcLocation": {
               "lat": 4066,
@@ -694,6 +699,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 25556,
             "npcName": "Archivist",
             "npcLocation": {
               "lat": 4036,

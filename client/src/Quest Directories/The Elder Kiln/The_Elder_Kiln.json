@@ -2,7 +2,7 @@
   "questName": "The Elder Kiln",
   "questSteps": [
     {
-      "stepDescription": "Talk to TzHaar-Mej-Jeh at the Birthing Pool in TzHaar City. (Chat \u2713)",
+      "stepDescription": "Talk to TzHaar-Mej-Jeh at the Birthing Pool in TzHaar City. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -35,7 +35,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to TzHaar-Mej-Jeh. (Chat 2\u20221\u20221)",
+      "stepDescription": "Talk to TzHaar-Mej-Jeh. (Chat 2•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -46,7 +46,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go west to the main plaza and talk to TzHaar-Mej-Ak. (Chat 1\u20221)",
+      "stepDescription": "Go west to the main plaza and talk to TzHaar-Mej-Ak. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -92,7 +92,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to one of the TzHaar-Mejs. (Chat 1\u20222\u20222\u20223)",
+      "stepDescription": "Talk to one of the TzHaar-Mejs. (Chat 1•2•2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -314,7 +314,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Complete all seven waves of the Kiln.\nTalk to TokHaar-Hok. (Chat 2\u20225\u20221)",
+      "stepDescription": "Complete all seven waves of the Kiln.\nTalk to TokHaar-Hok. (Chat 2•5•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -336,7 +336,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to the centre of the Main Plaza and talk to one of TzHaar-Mejs. (Chat 1\u20221\u20221)",
+      "stepDescription": "Return to the centre of the Main Plaza and talk to one of TzHaar-Mejs. (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

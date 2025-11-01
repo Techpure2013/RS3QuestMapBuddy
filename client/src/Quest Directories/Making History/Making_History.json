@@ -46,7 +46,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "After the cutscene, agree to help. (Chat \u2713)",
+      "stepDescription": "After the cutscene, agree to help. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -239,7 +239,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Dron, located west of the helmet shop. (Chat 3\u20222)",
+      "stepDescription": "Talk to Dron, located west of the helmet shop. (Chat 3•2)",
       "itemsNeeded": [
         "Journal",
         "scroll"
@@ -253,7 +253,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Answer his quiz. (Chat 2\u20221\u20222\u20221\u20222\u20222\u20221\u20223\u20223\u20221\u20221\u20221)",
+      "stepDescription": "Answer his quiz. (Chat 2•1•2•1•2•2•1•3•3•1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

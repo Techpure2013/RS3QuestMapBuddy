@@ -2,10 +2,10 @@
   "questName": "Rat Catchers",
   "questSteps": [
     {
-      "stepDescription": "Items needed: a cat, 1 free inventory space go\ntalk to Gertrude in west edge of Varrock. (Chat 3\u2022\u2713) or\nif you have a Hellcat out (Chat 4\u2022\u2713)",
+      "stepDescription": "Items needed: a cat, 1 free inventory space go\ntalk to Gertrude in west edge of Varrock. (Chat 3•✓) or\nif you have a Hellcat out (Chat 4•✓)",
       "itemsNeeded": [
         "a cat",
-        "1 free inventory space go\ntalk to Gertrude in west edge of Varrock. (Chat 3\u2022\u2713) or\nif you have a Hellcat out (Chat 4\u2022\u2713)"
+        "1 free inventory space go\ntalk to Gertrude in west edge of Varrock. (Chat 3•✓) or\nif you have a Hellcat out (Chat 4•✓)"
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -353,7 +353,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the Apothecary in western Varrock for cat antipoison. (Chat 2\u20225)",
+      "stepDescription": "Talk to the Apothecary in western Varrock for cat antipoison. (Chat 2•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -561,7 +561,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Use a coin with Badir the Snake Charmer's money pot. (Chat 2\u20223\u20222\u20222\u20221) (unless wearing a Ring of charos).",
+      "stepDescription": "Use a coin with Badir the Snake Charmer's money pot. (Chat 2•3•2•2•1) (unless wearing a Ring of charos).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

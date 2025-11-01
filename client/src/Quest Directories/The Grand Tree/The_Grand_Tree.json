@@ -2,7 +2,7 @@
   "questName": "The Grand Tree",
   "questSteps": [
     {
-      "stepDescription": "Speak to the King on the 1st floor[US] of the Grand Tree. (Chat 1\u2022\u2713)",
+      "stepDescription": "Speak to the King on the 1st floor[US] of the Grand Tree. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -68,7 +68,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the King. (Chat 1\u20225\u20225\u20222\u20221\u20224)",
+      "stepDescription": "Talk to the King. (Chat 1•5•5•2•1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -211,7 +211,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Tell him you work for Glough, Ka-Lu-Min is the password. (Chat 2\u20221\u20222\u20222)",
+      "stepDescription": "Tell him you work for Glough, Ka-Lu-Min is the password. (Chat 2•1•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -233,7 +233,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Either kill the foreman, or talk to him and answer his questions. (Chat 3\u20222\u20221)",
+      "stepDescription": "Either kill the foreman, or talk to him and answer his questions. (Chat 3•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

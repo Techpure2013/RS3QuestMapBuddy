@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11495,
             "npcName": "Tyr",
             "npcLocation": {
               "lat": 2666,
@@ -37,6 +38,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11506,
             "npcName": "Korasi",
             "npcLocation": {
               "lat": 2666,
@@ -66,6 +68,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11506,
             "npcName": "Korasi",
             "npcLocation": {
               "lat": 3206,
@@ -95,6 +98,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11700,
             "npcName": "Captain Tobias",
             "npcLocation": {
               "lat": 3217,
@@ -124,6 +128,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11699,
             "npcName": "Gerrant",
             "npcLocation": {
               "lat": 3228,
@@ -319,6 +324,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11506,
             "npcName": "Korasi (Port Sarim)",
             "npcLocation": {
               "lat": 3206,
@@ -348,6 +354,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11676,
             "npcName": "Bartender",
             "npcLocation": {
               "lat": 3257,
@@ -449,6 +456,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11676,
             "npcName": "Bartender (Rusty Anchor)",
             "npcLocation": {
               "lat": 3257,
@@ -478,6 +486,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11506,
             "npcName": "Korasi",
             "npcLocation": {
               "lat": 3206,
@@ -509,6 +518,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22710,
             "npcName": "Zembo",
             "npcLocation": {
               "lat": 3143,
@@ -538,6 +548,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11674,
             "npcName": "Shopkeeper_Kofi",
             "npcLocation": {
               "lat": 3148,
@@ -641,6 +652,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11674,
             "npcName": "Shopkeeper_Kofi",
             "npcLocation": {
               "lat": 3149,
@@ -832,6 +844,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 585,
             "npcName": "Rommik",
             "npcLocation": {
               "lat": 3195,
@@ -897,6 +910,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11506,
             "npcName": "Korasi",
             "npcLocation": {
               "lat": 3209,
@@ -926,6 +940,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 367,
             "npcName": "Chemist",
             "npcLocation": {
               "lat": 3211,
@@ -977,6 +992,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14328,
             "npcName": "Sir Tiffy Cashien",
             "npcLocation": {
               "lat": 3373,
@@ -1008,6 +1024,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11642,
             "npcName": "Ali Tist",
             "npcLocation": {
               "lat": 3349,
@@ -1037,6 +1054,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14328,
             "npcName": "Sir Tiffy Cashien",
             "npcLocation": {
               "lat": 3373,
@@ -1079,6 +1097,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11642,
             "npcName": "Ali Tist",
             "npcLocation": {
               "lat": 3349,
@@ -1110,6 +1129,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13277,
             "npcName": "Sir Amik Varze",
             "npcLocation": {
               "lat": 3336,
@@ -1139,6 +1159,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11642,
             "npcName": "Ali Tist",
             "npcLocation": {
               "lat": 3349,
@@ -1168,6 +1189,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14328,
             "npcName": "Sir Tiffy Cashien",
             "npcLocation": {
               "lat": 3373,
@@ -1373,6 +1395,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11506,
             "npcName": "Korasi",
             "npcLocation": {
               "lat": 3517,
@@ -1402,6 +1425,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11506,
             "npcName": "Korasi",
             "npcLocation": {
               "lat": 5644,
@@ -1499,6 +1523,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11494,
             "npcName": "Jessika",
             "npcLocation": {
               "lat": 5644,
@@ -1564,6 +1589,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11506,
             "npcName": "Korasi",
             "npcLocation": {
               "lat": 5644,
@@ -1649,6 +1675,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11506,
             "npcName": "Korasi",
             "npcLocation": {
               "lat": 5656,
@@ -1678,6 +1705,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11688,
             "npcName": "indentured worker",
             "npcLocation": {
               "lat": 5664,
@@ -1695,6 +1723,7 @@
             }
           },
           {
+            "id": 11688,
             "npcName": "indentured worker",
             "npcLocation": {
               "lat": 5666,
@@ -1712,6 +1741,7 @@
             }
           },
           {
+            "id": 11688,
             "npcName": "indentured worker",
             "npcLocation": {
               "lat": 5666,
@@ -1729,6 +1759,7 @@
             }
           },
           {
+            "id": 11688,
             "npcName": "indentured worker",
             "npcLocation": {
               "lat": 5664,
@@ -1773,6 +1804,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11698,
             "npcName": "Void leech",
             "npcLocation": {
               "lat": 5679,
@@ -1813,6 +1845,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11495,
             "npcName": "Tyr",
             "npcLocation": {
               "lat": 2667,

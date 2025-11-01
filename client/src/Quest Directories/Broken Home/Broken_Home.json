@@ -1497,6 +1497,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1081,
             "npcName": "Faceless Servant",
             "npcLocation": {
               "lat": 6258,
@@ -4373,6 +4374,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 20214,
             "npcName": "Lenian",
             "npcLocation": {
               "lat": 6243,
@@ -5377,6 +5379,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 20214,
             "npcName": "Lenian",
             "npcLocation": {
               "lat": 6243,
@@ -7528,6 +7531,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 20221,
             "npcName": "Senecianus",
             "npcLocation": {
               "lat": 6228,
@@ -7619,6 +7623,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 20214,
             "npcName": "Lenian",
             "npcLocation": {
               "lat": 6255,
@@ -7684,6 +7689,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 20205,
             "npcName": "Maria",
             "npcLocation": {
               "lat": 3481,

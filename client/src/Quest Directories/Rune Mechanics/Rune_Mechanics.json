@@ -2,7 +2,7 @@
   "questName": "Rune Mechanics",
   "questSteps": [
     {
-      "stepDescription": "Talk to Apprentice Clerval in the basement of the Mage Training Arena. (Chat \u2713)",
+      "stepDescription": "Talk to Apprentice Clerval in the basement of the Mage Training Arena. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -154,7 +154,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Wizard Shug on the top floor of the arena. (Chat 2\u20222)",
+      "stepDescription": "Talk to Wizard Shug on the top floor of the arena. (Chat 2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

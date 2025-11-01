@@ -2,7 +2,7 @@
   "questName": "Cook's Assistant",
   "questSteps": [
     {
-      "stepDescription": "To start, talk to the cook in Lumbridge Castle. (Chat 1\u20221\u20221\u2022\u2713)",
+      "stepDescription": "To start, talk to the cook in Lumbridge Castle. (Chat 1•1•1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -90,7 +90,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Millie Miller about making extra fine flour. (Chat 1\u20222)",
+      "stepDescription": "Talk to Millie Miller about making extra fine flour. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

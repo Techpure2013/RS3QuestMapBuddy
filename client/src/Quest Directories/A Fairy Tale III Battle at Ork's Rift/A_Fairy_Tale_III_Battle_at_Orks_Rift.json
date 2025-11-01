@@ -10,6 +10,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11435,
             "npcName": "Fairy Very Wise",
             "npcLocation": {
               "lat": 4397,
@@ -54,6 +55,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11380,
             "npcName": "Fairy Queen",
             "npcLocation": {
               "lat": 4241,
@@ -103,6 +105,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11376,
             "npcName": "Tooth Fairy",
             "npcLocation": {
               "lat": 4243,
@@ -132,6 +135,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11376,
             "npcName": "Tooth Fairy",
             "npcLocation": {
               "lat": 4242,
@@ -328,6 +332,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11309,
             "npcName": "Gnarly",
             "npcLocation": {
               "lat": 4468,
@@ -357,6 +362,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11309,
             "npcName": "Gnarly",
             "npcLocation": {
               "lat": 4468,
@@ -393,6 +399,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11309,
             "npcName": "Gnarly",
             "npcLocation": {
               "lat": 4468,
@@ -422,6 +429,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11376,
             "npcName": "Tooth Fairy",
             "npcLocation": {
               "lat": 4243,
@@ -541,6 +549,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11318,
             "npcName": "General Bre'egth",
             "npcLocation": {
               "lat": 4453,
@@ -617,6 +626,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 4455,
             "npcName": "Fairy Fixit",
             "npcLocation": {
               "lat": 4434,
@@ -646,6 +656,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11320,
             "npcName": "K'Chunk",
             "npcLocation": {
               "lat": 2922,
@@ -675,6 +686,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11320,
             "npcName": "K'Chunk",
             "npcLocation": {
               "lat": 2923,
@@ -710,6 +722,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 4441,
             "npcName": "Wood Dryad",
             "npcLocation": {
               "lat": 4520,
@@ -741,6 +754,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11312,
             "npcName": "General Gromblod",
             "npcLocation": {
               "lat": 4509,
@@ -770,6 +784,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 4441,
             "npcName": "Wood Dryad",
             "npcLocation": {
               "lat": 4520,
@@ -861,6 +876,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11312,
             "npcName": "General Gromblod",
             "npcLocation": {
               "lat": 4509,
@@ -931,6 +947,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11314,
             "npcName": "General Shredflesh",
             "npcLocation": {
               "lat": 4204,
@@ -1001,6 +1018,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11376,
             "npcName": "Tooth Fairy",
             "npcLocation": {
               "lat": 4243,
@@ -1086,6 +1104,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11376,
             "npcName": "Tooth Fairy",
             "npcLocation": {
               "lat": 4134,
@@ -1208,6 +1227,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11323,
             "npcName": "Fairy Godfather",
             "npcLocation": {
               "lat": 4139,
@@ -1237,6 +1257,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15854,
             "npcName": "Martin the Master Gardener",
             "npcLocation": {
               "lat": 3258,

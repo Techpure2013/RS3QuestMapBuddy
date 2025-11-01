@@ -2,7 +2,7 @@
   "questName": "Monk's Friend",
   "questSteps": [
     {
-      "stepDescription": "Talk to Brother Omad on the 1st floor[US] of the Monastery south of East Ardougne zoo. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Brother Omad on the 1st floor[US] of the Monastery south of East Ardougne zoo. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -57,7 +57,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to the monastery and talk to Brother Omad. (Chat 1\u20221\u20222)",
+      "stepDescription": "Return to the monastery and talk to Brother Omad. (Chat 1•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

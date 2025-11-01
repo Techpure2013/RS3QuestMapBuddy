@@ -10,6 +10,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2228,
             "npcName": "King Veldaban",
             "npcLocation": {
               "lat": 10194,
@@ -80,6 +81,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13361,
             "npcName": "Lieutenant Brae",
             "npcLocation": {
               "lat": 5844,
@@ -109,6 +111,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18434,
             "npcName": "Vigr",
             "npcLocation": {
               "lat": 5846,
@@ -138,6 +141,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18252,
             "npcName": "Brendt",
             "npcLocation": {
               "lat": 5837,
@@ -167,6 +171,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18254,
             "npcName": "Grundt",
             "npcLocation": {
               "lat": 5851,
@@ -196,6 +201,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18252,
             "npcName": "Brendt",
             "npcLocation": {
               "lat": 5837,
@@ -225,6 +231,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13357,
             "npcName": "Klaas",
             "npcLocation": {
               "lat": 5846,
@@ -290,6 +297,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13411,
             "npcName": "Meike",
             "npcLocation": {
               "lat": 10196,
@@ -319,6 +327,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18434,
             "npcName": "Vigr",
             "npcLocation": {
               "lat": 5846,
@@ -348,6 +357,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13357,
             "npcName": "Klaas",
             "npcLocation": {
               "lat": 5846,
@@ -379,6 +389,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2228,
             "npcName": "King Veldaban",
             "npcLocation": {
               "lat": 10194,
@@ -467,6 +478,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18318,
             "npcName": "Ikadia the Exile",
             "npcLocation": {
               "lat": 9852,
@@ -496,6 +508,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18318,
             "npcName": "Ikadia the Exile",
             "npcLocation": {
               "lat": 9849,
@@ -594,6 +607,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18370,
             "npcName": "Watchtower Wizard",
             "npcLocation": {
               "lat": 3116,
@@ -775,6 +789,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2228,
             "npcName": "King Veldaban",
             "npcLocation": {
               "lat": 10194,
@@ -888,6 +903,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2228,
             "npcName": "King Veldaban",
             "npcLocation": {
               "lat": 6258,
@@ -920,6 +936,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18309,
             "npcName": "Nulodion",
             "npcLocation": {
               "lat": 6255,
@@ -1096,6 +1113,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13420,
             "npcName": "Colonel Grimsson",
             "npcLocation": {
               "lat": 6179,
@@ -1257,6 +1275,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2228,
             "npcName": "King Veldaban",
             "npcLocation": {
               "lat": 5834,
@@ -1286,6 +1305,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18375,
             "npcName": "Small Troll ( Birthright of the Dwarves )",
             "npcLocation": {
               "lat": 5853,
@@ -1303,6 +1323,7 @@
             }
           },
           {
+            "id": 18374,
             "npcName": "Dwarf Bone ( Birthright of the Dwarves )",
             "npcLocation": {
               "lat": 5854,
@@ -1333,6 +1354,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13420,
             "npcName": "Colonel Grimsson",
             "npcLocation": {
               "lat": 5854,
@@ -1361,6 +1383,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 17423,
             "npcName": "Zamorak",
             "npcLocation": {
               "lat": 6258,
@@ -1396,6 +1419,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18350,
             "npcName": "Chaos Dwarf ( Birthright of the Dwarves )",
             "npcLocation": {
               "lat": 6171,
@@ -1413,6 +1437,7 @@
             }
           },
           {
+            "id": 18292,
             "npcName": "Grumpy Dwarf ( Birthright of the Dwarves )",
             "npcLocation": {
               "lat": 6173,
@@ -1430,6 +1455,7 @@
             }
           },
           {
+            "id": 18293,
             "npcName": "Beardless Dwarf ( Birthright of the Dwarves )",
             "npcLocation": {
               "lat": 6175,
@@ -1459,6 +1485,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18306,
             "npcName": "Grunsh",
             "npcLocation": {
               "lat": 6174,
@@ -1560,6 +1587,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2107,
             "npcName": "Red Axe Director",
             "npcLocation": {
               "lat": 6243,
@@ -1589,6 +1617,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2107,
             "npcName": "Red Axe Director",
             "npcLocation": {
               "lat": 6257,
@@ -1606,6 +1635,7 @@
             }
           },
           {
+            "id": 2107,
             "npcName": "Red Axe Director",
             "npcLocation": {
               "lat": 6256,
@@ -1623,6 +1653,7 @@
             }
           },
           {
+            "id": 2107,
             "npcName": "Red Axe Director",
             "npcLocation": {
               "lat": 6246,
@@ -1640,6 +1671,7 @@
             }
           },
           {
+            "id": 2107,
             "npcName": "Red Axe Director",
             "npcLocation": {
               "lat": 6240,
@@ -1657,6 +1689,7 @@
             }
           },
           {
+            "id": 2107,
             "npcName": "Red Axe Director",
             "npcLocation": {
               "lat": 6243,
@@ -1674,6 +1707,7 @@
             }
           },
           {
+            "id": 2107,
             "npcName": "Red Axe Director",
             "npcLocation": {
               "lat": 6238,
@@ -1691,6 +1725,7 @@
             }
           },
           {
+            "id": 2107,
             "npcName": "Red Axe Director",
             "npcLocation": {
               "lat": 6247,
@@ -1720,6 +1755,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2107,
             "npcName": "Redaxe Director",
             "npcLocation": {
               "lat": 6258,
@@ -1792,6 +1828,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 17226,
             "npcName": "Chaos Grimsson",
             "npcLocation": {
               "lat": 6244,

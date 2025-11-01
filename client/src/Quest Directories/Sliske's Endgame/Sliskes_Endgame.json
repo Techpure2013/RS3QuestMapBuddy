@@ -30,7 +30,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Speak to Relomia in Draynor Village. (Chat 1\u20221\u2022\u2713)",
+      "stepDescription": "Speak to Relomia in Draynor Village. (Chat 1•1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -107,7 +107,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Speak to Relomia in Heart of Gielinor campsite (west of the entrance). (Chat 1\u2022~\u2022~)",
+      "stepDescription": "Speak to Relomia in Heart of Gielinor campsite (west of the entrance). (Chat 1•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -932,7 +932,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Jas. (Chat ~\u2022~) (Except insulting Jas - does not allow you to continue)",
+      "stepDescription": "Talk to Jas. (Chat ~•~) (Except insulting Jas - does not allow you to continue)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -943,7 +943,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the gods on the surface. (Chat ~\u2022~\u2022~)",
+      "stepDescription": "Talk to the gods on the surface. (Chat ~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -954,7 +954,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Relomia in Draynor. (Chat 1\u2022~)",
+      "stepDescription": "Return to Relomia in Draynor. (Chat 1•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

@@ -2,12 +2,13 @@
   "questName": "Devious Minds",
   "questSteps": [
     {
-      "stepDescription": "Talk to the monk just outside of Paterdomus which is east of Silvarea. (Chat \u2713)",
+      "stepDescription": "Talk to the monk just outside of Paterdomus which is east of Silvarea. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
         "npc": [
           {
+            "id": 656,
             "npcName": "Monk (Devious Minds)",
             "npcLocation": {
               "lat": 3495,
@@ -80,6 +81,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 656,
             "npcName": "Monk (Devious Minds)",
             "npcLocation": {
               "lat": 3492,
@@ -111,6 +113,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2260,
             "npcName": "Mage of Zamorak",
             "npcLocation": {
               "lat": 3558,
@@ -226,6 +229,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 19387,
             "npcName": "High Priest",
             "npcLocation": {
               "lat": 3349,
@@ -255,6 +259,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 656,
             "npcName": "Monk (Devious Minds)",
             "npcLocation": {
               "lat": 7652,
@@ -284,6 +289,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 3077,
             "npcName": "Dead Monk",
             "npcLocation": {
               "lat": 7652,
@@ -313,6 +319,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 19387,
             "npcName": "High Priest",
             "npcLocation": {
               "lat": 3349,
@@ -372,6 +379,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14328,
             "npcName": "Sir Tiffy Cashien",
             "npcLocation": {
               "lat": 3373,

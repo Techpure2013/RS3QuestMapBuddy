@@ -10,6 +10,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2655,
             "npcName": "Unferth",
             "npcLocation": {
               "lat": 3530,
@@ -41,6 +42,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1090,
             "npcName": "Hild",
             "npcLocation": {
               "lat": 3523,
@@ -86,6 +88,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 20781,
             "npcName": "Gertrude",
             "npcLocation": {
               "lat": 3410,
@@ -117,6 +120,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 20835,
             "npcName": "Reldo",
             "npcLocation": {
               "lat": 3496,
@@ -146,6 +150,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1990,
             "npcName": "Sphinx",
             "npcLocation": {
               "lat": 2760,
@@ -177,6 +182,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1982,
             "npcName": "Raetul",
             "npcLocation": {
               "lat": 2781,
@@ -326,6 +332,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2655,
             "npcName": "Unferth",
             "npcLocation": {
               "lat": 3539,
@@ -355,6 +362,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 20827,
             "npcName": "Apothecary",
             "npcLocation": {
               "lat": 3404,
@@ -388,6 +396,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2655,
             "npcName": "Unferth",
             "npcLocation": {
               "lat": 3539,
@@ -428,6 +437,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2655,
             "npcName": "Unferth",
             "npcLocation": {
               "lat": 3539,

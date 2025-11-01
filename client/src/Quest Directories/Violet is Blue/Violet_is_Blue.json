@@ -2,7 +2,7 @@
   "questName": "Violet is Blue",
   "questSteps": [
     {
-      "stepDescription": "Talk to Violet found on the southern tip of White Wolf Mountain. (Chat \u2713)",
+      "stepDescription": "Talk to Violet found on the southern tip of White Wolf Mountain. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -57,7 +57,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Knock on the door. (Chat 3\u20221)",
+      "stepDescription": "Knock on the door. (Chat 3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -68,7 +68,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Trevor. (Chat 1\u20221)",
+      "stepDescription": "Talk to Trevor. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -200,7 +200,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Take icy snow from behind Violet. (Chat ~\u2022~\u2022~\u2022~\u2022~)",
+      "stepDescription": "Take icy snow from behind Violet. (Chat ~•~•~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

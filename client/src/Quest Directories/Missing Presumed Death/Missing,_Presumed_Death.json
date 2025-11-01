@@ -2,7 +2,7 @@
   "questName": "Missing, Presumed Death",
   "questSteps": [
     {
-      "stepDescription": "Speak to Brother Samwell (west of Paterdomus and east of Varrock). (Chat 1\u20221\u2022\u2713)",
+      "stepDescription": "Speak to Brother Samwell (west of Paterdomus and east of Varrock). (Chat 1•1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -68,7 +68,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Brother Samwell. (Chat 2\u2022~)",
+      "stepDescription": "Talk to Brother Samwell. (Chat 2•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -79,7 +79,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Up the north hill, speak to Odd Old Man. (Chat 2\u20221\u20221\u20221\u20222)",
+      "stepDescription": "Up the north hill, speak to Odd Old Man. (Chat 2•1•1•1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -90,7 +90,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Brother Samwell. (Chat 1\u20221\u2022~)",
+      "stepDescription": "Talk to Brother Samwell. (Chat 1•1•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -112,7 +112,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Investigate the killed Elf Ranger. (Chat 1\u20224)",
+      "stepDescription": "Investigate the killed Elf Ranger. (Chat 1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -156,7 +156,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Blaze Sharpeye by the beacon. (Chat 2\u20222\u20222\u20221)",
+      "stepDescription": "Talk to Blaze Sharpeye by the beacon. (Chat 2•2•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -167,7 +167,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Brother Samwell. (Chat 2\u2022~)",
+      "stepDescription": "Return to Brother Samwell. (Chat 2•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -178,7 +178,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to the Wizards' Tower and speak to Wizard Valina near the entrance. (Chat 2\u20221\u20222\u2022~\u20223)",
+      "stepDescription": "Go to the Wizards' Tower and speak to Wizard Valina near the entrance. (Chat 2•1•2•~•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -189,7 +189,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Brother Samwell. (Chat ~\u20225)",
+      "stepDescription": "Return to Brother Samwell. (Chat ~•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -200,7 +200,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Learn from Icthlarin about Death's disappearance. (Chat ~\u20222\u20223\u2022~\u2022~\u20224\u20221)",
+      "stepDescription": "Learn from Icthlarin about Death's disappearance. (Chat ~•2•3•~•~•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -222,7 +222,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Finish the conversation with Icthlarin. (Chat ~\u2022~)",
+      "stepDescription": "Finish the conversation with Icthlarin. (Chat ~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -332,7 +332,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Click on the viewing panel. (Chat 3\u20222\u2022~), then rotate the bottom-left machine once, the top-left one twice, the top-right three times and the bottom-right machine once.",
+      "stepDescription": "Click on the viewing panel. (Chat 3•2•~), then rotate the bottom-left machine once, the top-left one twice, the top-right three times and the bottom-right machine once.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -354,7 +354,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the statue of Death. (Chat 2\u2022~\u20223)",
+      "stepDescription": "Talk to the statue of Death. (Chat 2•~•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -431,7 +431,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "After a cutscene, walk forward to continue talking with the Gods. (Chat 1\u2022~\u2022~\u2022~)",
+      "stepDescription": "After a cutscene, walk forward to continue talking with the Gods. (Chat 1•~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

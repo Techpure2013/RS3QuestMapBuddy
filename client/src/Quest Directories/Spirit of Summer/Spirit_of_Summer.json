@@ -2,9 +2,9 @@
   "questName": "Spirit of Summer",
   "questSteps": [
     {
-      "stepDescription": "**Items needed: Ghostspeak amulet** \nTalk to the spirit at the Wilderness wall north-east of Varrock. (Chat \u2713)",
+      "stepDescription": "**Items needed: Ghostspeak amulet** \nTalk to the spirit at the Wilderness wall north-east of Varrock. (Chat ✓)",
       "itemsNeeded": [
-        "Ghostspeak amulet** \nTalk to the spirit at the Wilderness wall north-east of Varrock. (Chat \u2713)"
+        "Ghostspeak amulet** \nTalk to the spirit at the Wilderness wall north-east of Varrock. (Chat ✓)"
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -48,7 +48,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Once the girl is free, talk to her. (Chat 1\u20221)",
+      "stepDescription": "Once the girl is free, talk to her. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -213,7 +213,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Summer. (Chat 2\u20221)",
+      "stepDescription": "Talk to Summer. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -257,7 +257,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Climb the ladder and talk to Summer again. (Chat 1\u20223)",
+      "stepDescription": "Climb the ladder and talk to Summer again. (Chat 1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

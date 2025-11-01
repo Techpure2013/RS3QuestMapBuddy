@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 12188,
             "npcName": "Chuck",
             "npcLocation": {
               "lat": 3260,
@@ -40,6 +41,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18122,
             "npcName": "Skot",
             "npcLocation": {
               "lat": 3686,
@@ -57,6 +59,7 @@
             }
           },
           {
+            "id": 18124,
             "npcName": "Mundsen",
             "npcLocation": {
               "lat": 3687,
@@ -89,6 +92,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24068,
             "npcName": "Dundee",
             "npcLocation": {
               "lat": 2939,
@@ -120,6 +124,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24069,
             "npcName": "Croc",
             "npcLocation": {
               "lat": 2939,
@@ -185,6 +190,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 12188,
             "npcName": "Chuck",
             "npcLocation": {
               "lat": 3260,
@@ -256,6 +262,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24072,
             "npcName": "Elon",
             "npcLocation": {
               "lat": 2921,
@@ -273,6 +280,7 @@
             }
           },
           {
+            "id": 24070,
             "npcName": "Emperor Wing",
             "npcLocation": {
               "lat": 2920,
@@ -290,6 +298,7 @@
             }
           },
           {
+            "id": 24073,
             "npcName": "Hugh",
             "npcLocation": {
               "lat": 2916,
@@ -307,6 +316,7 @@
             }
           },
           {
+            "id": 24071,
             "npcName": "Gordon",
             "npcLocation": {
               "lat": 2914,
@@ -410,6 +420,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 17617,
             "npcName": "Jim",
             "npcLocation": {
               "lat": 4004,
@@ -764,6 +775,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24071,
             "npcName": "Gordon",
             "npcLocation": {
               "lat": 93,
@@ -793,6 +805,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24072,
             "npcName": "Elon",
             "npcLocation": {
               "lat": 113,
@@ -933,6 +946,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15458,
             "npcName": "Crate ( Past Penguin Base )",
             "npcLocation": {
               "lat": 110,
@@ -1024,6 +1038,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24100,
             "npcName": "Buzz",
             "npcLocation": {
               "lat": 108,
@@ -1055,6 +1070,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 17617,
             "npcName": "Jim ( The Polar Bear )",
             "npcLocation": {
               "lat": 4004,
@@ -1159,6 +1175,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 17617,
             "npcName": "Jim",
             "npcLocation": {
               "lat": 4004,
@@ -1190,6 +1207,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24072,
             "npcName": "Elon ( The Past )",
             "npcLocation": {
               "lat": 113,
@@ -1257,6 +1275,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24072,
             "npcName": "Elon",
             "npcLocation": {
               "lat": 113,
@@ -1286,6 +1305,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24071,
             "npcName": "Gordon ( The Past )",
             "npcLocation": {
               "lat": 92,
@@ -1315,6 +1335,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24073,
             "npcName": "Hugh",
             "npcLocation": {
               "lat": 121,
@@ -1344,6 +1365,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24070,
             "npcName": "Emperor Wing",
             "npcLocation": {
               "lat": 105,
@@ -1404,6 +1426,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 12188,
             "npcName": "Chuck",
             "npcLocation": {
               "lat": 3260,

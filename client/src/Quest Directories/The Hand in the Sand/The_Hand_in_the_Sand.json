@@ -2,7 +2,7 @@
   "questName": "The Hand in the Sand",
   "questSteps": [
     {
-      "stepDescription": "Talk to Bert in the building near Yanille's house portal. There is a sandpit to the north west of his house you may fill your bucket at for later in the quest. (Chat 2\u2022\u2713)",
+      "stepDescription": "Talk to Bert in the building near Yanille's house portal. There is a sandpit to the north west of his house you may fill your bucket at for later in the quest. (Chat 2•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -101,7 +101,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "If you have a second empty vial you can Teleport to Port Sarim's magic shop by talking to Zavistic Rarve again and give him an empty vial. (Chat 4\u20221)",
+      "stepDescription": "If you have a second empty vial you can Teleport to Port Sarim's magic shop by talking to Zavistic Rarve again and give him an empty vial. (Chat 4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -240,7 +240,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Sandy again. (Chat 1\u20221\u20221)",
+      "stepDescription": "Talk to Sandy again. (Chat 1•1•1)",
       "itemsNeeded": [
         "5 earth runes",
         "bucket of sand"

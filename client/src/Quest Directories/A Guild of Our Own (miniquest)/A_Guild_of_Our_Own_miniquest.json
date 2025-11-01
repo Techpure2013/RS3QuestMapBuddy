@@ -15,6 +15,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11274,
             "npcName": "Darren Lightfinger",
             "npcLocation": {
               "lat": 5776,
@@ -44,6 +45,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11280,
             "npcName": "Chief Thief Robin",
             "npcLocation": {
               "lat": 5777,
@@ -73,6 +75,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11280,
             "npcName": "Chief Thief Robin",
             "npcLocation": {
               "lat": 5777,
@@ -102,6 +105,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11280,
             "npcName": "Chief Thief Robin",
             "npcLocation": {
               "lat": 5777,
@@ -131,6 +135,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11280,
             "npcName": "Chief Thief Robin",
             "npcLocation": {
               "lat": 5777,
@@ -163,6 +168,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11274,
             "npcName": "Darren Lightfinger",
             "npcLocation": {
               "lat": 5776,
@@ -194,6 +200,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11272,
             "npcName": "Registrar",
             "npcLocation": {
               "lat": 3288,
@@ -298,6 +305,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13934,
             "npcName": "Guard",
             "npcLocation": {
               "lat": 3290,
@@ -459,6 +467,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11272,
             "npcName": "Registrar",
             "npcLocation": {
               "lat": 3288,
@@ -490,6 +499,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11274,
             "npcName": "Darren Lightfinger",
             "npcLocation": {
               "lat": 5776,

@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15854,
             "npcName": "Martin the Master Gardener",
             "npcLocation": {
               "lat": 3258,
@@ -37,6 +38,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 4560,
             "npcName": "Frizzy Skernip",
             "npcLocation": {
               "lat": 3260,
@@ -54,6 +56,7 @@
             }
           },
           {
+            "id": 2323,
             "npcName": "Elstan",
             "npcLocation": {
               "lat": 3310,
@@ -71,6 +74,7 @@
             }
           },
           {
+            "id": 2339,
             "npcName": "Alain",
             "npcLocation": {
               "lat": 3461,
@@ -88,6 +92,7 @@
             }
           },
           {
+            "id": 2324,
             "npcName": "Dantaera",
             "npcLocation": {
               "lat": 3464,
@@ -105,6 +110,7 @@
             }
           },
           {
+            "id": 2331,
             "npcName": "Ellena",
             "npcLocation": {
               "lat": 3434,
@@ -137,6 +143,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15854,
             "npcName": "Martin the Master Gardener",
             "npcLocation": {
               "lat": 3258,
@@ -207,6 +214,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11323,
             "npcName": "Fairy Godfather",
             "npcLocation": {
               "lat": 4431,
@@ -251,6 +259,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 3303,
             "npcName": "Fairy Nuff",
             "npcLocation": {
               "lat": 4464,
@@ -321,6 +330,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 3308,
             "npcName": "Zandar Horfyre",
             "npcLocation": {
               "lat": 3335,
@@ -350,6 +360,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2713,
             "npcName": "Malignius Mortifer",
             "npcLocation": {
               "lat": 3267,
@@ -414,6 +425,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2713,
             "npcName": "Malignius Mortifer",
             "npcLocation": {
               "lat": 3267,
@@ -464,6 +476,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1051,
             "npcName": "Nature Spirit",
             "npcLocation": {
               "lat": 5338,
@@ -567,6 +580,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 3313,
             "npcName": "Tanglefoot",
             "npcLocation": {
               "lat": 4397,
@@ -632,6 +646,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11323,
             "npcName": "Fairy Godfather",
             "npcLocation": {
               "lat": 4430,

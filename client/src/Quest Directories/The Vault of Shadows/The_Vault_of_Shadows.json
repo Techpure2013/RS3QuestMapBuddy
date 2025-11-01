@@ -2,7 +2,7 @@
   "questName": "The Vault of Shadows",
   "questSteps": [
     {
-      "stepDescription": "Speak to Dr Nabanik near the bank chest at Kharid-et Dig Site. (Chat \u2713)",
+      "stepDescription": "Speak to Dr Nabanik near the bank chest at Kharid-et Dig Site. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -497,7 +497,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "For this next step (The Shadow Button), you will either need to have activated all the shadow anchors or wait until the Kharid-et pylons are active. As of June 17, 2022 the pylon is only active about once every 16\u201324 hours on average, so it is usually best to charge the Shadow Anchors (you will want to do this eventually anyway, so might as well get it out of the way now). However, if Pylon activation is close (90% or more),",
+      "stepDescription": "For this next step (The Shadow Button), you will either need to have activated all the shadow anchors or wait until the Kharid-et pylons are active. As of June 17, 2022 the pylon is only active about once every 16–24 hours on average, so it is usually best to charge the Shadow Anchors (you will want to do this eventually anyway, so might as well get it out of the way now). However, if Pylon activation is close (90% or more),",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -596,7 +596,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "3, 3, 1\u2019, 3\u2019, 3\u2019",
+      "stepDescription": "3, 3, 1’, 3’, 3’",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -607,7 +607,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "1\u2019, 5\u2019, 2, 2, 4",
+      "stepDescription": "1’, 5’, 2, 2, 4",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -618,7 +618,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "1\u2019, 3\u2019, 1, 5\u2019, 3",
+      "stepDescription": "1’, 3’, 1, 5’, 3",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -629,7 +629,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "3, 5, 2\u2019, 3\u2019, 2\u2019",
+      "stepDescription": "3, 5, 2’, 3’, 2’",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -717,7 +717,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Take Trindine's memory to Dr Nabanik. (Chat 3\u2022#)",
+      "stepDescription": "Take Trindine's memory to Dr Nabanik. (Chat 3•#)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22063,
             "npcName": "Wizard Myrtle",
             "npcLocation": {
               "lat": 3182,
@@ -37,6 +38,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1597,
             "npcName": "Vannaka",
             "npcLocation": {
               "lat": 3478,
@@ -66,6 +68,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22063,
             "npcName": "Wizard Myrtle",
             "npcLocation": {
               "lat": 3182,
@@ -129,6 +132,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22063,
             "npcName": "Wizard Myrtle",
             "npcLocation": {
               "lat": 3111,
@@ -191,6 +195,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22077,
             "npcName": "Brynna",
             "npcLocation": {
               "lat": 792,
@@ -458,6 +463,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22077,
             "npcName": "Brynna",
             "npcLocation": {
               "lat": 792,
@@ -544,6 +550,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18883,
             "npcName": "Master Chef ( Beneath Cursed Tides )",
             "npcLocation": {
               "lat": 780,
@@ -590,6 +597,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22083,
             "npcName": "Large Jellyfish ( Beneath Cursed Tides )",
             "npcLocation": {
               "lat": 771,
@@ -676,6 +684,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18883,
             "npcName": "Master Chef ( Beneath Cursed Tides )",
             "npcLocation": {
               "lat": 781,
@@ -879,6 +888,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22075,
             "npcName": "Dezzick, The Mining Instructor",
             "npcLocation": {
               "lat": 728,
@@ -1216,6 +1226,10 @@
             "name": "Anvil's ( Beneath Cursed Tides )",
             "objectLocation": [
               {
+                "lat": 0,
+                "lng": 0
+              },
+              {
                 "lat": 722,
                 "lng": 5458,
                 "color": "#00FF00",
@@ -1253,6 +1267,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22075,
             "npcName": "Dezzick, The Mining Instructor",
             "npcLocation": {
               "lat": 727,
@@ -1339,6 +1354,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1597,
             "npcName": "Vannaka",
             "npcLocation": {
               "lat": 732,
@@ -1448,6 +1464,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22073,
             "npcName": "Financial Advisor ( Crassian )",
             "npcLocation": {
               "lat": 819,
@@ -1516,6 +1533,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22073,
             "npcName": "Financial Advisor ( Crassian )",
             "npcLocation": {
               "lat": 819,
@@ -1584,6 +1602,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22089,
             "npcName": "Brother Brace ( Crassian )",
             "npcLocation": {
               "lat": 803,
@@ -1613,6 +1632,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22090,
             "npcName": "Fish One",
             "npcLocation": {
               "lat": 806,
@@ -1630,6 +1650,7 @@
             }
           },
           {
+            "id": 22090,
             "npcName": "Fish Two",
             "npcLocation": {
               "lat": 822,
@@ -1647,6 +1668,7 @@
             }
           },
           {
+            "id": 22090,
             "npcName": "Fish Three",
             "npcLocation": {
               "lat": 824,
@@ -1664,6 +1686,7 @@
             }
           },
           {
+            "id": 22090,
             "npcName": "Fish Four",
             "npcLocation": {
               "lat": 818,
@@ -1681,6 +1704,7 @@
             }
           },
           {
+            "id": 22090,
             "npcName": "Fish Five",
             "npcLocation": {
               "lat": 803,
@@ -1712,6 +1736,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22089,
             "npcName": "Brother Brace ( Crassian )",
             "npcLocation": {
               "lat": 803,
@@ -1741,6 +1766,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 10487,
             "npcName": "New NPC",
             "npcLocation": {
               "lat": 785,
@@ -1803,6 +1829,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22095,
             "npcName": "Hector Vivian",
             "npcLocation": {
               "lat": 778,
@@ -1832,6 +1859,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 22063,
             "npcName": "Wizard Myrtle",
             "npcLocation": {
               "lat": 3113,

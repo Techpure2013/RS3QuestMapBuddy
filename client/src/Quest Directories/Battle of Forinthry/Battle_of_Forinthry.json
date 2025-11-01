@@ -10,12 +10,11 @@
         "Potions",
         ""
       ],
-      "itemsRecommended": [
-        "Beast of Burden"
-      ],
+      "itemsRecommended": ["Beast of Burden"],
       "highlights": {
         "npc": [
           {
+            "id": 13955,
             "npcName": "The Raptor",
             "npcLocation": {
               "lat": 3544,
@@ -47,6 +46,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13955,
             "npcName": "The Raptor",
             "npcLocation": {
               "lat": 3544,
@@ -109,6 +109,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 30542,
             "npcName": "Undead Giant",
             "npcLocation": {
               "lat": 2207,
@@ -177,6 +178,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 30542,
             "npcName": "Undead Giant",
             "npcLocation": {
               "lat": 2196,
@@ -197,9 +199,7 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [
-        ""
-      ]
+      "additionalStepInformation": [""]
     },
     {
       "stepDescription": "Disrupt the place of power.",
@@ -244,6 +244,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 30542,
             "npcName": "Undead Giant",
             "npcLocation": {
               "lat": 2146,
@@ -264,9 +265,7 @@
         "object": []
       },
       "floor": 0,
-      "additionalStepInformation": [
-        "Disrupt the place of power."
-      ]
+      "additionalStepInformation": ["Disrupt the place of power."]
     },
     {
       "stepDescription": "Disrupt the place of power.",
@@ -311,6 +310,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14270,
             "npcName": "Zemouregal",
             "npcLocation": {
               "lat": 2159,
@@ -349,6 +349,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13955,
             "npcName": "The Raptor",
             "npcLocation": {
               "lat": 3544,
@@ -398,6 +399,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13934,
             "npcName": "Guard captain Sofía",
             "npcLocation": {
               "lat": 3535,
@@ -415,6 +417,7 @@
             }
           },
           {
+            "id": 29811,
             "npcName": "Overseer Siv",
             "npcLocation": {
               "lat": 3534,
@@ -464,6 +467,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 29808,
             "npcName": "Aster",
             "npcLocation": {
               "lat": 3537,
@@ -481,6 +485,7 @@
             }
           },
           {
+            "id": 19480,
             "npcName": "Bill",
             "npcLocation": {
               "lat": 3536,
@@ -530,6 +535,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 25855,
             "npcName": "Zoe",
             "npcLocation": {
               "lat": 3541,
@@ -547,6 +553,7 @@
             }
           },
           {
+            "id": 30073,
             "npcName": "Oak (Fort Forinthry)",
             "npcLocation": {
               "lat": 3540,
@@ -596,6 +603,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 29815,
             "npcName": "Copperpot",
             "npcLocation": {
               "lat": 3562,
@@ -613,6 +621,7 @@
             }
           },
           {
+            "id": 14782,
             "npcName": "Father Flint",
             "npcLocation": {
               "lat": 3561,
@@ -630,6 +639,7 @@
             }
           },
           {
+            "id": 26135,
             "npcName": "Granny Rowan",
             "npcLocation": {
               "lat": 3560,
@@ -679,6 +689,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 29941,
             "npcName": "Princess",
             "npcLocation": {
               "lat": 3567,
@@ -696,6 +707,7 @@
             }
           },
           {
+            "id": 29934,
             "npcName": "Rodney",
             "npcLocation": {
               "lat": 3568,
@@ -749,6 +761,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13955,
             "npcName": "The Raptor",
             "npcLocation": {
               "lat": 3544,
@@ -779,6 +792,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 19480,
             "npcName": "Bill",
             "npcLocation": {
               "lat": 3571,
@@ -960,6 +974,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 29808,
             "npcName": "Aster",
             "npcLocation": {
               "lat": 3570,
@@ -977,6 +992,7 @@
             }
           },
           {
+            "id": 29811,
             "npcName": "Overseer Siv",
             "npcLocation": {
               "lat": 3566,
@@ -994,6 +1010,7 @@
             }
           },
           {
+            "id": 29934,
             "npcName": "Rodney",
             "npcLocation": {
               "lat": 3570,
@@ -1023,6 +1040,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13955,
             "npcName": "The Raptor",
             "npcLocation": {
               "lat": 3544,
@@ -1104,6 +1122,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14270,
             "npcName": "Zemouregal",
             "npcLocation": {
               "lat": 1707,

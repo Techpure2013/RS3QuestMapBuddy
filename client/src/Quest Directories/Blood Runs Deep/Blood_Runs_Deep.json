@@ -13,6 +13,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 21226,
             "npcName": "Baba Yaga",
             "npcLocation": {
               "lat": 4449,
@@ -42,6 +43,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 21226,
             "npcName": "Baba Yaga",
             "npcLocation": {
               "lat": 4449,
@@ -71,6 +73,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 9095,
             "npcName": "Silas",
             "npcLocation": {
               "lat": 5854,
@@ -172,6 +175,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 9095,
             "npcName": "Silas",
             "npcLocation": {
               "lat": 5840,
@@ -201,6 +205,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 9095,
             "npcName": "Silas",
             "npcLocation": {
               "lat": 5873,
@@ -244,6 +249,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 21226,
             "npcName": "Baba Yaga",
             "npcLocation": {
               "lat": 4450,
@@ -311,6 +317,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 9088,
             "npcName": "Queen Sigrid",
             "npcLocation": {
               "lat": 5857,
@@ -340,6 +347,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18255,
             "npcName": "Brundt",
             "npcLocation": {
               "lat": 5859,
@@ -373,6 +381,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2437,
             "npcName": "Jarvald",
             "npcLocation": {
               "lat": 3683,
@@ -404,6 +413,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2879,
             "npcName": "Bardur",
             "npcLocation": {
               "lat": 3741,
@@ -469,6 +479,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 5185,
             "npcName": "King Vargas",
             "npcLocation": {
               "lat": 5801,
@@ -599,6 +610,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18893,
             "npcName": "Eir",
             "npcLocation": {
               "lat": 5922,
@@ -628,6 +640,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 17270,
             "npcName": "Nial Swiftfling",
             "npcLocation": {
               "lat": 5923,
@@ -657,6 +670,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 7389,
             "npcName": "Asleif Hamalsdotter",
             "npcLocation": {
               "lat": 5923,
@@ -686,6 +700,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18893,
             "npcName": "Eir",
             "npcLocation": {
               "lat": 5922,
@@ -715,6 +730,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18255,
             "npcName": "Brundt",
             "npcLocation": {
               "lat": 5858,
@@ -746,6 +762,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 5185,
             "npcName": "King Vargas",
             "npcLocation": {
               "lat": 5859,
@@ -775,6 +792,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 3154,
             "npcName": "Princess Astrid",
             "npcLocation": {
               "lat": 5859,
@@ -792,6 +810,7 @@
             }
           },
           {
+            "id": 3918,
             "npcName": "Prince Brand",
             "npcLocation": {
               "lat": 5857,
@@ -821,6 +840,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18255,
             "npcName": "Brundt",
             "npcLocation": {
               "lat": 5858,
@@ -855,6 +875,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18255,
             "npcName": "Brundt",
             "npcLocation": {
               "lat": 3669,
@@ -884,6 +905,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 21226,
             "npcName": "Baba Yaga",
             "npcLocation": {
               "lat": 5921,
@@ -985,6 +1007,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14467,
             "npcName": "Dagannoth Sentinel",
             "npcLocation": {
               "lat": 5830,
@@ -1002,6 +1025,7 @@
             }
           },
           {
+            "id": 14467,
             "npcName": "Dagannoth Sentinel",
             "npcLocation": {
               "lat": 5830,
@@ -1950,6 +1974,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1348,
             "npcName": "Dagannoth Mother",
             "npcLocation": {
               "lat": 5843,
@@ -2083,6 +2108,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18893,
             "npcName": "Eir",
             "npcLocation": {
               "lat": 5923,
@@ -2155,6 +2181,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 21226,
             "npcName": "Baba Yaga",
             "npcLocation": {
               "lat": 5800,
@@ -2172,6 +2199,7 @@
             }
           },
           {
+            "id": 1290,
             "npcName": "Koschei the Deathless",
             "npcLocation": {
               "lat": 5799,
@@ -2237,6 +2265,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18255,
             "npcName": "Brundt",
             "npcLocation": {
               "lat": 5858,

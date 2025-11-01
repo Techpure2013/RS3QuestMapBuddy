@@ -2,7 +2,7 @@
   "questName": "Hazeel Cult",
   "questSteps": [
     {
-      "stepDescription": "Talk to Ceril Carnillean, located in his house to the immediate south of the East Ardougne castle. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Ceril Carnillean, located in his house to the immediate south of the East Ardougne castle. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -112,7 +112,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Clivet and refuse to help - he will disappear. (Chat 1\u20221)",
+      "stepDescription": "Talk to Clivet and refuse to help - he will disappear. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -211,7 +211,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Ceril Carnillean in East Ardougne.(Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Ceril Carnillean in East Ardougne.(Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -321,7 +321,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Clivet and agree to help.(Chat 1\u20222\u20222)",
+      "stepDescription": "Talk to Clivet and agree to help.(Chat 1•2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

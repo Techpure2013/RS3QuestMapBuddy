@@ -2,7 +2,7 @@
   "questName": "Stolen Hearts",
   "questSteps": [
     {
-      "stepDescription": "Speak to Ozan in the northern part of Draynor Village. He is south of the potter near the water pump (Chat \u2713)",
+      "stepDescription": "Speak to Ozan in the northern part of Draynor Village. He is south of the potter near the water pump (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -24,7 +24,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Khnum. (Chat 2\u2022~\u2022~\u2022~\u20221)",
+      "stepDescription": "Talk to Khnum. (Chat 2•~•~•~•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -35,7 +35,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Ozan (dismiss any followers first). (Chat 1\u20221)",
+      "stepDescription": "Talk to Ozan (dismiss any followers first). (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -68,7 +68,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Khnum. (Chat 4\u20223\u20223)",
+      "stepDescription": "Talk to Khnum. (Chat 4•3•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

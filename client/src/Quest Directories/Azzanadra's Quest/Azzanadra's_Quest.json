@@ -12,6 +12,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14277,
             "npcName": "Azzanadra",
             "npcLocation": {
               "lat": 3572,
@@ -47,6 +48,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14277,
             "npcName": "Azzanadra ( Praetorium War Table )",
             "npcLocation": {
               "lat": 7588,
@@ -80,6 +82,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14277,
             "npcName": "Azzanadra",
             "npcLocation": {
               "lat": 3360,
@@ -116,6 +119,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14277,
             "npcName": "Azzanadra Location 1",
             "npcLocation": {
               "lat": 6230,
@@ -133,6 +137,7 @@
             }
           },
           {
+            "id": 14277,
             "npcName": "Azzanadra Location 2",
             "npcLocation": {
               "lat": 6241,
@@ -150,6 +155,7 @@
             }
           },
           {
+            "id": 14277,
             "npcName": "Azzanadra Location 3",
             "npcLocation": {
               "lat": 6290,
@@ -167,6 +173,7 @@
             }
           },
           {
+            "id": 14277,
             "npcName": "Azzanadra Location 4",
             "npcLocation": {
               "lat": 6299,
@@ -184,6 +191,7 @@
             }
           },
           {
+            "id": 14277,
             "npcName": "Azzanadra Location 5",
             "npcLocation": {
               "lat": 6303,
@@ -229,6 +237,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14277,
             "npcName": "Azzanadra ( Elder Halls )",
             "npcLocation": {
               "lat": 6317,
@@ -469,6 +478,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13929,
             "npcName": "Ariane",
             "npcLocation": {
               "lat": 6325,
@@ -599,6 +609,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14277,
             "npcName": "Azzanadra ( Elder Halls )",
             "npcLocation": {
               "lat": 6317,
@@ -632,6 +643,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 27582,
             "npcName": "Sir Upticious",
             "npcLocation": {
               "lat": 3351,
@@ -665,6 +677,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 27596,
             "npcName": "Father Frith",
             "npcLocation": {
               "lat": 3342,
@@ -698,6 +711,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 10108,
             "npcName": "Sir Owen",
             "npcLocation": {
               "lat": 3337,
@@ -731,6 +745,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 27596,
             "npcName": "Father Frith",
             "npcLocation": {
               "lat": 3342,
@@ -764,6 +779,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13277,
             "npcName": "Sir Amik Varze",
             "npcLocation": {
               "lat": 3336,
@@ -797,6 +813,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 17420,
             "npcName": "Padomenes",
             "npcLocation": {
               "lat": 3342,
@@ -830,6 +847,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 18944,
             "npcName": "Sir Vyvin",
             "npcLocation": {
               "lat": 3341,
@@ -863,6 +881,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 10108,
             "npcName": "Sir Owen",
             "npcLocation": {
               "lat": 3337,
@@ -1038,6 +1057,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14341,
             "npcName": "Saradomin",
             "npcLocation": {
               "lat": 3341,
@@ -1067,6 +1087,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14341,
             "npcName": "Saradomin",
             "npcLocation": {
               "lat": 3341,
@@ -1116,6 +1137,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14277,
             "npcName": "Azzanadra",
             "npcLocation": {
               "lat": 7588,
@@ -1203,6 +1225,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 25556,
             "npcName": "The Archivist",
             "npcLocation": {
               "lat": 9104,
@@ -1236,6 +1259,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 25556,
             "npcName": "The Archivist",
             "npcLocation": {
               "lat": 9104,
@@ -1375,6 +1399,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 23665,
             "npcName": "Trinidine",
             "npcLocation": {
               "lat": 3163,
@@ -1408,6 +1433,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 16218,
             "npcName": "Ga'al",
             "npcLocation": {
               "lat": 5070,
@@ -1441,6 +1467,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 23665,
             "npcName": "Trindine (Tzhaar City Main Plaza)",
             "npcLocation": {
               "lat": 5151,
@@ -1474,6 +1501,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15195,
             "npcName": "TokHaar-Hok",
             "npcLocation": {
               "lat": 5156,
@@ -1509,6 +1537,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 23665,
             "npcName": "Trindine ( Tzhaar Library )",
             "npcLocation": {
               "lat": 5072,
@@ -1577,6 +1606,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 27618,
             "npcName": "Wizard Trindy",
             "npcLocation": {
               "lat": 3171,
@@ -1750,6 +1780,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 27618,
             "npcName": "Wizard Trindy ( at Eastern Bookcases )",
             "npcLocation": {
               "lat": 3153,
@@ -1783,6 +1814,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14277,
             "npcName": "Azzanadra ( Praetorium War Table )",
             "npcLocation": {
               "lat": 7588,
@@ -1854,6 +1886,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14277,
             "npcName": "Azzanadra ( Heart of Gielinor )",
             "npcLocation": {
               "lat": 2876,
@@ -1922,6 +1955,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13929,
             "npcName": "Ariane",
             "npcLocation": {
               "lat": 7219,
@@ -2194,6 +2228,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 16218,
             "npcName": "Ga'al",
             "npcLocation": {
               "lat": 5155,
@@ -2278,7 +2313,23 @@
       "highlights": {
         "npc": [
           {
+            "id": 25556,
+            "npcName": "The Archivist",
             "name": "The  Heart of Gielinor Entrance",
+            "npcLocation": {
+              "lat": 9104,
+              "lng": 2204
+            },
+            "wanderRadius": {
+              "bottomLeft": {
+                "lat": 9103,
+                "lng": 2203
+              },
+              "topRight": {
+                "lat": 9105,
+                "lng": 2205
+              }
+            },
             "objectLocation": [
               {
                 "lat": 2882,
@@ -2293,21 +2344,6 @@
               "topRight": {
                 "lat": 2895,
                 "lng": 3390
-              }
-            },
-            "npcName": "The Archivist",
-            "npcLocation": {
-              "lat": 9104,
-              "lng": 2204
-            },
-            "wanderRadius": {
-              "bottomLeft": {
-                "lat": 9103,
-                "lng": 2203
-              },
-              "topRight": {
-                "lat": 9105,
-                "lng": 2205
               }
             }
           }
@@ -2368,6 +2404,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13929,
             "npcName": "Ariane",
             "npcLocation": {
               "lat": 7214,
@@ -2401,6 +2438,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13929,
             "npcName": "Ariane",
             "npcLocation": {
               "lat": 3359,

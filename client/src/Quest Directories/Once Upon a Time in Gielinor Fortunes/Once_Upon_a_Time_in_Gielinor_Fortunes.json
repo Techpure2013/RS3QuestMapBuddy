@@ -2,7 +2,7 @@
   "questName": "Once Upon a Time in Gielinor Fortunes",
   "questSteps": [
     {
-      "stepDescription": "Talk to Closure. (Chat \u2713)",
+      "stepDescription": "Talk to Closure. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -46,7 +46,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Closure. (Chat 1\u20222\u20223)",
+      "stepDescription": "Talk to Closure. (Chat 1•2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

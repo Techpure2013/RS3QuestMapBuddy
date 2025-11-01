@@ -2,7 +2,7 @@
   "questName": "Dead and Buried",
   "questSteps": [
     {
-      "stepDescription": "Talk to the Raptor in Fort Forinthry. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to the Raptor in Fort Forinthry. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -24,7 +24,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the Herald of Varrock. (Chat ~\u2022~\u2022~\u20224\u20221)",
+      "stepDescription": "Talk to the Herald of Varrock. (Chat ~•~•~•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -93,7 +93,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to guard captain Sof\u00eda in the newly-built Ranger's Workroom.",
+      "stepDescription": "Talk to guard captain Sofía in the newly-built Ranger's Workroom.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

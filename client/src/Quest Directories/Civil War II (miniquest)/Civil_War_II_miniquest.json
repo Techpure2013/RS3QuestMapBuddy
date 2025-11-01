@@ -2,7 +2,7 @@
   "questName": "Civil War II (miniquest)",
   "questSteps": [
     {
-      "stepDescription": "Talk to Anne Dimitri who is just north of Quercus in the Wilderness. (Chat \u2713)",
+      "stepDescription": "Talk to Anne Dimitri who is just north of Quercus in the Wilderness. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -24,7 +24,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to the Wandering Ramokee to the west of the PvP hatch, west of Quercus (Chat 1\u2022~).",
+      "stepDescription": "Talk to the Wandering Ramokee to the west of the PvP hatch, west of Quercus (Chat 1•~).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

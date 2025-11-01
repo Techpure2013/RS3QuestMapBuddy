@@ -2,7 +2,7 @@
   "questName": "Family Crest",
   "questSteps": [
     {
-      "stepDescription": "Talk to Dimintheis in the house next to the Fancy Clothes Store in south-eastern Varrock. (Chat 3\u20222\u2022\u2713)",
+      "stepDescription": "Talk to Dimintheis in the house next to the Fancy Clothes Store in south-eastern Varrock. (Chat 3•2•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -13,13 +13,13 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Items needed: Swordfish, bass, tuna, salmon, and shrimp \nGo to Gertrude's house west of Varrock and talk to Caleb. (Chat 1\u20222\u20221)",
+      "stepDescription": "Items needed: Swordfish, bass, tuna, salmon, and shrimp \nGo to Gertrude's house west of Varrock and talk to Caleb. (Chat 1•2•1)",
       "itemsNeeded": [
         "Swordfish",
         "bass",
         "tuna",
         "salmon",
-        "and shrimp \nGo to Gertrude's house west of Varrock and talk to Caleb. (Chat 1\u20222\u20221)"
+        "and shrimp \nGo to Gertrude's house west of Varrock and talk to Caleb. (Chat 1•2•1)"
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -167,7 +167,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "You have to use 'perfect' gold bars on a furnace once you have smelted them with cut rubies in backpack. (Chat 1\u20222)",
+      "stepDescription": "You have to use 'perfect' gold bars on a furnace once you have smelted them with cut rubies in backpack. (Chat 1•2)",
       "itemsNeeded": [
         "Runes",
         "magic weapon and standard spellbook to cast Air",

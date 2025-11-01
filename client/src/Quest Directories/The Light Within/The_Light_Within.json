@@ -2,7 +2,7 @@
   "questName": "The Light Within",
   "questSteps": [
     {
-      "stepDescription": "Talk to Eluned in the Ithell Clan district. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Eluned in the Ithell Clan district. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -13,7 +13,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Climb the stairs in the Tower of Voices. (Chat 1\u20222\u20223\u20221\u20223)",
+      "stepDescription": "Climb the stairs in the Tower of Voices. (Chat 1•2•3•1•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -81,7 +81,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Guthix. (Chat 1\u20224)",
+      "stepDescription": "Talk to Guthix. (Chat 1•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -92,7 +92,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go west and talk to Haluned. (Chat 1\u20221\u20222\u20223)",
+      "stepDescription": "Go west and talk to Haluned. (Chat 1•1•2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -103,7 +103,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Guthix. (Chat 2\u2022~)",
+      "stepDescription": "Talk to Guthix. (Chat 2•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -208,7 +208,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Attempt to pass the Trahaearn automaton mk V. (Chat 4\u20223\u20222\u20223)",
+      "stepDescription": "Attempt to pass the Trahaearn automaton mk V. (Chat 4•3•2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -393,7 +393,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Investigate the statue of King Baxtorian. (Chat 2\u20224)",
+      "stepDescription": "Investigate the statue of King Baxtorian. (Chat 2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -437,7 +437,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to the Corrupted Seren Stone in the Hefin Cathedral, located in the northern-most part of Prifddinas, a chatbox will appear at the top of the steps. (Chat 1\u20222)",
+      "stepDescription": "Go to the Corrupted Seren Stone in the Hefin Cathedral, located in the northern-most part of Prifddinas, a chatbox will appear at the top of the steps. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -679,7 +679,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Angof to get the last piece of the Song of Restoration. (Chat 1\u20225)",
+      "stepDescription": "Talk to Angof to get the last piece of the Song of Restoration. (Chat 1•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -723,7 +723,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Watch the cutscene and go through the dialogue. Skipping won't work. At the end of the cutscene you will arrive on Freneskae with Seren in your arms. (If the options don't pop up leave and return to the room) (Chat ~\u2022~\u2022~\u20221\u20221)",
+      "stepDescription": "Watch the cutscene and go through the dialogue. Skipping won't work. At the end of the cutscene you will arrive on Freneskae with Seren in your arms. (If the options don't pop up leave and return to the room) (Chat ~•~•~•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -943,7 +943,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Seren. (Chat ~\u20221)",
+      "stepDescription": "Talk to Seren. (Chat ~•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

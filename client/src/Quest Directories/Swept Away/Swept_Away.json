@@ -2,7 +2,7 @@
   "questName": "Swept Away",
   "questSteps": [
     {
-      "stepDescription": "Talk to Maggie who is located just west of the Draynor Village lodestone. (Chat 1\u20221\u2022\u2713\u20221)",
+      "stepDescription": "Talk to Maggie who is located just west of the Draynor Village lodestone. (Chat 1•1•✓•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -277,7 +277,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Aggie in Draynor Village. (Chat 2\u20221) You will get teleported to a new area.",
+      "stepDescription": "Talk to Aggie in Draynor Village. (Chat 2•1) You will get teleported to a new area.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -332,7 +332,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Maggie. (Chat 1\u20221)",
+      "stepDescription": "Talk to Maggie. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

@@ -2,7 +2,7 @@
   "questName": "Holy Grail",
   "questSteps": [
     {
-      "stepDescription": "Talk to King Arthur in Camelot Castle. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to King Arthur in Camelot Castle. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -81,7 +81,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Galahad, located in a building west of McGrubor's Wood and east of the coal trucks. (Chat 2\u20223)",
+      "stepDescription": "Talk to Galahad, located in a building west of McGrubor's Wood and east of the coal trucks. (Chat 2•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -218,7 +218,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head upstairs and speak to the Fisher King. Make sure to ask him about his son. (Chat 1\u20222)",
+      "stepDescription": "Head upstairs and speak to the Fisher King. Make sure to ask him about his son. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

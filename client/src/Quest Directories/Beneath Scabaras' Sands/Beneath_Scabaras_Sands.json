@@ -10,6 +10,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13241,
             "npcName": "Osman",
             "npcLocation": {
               "lat": 6943,
@@ -39,6 +40,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15811,
             "npcName": "Emir Ali Mirza",
             "npcLocation": {
               "lat": 3148,
@@ -68,6 +70,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 19387,
             "npcName": "High Priest",
             "npcLocation": {
               "lat": 2730,
@@ -97,6 +100,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 3040,
             "npcName": "Awusah the Mayor",
             "npcLocation": {
               "lat": 2916,
@@ -126,6 +130,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1870,
             "npcName": "Hakeem the Mayor",
             "npcLocation": {
               "lat": 2971,
@@ -587,6 +592,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24490,
             "npcName": "Commander Akhomet (Imperial)",
             "npcLocation": {
               "lat": 2729,
@@ -616,6 +622,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13241,
             "npcName": "Osman",
             "npcLocation": {
               "lat": 6943,
@@ -692,6 +699,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 24635,
             "npcName": "Kohnen the librarian",
             "npcLocation": {
               "lat": 6757,
@@ -721,6 +729,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13172,
             "npcName": "Leela",
             "npcLocation": {
               "lat": 6739,
@@ -750,6 +759,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13167,
             "npcName": "Senliten",
             "npcLocation": {
               "lat": 4816,
@@ -779,6 +789,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 31578,
             "npcName": "Lead Archaeologist Kerner",
             "npcLocation": {
               "lat": 3090,
@@ -878,6 +889,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13241,
             "npcName": "Osman",
             "npcLocation": {
               "lat": 6943,
@@ -914,6 +926,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 13172,
             "npcName": "Leela",
             "npcLocation": {
               "lat": 2830,
@@ -943,6 +956,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 31565,
             "npcName": "Golden Scarab ( Beneath Cursed Sands )",
             "npcLocation": {
               "lat": 2895,
@@ -960,6 +974,7 @@
             }
           },
           {
+            "id": 31565,
             "npcName": "Golden Scarab ( Beneath Cursed Sands )",
             "npcLocation": {
               "lat": 2961,
@@ -977,6 +992,7 @@
             }
           },
           {
+            "id": 31565,
             "npcName": "Golden Scarab ( Beneath Cursed Sands )",
             "npcLocation": {
               "lat": 2999,
@@ -994,6 +1010,7 @@
             }
           },
           {
+            "id": 31565,
             "npcName": "Golden Scarab ( Beneath Cursed Sands )",
             "npcLocation": {
               "lat": 3028,
@@ -1011,6 +1028,7 @@
             }
           },
           {
+            "id": 31565,
             "npcName": "Golden Scarab ( Beneath Cursed Sands )",
             "npcLocation": {
               "lat": 2991,
@@ -1075,6 +1093,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 31565,
             "npcName": "Golden Scarab ( Beneath Cursed Sands )",
             "npcLocation": {
               "lat": 7570,
@@ -1266,6 +1285,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 31537,
             "npcName": "Scabaras",
             "npcLocation": {
               "lat": 7583,
@@ -1295,6 +1315,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 31583,
             "npcName": "Fear ( Beneath Scabaras Sand )",
             "npcLocation": {
               "lat": 7591,
@@ -1337,6 +1358,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 31584,
             "npcName": "Ego ( Beneath Scabaras Sands )",
             "npcLocation": {
               "lat": 7572,
@@ -1473,6 +1495,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 31585,
             "npcName": "Melancholy ( Beneath Scabaras Sand)",
             "npcLocation": {
               "lat": 7596,
@@ -1502,6 +1525,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 31597,
             "npcName": "Grief ( Beneath Scabaras Sand)",
             "npcLocation": {
               "lat": 7570,
@@ -1533,6 +1557,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 31537,
             "npcName": "Scabaras",
             "npcLocation": {
               "lat": 3081,

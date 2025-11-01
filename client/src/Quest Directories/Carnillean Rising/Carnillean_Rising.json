@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11476,
             "npcName": "Xenia",
             "npcLocation": {
               "lat": 3280,
@@ -37,6 +38,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2953,
             "npcName": "Ceril Carnillean",
             "npcLocation": {
               "lat": 3270,
@@ -109,6 +111,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15608,
             "npcName": "Butler Crichton",
             "npcLocation": {
               "lat": 3273,
@@ -514,6 +517,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15630,
             "npcName": "Sarsaparilla",
             "npcLocation": {
               "lat": 3269,
@@ -593,6 +597,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15627,
             "npcName": "Claus the chef",
             "npcLocation": {
               "lat": 9670,
@@ -802,6 +807,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15630,
             "npcName": "Sarsaparilla",
             "npcLocation": {
               "lat": 6339,
@@ -819,6 +825,7 @@
             }
           },
           {
+            "id": 15627,
             "npcName": "Claus the chef",
             "npcLocation": {
               "lat": 6339,
@@ -848,6 +855,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15605,
             "npcName": "Nostrillia",
             "npcLocation": {
               "lat": 6365,
@@ -865,6 +873,7 @@
             }
           },
           {
+            "id": 15603,
             "npcName": "Slimepits",
             "npcLocation": {
               "lat": 6364,
@@ -1285,6 +1294,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15612,
             "npcName": "Philipe Carnillean",
             "npcLocation": {
               "lat": 3268,
@@ -1363,6 +1373,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15612,
             "npcName": "Philipe Carnillean",
             "npcLocation": {
               "lat": 3268,
@@ -1560,6 +1571,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15612,
             "npcName": "Philipe Carnillean",
             "npcLocation": {
               "lat": 6359,
@@ -1649,6 +1661,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15612,
             "npcName": "Philipe Carnillean",
             "npcLocation": {
               "lat": 6380,
@@ -1678,6 +1691,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15630,
             "npcName": "Sarsaparilla",
             "npcLocation": {
               "lat": 6410,
@@ -1732,6 +1746,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 15612,
             "npcName": "Philipe Carnillean",
             "npcLocation": {
               "lat": 6399,
@@ -1761,6 +1776,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2953,
             "npcName": "Ceril Carnillean",
             "npcLocation": {
               "lat": 3270,
@@ -1790,6 +1806,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11476,
             "npcName": "Xenia",
             "npcLocation": {
               "lat": 3280,
@@ -1819,6 +1836,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2953,
             "npcName": "Ceril Carnillean",
             "npcLocation": {
               "lat": 3270,

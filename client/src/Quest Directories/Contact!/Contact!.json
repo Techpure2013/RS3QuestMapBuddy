@@ -2,7 +2,7 @@
   "questName": "Contact!",
   "questSteps": [
     {
-      "stepDescription": "Talk to the High Priest in Sophanem (Chat \u2713), then after the cutscene, (Chat 5).",
+      "stepDescription": "Talk to the High Priest in Sophanem (Chat ✓), then after the cutscene, (Chat 5).",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -112,7 +112,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Maisa to the west. (Chat 2\u20224)",
+      "stepDescription": "Talk to Maisa to the west. (Chat 2•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -123,7 +123,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Osman inside the Al Kharid palace. (Chat 2\u2022~\u20223)",
+      "stepDescription": "Talk to Osman inside the Al Kharid palace. (Chat 2•~•3)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14666,
             "npcName": "Elena",
             "npcLocation": {
               "lat": 3336,
@@ -37,6 +38,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 366,
             "npcName": "Jerico",
             "npcLocation": {
               "lat": 3324,
@@ -168,6 +170,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 350,
             "npcName": "Omart",
             "npcLocation": {
               "lat": 3266,
@@ -432,6 +435,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 16714,
             "npcName": "Mourner",
             "npcLocation": {
               "lat": 3325,
@@ -497,6 +501,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14666,
             "npcName": "Elena",
             "npcLocation": {
               "lat": 3336,
@@ -575,6 +580,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 367,
             "npcName": "Chemist",
             "npcLocation": {
               "lat": 3211,
@@ -604,6 +610,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 338,
             "npcName": "Chancy",
             "npcLocation": {
               "lat": 3221,
@@ -633,6 +640,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 336,
             "npcName": "Da Vinci",
             "npcLocation": {
               "lat": 3217,
@@ -662,6 +670,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 340,
             "npcName": "Hops",
             "npcLocation": {
               "lat": 3218,
@@ -779,6 +788,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 338,
             "npcName": "Chancy",
             "npcLocation": {
               "lat": 3388,
@@ -796,6 +806,7 @@
             }
           },
           {
+            "id": 336,
             "npcName": "Da Vinci",
             "npcLocation": {
               "lat": 3389,
@@ -813,6 +824,7 @@
             }
           },
           {
+            "id": 340,
             "npcName": "Hops",
             "npcLocation": {
               "lat": 3389,
@@ -878,6 +890,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 342,
             "npcName": "Guidor's wife",
             "npcLocation": {
               "lat": 3383,
@@ -907,6 +920,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14666,
             "npcName": "Elena",
             "npcLocation": {
               "lat": 3336,
@@ -979,6 +993,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 19546,
             "npcName": "King Lathas",
             "npcLocation": {
               "lat": 3298,

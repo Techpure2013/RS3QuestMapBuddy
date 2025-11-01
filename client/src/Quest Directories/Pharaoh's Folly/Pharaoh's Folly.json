@@ -2,7 +2,7 @@
   "questName": "Pharaoh's Folly",
   "questSteps": [
     {
-      "stepDescription": "Talk with Leela outside of the northern gates of Menaphos. (Chat \u2713\u20222)",
+      "stepDescription": "Talk with Leela outside of the northern gates of Menaphos. (Chat ✓•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -211,7 +211,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Commander Akhomet outside the northern gates of Sophanem. (Chat ~\u20222\u20225)",
+      "stepDescription": "Talk to Commander Akhomet outside the northern gates of Sophanem. (Chat ~•2•5)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -398,7 +398,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk with Grand Vizier Ehsan. (Chat 2\u20224\u20221)",
+      "stepDescription": "Talk with Grand Vizier Ehsan. (Chat 2•4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -409,7 +409,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk with 'Admiral' Wadud. (Chat 2\u20221\u20221)",
+      "stepDescription": "Talk with 'Admiral' Wadud. (Chat 2•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -420,7 +420,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk with Batal. (Chat 2\u20222\u20221)",
+      "stepDescription": "Talk with Batal. (Chat 2•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -431,7 +431,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk with Commander Akhomet. (Chat 2\u20223\u20222)",
+      "stepDescription": "Talk with Commander Akhomet. (Chat 2•3•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

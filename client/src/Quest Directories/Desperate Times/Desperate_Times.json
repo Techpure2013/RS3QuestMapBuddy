@@ -2,7 +2,7 @@
   "questName": "Desperate Times",
   "questSteps": [
     {
-      "stepDescription": "Talk to Seren on the 2nd floor[US] of Burthorpe Castle. (Chat \u2713)",
+      "stepDescription": "Talk to Seren on the 2nd floor[US] of Burthorpe Castle. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -35,7 +35,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Azzanadra for seeds. (North-west of the table, next to Commander Zilyana) (Chat 1\u20223\u20221)",
+      "stepDescription": "Talk to Azzanadra for seeds. (North-west of the table, next to Commander Zilyana) (Chat 1•3•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -46,7 +46,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Vanescula Drakan for a location. (By the staircase) (Chat 1\u20221\u20221)",
+      "stepDescription": "Talk to Vanescula Drakan for a location. (By the staircase) (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -57,7 +57,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Zarador for a location. (South-western corner of the room) (Chat 1\u20221\u20221)",
+      "stepDescription": "Talk to Zarador for a location. (South-western corner of the room) (Chat 1•1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -90,7 +90,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Travel west of Piscatoris Fishing Colony (Phoenix Lair Teleport, fairy ring AKQ, Sixth-Age circuit teleports to Guthix memorial, or via memory strands within the currency pouch) to The Needle and talk to Kerapac. (Chat ~\u2022~\u20221)",
+      "stepDescription": "Travel west of Piscatoris Fishing Colony (Phoenix Lair Teleport, fairy ring AKQ, Sixth-Age circuit teleports to Guthix memorial, or via memory strands within the currency pouch) to The Needle and talk to Kerapac. (Chat ~•~•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -423,7 +423,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Reldo in the northern-most room of the lowest floor of the Varrock castle (Varrock Library). (Chat 1\u2022~\u2022~\u2022~)",
+      "stepDescription": "Talk to Reldo in the northern-most room of the lowest floor of the Varrock castle (Varrock Library). (Chat 1•~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

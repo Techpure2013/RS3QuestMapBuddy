@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1200,
             "npcName": "Tyras Guard",
             "npcLocation": {
               "lat": 3183,
@@ -37,6 +38,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 7121,
             "npcName": "General Hining",
             "npcLocation": {
               "lat": 3150,
@@ -126,6 +128,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 7118,
             "npcName": "Catapult engineer",
             "npcLocation": {
               "lat": 3202,
@@ -166,6 +169,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 7118,
             "npcName": "Catapult engineer",
             "npcLocation": {
               "lat": 3202,
@@ -195,6 +199,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1841,
             "npcName": "Rolad",
             "npcLocation": {
               "lat": 3453,
@@ -224,6 +229,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 7115,
             "npcName": "Thaki the delivery dwarf",
             "npcLocation": {
               "lat": 3259,
@@ -253,6 +259,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 7116,
             "npcName": "Drunken sailor",
             "npcLocation": {
               "lat": 3254,
@@ -282,6 +289,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 7115,
             "npcName": "Thaki the delivery dwarf",
             "npcLocation": {
               "lat": 3259,
@@ -311,6 +319,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1200,
             "npcName": "Tyras guard",
             "npcLocation": {
               "lat": 3183,
@@ -351,6 +360,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1200,
             "npcName": "Tyras guard",
             "npcLocation": {
               "lat": 3183,
@@ -467,6 +477,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 1200,
             "npcName": "Tyras guard",
             "npcLocation": {
               "lat": 3183,

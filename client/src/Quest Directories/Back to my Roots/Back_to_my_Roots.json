@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 845,
             "npcName": "Horacio",
             "npcLocation": {
               "lat": 3312,
@@ -37,6 +38,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2328,
             "npcName": "Wizard Cromperty",
             "npcLocation": {
               "lat": 3325,
@@ -66,6 +68,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 843,
             "npcName": "RPDT Employee",
             "npcLocation": {
               "lat": 3282,
@@ -132,6 +135,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2328,
             "npcName": "Wizard Cromperty",
             "npcLocation": {
               "lat": 3325,
@@ -163,6 +167,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2328,
             "npcName": "Wizard Cromperty",
             "npcLocation": {
               "lat": 3325,
@@ -192,6 +197,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 2330,
             "npcName": "Garth",
             "npcLocation": {
               "lat": 3211,
@@ -1411,6 +1417,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 845,
             "npcName": "Horacio",
             "npcLocation": {
               "lat": 3312,
@@ -1516,6 +1523,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 845,
             "npcName": "Horacio",
             "npcLocation": {
               "lat": 3312,

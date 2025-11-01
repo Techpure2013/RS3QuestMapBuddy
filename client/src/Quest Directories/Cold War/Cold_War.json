@@ -15,7 +15,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Larry near the penguin enclosure in the Ardougne Zoo. (Chat 1\u2022\u2713)",
+      "stepDescription": "Talk to Larry near the penguin enclosure in the Ardougne Zoo. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -26,7 +26,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Larry again when carrying 10 oak planks, 10 steel nails. (Chat 1\u20221\u20221)",
+      "stepDescription": "Talk to Larry again when carrying 10 oak planks, 10 steel nails. (Chat 1•1•1)",
       "itemsNeeded": [
         "10 oak planks and 10 steel nails"
       ],
@@ -185,7 +185,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Return to Ardougne Zoo and talk to Larry. (Chat 1\u20221\u20221)",
+      "stepDescription": "Return to Ardougne Zoo and talk to Larry. (Chat 1•1•1)",
       "itemsNeeded": [
         "Clockwork suit"
       ],
@@ -198,7 +198,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Larry on the iceberg. (Chat 2\u20221)",
+      "stepDescription": "Talk to Larry on the iceberg. (Chat 2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -390,7 +390,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Enter penguin pen and talk to penguin. (Chat 1\u20222\u20221)",
+      "stepDescription": "Enter penguin pen and talk to penguin. (Chat 1•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -478,7 +478,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Fred the Farmer nearby. (Chat 3\u2022~)",
+      "stepDescription": "Talk to Fred the Farmer nearby. (Chat 3•~)",
       "itemsNeeded": [
         "Clockwork suit",
         "swamp tar",

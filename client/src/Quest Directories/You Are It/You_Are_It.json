@@ -75,7 +75,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Read the mysterious clue scroll. (Chat \u2713)",
+      "stepDescription": "Read the mysterious clue scroll. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -103,6 +103,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 20835,
             "npcName": "Reldo (You Are It)",
             "npcLocation": {
               "lat": 3494,
@@ -132,6 +133,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 845,
             "npcName": "Duke Horacio (You Are It)",
             "npcLocation": {
               "lat": 3220,
@@ -343,7 +345,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Follow the path to the end and investigate the coffin for a cutscene. (Chat 3\u20224)",
+      "stepDescription": "Follow the path to the end and investigate the coffin for a cutscene. (Chat 3•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -354,7 +356,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Investigate the mantle to the east. (Chat 6\u20221)",
+      "stepDescription": "Investigate the mantle to the east. (Chat 6•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

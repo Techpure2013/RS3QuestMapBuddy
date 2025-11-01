@@ -2,7 +2,7 @@
   "questName": "Heroes' Quest",
   "questSteps": [
     {
-      "stepDescription": "Talk to Achietties outside the Heroes' Guild in Burthorpe. (Chat \u2713)",
+      "stepDescription": "Talk to Achietties outside the Heroes' Guild in Burthorpe. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -184,7 +184,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go through the door and talk to Charlie. (Chat 1\u20222)",
+      "stepDescription": "Go through the door and talk to Charlie. (Chat 1•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -250,7 +250,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to south-west Varrock and talk to Katrine. (Chat 1\u2022\u2713)",
+      "stepDescription": "Go to south-west Varrock and talk to Katrine. (Chat 1•✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -261,7 +261,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Go to Brimhaven, to the building east of the bar (Chat 2) and talk to Trobert. (Chat 1\u20221)",
+      "stepDescription": "Go to Brimhaven, to the building east of the bar (Chat 2) and talk to Trobert. (Chat 1•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

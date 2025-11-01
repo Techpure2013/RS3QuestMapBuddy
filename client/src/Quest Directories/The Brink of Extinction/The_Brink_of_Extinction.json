@@ -2,9 +2,9 @@
   "questName": "The Brink of Extinction",
   "questSteps": [
     {
-      "stepDescription": "Items needed: 4 free inventory spaces---\nSpeak to TzHaar-Mej-Ak or TzHaar-Mej-Jeh in the main plaza of TzHaar City. (Chat \u2713)",
+      "stepDescription": "Items needed: 4 free inventory spaces---\nSpeak to TzHaar-Mej-Ak or TzHaar-Mej-Jeh in the main plaza of TzHaar City. (Chat ✓)",
       "itemsNeeded": [
-        "4 free inventory spaces---\nSpeak to TzHaar-Mej-Ak or TzHaar-Mej-Jeh in the main plaza of TzHaar City. (Chat \u2713)"
+        "4 free inventory spaces---\nSpeak to TzHaar-Mej-Ak or TzHaar-Mej-Jeh in the main plaza of TzHaar City. (Chat ✓)"
       ],
       "itemsRecommended": [],
       "highlights": {
@@ -26,7 +26,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Run north-east to the Birthing Pool and speak to TzHaar-Mej-Het. (Chat 4\u20221)",
+      "stepDescription": "Run north-east to the Birthing Pool and speak to TzHaar-Mej-Het. (Chat 4•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -754,7 +754,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "A cutscene ensues. (Chat 1\u2022~)",
+      "stepDescription": "A cutscene ensues. (Chat 1•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

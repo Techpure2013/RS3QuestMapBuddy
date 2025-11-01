@@ -12,6 +12,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 847,
             "npcName": "Head chef",
             "npcLocation": {
               "lat": 3446,
@@ -62,6 +63,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 7739,
             "npcName": "Phil",
             "npcLocation": {
               "lat": 3366,
@@ -79,6 +81,7 @@
             }
           },
           {
+            "id": 8948,
             "npcName": "Delphie",
             "npcLocation": {
               "lat": 3366,
@@ -144,6 +147,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 7739,
             "npcName": "Phil",
             "npcLocation": {
               "lat": 3366,
@@ -161,6 +165,7 @@
             }
           },
           {
+            "id": 8948,
             "npcName": "Delphie",
             "npcLocation": {
               "lat": 3366,
@@ -228,6 +233,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 847,
             "npcName": "Head chef",
             "npcLocation": {
               "lat": 3446,
@@ -319,6 +325,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 847,
             "npcName": "Head chef",
             "npcLocation": {
               "lat": 3446,
@@ -362,6 +369,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 847,
             "npcName": "Head chef",
             "npcLocation": {
               "lat": 3446,
@@ -407,6 +415,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 14881,
             "npcName": "Mess Sergeant Ramsey",
             "npcLocation": {
               "lat": 3442,
@@ -436,6 +445,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11305,
             "npcName": "Cook (Lumbridge)",
             "npcLocation": {
               "lat": 3215,
@@ -465,6 +475,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11305,
             "npcName": "Cook (Jolly Boar Inn)",
             "npcLocation": {
               "lat": 3490,
@@ -494,6 +505,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 847,
             "npcName": "Head chef",
             "npcLocation": {
               "lat": 3446,

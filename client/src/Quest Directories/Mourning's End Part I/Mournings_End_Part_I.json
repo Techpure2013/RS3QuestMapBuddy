@@ -2,7 +2,7 @@
   "questName": "Mourning's End Part I",
   "questSteps": [
     {
-      "stepDescription": "Talk to Eluned in Isafdar and agree to get teleported. (Chat \u2713)",
+      "stepDescription": "Talk to Eluned in Isafdar and agree to get teleported. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -272,7 +272,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Descend the trapdoor and talk to the Head Mourner. (Chat 2\u20222\u20221)",
+      "stepDescription": "Descend the trapdoor and talk to the Head Mourner. (Chat 2•2•1)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -378,7 +378,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Fetch an Ogre bellows from Rantz's cave if you need one. If you already have one, you won\u2019t be able to obtain another from the chest.",
+      "stepDescription": "Fetch an Ogre bellows from Rantz's cave if you need one. If you already have one, you won’t be able to obtain another from the chest.",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

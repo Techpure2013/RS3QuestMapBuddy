@@ -8,6 +8,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11274,
             "npcName": "Darren Lightfinger",
             "npcLocation": {
               "lat": 5903,
@@ -37,6 +38,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11280,
             "npcName": "Chief Thief Robin",
             "npcLocation": {
               "lat": 5904,
@@ -66,6 +68,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 458,
             "npcName": "Father Urhney",
             "npcLocation": {
               "lat": 3149,
@@ -133,6 +136,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 458,
             "npcName": "Father Urhney",
             "npcLocation": {
               "lat": 3149,
@@ -211,6 +215,7 @@
       "highlights": {
         "npc": [
           {
+            "id": 11274,
             "npcName": "Darren Lightfinger",
             "npcLocation": {
               "lat": 5903,

@@ -2,7 +2,7 @@
   "questName": "Diamond in the Rough",
   "questSteps": [
     {
-      "stepDescription": "Talk to Osman in Al Kharid palace without a follower or pet. (Chat \u2713)",
+      "stepDescription": "Talk to Osman in Al Kharid palace without a follower or pet. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -222,7 +222,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "During the cutscene, select any of the options. Do not skip it. (Chat ~\u2022~\u2022~\u2022~)",
+      "stepDescription": "During the cutscene, select any of the options. Do not skip it. (Chat ~•~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -387,7 +387,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "During the cutscene, select any of the options. (Chat ~\u2022~\u2022~)",
+      "stepDescription": "During the cutscene, select any of the options. (Chat ~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

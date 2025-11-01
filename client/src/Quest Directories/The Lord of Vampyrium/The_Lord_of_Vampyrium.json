@@ -2,7 +2,7 @@
   "questName": "The Lord of Vampyrium",
   "questSteps": [
     {
-      "stepDescription": "Talk to Vanescula Drakan at the docks south-east of Burgh de Rott. (Chat \u2713)",
+      "stepDescription": "Talk to Vanescula Drakan at the docks south-east of Burgh de Rott. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -211,7 +211,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Vanescula. (Chat ~\u2022~\u2022~\u2022~)",
+      "stepDescription": "Talk to Vanescula. (Chat ~•~•~•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

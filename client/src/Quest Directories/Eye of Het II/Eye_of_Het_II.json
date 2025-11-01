@@ -2,7 +2,7 @@
   "questName": "Eye of Het II",
   "questSteps": [
     {
-      "stepDescription": "Talk to Icthlarin at the entrance to Het's Oasis. (Chat \u2713)",
+      "stepDescription": "Talk to Icthlarin at the entrance to Het's Oasis. (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -68,7 +68,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Azzanadra at the Glacor Front (south of the cathedral in Senntisten). You can teleport to the Arch-Glacor for fast access. (Chat 1\u2022~)",
+      "stepDescription": "Talk to Azzanadra at the Glacor Front (south of the cathedral in Senntisten). You can teleport to the Arch-Glacor for fast access. (Chat 1•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {

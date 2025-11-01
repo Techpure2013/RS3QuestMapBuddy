@@ -2,7 +2,7 @@
   "questName": "Grim Tales",
   "questSteps": [
     {
-      "stepDescription": "Talk to Sylas south of Taverley (north of the Witch's house). (Chat \u2713)",
+      "stepDescription": "Talk to Sylas south of Taverley (north of the Witch's house). (Chat ✓)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -24,7 +24,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Head up the east side of White Wolf Mountain near the Burthorpe mine entrance and talk to Grimgnash. (Chat 1\u20221\u20222\u20224\u20224\u20223\u2022~)",
+      "stepDescription": "Head up the east side of White Wolf Mountain near the Burthorpe mine entrance and talk to Grimgnash. (Chat 1•1•2•4•4•3•~)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -90,7 +90,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk into the pipe again. (Chat 2\u20222)",
+      "stepDescription": "Talk into the pipe again. (Chat 2•2)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
@@ -134,7 +134,7 @@
       "additionalStepInformation": []
     },
     {
-      "stepDescription": "Talk to Miazrqa, located over the crumbling wall and to the north of the tower, and ask for the key to the Witch's house. (Chat 4\u20224\u20224)",
+      "stepDescription": "Talk to Miazrqa, located over the crumbling wall and to the north of the tower, and ask for the key to the Witch's house. (Chat 4•4•4)",
       "itemsNeeded": [],
       "itemsRecommended": [],
       "highlights": {
