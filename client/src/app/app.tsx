@@ -4,8 +4,8 @@ import {
   parseWikiImageUrl,
   processImageBlobToWebp,
 } from "./../map/utils/imageUtils";
-import "./../assets/CSS/index.css";
-import "./../assets/CSS/leafless.css";
+import "./../Assets/CSS/index.css";
+import "./../Assets/CSS/leafless.css";
 import { LatLngBounds } from "leaflet";
 import {
   bounds,
