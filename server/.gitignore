@@ -1,6 +1,0 @@
-.vs
-.vscode
-.prettierrc
-node_modules
-.env
-dist

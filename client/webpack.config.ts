@@ -2,13 +2,14 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-  entry: "./src/Entrance/index.tsx", // Entry point for your application
+  entry: "./src/app/entrance/index.tsx", // Entry point for your application
   output: {
     filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "/RS3QuestBuddy/", // Required for `webpack-dev-server`
   },
-  mode: "development", // Use 'production' for a production build
+  mode: "development",
+  devtool: "eval-source-map",
   externals: ["sharp", "canvas", "electron/common"],
   resolve: {
     extensions: [".wasm", ".tsx", ".ts", ".mjs", ".jsx", ".js"],
@@ -45,7 +46,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/Entrance/index.html",
+      template: "./src/app/entrance/index.html",
       filename: "index.html",
       inject: true,
     }),
@@ -61,13 +62,22 @@ module.exports = {
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, "dist"), // Serve files from the 'dist' folder
+      directory: path.join(__dirname, "dist"),
     },
-
-    port: 3000, // Development server port
-    open: true, // Automatically open the browser
-    hot: false, // Enable hot module replacement
+    port: 3000,
+    open: true,
+    hot: true,
     historyApiFallback: true,
-    liveReload: false, // Disable Live Reloading
+    liveReload: false,
+
+    proxy: [
+      {
+        context: ["/api"],
+
+        target: "http://127.0.0.1:42069",
+
+        changeOrigin: true,
+      },
+    ],
   },
 };

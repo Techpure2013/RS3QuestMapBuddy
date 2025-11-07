@@ -1072,3 +1072,122 @@ button:hover {
   color: #6b7280;
   font-style: italic;
 }
+/* Quest Picker Modal */
+.qp-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.qp-modal {
+  width: 520px;
+  max-width: calc(100vw - 40px);
+  background: #111827;
+  border: 1px solid #4b5563;
+  color: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+.qp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid #374151;
+}
+.qp-close {
+  background: #374151;
+  color: #e5e7eb;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+.qp-body {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.qp-input {
+  width: 100%;
+  background-color: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  color: #f9fafb;
+  padding: 8px;
+}
+.qp-loading,
+.qp-empty {
+  color: #9ca3af;
+  font-style: italic;
+  background: #1f2937;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #4b5563;
+}
+.qp-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  background: #1f2937;
+  max-height: 340px;
+  overflow: auto;
+}
+.qp-results li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 1px solid #374151;
+}
+.qp-results li:last-child {
+  border-bottom: none;
+}
+.qp-result-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+.qp-load {
+  background-color: #2563eb;
+  border: 1px solid #3b82f6;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.qp-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 6px;
+}
+.qp-pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.qp-pagination button {
+  background: #374151;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.qp-cancel {
+  background: #374151;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+}

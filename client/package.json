@@ -1,10 +1,9 @@
 {
   "name": "rs3_map_buddy",
   "scripts": {
+    "dev": "webpack serve --config ./webpack.config.ts",
     "build": "webpack",
-    "build-production": "node -r ts-node/register ./node_modules/webpack/bin/webpack.js",
-    "watch": "npm run build -- --watch",
-    "start": "webpack serve"
+    "start": "serve -s dist -l 3000"
   },
   "devDependencies": {
     "@react-leaflet/core": "^3.0.0",

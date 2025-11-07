@@ -3,9 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "concurrently --raw \"npm run server\" \"npm run client\"",
-    "server": "cd server && tsc && node dist/server.js",
-    "client": "cd client && npm run build && npm run start"
+    "dev": "concurrently --raw \"npm:server:dev\" \"npm:client:dev\"",
+    "start": "concurrently  \"npm:client:start\"",
+    "server:build": "cd server && tsc",
+    "server:start": "cd server && node dist/server.js",
+    "server:inspect": "cd server && node --inspect=9229 dist/server.js",
+    "server:dev": "cd server && nodemon --watch src --ext ts,tsx,json --exec \"node --inspect=9229 -r ts-node/register src/server.ts\"",
+    "client:dev": "cd client && npm run dev",
+    "client:build": "cd client && npm run build",
+    "client:start": "cd client && npm run start",
+    "build": "npm run server:build && npm run client:build",
+    "clean": "rimraf server/dist client/dist"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +21,11 @@
   "type": "commonjs",
   "devDependencies": {
     "@types/node": "^22.13.4",
-    "concurrently": "^9.1.2",
-    "copy-webpack-plugin": "^13.0.1"
+    "concurrently": "^9.2.1",
+    "copy-webpack-plugin": "^13.0.1",
+    "nodemon": "^3.1.10",
+    "rimraf": "^6.1.0",
+    "ts-node": "^10.9.2"
   },
   "dependencies": {
     "idb-keyval": "^6.2.2",
