@@ -2,11 +2,11 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Root deps (if needed)
+# Install root deps (if any)
 COPY package*.json ./
 RUN npm ci
 
-# Client deps
+# Install client deps
 WORKDIR /app/client
 COPY client/package*.json ./
 RUN npm ci
@@ -15,7 +15,9 @@ RUN npm ci
 WORKDIR /app
 COPY . .
 
-# CRA/webpack build at subpath /RS3QuestBuddyEditor/
+# Build for subpath /RS3QuestBuddyEditor/
+# If you updated webpack.config.js output.publicPath to /RS3QuestBuddyEditor/,
+# this can be just `npm run build`. Keeping PUBLIC_URL is optional.
 RUN sh -c 'cd /app/client && PUBLIC_URL=/RS3QuestBuddyEditor npm run build'
 
 # ---- runtime ----
@@ -23,8 +25,8 @@ FROM nginx:alpine AS runner
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 
-# CRA build output goes to client/build
-COPY --from=builder /app/client/build ./
+# Webpack output goes to client/dist (not build)
+COPY --from=builder /app/client/dist ./
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
