@@ -8,6 +8,8 @@ services:
     image: rs3questbuddy-editor:latest
     container_name: rs3questbuddy_editor
     restart: unless-stopped
+    env_file:
+      - server/.env
     networks:
       - app_net
 
