@@ -31,7 +31,7 @@ export async function searchNpcs(
 ): Promise<NpcSearchResult[]> {
   const params = new URLSearchParams({ name, limit: String(limit) });
   console.log(API_BASE);
-  const res = await fetch(`${API_BASE}/api/npcs/search?${params.toString()}`);
+  const res = await fetch(`${API_BASE}/npcs/search?${params.toString()}`);
 
   if (!res.ok) {
     const msg = await res.text().catch(() => "");
@@ -52,7 +52,7 @@ export async function addNpcLocation(
   success: true;
   locations: Array<{ lat: number; lng: number; floor: number }>;
 }> {
-  const res = await fetch(`${API_BASE}/api/npcs/${id}/locations`, {
+  const res = await fetch(`${API_BASE}/npcs/${id}/locations`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(coord),
