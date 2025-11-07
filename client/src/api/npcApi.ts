@@ -1,17 +1,14 @@
 function getApiBase(): string {
   const host = window.location.hostname;
 
-  // Local dev (webpack-dev-server): hit local API directly or use dev proxy
+  // Local dev: hit dev API or rely on webpack devServer proxy
   if (host === "localhost" || host === "127.0.0.1") {
-    // If you run the API locally:
-    return "http://127.0.0.1:42069";
-    // you can also return "" and always prefix routes with /api in fetch calls.
+    return "http://127.0.0.1:42069"; // or just return "" and prefix fetch with /api
   }
 
-  // This keeps same-origin and avoids CORS
-  const base = window.__APP_CONFIG__?.API_BASE;
-  if (base) return base; // allow runtime override if you ever inject one
-
+  // Prod: always go through /api behind NGINX
+  const base = (window as any).__APP_CONFIG__?.API_BASE;
+  if (base) return base; // optional runtime override
   return `${window.location.origin}/api`;
 }
 const API_BASE = getApiBase();
