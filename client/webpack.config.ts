@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/RS3QuestBuddy/", // Required for `webpack-dev-server`
+    publicPath: "/RS3QuestBuddyEditor/", // Required for `webpack-dev-server`
   },
   mode: "development",
   devtool: "eval-source-map",

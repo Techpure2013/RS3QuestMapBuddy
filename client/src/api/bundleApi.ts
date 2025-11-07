@@ -4,11 +4,19 @@ import { QuestBundleNormalized } from "./../state/types";
 
 function getApiBase(): string {
   const host = window.location.hostname;
+
+  // Local dev (webpack-dev-server): hit local API directly or use dev proxy
   if (host === "localhost" || host === "127.0.0.1") {
-    // Use dev proxy or same-origin in dev to avoid CORS
+    // If you run the API locally:
     return "http://127.0.0.1:42069";
+    // you can also return "" and always prefix routes with /api in fetch calls.
   }
-  return window.__APP_CONFIG__?.API_BASE ?? window.location.origin;
+
+  // This keeps same-origin and avoids CORS
+  const base = window.__APP_CONFIG__?.API_BASE;
+  if (base) return base; // allow runtime override if you ever inject one
+
+  return `${window.location.origin}/api`;
 }
 const API_BASE = getApiBase();
 
