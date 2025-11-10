@@ -7,8 +7,8 @@ COPY package*.json ./
 RUN npm ci
 
 # Install client deps
-WORKDIR /app/client
-COPY client/package*.json ./
+WORKDIR /app
+COPY package*.json ./
 RUN npm ci
 
 # Copy source

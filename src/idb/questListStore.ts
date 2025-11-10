@@ -2,10 +2,7 @@ import {
   loadQuestListFullCache,
   saveQuestListFullCache,
 } from "api/questListService";
-import {
-  type QuestListFullCache,
-  type QuestRowFull,
-} from "./../state/questList";
+import { type QuestListFullCache, type QuestRowFull } from "../state/questList";
 
 function getApiBase(): string {
   const host = window.location.hostname;

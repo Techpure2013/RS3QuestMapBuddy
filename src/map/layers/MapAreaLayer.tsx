@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
-import allMapAreasData from "./../Map Data/combinedMapData.json";
+import allMapAreasData from "../Map Data/combinedMapData.json";
 
 interface MapArea {
   mapId: number;

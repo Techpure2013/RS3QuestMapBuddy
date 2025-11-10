@@ -1,7 +1,7 @@
 // add to imports
 import React from "react";
-import type { Clipboard, Quest } from "./../../state/types";
-import type { NpcHighlight, ObjectHighlight } from "./../../state/types";
+import type { Clipboard, Quest } from "../../state/types";
+import type { NpcHighlight, ObjectHighlight } from "../../state/types";
 type TargetType = "npc" | "object";
 
 interface TargetSelectionSectionProps {

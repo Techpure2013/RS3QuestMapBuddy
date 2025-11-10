@@ -3,7 +3,7 @@ import {
   loadQuestListAllFull,
   type QuestListFullCache,
   type QuestRowFull,
-} from "./../../idb/questListStore";
+} from "../../idb/questListStore";
 
 interface QuestPickerModalProps {
   isOpen: boolean;

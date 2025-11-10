@@ -1,9 +1,9 @@
-import { addNpcLocation } from "./../api/npcApi";
+import { addNpcLocation } from "../api/npcApi";
 import {
   loadNpcCache,
   saveNpcCache,
   addNpcLocationToCache,
-} from "./../idb/npcStore";
+} from "../idb/npcStore";
 
 /**
  Explicitly persist a new NPC location to DB and local persistent cache.

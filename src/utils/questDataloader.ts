@@ -3,7 +3,7 @@ import type {
   MemberRequirement,
   OfficialLength,
   QuestDetails,
-} from "./../state/types";
+} from "../state/types";
 export interface QuestInfo {
   Quest: string;
   StartPoint: string;

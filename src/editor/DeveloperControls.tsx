@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { QuestDetailsEditor } from "./sections/QuestDetailsEditor";
-import type { Clipboard, Quest, QuestImage } from "./../state/types";
+import type { Clipboard, Quest, QuestImage } from "../state/types";
 import AssetToolsSection from "./sections/AssetToolSection";
 import { ObjectToolsSection } from "./sections/ObjectToolsSection";
 import { NpcToolsSection } from "./sections/NpcToolsSection";
@@ -9,6 +9,7 @@ import { StepControlsSection } from "./sections/StepControlSection";
 import { ItemsSection } from "./sections/ItemsSection";
 import { StepDescriptionSection } from "./sections/StepDescriptionSection";
 import { QuestPickerModal } from "./sections/QuestPickerModal";
+import QuestImagesPanel from "./sections/ImageTool";
 
 type TargetType = "npc" | "object";
 
@@ -302,7 +303,7 @@ export const EditorPanel: React.FC<EditorPanelProps> = React.memo((props) => {
       onChange(newValue);
     }
   };
-
+  const [isQuestImagesOpen, setIsQuestImagesOpen] = useState(true);
   const handleAddChathead = () => {
     onAddChatheadOverride(chatheadName.trim(), chatheadUrl.trim());
     setChatheadName("");
@@ -426,16 +427,23 @@ export const EditorPanel: React.FC<EditorPanelProps> = React.memo((props) => {
         isOpen={isAssetToolsOpen}
         onToggle={() => setIsAssetToolsOpen((v) => !v)}
         isAlt1Environment={isAlt1Environment}
-        questImageList={questImageList}
         questName={questJson?.questName ?? ""}
         previewBaseUrl="https://techpure.dev/RS3QuestBuddy/Images"
-        onRemoveQuestImage={onRemoveQuestImage}
-        onReorderQuestImage={onReorderQuestImage}
         chatheadName={chatheadName}
         onChatheadNameChange={setChatheadName}
         chatheadUrl={chatheadUrl}
         onChatheadUrlChange={setChatheadUrl}
         onAddChathead={handleAddChathead}
+      />
+
+      <QuestImagesPanel
+        isOpen={isQuestImagesOpen}
+        onToggle={() => setIsQuestImagesOpen((v) => !v)}
+        questName={questJson?.questName ?? ""}
+        previewBaseUrl="https://techpure.dev/RS3QuestBuddy/Images"
+        questImageList={questImageList}
+        onRemoveQuestImage={onRemoveQuestImage}
+        onReorderQuestImage={onReorderQuestImage}
         onSelectImageDirectory={onSelectImageDirectory}
         imageDirectoryName={imageDirectoryName}
         onImagePaste={onImagePaste}

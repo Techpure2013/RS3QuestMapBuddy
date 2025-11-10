@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
-import { resizeImageToDataUrl } from "./../utils/imageDisplayUtils";
-import chatheadOverrides from "./../Map Data/chatheadOverrides.json";
+import { resizeImageToDataUrl } from "../utils/imageDisplayUtils";
+import chatheadOverrides from "../Map Data/chatheadOverrides.json";
 import { isEqual } from "lodash";
 
 // --- INTERFACES ---

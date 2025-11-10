@@ -1,32 +1,18 @@
 ⚙️ Installation
 
-
 Clone the repository and install dependencies for the root, client, and server:
 
 # Clone the repo
 
-```git clone https://github.com/Techpure2013/RS3QuestMapBuddy.git```
-```cd RS3QuestMapBuddy```
+`git clone https://github.com/Techpure2013/RS3QuestMapBuddy.git`
+`cd RS3QuestMapBuddy`
 
 # Install root dependencies
+
 Install in the root directory /RS3QuestMapBuddy
 
-```npm install```
-
-# Install client dependencies
-Install in the /RS3QuestMapBuddy/client folder
-
-```cd client```
-```npm install```
-
-# Install server dependencies
-Install in the /RS3QuestMapBuddy/server
-
-```cd server```
-```npm install```
-
-# In the root directory
-```npm run start```
+`npm install`
+`npm run start`
 
 Localhost:3000 should start up into the editor panel and map.
 
@@ -34,16 +20,18 @@ Localhost:3000 should start up into the editor panel and map.
 
 <img width="1917" height="962" alt="image" src="https://github.com/user-attachments/assets/8801e02b-67b9-4532-bb3c-daf65e99ff51" />
 
-# Little Walk Around: 
- ## You have the: 
-  - New Quest - Sets up a new quest
-  - Load Quest - Pulls up a File Explorer to load a quest
-  - Save - Saves the quest as is. Works as save as in alt1 browser
-  - Save As - Alt1's alternative to a safer save.
+# Little Walk Around:
+
+## You have the:
+
+- New Quest - Sets up a new quest
+- Load Quest - Pulls up a File Explorer to load a quest
+- Save - Saves the quest as is. Works as save as in alt1 browser
+- Save As - Alt1's alternative to a safer save.
 - The Step Description Section
   - You can edit the step description section with the checkbox checked
 - Items Needed and Recommended Boxes
-  - Change the items needed and recommended as needed 
+  - Change the items needed and recommended as needed
 - Step Increase/Decrese Floor Increase/Decrease
   - Floor saves as you proceed to the next step
   - Add and Delete Step works as intended

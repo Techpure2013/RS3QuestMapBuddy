@@ -2,51 +2,37 @@ import React, { useState } from "react";
 import { ImagePasteTarget } from "./ImagePasteTarget";
 import type { QuestImage } from "state/types";
 
-const AssetToolsSection: React.FC<{
-  isOpen: boolean;
-  onToggle: () => void;
+export interface QuestImagesPanelProps {
+  questName: string;
+  previewBaseUrl?: string;
 
+  // Current quest images
   questImageList: QuestImage[];
   onRemoveQuestImage: (index: number) => void;
   onReorderQuestImage?: (from: number, to: number) => void;
 
-  // For preview URL building
-  questName: string;
-  previewBaseUrl?: string;
-
-  isAlt1Environment: boolean;
-
-  chatheadName: string;
-  onChatheadNameChange: (v: string) => void;
-  chatheadUrl: string;
-  onChatheadUrlChange: (v: string) => void;
-  onAddChathead: () => void;
-
+  // Directory + ingest
   onSelectImageDirectory: () => void;
   imageDirectoryName: string;
-  onImagePaste: (b: Blob) => void;
+  onImagePaste: (blob: Blob) => void;
 
+  // URL ingest
   stepImageUrl: string;
-  onStepImageUrlChange: (v: string) => void;
+  onStepImageUrlChange: (value: string) => void;
   onAddImage: () => void;
-}> = ({
-  isOpen,
-  onToggle,
+
+  // Optional: controlled expand/collapse of panel if you want
+  isOpen: boolean;
+  onToggle: () => void;
+}
+
+export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
+  questName,
+  previewBaseUrl = "https://techpure.dev/RS3QuestBuddy/Images",
 
   questImageList,
   onRemoveQuestImage,
   onReorderQuestImage,
-
-  questName,
-  previewBaseUrl = "https://techpure.dev/RS3QuestBuddy/Images",
-
-  isAlt1Environment,
-
-  chatheadName,
-  onChatheadNameChange,
-  chatheadUrl,
-  onChatheadUrlChange,
-  onAddChathead,
 
   onSelectImageDirectory,
   imageDirectoryName,
@@ -55,57 +41,31 @@ const AssetToolsSection: React.FC<{
   stepImageUrl,
   onStepImageUrlChange,
   onAddImage,
+
+  isOpen,
+  onToggle,
 }) => {
-  // Track which image rows are expanded for preview
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
-  const buildPreviewUrl = (img: QuestImage) => {
-    // Encode quest folder the same way your server expects
+  const buildPreviewUrl = (img: QuestImage): string => {
     const folder = encodeURIComponent(questName);
     return `${previewBaseUrl}/${folder}/${img.src}`;
   };
 
-  const toggleExpanded = (idx: number) => {
-    setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }));
+  const toggleExpanded = (index: number): void => {
+    setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
   return (
     <div className="panel-section">
       <label className="EditDescriptionLabel">
-        <strong>Asset Creation Tools</strong>
+        <strong>Quest Images</strong>
         <input type="checkbox" checked={isOpen} onChange={onToggle} />
       </label>
 
       {isOpen && (
         <div style={{ marginTop: 10 }}>
-          {/* Chatheads */}
-          <div className="panel-section">
-            <div className="control-group">
-              <label>Chathead Override Name</label>
-              <input
-                type="text"
-                value={chatheadName}
-                onChange={(e) => onChatheadNameChange(e.target.value)}
-                placeholder="e.g., Master Chef ( Beneath Cursed Tides )"
-              />
-            </div>
-            <div className="control-group">
-              <label>Chathead Image URL</label>
-              <input
-                type="text"
-                value={chatheadUrl}
-                onChange={(e) => onChatheadUrlChange(e.target.value)}
-                placeholder="Paste wiki URL here"
-              />
-            </div>
-            <div className="button-group">
-              <button onClick={onAddChathead} className="button--add">
-                Add/Update Chathead Override
-              </button>
-            </div>
-          </div>
-
-          {/* Ingest tools */}
+          {/* Directory + paste/URL ingest */}
           <div className="panel-section">
             <div className="button-group">
               <button
@@ -124,7 +84,7 @@ const AssetToolsSection: React.FC<{
             />
 
             <div className="control-group">
-              <label>Or Add Step Image from URL</label>
+              <label>Add Step Image from URL</label>
               <input
                 type="text"
                 value={stepImageUrl}
@@ -146,16 +106,15 @@ const AssetToolsSection: React.FC<{
             </button>
           </div>
 
-          {/* Quest image list with inline preview */}
+          {/* List + preview */}
           <div className="panel-section">
-            <strong>Quest Images</strong>
             {questImageList.length === 0 ? (
               <div className="qp-empty">No images yet</div>
             ) : (
               <ul className="search-results" style={{ maxHeight: 320 }}>
                 {questImageList.map((img, i) => {
                   const url = buildPreviewUrl(img);
-                  const isOpen = !!expanded[i];
+                  const isRowOpen = !!expanded[i];
 
                   return (
                     <li
@@ -181,15 +140,13 @@ const AssetToolsSection: React.FC<{
                           Step {img.step}: {img.src}
                         </span>
 
-                        {/* Preview Toggle */}
                         <button
                           onClick={() => toggleExpanded(i)}
-                          title={isOpen ? "Hide preview" : "Show preview"}
+                          title={isRowOpen ? "Hide preview" : "Show preview"}
                         >
-                          {isOpen ? "Hide" : "Preview"}
+                          {isRowOpen ? "Hide" : "Preview"}
                         </button>
 
-                        {/* Move up/down */}
                         {onReorderQuestImage && (
                           <>
                             <button
@@ -209,7 +166,6 @@ const AssetToolsSection: React.FC<{
                           </>
                         )}
 
-                        {/* Remove */}
                         <button
                           onClick={() => onRemoveQuestImage(i)}
                           className="button--delete"
@@ -219,8 +175,7 @@ const AssetToolsSection: React.FC<{
                         </button>
                       </div>
 
-                      {/* Inline preview content */}
-                      {isOpen && (
+                      {isRowOpen && (
                         <div
                           style={{
                             marginTop: 8,
@@ -230,7 +185,6 @@ const AssetToolsSection: React.FC<{
                             padding: 8,
                           }}
                         >
-                          {/* Optional compact header */}
                           <div
                             style={{
                               display: "flex",
@@ -263,7 +217,6 @@ const AssetToolsSection: React.FC<{
                             </a>
                           </div>
 
-                          {/* Thumbnail box */}
                           <div
                             style={{
                               display: "flex",
@@ -301,4 +254,4 @@ const AssetToolsSection: React.FC<{
   );
 };
 
-export default AssetToolsSection;
+export default QuestImagesPanel;

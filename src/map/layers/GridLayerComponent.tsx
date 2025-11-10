@@ -1,4 +1,4 @@
-import Graticule from "./../utils/Graticule";
+import Graticule from "../utils/Graticule";
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 

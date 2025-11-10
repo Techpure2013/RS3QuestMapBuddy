@@ -1191,22 +1191,6 @@ const App: React.FC = () => {
           </button>
         </div>
 
-        <div className="floorButtonContainer">
-          <button
-            className="floor-button floor-button--up"
-            onClick={() => handleFloorChange(floor + 1)}
-          >
-            ↑
-          </button>
-          <div className="floor-display">Floor {floor}</div>
-          <button
-            className="floor-button floor-button--down"
-            onClick={() => handleFloorChange(floor - 1)}
-          >
-            ↓
-          </button>
-        </div>
-
         {layers.map((layer) => (
           <TileLayer
             key={layer.name}

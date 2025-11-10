@@ -13,11 +13,11 @@ import type {
   QuestDetails,
   MemberRequirement,
   OfficialLength,
-} from "./../../state/types";
+} from "../../state/types";
 import {
   getQuestInfo,
   updateQuestInDatabase,
-} from "./../../utils/questDataloader";
+} from "../../utils/questDataloader";
 
 interface QuestDetailsEditorProps {
   questJson: Quest | null;

@@ -1,6 +1,6 @@
 // src/utils/bundleApi.ts
 
-import { QuestBundleNormalized } from "./../state/types";
+import { QuestBundleNormalized } from "../state/types";
 
 function getApiBase(): string {
   const host = window.location.hostname;

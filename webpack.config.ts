@@ -2,11 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-  entry: "./src/app/entrance/index.tsx", // Entry point for your application
+  entry: { main: "./src/app/entrance/index.tsx" }, // Entry point for your application
   output: {
     filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/RS3QuestBuddyEditor/", // Required for `webpack-dev-server`
+    clean: true,
+    publicPath: "./",
   },
   mode: "development",
   devtool: "eval-source-map",
