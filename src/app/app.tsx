@@ -14,7 +14,7 @@ import NpcObjectToolsPanel from "./containers/NpcObjectToolsPanel";
 import QuestImagePastePanel from "./containers/QuestImagePastePanel";
 import ChatheadsPanel from "./containers/ChatheadsPanel";
 import NpcSearchPanel from "./containers/SearchPanels/NpcSearchPanel";
-import MapAreaSearchPanel from "./containers/SearchPanels/MapAreaSearchPanel";
+import { MapAreaSearchPanel } from "./containers/SearchPanels/MapAreaSearchPanel";
 import ObjectSearchPanel from "./containers/SearchPanels/ObjectSearchPanel";
 import MapCenter from "./map/MapCenter";
 import CenterControls from "./containers/CenterControlPanel";

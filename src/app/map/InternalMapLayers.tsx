@@ -12,23 +12,19 @@ import {
 } from "../../map/utils/coordinates";
 import { HandleFloorIncreaseDecrease } from "../../map/utils/MapFunctions";
 import { SelectionHighlightLayer } from "../../map/layers/SelectionHighlightLayer";
-import MapAreaFlyToHandler from "../../map/handlers/MapAreaFlyToHandler";
-import StepSnapHandler from "./../sections/StepSnapHandler";
-import { TargetFlyToHandler } from "./../../map/handlers/TargetFlyToHandler";
-import NpcFlyToHandler from "../../map/handlers/NpcFlyToHandler";
-import ObjectFlyToHandler from "../../map/handlers/ObjectFlyToHandler";
-import SelectedObjectFlyToHandler from "../../map/handlers/SelectedObjectFlyToHandler";
+import TargetFlyToHandler from "./../../map/handlers/TargetFlyToHandler";
 import { MapUIOverlay } from "../../map/overlay/MapUIOverlay";
-import type {
-  ObjectRenderItem,
-  SelectionGeometry,
-} from "../../map/layers/SelectionHighlightLayer";
+import type { SelectionGeometry } from "../../map/layers/SelectionHighlightLayer";
 import type {
   NpcHighlight,
   ObjectHighlight,
   ObjectLocationPoint,
 } from "../../state/types";
 import type { MapObject } from "./../sections/ObjectSearch";
+import AreaFlyToHandler from "map/handlers/AreaFlyToHandler";
+import NavReturnCaptureHandler from "map/handlers/NavReturnCaptureHandler";
+import RestoreViewHandler from "map/handlers/RestoreViewHandler";
+import SearchHighlightFlyToHandler from "map/handlers/SearchHighlightFlyToHandler";
 
 const snapToTileCoordinate = (
   latlng: L.LatLng
@@ -368,46 +364,11 @@ const InternalMapLayers: React.FC = () => {
   return (
     <>
       <MapClickHandler disabled={false} />
-      <MapAreaFlyToHandler selectedArea={highlights.selectedArea} />
-      {/* <StepSnapHandler
-        questJson={stepSnapQuest}
-        selectedStep={selectedStep}
-        targetIndex={targetIndex}
-        targetType={targetType}
-        onFloorChange={handleFloorChange}
-      /> */}
-      <TargetFlyToHandler
-        questJson={stepSnapQuest}
-        selectedStep={selectedStep}
-        targetType={targetType}
-        targetIndex={targetIndex}
-        floor={floor}
-        onFloorChange={handleFloorChange}
-      />
-      <NpcFlyToHandler
-        highlightedNpc={highlights.highlightedNpc}
-        onFloorChange={handleFloorChange}
-      />
-      <ObjectFlyToHandler
-        highlightedObject={
-          highlights.highlightedObject
-            ? {
-                lat: highlights.highlightedObject.lat,
-                lng: highlights.highlightedObject.lng,
-              }
-            : null
-        }
-      />
-      <SelectedObjectFlyToHandler
-        selectedObject={
-          highlights.selectedObjectFromSearch
-            ? {
-                lat: highlights.selectedObjectFromSearch.lat,
-                lng: highlights.selectedObjectFromSearch.lng,
-              }
-            : null
-        }
-      />
+      <SearchHighlightFlyToHandler />
+      <NavReturnCaptureHandler />
+      <RestoreViewHandler />
+      <TargetFlyToHandler />
+      <AreaFlyToHandler />
       <SelectionHighlightLayer
         geometry={npcGeometry}
         pane="selectionPane"

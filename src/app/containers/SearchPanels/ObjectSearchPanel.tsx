@@ -1,66 +1,90 @@
 import React, { useCallback, useState, useEffect } from "react";
-import Panel from "./../../sections/panel";
 import { ObjectSearch, type MapObject } from "./../../sections/ObjectSearch";
-import { EditorStore } from "../../../state/editorStore";
+import {
+  EditorStore,
+  requestFlyToCurrentTargetAt,
+  requestCaptureNavReturn,
+  requestRestoreView,
+} from "../../../state/editorStore";
+import { useEditorSelector } from "./../../../state/useEditorSelector";
 
 export const ObjectSearchPanel: React.FC = () => {
   const [areaSearchResults, setAreaSearchResults] = useState<MapObject[]>([]);
   const [isAreaSearchActive, setIsAreaSearchActive] = useState(false);
+  const [session, setSession] = useState(0); // remount key
+  const ui = useEditorSelector((s) => s.ui);
 
-  // Listen for area search results from map clicks
   useEffect(() => {
     const handleAreaSearchResults = (e: Event) => {
-      const customEvent = e as CustomEvent<{ results: MapObject[] }>;
-      const results = customEvent.detail.results;
-      console.log("ObjectSearchPanel received results:", results.length);
-      setAreaSearchResults(results);
-      setIsAreaSearchActive(false); // Deactivate after results
+      const ce = e as CustomEvent<{ results: MapObject[] }>;
+      setAreaSearchResults(ce.detail.results);
+      setIsAreaSearchActive(false);
     };
-
     window.addEventListener("areaSearchResults", handleAreaSearchResults);
-    return () => {
+    return () =>
       window.removeEventListener("areaSearchResults", handleAreaSearchResults);
-    };
   }, []);
 
   const onObjectHighlight = useCallback((obj: MapObject | null) => {
+    if (!EditorStore.getState().ui.navReturn) {
+      requestCaptureNavReturn(true);
+    }
     EditorStore.setHighlights({ highlightedObject: obj });
   }, []);
 
   const onObjectSelect = useCallback((chosen: MapObject) => {
+    EditorStore.setSelection({ targetType: "object", floor: chosen.floor });
     const sel = EditorStore.getState().selection;
-    EditorStore.setSelection({ floor: chosen.floor });
+
     EditorStore.patchQuest((draft) => {
-      const target =
+      const t =
         draft.questSteps[sel.selectedStep]?.highlights.object?.[
           sel.targetIndex
         ];
-      if (!target) return;
-      target.name = chosen.name;
-      target.objectLocation = [
+      if (!t) return;
+      t.name = chosen.name;
+      t.objectLocation = [
         { lat: chosen.lat, lng: chosen.lng, color: "#FFFFFF", numberLabel: "" },
       ];
       draft.questSteps[sel.selectedStep].floor = chosen.floor;
     });
-    EditorStore.setHighlights({ highlightedObject: null });
 
-    // Deactivate area search after selection
+    EditorStore.setHighlights({ highlightedObject: null });
     setIsAreaSearchActive(false);
     setAreaSearchResults([]);
+    requestFlyToCurrentTargetAt(5, "selection");
   }, []);
 
   const handleToggleAreaSearch = useCallback((active: boolean) => {
     setIsAreaSearchActive(active);
-    if (!active) {
-      setAreaSearchResults([]);
+    if (active && !EditorStore.getState().ui.navReturn) {
+      requestCaptureNavReturn(true);
     }
-    // Store in UI state so map can read it
+    if (!active) setAreaSearchResults([]);
     EditorStore.setUi({ areaSearchMode: active ? "object" : null });
   }, []);
 
+  const handleBack = useCallback(() => {
+    EditorStore.setHighlights({ highlightedObject: null });
+    requestRestoreView(true);
+    setIsAreaSearchActive(false);
+    setAreaSearchResults([]);
+    setSession((s) => s + 1); // reset widget
+  }, []);
+
   return (
-    <Panel title="Object Search" defaultOpen={false}>
+    <>
+      <div className="button-group" style={{ marginBottom: 6 }}>
+        <button
+          onClick={handleBack}
+          disabled={!ui.navReturn}
+          title="Return to previous view"
+        >
+          Back
+        </button>
+      </div>
       <ObjectSearch
+        key={session} // force reset
         onObjectSelect={onObjectSelect}
         onObjectHighlight={onObjectHighlight}
         isAreaSearchActive={isAreaSearchActive}
@@ -68,7 +92,7 @@ export const ObjectSearchPanel: React.FC = () => {
         areaSearchResults={areaSearchResults}
         onClearAreaSearchResults={() => setAreaSearchResults([])}
       />
-    </Panel>
+    </>
   );
 };
 

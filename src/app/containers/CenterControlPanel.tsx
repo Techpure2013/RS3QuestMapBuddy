@@ -3,7 +3,10 @@ import React, { useCallback, useState, useEffect, useRef } from "react";
 import { QuestPickerModal } from "./../sections/QuestPickerModal";
 import { fetchQuestBundle, saveQuestBundle } from "./../../api/bundleApi";
 import { bundleToQuest, questToBundle } from "./../../state/types";
-import { EditorStore } from "./../../state/editorStore";
+import {
+  EditorStore,
+  requestFlyToCurrentTargetAt,
+} from "./../../state/editorStore";
 import { saveActiveBundle, loadActiveBundle } from "./../../idb/bundleStore";
 import {
   loadPendingChatheads,
@@ -136,6 +139,7 @@ export const CenterControls: React.FC = () => {
         targetType,
         floor,
       });
+      requestFlyToCurrentTargetAt(5, "quest-load");
       EditorStore.setClipboard({ type: "none", data: null });
       EditorStore.setHighlights({
         highlightedNpc: null,

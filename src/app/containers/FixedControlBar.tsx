@@ -1,7 +1,10 @@
 // src/app/containers/StepControlBar.tsx
 import React, { useCallback, useEffect, useState } from "react";
 import { useEditorSelector } from "../../state/useEditorSelector";
-import { EditorStore } from "../../state/editorStore";
+import {
+  EditorStore,
+  requestFlyToCurrentTargetAt,
+} from "../../state/editorStore";
 import { HandleFloorIncreaseDecrease } from "../../map/utils/MapFunctions";
 import { useAuth } from "state/useAuth";
 import { IconGridDots } from "@tabler/icons-react";
@@ -50,6 +53,7 @@ export const StepControlBar: React.FC = () => {
       const nextStep = sel.selectedStep + 1;
       // First set floor by step (EditorStore will sync floor inside helper)
       EditorStore.autoSelectFirstValidTargetForStep(nextStep);
+      requestFlyToCurrentTargetAt(5, "auto-select");
     }
   }, [sel.selectedStep, totalSteps]);
 
@@ -57,11 +61,13 @@ export const StepControlBar: React.FC = () => {
     if (sel.selectedStep > 0) {
       const nextStep = sel.selectedStep - 1;
       EditorStore.autoSelectFirstValidTargetForStep(nextStep);
+      requestFlyToCurrentTargetAt(5, "auto-select");
     }
   }, [sel.selectedStep]);
 
   const onStepSelect = useCallback((stepIndex: number) => {
     EditorStore.autoSelectFirstValidTargetForStep(stepIndex);
+    requestFlyToCurrentTargetAt(5, "auto-select");
   }, []);
 
   const floorInc = useCallback(() => {

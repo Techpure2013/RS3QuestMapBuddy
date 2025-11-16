@@ -10,7 +10,10 @@ import { NpcToolsSection } from "./../sections/NpcToolsSection";
 import { ObjectToolsSection } from "./../sections/ObjectToolsSection";
 import { TargetSelectionSection } from "./../sections/TargetSelectionSection";
 import { useEditorSelector } from "../../state/useEditorSelector";
-import { EditorStore } from "../../state/editorStore";
+import {
+  EditorStore,
+  requestFlyToCurrentTargetAt,
+} from "../../state/editorStore";
 import type { Quest, NpcHighlight, ObjectHighlight } from "../../state/types";
 import { recordObservedChathead } from "../../idb/chatheadsObserved";
 import { addPendingChathead } from "../../idb/chatheadQueue";
@@ -81,6 +84,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
       } else {
         EditorStore.setSelection({ targetIndex: i });
       }
+      requestFlyToCurrentTargetAt(5, "selection");
     },
     [sel.targetType]
   );

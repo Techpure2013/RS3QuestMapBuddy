@@ -23,6 +23,40 @@ export interface UiState {
   wanderRadiusInput: number;
   imageDirectoryName: string;
   areaSearchMode: "object" | null;
+
+  targetZoom?: number;
+  areaZoom?: number;
+
+  flyToTargetRequest?: {
+    token: number;
+    source?: "selection" | "quest-load" | "auto-select" | "external";
+  };
+  areaFlyRequest?: {
+    token: number;
+    area: {
+      name: string;
+      bounds: [[number, number], [number, number]];
+      center: [number, number];
+      mapId: number;
+    };
+    preferredZoom?: number;
+  };
+
+  targetNavSeq?: number;
+  areaNavSeq?: number;
+
+  captureNavReturnRequest?: { token: number; includeSelection?: boolean };
+  restoreViewRequest?: { token: number; clearReturn?: boolean };
+  captureNavSeq?: number;
+  restoreNavSeq?: number;
+
+  navReturn?: {
+    center: { lat: number; lng: number };
+    zoom: number;
+    floor: number;
+    selection?: SelectionState;
+  };
+
   isAlt1Environment: boolean;
 }
 

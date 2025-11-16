@@ -63,7 +63,58 @@ const schedulePersist = () => {
     persistTimer = null;
   }, 150);
 };
+export function requestFlyToCurrentTargetAt(
+  zoom: number,
+  source: "selection" | "quest-load" | "auto-select" | "external" = "external"
+): void {
+  const ui = EditorStore.getState().ui;
+  const nextSeq = (ui.targetNavSeq ?? 0) + 1;
+  EditorStore.setUi({
+    targetNavSeq: nextSeq,
+    targetZoom: zoom,
+    flyToTargetRequest: { token: nextSeq, source },
+  });
+}
+export function requestCaptureNavReturn(
+  includeSelection: boolean = true
+): void {
+  const ui = EditorStore.getState().ui;
+  const next = (ui.captureNavSeq ?? 0) + 1;
+  EditorStore.setUi({
+    captureNavSeq: next,
+    captureNavReturnRequest: { token: next, includeSelection },
+  });
+}
 
+export function requestRestoreView(clearReturn: boolean = true): void {
+  const ui = EditorStore.getState().ui;
+  const next = (ui.restoreNavSeq ?? 0) + 1;
+  EditorStore.setUi({
+    restoreNavSeq: next,
+    restoreViewRequest: { token: next, clearReturn },
+  });
+}
+export function requestFlyToAreaAt(
+  area: {
+    name: string;
+    bounds: [[number, number], [number, number]];
+    center: [number, number];
+    mapId: number;
+  },
+  zoom: number
+): void {
+  const ui = EditorStore.getState().ui;
+  const nextSeq = (ui.areaNavSeq ?? 0) + 1;
+  EditorStore.setUi({
+    areaNavSeq: nextSeq,
+    areaFlyRequest: {
+      token: nextSeq,
+      area,
+      preferredZoom: zoom,
+    },
+    areaZoom: zoom,
+  });
+}
 function migrate(raw: EditorState): EditorState {
   if (!raw || typeof raw.version !== "number") return initialState;
   return { ...initialState, ...raw, version: CURRENT_VERSION };
@@ -233,53 +284,42 @@ export const EditorStore = {
       (draft) => {
         draft.quest = q;
 
-        // NEW: Auto-select appropriate target based on what's available in step 0
-        const step = q.questSteps?.[0];
-        if (step?.highlights) {
-          const hasValidNpc = step.highlights.npc?.some(
-            (npc) =>
-              npc.npcLocation &&
-              (npc.npcLocation.lat !== 0 || npc.npcLocation.lng !== 0)
-          );
-          const hasValidObject = step.highlights.object?.some((obj) =>
-            obj.objectLocation?.some((loc) => loc.lat !== 0 || loc.lng !== 0)
-          );
+        const step0 = q.questSteps?.[0];
+        let nextSelection = {
+          ...draft.selection,
+          selectedStep: 0,
+          floor: step0?.floor ?? 0,
+          targetType: draft.selection.targetType,
+          targetIndex: 0,
+        };
 
-          // Priority: NPC first, then object
-          if (hasValidNpc) {
-            draft.selection = {
-              ...draft.selection,
-              selectedStep: 0,
-              targetIndex: 0,
-              targetType: "npc",
-              floor: step.floor ?? 0,
-            };
-          } else if (hasValidObject) {
-            draft.selection = {
-              ...draft.selection,
-              selectedStep: 0,
-              targetIndex: 0,
-              targetType: "object",
-              floor: step.floor ?? 0,
-            };
+        if (step0?.highlights) {
+          const hasValidLoc = (loc?: { lat: number; lng: number }) =>
+            !!loc && (loc.lat !== 0 || loc.lng !== 0);
+
+          const npcIdx =
+            step0.highlights.npc?.findIndex((n) =>
+              hasValidLoc(n?.npcLocation)
+            ) ?? -1;
+
+          const objIdx =
+            step0.highlights.object?.findIndex((o) =>
+              (o?.objectLocation ?? []).some(hasValidLoc)
+            ) ?? -1;
+
+          if (npcIdx >= 0) {
+            nextSelection.targetType = "npc";
+            nextSelection.targetIndex = npcIdx;
+          } else if (objIdx >= 0) {
+            nextSelection.targetType = "object";
+            nextSelection.targetIndex = objIdx;
           } else {
-            // No valid targets, just reset to step 0
-            draft.selection = {
-              ...draft.selection,
-              selectedStep: 0,
-              targetIndex: 0,
-              floor: step.floor ?? 0,
-            };
+            // keep current type, index 0
+            nextSelection.targetIndex = 0;
           }
-        } else {
-          // No highlights at all, reset to defaults
-          draft.selection = {
-            ...draft.selection,
-            selectedStep: 0,
-            targetIndex: 0,
-            floor: q.questSteps?.[0]?.floor ?? 0,
-          };
         }
+
+        draft.selection = nextSelection;
       },
       ["quest", "selection"]
     );

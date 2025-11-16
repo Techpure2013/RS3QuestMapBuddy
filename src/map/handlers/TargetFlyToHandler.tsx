@@ -1,200 +1,91 @@
 // src/map/handlers/TargetFlyToHandler.tsx
-// Update the initialization check to ensure it fires on quest load
-
 import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
-import type { LatLngTuple } from "leaflet";
+import { useEditorSelector } from "../../state/useEditorSelector";
 import { EditorStore } from "../../state/editorStore";
+import type { NpcHighlight, ObjectHighlight } from "../../state/types";
+import { convertManualCoordToVisual } from "../../map/utils/coordinates";
 
-interface TargetFlyToHandlerProps {
-  questJson: any;
-  selectedStep: number;
-  targetIndex: number;
-  targetType: "npc" | "object";
-  floor: number;
-  onFloorChange: (floor: number) => void;
-}
-
-export const TargetFlyToHandler: React.FC<TargetFlyToHandlerProps> = ({
-  questJson,
-  selectedStep,
-  targetIndex,
-  targetType,
-  floor,
-  onFloorChange,
-}) => {
+/**
+ * Computes the same center the renderer uses:
+ * - convertManualCoordToVisual (manual -> visual tile origin)
+ * - then +0.5,+0.5 to land in the middle of the tile
+ * - for objects with multiple tiles, fly to the average center
+ */
+const TargetFlyToHandler: React.FC = () => {
   const map = useMap();
-
-  const prevRef = useRef({
-    selectedStep,
-    targetIndex,
-    targetType,
-    npcCount: 0,
-    objectCount: 0,
-    initialized: false,
-    questName: "", // Track quest changes
-  });
+  // wake on new token; read latest quest/selection directly from store to avoid races
+  const ui = useEditorSelector((s) => s.ui);
+  const tokenRef = useRef<number>(ui.flyToTargetRequest?.token ?? 0);
 
   useEffect(() => {
-    if (!questJson) return;
+    const req = ui.flyToTargetRequest;
+    if (!req) return;
+    if (req.token === tokenRef.current) return;
+    tokenRef.current = req.token;
 
-    const step = questJson.questSteps?.[selectedStep];
-    if (!step?.highlights) return;
-
-    const currentNpcCount = step.highlights.npc?.length || 0;
-    const currentObjectCount = step.highlights.object?.length || 0;
-    const currentQuestName = questJson.questName || "";
-
-    const prev = prevRef.current;
-
-    // Check if quest changed (new quest loaded)
-    const questChanged = prev.questName !== currentQuestName;
-
-    const npcArrayGrew = currentNpcCount > prev.npcCount;
-    const objectArrayGrew = currentObjectCount > prev.objectCount;
-
-    // Handle initial mount OR quest change
-    if (!prev.initialized || questChanged) {
-      prevRef.current = {
-        selectedStep,
-        targetIndex,
-        targetType,
-        npcCount: currentNpcCount,
-        objectCount: currentObjectCount,
-        initialized: true,
-        questName: currentQuestName,
-      };
-
-      // Fly to initial target
-      const target = step.highlights[targetType]?.[targetIndex];
-      if (!target) return;
-
-      let snapLocation: LatLngTuple | null = null;
-
-      if (targetType === "npc") {
-        const loc = target.npcLocation;
-        if (loc && (loc.lat !== 0 || loc.lng !== 0)) {
-          snapLocation = [loc.lat + 0.5, loc.lng + 0.5];
-        }
-      } else if (targetType === "object") {
-        const firstValid = target.objectLocation?.find(
-          (loc: any) => loc.lat !== 0 || loc.lng !== 0
-        );
-        if (firstValid) {
-          snapLocation = [firstValid.lat + 0.5, firstValid.lng + 0.5];
-        }
-      }
-
-      if (snapLocation) {
-        if (typeof step.floor === "number" && floor !== step.floor) {
-          onFloorChange(step.floor);
-        }
-        console.log(
-          `${
-            questChanged ? "🆕 New quest" : "🎬 Initial"
-          } fly to ${targetType} at`,
-          snapLocation
-        );
-        map.flyTo(snapLocation, 4, { duration: 0.5 });
-      }
+    const { quest, selection: sel } = EditorStore.getState();
+    if (!quest) {
+      EditorStore.setUi({ flyToTargetRequest: undefined });
+      return;
+    }
+    const step = quest.questSteps?.[sel.selectedStep];
+    if (!step?.highlights) {
+      EditorStore.setUi({ flyToTargetRequest: undefined });
       return;
     }
 
-    // STEP CHANGE: Auto-select first valid target (don't fly here)
-    if (prev.selectedStep !== selectedStep) {
-      const isValidLocation = (loc: { lat: number; lng: number } | undefined) =>
-        loc && (loc.lat !== 0 || loc.lng !== 0);
+    let centerLat: number | null = null;
+    let centerLng: number | null = null;
 
-      const firstNpc = step.highlights.npc?.[0];
-      const hasValidNpc = firstNpc && isValidLocation(firstNpc.npcLocation);
-
-      const firstObject = step.highlights.object?.[0];
-      const hasValidObject =
-        firstObject &&
-        firstObject.objectLocation?.some((loc: any) => isValidLocation(loc));
-
-      prevRef.current = {
-        selectedStep,
-        targetIndex,
-        targetType,
-        npcCount: currentNpcCount,
-        objectCount: currentObjectCount,
-        initialized: true,
-        questName: currentQuestName,
-      };
-
-      if (hasValidNpc) {
-        console.log("Step changed: auto-selecting first NPC");
-        EditorStore.setSelection({ targetType: "npc", targetIndex: 0 });
-        return;
-      } else if (hasValidObject) {
-        console.log("Step changed: auto-selecting first object");
-        EditorStore.setSelection({ targetType: "object", targetIndex: 0 });
-        return;
+    if (sel.targetType === "npc") {
+      const npc = (step.highlights.npc ?? [])[sel.targetIndex] as
+        | NpcHighlight
+        | undefined;
+      if (npc?.npcLocation) {
+        const v = convertManualCoordToVisual(npc.npcLocation);
+        if (v) {
+          centerLat = v.lat - 2;
+          centerLng = v.lng + 8;
+        }
       }
-
-      console.log("Step changed: no valid targets found");
-      return;
-    }
-
-    // NORMAL LOGIC: Fly when user manually changes selection
-    const shouldFly =
-      prev.targetType !== targetType ||
-      (prev.targetIndex !== targetIndex &&
-        !(targetType === "npc" && npcArrayGrew) &&
-        !(targetType === "object" && objectArrayGrew));
-
-    prevRef.current = {
-      selectedStep,
-      targetIndex,
-      targetType,
-      npcCount: currentNpcCount,
-      objectCount: currentObjectCount,
-      initialized: true,
-      questName: currentQuestName,
-    };
-
-    if (!shouldFly) {
-      console.log("Skipping fly-to: new item was added");
-      return;
-    }
-
-    const target = step.highlights[targetType]?.[targetIndex];
-    if (!target) return;
-
-    let snapLocation: LatLngTuple | null = null;
-
-    if (targetType === "npc") {
-      const loc = target.npcLocation;
-      if (loc && (loc.lat !== 0 || loc.lng !== 0)) {
-        snapLocation = [loc.lat + 0.5, loc.lng + 0.5];
-      }
-    } else if (targetType === "object") {
-      const firstValid = target.objectLocation?.find(
-        (loc: any) => loc.lat !== 0 || loc.lng !== 0
+    } else {
+      const obj = (step.highlights.object ?? [])[sel.targetIndex] as
+        | ObjectHighlight
+        | undefined;
+      const pts = (obj?.objectLocation ?? []).filter(
+        (p) => p && (p.lat !== 0 || p.lng !== 0)
       );
-      if (firstValid) {
-        snapLocation = [firstValid.lat + 0.5, firstValid.lng + 0.5];
+      if (pts.length > 0) {
+        // average of all valid object tiles in visual space, then +0.5,+0.5
+        let sumLat = 0;
+        let sumLng = 0;
+        for (const p of pts) {
+          const v = convertManualCoordToVisual({ lat: p.lat, lng: p.lng });
+          if (!v) continue;
+          sumLat += v.lat - 2;
+          sumLng += v.lng + 8;
+        }
+        centerLat = sumLat / pts.length;
+        centerLng = sumLng / pts.length;
       }
     }
 
-    if (snapLocation) {
-      if (typeof step.floor === "number" && floor !== step.floor) {
-        onFloorChange(step.floor);
-      }
-
-      console.log(`Flying to ${targetType} at`, snapLocation);
-      map.flyTo(snapLocation, 4, { duration: 0.5 });
+    if (centerLat === null || centerLng === null) {
+      EditorStore.setUi({ flyToTargetRequest: undefined });
+      return;
     }
-  }, [
-    selectedStep,
-    targetIndex,
-    targetType,
-    questJson,
-    floor,
-    map,
-    onFloorChange,
-  ]);
+
+    // sync floor
+    if (typeof step.floor === "number" && sel.floor !== step.floor) {
+      EditorStore.setSelection({ floor: step.floor });
+    }
+
+    // always zoom 5 for targets
+    map.flyTo([centerLat, centerLng], 5, { duration: 0.5 });
+
+    EditorStore.setUi({ flyToTargetRequest: undefined });
+  }, [map, ui.flyToTargetRequest]);
 
   return null;
 };
