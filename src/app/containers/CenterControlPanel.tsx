@@ -19,7 +19,8 @@ import { recordQuestNpcLocations } from "./../../feature/npcPublisher";
 import { clearImageCache } from "../../idb/imageCache";
 import { clearObservedChatheads } from "idb/chatheadsObserved";
 
-import { useAuth } from "state/useAuth";
+import { useAuth } from "./../../state/useAuth";
+import { fetchMe } from "./../../api/auth";
 
 export const CenterControls: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -206,7 +207,8 @@ export const CenterControls: React.FC = () => {
   }, []);
 
   const handlePublish = useCallback(async () => {
-    if (!isAuthed) {
+    const me = await fetchMe();
+    if (!me.ok) {
       alert("You must be logged in to publish.");
       return;
     }
