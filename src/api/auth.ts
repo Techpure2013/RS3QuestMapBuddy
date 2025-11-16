@@ -11,17 +11,15 @@ export async function fetchMe(): Promise<{
   email?: string;
   role?: string;
 }> {
-  const res = await fetch(getApiBase() + "/api/auth/me", {
-    credentials: "include",
-  });
-  if (!res.ok) return { ok: false };
-  return (await res.json()) as { ok: boolean; email?: string; role?: string };
-}
-
-export async function logout(): Promise<void> {
-  const res = await fetch(getApiBase() + "/api/auth/logout", {
-    method: "POST",
-    credentials: "include",
-  });
-  // We don’t need response body; cookie cleared by server
+  try {
+    const res = await fetch(getApiBase() + "/api/auth/me", {
+      credentials: "include",
+      cache: "no-store",
+    });
+    if (!res.ok) return { ok: false };
+    return (await res.json()) as { ok: boolean; email?: string; role?: string };
+  } catch {
+    // Network failures should not throw; report unauth
+    return { ok: false };
+  }
 }
