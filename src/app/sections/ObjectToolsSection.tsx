@@ -1,4 +1,5 @@
 import React from "react";
+
 export const ObjectToolsSection: React.FC<{
   selectedObjectColor: string;
   onSelectedObjectColorChange: (c: string) => void;
@@ -17,18 +18,12 @@ export const ObjectToolsSection: React.FC<{
   <div className="panel-section editor-controls-grid">
     <div className="control-group">
       <label>Object Color</label>
-      <label className="color-picker-label">
-        <div
-          className="color-picker-swatch"
-          style={{ backgroundColor: selectedObjectColor }}
-        />
-        <input
-          type="color"
-          value={selectedObjectColor}
-          onChange={(e) => onSelectedObjectColorChange(e.target.value)}
-          className="color-input-hidden"
-        />
-      </label>
+      <input
+        type="color"
+        value={selectedObjectColor}
+        onChange={(e) => onSelectedObjectColorChange(e.target.value)}
+        className="color-picker-input"
+      />
     </div>
 
     <div className="control-group">

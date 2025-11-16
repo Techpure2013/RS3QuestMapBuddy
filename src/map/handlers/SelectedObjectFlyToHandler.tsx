@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
-import type { MapObject } from "../../editor/sections/ObjectSearch";
 
 interface SelectedObjectFlyToHandlerProps {
-  selectedObject: MapObject | null;
+  selectedObject: { lat: number; lng: number } | null;
 }
 
 const SelectedObjectFlyToHandler: React.FC<SelectedObjectFlyToHandlerProps> = ({

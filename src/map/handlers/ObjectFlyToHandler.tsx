@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
-import type { MapObject } from "../../editor/sections/ObjectSearch"; // Import the type
 
 interface ObjectFlyToHandlerProps {
-  highlightedObject: MapObject | null;
+  highlightedObject: { lat: number; lng: number } | null;
 }
 
 const ObjectFlyToHandler: React.FC<ObjectFlyToHandlerProps> = ({
@@ -13,7 +12,6 @@ const ObjectFlyToHandler: React.FC<ObjectFlyToHandlerProps> = ({
 
   useEffect(() => {
     if (highlightedObject) {
-      // --- IMPROVEMENT: Set a specific zoom level (e.g., 4) for consistency ---
       map.flyTo([highlightedObject.lat, highlightedObject.lng], 5, {
         animate: true,
         duration: 0.5,

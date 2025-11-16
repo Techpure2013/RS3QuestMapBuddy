@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
-import type { Npc } from "../../editor/sections/NpcSearch"; // Assuming Npc type is exported from NpcSearch
+import type { Npc } from "./../../app/sections/NpcSearch"; // Assuming Npc type is exported from NpcSearch
 
 interface NpcFlyToHandlerProps {
   highlightedNpc: Npc | null;

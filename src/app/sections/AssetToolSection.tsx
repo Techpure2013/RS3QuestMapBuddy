@@ -1,21 +1,13 @@
 import React, { useState } from "react";
-import { ImagePasteTarget } from "./ImagePasteTarget";
-import type { QuestImage } from "state/types";
+
+import { addPendingChathead } from "./../../idb/chatheadQueue";
 
 const AssetToolsSection: React.FC<{
   isOpen: boolean;
   onToggle: () => void;
-
-  // Removed: questImageList, onRemoveQuestImage, onReorderQuestImage,
-  //          onSelectImageDirectory, imageDirectoryName, onImagePaste,
-  //          stepImageUrl, onStepImageUrlChange, onAddImage
-
-  // For preview URL building (kept in case future needs)
   questName: string;
   previewBaseUrl?: string;
-
   isAlt1Environment: boolean;
-
   chatheadName: string;
   onChatheadNameChange: (v: string) => void;
   chatheadUrl: string;
@@ -25,22 +17,28 @@ const AssetToolsSection: React.FC<{
   isOpen,
   onToggle,
 
-  questName,
-  previewBaseUrl = "https://techpure.dev/RS3QuestBuddy/Images",
-
-  isAlt1Environment,
-
   chatheadName,
   onChatheadNameChange,
   chatheadUrl,
   onChatheadUrlChange,
   onAddChathead,
 }) => {
+  async function handleQueueChathead() {
+    // Example: variant from parentheses in name, or UI input
+    const variant = "default"; // normalize as you do elsewhere
+    await addPendingChathead({
+      // if you have an active NPC target with an id, pass npcId
+      // otherwise pass the name (exact string you want to match)
+      name: chatheadName.trim(), // or npc.npcName
+      variant,
+      sourceUrl: chatheadUrl.trim(),
+    });
+    alert("Queued chathead for publish.");
+  }
   return (
     <div className="panel-section">
       <label className="EditDescriptionLabel">
-        <strong>Asset Creation Tools</strong>
-        <input type="checkbox" checked={isOpen} onChange={onToggle} />
+        <strong>Chathead Creation Tool</strong>
       </label>
 
       {isOpen && (
@@ -53,7 +51,7 @@ const AssetToolsSection: React.FC<{
                 type="text"
                 value={chatheadName}
                 onChange={(e) => onChatheadNameChange(e.target.value)}
-                placeholder="e.g., Master Chef ( Beneath Cursed Tides )"
+                placeholder="Input the name you want of the chathead."
               />
             </div>
             <div className="control-group">
@@ -66,8 +64,11 @@ const AssetToolsSection: React.FC<{
               />
             </div>
             <div className="button-group">
-              <button onClick={onAddChathead} className="button--add">
-                Add/Update Chathead Override
+              <button
+                onClick={() => void handleQueueChathead()}
+                className="button--add"
+              >
+                Queue for Publish
               </button>
             </div>
           </div>

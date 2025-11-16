@@ -147,7 +147,7 @@ export type QuestStep = {
 };
 
 export type QuestImage = {
-  step: number;
+  step: string;
   src: string;
   height: number;
   width: number;
@@ -163,6 +163,7 @@ export type Quest = {
   questSteps: QuestStep[];
   questDetails: QuestDetails;
   questImages: QuestImage[];
+  rewards: QuestRewards;
 };
 
 /* ==========================================================================
@@ -183,6 +184,7 @@ export type QuestBundle = {
   details: QuestDetails;
   steps: QuestStep[];
   images: QuestImage[];
+  rewards: QuestRewards;
 };
 
 export type QuestBundleNormalized = {
@@ -190,6 +192,7 @@ export type QuestBundleNormalized = {
   details: QuestDetails;
   steps: NormalizedQuestStep[];
   images: QuestImage[];
+  rewards: QuestRewards;
 };
 
 /* ==========================================================================
@@ -237,7 +240,10 @@ export function bundleToQuest(b: QuestBundle): Quest {
   const sorted = stepsIn
     .slice()
     .sort((s1, s2) => (s1.stepNumber ?? 0) - (s2.stepNumber ?? 0));
-
+  const rewards: QuestRewards = b.rewards ?? {
+    questPoints: 0,
+    questRewards: [],
+  };
   return {
     questName: b.quest.name,
     questSteps: sorted.map((s) => ({
@@ -258,10 +264,47 @@ export function bundleToQuest(b: QuestBundle): Quest {
       Recommended: b.details.Recommended ?? [],
       EnemiesToDefeat: b.details.EnemiesToDefeat ?? [],
     },
-    questImages: b.images ?? [],
+    questImages: (b.images ?? []).map((img) => ({
+      step: String(img.step ?? ""),
+      src: img.src ?? "",
+      width: typeof img.width === "number" ? img.width : 0,
+      height: typeof img.height === "number" ? img.height : 0,
+      stepDescription: img.stepDescription ?? "",
+    })),
+    rewards,
   };
 }
+export type DockZoneId = "left" | "right";
+export type PanelId =
+  | "npcSearch"
+  | "objectSearch"
+  | "mapAreaSearch"
+  | "npcObjectTools"
+  | "chatheads"
+  | "itemsNeeded"
+  | "itemsRecommended"
+  | "additionalInfo"
+  | "questDetails"
+  | "questImagePaste"
+  | "questImages"
+  | "stepEditor";
 
+export type DockLayout = {
+  zones: Record<DockZoneId, PanelId[]>;
+  hidden: PanelId[];
+};
+
+export type PanelSpec = {
+  id: PanelId;
+  title: string;
+  render: () => React.ReactElement;
+};
+export type QuestRewards = {
+  questPoints: number;
+  questRewards: string[];
+};
+export type PanelRegistry = Record<PanelId, PanelSpec>;
+export const DOCK_ZONES: ReadonlyArray<DockZoneId> = ["left", "right"] as const;
 export function questToBundle(q: Quest): QuestBundleNormalized {
   return {
     quest: { name: q.questName },
@@ -283,6 +326,13 @@ export function questToBundle(q: Quest): QuestBundleNormalized {
       highlights: s.highlights ?? { npc: [], object: [] },
       floor: Number.isFinite(s.floor) ? s.floor : 0,
     })),
-    images: q.questImages ?? [],
+    images: (q.questImages ?? []).map((img) => ({
+      step: String(img.step ?? ""), // ENSURE STRING
+      src: img.src,
+      width: img.width,
+      height: img.height,
+      stepDescription: img.stepDescription ?? "",
+    })),
+    rewards: q.rewards ?? { questPoints: 0, questRewards: [] },
   };
 }

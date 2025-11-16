@@ -1,65 +1,55 @@
 function getApiBase(): string {
   const host = window.location.hostname;
-
-  // Local dev: hit dev API or rely on webpack devServer proxy
   if (host === "localhost" || host === "127.0.0.1") {
-    return "http://127.0.0.1:42069"; // or just return "" and prefix fetch with /api
+    return "http://127.0.0.1:42069";
   }
-
-  // Prod: always go through /api behind NGINX
-  const base = (window as any).__APP_CONFIG__?.API_BASE;
-  if (base) return base; // optional runtime override
-  return `${window.location.origin}/api`;
+  return window.__APP_CONFIG__?.API_BASE ?? window.location.origin;
 }
+
 const API_BASE = getApiBase();
 
-export type NpcSearchResult = {
-  id: number;
-  name: string;
-  lat: number;
-  lng: number;
-  floor: number;
-};
-
-/**
- * Case-insensitive search is handled server-side via lower(name) like %term%.
- * Minimum length: enforce in UI; server also enforces >= 2 chars.
- */
 export async function searchNpcs(
   name: string,
   limit = 15
-): Promise<NpcSearchResult[]> {
-  const params = new URLSearchParams({ name, limit: String(limit) });
-  console.log(API_BASE);
-  const res = await fetch(`${API_BASE}/npcs/search?${params.toString()}`);
+): Promise<
+  {
+    id: number;
+    name: string;
+    lat: number;
+    lng: number;
+    floor: number;
+  }[]
+> {
+  // FIX: Use correct endpoint format
+  const params = new URLSearchParams({
+    name: name.trim(),
+    limit: String(limit),
+  });
+
+  // Try the correct endpoint
+  const res = await fetch(`${API_BASE}/api/npcs/search?${params.toString()}`);
 
   if (!res.ok) {
-    const msg = await res.text().catch(() => "");
-    throw new Error(
-      msg || `NPC search failed: ${res.status} ${res.statusText}`
-    );
+    const text = await res.text().catch(() => "");
+    throw new Error(text || `NPC search failed: ${res.status}`);
   }
-  return (await res.json()) as NpcSearchResult[];
+
+  const json = await res.json();
+  return Array.isArray(json) ? json : json.results ?? json.items ?? [];
 }
 
-/**
- * Append a new location to an NPC. Server de-duplicates exact lat/lng/floor.
- */
 export async function addNpcLocation(
-  id: number,
-  coord: { lat: number; lng: number; floor?: number }
-): Promise<{
-  success: true;
-  locations: Array<{ lat: number; lng: number; floor: number }>;
-}> {
-  const res = await fetch(`${API_BASE}/npcs/${id}/locations`, {
+  npcId: number,
+  coord: { lat: number; lng: number; floor: number }
+): Promise<void> {
+  const res = await fetch(`${API_BASE}/api/npcs/${npcId}/locations`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(coord),
   });
+
   if (!res.ok) {
-    const msg = await res.text().catch(() => "");
-    throw new Error(msg || `Add NPC location failed: ${res.statusText}`);
+    const text = await res.text().catch(() => "");
+    throw new Error(text || `Failed to add NPC location: ${res.status}`);
   }
-  return res.json();
 }

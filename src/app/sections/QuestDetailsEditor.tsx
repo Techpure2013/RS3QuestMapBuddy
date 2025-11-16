@@ -7,22 +7,92 @@ import {
   IconRefresh,
   IconTrash,
   IconX,
+  IconGripVertical,
 } from "@tabler/icons-react";
-import type {
-  Quest,
-  QuestDetails,
-  MemberRequirement,
-  OfficialLength,
-} from "../../state/types";
+import type { Quest, QuestDetails } from "../../state/types";
 import {
   getQuestInfo,
   updateQuestInDatabase,
 } from "../../utils/questDataloader";
+import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 interface QuestDetailsEditorProps {
   questJson: Quest | null;
   onUpdateQuest: (updatedQuest: Quest) => void;
 }
+
+interface SortableItemProps {
+  id: string;
+  value: string;
+  onRemove: () => void;
+  onChange: (value: string) => void;
+}
+
+const SortableItem: React.FC<SortableItemProps> = ({
+  id,
+  value,
+  onRemove,
+  onChange,
+}) => {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <div ref={setNodeRef} style={style} className="array-item">
+      <button
+        className="drag-handle"
+        {...attributes}
+        {...listeners}
+        title="Drag to reorder"
+        type="button"
+      >
+        <IconGripVertical size={16} />
+      </button>
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="array-input"
+      />
+      <button
+        onClick={onRemove}
+        className="array-remove-button"
+        title="Remove item"
+        type="button"
+      >
+        <IconTrash size={16} />
+      </button>
+    </div>
+  );
+};
 
 export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
   questJson,
@@ -44,7 +114,13 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
   });
   const [tempDetails, setTempDetails] = useState<QuestDetails>(questDetails);
 
-  // Helper to create defaults based on a name
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
   const defaultsFor = (name: string): QuestDetails => ({
     Quest: name,
     StartPoint: "",
@@ -58,7 +134,6 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
 
   useEffect(() => {
     const loadQuestDetails = async () => {
-      // If we don't have a quest loaded, reset to clean defaults.
       if (!questJson) {
         const d = defaultsFor("");
         setQuestDetails(d);
@@ -66,14 +141,12 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
         return;
       }
 
-      // If questJson already carries details, prefer them.
       if (questJson.questDetails) {
         setQuestDetails(questJson.questDetails);
         setTempDetails(questJson.questDetails);
         return;
       }
 
-      // Otherwise, fetch from API using the quest name and write back.
       if (questJson.questName) {
         setIsLoading(true);
         try {
@@ -125,10 +198,8 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
   };
 
   const handleSave = () => {
-    // Update the in-memory details cache
     updateQuestInDatabase(tempDetails);
 
-    // Update questJson in the parent
     if (!questJson) return;
 
     const updatedQuest = produce(questJson, (draft) => {
@@ -139,7 +210,6 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
     });
     onUpdateQuest(updatedQuest);
 
-    // Update local display state
     setQuestDetails(tempDetails);
     setIsEditing(false);
   };
@@ -208,6 +278,35 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
     });
   };
 
+  const handleDragEnd =
+    (
+      field:
+        | "Requirements"
+        | "ItemsRequired"
+        | "Recommended"
+        | "EnemiesToDefeat"
+    ) =>
+    (event: DragEndEvent) => {
+      const { active, over } = event;
+
+      if (over && active.id !== over.id) {
+        setTempDetails((prev) => {
+          const items = prev[field];
+          const oldIndex = items.findIndex(
+            (_, i) => `${field}-${i}` === active.id
+          );
+          const newIndex = items.findIndex(
+            (_, i) => `${field}-${i}` === over.id
+          );
+
+          return {
+            ...prev,
+            [field]: arrayMove(items, oldIndex, newIndex),
+          };
+        });
+      }
+    };
+
   const renderArrayField = (
     field: "Requirements" | "ItemsRequired" | "Recommended" | "EnemiesToDefeat",
     title: string
@@ -218,34 +317,38 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
       <div className="quest-array-field">
         <h4>{title}</h4>
         {isEditing ? (
-          <div className="array-items">
-            {items.map((item, index) => (
-              <div key={index} className="array-item">
-                <input
-                  type="text"
-                  value={item}
-                  onChange={(e) =>
-                    handleArrayItemChange(field, index, e.target.value)
-                  }
-                  className="array-input"
-                />
-                <button
-                  onClick={() => removeArrayItem(field, index)}
-                  className="array-remove-button"
-                  title="Remove item"
-                >
-                  <IconTrash size={16} />
-                </button>
-              </div>
-            ))}
-            <button
-              onClick={() => addArrayItem(field)}
-              className="array-add-button"
-              title="Add new item"
-            >
-              <IconPlus size={16} /> Add Item
-            </button>
-          </div>
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={handleDragEnd(field)}
+          >
+            <div className="array-items">
+              <SortableContext
+                items={items.map((_, i) => `${field}-${i}`)}
+                strategy={verticalListSortingStrategy}
+              >
+                {items.map((item, index) => (
+                  <SortableItem
+                    key={`${field}-${index}`}
+                    id={`${field}-${index}`}
+                    value={item}
+                    onChange={(value) =>
+                      handleArrayItemChange(field, index, value)
+                    }
+                    onRemove={() => removeArrayItem(field, index)}
+                  />
+                ))}
+              </SortableContext>
+              <button
+                onClick={() => addArrayItem(field)}
+                className="array-add-button"
+                title="Add new item"
+                type="button"
+              >
+                <IconPlus size={16} /> Add Item
+              </button>
+            </div>
+          </DndContext>
         ) : (
           <ul className="array-display">
             {items.length > 0 ? (
