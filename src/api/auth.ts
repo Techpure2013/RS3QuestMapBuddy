@@ -19,8 +19,9 @@ export async function fetchMe(): Promise<{
 }
 
 export async function logout(): Promise<void> {
-  await fetch(getApiBase() + "/api/auth/logout", {
+  const res = await fetch(getApiBase() + "/api/auth/logout", {
     method: "POST",
     credentials: "include",
   });
+  // We don’t need response body; cookie cleared by server
 }

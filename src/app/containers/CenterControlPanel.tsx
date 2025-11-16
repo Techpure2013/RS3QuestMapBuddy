@@ -301,37 +301,41 @@ export const CenterControls: React.FC = () => {
           >
             {busy ? "Loading…" : "Open Quest"}
           </button>
-          <button
-            onClick={async () => {
-              try {
-                setBusy(true);
-                await clearImageCache();
-                await EditorStore.newQuest();
-              } finally {
-                setBusy(false);
-              }
-            }}
-            disabled={busy}
-            style={{ fontSize: "0.75rem", padding: "5px 12px" }}
-          >
-            New Quest
-          </button>
-          <button
-            onClick={() => void handleSaveEdits()}
-            disabled={busy}
-            style={{ fontSize: "0.75rem", padding: "5px 12px" }}
-          >
-            Save Edits
-          </button>
+          {isAuthed && (
+            <>
+              <button
+                onClick={async () => {
+                  try {
+                    setBusy(true);
+                    await clearImageCache();
+                    await EditorStore.newQuest();
+                  } finally {
+                    setBusy(false);
+                  }
+                }}
+                disabled={busy}
+                style={{ fontSize: "0.75rem", padding: "5px 12px" }}
+              >
+                New Quest
+              </button>
+              <button
+                onClick={() => void handleSaveEdits()}
+                disabled={busy}
+                style={{ fontSize: "0.75rem", padding: "5px 12px" }}
+              >
+                Save Edits
+              </button>
+              <button
+                className="button--add"
+                onClick={() => void handlePublish()}
+                disabled={busy}
+                style={{ fontSize: "0.75rem", padding: "5px 12px" }}
+              >
+                Publish
+              </button>
+            </>
+          )}
 
-          <button
-            className="button--add"
-            onClick={() => void handlePublish()}
-            disabled={busy}
-            style={{ fontSize: "0.75rem", padding: "5px 12px" }}
-          >
-            Publish
-          </button>
           <div
             style={{
               marginLeft: "auto",
@@ -349,7 +353,9 @@ export const CenterControls: React.FC = () => {
                   </strong>
                 </span>
                 <button
-                  onClick={() => void signOut()}
+                  onClick={async () => {
+                    await signOut();
+                  }}
                   style={{ fontSize: "0.75rem", padding: "5px 12px" }}
                 >
                   Logout
