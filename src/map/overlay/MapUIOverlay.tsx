@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useMap } from "react-leaflet";
 import HighlightLayer from "./TileHighlighting";
-import { IconSettings } from "@tabler/icons-react";
 
 const RENDER_FPS = 12; // limit UI updates to 12 Hz (adjust to taste)
 
@@ -36,7 +35,11 @@ export const MapUIOverlay: React.FC = () => {
     setCursorX((prev) => (prev !== nextX ? nextX : prev));
     setCursorY((prev) => (prev !== nextY ? nextY : prev));
     setMapZoom((prev) => (prev !== nextZoom ? nextZoom : prev));
-
+    window.dispatchEvent(
+      new CustomEvent("mapCursorInfo", {
+        detail: { x: nextX, y: nextY, zoom: nextZoom },
+      })
+    );
     lastCommitTs.current = ts;
   };
 
@@ -86,17 +89,6 @@ export const MapUIOverlay: React.FC = () => {
   return (
     <>
       <HighlightLayer onCursorMove={handleCursorMove} />
-
-      <div className="cursor-coordinates-box">
-        <div className="coordinate-row">
-          <span>Zoom: {mapZoom}</span>
-          <span>X: {cursorX}</span>
-          <span>Y: {cursorY}</span>
-          <span>
-            <IconSettings />
-          </span>
-        </div>
-      </div>
     </>
   );
 };

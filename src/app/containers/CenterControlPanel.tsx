@@ -28,10 +28,20 @@ export const CenterControls: React.FC = () => {
   const questName = quest?.questName ?? "(none)";
   const stepDescription =
     quest?.questSteps?.[selection.selectedStep]?.stepDescription ?? "";
-
+  const [showEditor, setShowEditor] = useState<boolean>(true);
   const [localStepDesc, setLocalStepDesc] = useState(stepDescription);
   const [hasStepChanges, setHasStepChanges] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const ce = e as CustomEvent<{ show: boolean }>;
+      setShowEditor(ce.detail.show);
+    };
+    window.addEventListener("toggleStepEditorVisibility", handler);
+    return () => {
+      window.removeEventListener("toggleStepEditorVisibility", handler);
+    };
+  }, []);
   // Sync auth state
   useEffect(() => {
     void refresh();
@@ -381,102 +391,104 @@ export const CenterControls: React.FC = () => {
         </div>
 
         {/* Row 2: Step Editor - Now with auto-growing textarea */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr auto",
-            gap: 10,
-          }}
-        >
-          <div style={{ position: "relative" }}>
-            <label
-              style={{
-                fontSize: "0.6875rem",
-                fontWeight: 600,
-                color: "#9ca3af",
-                textTransform: "uppercase",
-                letterSpacing: "0.03em",
-                display: "block",
-                marginBottom: 6,
-              }}
-            >
-              Step {selection.selectedStep + 1}
-              {hasStepChanges && (
-                <span
+        {showEditor && (
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr auto",
+              gap: 10,
+            }}
+          >
+            <div style={{ position: "relative" }}>
+              <label
+                style={{
+                  fontSize: "0.6875rem",
+                  fontWeight: 600,
+                  color: "#9ca3af",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.03em",
+                  display: "block",
+                  marginBottom: 6,
+                }}
+              >
+                Step {selection.selectedStep + 1}
+                {hasStepChanges && (
+                  <span
+                    style={{
+                      marginLeft: 6,
+                      fontSize: "0.625rem",
+                      color: "#f59e0b",
+                      background: "rgba(245, 158, 11, 0.1)",
+                      padding: "2px 6px",
+                      borderRadius: 3,
+                    }}
+                  >
+                    Modified
+                  </span>
+                )}
+              </label>
+              <textarea
+                ref={textareaRef}
+                value={localStepDesc}
+                onChange={(e) => handleStepChange(e.target.value)}
+                onKeyDown={(e) => {
+                  if ((e.ctrlKey || e.metaKey) && e.key === "s") {
+                    e.preventDefault();
+                    handleStepSave();
+                  }
+                  if (e.key === "Escape" && hasStepChanges) {
+                    e.preventDefault();
+                    handleStepDiscard();
+                  }
+                }}
+                placeholder="Describe this step..."
+                style={{
+                  width: "100%",
+                  minHeight: 70,
+                  maxHeight: 250,
+                  resize: "none",
+                  overflow: "hidden",
+                  border: hasStepChanges
+                    ? "1px solid #f59e0b"
+                    : "1px solid #374151",
+                  padding: "8px 10px",
+                  background: "#1f2937",
+                  borderRadius: 4,
+                  color: "#e5e7eb",
+                  fontSize: "0.8125rem",
+                  fontFamily: "inherit",
+                  lineHeight: 1.5,
+                }}
+              />
+            </div>
+
+            {hasStepChanges && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                <button
+                  onClick={handleStepSave}
+                  className="button--add"
                   style={{
-                    marginLeft: 6,
-                    fontSize: "0.625rem",
-                    color: "#f59e0b",
-                    background: "rgba(245, 158, 11, 0.1)",
-                    padding: "2px 6px",
-                    borderRadius: 3,
+                    fontSize: "0.6875rem",
+                    whiteSpace: "nowrap",
+                    padding: "5px 10px",
                   }}
                 >
-                  Modified
-                </span>
-              )}
-            </label>
-            <textarea
-              ref={textareaRef}
-              value={localStepDesc}
-              onChange={(e) => handleStepChange(e.target.value)}
-              onKeyDown={(e) => {
-                if ((e.ctrlKey || e.metaKey) && e.key === "s") {
-                  e.preventDefault();
-                  handleStepSave();
-                }
-                if (e.key === "Escape" && hasStepChanges) {
-                  e.preventDefault();
-                  handleStepDiscard();
-                }
-              }}
-              placeholder="Describe this step..."
-              style={{
-                width: "100%",
-                minHeight: 70,
-                maxHeight: 250,
-                resize: "none",
-                overflow: "hidden",
-                border: hasStepChanges
-                  ? "1px solid #f59e0b"
-                  : "1px solid #374151",
-                padding: "8px 10px",
-                background: "#1f2937",
-                borderRadius: 4,
-                color: "#e5e7eb",
-                fontSize: "0.8125rem",
-                fontFamily: "inherit",
-                lineHeight: 1.5,
-              }}
-            />
+                  Save (Ctrl+S)
+                </button>
+                <button
+                  onClick={handleStepDiscard}
+                  style={{
+                    fontSize: "0.6875rem",
+                    whiteSpace: "nowrap",
+                    padding: "5px 10px",
+                  }}
+                >
+                  Discard (Esc)
+                </button>
+              </div>
+            )}
           </div>
-
-          {hasStepChanges && (
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              <button
-                onClick={handleStepSave}
-                className="button--add"
-                style={{
-                  fontSize: "0.6875rem",
-                  whiteSpace: "nowrap",
-                  padding: "5px 10px",
-                }}
-              >
-                Save (Ctrl+S)
-              </button>
-              <button
-                onClick={handleStepDiscard}
-                style={{
-                  fontSize: "0.6875rem",
-                  whiteSpace: "nowrap",
-                  padding: "5px 10px",
-                }}
-              >
-                Discard (Esc)
-              </button>
-            </div>
-          )}
-        </div>
+        )}
       </div>
 
       <QuestPickerModal

@@ -103,15 +103,6 @@ const InternalMapLayers: React.FC = () => {
   const targetIndex = selection.targetIndex;
   const floor = selection.floor;
 
-  React.useEffect(() => {
-    const container = map.getContainer();
-    const btn = container.querySelector(".grid-toggle-container .floor-button");
-    if (!btn) return;
-    const handler = () => EditorStore.setUi({ showGrids: !ui.showGrids });
-    btn.addEventListener("click", handler);
-    return () => btn.removeEventListener("click", handler);
-  }, [map, ui.showGrids]);
-
   const handleFloorChange = useCallback(
     (newFloor: number) => {
       if (!HandleFloorIncreaseDecrease(newFloor)) return;

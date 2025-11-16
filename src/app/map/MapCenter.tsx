@@ -78,12 +78,6 @@ const MapCenter: React.FC = () => {
       dragging={true}
       center={[3288, 3023]}
     >
-      <div className="grid-toggle-container">
-        <button className="floor-button" title="Toggle Grids">
-          <IconGridDots size={20} />
-        </button>
-      </div>
-
       <CustomMapPanes />
 
       {layers.map((layer) => (
