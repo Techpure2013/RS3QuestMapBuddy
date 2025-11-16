@@ -65,13 +65,10 @@ const schedulePersist = () => {
 };
 
 function migrate(raw: EditorState): EditorState {
-  // Add migrations as needed when version increments
   if (!raw || typeof raw.version !== "number") return initialState;
-  // example: if (raw.version < 3) { /* transform */ raw.version = 3; }
   return { ...initialState, ...raw, version: CURRENT_VERSION };
 }
 
-// Basic shallow comparison for primitives/flat objects you pass to subscribers
 const isEqualShallow = (a: unknown, b: unknown): boolean => {
   if (Object.is(a, b)) return true;
   if (
