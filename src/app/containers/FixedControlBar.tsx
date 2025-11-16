@@ -12,27 +12,21 @@ export const StepControlBar: React.FC = () => {
 
   const incStep = useCallback(() => {
     if (sel.selectedStep < totalSteps - 1) {
-      EditorStore.setSelection({
-        selectedStep: sel.selectedStep + 1,
-        targetIndex: 0,
-      });
+      const nextStep = sel.selectedStep + 1;
+      // First set floor by step (EditorStore will sync floor inside helper)
+      EditorStore.autoSelectFirstValidTargetForStep(nextStep);
     }
   }, [sel.selectedStep, totalSteps]);
 
   const decStep = useCallback(() => {
     if (sel.selectedStep > 0) {
-      EditorStore.setSelection({
-        selectedStep: sel.selectedStep - 1,
-        targetIndex: 0,
-      });
+      const nextStep = sel.selectedStep - 1;
+      EditorStore.autoSelectFirstValidTargetForStep(nextStep);
     }
   }, [sel.selectedStep]);
 
   const onStepSelect = useCallback((stepIndex: number) => {
-    EditorStore.setSelection({
-      selectedStep: stepIndex,
-      targetIndex: 0,
-    });
+    EditorStore.autoSelectFirstValidTargetForStep(stepIndex);
   }, []);
 
   const floorInc = useCallback(() => {

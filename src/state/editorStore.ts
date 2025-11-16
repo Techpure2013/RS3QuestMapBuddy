@@ -68,7 +68,9 @@ function migrate(raw: EditorState): EditorState {
   if (!raw || typeof raw.version !== "number") return initialState;
   return { ...initialState, ...raw, version: CURRENT_VERSION };
 }
-
+function hasValidLoc(loc?: { lat: number; lng: number } | null): boolean {
+  return !!loc && (loc.lat !== 0 || loc.lng !== 0);
+}
 const isEqualShallow = (a: unknown, b: unknown): boolean => {
   if (Object.is(a, b)) return true;
   if (
@@ -99,6 +101,50 @@ export const EditorStore = {
     } catch {
       // ignore; keep initial
     }
+  },
+
+  autoSelectFirstValidTargetForStep(stepIndex: number): void {
+    const q = state.quest;
+    if (!q || !q.questSteps || !q.questSteps[stepIndex]) return;
+    const step = q.questSteps[stepIndex];
+    const npcs = step.highlights?.npc ?? [];
+    const objects = step.highlights?.object ?? [];
+
+    // Priority: NPC with valid location
+    const firstNpcIdx = npcs.findIndex((n) => hasValidLoc(n?.npcLocation));
+    if (firstNpcIdx >= 0) {
+      this.setSelection({
+        selectedStep: stepIndex,
+        targetType: "npc",
+        targetIndex: firstNpcIdx,
+        floor:
+          typeof step.floor === "number" ? step.floor : state.selection.floor,
+      });
+      return;
+    }
+
+    // Else: first object with any valid location in its array
+    const firstObjIdx = objects.findIndex((o) =>
+      (o?.objectLocation ?? []).some((p) => hasValidLoc(p))
+    );
+    if (firstObjIdx >= 0) {
+      this.setSelection({
+        selectedStep: stepIndex,
+        targetType: "object",
+        targetIndex: firstObjIdx,
+        floor:
+          typeof step.floor === "number" ? step.floor : state.selection.floor,
+      });
+      return;
+    }
+
+    // Nothing valid: keep targetType but reset index to 0 safely; sync floor
+    this.setSelection({
+      selectedStep: stepIndex,
+      targetIndex: 0,
+      floor:
+        typeof step.floor === "number" ? step.floor : state.selection.floor,
+    });
   },
   async newQuest(): Promise<void> {
     const q = createDefaultQuest();
