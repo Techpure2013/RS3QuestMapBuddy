@@ -15,21 +15,25 @@ export async function fetchMe(): Promise<{
     const res = await fetch(getApiBase() + "/api/auth/me", {
       credentials: "include",
       cache: "no-store",
+      // Prevent revalidation caching weirdness on some proxies
+      headers: { "Cache-Control": "no-store" },
     });
     if (!res.ok) return { ok: false };
     return (await res.json()) as { ok: boolean; email?: string; role?: string };
   } catch {
-    // Network failures should not throw; report unauth
     return { ok: false };
   }
 }
+
 export async function logout(): Promise<void> {
   try {
     await fetch(getApiBase() + "/api/auth/logout", {
       method: "POST",
       credentials: "include",
+      cache: "no-store",
+      headers: { "Cache-Control": "no-store" },
     });
   } catch {
-    // ignore network errors on logout
+    // ignore
   }
 }
