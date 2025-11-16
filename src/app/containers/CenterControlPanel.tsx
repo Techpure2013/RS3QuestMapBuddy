@@ -15,7 +15,7 @@ import { useEditorSelector } from "./../../state/useEditorSelector";
 import { recordQuestNpcLocations } from "./../../feature/npcPublisher";
 import { clearImageCache } from "../../idb/imageCache";
 import { clearObservedChatheads } from "idb/chatheadsObserved";
-import { logout } from "api/auth";
+
 import { useAuth } from "state/useAuth";
 
 export const CenterControls: React.FC = () => {

@@ -23,3 +23,13 @@ export async function fetchMe(): Promise<{
     return { ok: false };
   }
 }
+export async function logout(): Promise<void> {
+  try {
+    await fetch(getApiBase() + "/api/auth/logout", {
+      method: "POST",
+      credentials: "include",
+    });
+  } catch {
+    // ignore network errors on logout
+  }
+}
