@@ -55,9 +55,6 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
     <div className="panel-section">
       <label className="EditDescriptionLabel" style={{ marginBottom: 6 }}>
         <strong>Quest Images</strong>
-        {onToggle && typeof isOpen === "boolean" && (
-          <input type="checkbox" checked={isOpen} onChange={onToggle} />
-        )}
       </label>
 
       {isOpen && (
@@ -70,7 +67,7 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
                 const url = buildPreviewUrl(img);
                 const isRowOpen = !!expanded[i];
                 const stepString = String(img.step ?? "");
-                const uniqueKey = `${i}_${img.src}_${stepString}`;
+                const uniqueKey = `${i}_${img.src}`;
                 return (
                   <li key={uniqueKey} style={{ padding: 8 }}>
                     <div

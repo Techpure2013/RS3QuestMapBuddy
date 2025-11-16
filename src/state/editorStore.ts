@@ -75,6 +75,11 @@ export function requestFlyToCurrentTargetAt(
     flyToTargetRequest: { token: nextSeq, source },
   });
 }
+export function autoGrow(el: HTMLTextAreaElement): void {
+  el.style.height = "auto";
+  el.style.overflow = "hidden";
+  el.style.height = `${el.scrollHeight}px`;
+}
 export function requestCaptureNavReturn(
   includeSelection: boolean = true
 ): void {
