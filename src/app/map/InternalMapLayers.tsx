@@ -175,6 +175,7 @@ const InternalMapLayers: React.FC = () => {
                   loc.lat === snappedCoord.lat && loc.lng === snappedCoord.lng
               );
               if (isDuplicate) return;
+              console.log(current);
               current.push({
                 lat: snappedCoord.lat,
                 lng: snappedCoord.lng,

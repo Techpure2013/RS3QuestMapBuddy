@@ -39,7 +39,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
   const quest = useEditorSelector((s) => s.quest);
   const sel = useEditorSelector((s) => s.selection);
   const clipboard = useEditorSelector((s) => s.clipboard);
-
+  const captureSettings = useEditorSelector((s) => s.ui.captureMode);
   const currentTargetName = useMemo(() => {
     const step = quest?.questSteps?.[sel.selectedStep];
     if (!step) return "";
@@ -73,17 +73,25 @@ export const NpcObjectToolsPanel: React.FC = () => {
   }, [quest, sel.selectedStep, sel.targetType, sel.targetIndex]);
 
   const handleTargetTypeChange = useCallback((t: "npc" | "object") => {
+    // switch selection
     EditorStore.setSelection({ targetType: t, targetIndex: 0 });
+
+    // switch capture mode to match type
+    EditorStore.setUi({
+      captureMode: t === "npc" ? "single" : "multi-point",
+    });
   }, []);
 
   const handleTargetIndexChange = useCallback(
     (i: number, type: "npc" | "object") => {
-      // NEW: Directly switch to the specified type
       if (type !== sel.targetType) {
         EditorStore.setSelection({ targetType: type, targetIndex: i });
       } else {
         EditorStore.setSelection({ targetIndex: i });
       }
+      EditorStore.setUi({
+        captureMode: type === "npc" ? "single" : "multi-point",
+      });
       requestFlyToCurrentTargetAt(5, "selection");
     },
     [sel.targetType]
