@@ -15,13 +15,12 @@ import { useEditorSelector } from "../../../state/useEditorSelector";
 import type { MapArea } from "../../../state/model";
 import allMapAreasData from "../../../map/Map Data/combinedMapData.json";
 
-// Composite stable key (avoids duplicate key warnings even if mapId repeats)
 const areaKey = (a: MapArea): string =>
   `${a.mapId}|${a.name}|${a.bounds[0][0]},${a.bounds[0][1]}|${a.bounds[1][0]},${a.bounds[1][1]}`;
 
 const ALL_AREAS: MapArea[] = allMapAreasData as MapArea[];
 
-export const MapAreaSearchPanel: React.FC = () => {
+const MapAreaSearchPanel: React.FC = () => {
   const ui = useEditorSelector((s) => s.ui);
 
   const [term, setTerm] = useState<string>("");
@@ -35,12 +34,10 @@ export const MapAreaSearchPanel: React.FC = () => {
 
   const filtered: MapArea[] = useMemo(() => {
     const t = term.trim().toLowerCase();
-    if (t.length <= 1) return [];
-    // filter + sort
+    if (t.length < 1) return [];
     const results = ALL_AREAS.filter((a) =>
       a.name.toLowerCase().includes(t)
     ).sort((a, b) => a.name.localeCompare(b.name));
-    // dedupe by composite key
     const m = new Map<string, MapArea>();
     for (const a of results) {
       const k = areaKey(a);
@@ -61,6 +58,8 @@ export const MapAreaSearchPanel: React.FC = () => {
         !containerRef.current.contains(e.target as Node)
       ) {
         setIsOpen(false);
+        setIsKeyboardNav(false);
+        setHighlightedIndex(-1);
       }
     };
     document.addEventListener("mousedown", onDocClick);
@@ -79,11 +78,13 @@ export const MapAreaSearchPanel: React.FC = () => {
       requestCaptureNavReturn(true);
     }
     EditorStore.setHighlights({ selectedArea: area });
-    requestFlyToAreaAt(area, 1);
+    // You can pass preferred zoom 2 or 3 if desired
+    requestFlyToAreaAt(area, 2);
     setTerm(area.name);
     setIsOpen(false);
     setHighlightedIndex(-1);
     setIsKeyboardNav(false);
+    inputRef.current?.focus();
   }, []);
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -102,12 +103,17 @@ export const MapAreaSearchPanel: React.FC = () => {
         setIsKeyboardNav(true);
         setHighlightedIndex((prev) => (prev > 0 ? prev - 1 : -1));
         break;
-      case "Enter":
+      case "Enter": {
         e.preventDefault();
-        if (highlightedIndex >= 0 && filtered[highlightedIndex]) {
-          handleSelect(filtered[highlightedIndex]);
-        }
+        const idx =
+          highlightedIndex >= 0
+            ? highlightedIndex
+            : filtered.length === 1
+            ? 0
+            : -1;
+        if (idx >= 0) handleSelect(filtered[idx]);
         break;
+      }
       case "Escape":
         e.preventDefault();
         setIsOpen(false);
@@ -142,7 +148,7 @@ export const MapAreaSearchPanel: React.FC = () => {
           type="text"
           value={term}
           onChange={(e) => setTerm(e.target.value)}
-          onFocus={() => term.trim().length > 1 && setIsOpen(true)}
+          onFocus={() => setIsOpen(filtered.length > 0)}
           onKeyDown={onKeyDown}
           placeholder="Search for a map area..."
           className="search-input"
@@ -176,7 +182,7 @@ export const MapAreaSearchPanel: React.FC = () => {
         </ul>
       )}
 
-      {isOpen && term.trim().length > 1 && filtered.length === 0 && (
+      {isOpen && term.trim().length >= 1 && filtered.length === 0 && (
         <div className="search-no-results">No areas found</div>
       )}
     </div>

@@ -2271,3 +2271,27 @@ textarea[placeholder="Describe this step..."] {
     height: 200px;
   }
 }
+.map-area-results,
+.search-results {
+  z-index: 1000;
+}
+
+.right-panel-scroll {
+  height: 100%;
+  overflow-y: auto;
+}
+.area-search-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.area-search-controls .area-search-toggle {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
