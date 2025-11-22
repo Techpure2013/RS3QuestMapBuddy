@@ -21,6 +21,7 @@ import { clearObservedChatheads } from "idb/chatheadsObserved";
 
 import { useAuth } from "./../../state/useAuth";
 import { fetchMe } from "./../../api/auth";
+import { buildPlotLink } from "utils/plotLinks";
 
 export const CenterControls: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -348,6 +349,21 @@ export const CenterControls: React.FC = () => {
                 style={{ fontSize: "0.75rem", padding: "5px 12px" }}
               >
                 Publish
+              </button>
+              <button
+                onClick={async () => {
+                  const name = quest?.questName?.trim() ?? "";
+                  if (!name) {
+                    alert("Load a quest first.");
+                    return;
+                  }
+                  const url = buildPlotLink(name, selection.selectedStep);
+                  await navigator.clipboard.writeText(url).catch(() => {});
+                  alert(`Plot link copied:\n${url}`);
+                }}
+                style={{ fontSize: "0.75rem", padding: "5px 12px" }}
+              >
+                Copy Plot Link
               </button>
             </>
           )}

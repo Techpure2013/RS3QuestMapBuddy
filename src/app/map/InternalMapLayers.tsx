@@ -1,7 +1,7 @@
 // src/app/map/InternalMapLayers.tsx
-import React, { useCallback, useMemo, useRef } from "react";
+import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import { useMap, useMapEvents } from "react-leaflet";
-import type { LatLng } from "leaflet";
+import L from "leaflet";
 import { produce } from "immer";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import { EditorStore } from "../../state/editorStore";
@@ -25,6 +25,7 @@ import AreaFlyToHandler from "map/handlers/AreaFlyToHandler";
 import NavReturnCaptureHandler from "map/handlers/NavReturnCaptureHandler";
 import RestoreViewHandler from "map/handlers/RestoreViewHandler";
 import SearchHighlightFlyToHandler from "map/handlers/SearchHighlightFlyToHandler";
+import { PlotSubmissionRow } from "api/plotSubmissionsAdmin";
 
 const snapToTileCoordinate = (
   latlng: L.LatLng
@@ -35,7 +36,133 @@ const snapToTileCoordinate = (
   const storedLat = visualCenterY + 0.5;
   return { lat: storedLat, lng: storedLng };
 };
+function submissionToGeometry(
+  highlights: PlotSubmissionRow["basehighlights"]
+): SelectionGeometry {
+  const hasNpc = Array.isArray(highlights.npc) && highlights.npc.length > 0;
+  const hasObj =
+    Array.isArray(highlights.object) && highlights.object.length > 0;
 
+  if (hasNpc) {
+    return {
+      type: "npc",
+      npcArray: (highlights.npc ?? [])
+        .filter(
+          (n) =>
+            n.npcLocation &&
+            Number.isFinite(n.npcLocation.lat) &&
+            Number.isFinite(n.npcLocation.lng)
+        )
+        .map((n) => ({
+          npcName: n.npcName,
+          npcLocation: {
+            lat: n.npcLocation!.lat - 0.5,
+            lng: n.npcLocation!.lng + 0.5,
+          },
+          wanderRadius: n.wanderRadius ?? {
+            bottomLeft: { lat: 0, lng: 0 },
+            topRight: { lat: 0, lng: 0 },
+          },
+        })),
+    };
+  }
+
+  if (hasObj) {
+    return {
+      type: "object",
+      objectArray: (highlights.object ?? []).map((o) => ({
+        name: o.name,
+        objectLocation: (o.objectLocation ?? []).map((p) => ({
+          lat: p.lat - 0.5,
+          lng: p.lng + 0.5,
+          color: p.color,
+          numberLabel: p.numberLabel,
+        })),
+        objectRadius: o.objectRadius ?? {
+          bottomLeft: { lat: 0, lng: 0 },
+          topRight: { lat: 0, lng: 0 },
+        },
+      })),
+    };
+  }
+
+  return { type: "none" as const };
+}
+
+const SubmissionPreviewHandler: React.FC = () => {
+  const map = useMap();
+  const previewSub = useEditorSelector((s) => s.ui.previewSubmission);
+  const lastIdRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!previewSub) {
+      lastIdRef.current = null;
+      return;
+    }
+
+    // Only fly if we swapped to a new ID
+    if (previewSub.id === lastIdRef.current) return;
+    lastIdRef.current = previewSub.id;
+
+    const points: L.LatLngTuple[] = [];
+    const push = (lat: number, lng: number) => {
+      // visual center = stored + 0.5
+      points.push([lat + 0.5, lng + 0.5]);
+    };
+
+    // Proposed
+    previewSub.proposedhighlights.npc.forEach((n) => {
+      if (n.npcLocation) push(n.npcLocation.lat, n.npcLocation.lng);
+    });
+    previewSub.proposedhighlights.object.forEach((o) => {
+      o.objectLocation?.forEach((p) => push(p.lat, p.lng));
+    });
+
+    // Fallback to base
+    if (points.length === 0) {
+      previewSub.basehighlights.npc.forEach((n) => {
+        if (n.npcLocation) push(n.npcLocation.lat, n.npcLocation.lng);
+      });
+      previewSub.basehighlights.object.forEach((o) => {
+        o.objectLocation?.forEach((p) => push(p.lat, p.lng));
+      });
+    }
+
+    if (points.length > 0) {
+      const bounds = L.latLngBounds(points);
+      map.flyToBounds(bounds, {
+        padding: [100, 100],
+        maxZoom: 5,
+        duration: 0.8,
+        animate: true,
+      });
+    }
+  }, [previewSub, map]);
+
+  if (!previewSub) return null;
+
+  const baseGeom = submissionToGeometry(previewSub.basehighlights);
+  const propGeom = submissionToGeometry(previewSub.proposedhighlights);
+
+  return (
+    <>
+      {/* Render Proposed on Top (Selection Pane) */}
+      <SelectionHighlightLayer
+        pane="selectionPane"
+        geometry={propGeom}
+        isActiveType
+        selectedIndex={-1}
+      />
+      {/* Render Base below (Highlight Pane) */}
+      <SelectionHighlightLayer
+        pane="highlightPane"
+        geometry={baseGeom}
+        isActiveType={false}
+        selectedIndex={-1}
+      />
+    </>
+  );
+};
 // FIXED: Better object search with multiple path attempts
 async function searchObjectsNearCoord(
   coord: { lat: number; lng: number },
@@ -93,7 +220,7 @@ const InternalMapLayers: React.FC = () => {
   const selection = useEditorSelector((s) => s.selection);
   const ui = useEditorSelector((s) => s.ui);
   const highlights = useEditorSelector((s) => s.highlights);
-
+  const isPreviewing = !!ui.previewSubmission;
   const selectedStep = selection.selectedStep;
   const targetType = selection.targetType;
   const targetIndex = selection.targetIndex;
@@ -151,9 +278,19 @@ const InternalMapLayers: React.FC = () => {
         // NORMAL CAPTURE MODE LOGIC
         const mode = currentUi.captureMode;
         const sel = EditorStore.getState().selection;
-
+        const rm = EditorStore.getState().ui.restrictedMode;
+        if (rm?.enabled) {
+          const allow =
+            (sel.targetType === "npc" && rm.allowNpc) ||
+            (sel.targetType === "object" && rm.allowObject) ||
+            (currentUi.captureMode === "radius" && rm.allowRadius);
+          if (sel.selectedStep !== rm.stepIndex || !allow) {
+            return;
+          }
+        }
         // FIXED: Use patchQuest instead of produce + setQuest
         EditorStore.patchQuest((draft) => {
+          const sel = EditorStore.getState().selection;
           const step = draft.questSteps[sel.selectedStep];
           if (!step) return;
           step.floor = sel.floor;
@@ -175,12 +312,17 @@ const InternalMapLayers: React.FC = () => {
                   loc.lat === snappedCoord.lat && loc.lng === snappedCoord.lng
               );
               if (isDuplicate) return;
-              console.log(current);
+
+              // READ STYLE FROM UI OUTSIDE THE Quest draft
+              const uiState = EditorStore.getState().ui;
+              const color = uiState.selectedObjectColor || "#FFFFFF";
+              const numberLabel = uiState.objectNumberLabel || "";
+
               current.push({
                 lat: snappedCoord.lat,
                 lng: snappedCoord.lng,
-                color: current[current.length - 1]?.color ?? "#FFFFFF",
-                numberLabel: current[current.length - 1]?.numberLabel ?? "",
+                color,
+                numberLabel,
               });
               t.objectLocation = current;
             }
@@ -360,8 +502,6 @@ const InternalMapLayers: React.FC = () => {
     return { type: "none" };
   }, [highlights]);
 
-  const stepSnapQuest = quest as unknown as Record<string, unknown>;
-
   return (
     <>
       <MapClickHandler disabled={false} />
@@ -378,7 +518,7 @@ const InternalMapLayers: React.FC = () => {
         }
         isActiveType={selection.targetType === "npc"}
       />
-
+      <SubmissionPreviewHandler />
       <SelectionHighlightLayer
         geometry={objectGeometry}
         pane="selectionPane"

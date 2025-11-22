@@ -1,29 +1,26 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useMap } from "react-leaflet";
 import HighlightLayer from "./TileHighlighting";
 
-const RENDER_FPS = 12; // limit UI updates to 12 Hz (adjust to taste)
+const RENDER_HERTZ = 12;
 
 export const MapUIOverlay: React.FC = () => {
   const map = useMap();
 
-  // Rendered values (coarse, low frequency)
   const [cursorX, setCursorX] = useState<number>(0);
   const [cursorY, setCursorY] = useState<number>(0);
   const [mapZoom, setMapZoom] = useState<number>(map.getZoom());
 
-  // Live values (updated at mouse speed, do NOT cause re-render)
   const liveX = useRef<number>(0);
   const liveY = useRef<number>(0);
   const liveZoom = useRef<number>(mapZoom);
 
-  // rAF + timer for throttled commit to state
   const rafId = useRef<number | null>(null);
   const lastCommitTs = useRef<number>(0);
 
   // Commit function: moves ref values to state at limited FPS
   const commitIfDue = (ts: number) => {
-    const minDelta = 1000 / RENDER_FPS;
+    const minDelta = 1000 / RENDER_HERTZ;
     if (ts - lastCommitTs.current < minDelta) return;
 
     // Round to reduce pointless re-renders (values flicker otherwise)
@@ -31,7 +28,6 @@ export const MapUIOverlay: React.FC = () => {
     const nextY = Math.round(liveY.current * 100) / 100;
     const nextZoom = Math.round(liveZoom.current);
 
-    // Only set if changed
     setCursorX((prev) => (prev !== nextX ? nextX : prev));
     setCursorY((prev) => (prev !== nextY ? nextY : prev));
     setMapZoom((prev) => (prev !== nextZoom ? nextZoom : prev));

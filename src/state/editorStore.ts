@@ -6,6 +6,7 @@ import type {
   SelectionState,
   UiState,
   HighlightState,
+  RestrictedPlotMode,
 } from "./model";
 import {
   type Quest,
@@ -42,6 +43,9 @@ const initialState: EditorState = {
     imageDirectoryName: "",
     isAlt1Environment: false,
     areaSearchMode: null,
+    restrictedMode: null,
+    selectedObjectColor: "#FFFFFF",
+    objectNumberLabel: "",
   },
   highlights: {
     highlightedNpc: null,
@@ -278,6 +282,14 @@ export const EditorStore = {
     const next = produce(state, recipe);
     if (next === state) return;
     state = next;
+
+    console.debug(
+      "[EditorStore.update] changed:",
+      Array.from(new Set(changedKeys ?? [])).join(",") || "(unknown)",
+      "at",
+      performance.now().toFixed(2)
+    );
+
     schedulePersist();
     const changed = new Set<string>(changedKeys ?? []);
     for (const l of Array.from(listeners)) l(changed, state);
@@ -391,8 +403,33 @@ export const EditorStore = {
     this.update(
       (draft) => {
         Object.assign(draft, initialState);
+        draft.ui.restrictedMode = null;
       },
       ["quest", "selection", "ui", "highlights", "clipboard"]
     );
+  },
+  enableRestrictedMode(cfg: {
+    enabled: boolean;
+    stepIndex: number;
+    stepId: number;
+    allowNpc: boolean;
+    allowObject: boolean;
+    allowRadius: boolean;
+    defaultPlayerName?: string;
+  }): void {
+    this.setUi({ restrictedMode: { ...cfg } });
+    const sel = this.getState().selection;
+    if (sel.selectedStep !== cfg.stepIndex) {
+      this.setSelection({ selectedStep: cfg.stepIndex, targetIndex: 0 });
+    }
+    if (cfg.allowNpc && !cfg.allowObject) {
+      this.setUi({ captureMode: "single" });
+    } else if (!cfg.allowNpc && cfg.allowObject) {
+      this.setUi({ captureMode: "multi-point" });
+    }
+  },
+
+  disableRestrictedMode(): void {
+    this.setUi({ restrictedMode: null });
   },
 };

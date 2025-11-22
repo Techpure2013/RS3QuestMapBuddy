@@ -1,13 +1,28 @@
-export type TargetType = "npc" | "object";
-export type CaptureMode = "single" | "multi-point" | "radius" | "wanderRadius";
-import type { Clipboard } from "./types";
+import type { Clipboard } from "./types"; // Import your Quest types
+import type {
+  Quest,
+  QuestImage,
+  NpcHighlight,
+  ObjectHighlight,
+} from "../state/types";
+import { PlotSubmissionRow } from "./../api/plotSubmissionsAdmin";
 export interface MapArea {
   mapId: number;
   bounds: [[number, number], [number, number]];
   center: [number, number];
   name: string;
 }
-
+export type TargetType = "npc" | "object";
+export type CaptureMode = "single" | "multi-point" | "radius" | "wanderRadius";
+export type RestrictedPlotMode = {
+  enabled: boolean;
+  stepIndex: number;
+  stepId: number;
+  allowNpc: boolean;
+  allowObject: boolean;
+  allowRadius: boolean;
+  defaultPlayerName?: string;
+};
 export interface SelectionState {
   selectedStep: number;
   targetType: TargetType;
@@ -49,7 +64,8 @@ export interface UiState {
   restoreViewRequest?: { token: number; clearReturn?: boolean };
   captureNavSeq?: number;
   restoreNavSeq?: number;
-
+  selectedObjectColor: string;
+  objectNumberLabel: string;
   navReturn?: {
     center: { lat: number; lng: number };
     zoom: number;
@@ -57,6 +73,8 @@ export interface UiState {
     selection?: SelectionState;
   };
 
+  restrictedMode?: RestrictedPlotMode | null;
+  previewSubmission?: PlotSubmissionRow | null;
   isAlt1Environment: boolean;
 }
 
@@ -86,14 +104,6 @@ export interface ObjectNPCClipboard {
   type: Clipboard;
   data: unknown | null;
 }
-
-// Import your Quest types
-import type {
-  Quest,
-  QuestImage,
-  NpcHighlight,
-  ObjectHighlight,
-} from "../state/types";
 
 export interface EditorState {
   version: number;

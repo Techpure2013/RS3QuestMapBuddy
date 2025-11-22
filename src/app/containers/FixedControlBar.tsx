@@ -6,24 +6,21 @@ import {
   requestFlyToCurrentTargetAt,
 } from "../../state/editorStore";
 import { HandleFloorIncreaseDecrease } from "../../map/utils/MapFunctions";
-import { useAuth } from "state/useAuth";
 import { IconGridDots } from "@tabler/icons-react";
-export const StepControlBar: React.FC = () => {
-  const quest = useEditorSelector((s) => s.quest);
-  const sel = useEditorSelector((s) => s.selection);
-  const { isAuthed } = useAuth();
-  const totalSteps = quest?.questSteps.length ?? 0;
-  const ui = useEditorSelector((s) => s.ui);
-  const toggleGrids = useCallback(() => {
-    EditorStore.setUi({ showGrids: !ui.showGrids });
-  }, [ui.showGrids]);
+
+const StepControlBar: React.FC = React.memo(() => {
+  // Minimal subscriptions (primitives only)
+  const totalSteps = useEditorSelector((s) => s.quest?.questSteps.length ?? 0);
+  const selStep = useEditorSelector((s) => s.selection.selectedStep);
+  const selFloor = useEditorSelector((s) => s.selection.floor);
+  const showGrids = useEditorSelector((s) => s.ui.showGrids);
+
+  // Cursor info: local only
   const [cursor, setCursor] = useState<{ x: number; y: number; zoom: number }>({
     x: 0,
     y: 0,
     zoom: 0,
   });
-  const [showEditor, setShowEditor] = useState<boolean>(true);
-
   useEffect(() => {
     const handler = (e: Event) => {
       const ce = e as CustomEvent<{ x: number; y: number; zoom: number }>;
@@ -33,6 +30,8 @@ export const StepControlBar: React.FC = () => {
     return () => window.removeEventListener("mapCursorInfo", handler);
   }, []);
 
+  // Step editor visibility (local + broadcast)
+  const [showEditor, setShowEditor] = useState<boolean>(true);
   const emitEditorVisibility = useCallback((visible: boolean) => {
     window.dispatchEvent(
       new CustomEvent("toggleStepEditorVisibility", {
@@ -40,7 +39,6 @@ export const StepControlBar: React.FC = () => {
       })
     );
   }, []);
-
   const toggleEditor = useCallback(() => {
     setShowEditor((prev) => {
       const next = !prev;
@@ -48,22 +46,32 @@ export const StepControlBar: React.FC = () => {
       return next;
     });
   }, [emitEditorVisibility]);
+
+  // Stable handlers reading fresh state
+  const toggleGrids = useCallback(() => {
+    const curr = EditorStore.getState().ui.showGrids;
+    EditorStore.setUi({ showGrids: !curr });
+  }, []);
+
   const incStep = useCallback(() => {
-    if (sel.selectedStep < totalSteps - 1) {
-      const nextStep = sel.selectedStep + 1;
-      // First set floor by step (EditorStore will sync floor inside helper)
-      EditorStore.autoSelectFirstValidTargetForStep(nextStep);
+    const state = EditorStore.getState();
+    const total = state.quest?.questSteps.length ?? 0;
+    const curr = state.selection.selectedStep;
+    if (curr < total - 1) {
+      const next = curr + 1;
+      EditorStore.autoSelectFirstValidTargetForStep(next);
       requestFlyToCurrentTargetAt(5, "auto-select");
     }
-  }, [sel.selectedStep, totalSteps]);
+  }, []);
 
   const decStep = useCallback(() => {
-    if (sel.selectedStep > 0) {
-      const nextStep = sel.selectedStep - 1;
-      EditorStore.autoSelectFirstValidTargetForStep(nextStep);
+    const curr = EditorStore.getState().selection.selectedStep;
+    if (curr > 0) {
+      const next = curr - 1;
+      EditorStore.autoSelectFirstValidTargetForStep(next);
       requestFlyToCurrentTargetAt(5, "auto-select");
     }
-  }, [sel.selectedStep]);
+  }, []);
 
   const onStepSelect = useCallback((stepIndex: number) => {
     EditorStore.autoSelectFirstValidTargetForStep(stepIndex);
@@ -71,42 +79,47 @@ export const StepControlBar: React.FC = () => {
   }, []);
 
   const floorInc = useCallback(() => {
-    const nf = sel.floor + 1;
+    const state = EditorStore.getState();
+    const nf = state.selection.floor + 1;
     if (!HandleFloorIncreaseDecrease(nf)) return;
     EditorStore.setSelection({ floor: nf });
     EditorStore.patchQuest((draft) => {
-      const step = draft.questSteps[sel.selectedStep];
+      const step = draft.questSteps[state.selection.selectedStep];
       if (step) step.floor = nf;
     });
-  }, [sel.floor, sel.selectedStep]);
+  }, []);
 
   const floorDec = useCallback(() => {
-    const nf = sel.floor - 1;
+    const state = EditorStore.getState();
+    const nf = state.selection.floor - 1;
     if (!HandleFloorIncreaseDecrease(nf)) return;
     EditorStore.setSelection({ floor: nf });
     EditorStore.patchQuest((draft) => {
-      const step = draft.questSteps[sel.selectedStep];
+      const step = draft.questSteps[state.selection.selectedStep];
       if (step) step.floor = nf;
     });
-  }, [sel.floor, sel.selectedStep]);
+  }, []);
 
   const addStep = useCallback(() => {
+    const floor = EditorStore.getState().selection.floor;
     EditorStore.patchQuest((draft) => {
       draft.questSteps.push({
         stepDescription: "",
-        floor: sel.floor,
+        floor,
         highlights: { npc: [], object: [] },
         itemsNeeded: [],
         itemsRecommended: [],
         additionalStepInformation: [],
       });
     });
-  }, [sel.floor]);
+  }, []);
 
   const deleteStep = useCallback(() => {
+    const state = EditorStore.getState();
+    const idx = state.selection.selectedStep;
     EditorStore.patchQuest((draft) => {
       if (draft.questSteps.length > 0) {
-        draft.questSteps.splice(sel.selectedStep, 1);
+        draft.questSteps.splice(idx, 1);
       }
     });
     const total = EditorStore.getState().quest?.questSteps.length ?? 0;
@@ -117,7 +130,7 @@ export const StepControlBar: React.FC = () => {
       ),
       targetIndex: 0,
     });
-  }, [sel.selectedStep]);
+  }, []);
 
   return (
     <div
@@ -128,21 +141,21 @@ export const StepControlBar: React.FC = () => {
         gap: 16,
         padding: "0 16px",
         height: "100%",
-        pointerEvents: "auto", // ensure bar captures clicks
+        pointerEvents: "auto",
       }}
     >
       {/* Step Navigation */}
       <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
         <button
           onClick={decStep}
-          disabled={sel.selectedStep === 0}
+          disabled={selStep === 0}
           className="control-btn"
+          type="button"
         >
           ←
         </button>
-
         <select
-          value={sel.selectedStep}
+          value={selStep}
           onChange={(e) => onStepSelect(Number(e.target.value))}
           style={{
             padding: "4px 8px",
@@ -160,13 +173,12 @@ export const StepControlBar: React.FC = () => {
             </option>
           ))}
         </select>
-
         <span style={{ fontSize: 11, color: "#6b7280" }}>/ {totalSteps}</span>
-
         <button
           onClick={incStep}
-          disabled={sel.selectedStep === totalSteps - 1}
+          disabled={selStep === totalSteps - 1}
           className="control-btn"
+          type="button"
         >
           →
         </button>
@@ -174,7 +186,7 @@ export const StepControlBar: React.FC = () => {
 
       {/* Floor Controls */}
       <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-        <button onClick={floorDec} className="control-btn">
+        <button onClick={floorDec} className="control-btn" type="button">
           ↓
         </button>
         <div
@@ -190,28 +202,32 @@ export const StepControlBar: React.FC = () => {
             textAlign: "center",
           }}
         >
-          F{sel.floor}
+          F{selFloor}
         </div>
-        <button onClick={floorInc} className="control-btn">
+        <button onClick={floorInc} className="control-btn" type="button">
           ↑
         </button>
       </div>
 
-      {/* Step Actions */}
-      {isAuthed && (
-        <div style={{ display: "flex", gap: 6 }}>
-          <button onClick={addStep} className="control-btn control-btn--add">
-            + Step
-          </button>
-          <button
-            onClick={deleteStep}
-            className="control-btn control-btn--delete"
-          >
-            Delete
-          </button>
-        </div>
-      )}
+      {/* Step Actions (show/hide as needed) */}
+      <div style={{ display: "flex", gap: 6 }}>
+        <button
+          onClick={addStep}
+          className="control-btn control-btn--add"
+          type="button"
+        >
+          + Step
+        </button>
+        <button
+          onClick={deleteStep}
+          className="control-btn control-btn--delete"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
 
+      {/* Cursor info */}
       <div
         style={{
           marginLeft: "auto",
@@ -232,30 +248,36 @@ export const StepControlBar: React.FC = () => {
         <span>Y: {cursor.y}</span>
       </div>
 
-      {/* NEW: Hide/Show step editor toggle */}
+      {/* Editor toggle */}
       <button
         onClick={toggleEditor}
         className="control-btn"
+        type="button"
         style={{ minWidth: 64 }}
         title={showEditor ? "Hide step editor" : "Show step editor"}
       >
         {showEditor ? "Hide" : "Show"}
       </button>
+
+      {/* Grid toggle */}
       <button
         onClick={toggleGrids}
         className="control-btn"
-        title={ui.showGrids ? "Hide grids" : "Show grids"}
+        type="button"
+        title={showGrids ? "Hide grids" : "Show grids"}
         style={{
           marginLeft: 8,
-          background: ui.showGrids ? "#2563eb" : undefined,
-          borderColor: ui.showGrids ? "#2563eb" : undefined,
-          color: ui.showGrids ? "#fff" : undefined,
+          background: showGrids ? "#2563eb" : undefined,
+          borderColor: showGrids ? "#2563eb" : undefined,
+          color: showGrids ? "#fff" : undefined,
           minWidth: 64,
         }}
       >
         <IconGridDots size={14} style={{ marginRight: 4 }} />
-        {ui.showGrids ? "Grids: On" : "Grids: Off"}
+        {showGrids ? "Grids: On" : "Grids: Off"}
       </button>
     </div>
   );
-};
+});
+
+export default StepControlBar;

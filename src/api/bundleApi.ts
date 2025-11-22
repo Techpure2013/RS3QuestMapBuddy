@@ -1,18 +1,5 @@
 import { QuestBundleNormalized } from "../state/types";
 
-function getApiBase(): string {
-  const host = window.location.hostname;
-
-  if (host === "localhost" || host === "127.0.0.1") {
-    return "http://127.0.0.1:42069";
-  }
-
-  const base = (window as any).__APP_CONFIG__?.API_BASE;
-  if (base) return base;
-  return `${window.location.origin}/api`;
-}
-const API_BASE = getApiBase();
-
 export async function fetchQuestBundle(
   questName: string
 ): Promise<QuestBundleNormalized> {

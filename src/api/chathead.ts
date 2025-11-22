@@ -1,3 +1,5 @@
+import { getApiBase } from "./../utils/apiBase";
+
 export async function upsertChathead({
   name,
   sourceUrl,
@@ -16,11 +18,7 @@ export async function upsertChathead({
   name: string;
   variant: string;
 }> {
-  const API_BASE =
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1"
-      ? "http://127.0.0.1:42069"
-      : (window as any).__APP_CONFIG__?.API_BASE ?? window.location.origin;
+  const API_BASE = getApiBase();
 
   const body: Record<string, unknown> = { variant, sourceUrl, spriteSize };
   if (typeof npcId === "number") body.npcId = npcId;

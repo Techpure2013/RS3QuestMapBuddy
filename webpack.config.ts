@@ -7,7 +7,7 @@ module.exports = {
     filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    publicPath: "./",
+    publicPath: "/RS3QuestBuddyEditor/",
   },
   mode: "development",
   devtool: "eval-source-map",
@@ -67,9 +67,11 @@ module.exports = {
     },
     host: "127.0.0.1",
     port: 3000,
-    open: true,
+    open: ["/RS3QuestBuddyEditor/"],
     hot: true,
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: "/RS3QuestBuddyEditor/index.html",
+    },
     liveReload: false,
 
     proxy: [

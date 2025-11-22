@@ -1,10 +1,4 @@
-export function getApiBase(): string {
-  const host = window.location.hostname;
-  if (host === "localhost" || host === "127.0.0.1") {
-    return "http://127.0.0.1:42069";
-  }
-  return window.__APP_CONFIG__?.API_BASE ?? window.location.origin;
-}
+import { getApiBase } from "./../utils/apiBase";
 
 export async function fetchMe(): Promise<{
   ok: boolean;

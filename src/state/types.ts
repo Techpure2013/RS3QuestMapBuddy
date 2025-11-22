@@ -207,7 +207,44 @@ type StepIn = {
   highlights?: QuestHighlights;
   floor?: number;
 };
-
+export type PlotQuestBundle = {
+  quest: { name: string };
+  details: {
+    Quest: string;
+    StartPoint: string;
+    MemberRequirement: string;
+    OfficialLength: string;
+    Requirements: string[];
+    ItemsRequired: string[];
+    Recommended: string[];
+    EnemiesToDefeat: string[];
+  };
+  steps: Array<{
+    stepNumber: number;
+    stepDescription: string;
+    itemsNeeded: string[];
+    itemsRecommended: string[];
+    additionalStepInformation: string[];
+    highlights: {
+      npc: unknown[];
+      object: unknown[];
+    };
+    floor: number;
+    // Server can add this; we consume it if present
+    stepId?: number;
+  }>;
+  images: Array<{
+    step: string;
+    src: string;
+    height: number;
+    width: number;
+    stepDescription: string;
+  }>;
+  // Optional fields your server may add
+  rewards?: { questPoints: number; questRewards: string[] };
+  updatedAt?: string;
+  totalSteps?: number;
+};
 const toLinesArray = (v: unknown): string[] => {
   if (Array.isArray(v)) return v.map((x) => String(x ?? "")).filter(Boolean);
   if (v == null) return [];

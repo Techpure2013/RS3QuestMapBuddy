@@ -1,5 +1,5 @@
 // src/map/layers/SelectionHighlightLayer.tsx
-import React, { useEffect, useRef, useState, useMemo } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useMap } from "react-leaflet";
 import L, { type LatLngBounds, type PathOptions } from "leaflet";
 import { resizeImageToDataUrl } from "../utils/imageDisplayUtils";
@@ -12,26 +12,20 @@ import { recordObservedChathead } from "./../../idb/chatheadsObserved";
 const chatheadOverrides: Record<string, string> =
   rawChatheadOverrides as Record<string, string>;
 
-// Render-time object point (already in visual space)
 export interface ObjectLocationRender {
   lat: number;
   lng: number;
   color?: string;
   numberLabel?: string;
 }
-
-// Render-time NPC item
 export interface NpcRenderItem {
   npcName: string;
   npcLocation: { lat: number; lng: number };
-
   wanderRadius: {
     bottomLeft: { lat: number; lng: number };
     topRight: { lat: number; lng: number };
   };
 }
-
-// Render-time Object item
 export interface ObjectRenderItem {
   name: string;
   objectLocation: ObjectLocationRender[];
@@ -40,8 +34,6 @@ export interface ObjectRenderItem {
     topRight: { lat: number; lng: number };
   };
 }
-
-// Discriminated union for geometry
 export type SelectionGeometry =
   | { type: "none" }
   | { type: "npc"; npcArray: NpcRenderItem[] }
@@ -50,7 +42,7 @@ export type SelectionGeometry =
 interface SelectionHighlightLayerProps {
   geometry: SelectionGeometry;
   pane: string;
-  selectedIndex?: number; // NEW: which item in the array is selected
+  selectedIndex?: number;
   isActiveType?: boolean;
 }
 
@@ -73,7 +65,6 @@ function observeOnce({
   void recordObservedChathead({ npcId, name, variant, sourceUrl });
 }
 
-// Helpers
 const getImageUrl = (
   name: string,
   type: "npc" | "object",
@@ -111,7 +102,6 @@ const createObstacleIcon = (resizedDataUrl: string): L.DivIcon => {
   });
 };
 
-// Style types
 const radiusStyle = {
   color: "#00FFFF",
   weight: 2,
@@ -120,6 +110,30 @@ const radiusStyle = {
   interactive: false,
   pane: "selectionRadiusPane",
 };
+
+function ensurePane(map: L.Map, paneName: string): void {
+  if (!paneName) return;
+  if (!map.getPane(paneName)) {
+    map.createPane(paneName);
+    const p = map.getPane(paneName);
+    if (p) {
+      // set defaults similar to your CustomMapPanes
+      if (paneName === "highlightPane") {
+        p.style.zIndex = "590";
+        p.style.pointerEvents = "none";
+      } else if (paneName === "selectionRadiusPane") {
+        p.style.zIndex = "640";
+        p.style.pointerEvents = "none";
+      } else if (paneName === "selectionPane") {
+        p.style.zIndex = "650";
+        p.style.pointerEvents = "none";
+      } else if (paneName === "selectionLabelPane") {
+        p.style.zIndex = "670";
+        p.style.pointerEvents = "none";
+      }
+    }
+  }
+}
 
 const SelectionHighlightLayerComponent: React.FC<
   SelectionHighlightLayerProps
@@ -139,6 +153,13 @@ const SelectionHighlightLayerComponent: React.FC<
   useEffect(() => {
     let isActive = true;
 
+    // Ensure required panes exist before adding layers
+    ensurePane(map, pane);
+    ensurePane(map, "selectionPane");
+    ensurePane(map, "selectionRadiusPane");
+    ensurePane(map, "selectionLabelPane");
+    ensurePane(map, "highlightPane");
+
     if (!layerRef.current) {
       layerRef.current = new L.LayerGroup().addTo(map);
     }
@@ -152,7 +173,6 @@ const SelectionHighlightLayerComponent: React.FC<
         geometry.npcArray.forEach((npc, index) => {
           const point = npc.npcLocation;
           const isSelected = isActiveType && index === selectedIndex;
-          // Skip sentinel value, if any
           if (point.lat === -16.5 && point.lng === 16.5) return;
 
           const imageUrl = getImageUrl(npc.npcName, "npc");
@@ -161,7 +181,6 @@ const SelectionHighlightLayerComponent: React.FC<
           )}`;
           const popupContent = `<b>${npc.npcName}</b><br><a href="${wikiSearchUrl}" target="_blank" rel="noopener noreferrer">Search on Wiki</a>`;
 
-          // USE CACHED VERSION HERE
           resizeImageToDataUrlCached(imageUrl, 40)
             .then((resizedDataUrl) => {
               if (!isActive) return;
@@ -196,7 +215,7 @@ const SelectionHighlightLayerComponent: React.FC<
                 [point.lat + 1, point.lng + 1]
               );
               L.rectangle(tileBounds, {
-                color: isSelected ? "#00FF00" : "#00FFFF", // Green if selected
+                color: isSelected ? "#00FF00" : "#00FFFF",
                 weight: isSelected ? 3 : 1,
                 fillOpacity: 0.7,
                 pane,
@@ -205,28 +224,26 @@ const SelectionHighlightLayerComponent: React.FC<
 
           const r = npc.wanderRadius;
           if (
-            npc.wanderRadius &&
-            (npc.wanderRadius.bottomLeft.lat !== 0 ||
-              npc.wanderRadius.topRight.lat !== 0)
+            r &&
+            (r.bottomLeft.lat !== 0 ||
+              r.topRight.lat !== 0 ||
+              r.bottomLeft.lng !== 0 ||
+              r.topRight.lng !== 0)
           ) {
             const bounds = L.latLngBounds(
-              [
-                npc.wanderRadius.topRight.lat + 0.5,
-                npc.wanderRadius.bottomLeft.lng + 0.5,
-              ],
-              [
-                npc.wanderRadius.bottomLeft.lat - 0.5,
-                npc.wanderRadius.topRight.lng + 1.5,
-              ]
+              [r.topRight.lat + 0.5, r.bottomLeft.lng + 0.5],
+              [r.bottomLeft.lat - 0.5, r.topRight.lng + 1.5]
             );
-            if (isActive) L.rectangle(bounds, radiusStyle).addTo(currentLayer);
+            if (isActive)
+              L.rectangle(bounds, {
+                ...radiusStyle,
+                pane: "selectionRadiusPane",
+              }).addTo(currentLayer);
           }
         });
         break;
       }
-
       case "object": {
-        // If the icon fetch fails, we draw filled tiles islands and borders
         const fallbackPoints = new Map<string, ObjectLocationRender>();
         const promises: Promise<void>[] = [];
 
@@ -240,7 +257,6 @@ const SelectionHighlightLayerComponent: React.FC<
             )}`;
             const popupContent = `<b>${obj.name}</b><br><a href="${wikiSearchUrl}" target="_blank" rel="noopener noreferrer">Search on Wiki</a>`;
 
-            // USE CACHED VERSION HERE
             const p = resizeImageToDataUrlCached(imageUrl, 48)
               .then((resizedDataUrl) => {
                 if (!isActive) return;
@@ -250,7 +266,6 @@ const SelectionHighlightLayerComponent: React.FC<
                   .addTo(currentLayer);
               })
               .catch(() => {
-                // Collect into fallback set to paint tiles later
                 fallbackPoints.set(`${loc.lng},${loc.lat}`, loc);
               });
 
@@ -259,16 +274,21 @@ const SelectionHighlightLayerComponent: React.FC<
 
           const r = obj.objectRadius;
           if (
-            r.bottomLeft.lat !== 0 ||
-            r.topRight.lat !== 0 ||
-            r.bottomLeft.lng !== 0 ||
-            r.topRight.lng !== 0
+            r &&
+            (r.bottomLeft.lat !== 0 ||
+              r.topRight.lat !== 0 ||
+              r.bottomLeft.lng !== 0 ||
+              r.topRight.lng !== 0)
           ) {
             const bounds = L.latLngBounds(
               [r.topRight.lat + 0.5, r.bottomLeft.lng + 0.5],
               [r.bottomLeft.lat - 0.5, r.topRight.lng + 1.5]
             );
-            if (isActive) L.rectangle(bounds, radiusStyle).addTo(currentLayer);
+            if (isActive)
+              L.rectangle(bounds, {
+                ...radiusStyle,
+                pane: "selectionRadiusPane",
+              }).addTo(currentLayer);
           }
         });
 
@@ -278,7 +298,6 @@ const SelectionHighlightLayerComponent: React.FC<
           const fallbackLayer = L.layerGroup().addTo(currentLayer);
           const unvisited = new Set(fallbackPoints.keys());
 
-          // Group connected tiles by style key (color+label)
           while (unvisited.size > 0) {
             const startKey = unvisited.values().next().value as string;
             const startPoint = fallbackPoints.get(startKey)!;
@@ -341,7 +360,6 @@ const SelectionHighlightLayerComponent: React.FC<
               pane,
             };
 
-            // Fill tiles
             currentIsland.forEach((point) => {
               const tileBounds = L.latLngBounds(
                 [point.lat, point.lng],
@@ -350,7 +368,6 @@ const SelectionHighlightLayerComponent: React.FC<
               L.rectangle(tileBounds, fillStyle).addTo(fallbackLayer);
             });
 
-            // Borders
             currentIsland.forEach((point) => {
               const { lat, lng } = point;
               const tl = L.latLng(lat, lng);
@@ -375,7 +392,6 @@ const SelectionHighlightLayerComponent: React.FC<
               }
             });
 
-            // Label
             if (groupLabel) {
               const centerLat =
                 currentIsland.reduce((s, l) => s + l.lat, 0) /
@@ -412,8 +428,11 @@ const SelectionHighlightLayerComponent: React.FC<
 
     return () => {
       isActive = false;
+      if (layerRef.current) {
+        layerRef.current.clearLayers();
+      }
     };
-  }, [geometry, map, pane, zoom]);
+  }, [geometry, map, pane, zoom, isActiveType, selectedIndex]);
 
   return null;
 };
@@ -423,7 +442,9 @@ export const SelectionHighlightLayer = React.memo(
   (prevProps, nextProps) => {
     return (
       isEqual(prevProps.geometry, nextProps.geometry) &&
-      prevProps.pane === nextProps.pane
+      prevProps.pane === nextProps.pane &&
+      prevProps.selectedIndex === nextProps.selectedIndex &&
+      prevProps.isActiveType === nextProps.isActiveType
     );
   }
 );
