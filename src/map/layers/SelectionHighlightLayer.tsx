@@ -2,13 +2,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useMap } from "react-leaflet";
 import L, { type LatLngBounds, type PathOptions } from "leaflet";
-import { resizeImageToDataUrl } from "../utils/imageDisplayUtils";
 import { resizeImageToDataUrlCached } from "./../../utils/cachedImageLoader";
 import rawChatheadOverrides from "../Map Data/chatheadOverrides.json";
 import { isEqual } from "lodash";
 import { recordObservedChathead } from "./../../idb/chatheadsObserved";
+import { useEditorSelector } from "../../state/useEditorSelector";
+import { getApiBase } from "./../../utils/apiBase";
 
-// Typed overrides map
 const chatheadOverrides: Record<string, string> =
   rawChatheadOverrides as Record<string, string>;
 
@@ -25,6 +25,7 @@ export interface NpcRenderItem {
     bottomLeft: { lat: number; lng: number };
     topRight: { lat: number; lng: number };
   };
+  id?: number;
 }
 export interface ObjectRenderItem {
   name: string;
@@ -117,7 +118,6 @@ function ensurePane(map: L.Map, paneName: string): void {
     map.createPane(paneName);
     const p = map.getPane(paneName);
     if (p) {
-      // set defaults similar to your CustomMapPanes
       if (paneName === "highlightPane") {
         p.style.zIndex = "590";
         p.style.pointerEvents = "none";
@@ -135,12 +135,139 @@ function ensurePane(map: L.Map, paneName: string): void {
   }
 }
 
+function extractVariantFromName(name: string): {
+  baseName: string;
+  detectedVariant: string | null;
+} {
+  const match = name.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
+  if (match) {
+    return {
+      baseName: match[1].trim(),
+      detectedVariant: match[2].trim().toLowerCase(),
+    };
+  }
+  return { baseName: name, detectedVariant: null };
+}
+
+type ChatheadLoadResult =
+  | {
+      success: true;
+      dataUrl: string;
+      source: "database" | "wiki";
+      variant: string;
+      reason?: string;
+    }
+  | { success: false; reason: string };
+
+async function loadChatheadWithFallback(
+  npcName: string,
+  variant: string,
+  npcId?: number
+): Promise<ChatheadLoadResult> {
+  const { baseName, detectedVariant } = extractVariantFromName(npcName);
+  const finalVariant = variant || detectedVariant || "default";
+
+  console.log(`🎯 Loading chathead:`, {
+    npcName,
+    baseName,
+    npcId,
+    requestedVariant: variant,
+    detectedVariant,
+    finalVariant,
+  });
+
+  const API_BASE = getApiBase();
+
+  // STEP 1: Try database with npcId (preferred)
+  if (typeof npcId === "number" && npcId > 0) {
+    try {
+      const dbUrl = `${API_BASE}/api/chatheads/sprite?npcId=${npcId}&variant=${encodeURIComponent(
+        finalVariant
+      )}`;
+      console.log(`🔍 Trying DB by npcId: ${dbUrl}`);
+      const dataUrl = await resizeImageToDataUrlCached(dbUrl, 40);
+      console.log(
+        `✅ Database hit by npcId: ${npcId}, variant: ${finalVariant}`
+      );
+      return {
+        success: true,
+        dataUrl,
+        source: "database",
+        variant: finalVariant,
+      };
+    } catch (err) {
+      console.warn(
+        `⚠️ Database miss by npcId: ${npcId}, variant: ${finalVariant}`,
+        err instanceof Error ? err.message : err
+      );
+    }
+  }
+
+  // STEP 2: Try database with name
+  try {
+    const dbUrl = `${API_BASE}/api/chatheads/sprite?name=${encodeURIComponent(
+      baseName
+    )}&variant=${encodeURIComponent(finalVariant)}`;
+    console.log(`🔍 Trying DB by name: ${dbUrl}`);
+    const dataUrl = await resizeImageToDataUrlCached(dbUrl, 40);
+    console.log(
+      `✅ Database hit by name: "${baseName}", variant: ${finalVariant}`
+    );
+    return {
+      success: true,
+      dataUrl,
+      source: "database",
+      variant: finalVariant,
+    };
+  } catch (err) {
+    console.warn(
+      `⚠️ Database miss by name: "${baseName}", variant: ${finalVariant}`,
+      err instanceof Error ? err.message : err
+    );
+  }
+
+  // STEP 3: Wiki fallback (full name)
+  try {
+    const wikiUrl = getImageUrl(npcName, "npc");
+    console.log(`🔍 Trying Wiki (full name): ${wikiUrl}`);
+    const dataUrl = await resizeImageToDataUrlCached(wikiUrl, 40);
+    console.log(`✅ Wiki hit (full name): "${npcName}"`);
+    return { success: true, dataUrl, source: "wiki", variant: "wiki" };
+  } catch (err) {
+    console.warn(
+      `⚠️ Wiki miss (full name): "${npcName}"`,
+      err instanceof Error ? err.message : err
+    );
+  }
+
+  // STEP 4: Wiki fallback (base name without parenthetical)
+  if (baseName !== npcName) {
+    try {
+      const wikiUrl = getImageUrl(baseName, "npc");
+      console.log(`🔍 Trying Wiki (base name): ${wikiUrl}`);
+      const dataUrl = await resizeImageToDataUrlCached(wikiUrl, 40);
+      console.log(`✅ Wiki hit (base name): "${baseName}"`);
+      return { success: true, dataUrl, source: "wiki", variant: "wiki" };
+    } catch (err) {
+      console.warn(
+        `⚠️ Wiki miss (base name): "${baseName}"`,
+        err instanceof Error ? err.message : err
+      );
+    }
+  }
+
+  console.error(`❌ All sources exhausted for: "${npcName}" (npcId: ${npcId})`);
+  return { success: false, reason: "All sources failed" };
+}
+
 const SelectionHighlightLayerComponent: React.FC<
   SelectionHighlightLayerProps
 > = ({ geometry, pane, selectedIndex = -1, isActiveType = false }) => {
   const map = useMap();
   const layerRef = useRef<L.LayerGroup | null>(null);
   const [zoom, setZoom] = useState<number>(map.getZoom());
+
+  const chatheadVariant = useEditorSelector((s) => s.selection.chatheadVariant);
 
   useEffect(() => {
     const handleZoom = () => setZoom(map.getZoom());
@@ -153,7 +280,6 @@ const SelectionHighlightLayerComponent: React.FC<
   useEffect(() => {
     let isActive = true;
 
-    // Ensure required panes exist before adding layers
     ensurePane(map, pane);
     ensurePane(map, "selectionPane");
     ensurePane(map, "selectionRadiusPane");
@@ -170,21 +296,74 @@ const SelectionHighlightLayerComponent: React.FC<
 
     switch (geometry.type) {
       case "npc": {
+        console.log(
+          `📊 Rendering ${geometry.npcArray.length} NPCs with variant: "${
+            chatheadVariant || "default"
+          }"`
+        );
+
         geometry.npcArray.forEach((npc, index) => {
           const point = npc.npcLocation;
           const isSelected = isActiveType && index === selectedIndex;
-          if (point.lat === -16.5 && point.lng === 16.5) return;
 
-          const imageUrl = getImageUrl(npc.npcName, "npc");
+          if (point.lat === -16.5 && point.lng === 16.5) {
+            console.warn(`⏭️ Skipping invalid NPC location: ${npc.npcName}`);
+            return;
+          }
+
           const wikiSearchUrl = `https://runescape.wiki/w/Special:Search?search=${encodeURIComponent(
             npc.npcName
           )}`;
-          const popupContent = `<b>${npc.npcName}</b><br><a href="${wikiSearchUrl}" target="_blank" rel="noopener noreferrer">Search on Wiki</a>`;
+          const popupContent = `<b>${npc.npcName}</b>${
+            npc.id ? `<br>ID: ${npc.id}` : ""
+          }<br><a href="${wikiSearchUrl}" target="_blank" rel="noopener noreferrer">Search on Wiki</a>`;
 
-          resizeImageToDataUrlCached(imageUrl, 40)
-            .then((resizedDataUrl) => {
-              if (!isActive) return;
-              const icon = createChatheadIcon(resizedDataUrl);
+          const npcKey = `${npc.id ?? npc.npcName}@${point.lat},${point.lng}`;
+          (SelectionHighlightLayer as any)._npcTok ??= new Map<
+            string,
+            number
+          >();
+          const nextToken =
+            ((SelectionHighlightLayer as any)._npcTok.get(npcKey) ?? 0) + 1;
+          (SelectionHighlightLayer as any)._npcTok.set(npcKey, nextToken);
+          const thisToken = nextToken;
+
+          console.log(
+            `🎬 Starting load for NPC: ${npc.npcName} (token: ${thisToken})`
+          );
+
+          (async () => {
+            const result = await loadChatheadWithFallback(
+              npc.npcName,
+              chatheadVariant || "default",
+              npc.id
+            );
+
+            const currentToken = (SelectionHighlightLayer as any)._npcTok.get(
+              npcKey
+            );
+            if (currentToken !== thisToken) {
+              console.warn(
+                `⏭️ Stale result ignored for ${npc.npcName} (token ${thisToken} vs current ${currentToken})`
+              );
+              return;
+            }
+
+            if (!isActive) {
+              console.warn(
+                `⏭️ Component unmounted, ignoring result for ${npc.npcName}`
+              );
+              return;
+            }
+
+            if (result.success) {
+              console.log(`✨ Rendering chathead for: ${npc.npcName}`, {
+                source: result.source,
+                variant: result.variant,
+                isSelected,
+              });
+
+              const icon = createChatheadIcon(result.dataUrl);
               L.marker([point.lat + 0.5, point.lng + 0.5], {
                 icon,
                 pane,
@@ -192,6 +371,7 @@ const SelectionHighlightLayerComponent: React.FC<
               })
                 .bindPopup(popupContent)
                 .addTo(currentLayer);
+
               if (isSelected) {
                 L.circle([point.lat + 0.5, point.lng + 0.5], {
                   radius: 0.7,
@@ -202,14 +382,25 @@ const SelectionHighlightLayerComponent: React.FC<
                   interactive: false,
                 }).addTo(currentLayer);
               }
+
               observeOnce({
+                npcId: npc.id,
                 name: npc.npcName,
-                variant: "default",
-                sourceUrl: imageUrl,
+                variant: result.variant,
+                sourceUrl:
+                  result.source === "database"
+                    ? "database"
+                    : getImageUrl(npc.npcName, "npc"),
               });
-            })
-            .catch(() => {
-              if (!isActive) return;
+            } else {
+              console.error(
+                `💥 Rendering fallback square for: ${npc.npcName}`,
+                {
+                  reason: result.reason,
+                  npcId: npc.id,
+                }
+              );
+
               const tileBounds: LatLngBounds = L.latLngBounds(
                 [point.lat, point.lng],
                 [point.lat + 1, point.lng + 1]
@@ -220,7 +411,8 @@ const SelectionHighlightLayerComponent: React.FC<
                 fillOpacity: 0.7,
                 pane,
               }).addTo(currentLayer);
-            });
+            }
+          })();
 
           const r = npc.wanderRadius;
           if (
@@ -243,13 +435,23 @@ const SelectionHighlightLayerComponent: React.FC<
         });
         break;
       }
+
       case "object": {
+        console.log(`📊 Rendering ${geometry.objectArray.length} objects`);
+
         const fallbackPoints = new Map<string, ObjectLocationRender>();
         const promises: Promise<void>[] = [];
 
-        geometry.objectArray.forEach((obj) => {
-          obj.objectLocation.forEach((loc) => {
-            if (loc.lat === -16.5 && loc.lng === 16.5) return;
+        geometry.objectArray.forEach((obj, objIndex) => {
+          console.log(
+            `🔧 Processing object: ${obj.name} with ${obj.objectLocation.length} locations`
+          );
+
+          obj.objectLocation.forEach((loc, locIndex) => {
+            if (loc.lat === -16.5 && loc.lng === 16.5) {
+              console.warn(`⏭️ Skipping invalid object location: ${obj.name}`);
+              return;
+            }
 
             const imageUrl = getImageUrl(obj.name, "object");
             const wikiSearchUrl = `https://runescape.wiki/w/Special:Search?search=${encodeURIComponent(
@@ -257,15 +459,24 @@ const SelectionHighlightLayerComponent: React.FC<
             )}`;
             const popupContent = `<b>${obj.name}</b><br><a href="${wikiSearchUrl}" target="_blank" rel="noopener noreferrer">Search on Wiki</a>`;
 
+            console.log(
+              `🖼️ Loading object image: ${obj.name} from ${imageUrl}`
+            );
+
             const p = resizeImageToDataUrlCached(imageUrl, 48)
               .then((resizedDataUrl) => {
                 if (!isActive) return;
+                console.log(`✅ Object image loaded: ${obj.name}`);
                 const icon = createObstacleIcon(resizedDataUrl);
                 L.marker([loc.lat + 0.5, loc.lng + 0.5], { icon, pane })
                   .bindPopup(popupContent)
                   .addTo(currentLayer);
               })
-              .catch(() => {
+              .catch((err) => {
+                console.warn(
+                  `⚠️ Object image failed: ${obj.name}`,
+                  err instanceof Error ? err.message : err
+                );
                 fallbackPoints.set(`${loc.lng},${loc.lat}`, loc);
               });
 
@@ -294,6 +505,10 @@ const SelectionHighlightLayerComponent: React.FC<
 
         Promise.allSettled(promises).then(() => {
           if (!isActive || fallbackPoints.size === 0) return;
+
+          console.log(
+            `🎨 Rendering ${fallbackPoints.size} fallback object tiles`
+          );
 
           const fallbackLayer = L.layerGroup().addTo(currentLayer);
           const unvisited = new Set(fallbackPoints.keys());
@@ -432,7 +647,7 @@ const SelectionHighlightLayerComponent: React.FC<
         layerRef.current.clearLayers();
       }
     };
-  }, [geometry, map, pane, zoom, isActiveType, selectedIndex]);
+  }, [geometry, map, pane, zoom, isActiveType, selectedIndex, chatheadVariant]);
 
   return null;
 };

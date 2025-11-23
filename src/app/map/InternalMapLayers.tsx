@@ -395,8 +395,7 @@ const InternalMapLayers: React.FC = () => {
         return {
           npcName: npc.npcName || `NPC ${idx + 1}`,
           npcLocation: { lat: loc.lat, lng: loc.lng },
-          npcId: npc.id,
-          chatheadOverride: undefined,
+          id: npc.id, // ✅ ADD THIS LINE - Preserve the NPC ID!
           wanderRadius: npc.wanderRadius || {
             bottomLeft: { lat: 0, lng: 0 },
             topRight: { lat: 0, lng: 0 },

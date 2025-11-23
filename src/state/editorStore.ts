@@ -1,3 +1,4 @@
+// src/state/editorStore.ts
 import { get, set } from "idb-keyval";
 import { produce, Draft } from "immer";
 import type {
@@ -33,6 +34,7 @@ const initialState: EditorState = {
     targetType: "npc",
     targetIndex: 0,
     floor: 0,
+    chatheadVariant: "default", // NEW: Default chathead variant
   },
   ui: {
     panelOpen: true,
@@ -67,6 +69,7 @@ const schedulePersist = () => {
     persistTimer = null;
   }, 150);
 };
+
 export function requestFlyToCurrentTargetAt(
   zoom: number,
   source: "selection" | "quest-load" | "auto-select" | "external" = "external"
@@ -79,11 +82,13 @@ export function requestFlyToCurrentTargetAt(
     flyToTargetRequest: { token: nextSeq, source },
   });
 }
+
 export function autoGrow(el: HTMLTextAreaElement): void {
   el.style.height = "auto";
   el.style.overflow = "hidden";
   el.style.height = `${el.scrollHeight}px`;
 }
+
 export function requestCaptureNavReturn(
   includeSelection: boolean = true
 ): void {
@@ -103,6 +108,7 @@ export function requestRestoreView(clearReturn: boolean = true): void {
     restoreViewRequest: { token: next, clearReturn },
   });
 }
+
 export function requestFlyToAreaAt(
   area: {
     name: string;
@@ -124,13 +130,23 @@ export function requestFlyToAreaAt(
     areaZoom: zoom,
   });
 }
+
 function migrate(raw: EditorState): EditorState {
   if (!raw || typeof raw.version !== "number") return initialState;
-  return { ...initialState, ...raw, version: CURRENT_VERSION };
+
+  // NEW: Ensure chatheadVariant exists on migrated state
+  const migrated = { ...initialState, ...raw, version: CURRENT_VERSION };
+  if (!migrated.selection.chatheadVariant) {
+    migrated.selection.chatheadVariant = "default";
+  }
+
+  return migrated;
 }
+
 function hasValidLoc(loc?: { lat: number; lng: number } | null): boolean {
   return !!loc && (loc.lat !== 0 || loc.lng !== 0);
 }
+
 const isEqualShallow = (a: unknown, b: unknown): boolean => {
   if (Object.is(a, b)) return true;
   if (
@@ -206,6 +222,7 @@ export const EditorStore = {
         typeof step.floor === "number" ? step.floor : state.selection.floor,
     });
   },
+
   async newQuest(): Promise<void> {
     const q = createDefaultQuest();
     // Replace quest
@@ -218,6 +235,7 @@ export const EditorStore = {
       targetType: "npc",
       targetIndex: 0,
       floor: 0,
+      chatheadVariant: "default", // NEW: Reset variant on new quest
     });
     this.setClipboard({ type: "none", data: null });
     this.setHighlights({
@@ -230,6 +248,7 @@ export const EditorStore = {
     // Persist locally
     await saveActiveBundle(questToBundle(q));
   },
+
   getState(): EditorState {
     return state;
   },
@@ -308,6 +327,7 @@ export const EditorStore = {
           floor: step0?.floor ?? 0,
           targetType: draft.selection.targetType,
           targetIndex: 0,
+          chatheadVariant: draft.selection.chatheadVariant ?? "default", // NEW: Preserve variant
         };
 
         if (step0?.highlights) {
@@ -408,6 +428,7 @@ export const EditorStore = {
       ["quest", "selection", "ui", "highlights", "clipboard"]
     );
   },
+
   enableRestrictedMode(cfg: {
     enabled: boolean;
     stepIndex: number;
@@ -433,3 +454,5 @@ export const EditorStore = {
     this.setUi({ restrictedMode: null });
   },
 };
+
+export default EditorStore;

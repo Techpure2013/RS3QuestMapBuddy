@@ -1,4 +1,14 @@
+// src/utils/chatheadResolver.ts
 import { getApiBase } from "utils/apiBase";
+import { parseWikiImageUrl } from "map/utils/imageUtils";
+
+type Source = "db" | "wiki";
+type VariantTry = "preferred" | "default";
+
+// strict normalization to match server upsert normalization
+function normalizeNameForDb(name: string): string {
+  return name.trim().replace(/\s+/g, " ");
+}
 
 function spriteUrl(params: {
   npcId?: number;
@@ -15,50 +25,91 @@ function spriteUrl(params: {
 
 async function headOk(url: string): Promise<boolean> {
   try {
-    const res = await fetch(url, { method: "HEAD", cache: "no-store" });
+    const res = await fetch(url, {
+      method: "HEAD",
+      cache: "no-store",
+      headers: { "Cache-Control": "no-store" },
+    });
     return res.ok;
   } catch {
     return false;
   }
 }
 
-/**
- DB-first chathead resolver.
- - Try preferred variant sprite
- - If missing and preferred != default, try default sprite
- - Finally, fallback to wiki image as a visual-only backup
-*/
 export async function resolveNpcChatheadUrl(opts: {
   npcName: string;
   npcId?: number;
   preferredVariant?: string;
-}): Promise<{ url: string; variant: string; source: "db" | "wiki" }> {
-  const name = opts.npcName.trim();
+}): Promise<{
+  url: string;
+  variant: string;
+  source: Source;
+  tried: Array<{
+    by: "id" | "name" | "wiki";
+    variant: VariantTry;
+    ok: boolean;
+  }>;
+}> {
+  const tried: Array<{
+    by: "id" | "name" | "wiki";
+    variant: VariantTry;
+    ok: boolean;
+  }> = [];
+
+  const rawName = opts.npcName ?? "";
+  const name = normalizeNameForDb(rawName);
   const preferred = (opts.preferredVariant || "default").trim().toLowerCase();
 
-  // 1) DB sprite for preferred variant
-  const preferredUrl = spriteUrl({
-    npcId: opts.npcId,
-    name,
-    variant: preferred,
-  });
-  if (await headOk(preferredUrl)) {
-    return { url: preferredUrl, variant: preferred, source: "db" };
-  }
+  const tryChain: Array<{
+    by: "id" | "name";
+    variant: VariantTry;
+    make: () => string;
+  }> = [
+    ...(typeof opts.npcId === "number"
+      ? [
+          {
+            by: "id" as const,
+            variant: "preferred" as const,
+            make: () => spriteUrl({ npcId: opts.npcId, variant: preferred }),
+          },
+          {
+            by: "id" as const,
+            variant: "default" as const,
+            make: () => spriteUrl({ npcId: opts.npcId, variant: "default" }),
+          },
+        ]
+      : []),
+    {
+      by: "name" as const,
+      variant: "preferred" as const,
+      make: () => spriteUrl({ name, variant: preferred }),
+    },
+    {
+      by: "name" as const,
+      variant: "default" as const,
+      make: () => spriteUrl({ name, variant: "default" }),
+    },
+  ];
 
-  // 2) DB sprite fallback to "default" variant (if preferred isn't default)
-  if (preferred !== "default") {
-    const defUrl = spriteUrl({ npcId: opts.npcId, name, variant: "default" });
-    if (await headOk(defUrl)) {
-      return { url: defUrl, variant: "default", source: "db" };
+  for (const step of tryChain) {
+    const url = step.make();
+    const ok = await headOk(url);
+    tried.push({ by: step.by, variant: step.variant, ok });
+    if (ok) {
+      return {
+        url,
+        variant: step.variant === "preferred" ? preferred : "default",
+        source: "db",
+        tried,
+      };
     }
   }
 
-  // 3) Pure wiki fallback (visual only)
+  // Wiki fallback (visual only)
   const formatted = name.replace(/\s+/g, "_");
-  return {
-    url: `https://runescape.wiki/images/${formatted}_chathead.png`,
-    variant: preferred,
-    source: "wiki",
-  };
+  const wiki = parseWikiImageUrl(
+    `https://runescape.wiki/images/${formatted}_chathead.png`
+  );
+  tried.push({ by: "wiki", variant: "preferred", ok: true });
+  return { url: wiki, variant: preferred, source: "wiki", tried };
 }

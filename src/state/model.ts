@@ -28,6 +28,7 @@ export interface SelectionState {
   targetType: TargetType;
   targetIndex: number;
   floor: number;
+  chatheadVariant: string;
 }
 
 export interface UiState {

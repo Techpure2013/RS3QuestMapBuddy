@@ -1,3 +1,4 @@
+// src/app/containers/NpcObjectToolsPanel.tsx
 import React, {
   useCallback,
   useMemo,
@@ -22,27 +23,36 @@ import {
   getCacheStats,
   clearImageCache,
 } from "../../idb/imageCache";
-import { resolveNpcChatheadUrl } from "./../../utils/chatheadResolver";
-import { upsertChathead } from "./../../api/chathead";
-
-const getImageUrl = (
-  name: string,
-  type: "npc" | "object",
-  explicitOverride?: string
-): string => {
-  if (explicitOverride) return explicitOverride;
-  const formattedName = name.replace(/\s+/g, "_");
-  return type === "npc"
-    ? `https://runescape.wiki/images/${formattedName}_chathead.png`
-    : `https://runescape.wiki/images/${formattedName}.png`;
-};
+import {
+  listChatheadVariants,
+  resolveObjectImageUrl,
+  upsertChathead,
+} from "./../../api/chathead";
+import { getApiBase } from "./../../utils/apiBase";
 
 const normName = (s: string): string => s.trim().replace(/\s+/g, " ");
+
+function extractVariantFromName(name: string): {
+  baseName: string;
+  detectedVariant: string | null;
+} {
+  const match = name.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
+  if (match) {
+    return {
+      baseName: match[1].trim(),
+      detectedVariant: match[2].trim().toLowerCase(),
+    };
+  }
+  return { baseName: name, detectedVariant: null };
+}
 
 export const NpcObjectToolsPanel: React.FC = () => {
   const quest = useEditorSelector((s) => s.quest);
   const sel = useEditorSelector((s) => s.selection);
   const clipboard = useEditorSelector((s) => s.clipboard);
+
+  // Read variant directly from store
+  const variant = useEditorSelector((s) => s.selection.chatheadVariant);
 
   const currentTargetName = useMemo(() => {
     const step = quest?.questSteps?.[sel.selectedStep];
@@ -205,9 +215,8 @@ export const NpcObjectToolsPanel: React.FC = () => {
     [sel.selectedStep, sel.targetType, sel.targetIndex]
   );
 
-  // Variant state + preview
-  const [variant, setVariant] = useState<string>("default");
   const [variantUrl, setVariantUrl] = useState<string>("");
+  const [availableVariants, setAvailableVariants] = useState<string[]>([]);
 
   const [previewUrl, setPreviewUrl] = useState<string>("");
   const [previewImg, setPreviewImg] = useState<string>("");
@@ -219,6 +228,12 @@ export const NpcObjectToolsPanel: React.FC = () => {
   }>({ sizeMB: 0, count: 0 });
 
   const recordedThisSessionRef = useRef<Set<string>>(new Set());
+
+  // Update variant in store only
+  const handleVariantChange = useCallback((v: string) => {
+    const normalized = v.trim().toLowerCase();
+    EditorStore.setSelection({ chatheadVariant: normalized });
+  }, []);
 
   useEffect(() => {
     void (async () => {
@@ -236,7 +251,72 @@ export const NpcObjectToolsPanel: React.FC = () => {
     window.dispatchEvent(new CustomEvent("chatheadQueuesChanged"));
   }, []);
 
-  // Resolve preview URL (DB-first for NPCs)
+  // Load available variants when target changes (NOT when variant changes)
+  useEffect(() => {
+    const name = normName(currentTargetName);
+    if (!name) {
+      setAvailableVariants([]);
+      return;
+    }
+
+    let mounted = true;
+
+    (async () => {
+      if (sel.targetType === "npc") {
+        const step =
+          EditorStore.getState().quest?.questSteps?.[sel.selectedStep];
+        const npc = step?.highlights.npc?.[sel.targetIndex];
+        const variants = await listChatheadVariants(
+          typeof npc?.id === "number" ? { npcId: npc.id } : { name }
+        );
+
+        if (!mounted) return;
+
+        const allVariants = variants.length ? variants : ["default"];
+        setAvailableVariants(allVariants);
+
+        // Only auto-set variant if current one is invalid
+        const currentVariant = EditorStore.getState().selection.chatheadVariant;
+        if (!allVariants.includes(currentVariant)) {
+          const { detectedVariant } = extractVariantFromName(name);
+          if (detectedVariant && allVariants.includes(detectedVariant)) {
+            handleVariantChange(detectedVariant);
+          } else {
+            handleVariantChange(
+              allVariants.includes("default") ? "default" : allVariants[0]
+            );
+          }
+        }
+      } else {
+        const variants = await listChatheadVariants({ name });
+
+        if (!mounted) return;
+
+        setAvailableVariants(variants.length ? variants : ["default"]);
+
+        // Only auto-set variant if current one is invalid
+        const currentVariant = EditorStore.getState().selection.chatheadVariant;
+        const allVariants = variants.length ? variants : ["default"];
+        if (!allVariants.includes(currentVariant)) {
+          handleVariantChange(
+            allVariants.includes("default") ? "default" : allVariants[0]
+          );
+        }
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
+  }, [
+    currentTargetName,
+    sel.targetType,
+    sel.selectedStep,
+    sel.targetIndex,
+    handleVariantChange,
+  ]); // Removed variant from deps
+
+  // Build preview URL when target or variant changes
   useEffect(() => {
     const raw = currentTargetName;
     const name = normName(raw);
@@ -247,22 +327,42 @@ export const NpcObjectToolsPanel: React.FC = () => {
       return;
     }
 
+    const API_BASE = getApiBase();
+
     (async () => {
+      // Use the variant as-is, or fall back to default if no variants loaded yet
+      const effectiveVariant =
+        availableVariants.length > 0
+          ? availableVariants.includes(variant)
+            ? variant
+            : availableVariants.includes("default")
+            ? "default"
+            : availableVariants[0]
+          : variant || "default";
+
       if (sel.targetType === "npc") {
         const step =
           EditorStore.getState().quest?.questSteps?.[sel.selectedStep];
         const npc = step?.highlights.npc?.[sel.targetIndex];
-        const res = await resolveNpcChatheadUrl({
-          npcName: name,
-          npcId: typeof npc?.id === "number" ? npc.id : undefined,
-          preferredVariant: variant,
-        });
-        setPreviewUrl(res.url);
+
+        const url =
+          typeof npc?.id === "number"
+            ? `${API_BASE}/api/chatheads/sprite?npcId=${
+                npc.id
+              }&variant=${encodeURIComponent(effectiveVariant)}`
+            : `${API_BASE}/api/chatheads/sprite?name=${encodeURIComponent(
+                name
+              )}&variant=${encodeURIComponent(effectiveVariant)}`;
+
+        setPreviewUrl(url);
         setPreviewImg("");
         setPreviewErr("");
       } else {
-        const formatted = name.replace(/\s+/g, "_");
-        setPreviewUrl(`https://runescape.wiki/images/${formatted}.png`);
+        const res = await resolveObjectImageUrl({
+          objectName: name,
+          preferredVariant: effectiveVariant,
+        });
+        setPreviewUrl(res.url);
         setPreviewImg("");
         setPreviewErr("");
       }
@@ -273,9 +373,10 @@ export const NpcObjectToolsPanel: React.FC = () => {
     sel.selectedStep,
     sel.targetIndex,
     variant,
+    availableVariants,
   ]);
 
-  // Load preview image (cached)
+  // Load preview image when URL changes
   useEffect(() => {
     let canceled = false;
     if (!previewUrl) return;
@@ -293,7 +394,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
 
           const recordKey = `${normName(currentTargetName)}|${previewUrl}|${
             sel.selectedStep
-          }`;
+          }|${variant}`;
           if (!recordedThisSessionRef.current.has(recordKey)) {
             recordedThisSessionRef.current.add(recordKey);
 
@@ -342,7 +443,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
     if (!name || !previewUrl || previewErr) return;
     await addPendingChathead({
       name,
-      variant: variant || "default",
+      variant: (variant || "default").trim().toLowerCase(),
       sourceUrl: previewUrl,
       step: sel.selectedStep + 1,
       stepDescription: quest?.questSteps[sel.selectedStep]?.stepDescription,
@@ -399,7 +500,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
       quest?.questSteps?.[sel.selectedStep]?.highlights.npc?.length ?? 1 - 1;
     EditorStore.setSelection({ targetType: "npc", targetIndex: nextIndex });
     EditorStore.setUi({ captureMode: "single" });
-  }, [sel.selectedStep]);
+  }, [sel.selectedStep, quest]);
 
   const onDeleteNpc = useCallback(() => {
     EditorStore.patchQuest((draft) => {
@@ -430,8 +531,9 @@ export const NpcObjectToolsPanel: React.FC = () => {
     const nextIndex =
       quest?.questSteps?.[sel.selectedStep]?.highlights.object?.length ?? 1;
     EditorStore.setSelection({ targetType: "object", targetIndex: nextIndex });
+
     EditorStore.setUi({ captureMode: "multi-point" });
-  }, [sel.selectedStep]);
+  }, [sel.selectedStep, quest]);
 
   return (
     <>
@@ -473,6 +575,22 @@ export const NpcObjectToolsPanel: React.FC = () => {
         >
           Clear Cache
         </button>
+      </div>
+
+      <div className="control-group" style={{ marginTop: 8 }}>
+        <label>Chathead Variant</label>
+        <select
+          value={variant}
+          onChange={(e) => handleVariantChange(e.target.value)}
+        >
+          {(availableVariants.length ? availableVariants : ["default"]).map(
+            (v) => (
+              <option key={v} value={v}>
+                {v}
+              </option>
+            )
+          )}
+        </select>
       </div>
 
       <div className="chathead-preview-section">
@@ -521,7 +639,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
 
       {sel.targetType === "npc" && (
         <div className="control-group" style={{ marginTop: 8 }}>
-          <label>Chathead Variant (DB)</label>
+          <label>Add New Variant (DB)</label>
           <div
             style={{
               display: "grid",
@@ -533,8 +651,8 @@ export const NpcObjectToolsPanel: React.FC = () => {
             <input
               type="text"
               value={variant}
-              onChange={(e) => setVariant(e.target.value)}
-              placeholder="variant"
+              onChange={(e) => handleVariantChange(e.target.value)}
+              placeholder="variant name"
               style={{
                 padding: "4px 6px",
                 fontSize: 12,
@@ -574,11 +692,16 @@ export const NpcObjectToolsPanel: React.FC = () => {
                   spriteSize: 48,
                 });
                 setVariantUrl("");
-                // Force resolver to run; cache-bust via variant toggle
-                setVariant((x) => x.slice());
+                const step =
+                  EditorStore.getState().quest?.questSteps?.[sel.selectedStep];
+                const npc = step?.highlights.npc?.[sel.targetIndex];
+                const variants = await listChatheadVariants(
+                  typeof npc?.id === "number" ? { npcId: npc.id } : { name }
+                );
+                setAvailableVariants(variants.length ? variants : ["default"]);
               }}
               style={{ height: 28, padding: "0 10px", fontSize: 12 }}
-              title="Save/update variant in DB"
+              title="Save new variant to database"
             >
               Save
             </button>
