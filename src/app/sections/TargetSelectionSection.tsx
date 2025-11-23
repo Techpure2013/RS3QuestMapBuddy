@@ -8,7 +8,7 @@ interface TargetSelectionSectionProps {
   targetType: "npc" | "object";
   onTargetTypeChange: (t: "npc" | "object") => void;
   targetIndex: number;
-  onTargetIndexChange: (i: number, type: "npc" | "object") => void; // CHANGED: Added type parameter
+  onTargetIndexChange: (i: number, type: "npc" | "object") => void;
   clipboard: Clipboard;
   onCopyList: () => void;
   onPasteList: () => void;
@@ -39,61 +39,108 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
   const npcItems = step?.highlights?.npc ?? [];
   const objectItems = step?.highlights?.object ?? [];
 
+  const labelCss: React.CSSProperties = {
+    fontSize: 12,
+    color: "#9ca3af",
+    marginBottom: 4,
+  };
+  const inputCss: React.CSSProperties = {
+    padding: "4px 6px",
+    fontSize: 12,
+    height: 28,
+    background: "#0f172a",
+    border: "1px solid #334155",
+    borderRadius: 4,
+    color: "#e5e7eb",
+  };
+  const btnCss: React.CSSProperties = {
+    padding: "4px 8px",
+    fontSize: 12,
+    height: 28,
+  };
+
   return (
-    <div className="panel-section editor-controls-grid">
-      <div className="control-group">
-        <label>Target Type</label>
-        <select
-          value={targetType}
-          onChange={(e) =>
-            onTargetTypeChange(e.target.value as "npc" | "object")
-          }
+    <div className="panel-section" style={{ paddingTop: 6, paddingBottom: 6 }}>
+      {/* Top row: Type + Name in a compact grid */}
+      <div
+        className="editor-controls-grid"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "0.8fr 1fr 1fr",
+          gap: 8,
+          alignItems: "center",
+        }}
+      >
+        <div className="control-group" style={{ margin: 0 }}>
+          <label style={labelCss}>Target Type</label>
+          <select
+            value={targetType}
+            onChange={(e) =>
+              onTargetTypeChange(e.target.value as "npc" | "object")
+            }
+            style={inputCss}
+          >
+            <option value="npc">NPC</option>
+            <option value="object">Object</option>
+          </select>
+        </div>
+
+        <div
+          className="control-group"
+          style={{ gridColumn: "span 2", margin: 0 }}
         >
-          <option value="npc">NPC</option>
-          <option value="object">Object</option>
-        </select>
+          <label style={labelCss}>Name</label>
+          <input
+            type="text"
+            value={targetNameValue}
+            onChange={(e) => onTargetNameChange(e.target.value)}
+            placeholder="NPC or Object Name"
+            style={{ ...inputCss, width: "100%" }}
+          />
+        </div>
       </div>
 
-      <div className="control-group full-width-control">
-        <label>Targets</label>
+      {/* Middle row: Targets list (compact) */}
+      <div className="control-group" style={{ marginTop: 8 }}>
+        <label style={labelCss}>Targets</label>
 
-        {/* NPCs Section */}
         {npcItems.length > 0 && (
-          <div className="target-section">
-            <div className="target-section-header">NPCs</div>
-            <ul className="target-list">
+          <div className="target-section" style={{ marginBottom: 8 }}>
+            <div
+              className="target-section-header"
+              style={{ fontSize: 12, color: "#93c5fd", marginBottom: 4 }}
+            >
+              NPCs
+            </div>
+            <ul className="target-list" style={{ margin: 0 }}>
               {npcItems.map((npc: NpcHighlight, index: number) => {
                 const isActive = targetType === "npc" && index === targetIndex;
                 const displayName = npc.npcName || `NPC ${index + 1}`;
+                const loc = npc.npcLocation;
+                const isUnset = !loc || (loc.lat === 0 && loc.lng === 0);
 
                 return (
                   <li
                     key={`npc-${index}`}
                     className={isActive ? "active" : ""}
                     onClick={() => onTargetIndexChange(index, "npc")}
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      padding: "6px 8px",
+                      borderBottom: "1px solid #1f2937",
+                      cursor: "pointer",
+                      background: isActive
+                        ? "rgba(37, 99, 235, 0.12)"
+                        : undefined,
+                      borderLeft: isActive ? "3px solid #2563eb" : undefined,
+                    }}
                   >
-                    <div className="target-item-header">
-                      <span>{displayName}</span>
-                    </div>
-
-                    {isActive && (
-                      <ul className="location-sublist">
-                        {(() => {
-                          const loc = npc.npcLocation;
-                          const isUnset =
-                            !loc || (loc.lat === 0 && loc.lng === 0);
-                          return (
-                            <li className="location-item">
-                              <span className="location-coords">
-                                {isUnset
-                                  ? "{unset}"
-                                  : `{${loc.lat}, ${loc.lng}}`}
-                              </span>
-                            </li>
-                          );
-                        })()}
-                      </ul>
-                    )}
+                    <span style={{ fontSize: 13 }}>{displayName}</span>
+                    <span style={{ fontSize: 11, color: "#9ca3af" }}>
+                      {isUnset ? "{unset}" : `{${loc.lat}, ${loc.lng}}`}
+                    </span>
                   </li>
                 );
               })}
@@ -101,48 +148,96 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
           </div>
         )}
 
-        {/* Objects Section */}
         {objectItems.length > 0 && (
           <div className="target-section">
-            <div className="target-section-header">Objects</div>
-            <ul className="target-list">
+            <div
+              className="target-section-header"
+              style={{ fontSize: 12, color: "#a3e635", marginBottom: 4 }}
+            >
+              Objects
+            </div>
+            <ul className="target-list" style={{ margin: 0 }}>
               {objectItems.map((obj: ObjectHighlight, index: number) => {
                 const isActive =
                   targetType === "object" && index === targetIndex;
                 const displayName = obj.name || `Object ${index + 1}`;
+                const pts = obj.objectLocation ?? [];
 
                 return (
                   <li
                     key={`object-${index}`}
                     className={isActive ? "active" : ""}
                     onClick={() => onTargetIndexChange(index, "object")}
+                    style={{
+                      padding: "6px 8px",
+                      borderBottom: "1px solid #1f2937",
+                      cursor: "pointer",
+                      background: isActive
+                        ? "rgba(37, 99, 235, 0.12)"
+                        : undefined,
+                      borderLeft: isActive ? "3px solid #2563eb" : undefined,
+                    }}
                   >
-                    <div className="target-item-header">
-                      <span>{displayName}</span>
+                    <div
+                      className="target-item-header"
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <span style={{ fontSize: 13 }}>{displayName}</span>
+                      <span style={{ fontSize: 11, color: "#9ca3af" }}>
+                        {pts.length === 0
+                          ? "No points"
+                          : `${pts.length} point${pts.length > 1 ? "s" : ""}`}
+                      </span>
                     </div>
 
-                    {isActive && (
-                      <ul className="location-sublist">
-                        {(obj.objectLocation ?? []).map(
-                          (
-                            loc: { lat: number; lng: number },
-                            locIndex: number
-                          ) => (
-                            <li key={locIndex} className="location-item">
-                              <span className="location-coords">{`{${loc.lat}, ${loc.lng}}`}</span>
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  onDeleteObjectLocation(locIndex);
-                                }}
-                                className="location-delete-btn"
-                                title="Delete this location"
-                              >
-                                &times;
-                              </button>
-                            </li>
-                          )
-                        )}
+                    {isActive && pts.length > 0 && (
+                      <ul
+                        className="location-sublist"
+                        style={{
+                          marginTop: 6,
+                          marginBottom: 0,
+                          paddingLeft: 0,
+                        }}
+                      >
+                        {pts.map((loc, locIndex) => (
+                          <li
+                            key={locIndex}
+                            className="location-item"
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                              padding: "4px 6px",
+                              background: "#0b1220",
+                              borderRadius: 4,
+                              marginBottom: 4,
+                            }}
+                          >
+                            <span style={{ fontSize: 11, color: "#9ca3af" }}>
+                              {`{${loc.lat}, ${loc.lng}}`}
+                              {loc.color ? ` • ${loc.color}` : ""}
+                              {loc.numberLabel ? ` • #${loc.numberLabel}` : ""}
+                            </span>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onDeleteObjectLocation(locIndex);
+                              }}
+                              className="location-delete-btn"
+                              title="Delete this location"
+                              style={{
+                                ...btnCss,
+                                height: 22,
+                                padding: "0 8px",
+                              }}
+                            >
+                              ×
+                            </button>
+                          </li>
+                        ))}
                       </ul>
                     )}
                   </li>
@@ -153,9 +248,15 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
         )}
       </div>
 
-      <div className="control-group full-width-control">
-        <div className="button-group">
-          <button onClick={onCopyList}>Copy List</button>
+      {/* Bottom row: copy/paste buttons (compact) */}
+      <div
+        className="control-group full-width-control"
+        style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 8 }}
+      >
+        <div className="button-group" style={{ display: "flex", gap: 6 }}>
+          <button onClick={onCopyList} style={btnCss}>
+            Copy List
+          </button>
           <button
             onClick={onPasteList}
             disabled={!clipboard.type.endsWith("-list")}
@@ -164,15 +265,16 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
                 ? "Clipboard does not contain a list"
                 : "Replace current list with clipboard"
             }
+            style={btnCss}
           >
             Paste List
           </button>
         </div>
-      </div>
 
-      <div className="control-group full-width-control">
-        <div className="button-group">
-          <button onClick={onCopySelected}>Copy Selected</button>
+        <div className="button-group" style={{ display: "flex", gap: 6 }}>
+          <button onClick={onCopySelected} style={btnCss}>
+            Copy Selected
+          </button>
           <button
             onClick={onPasteSelected}
             disabled={
@@ -187,20 +289,11 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
                 ? `Cannot paste ${clipboard.type} over ${targetType}`
                 : "Paste from clipboard"
             }
+            style={btnCss}
           >
             Paste Over Selected
           </button>
         </div>
-      </div>
-
-      <div className="control-group full-width-control">
-        <label>Name</label>
-        <input
-          type="text"
-          value={targetNameValue}
-          onChange={(e) => onTargetNameChange(e.target.value)}
-          placeholder="NPC or Object Name"
-        />
       </div>
     </div>
   );

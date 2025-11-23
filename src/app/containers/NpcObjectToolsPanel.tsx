@@ -22,6 +22,8 @@ import {
   getCacheStats,
   clearImageCache,
 } from "../../idb/imageCache";
+import { resolveNpcChatheadUrl } from "./../../utils/chatheadResolver";
+import { upsertChathead } from "./../../api/chathead";
 
 const getImageUrl = (
   name: string,
@@ -35,11 +37,13 @@ const getImageUrl = (
     : `https://runescape.wiki/images/${formattedName}.png`;
 };
 
+const normName = (s: string): string => s.trim().replace(/\s+/g, " ");
+
 export const NpcObjectToolsPanel: React.FC = () => {
   const quest = useEditorSelector((s) => s.quest);
   const sel = useEditorSelector((s) => s.selection);
   const clipboard = useEditorSelector((s) => s.clipboard);
-  const captureSettings = useEditorSelector((s) => s.ui.captureMode);
+
   const currentTargetName = useMemo(() => {
     const step = quest?.questSteps?.[sel.selectedStep];
     if (!step) return "";
@@ -73,10 +77,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
   }, [quest, sel.selectedStep, sel.targetType, sel.targetIndex]);
 
   const handleTargetTypeChange = useCallback((t: "npc" | "object") => {
-    // switch selection
     EditorStore.setSelection({ targetType: t, targetIndex: 0 });
-
-    // switch capture mode to match type
     EditorStore.setUi({
       captureMode: t === "npc" ? "single" : "multi-point",
     });
@@ -96,6 +97,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
     },
     [sel.targetType]
   );
+
   const handleCopyList = useCallback(() => {
     const step = quest?.questSteps?.[sel.selectedStep];
     if (!step) return;
@@ -181,6 +183,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
       }
     });
   }, [clipboard, sel.selectedStep, sel.targetType, sel.targetIndex]);
+
   const handleTargetNameChange = useCallback(
     (name: string) => {
       EditorStore.patchQuest((draft) => {
@@ -202,9 +205,14 @@ export const NpcObjectToolsPanel: React.FC = () => {
     [sel.selectedStep, sel.targetType, sel.targetIndex]
   );
 
+  // Variant state + preview
+  const [variant, setVariant] = useState<string>("default");
+  const [variantUrl, setVariantUrl] = useState<string>("");
+
   const [previewUrl, setPreviewUrl] = useState<string>("");
   const [previewImg, setPreviewImg] = useState<string>("");
   const [previewErr, setPreviewErr] = useState<string>("");
+
   const [cacheStats, setCacheStats] = useState<{
     sizeMB: number;
     count: number;
@@ -213,7 +221,10 @@ export const NpcObjectToolsPanel: React.FC = () => {
   const recordedThisSessionRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
-    void loadCacheStats();
+    void (async () => {
+      const stats = await getCacheStats();
+      setCacheStats({ sizeMB: stats.totalSizeMB, count: stats.itemCount });
+    })();
   }, []);
 
   const loadCacheStats = async () => {
@@ -225,20 +236,46 @@ export const NpcObjectToolsPanel: React.FC = () => {
     window.dispatchEvent(new CustomEvent("chatheadQueuesChanged"));
   }, []);
 
+  // Resolve preview URL (DB-first for NPCs)
   useEffect(() => {
-    const name = currentTargetName.trim();
+    const raw = currentTargetName;
+    const name = normName(raw);
     if (!name) {
       setPreviewUrl("");
       setPreviewImg("");
       setPreviewErr("");
       return;
     }
-    const url = getImageUrl(name, sel.targetType);
-    setPreviewUrl(url);
-    setPreviewImg("");
-    setPreviewErr("");
-  }, [currentTargetName, sel.targetType]);
 
+    (async () => {
+      if (sel.targetType === "npc") {
+        const step =
+          EditorStore.getState().quest?.questSteps?.[sel.selectedStep];
+        const npc = step?.highlights.npc?.[sel.targetIndex];
+        const res = await resolveNpcChatheadUrl({
+          npcName: name,
+          npcId: typeof npc?.id === "number" ? npc.id : undefined,
+          preferredVariant: variant,
+        });
+        setPreviewUrl(res.url);
+        setPreviewImg("");
+        setPreviewErr("");
+      } else {
+        const formatted = name.replace(/\s+/g, "_");
+        setPreviewUrl(`https://runescape.wiki/images/${formatted}.png`);
+        setPreviewImg("");
+        setPreviewErr("");
+      }
+    })();
+  }, [
+    currentTargetName,
+    sel.targetType,
+    sel.selectedStep,
+    sel.targetIndex,
+    variant,
+  ]);
+
+  // Load preview image (cached)
   useEffect(() => {
     let canceled = false;
     if (!previewUrl) return;
@@ -254,15 +291,15 @@ export const NpcObjectToolsPanel: React.FC = () => {
           setPreviewImg(reader.result as string);
           setPreviewErr("");
 
-          const recordKey = `${currentTargetName.trim()}|${previewUrl}|${
+          const recordKey = `${normName(currentTargetName)}|${previewUrl}|${
             sel.selectedStep
           }`;
           if (!recordedThisSessionRef.current.has(recordKey)) {
             recordedThisSessionRef.current.add(recordKey);
 
             void recordObservedChathead({
-              name: currentTargetName.trim(),
-              variant: "default",
+              name: normName(currentTargetName),
+              variant,
               sourceUrl: previewUrl,
               step: sel.selectedStep + 1,
               stepDescription:
@@ -297,14 +334,15 @@ export const NpcObjectToolsPanel: React.FC = () => {
     sel.selectedStep,
     quest,
     triggerQueueRefresh,
+    variant,
   ]);
 
   const handleQueueForPublish = useCallback(async () => {
-    const name = currentTargetName.trim();
+    const name = normName(currentTargetName);
     if (!name || !previewUrl || previewErr) return;
     await addPendingChathead({
       name,
-      variant: "default",
+      variant: variant || "default",
       sourceUrl: previewUrl,
       step: sel.selectedStep + 1,
       stepDescription: quest?.questSteps[sel.selectedStep]?.stepDescription,
@@ -318,6 +356,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
     sel.selectedStep,
     quest,
     triggerQueueRefresh,
+    variant,
   ]);
 
   const handleClearCache = useCallback(async () => {
@@ -338,12 +377,21 @@ export const NpcObjectToolsPanel: React.FC = () => {
   const onAddNpc = useCallback(() => {
     EditorStore.patchQuest((draft) => {
       draft.questSteps[sel.selectedStep].highlights.npc.push({
-        id: null,
+        id: null as unknown as number,
         npcName: "",
-        npcLocation: { lat: null, lng: null },
+        npcLocation: {
+          lat: null as unknown as number,
+          lng: null as unknown as number,
+        },
         wanderRadius: {
-          bottomLeft: { lat: null, lng: null },
-          topRight: { lat: null, lng: null },
+          bottomLeft: {
+            lat: null as unknown as number,
+            lng: null as unknown as number,
+          },
+          topRight: {
+            lat: null as unknown as number,
+            lng: null as unknown as number,
+          },
         },
       });
     });
@@ -361,27 +409,30 @@ export const NpcObjectToolsPanel: React.FC = () => {
       );
     });
   }, [sel.selectedStep, sel.targetIndex]);
-  const onAddObject = useCallback(() => {
-    const lengthBefore =
-      EditorStore.getState().quest?.questSteps[sel.selectedStep]?.highlights
-        .object.length || 0;
 
+  const onAddObject = useCallback(() => {
     EditorStore.patchQuest((draft) => {
       draft.questSteps[sel.selectedStep].highlights.object.push({
         name: "",
         objectLocation: [],
         objectRadius: {
-          bottomLeft: { lat: undefined, lng: undefined },
-          topRight: { lat: undefined, lng: undefined },
+          bottomLeft: {
+            lat: undefined as unknown as number,
+            lng: undefined as unknown as number,
+          },
+          topRight: {
+            lat: undefined as unknown as number,
+            lng: undefined as unknown as number,
+          },
         },
       });
     });
     const nextIndex =
       quest?.questSteps?.[sel.selectedStep]?.highlights.object?.length ?? 1;
     EditorStore.setSelection({ targetType: "object", targetIndex: nextIndex });
-
     EditorStore.setUi({ captureMode: "multi-point" });
   }, [sel.selectedStep]);
+
   return (
     <>
       <TargetSelectionSection
@@ -445,7 +496,14 @@ export const NpcObjectToolsPanel: React.FC = () => {
           <div className="preview-name">
             Preview for "{currentTargetName || "<unnamed>"}"
           </div>
-          {previewUrl && <div className="preview-url">{previewUrl}</div>}
+          {previewUrl && (
+            <div
+              className="preview-url"
+              style={{ fontSize: 11, color: "#9ca3af", wordBreak: "break-all" }}
+            >
+              {previewUrl}
+            </div>
+          )}
         </div>
         <button
           className="button--add"
@@ -460,6 +518,73 @@ export const NpcObjectToolsPanel: React.FC = () => {
           Queue for publish
         </button>
       </div>
+
+      {sel.targetType === "npc" && (
+        <div className="control-group" style={{ marginTop: 8 }}>
+          <label>Chathead Variant (DB)</label>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "0.9fr 1.8fr auto",
+              gap: 6,
+              alignItems: "center",
+            }}
+          >
+            <input
+              type="text"
+              value={variant}
+              onChange={(e) => setVariant(e.target.value)}
+              placeholder="variant"
+              style={{
+                padding: "4px 6px",
+                fontSize: 12,
+                height: 28,
+                background: "#0f172a",
+                border: "1px solid #334155",
+                borderRadius: 4,
+                color: "#e5e7eb",
+              }}
+            />
+            <input
+              type="text"
+              value={variantUrl}
+              onChange={(e) => setVariantUrl(e.target.value)}
+              placeholder="Source URL"
+              style={{
+                padding: "4px 6px",
+                fontSize: 12,
+                height: 28,
+                background: "#0f172a",
+                border: "1px solid #334155",
+                borderRadius: 4,
+                color: "#e5e7eb",
+              }}
+            />
+            <button
+              className="button--add"
+              onClick={async () => {
+                const v = variant.trim();
+                const src = variantUrl.trim();
+                const name = normName(currentTargetName);
+                if (!name || !v || !src) return;
+                await upsertChathead({
+                  name,
+                  variant: v,
+                  sourceUrl: src,
+                  spriteSize: 48,
+                });
+                setVariantUrl("");
+                // Force resolver to run; cache-bust via variant toggle
+                setVariant((x) => x.slice());
+              }}
+              style={{ height: 28, padding: "0 10px", fontSize: 12 }}
+              title="Save/update variant in DB"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      )}
 
       {sel.targetType === "npc" ? (
         <NpcToolsSection

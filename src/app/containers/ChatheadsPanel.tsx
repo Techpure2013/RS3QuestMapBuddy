@@ -299,7 +299,10 @@ export const ChatheadsPanel: React.FC = () => {
           }}
         >
           <strong>Pending queue</strong>
-          <div className="button-group" style={{ maxWidth: 260 }}>
+          <div
+            className="button-group"
+            style={{ maxWidth: 260, flexDirection: "row" }}
+          >
             <button onClick={() => void refreshQueues()} disabled={loading}>
               {loading ? "Refreshing..." : "Refresh"}
             </button>

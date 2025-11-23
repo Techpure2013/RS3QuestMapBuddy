@@ -338,6 +338,11 @@ export const PlotApp: React.FC = () => {
             NPC didn’t approve: ensure an exact DB name match via NPC Search to
             backfill id.
           </li>
+          <li>
+            If you cannot plot a point something might be hung up in the cache
+            quick cache reset ctrl+shift+r or hit the local reset button by the
+            grid controls
+          </li>
         </ul>
       </div>
     </div>

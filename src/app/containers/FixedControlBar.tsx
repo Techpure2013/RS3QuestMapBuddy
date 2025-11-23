@@ -7,6 +7,7 @@ import {
 } from "../../state/editorStore";
 import { HandleFloorIncreaseDecrease } from "../../map/utils/MapFunctions";
 import { IconGridDots } from "@tabler/icons-react";
+import { hardLocalReset } from "./../../state/hardLocalReset";
 
 const StepControlBar: React.FC = React.memo(() => {
   // Minimal subscriptions (primitives only)
@@ -29,7 +30,21 @@ const StepControlBar: React.FC = React.memo(() => {
     window.addEventListener("mapCursorInfo", handler);
     return () => window.removeEventListener("mapCursorInfo", handler);
   }, []);
-
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (
+        (e.ctrlKey || e.metaKey) &&
+        e.shiftKey &&
+        e.key.toLowerCase() === "r"
+      ) {
+        e.preventDefault();
+        const ok = confirm("Hard reset local state now?");
+        if (ok) void hardLocalReset();
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
   // Step editor visibility (local + broadcast)
   const [showEditor, setShowEditor] = useState<boolean>(true);
   const emitEditorVisibility = useCallback((visible: boolean) => {
@@ -275,6 +290,21 @@ const StepControlBar: React.FC = React.memo(() => {
       >
         <IconGridDots size={14} style={{ marginRight: 4 }} />
         {showGrids ? "Grids: On" : "Grids: Off"}
+      </button>
+      <button
+        onClick={async () => {
+          const ok = confirm(
+            "This will clear local editor state, image cache, and chathead queues.\nContinue?"
+          );
+          if (!ok) return;
+          await hardLocalReset();
+        }}
+        className="control-btn"
+        type="button"
+        title="Clear local caches and reset editor"
+        style={{ minWidth: 92 }}
+      >
+        Local Reset
       </button>
     </div>
   );
