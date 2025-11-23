@@ -130,10 +130,10 @@ const PlotTargetsPanel: React.FC = () => {
       list.push({
         id: undefined,
         npcName: "",
-        npcLocation: { lat: undefined, lng: undefined } as NpcLocation,
+        npcLocation: { lat: null, lng: null } as NpcLocation,
         wanderRadius: {
-          bottomLeft: { lat: undefined, lng: undefined },
-          topRight: { lat: undefined, lng: undefined },
+          bottomLeft: { lat: null, lng: null },
+          topRight: { lat: null, lng: null },
         },
       });
     });
@@ -167,8 +167,8 @@ const PlotTargetsPanel: React.FC = () => {
         name: "",
         objectLocation: [],
         objectRadius: {
-          bottomLeft: { lat: undefined, lng: undefined },
-          topRight: { lat: undefined, lng: undefined },
+          bottomLeft: { lat: null, lng: null },
+          topRight: { lat: null, lng: null },
         },
       });
     });

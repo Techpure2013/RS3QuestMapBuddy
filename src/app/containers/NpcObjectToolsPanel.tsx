@@ -338,12 +338,12 @@ export const NpcObjectToolsPanel: React.FC = () => {
   const onAddNpc = useCallback(() => {
     EditorStore.patchQuest((draft) => {
       draft.questSteps[sel.selectedStep].highlights.npc.push({
-        id: undefined,
+        id: null,
         npcName: "",
-        npcLocation: { lat: undefined, lng: undefined },
+        npcLocation: { lat: null, lng: null },
         wanderRadius: {
-          bottomLeft: { lat: undefined, lng: undefined },
-          topRight: { lat: undefined, lng: undefined },
+          bottomLeft: { lat: null, lng: null },
+          topRight: { lat: null, lng: null },
         },
       });
     });
