@@ -130,7 +130,7 @@ const PlotTargetsPanel: React.FC = () => {
       list.push({
         id: undefined,
         npcName: "",
-        npcLocation: { lat: 0, lng: 0 },
+        npcLocation: { lat: undefined, lng: undefined } as NpcLocation,
         wanderRadius: {
           bottomLeft: { lat: 0, lng: 0 },
           topRight: { lat: 0, lng: 0 },
@@ -138,7 +138,7 @@ const PlotTargetsPanel: React.FC = () => {
       });
     });
     const nextIndex =
-      quest?.questSteps?.[sel.selectedStep]?.highlights.npc?.length ?? 1;
+      quest?.questSteps?.[sel.selectedStep]?.highlights.npc?.length ?? 1 - 1;
     EditorStore.setSelection({ targetType: "npc", targetIndex: nextIndex });
     EditorStore.setUi({ captureMode: "single" });
   }, [quest, sel.selectedStep]);
@@ -175,10 +175,7 @@ const PlotTargetsPanel: React.FC = () => {
     const nextIndex =
       quest?.questSteps?.[sel.selectedStep]?.highlights.object?.length ?? 1;
     EditorStore.setSelection({ targetType: "object", targetIndex: nextIndex });
-    EditorStore.setSelection({
-      targetType: "object",
-      targetIndex: nextIndex + 1,
-    });
+
     EditorStore.setUi({ captureMode: "multi-point" });
   }, [quest, sel.selectedStep]);
 
