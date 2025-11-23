@@ -340,17 +340,17 @@ export const NpcObjectToolsPanel: React.FC = () => {
       draft.questSteps[sel.selectedStep].highlights.npc.push({
         id: undefined,
         npcName: "",
-        npcLocation: { lat: 0, lng: 0 },
+        npcLocation: { lat: undefined, lng: undefined },
         wanderRadius: {
-          bottomLeft: { lat: 0, lng: 0 },
-          topRight: { lat: 0, lng: 0 },
+          bottomLeft: { lat: undefined, lng: undefined },
+          topRight: { lat: undefined, lng: undefined },
         },
       });
     });
-    EditorStore.setSelection({
-      targetType: "npc",
-      // Don't change targetIndex - this prevents the fly-to
-    });
+    const nextIndex =
+      quest?.questSteps?.[sel.selectedStep]?.highlights.npc?.length ?? 1 - 1;
+    EditorStore.setSelection({ targetType: "npc", targetIndex: nextIndex });
+    EditorStore.setUi({ captureMode: "single" });
   }, [sel.selectedStep]);
 
   const onDeleteNpc = useCallback(() => {
@@ -371,16 +371,16 @@ export const NpcObjectToolsPanel: React.FC = () => {
         name: "",
         objectLocation: [],
         objectRadius: {
-          bottomLeft: { lat: 0, lng: 0 },
-          topRight: { lat: 0, lng: 0 },
+          bottomLeft: { lat: undefined, lng: undefined },
+          topRight: { lat: undefined, lng: undefined },
         },
       });
     });
+    const nextIndex =
+      quest?.questSteps?.[sel.selectedStep]?.highlights.object?.length ?? 1;
+    EditorStore.setSelection({ targetType: "object", targetIndex: nextIndex });
 
-    EditorStore.setSelection({
-      targetType: "object",
-      targetIndex: lengthBefore,
-    });
+    EditorStore.setUi({ captureMode: "multi-point" });
   }, [sel.selectedStep]);
   return (
     <>

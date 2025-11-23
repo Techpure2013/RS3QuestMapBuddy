@@ -132,8 +132,8 @@ const PlotTargetsPanel: React.FC = () => {
         npcName: "",
         npcLocation: { lat: undefined, lng: undefined } as NpcLocation,
         wanderRadius: {
-          bottomLeft: { lat: 0, lng: 0 },
-          topRight: { lat: 0, lng: 0 },
+          bottomLeft: { lat: undefined, lng: undefined },
+          topRight: { lat: undefined, lng: undefined },
         },
       });
     });
@@ -167,8 +167,8 @@ const PlotTargetsPanel: React.FC = () => {
         name: "",
         objectLocation: [],
         objectRadius: {
-          bottomLeft: { lat: 0, lng: 0 },
-          topRight: { lat: 0, lng: 0 },
+          bottomLeft: { lat: undefined, lng: undefined },
+          topRight: { lat: undefined, lng: undefined },
         },
       });
     });
