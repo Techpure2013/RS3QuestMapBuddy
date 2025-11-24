@@ -23,6 +23,40 @@ export type RestrictedPlotMode = {
   allowRadius: boolean;
   defaultPlayerName?: string;
 };
+export interface PlotPayload {
+  playerName: string;
+  stepId: number;
+  floor: number;
+  highlights: {
+    npc: PlotNpcHighlight[];
+    object: PlotObjectHighlight[];
+  };
+}
+
+export interface PlotNpcHighlight {
+  id?: number;
+  npcName: string;
+  npcLocation: { lat: number; lng: number };
+  wanderRadius: {
+    bottomLeft: { lat: number; lng: number };
+    topRight: { lat: number; lng: number };
+  };
+}
+
+export interface PlotObjectHighlight {
+  id?: number;
+  name: string;
+  objectLocation: Array<{
+    lat: number;
+    lng: number;
+    color?: string;
+    numberLabel?: string;
+  }>;
+  objectRadius: {
+    bottomLeft: { lat: number; lng: number };
+    topRight: { lat: number; lng: number };
+  };
+}
 export interface SelectionState {
   selectedStep: number;
   targetType: TargetType;

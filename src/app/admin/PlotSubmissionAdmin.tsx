@@ -1,251 +1,346 @@
 // src/app/admin/PlotSubmissionsAdmin.tsx
-import React, {
-  useEffect,
-  useMemo,
-  useState,
-  useCallback,
-  useRef,
-} from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import {
   listPendingSubmissions,
   approveSubmission,
   rejectSubmission,
-  type PlotSubmissionRow,
 } from "../../api/plotSubmissionsAdmin";
-import { useAuth } from "state/useAuth";
+import { useAuth } from "../../state/useAuth";
 import Panel from "../sections/panel";
 import { EditorStore } from "../../state/editorStore";
 
-const JsonPanel: React.FC<{
-  title: string;
-  payload: unknown;
-}> = ({ title, payload }) => (
-  <div className="json-panel">
-    <div className="json-header">{title}</div>
-    <div className="json-content">
-      <pre>{JSON.stringify(payload, null, 2)}</pre>
-    </div>
-  </div>
-);
+import { SubmissionPreview } from "./SubmissionPreview";
+import { showSuccessToast, showErrorToast } from "../../utils/toast";
+import { AdminFilter, AdminState } from "./../../state/types";
+import { PlotSubmissionItem } from "./PlotSubmissionsItem";
 
 const AdminPlotSubmissions: React.FC = () => {
   const { isAuthed } = useAuth();
-  const [items, setItems] = useState<PlotSubmissionRow[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [selectedId, setSelectedId] = useState<number | null>(null);
-  const [filter, setFilter] = useState<{ quest?: string; stepId?: number }>({});
+  const [state, setState] = useState<AdminState>({
+    items: [],
+    selectedId: null,
+    filter: {},
+    loading: false,
+    processing: false,
+    error: null,
+  });
+
   const listRef = useRef<HTMLUListElement>(null);
+  const filterTimeoutRef = useRef<number | null>(null);
 
-  const selected = useMemo(
-    () => items.find((i) => i.id === selectedId) ?? null,
-    [items, selectedId]
-  );
+  const selectedSubmission =
+    state.items.find((i) => i.id === state.selectedId) ?? null;
 
-  // Sync selected submission to Global Editor Store
+  // Sync selected submission to Global Editor Store for map preview
   useEffect(() => {
-    EditorStore.setUi({ previewSubmission: selected });
+    EditorStore.setUi({ previewSubmission: selectedSubmission });
 
-    if (selected && typeof selected.floor === "number") {
-      EditorStore.setSelection({ floor: selected.floor });
+    if (selectedSubmission && typeof selectedSubmission.floor === "number") {
+      EditorStore.setSelection({ floor: selectedSubmission.floor });
     }
 
     return () => {
-      if (!selected) EditorStore.setUi({ previewSubmission: null });
+      if (!selectedSubmission) {
+        EditorStore.setUi({ previewSubmission: null });
+      }
     };
-  }, [selected]);
+  }, [selectedSubmission]);
 
+  // Cleanup on unmount
   useEffect(() => {
     return () => {
       EditorStore.setUi({ previewSubmission: null });
     };
   }, []);
 
-  const load = useCallback(async () => {
-    setLoading(true);
+  const loadSubmissions = useCallback(async (filter: AdminFilter) => {
+    setState((prev) => ({ ...prev, loading: true, error: null }));
+
     try {
       const data = await listPendingSubmissions(
         filter.stepId ? { stepId: filter.stepId } : undefined
       );
+
       const filtered = filter.quest
         ? data.items.filter((i) =>
             i.quest_name.toLowerCase().includes(filter.quest!.toLowerCase())
           )
         : data.items;
-      setItems(filtered);
-      if (filtered.length > 0 && !selectedId) setSelectedId(filtered[0].id);
-    } finally {
-      setLoading(false);
-    }
-  }, [filter, selectedId]);
 
+      setState((prev) => ({
+        ...prev,
+        items: filtered,
+        loading: false,
+        selectedId: filtered.length > 0 ? filtered[0].id : null,
+      }));
+    } catch (err) {
+      console.error("Failed to load submissions:", err);
+      setState((prev) => ({
+        ...prev,
+        loading: false,
+        error:
+          err instanceof Error ? err.message : "Failed to load submissions",
+      }));
+      showErrorToast("Failed to load submissions");
+    }
+  }, []);
+
+  // Initial load
   useEffect(() => {
     if (!isAuthed) return;
-    void load();
-  }, [isAuthed, load]);
+    void loadSubmissions(state.filter);
+  }, [isAuthed]); // Only run on auth change
 
-  useEffect(() => {
-    if (!listRef.current || !selectedId) return;
-    const el = listRef.current.querySelector<HTMLLIElement>(
-      `li[data-id="${selectedId}"]`
+  // Debounced filter
+  const handleFilterChange = useCallback(
+    (updates: Partial<AdminFilter>) => {
+      const newFilter = { ...state.filter, ...updates };
+      setState((prev) => ({ ...prev, filter: newFilter }));
+
+      if (filterTimeoutRef.current !== null) {
+        window.clearTimeout(filterTimeoutRef.current);
+      }
+
+      filterTimeoutRef.current = window.setTimeout(() => {
+        void loadSubmissions(newFilter);
+      }, 300);
+    },
+    [state.filter, loadSubmissions]
+  );
+
+  const handleApprove = useCallback(async () => {
+    if (!selectedSubmission || state.processing) return;
+
+    const confirmed = confirm(
+      `Approve submission from ${selectedSubmission.playername} for ${selectedSubmission.quest_name}?`
     );
-    if (el) el.scrollIntoView({ block: "nearest" });
-  }, [selectedId]);
+    if (!confirmed) return;
 
-  if (!isAuthed) return null;
+    setState((prev) => ({ ...prev, processing: true }));
+
+    try {
+      await approveSubmission(selectedSubmission.id);
+      showSuccessToast(
+        `Approved submission from ${selectedSubmission.playername}`
+      );
+      await loadSubmissions(state.filter);
+    } catch (err) {
+      console.error("Failed to approve submission:", err);
+      showErrorToast(
+        err instanceof Error ? err.message : "Failed to approve submission"
+      );
+    } finally {
+      setState((prev) => ({ ...prev, processing: false }));
+    }
+  }, [selectedSubmission, state.processing, state.filter, loadSubmissions]);
+
+  const handleReject = useCallback(async () => {
+    if (!selectedSubmission || state.processing) return;
+
+    const reason = prompt(
+      `Reject submission from ${selectedSubmission.playername}?\n\nOptional reason:`
+    );
+    if (reason === null) return; // Cancelled
+
+    setState((prev) => ({ ...prev, processing: true }));
+
+    try {
+      await rejectSubmission(selectedSubmission.id, reason);
+      showSuccessToast(
+        `Rejected submission from ${selectedSubmission.playername}`
+      );
+      await loadSubmissions(state.filter);
+    } catch (err) {
+      console.error("Failed to reject submission:", err);
+      showErrorToast(
+        err instanceof Error ? err.message : "Failed to reject submission"
+      );
+    } finally {
+      setState((prev) => ({ ...prev, processing: false }));
+    }
+  }, [selectedSubmission, state.processing, state.filter, loadSubmissions]);
+
+  const handleKeyboardNav = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (!state.items.length) return;
+
+      const idx = state.items.findIndex((it) => it.id === state.selectedId);
+
+      switch (e.key) {
+        case "ArrowDown":
+          e.preventDefault();
+          if (idx < state.items.length - 1) {
+            setState((prev) => ({
+              ...prev,
+              selectedId: state.items[idx + 1].id,
+            }));
+          }
+          break;
+
+        case "ArrowUp":
+          e.preventDefault();
+          if (idx > 0) {
+            setState((prev) => ({
+              ...prev,
+              selectedId: state.items[idx - 1].id,
+            }));
+          }
+          break;
+
+        case "Enter":
+          if (e.shiftKey) {
+            void handleReject();
+          } else {
+            void handleApprove();
+          }
+          break;
+
+        case "Escape":
+          setState((prev) => ({ ...prev, selectedId: null }));
+          break;
+      }
+    },
+    [state.items, state.selectedId, handleApprove, handleReject]
+  );
+
+  // Auto-scroll to selected item
+  useEffect(() => {
+    if (!listRef.current || !state.selectedId) return;
+
+    const el = listRef.current.querySelector<HTMLLIElement>(
+      `li[data-id="${state.selectedId}"]`
+    );
+    if (el) {
+      el.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }, [state.selectedId]);
+
+  if (!isAuthed) {
+    return null;
+  }
 
   return (
-    <Panel title="Plot Submissions (Admin)" defaultOpen>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 12,
-          height: "calc(100vh - 140px)",
-          overflow: "hidden",
-        }}
-      >
-        <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
+    <div className="admin-plot-submissions">
+      <div className="admin-container">
+        {/* Filters */}
+        <div className="admin-filters">
           <input
             type="text"
-            placeholder="Filter quest..."
-            value={filter.quest ?? ""}
-            onChange={(e) =>
-              setFilter((f) => ({ ...f, quest: e.target.value }))
-            }
-            className="array-input"
+            placeholder="Filter by quest name..."
+            value={state.filter.quest ?? ""}
+            onChange={(e) => handleFilterChange({ quest: e.target.value })}
+            className="admin-filter-input"
+            disabled={state.loading}
           />
           <input
             type="number"
             placeholder="Step ID"
-            value={filter.stepId ?? ""}
+            value={state.filter.stepId ?? ""}
             onChange={(e) =>
-              setFilter((f) => ({
-                ...f,
+              handleFilterChange({
                 stepId: e.target.value ? Number(e.target.value) : undefined,
-              }))
+              })
             }
-            className="array-input"
-            style={{ width: "60px" }}
+            className="admin-filter-input admin-filter-step"
+            disabled={state.loading}
           />
           <button
-            className="array-add-button"
-            style={{
-              background: "var(--bg-elevated)",
-              border: "1px solid var(--border-default)",
-              color: "var(--text-primary)",
-            }}
-            onClick={() => void load()}
-            disabled={loading}
+            className="admin-refresh-btn"
+            onClick={() => void loadSubmissions(state.filter)}
+            disabled={state.loading}
+            title="Refresh list"
           >
-            {loading ? "..." : "↻"}
+            {state.loading ? "⏳" : "↻"}
           </button>
         </div>
 
-        {/* List */}
-        <ul
-          ref={listRef}
-          className="search-results"
-          style={{
-            flex: 1, // Grow to fill space
-            overflowY: "auto",
-            border: "1px solid #374151",
-            borderRadius: 6,
-            maxHeight: "none",
-          }}
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (!items.length) return;
-            const idx = items.findIndex((it) => it.id === selectedId);
-            if (e.key === "ArrowDown") {
-              e.preventDefault();
-              const next = Math.min(items.length - 1, Math.max(0, idx + 1));
-              setSelectedId(items[next].id);
-            } else if (e.key === "ArrowUp") {
-              e.preventDefault();
-              const prev = Math.max(0, Math.max(0, idx - 1));
-              setSelectedId(items[prev].id);
-            }
-          }}
-        >
-          {items.map((it) => {
-            const isSel = it.id === selectedId;
-            return (
-              <li
-                key={it.id}
-                data-id={it.id}
-                onClick={() => setSelectedId(it.id)}
-                className={isSel ? "highlighted" : ""}
-                style={{
-                  cursor: "pointer",
-                  padding: "10px",
-                  borderBottom: "1px solid #1f2937",
-                  background: isSel ? "rgba(37, 99, 235, 0.1)" : undefined,
-                  borderLeft: isSel
-                    ? "3px solid #2563eb"
-                    : "3px solid transparent",
-                }}
-              >
-                <div
-                  style={{ display: "flex", flexDirection: "column", gap: 2 }}
-                >
-                  <div style={{ fontWeight: 600, color: "#e5e7eb" }}>
-                    {it.quest_name}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: 11,
-                      color: "#9ca3af",
-                      display: "flex",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <span>Step {it.step_number}</span>
-                    <span>{it.playername}</span>
-                  </div>
-                  <div style={{ fontSize: 10, color: "#6b7280", marginTop: 2 }}>
-                    {new Date(it.createdat).toLocaleString()}
-                  </div>
-                </div>
-              </li>
-            );
-          })}
-          {items.length === 0 && (
-            <li className="qp-empty">No pending submissions</li>
-          )}
-        </ul>
-        {/* Actions */}
-        <div
-          style={{ display: "flex", gap: 10, paddingBottom: 4, flexShrink: 0 }}
-        >
+        {/* Error Display */}
+        {state.error && (
+          <div className="admin-error">
+            <span>⚠️ {state.error}</span>
+            <button onClick={() => void loadSubmissions(state.filter)}>
+              Retry
+            </button>
+          </div>
+        )}
+
+        {/* Main Content */}
+        <div className="admin-content">
+          {/* Submissions List */}
+          <div className="admin-list-container">
+            <div className="admin-list-header">
+              <span>
+                {state.items.length} submission
+                {state.items.length !== 1 ? "s" : ""}
+              </span>
+            </div>
+
+            <ul
+              ref={listRef}
+              className="admin-submissions-list"
+              role="listbox"
+              tabIndex={0}
+              onKeyDown={handleKeyboardNav}
+              aria-label="Plot submissions"
+            >
+              {state.items.map((item) => (
+                <PlotSubmissionItem
+                  key={item.id}
+                  item={item}
+                  isSelected={item.id === state.selectedId}
+                  onSelect={() =>
+                    setState((prev) => ({ ...prev, selectedId: item.id }))
+                  }
+                />
+              ))}
+
+              {state.items.length === 0 && !state.loading && (
+                <li className="admin-empty">
+                  {state.filter.quest || state.filter.stepId
+                    ? "No submissions match your filters"
+                    : "No pending submissions"}
+                </li>
+              )}
+
+              {state.loading && (
+                <li className="admin-loading">Loading submissions...</li>
+              )}
+            </ul>
+          </div>
+
+          {/* Preview Panel */}
+          <div className="admin-preview-container">
+            <SubmissionPreview submission={selectedSubmission} />
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="admin-actions">
           <button
-            className="button--add"
-            style={{ flex: 2, height: "40px", fontSize: "0.9rem" }}
-            onClick={async () => {
-              if (!selected) return;
-              await approveSubmission(selected.id);
-              await load();
-            }}
-            disabled={!selected}
+            className="button--add admin-action-btn"
+            onClick={() => void handleApprove()}
+            disabled={!selectedSubmission || state.processing}
+            title="Approve submission (Enter)"
           >
-            Approve
+            {state.processing ? "Processing..." : "✓ Approve"}
           </button>
+
           <button
-            className="button--delete"
-            style={{ flex: 1, height: "40px", fontSize: "0.9rem" }}
-            onClick={async () => {
-              if (!selected) return;
-              const reason = prompt("Optional rejection reason:");
-              if (reason === null) return;
-              await rejectSubmission(selected.id, reason);
-              await load();
-            }}
-            disabled={!selected}
+            className="button--delete admin-action-btn"
+            onClick={() => void handleReject()}
+            disabled={!selectedSubmission || state.processing}
+            title="Reject submission (Shift+Enter)"
           >
-            Reject
+            {state.processing ? "Processing..." : "✗ Reject"}
           </button>
+
+          <div className="admin-keyboard-hint">
+            <kbd>↑/↓</kbd> Navigate • <kbd>Enter</kbd> Approve •{" "}
+            <kbd>Shift+Enter</kbd> Reject
+          </div>
         </div>
       </div>
-    </Panel>
+    </div>
   );
 };
 

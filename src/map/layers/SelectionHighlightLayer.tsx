@@ -318,7 +318,10 @@ const SelectionHighlightLayerComponent: React.FC<
             npc.id ? `<br>ID: ${npc.id}` : ""
           }<br><a href="${wikiSearchUrl}" target="_blank" rel="noopener noreferrer">Search on Wiki</a>`;
 
-          const npcKey = `${npc.id ?? npc.npcName}@${point.lat},${point.lng}`;
+          const npcKey = `${npc.id ?? npc.npcName}@${point.lat},${point.lng}:${
+            chatheadVariant || "default"
+          }`;
+
           (SelectionHighlightLayer as any)._npcTok ??= new Map<
             string,
             number
@@ -328,41 +331,27 @@ const SelectionHighlightLayerComponent: React.FC<
           (SelectionHighlightLayer as any)._npcTok.set(npcKey, nextToken);
           const thisToken = nextToken;
 
-          console.log(
+          console.debug(
             `🎬 Starting load for NPC: ${npc.npcName} (token: ${thisToken})`
           );
 
           (async () => {
+            if (!isActive) return;
             const result = await loadChatheadWithFallback(
               npc.npcName,
               chatheadVariant || "default",
               npc.id
             );
-
+            if (!isActive) return;
             const currentToken = (SelectionHighlightLayer as any)._npcTok.get(
               npcKey
             );
             if (currentToken !== thisToken) {
-              console.warn(
-                `⏭️ Stale result ignored for ${npc.npcName} (token ${thisToken} vs current ${currentToken})`
-              );
-              return;
-            }
-
-            if (!isActive) {
-              console.warn(
-                `⏭️ Component unmounted, ignoring result for ${npc.npcName}`
-              );
+              console.warn(`⏭️ Stale result ignored`);
               return;
             }
 
             if (result.success) {
-              console.log(`✨ Rendering chathead for: ${npc.npcName}`, {
-                source: result.source,
-                variant: result.variant,
-                isSelected,
-              });
-
               const icon = createChatheadIcon(result.dataUrl);
               L.marker([point.lat + 0.5, point.lng + 0.5], {
                 icon,
@@ -506,10 +495,6 @@ const SelectionHighlightLayerComponent: React.FC<
         Promise.allSettled(promises).then(() => {
           if (!isActive || fallbackPoints.size === 0) return;
 
-          console.log(
-            `🎨 Rendering ${fallbackPoints.size} fallback object tiles`
-          );
-
           const fallbackLayer = L.layerGroup().addTo(currentLayer);
           const unvisited = new Set(fallbackPoints.keys());
 
@@ -643,6 +628,7 @@ const SelectionHighlightLayerComponent: React.FC<
 
     return () => {
       isActive = false;
+      observedKeys.clear();
       if (layerRef.current) {
         layerRef.current.clearLayers();
       }

@@ -260,61 +260,62 @@ export const NpcObjectToolsPanel: React.FC = () => {
     }
 
     let mounted = true;
+    const abortController = new AbortController(); // ✅ Add abort support
 
     (async () => {
-      if (sel.targetType === "npc") {
-        const step =
-          EditorStore.getState().quest?.questSteps?.[sel.selectedStep];
-        const npc = step?.highlights.npc?.[sel.targetIndex];
-        const variants = await listChatheadVariants(
-          typeof npc?.id === "number" ? { npcId: npc.id } : { name }
-        );
+      try {
+        if (sel.targetType === "npc") {
+          const step =
+            EditorStore.getState().quest?.questSteps?.[sel.selectedStep];
+          const npc = step?.highlights.npc?.[sel.targetIndex];
+          const variants = await listChatheadVariants(
+            typeof npc?.id === "number" ? { npcId: npc.id } : { name }
+          );
 
-        if (!mounted) return;
+          if (!mounted || abortController.signal.aborted) return;
 
-        const allVariants = variants.length ? variants : ["default"];
-        setAvailableVariants(allVariants);
+          const allVariants = variants.length ? variants : ["default"];
+          setAvailableVariants(allVariants);
 
-        // Only auto-set variant if current one is invalid
-        const currentVariant = EditorStore.getState().selection.chatheadVariant;
-        if (!allVariants.includes(currentVariant)) {
-          const { detectedVariant } = extractVariantFromName(name);
-          if (detectedVariant && allVariants.includes(detectedVariant)) {
-            handleVariantChange(detectedVariant);
-          } else {
-            handleVariantChange(
-              allVariants.includes("default") ? "default" : allVariants[0]
-            );
+          const currentVariant =
+            EditorStore.getState().selection.chatheadVariant;
+          if (!allVariants.includes(currentVariant)) {
+            const { detectedVariant } = extractVariantFromName(name);
+            const newVariant =
+              detectedVariant && allVariants.includes(detectedVariant)
+                ? detectedVariant
+                : allVariants.includes("default")
+                ? "default"
+                : allVariants[0];
+
+            EditorStore.setSelection({ chatheadVariant: newVariant });
+          }
+        } else {
+          const variants = await listChatheadVariants({ name });
+          if (!mounted || abortController.signal.aborted) return;
+
+          const allVariants = variants.length ? variants : ["default"];
+          setAvailableVariants(allVariants);
+
+          const currentVariant =
+            EditorStore.getState().selection.chatheadVariant;
+          if (!allVariants.includes(currentVariant)) {
+            const newVariant = allVariants.includes("default")
+              ? "default"
+              : allVariants[0];
+            EditorStore.setSelection({ chatheadVariant: newVariant });
           }
         }
-      } else {
-        const variants = await listChatheadVariants({ name });
-
-        if (!mounted) return;
-
-        setAvailableVariants(variants.length ? variants : ["default"]);
-
-        // Only auto-set variant if current one is invalid
-        const currentVariant = EditorStore.getState().selection.chatheadVariant;
-        const allVariants = variants.length ? variants : ["default"];
-        if (!allVariants.includes(currentVariant)) {
-          handleVariantChange(
-            allVariants.includes("default") ? "default" : allVariants[0]
-          );
-        }
+      } catch (err) {
+        console.error("Failed to load variants:", err);
       }
     })();
 
     return () => {
       mounted = false;
+      abortController.abort();
     };
-  }, [
-    currentTargetName,
-    sel.targetType,
-    sel.selectedStep,
-    sel.targetIndex,
-    handleVariantChange,
-  ]); // Removed variant from deps
+  }, [currentTargetName, sel.targetType, sel.selectedStep, sel.targetIndex]);
 
   // Build preview URL when target or variant changes
   useEffect(() => {

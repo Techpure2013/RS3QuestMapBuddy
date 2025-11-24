@@ -1,70 +1,10 @@
 // src/app/plot/PlotTargetsPanel.tsx
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useEffect } from "react";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import { EditorStore } from "../../state/editorStore";
-import type {
-  NpcHighlight,
-  NpcLocation,
-  ObjectHighlight,
-} from "../../state/types";
-
-const styles: Record<string, React.CSSProperties> = {
-  panel: { padding: 8 },
-  btnGroup: { display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 },
-  controlGroup: { marginTop: 8 },
-  targetsHeader: { fontWeight: 600, margin: "8px 0 4px" },
-  list: {
-    listStyle: "none",
-    padding: 0,
-    margin: 0,
-    border: "1px solid #1f2937",
-    borderRadius: 6,
-    overflow: "hidden",
-  },
-  li: {
-    padding: "6px 8px",
-    borderBottom: "1px solid #1f2937",
-    cursor: "pointer",
-  },
-  liActive: {
-    padding: "6px 8px",
-    borderBottom: "1px solid #1f2937",
-    cursor: "pointer",
-    background: "rgba(37, 99, 235, 0.12)",
-    borderLeft: "3px solid #2563eb",
-  },
-  rowHeader: { display: "flex", alignItems: "center", gap: 6 },
-  dot: { color: "#60a5fa", fontWeight: 700 },
-  fieldLabel: {
-    fontSize: 12,
-    color: "#9ca3af",
-    display: "block",
-    marginBottom: 4,
-  },
-  inputText: {
-    width: "100%",
-    background: "#0f172a",
-    border: "1px solid #334155",
-    borderRadius: 4,
-    color: "#e5e7eb",
-    padding: "6px 8px",
-  },
-  colorInput: { width: 48, height: 28, padding: 0 },
-  subRow: {
-    display: "flex",
-    alignItems: "center",
-    gap: 8,
-    marginTop: 6,
-    padding: "6px 8px",
-    background: "#0b1220",
-    borderRadius: 4,
-  },
-  subRowMeta: { fontSize: 12, color: "#9ca3af" },
-  smallBtn: {
-    padding: "4px 8px",
-    fontSize: 12,
-  },
-};
+import type { NpcLocation } from "../../state/types";
+import { PlotNpcList } from "./PlotNpcList";
+import { PlotObjectList } from "./PlotObjectList";
 
 const PlotTargetsPanel: React.FC = () => {
   const quest = useEditorSelector((s) => s.quest);
@@ -72,9 +12,6 @@ const PlotTargetsPanel: React.FC = () => {
   const ui = useEditorSelector((s) => s.ui);
 
   const step = quest?.questSteps?.[sel.selectedStep];
-
-  const [npcChatheadUrl, setNpcChatheadUrl] = useState<string>("");
-
   const npcList = step?.highlights?.npc ?? [];
   const objList = step?.highlights?.object ?? [];
 
@@ -85,114 +22,6 @@ const PlotTargetsPanel: React.FC = () => {
     }
     return step.highlights.object?.[sel.targetIndex]?.name ?? "";
   }, [step, sel.targetType, sel.targetIndex]);
-
-  const onTargetTypeChange = useCallback((t: "npc" | "object") => {
-    EditorStore.setSelection({ targetType: t, targetIndex: 0 });
-    EditorStore.setUi({ captureMode: t === "npc" ? "single" : "multi-point" });
-  }, []);
-
-  const onTargetIndexChange = useCallback(
-    (i: number, type: "npc" | "object") => {
-      if (type !== sel.targetType) {
-        EditorStore.setSelection({ targetType: type, targetIndex: i });
-      } else {
-        EditorStore.setSelection({ targetIndex: i });
-      }
-      EditorStore.setUi({
-        captureMode: type === "npc" ? "single" : "multi-point",
-      });
-    },
-    [sel.targetType]
-  );
-
-  const onTargetNameChange = useCallback(
-    (name: string) => {
-      EditorStore.patchQuest((draft) => {
-        const s = draft.questSteps[sel.selectedStep];
-        if (!s) return;
-        if (sel.targetType === "npc") {
-          const t = s.highlights.npc?.[sel.targetIndex];
-          if (t) t.npcName = name;
-        } else {
-          const t = s.highlights.object?.[sel.targetIndex];
-          if (t) t.name = name;
-        }
-      });
-    },
-    [sel.selectedStep, sel.targetIndex, sel.targetType]
-  );
-
-  const onAddNpc = useCallback(() => {
-    EditorStore.patchQuest((draft) => {
-      const s = draft.questSteps[sel.selectedStep];
-      if (!s) return;
-      const list = s.highlights.npc ?? (s.highlights.npc = []);
-      list.push({
-        id: undefined,
-        npcName: "",
-        npcLocation: { lat: null, lng: null } as NpcLocation,
-        wanderRadius: {
-          bottomLeft: { lat: null, lng: null },
-          topRight: { lat: null, lng: null },
-        },
-      });
-    });
-    const nextIndex =
-      quest?.questSteps?.[sel.selectedStep]?.highlights.npc?.length ?? 1 - 1;
-    EditorStore.setSelection({ targetType: "npc", targetIndex: nextIndex });
-    EditorStore.setUi({ captureMode: "single" });
-  }, [quest, sel.selectedStep]);
-
-  const onDeleteNpc = useCallback(() => {
-    if (sel.targetType !== "npc" || npcList.length === 0) return;
-    const index = sel.targetIndex;
-    EditorStore.patchQuest((draft) => {
-      const s = draft.questSteps[sel.selectedStep];
-      if (!s?.highlights.npc) return;
-      if (index >= 0 && index < s.highlights.npc.length) {
-        s.highlights.npc.splice(index, 1);
-      }
-    });
-    const nextLen = npcList.length - 1;
-    const nextIndex = Math.max(0, Math.min(index, Math.max(0, nextLen)));
-    EditorStore.setSelection({ targetType: "npc", targetIndex: nextIndex });
-  }, [npcList.length, sel.selectedStep, sel.targetIndex, sel.targetType]);
-
-  const onAddObject = useCallback(() => {
-    EditorStore.patchQuest((draft) => {
-      const s = draft.questSteps[sel.selectedStep];
-      if (!s) return;
-      const list = s.highlights.object ?? (s.highlights.object = []);
-      list.push({
-        name: "",
-        objectLocation: [],
-        objectRadius: {
-          bottomLeft: { lat: null, lng: null },
-          topRight: { lat: null, lng: null },
-        },
-      });
-    });
-    const nextIndex =
-      quest?.questSteps?.[sel.selectedStep]?.highlights.object?.length ?? 1;
-    EditorStore.setSelection({ targetType: "object", targetIndex: nextIndex });
-
-    EditorStore.setUi({ captureMode: "multi-point" });
-  }, [quest, sel.selectedStep]);
-
-  const onDeleteObject = useCallback(() => {
-    if (sel.targetType !== "object" || objList.length === 0) return;
-    const index = sel.targetIndex;
-    EditorStore.patchQuest((draft) => {
-      const s = draft.questSteps[sel.selectedStep];
-      if (!s?.highlights.object) return;
-      if (index >= 0 && index < s.highlights.object.length) {
-        s.highlights.object.splice(index, 1);
-      }
-    });
-    const nextLen = objList.length - 1;
-    const nextIndex = Math.max(0, Math.min(index, Math.max(0, nextLen)));
-    EditorStore.setSelection({ targetType: "object", targetIndex: nextIndex });
-  }, [objList.length, sel.selectedStep, sel.targetIndex, sel.targetType]);
 
   const currentObjectColor = useMemo(() => {
     if (ui.selectedObjectColor) return ui.selectedObjectColor;
@@ -210,34 +39,260 @@ const PlotTargetsPanel: React.FC = () => {
     return last?.numberLabel ?? "";
   }, [ui.objectNumberLabel, step, sel.targetType, sel.targetIndex]);
 
-  const clearNpcPoint = useCallback(
-    (npcIndex: number) => {
-      EditorStore.patchQuest((draft) => {
-        const s = draft.questSteps[sel.selectedStep];
-        const t = s?.highlights.npc?.[npcIndex];
-        if (!t) return;
-        t.npcLocation = undefined as unknown as { lat: number; lng: number };
+  // Stable callbacks (no deps that change frequently)
+  const onTargetTypeChange = useCallback((t: "npc" | "object") => {
+    EditorStore.setSelection({ targetType: t, targetIndex: 0 });
+    EditorStore.setUi({ captureMode: t === "npc" ? "single" : "multi-point" });
+  }, []);
+
+  const onTargetIndexChange = useCallback(
+    (i: number, type: "npc" | "object") => {
+      const currentType = EditorStore.getState().selection.targetType;
+      if (type !== currentType) {
+        EditorStore.setSelection({ targetType: type, targetIndex: i });
+      } else {
+        EditorStore.setSelection({ targetIndex: i });
+      }
+      EditorStore.setUi({
+        captureMode: type === "npc" ? "single" : "multi-point",
       });
     },
-    [sel.selectedStep]
+    []
   );
+
+  const onTargetNameChange = useCallback((name: string) => {
+    const state = EditorStore.getState();
+    EditorStore.patchQuest((draft) => {
+      const s = draft.questSteps[state.selection.selectedStep];
+      if (!s) return;
+      if (state.selection.targetType === "npc") {
+        const t = s.highlights.npc?.[state.selection.targetIndex];
+        if (t) t.npcName = name;
+      } else {
+        const t = s.highlights.object?.[state.selection.targetIndex];
+        if (t) t.name = name;
+      }
+    });
+  }, []);
+
+  const onAddNpc = useCallback(() => {
+    const state = EditorStore.getState();
+    EditorStore.patchQuest((draft) => {
+      const s = draft.questSteps[state.selection.selectedStep];
+      if (!s) return;
+      const list = s.highlights.npc ?? (s.highlights.npc = []);
+      list.push({
+        id: undefined,
+        npcName: "",
+        npcLocation: { lat: 0, lng: 0 } as NpcLocation,
+        wanderRadius: {
+          bottomLeft: { lat: 0, lng: 0 },
+          topRight: { lat: 0, lng: 0 },
+        },
+      });
+    });
+    const nextIndex =
+      EditorStore.getState().quest?.questSteps?.[
+        EditorStore.getState().selection.selectedStep
+      ]?.highlights.npc?.length ?? 1;
+    EditorStore.setSelection({
+      targetType: "npc",
+      targetIndex: Math.max(0, nextIndex - 1),
+    });
+    EditorStore.setUi({ captureMode: "single" });
+  }, []);
+
+  const onDeleteNpc = useCallback(() => {
+    const state = EditorStore.getState();
+    if (state.selection.targetType !== "npc") return;
+    const index = state.selection.targetIndex;
+    const npcList =
+      state.quest?.questSteps?.[state.selection.selectedStep]?.highlights.npc;
+    if (!npcList || npcList.length === 0) return;
+
+    EditorStore.patchQuest((draft) => {
+      const s = draft.questSteps[state.selection.selectedStep];
+      if (!s?.highlights.npc) return;
+      if (index >= 0 && index < s.highlights.npc.length) {
+        s.highlights.npc.splice(index, 1);
+      }
+    });
+
+    const nextLen = npcList.length - 1;
+    const nextIndex = Math.max(0, Math.min(index, Math.max(0, nextLen - 1)));
+    EditorStore.setSelection({ targetType: "npc", targetIndex: nextIndex });
+  }, []);
+
+  const onAddObject = useCallback(() => {
+    const state = EditorStore.getState();
+    EditorStore.patchQuest((draft) => {
+      const s = draft.questSteps[state.selection.selectedStep];
+      if (!s) return;
+      const list = s.highlights.object ?? (s.highlights.object = []);
+      list.push({
+        name: "",
+        objectLocation: [],
+        objectRadius: {
+          bottomLeft: { lat: 0, lng: 0 },
+          topRight: { lat: 0, lng: 0 },
+        },
+      });
+    });
+    const nextIndex =
+      EditorStore.getState().quest?.questSteps?.[
+        EditorStore.getState().selection.selectedStep
+      ]?.highlights.object?.length ?? 1;
+    EditorStore.setSelection({
+      targetType: "object",
+      targetIndex: Math.max(0, nextIndex - 1),
+    });
+    EditorStore.setUi({ captureMode: "multi-point" });
+  }, []);
+
+  const onDeleteObject = useCallback(() => {
+    const state = EditorStore.getState();
+    if (state.selection.targetType !== "object") return;
+    const index = state.selection.targetIndex;
+    const objList =
+      state.quest?.questSteps?.[state.selection.selectedStep]?.highlights
+        .object;
+    if (!objList || objList.length === 0) return;
+
+    EditorStore.patchQuest((draft) => {
+      const s = draft.questSteps[state.selection.selectedStep];
+      if (!s?.highlights.object) return;
+      if (index >= 0 && index < s.highlights.object.length) {
+        s.highlights.object.splice(index, 1);
+      }
+    });
+
+    const nextLen = objList.length - 1;
+    const nextIndex = Math.max(0, Math.min(index, Math.max(0, nextLen - 1)));
+    EditorStore.setSelection({ targetType: "object", targetIndex: nextIndex });
+  }, []);
+
+  const clearNpcPoint = useCallback((npcIndex: number) => {
+    const selectedStep = EditorStore.getState().selection.selectedStep;
+    EditorStore.patchQuest((draft) => {
+      const s = draft.questSteps[selectedStep];
+      const t = s?.highlights.npc?.[npcIndex];
+      if (!t) return;
+      t.npcLocation = { lat: 0, lng: 0 } as NpcLocation;
+    });
+  }, []);
 
   const deleteObjectPoint = useCallback(
     (objIndex: number, locIndex: number) => {
+      const selectedStep = EditorStore.getState().selection.selectedStep;
       EditorStore.patchQuest((draft) => {
-        const s = draft.questSteps[sel.selectedStep];
+        const s = draft.questSteps[selectedStep];
         const t = s?.highlights.object?.[objIndex];
         if (!t?.objectLocation) return;
         if (locIndex < 0 || locIndex >= t.objectLocation.length) return;
         t.objectLocation.splice(locIndex, 1);
       });
     },
-    [sel.selectedStep]
+    []
   );
 
+  const toggleRadius = useCallback(() => {
+    const state = EditorStore.getState();
+    const next =
+      state.ui.captureMode === "radius"
+        ? state.selection.targetType === "npc"
+          ? "single"
+          : "multi-point"
+        : "radius";
+    EditorStore.setUi({ captureMode: next });
+  }, []);
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Only handle shortcuts if not typing in an input
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement
+      ) {
+        return;
+      }
+
+      const state = EditorStore.getState();
+      const currentType = state.selection.targetType;
+      const currentIndex = state.selection.targetIndex;
+
+      switch (e.key) {
+        case "ArrowUp":
+          if (currentIndex > 0) {
+            e.preventDefault();
+            onTargetIndexChange(currentIndex - 1, currentType);
+          }
+          break;
+
+        case "ArrowDown": {
+          e.preventDefault();
+          const max =
+            currentType === "npc" ? npcList.length - 1 : objList.length - 1;
+          if (currentIndex < max) {
+            onTargetIndexChange(currentIndex + 1, currentType);
+          }
+          break;
+        }
+
+        case "Delete":
+        case "Backspace":
+          if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            if (currentType === "npc") {
+              onDeleteNpc();
+            } else {
+              onDeleteObject();
+            }
+          }
+          break;
+
+        case "n":
+          if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            if (currentType === "npc") {
+              onAddNpc();
+            } else {
+              onAddObject();
+            }
+          }
+          break;
+
+        case "Tab":
+          e.preventDefault();
+          onTargetTypeChange(currentType === "npc" ? "object" : "npc");
+          break;
+
+        case "r":
+          if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            toggleRadius();
+          }
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [
+    npcList.length,
+    objList.length,
+    onTargetIndexChange,
+    onTargetTypeChange,
+    onAddNpc,
+    onAddObject,
+    onDeleteNpc,
+    onDeleteObject,
+    toggleRadius,
+  ]);
+
   return (
-    <div style={styles.panel}>
-      <div style={styles.btnGroup}>
+    <div className="plot-targets-panel">
+      <div className="plot-btn-group">
         <button
           className="control-btn"
           onClick={() => onTargetTypeChange("npc")}
@@ -262,28 +317,19 @@ const PlotTargetsPanel: React.FC = () => {
         </button>
         <button
           className="control-btn"
-          onClick={() =>
-            EditorStore.setUi({
-              captureMode:
-                ui.captureMode === "radius"
-                  ? sel.targetType === "npc"
-                    ? "single"
-                    : "multi-point"
-                  : "radius",
-            })
-          }
+          onClick={toggleRadius}
           style={{
             background: ui.captureMode === "radius" ? "#10b981" : undefined,
             borderColor: ui.captureMode === "radius" ? "#10b981" : undefined,
             color: ui.captureMode === "radius" ? "#fff" : undefined,
           }}
-          title="Toggle radius capture"
+          title="Toggle radius capture (Ctrl+R)"
         >
           Radius
         </button>
       </div>
 
-      <div style={styles.btnGroup}>
+      <div className="plot-btn-group">
         <button className="button--add" onClick={onAddNpc}>
           + NPC
         </button>
@@ -306,181 +352,84 @@ const PlotTargetsPanel: React.FC = () => {
         </button>
       </div>
 
-      <div style={styles.controlGroup}>
-        <label style={styles.fieldLabel}>Name</label>
+      <div className="plot-control-group">
+        <label className="plot-field-label">Name</label>
         <input
           type="text"
           value={targetNameValue}
           onChange={(e) => onTargetNameChange(e.target.value)}
           placeholder={sel.targetType === "npc" ? "NPC Name" : "Object Name"}
-          style={styles.inputText}
+          className="plot-input-text"
         />
       </div>
 
-      {sel.targetType === "npc" && (
-        <div style={styles.controlGroup}>
-          <label style={styles.fieldLabel}>Chathead URL (optional)</label>
-          <input
-            type="text"
-            value={npcChatheadUrl}
-            onChange={(e) => setNpcChatheadUrl(e.target.value)}
-            placeholder="https://runescape.wiki/images/Foo_chathead.png"
-            style={styles.inputText}
-          />
-        </div>
-      )}
-
       {sel.targetType === "object" && (
-        <div className="editor-controls-grid" style={styles.controlGroup}>
-          <div>
-            <label style={styles.fieldLabel}>Object Color</label>
+        <div className="plot-object-controls">
+          <div className="plot-control-group">
+            <label className="plot-field-label">Object Color</label>
             <input
               type="color"
-              value={ui.selectedObjectColor || "#FFFFFF"}
-              onChange={(e) => {
-                EditorStore.setUi({ selectedObjectColor: e.target.value });
-              }}
-              style={styles.colorInput}
+              value={currentObjectColor}
+              onChange={(e) =>
+                EditorStore.setUi({ selectedObjectColor: e.target.value })
+              }
+              className="plot-color-input"
             />
           </div>
-          <div>
-            <label style={styles.fieldLabel}>Object Number</label>
+          <div className="plot-control-group">
+            <label className="plot-field-label">Object Number</label>
             <input
               type="text"
               value={currentObjectNumber}
-              onChange={(e) => {
-                EditorStore.setUi({ objectNumberLabel: e.target.value });
-              }}
+              onChange={(e) =>
+                EditorStore.setUi({ objectNumberLabel: e.target.value })
+              }
               placeholder="Optional"
-              style={styles.inputText}
+              className="plot-input-text"
             />
           </div>
         </div>
       )}
 
-      <div style={styles.controlGroup}>
-        <div style={styles.targetsHeader}>NPCs</div>
-        {npcList.length === 0 ? (
-          <div className="qp-empty">No NPCs yet</div>
-        ) : (
-          <ul style={styles.list}>
-            {npcList.map((npc: NpcHighlight, i: number) => {
-              const isActive =
-                sel.targetType === "npc" && sel.targetIndex === i;
-              const hasLoc =
-                !!npc.npcLocation &&
-                Number.isFinite((npc.npcLocation as NpcLocation).lat) &&
-                Number.isFinite((npc.npcLocation as NpcLocation).lng);
-              return (
-                <li
-                  key={`npc-${i}`}
-                  style={isActive ? styles.liActive : styles.li}
-                  onClick={() => onTargetIndexChange(i, "npc")}
-                >
-                  <div style={styles.rowHeader}>
-                    {isActive && <span style={styles.dot}>•</span>}
-                    <span>{npc.npcName || `NPC ${i + 1}`}</span>
-                  </div>
-                  <div style={{ fontSize: 12, color: "#9ca3af" }}>
-                    {hasLoc
-                      ? `{${npc.npcLocation.lat}, ${npc.npcLocation.lng}}`
-                      : "{unset}"}
-                  </div>
-
-                  {isActive && (
-                    <div
-                      style={styles.subRow}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <span style={styles.subRowMeta}>Location controls</span>
-                      <button
-                        className="button--delete"
-                        style={styles.smallBtn}
-                        onClick={() => clearNpcPoint(i)}
-                        title="Clear NPC point"
-                      >
-                        Clear point
-                      </button>
-                    </div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        )}
+      <div className="plot-control-group">
+        <div className="plot-targets-header">NPCs</div>
+        <PlotNpcList
+          npcs={npcList}
+          selectedIndex={sel.targetIndex}
+          isActive={sel.targetType === "npc"}
+          onSelect={(i) => onTargetIndexChange(i, "npc")}
+          onClearPoint={clearNpcPoint}
+        />
       </div>
 
-      <div style={styles.controlGroup}>
-        <div style={styles.targetsHeader}>Objects</div>
-        {objList.length === 0 ? (
-          <div className="qp-empty">No Objects yet</div>
-        ) : (
-          <ul style={styles.list}>
-            {objList.map((obj: ObjectHighlight, i: number) => {
-              const isActive =
-                sel.targetType === "object" && sel.targetIndex === i;
-              const pts = obj.objectLocation ?? [];
-              return (
-                <li
-                  key={`obj-${i}`}
-                  style={isActive ? styles.liActive : styles.li}
-                  onClick={() => onTargetIndexChange(i, "object")}
-                >
-                  <div style={styles.rowHeader}>
-                    {isActive && <span style={styles.dot}>•</span>}
-                    <span>{obj.name || `Object ${i + 1}`}</span>
-                  </div>
-                  <div style={{ fontSize: 12, color: "#9ca3af" }}>
-                    {pts.length === 0
-                      ? "No points"
-                      : `${pts.length} point${pts.length === 1 ? "" : "s"}`}
-                  </div>
+      <div className="plot-control-group">
+        <div className="plot-targets-header">Objects</div>
+        <PlotObjectList
+          objects={objList}
+          selectedIndex={sel.targetIndex}
+          isActive={sel.targetType === "object"}
+          onSelect={(i) => onTargetIndexChange(i, "object")}
+          onDeletePoint={deleteObjectPoint}
+        />
+      </div>
 
-                  {isActive && pts.length > 0 && (
-                    <div
-                      style={{ marginTop: 6 }}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {pts.map((p, idx) => (
-                        <div
-                          key={idx}
-                          style={{
-                            ...styles.subRow,
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          <div style={{ display: "flex", gap: 10 }}>
-                            <span style={styles.subRowMeta}>
-                              {`{${p.lat}, ${p.lng}}`}
-                            </span>
-                            {p.color && (
-                              <span style={styles.subRowMeta}>
-                                color: {p.color}
-                              </span>
-                            )}
-                            {p.numberLabel && (
-                              <span style={styles.subRowMeta}>
-                                label: {p.numberLabel}
-                              </span>
-                            )}
-                          </div>
-                          <button
-                            className="button--delete"
-                            style={styles.smallBtn}
-                            onClick={() => deleteObjectPoint(i, idx)}
-                            title="Delete this point"
-                          >
-                            Delete point
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        )}
+      <div className="plot-keyboard-hints">
+        <div className="plot-hint-title">Keyboard Shortcuts:</div>
+        <div className="plot-hint-row">
+          <kbd>↑/↓</kbd> Navigate targets
+        </div>
+        <div className="plot-hint-row">
+          <kbd>Tab</kbd> Switch NPC/Object
+        </div>
+        <div className="plot-hint-row">
+          <kbd>Ctrl+N</kbd> Add new
+        </div>
+        <div className="plot-hint-row">
+          <kbd>Ctrl+Del</kbd> Delete
+        </div>
+        <div className="plot-hint-row">
+          <kbd>Ctrl+R</kbd> Toggle radius
+        </div>
       </div>
     </div>
   );
