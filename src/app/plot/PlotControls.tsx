@@ -1,4 +1,3 @@
-// src/app/plot/PlotControls.tsx
 import React, { useCallback, useState } from "react";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import { EditorStore } from "../../state/editorStore";
@@ -8,15 +7,19 @@ import {
   NpcHighlight,
   ObjectHighlight,
   ValidationResult,
-  submitPlot,
 } from "../../state/types";
 import { HandleFloorIncreaseDecrease } from "../../map/utils/MapFunctions";
 
 import { showSuccessToast, showErrorToast } from "../../utils/toast";
+import { savePlayerPlot } from "./savePlotPlayer";
+import { submitPlotApi } from "./submitPlot";
+import { toastApiError } from "./toastErrors";
 
 interface PlotControlsProps {
   busy: boolean;
 }
+
+const normalizeName = (s: string) => s.trim().replace(/\s+/g, " ");
 
 function extractValidNpcs(npcs: NpcHighlight[]) {
   return npcs
@@ -31,10 +34,7 @@ function extractValidNpcs(npcs: NpcHighlight[]) {
       const base = {
         npcName: n.npcName,
         npcLocation: { lat: loc.lat, lng: loc.lng },
-        wanderRadius: n.wanderRadius || {
-          bottomLeft: { lat: 0, lng: 0 },
-          topRight: { lat: 0, lng: 0 },
-        },
+        ...(n.wanderRadius ? { wanderRadius: n.wanderRadius } : {}),
       };
       return typeof n.id === "number" && Number.isFinite(n.id)
         ? { id: n.id, ...base }
@@ -53,13 +53,10 @@ function extractValidObjects(objects: ObjectHighlight[]) {
         objectLocation: locs.map((p) => ({
           lat: p.lat,
           lng: p.lng,
-          color: p.color,
-          numberLabel: p.numberLabel,
+          ...(p.color ? { color: p.color } : {}),
+          ...(p.numberLabel ? { numberLabel: p.numberLabel } : {}),
         })),
-        objectRadius: o.objectRadius || {
-          bottomLeft: { lat: 0, lng: 0 },
-          topRight: { lat: 0, lng: 0 },
-        },
+        ...(o.objectRadius ? { objectRadius: o.objectRadius } : {}),
       };
       return typeof o.id === "number" && Number.isFinite(o.id)
         ? { id: o.id, ...base }
@@ -74,7 +71,6 @@ function validatePlotState(playerName: string): ValidationResult {
   const quest = state.quest;
   const selection = state.selection;
 
-  // Validation phase
   if (!rm?.enabled || rm.stepId <= 0) {
     return { ok: false, error: "Plot step is not ready (missing step id)." };
   }
@@ -90,7 +86,6 @@ function validatePlotState(playerName: string): ValidationResult {
     return { ok: false, error: "Invalid step." };
   }
 
-  // Transformation phase
   const npc = extractValidNpcs(step.highlights.npc ?? []);
   const object = extractValidObjects(step.highlights.object ?? []);
 
@@ -104,23 +99,12 @@ function validatePlotState(playerName: string): ValidationResult {
   return {
     ok: true,
     payload: {
-      playerName: playerName.trim(),
+      playerName: normalizeName(playerName),
       stepId: rm.stepId,
       floor: step.floor,
       highlights: { npc, object },
     },
   };
-}
-
-function handleSubmitError(res: any): void {
-  const err = res.error ?? "failed";
-  if (err === "name_bound_to_different_ip") {
-    showErrorToast(
-      "This player name is already bound to a different User for this step"
-    );
-  } else {
-    showErrorToast(`Submission failed: ${err}`);
-  }
 }
 
 const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
@@ -144,8 +128,8 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
     if (!HandleFloorIncreaseDecrease(nf)) return;
     EditorStore.setSelection({ floor: nf });
     EditorStore.patchQuest((draft) => {
-      const step = draft.questSteps[state.selection.selectedStep];
-      if (step) step.floor = nf;
+      const s = draft.questSteps[state.selection.selectedStep];
+      if (s) s.floor = nf;
     });
   }, []);
 
@@ -155,29 +139,59 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
     if (!HandleFloorIncreaseDecrease(nf)) return;
     EditorStore.setSelection({ floor: nf });
     EditorStore.patchQuest((draft) => {
-      const step = draft.questSteps[state.selection.selectedStep];
-      if (step) step.floor = nf;
+      const s = draft.questSteps[state.selection.selectedStep];
+      if (s) s.floor = nf;
     });
   }, []);
 
   const handleSubmit = useCallback(async () => {
-    if (submitting || playerName.trim().length === 0) return;
+    if (submitting) return;
 
-    const validation = validatePlotState(playerName);
+    const normalizedName = playerName.trim();
+    if (normalizedName.length === 0) return;
 
+    const validation = validatePlotState(normalizedName);
     if (validation.ok === false) {
       showErrorToast(validation.error);
       return;
     }
 
+    // enforce the same normalization the server uses
+    const normalizeName = (s: string) => s.trim().replace(/\s+/g, " ");
+    const payload = {
+      ...validation.payload,
+      playerName: normalizeName(validation.payload.playerName),
+    };
+
     setSubmitting(true);
     try {
-      const res = await submitPlot(validation.payload);
-      if (!res.ok) {
-        handleSubmitError(res);
+      // 1) Save: IP-bound player-owned plot
+      const saveRes = await savePlayerPlot({
+        playerName: payload.playerName,
+        stepId: payload.stepId,
+        floor: payload.floor,
+        plotHighlights: payload.highlights,
+      });
+      if (saveRes.ok === false) {
+        toastApiError(saveRes.error);
         return;
       }
-      showSuccessToast("Plot submitted for approval. Thank you!");
+
+      // 2) Submit: moderation queue
+      const submitRes = await submitPlotApi({
+        playerName: payload.playerName,
+        stepId: payload.stepId,
+        floor: payload.floor,
+        highlights: payload.highlights,
+      });
+      if (submitRes.ok === false) {
+        toastApiError(submitRes.error);
+        return;
+      }
+
+      showSuccessToast(
+        "Saved your plot and submitted for approval. Thank you!"
+      );
     } catch (e) {
       console.error("Submit failed:", e);
       showErrorToast("Submit failed. Please try again.");
@@ -230,7 +244,7 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
           title={
             !playerName.trim()
               ? "Enter your player name to submit"
-              : "Submit plot for this step"
+              : "Save and submit plot for this step"
           }
         >
           {submitting ? (

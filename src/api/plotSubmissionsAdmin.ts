@@ -41,6 +41,7 @@ export type PlotSubmissionRow = {
   reviewedat: string | null;
   reviewedby: string | null;
   // joined fields
+  step_description: string;
   step_number: number;
   quest_name: string;
 };

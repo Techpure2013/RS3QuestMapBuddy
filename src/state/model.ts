@@ -37,7 +37,7 @@ export interface PlotNpcHighlight {
   id?: number;
   npcName: string;
   npcLocation: { lat: number; lng: number };
-  wanderRadius: {
+  wanderRadius?: {
     bottomLeft: { lat: number; lng: number };
     topRight: { lat: number; lng: number };
   };
@@ -52,7 +52,7 @@ export interface PlotObjectHighlight {
     color?: string;
     numberLabel?: string;
   }>;
-  objectRadius: {
+  objectRadius?: {
     bottomLeft: { lat: number; lng: number };
     topRight: { lat: number; lng: number };
   };

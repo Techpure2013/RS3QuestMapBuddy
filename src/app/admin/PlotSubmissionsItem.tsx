@@ -19,6 +19,8 @@ export const PlotSubmissionItem: React.FC<PlotSubmissionItemProps> = React.memo(
         0
       ) ?? 0);
 
+    const desc = item.step_description?.trim() ?? "";
+
     return (
       <li
         data-id={item.id}
@@ -37,10 +39,31 @@ export const PlotSubmissionItem: React.FC<PlotSubmissionItemProps> = React.memo(
         <div className="submission-meta">
           <span className="submission-step">Step {item.step_number}</span>
           <span className="submission-divider">•</span>
-          <span className="submission-floor">Floor {item.floor}</span>
+          <span className="submission-floor">Floor {item.floor ?? 0}</span>
           <span className="submission-divider">•</span>
           <span className="submission-player">{item.playername}</span>
         </div>
+
+        {/* NEW: step description preview */}
+        {desc && (
+          <div
+            className="submission-step-desc"
+            title={desc}
+            style={{
+              marginTop: 4,
+              fontSize: 12,
+              color: "#9ca3af",
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              lineHeight: "1.2",
+            }}
+          >
+            {desc}
+          </div>
+        )}
 
         <div className="submission-details">
           <span className="submission-counts">

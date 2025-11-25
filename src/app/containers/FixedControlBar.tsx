@@ -54,6 +54,7 @@ const StepControlBar: React.FC = React.memo(() => {
       })
     );
   }, []);
+
   const toggleEditor = useCallback(() => {
     setShowEditor((prev) => {
       const next = !prev;
