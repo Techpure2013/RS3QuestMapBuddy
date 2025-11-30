@@ -1,5 +1,6 @@
 // src/editor/sections/ObjectSearch.tsx
 import React, { useState, useEffect } from "react";
+import { buildObjectsJsonUrl } from "./../../utils/appBase";
 
 export interface MapObject {
   id: number;
@@ -79,7 +80,8 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
     }
 
     onClearAreaSearchResults();
-    const firstLetter = searchTerm[0].toUpperCase();
+
+    const firstLetter = (searchTerm[0] || "").toUpperCase();
     let searchData: MapObject[] = [];
 
     if (dataCache[firstLetter]) {
@@ -87,30 +89,11 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
     } else {
       setIsLoading(true);
       try {
-        // Try multiple possible paths
-        const possiblePaths = [
-          `/Objects_By_Letter/${firstLetter}.json`,
-          `/public/Objects_By_Letter/${firstLetter}.json`,
-          `./Objects_By_Letter/${firstLetter}.json`,
-        ];
-
-        let response: Response | null = null;
-        let lastError: Error | null = null;
-
-        for (const path of possiblePaths) {
-          try {
-            response = await fetch(path);
-            if (response.ok) break;
-          } catch (err) {
-            lastError = err as Error;
-            console.warn(`Failed to fetch from ${path}:`, err);
-          }
+        const url = buildObjectsJsonUrl(searchTerm);
+        const response = await fetch(url, { credentials: "omit" });
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${url}: ${response.status}`);
         }
-
-        if (!response || !response.ok) {
-          throw lastError || new Error("All paths failed");
-        }
-
         const jsonData: MapObject[] = await response.json();
         setDataCache((prev) => ({ ...prev, [firstLetter]: jsonData }));
         searchData = jsonData;
@@ -118,7 +101,7 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
         console.error("Failed to fetch object data:", error);
         alert(
           `Failed to load object data for letter "${firstLetter}". ` +
-            `Make sure Objects_By_Letter/${firstLetter}.json exists in your public folder.`
+            `Ensure Objects_By_Letter/${firstLetter}.json is deployed under the site root or your subpath.`
         );
         setAllMatches([]);
         setCurrentIndex(-1);
@@ -128,8 +111,9 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
       }
     }
 
+    const term = searchTerm.toLowerCase();
     const results = searchData.filter((obj) =>
-      obj.name.toLowerCase().includes(searchTerm.toLowerCase())
+      obj.name.toLowerCase().includes(term)
     );
 
     setAllMatches(results);
