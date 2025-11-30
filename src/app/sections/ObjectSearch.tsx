@@ -89,7 +89,7 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
     } else {
       setIsLoading(true);
       try {
-        const url = buildObjectsJsonUrl(searchTerm);
+        const url = `https://wwww.techpure.dev/RS3QuestBuddyEditor/Objects_By_Letter/${firstLetter}.json`;
         const response = await fetch(url, { credentials: "omit" });
         if (!response.ok) {
           throw new Error(`Failed to fetch ${url}: ${response.status}`);
