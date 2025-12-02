@@ -117,9 +117,27 @@ const StepControlBar: React.FC = React.memo(() => {
   }, []);
 
   const addStep = useCallback(() => {
-    const floor = EditorStore.getState().selection.floor;
+    const state = EditorStore.getState();
+    const floor = state.selection.floor;
+    const currentIndex = state.selection.selectedStep;
+    const total = state.quest?.questSteps.length ?? 0;
+
+    const hasSelection =
+      Number.isInteger(currentIndex) &&
+      currentIndex >= 0 &&
+      currentIndex < total;
+
+    // Insert AFTER current selection; use currentIndex for "insert before"
+    const targetIndex = hasSelection ? currentIndex + 1 : total;
+
+    let insertedIndex = targetIndex;
+
     EditorStore.patchQuest((draft) => {
-      draft.questSteps.push({
+      const length = draft.questSteps.length;
+      const clamped =
+        targetIndex < 0 ? 0 : targetIndex > length ? length : targetIndex;
+
+      draft.questSteps.splice(clamped, 0, {
         stepDescription: "",
         floor,
         highlights: { npc: [], object: [] },
@@ -127,7 +145,17 @@ const StepControlBar: React.FC = React.memo(() => {
         itemsRecommended: [],
         additionalStepInformation: [],
       });
+
+      // capture the authoritative index from the draft
+      insertedIndex = clamped;
     });
+
+    // update selection in the correct slice
+    EditorStore.setSelection({ selectedStep: insertedIndex, targetIndex: 0 });
+
+    // focus the new step
+    EditorStore.autoSelectFirstValidTargetForStep(insertedIndex);
+    requestFlyToCurrentTargetAt(5, "auto-select");
   }, []);
 
   const deleteStep = useCallback(() => {
