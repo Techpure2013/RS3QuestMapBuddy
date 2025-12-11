@@ -141,6 +141,7 @@ export type NpcHighlight = {
   npcName: string;
   npcLocation: NpcLocation;
   wanderRadius?: NpcWanderRadius;
+  floor?: number;
 };
 export type AdminFilter = {
   quest?: string;
@@ -180,6 +181,7 @@ export type ObjectHighlight = {
   name: string;
   objectLocation: ObjectLocationPoint[];
   objectRadius?: ObjectRadius;
+  floor?: number;
 };
 
 export type QuestHighlights = {

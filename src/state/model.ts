@@ -63,6 +63,10 @@ export interface SelectionState {
   targetIndex: number;
   floor: number;
   chatheadVariant: string;
+  // Hover state for highlighting individual points on the map
+  hoveredTargetType?: TargetType | null;
+  hoveredTargetIndex?: number | null;
+  hoveredLocationIndex?: number | null; // For object location points within hoveredTargetIndex
 }
 
 export interface UiState {

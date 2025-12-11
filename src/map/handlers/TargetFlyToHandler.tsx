@@ -37,6 +37,7 @@ const TargetFlyToHandler: React.FC = () => {
 
     let centerLat: number | null = null;
     let centerLng: number | null = null;
+    let targetFloor: number = 0;
 
     if (sel.targetType === "npc") {
       const npc = (step.highlights.npc ?? [])[sel.targetIndex] as
@@ -48,6 +49,7 @@ const TargetFlyToHandler: React.FC = () => {
           centerLat = v.lat - 2;
           centerLng = v.lng + 8;
         }
+        targetFloor = npc.floor ?? 0;
       }
     } else {
       const obj = (step.highlights.object ?? [])[sel.targetIndex] as
@@ -69,6 +71,7 @@ const TargetFlyToHandler: React.FC = () => {
         centerLat = sumLat / pts.length;
         centerLng = sumLng / pts.length;
       }
+      targetFloor = obj?.floor ?? 0;
     }
 
     if (centerLat === null || centerLng === null) {
@@ -76,9 +79,9 @@ const TargetFlyToHandler: React.FC = () => {
       return;
     }
 
-    // sync floor
-    if (typeof step.floor === "number" && sel.floor !== step.floor) {
-      EditorStore.setSelection({ floor: step.floor });
+    // sync floor to the target's floor
+    if (sel.floor !== targetFloor) {
+      EditorStore.setSelection({ floor: targetFloor });
     }
 
     // always zoom 5 for targets

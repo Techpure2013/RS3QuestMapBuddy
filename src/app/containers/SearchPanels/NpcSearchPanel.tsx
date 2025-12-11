@@ -20,7 +20,7 @@ export const NpcSearchPanel: React.FC = () => {
   }, []);
 
   const onNpcSelect = useCallback((npc: Npc) => {
-    EditorStore.setSelection({ targetType: "npc" });
+    EditorStore.setSelection({ targetType: "npc", floor: npc.floor });
     const sel = EditorStore.getState().selection;
 
     EditorStore.patchQuest((draft) => {
@@ -30,7 +30,7 @@ export const NpcSearchPanel: React.FC = () => {
       t.id = npc.id;
       t.npcName = npc.name;
       t.npcLocation = { lat: npc.lat, lng: npc.lng };
-      draft.questSteps[sel.selectedStep].floor = npc.floor;
+      t.floor = npc.floor;
     });
 
     EditorStore.setHighlights({ highlightedNpc: null });

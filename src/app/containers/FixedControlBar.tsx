@@ -101,7 +101,14 @@ const StepControlBar: React.FC = React.memo(() => {
     EditorStore.setSelection({ floor: nf });
     EditorStore.patchQuest((draft) => {
       const step = draft.questSteps[state.selection.selectedStep];
-      if (step) step.floor = nf;
+      if (!step) return;
+      // Set floor on the selected NPC or object
+      const { targetType, targetIndex } = state.selection;
+      if (targetType === "npc" && step.highlights.npc[targetIndex]) {
+        step.highlights.npc[targetIndex].floor = nf;
+      } else if (targetType === "object" && step.highlights.object[targetIndex]) {
+        step.highlights.object[targetIndex].floor = nf;
+      }
     });
   }, []);
 
@@ -112,7 +119,14 @@ const StepControlBar: React.FC = React.memo(() => {
     EditorStore.setSelection({ floor: nf });
     EditorStore.patchQuest((draft) => {
       const step = draft.questSteps[state.selection.selectedStep];
-      if (step) step.floor = nf;
+      if (!step) return;
+      // Set floor on the selected NPC or object
+      const { targetType, targetIndex } = state.selection;
+      if (targetType === "npc" && step.highlights.npc[targetIndex]) {
+        step.highlights.npc[targetIndex].floor = nf;
+      } else if (targetType === "object" && step.highlights.object[targetIndex]) {
+        step.highlights.object[targetIndex].floor = nf;
+      }
     });
   }, []);
 

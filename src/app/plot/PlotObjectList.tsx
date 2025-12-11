@@ -90,7 +90,7 @@ const PlotObjectItem: React.FC<PlotObjectItemProps> = ({
                 )}
                 {p.numberLabel && (
                   <span className="plot-object-point-meta">
-                    label: {p.numberLabel}
+                    Object Label: {p.numberLabel}
                   </span>
                 )}
               </div>

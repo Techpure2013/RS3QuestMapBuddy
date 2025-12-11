@@ -46,7 +46,7 @@ export const ObjectSearchPanel: React.FC = () => {
       t.objectLocation = [
         { lat: chosen.lat, lng: chosen.lng, color: "#FFFFFF", numberLabel: "" },
       ];
-      draft.questSteps[sel.selectedStep].floor = chosen.floor;
+      t.floor = chosen.floor;
     });
 
     EditorStore.setHighlights({ highlightedObject: null });

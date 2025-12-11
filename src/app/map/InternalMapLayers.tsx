@@ -232,10 +232,17 @@ const InternalMapLayers: React.FC = () => {
       EditorStore.setSelection({ floor: newFloor });
       EditorStore.patchQuest((draft) => {
         const step = draft.questSteps[selectedStep];
-        if (step) step.floor = newFloor;
+        if (!step) return;
+
+        // Set floor on the selected NPC or object
+        if (targetType === "npc" && step.highlights.npc[targetIndex]) {
+          step.highlights.npc[targetIndex].floor = newFloor;
+        } else if (targetType === "object" && step.highlights.object[targetIndex]) {
+          step.highlights.object[targetIndex].floor = newFloor;
+        }
       });
     },
-    [selectedStep]
+    [selectedStep, targetType, targetIndex]
   );
 
   const MapClickHandler: React.FC<{ disabled: boolean }> = ({ disabled }) => {
@@ -389,13 +396,17 @@ const InternalMapLayers: React.FC = () => {
 
     const npcs = (step.highlights.npc ?? [])
       .map((npc, idx) => {
+        // Only show NPC if its floor matches the current floor (default to 0 if not set)
+        const npcFloor = npc.floor ?? 0;
+        if (npcFloor !== floor) return null;
+
         const loc = convertManualCoordToVisual(npc.npcLocation);
         if (!loc || (loc.lat === 0 && loc.lng === 0)) return null;
 
         return {
           npcName: npc.npcName || `NPC ${idx + 1}`,
           npcLocation: { lat: loc.lat, lng: loc.lng },
-          id: npc.id, // ✅ ADD THIS LINE - Preserve the NPC ID!
+          id: npc.id,
           wanderRadius: npc.wanderRadius || {
             bottomLeft: { lat: 0, lng: 0 },
             topRight: { lat: 0, lng: 0 },
@@ -405,7 +416,7 @@ const InternalMapLayers: React.FC = () => {
       .filter((item): item is NonNullable<typeof item> => item !== null);
 
     return npcs.length > 0 ? { type: "npc", npcArray: npcs } : { type: "none" };
-  }, [quest, selection.selectedStep]);
+  }, [quest, selection.selectedStep, floor]);
 
   const objectGeometry = useMemo<SelectionGeometry>(() => {
     if (!quest) return { type: "none" };
@@ -414,6 +425,10 @@ const InternalMapLayers: React.FC = () => {
 
     const objects = (step.highlights.object ?? [])
       .map((obj, idx) => {
+        // Only show object if its floor matches the current floor (default to 0 if not set)
+        const objFloor = obj.floor ?? 0;
+        if (objFloor !== floor) return null;
+
         const locations: ObjectLocationPoint[] = (obj.objectLocation ?? [])
           .map((p): ObjectLocationPoint | null => {
             const v = convertManualCoordToVisual({ lat: p.lat, lng: p.lng });
@@ -441,14 +456,15 @@ const InternalMapLayers: React.FC = () => {
     return objects.length > 0
       ? { type: "object", objectArray: objects }
       : { type: "none" };
-  }, [quest, selection.selectedStep]);
+  }, [quest, selection.selectedStep, floor]);
 
   const highlightGeometry = useMemo<SelectionGeometry>(() => {
     const selObj = highlights.selectedObjectFromSearch;
     const hiNpc = highlights.highlightedNpc;
     const hiObj = highlights.highlightedObject;
 
-    if (selObj) {
+    // Only show selected object from search if on the same floor
+    if (selObj && selObj.floor === floor) {
       const visual = convertSearchedObjectCoordToVisual(selObj);
       return {
         type: "object",
@@ -465,7 +481,8 @@ const InternalMapLayers: React.FC = () => {
       };
     }
 
-    if (hiNpc) {
+    // Only show highlighted NPC if on the same floor
+    if (hiNpc && hiNpc.floor === floor) {
       const visual = convertSearchedNPCCoordToVisual(hiNpc);
       return {
         type: "npc",
@@ -482,7 +499,8 @@ const InternalMapLayers: React.FC = () => {
       };
     }
 
-    if (hiObj) {
+    // Only show highlighted object if on the same floor
+    if (hiObj && hiObj.floor === floor) {
       const visual = convertSearchedObjectCoordToVisual(hiObj);
       return {
         type: "object",
@@ -500,7 +518,7 @@ const InternalMapLayers: React.FC = () => {
     }
 
     return { type: "none" };
-  }, [highlights]);
+  }, [highlights, floor]);
 
   return (
     <>

@@ -597,6 +597,24 @@ svg.leaflet-image-layer.leaflet-interactive path {
   border: 1px solid #666;
 }
 
+/* Object label icon - override default div icon styling */
+.object-label-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Location item hover styles */
+.location-item {
+  cursor: pointer;
+}
+.location-item:hover {
+  background: #1e293b !important;
+  border-color: #00FF00 !important;
+}
+.location-item:hover span {
+  color: #e5e7eb !important;
+}
+
 /* Tooltip */
 /* Base styles for the element that has a tooltip */
 .leaflet-tooltip {

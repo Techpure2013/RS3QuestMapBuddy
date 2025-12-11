@@ -45,6 +45,8 @@ interface SelectionHighlightLayerProps {
   pane: string;
   selectedIndex?: number;
   isActiveType?: boolean;
+  hoveredTargetIndex?: number | null;
+  hoveredLocationIndex?: number | null;
 }
 
 const observedKeys = new Set<string>();
@@ -262,12 +264,28 @@ async function loadChatheadWithFallback(
 
 const SelectionHighlightLayerComponent: React.FC<
   SelectionHighlightLayerProps
-> = ({ geometry, pane, selectedIndex = -1, isActiveType = false }) => {
+> = ({
+  geometry,
+  pane,
+  selectedIndex = -1,
+  isActiveType = false,
+}) => {
   const map = useMap();
   const layerRef = useRef<L.LayerGroup | null>(null);
+  const hoverLayerRef = useRef<L.LayerGroup | null>(null);
   const [zoom, setZoom] = useState<number>(map.getZoom());
 
   const chatheadVariant = useEditorSelector((s) => s.selection.chatheadVariant);
+  // Get hover state from store
+  const storeHoveredTargetType = useEditorSelector(
+    (s) => s.selection.hoveredTargetType
+  );
+  const storeHoveredTargetIndex = useEditorSelector(
+    (s) => s.selection.hoveredTargetIndex
+  );
+  const storeHoveredLocationIndex = useEditorSelector(
+    (s) => s.selection.hoveredLocationIndex
+  );
 
   useEffect(() => {
     const handleZoom = () => setZoom(map.getZoom());
@@ -276,6 +294,89 @@ const SelectionHighlightLayerComponent: React.FC<
       map.off("zoomend", handleZoom);
     };
   }, [map]);
+
+  // Separate effect for hover highlights - doesn't clear main layer
+  useEffect(() => {
+    ensurePane(map, "selectionPane");
+
+    if (!hoverLayerRef.current) {
+      hoverLayerRef.current = new L.LayerGroup().addTo(map);
+    }
+    const hoverLayer = hoverLayerRef.current;
+    hoverLayer.clearLayers();
+
+    // Only show hover if the geometry type matches the hovered type
+    const shouldShowHover =
+      isActiveType &&
+      storeHoveredTargetIndex !== null &&
+      ((geometry.type === "npc" && storeHoveredTargetType === "npc") ||
+        (geometry.type === "object" && storeHoveredTargetType === "object"));
+
+    if (!shouldShowHover) return;
+
+    if (geometry.type === "npc" && storeHoveredTargetType === "npc") {
+      const npc = geometry.npcArray[storeHoveredTargetIndex!];
+      if (npc) {
+        const point = npc.npcLocation;
+        // Guard against invalid coordinates
+        if (point && typeof point.lat === "number" && typeof point.lng === "number" && !isNaN(point.lat) && !isNaN(point.lng)) {
+          // Use white if this is the selected NPC (already has green highlight), otherwise green
+          const isAlreadySelected = storeHoveredTargetIndex === selectedIndex;
+          const hoverColor = isAlreadySelected ? "#FFFFFF" : "#00FF00";
+          const tileBounds = L.latLngBounds(
+            [point.lat, point.lng],
+            [point.lat + 1, point.lng + 1]
+          );
+          L.rectangle(tileBounds, {
+            color: hoverColor,
+            weight: 3,
+            fillOpacity: 0,
+            pane: "selectionPane",
+            interactive: false,
+          }).addTo(hoverLayer);
+        }
+      }
+    } else if (
+      geometry.type === "object" &&
+      storeHoveredTargetType === "object"
+    ) {
+      const obj = geometry.objectArray[storeHoveredTargetIndex!];
+      if (obj && storeHoveredLocationIndex !== null) {
+        const loc = obj.objectLocation[storeHoveredLocationIndex];
+        // Guard against invalid coordinates
+        if (loc && typeof loc.lat === "number" && typeof loc.lng === "number" && !isNaN(loc.lat) && !isNaN(loc.lng)) {
+          // Use white if this is the selected object (already has green highlight), otherwise green
+          const isAlreadySelected = storeHoveredTargetIndex === selectedIndex;
+          const hoverColor = isAlreadySelected ? "#FFFFFF" : "#00FF00";
+          const tileBounds = L.latLngBounds(
+            [loc.lat, loc.lng],
+            [loc.lat + 1, loc.lng + 1]
+          );
+          L.rectangle(tileBounds, {
+            color: hoverColor,
+            weight: 3,
+            fillOpacity: 0,
+            pane: "selectionPane",
+            interactive: false,
+          }).addTo(hoverLayer);
+        }
+      }
+    }
+
+    return () => {
+      if (hoverLayerRef.current) {
+        hoverLayerRef.current.clearLayers();
+      }
+    };
+  }, [
+    map,
+    geometry,
+    isActiveType,
+    storeHoveredTargetType,
+    storeHoveredTargetIndex,
+    storeHoveredLocationIndex,
+    selectedIndex,
+  ]);
 
   useEffect(() => {
     let isActive = true;
@@ -428,17 +529,28 @@ const SelectionHighlightLayerComponent: React.FC<
       case "object": {
         console.log(`📊 Rendering ${geometry.objectArray.length} objects`);
 
-        const fallbackPoints = new Map<string, ObjectLocationRender>();
+        const fallbackPoints = new Map<
+          string,
+          ObjectLocationRender & { objIndex: number; locIndex: number; objectName: string }
+        >();
         const promises: Promise<void>[] = [];
 
         geometry.objectArray.forEach((obj, objIndex) => {
+          const isObjSelected = isActiveType && objIndex === selectedIndex;
           console.log(
-            `🔧 Processing object: ${obj.name} with ${obj.objectLocation.length} locations`
+            `🔧 Processing object: ${obj.name} with ${obj.objectLocation.length} locations (selected: ${isObjSelected})`
           );
 
           obj.objectLocation.forEach((loc, locIndex) => {
-            if (loc.lat === -16.5 && loc.lng === 16.5) {
-              console.warn(`⏭️ Skipping invalid object location: ${obj.name}`);
+            // Skip invalid coordinates (NaN, null, undefined, or sentinel values)
+            if (
+              typeof loc.lat !== "number" ||
+              typeof loc.lng !== "number" ||
+              isNaN(loc.lat) ||
+              isNaN(loc.lng) ||
+              (loc.lat === -16.5 && loc.lng === 16.5)
+            ) {
+              console.warn(`⏭️ Skipping invalid object location: ${obj.name} at index ${locIndex}`);
               return;
             }
 
@@ -457,16 +569,40 @@ const SelectionHighlightLayerComponent: React.FC<
                 if (!isActive) return;
                 console.log(`✅ Object image loaded: ${obj.name}`);
                 const icon = createObstacleIcon(resizedDataUrl);
-                L.marker([loc.lat + 0.5, loc.lng + 0.5], { icon, pane })
+                L.marker([loc.lat + 0.5, loc.lng + 0.5], {
+                  icon,
+                  pane,
+                  zIndexOffset: isObjSelected ? 1000 : 0,
+                })
                   .bindPopup(popupContent)
                   .addTo(currentLayer);
+
+                // Add selection highlight circle for selected object
+                if (isObjSelected) {
+                  L.circle([loc.lat + 0.5, loc.lng + 0.5], {
+                    radius: 0.7,
+                    color: "#00FF00",
+                    weight: 3,
+                    fillOpacity: 0,
+                    pane: "selectionPane",
+                    interactive: false,
+                  }).addTo(currentLayer);
+                }
               })
               .catch((err) => {
                 console.warn(
                   `⚠️ Object image failed: ${obj.name}`,
                   err instanceof Error ? err.message : err
                 );
-                fallbackPoints.set(`${loc.lng},${loc.lat}`, loc);
+                // Only add to fallback if coordinates are valid
+                if (typeof loc.lat === "number" && typeof loc.lng === "number" && !isNaN(loc.lat) && !isNaN(loc.lng)) {
+                  fallbackPoints.set(`${loc.lng},${loc.lat}`, {
+                    ...loc,
+                    objIndex,
+                    locIndex,
+                    objectName: obj.name,
+                  });
+                }
               });
 
             promises.push(p);
@@ -475,6 +611,14 @@ const SelectionHighlightLayerComponent: React.FC<
           const r = obj.objectRadius;
           if (
             r &&
+            typeof r.bottomLeft?.lat === "number" &&
+            typeof r.bottomLeft?.lng === "number" &&
+            typeof r.topRight?.lat === "number" &&
+            typeof r.topRight?.lng === "number" &&
+            !isNaN(r.bottomLeft.lat) &&
+            !isNaN(r.bottomLeft.lng) &&
+            !isNaN(r.topRight.lat) &&
+            !isNaN(r.topRight.lng) &&
             (r.bottomLeft.lat !== 0 ||
               r.topRight.lat !== 0 ||
               r.bottomLeft.lng !== 0 ||
@@ -496,49 +640,29 @@ const SelectionHighlightLayerComponent: React.FC<
           if (!isActive || fallbackPoints.size === 0) return;
 
           const fallbackLayer = L.layerGroup().addTo(currentLayer);
-          const unvisited = new Set(fallbackPoints.keys());
 
-          while (unvisited.size > 0) {
-            const startKey = unvisited.values().next().value as string;
-            const startPoint = fallbackPoints.get(startKey)!;
-            const targetStyleKey = `${startPoint.color || "path"}_${
-              startPoint.numberLabel || ""
-            }`;
-            const currentIsland: ObjectLocationRender[] = [];
-            const queue: string[] = [startKey];
-            unvisited.delete(startKey);
+          // Build a coord set of ALL fallback points for border detection
+          const allCoordsSet = new Set(
+            Array.from(fallbackPoints.values()).map((loc) => `${loc.lng},${loc.lat}`)
+          );
 
-            while (queue.length > 0) {
-              const currentKey = queue.shift()!;
-              const currentPoint = fallbackPoints.get(currentKey)!;
-              currentIsland.push(currentPoint);
-              const { lng, lat } = currentPoint;
-              const neighbors = [
-                `${lng},${lat - 1}`,
-                `${lng},${lat + 1}`,
-                `${lng - 1},${lat}`,
-                `${lng + 1},${lat}`,
-              ];
-              neighbors.forEach((neighborKey) => {
-                if (unvisited.has(neighborKey)) {
-                  const neighborPoint = fallbackPoints.get(neighborKey)!;
-                  const neighborStyleKey = `${neighborPoint.color || "path"}_${
-                    neighborPoint.numberLabel || ""
-                  }`;
-                  if (neighborStyleKey === targetStyleKey) {
-                    unvisited.delete(neighborKey);
-                    queue.push(neighborKey);
-                  }
-                }
-              });
+          // Track which labels we've already added
+          const addedLabels = new Set<string>();
+
+          // Render each tile individually
+          Array.from(fallbackPoints.values()).forEach((point) => {
+            // Skip points with invalid coordinates
+            if (typeof point.lat !== "number" || typeof point.lng !== "number" || isNaN(point.lat) || isNaN(point.lng)) {
+              return;
             }
 
-            const islandCoordSet = new Set(
-              currentIsland.map((loc) => `${loc.lng},${loc.lat}`)
-            );
-            const groupLabel = startPoint.numberLabel || "";
+            const displayLabel = point.numberLabel || "";
             const baseColor =
-              startPoint.color || (groupLabel ? "#A855F7" : "#C77C48");
+              point.color || (displayLabel ? "#A855F7" : "#C77C48");
+
+            // Check if this point belongs to a selected object
+            const isPointSelected =
+              isActiveType && point.objIndex === selectedIndex;
 
             const fillStyle: PathOptions & { pane: string } = {
               stroke: false,
@@ -548,79 +672,107 @@ const SelectionHighlightLayerComponent: React.FC<
               pane,
             };
             const borderInlineStyle: PathOptions & { pane: string } = {
-              color: baseColor,
-              weight: 2,
+              color: isPointSelected ? "#00FF00" : baseColor,
+              weight: isPointSelected ? 3 : 2,
               opacity: 1.0,
               pane,
             };
             const borderCasingStyle: PathOptions & { pane: string } = {
               color: "#000000",
-              weight: 4,
+              weight: isPointSelected ? 5 : 4,
               opacity: 0.6,
               pane,
             };
 
-            currentIsland.forEach((point) => {
-              const tileBounds = L.latLngBounds(
-                [point.lat, point.lng],
-                [point.lat + 1, point.lng + 1]
-              );
-              L.rectangle(tileBounds, fillStyle).addTo(fallbackLayer);
-            });
+            // Draw tile fill
+            const tileBounds = L.latLngBounds(
+              [point.lat, point.lng],
+              [point.lat + 1, point.lng + 1]
+            );
+            L.rectangle(tileBounds, fillStyle).addTo(fallbackLayer);
 
-            currentIsland.forEach((point) => {
-              const { lat, lng } = point;
-              const tl = L.latLng(lat, lng);
-              const tr = L.latLng(lat, lng + 1);
-              const bl = L.latLng(lat + 1, lng);
-              const br = L.latLng(lat + 1, lng + 1);
-              if (!islandCoordSet.has(`${lng},${lat - 1}`)) {
-                L.polyline([tl, tr], borderCasingStyle).addTo(fallbackLayer);
-                L.polyline([tl, tr], borderInlineStyle).addTo(fallbackLayer);
-              }
-              if (!islandCoordSet.has(`${lng},${lat + 1}`)) {
-                L.polyline([bl, br], borderCasingStyle).addTo(fallbackLayer);
-                L.polyline([bl, br], borderInlineStyle).addTo(fallbackLayer);
-              }
-              if (!islandCoordSet.has(`${lng - 1},${lat}`)) {
-                L.polyline([tl, bl], borderCasingStyle).addTo(fallbackLayer);
-                L.polyline([tl, bl], borderInlineStyle).addTo(fallbackLayer);
-              }
-              if (!islandCoordSet.has(`${lng + 1},${lat}`)) {
-                L.polyline([tr, br], borderCasingStyle).addTo(fallbackLayer);
-                L.polyline([tr, br], borderInlineStyle).addTo(fallbackLayer);
-              }
-            });
+            // Draw borders only on edges (where there's no adjacent tile)
+            const { lat, lng } = point;
+            const tl = L.latLng(lat, lng);
+            const tr = L.latLng(lat, lng + 1);
+            const bl = L.latLng(lat + 1, lng);
+            const br = L.latLng(lat + 1, lng + 1);
 
-            if (groupLabel) {
-              const centerLat =
-                currentIsland.reduce((s, l) => s + l.lat, 0) /
-                currentIsland.length;
-              const centerLng =
-                currentIsland.reduce((s, l) => s + l.lng, 0) /
-                currentIsland.length;
-
-              const tileSizeAtZoom0 =
-                map.project([1, 1], 0).x - map.project([0, 0], 0).x;
-              const currentTileSize = tileSizeAtZoom0 * Math.pow(2, zoom);
-              const dynamicFontSize = Math.max(
-                8,
-                Math.min(16, currentTileSize / 4.5)
-              );
-
-              const labelIcon = L.divIcon({
-                className: "object-label-icon",
-                iconSize: [currentTileSize, currentTileSize],
-                iconAnchor: [currentTileSize / 2, currentTileSize / 2],
-                html: `<div class="object-label-container"><span class="object-label-text" style="font-size: ${dynamicFontSize}px;">${groupLabel}</span></div>`,
-              });
-              L.marker([centerLat + 0.5, centerLng + 0.5], {
-                icon: labelIcon,
-                interactive: false,
-                pane: "selectionLabelPane",
-              }).addTo(fallbackLayer);
+            if (!allCoordsSet.has(`${lng},${lat - 1}`)) {
+              L.polyline([tl, tr], borderCasingStyle).addTo(fallbackLayer);
+              L.polyline([tl, tr], borderInlineStyle).addTo(fallbackLayer);
             }
-          }
+            if (!allCoordsSet.has(`${lng},${lat + 1}`)) {
+              L.polyline([bl, br], borderCasingStyle).addTo(fallbackLayer);
+              L.polyline([bl, br], borderInlineStyle).addTo(fallbackLayer);
+            }
+            if (!allCoordsSet.has(`${lng - 1},${lat}`)) {
+              L.polyline([tl, bl], borderCasingStyle).addTo(fallbackLayer);
+              L.polyline([tl, bl], borderInlineStyle).addTo(fallbackLayer);
+            }
+            if (!allCoordsSet.has(`${lng + 1},${lat}`)) {
+              L.polyline([tr, br], borderCasingStyle).addTo(fallbackLayer);
+              L.polyline([tr, br], borderInlineStyle).addTo(fallbackLayer);
+            }
+          });
+
+          // Add labels - one per unique object, positioned at center of ALL tiles for that object
+          // If any tile in the object has a numberLabel, use that as the label text
+          Array.from(fallbackPoints.values()).forEach((point) => {
+            const objectName = point.objectName;
+            // Skip if we've already processed this object
+            if (addedLabels.has(objectName)) return;
+
+            addedLabels.add(objectName);
+
+            // Find ALL tiles for this object (with valid coordinates)
+            const allTilesForObject = Array.from(fallbackPoints.values()).filter(
+              (p) => p.objectName === objectName &&
+                typeof p.lat === "number" && typeof p.lng === "number" &&
+                !isNaN(p.lat) && !isNaN(p.lng)
+            );
+
+            // Skip if no valid tiles found
+            if (allTilesForObject.length === 0) return;
+
+            // Find the first numberLabel from any tile in this object
+            const labelText = allTilesForObject.find((p) => p.numberLabel)?.numberLabel || "";
+
+            // Only show label if at least one tile has a numberLabel
+            if (!labelText) return;
+
+            // Calculate bounding box of ALL tiles for this object
+            const minLat = Math.min(...allTilesForObject.map((l) => l.lat));
+            const maxLat = Math.max(...allTilesForObject.map((l) => l.lat));
+            const minLng = Math.min(...allTilesForObject.map((l) => l.lng));
+            const maxLng = Math.max(...allTilesForObject.map((l) => l.lng));
+
+            // Center of bounding box (tiles span from coord to coord+1)
+            const centerLat = (minLat + maxLat + 1) / 2;
+            const centerLng = (minLng + maxLng + 1) / 2;
+
+            const tileSizeAtZoom0 =
+              map.project([1, 1], 0).x - map.project([0, 0], 0).x;
+            const currentTileSize = tileSizeAtZoom0 * Math.pow(2, zoom);
+
+            const dynamicFontSize = Math.max(
+              8,
+              Math.min(16, currentTileSize / 4.5)
+            );
+
+            // Simple centered label at the bounding box center of ALL tiles with this label
+            const labelIcon = L.divIcon({
+              className: "object-label-icon",
+              iconSize: [0, 0],
+              iconAnchor: [0, 0],
+              html: `<div style="position: absolute; transform: translate(-50%, -50%); white-space: nowrap;"><span style="font-size: ${dynamicFontSize}px; color: #000000; font-weight: bold; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0 0 4px rgba(255,255,255,0.8);">${labelText}</span></div>`,
+            });
+            L.marker([centerLat, centerLng], {
+              icon: labelIcon,
+              interactive: false,
+              pane: "selectionLabelPane",
+            }).addTo(fallbackLayer);
+          });
         });
         break;
       }
@@ -633,7 +785,15 @@ const SelectionHighlightLayerComponent: React.FC<
         layerRef.current.clearLayers();
       }
     };
-  }, [geometry, map, pane, zoom, isActiveType, selectedIndex, chatheadVariant]);
+  }, [
+    geometry,
+    map,
+    pane,
+    zoom,
+    isActiveType,
+    selectedIndex,
+    chatheadVariant,
+  ]);
 
   return null;
 };

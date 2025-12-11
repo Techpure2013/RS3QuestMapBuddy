@@ -50,6 +50,25 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
   };
   const captureMode = EditorStore.getState().ui.captureMode;
 
+  const setHoveredPoint = useCallback(
+    (
+      type: "npc" | "object" | null,
+      targetIdx: number | null,
+      locationIdx?: number | null
+    ) => {
+      EditorStore.setSelection({
+        hoveredTargetType: type,
+        hoveredTargetIndex: targetIdx,
+        hoveredLocationIndex: locationIdx ?? null,
+      });
+    },
+    []
+  );
+
+  const clearHover = useCallback(() => {
+    setHoveredPoint(null, null, null);
+  }, [setHoveredPoint]);
+
   const clearCurrentRadius = useCallback(() => {
     const s = EditorStore.getState();
     const stepIdx = s.selection.selectedStep;
@@ -321,6 +340,8 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
                     key={`npc-${index}`}
                     className={isActive ? "active" : ""}
                     onClick={() => onTargetIndexChange(index, "npc")}
+                    onMouseEnter={() => setHoveredPoint("npc", index, null)}
+                    onMouseLeave={clearHover}
                     style={{
                       display: "flex",
                       justifyContent: "space-between",
@@ -412,6 +433,10 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
                           <li
                             key={locIndex}
                             className="location-item"
+                            onMouseEnter={() =>
+                              setHoveredPoint("object", index, locIndex)
+                            }
+                            onMouseLeave={clearHover}
                             style={{
                               display: "flex",
                               justifyContent: "space-between",
@@ -421,6 +446,7 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
                               borderRadius: 6,
                               marginBottom: 4,
                               border: "1px solid #1f2937",
+                              transition: "border-color 0.15s ease",
                             }}
                           >
                             <span style={{ fontSize: 11, color: "#9ca3af" }}>

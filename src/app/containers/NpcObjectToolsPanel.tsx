@@ -95,17 +95,28 @@ export const NpcObjectToolsPanel: React.FC = () => {
 
   const handleTargetIndexChange = useCallback(
     (i: number, type: "npc" | "object") => {
+      // Get the floor of the selected item
+      const step = quest?.questSteps?.[sel.selectedStep];
+      let itemFloor = 0;
+      if (step) {
+        if (type === "npc") {
+          itemFloor = step.highlights.npc?.[i]?.floor ?? 0;
+        } else {
+          itemFloor = step.highlights.object?.[i]?.floor ?? 0;
+        }
+      }
+
       if (type !== sel.targetType) {
-        EditorStore.setSelection({ targetType: type, targetIndex: i });
+        EditorStore.setSelection({ targetType: type, targetIndex: i, floor: itemFloor });
       } else {
-        EditorStore.setSelection({ targetIndex: i });
+        EditorStore.setSelection({ targetIndex: i, floor: itemFloor });
       }
       EditorStore.setUi({
         captureMode: type === "npc" ? "single" : "multi-point",
       });
       requestFlyToCurrentTargetAt(5, "selection");
     },
-    [sel.targetType]
+    [sel.targetType, quest, sel.selectedStep]
   );
 
   const handleCopyList = useCallback(() => {
@@ -477,6 +488,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
   }, [sel.selectedStep, sel.targetIndex]);
 
   const onAddNpc = useCallback(() => {
+    const currentFloor = sel.floor;
     EditorStore.patchQuest((draft) => {
       draft.questSteps[sel.selectedStep].highlights.npc.push({
         id: null as unknown as number,
@@ -495,13 +507,14 @@ export const NpcObjectToolsPanel: React.FC = () => {
             lng: null as unknown as number,
           },
         },
+        floor: currentFloor,
       });
     });
     const nextIndex =
       quest?.questSteps?.[sel.selectedStep]?.highlights.npc?.length ?? 1 - 1;
     EditorStore.setSelection({ targetType: "npc", targetIndex: nextIndex });
     EditorStore.setUi({ captureMode: "single" });
-  }, [sel.selectedStep, quest]);
+  }, [sel.selectedStep, sel.floor, quest]);
 
   const onDeleteNpc = useCallback(() => {
     EditorStore.patchQuest((draft) => {
@@ -513,6 +526,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
   }, [sel.selectedStep, sel.targetIndex]);
 
   const onAddObject = useCallback(() => {
+    const currentFloor = sel.floor;
     EditorStore.patchQuest((draft) => {
       draft.questSteps[sel.selectedStep].highlights.object.push({
         name: "",
@@ -527,6 +541,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
             lng: undefined as unknown as number,
           },
         },
+        floor: currentFloor,
       });
     });
     const nextIndex =
@@ -534,7 +549,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
     EditorStore.setSelection({ targetType: "object", targetIndex: nextIndex });
 
     EditorStore.setUi({ captureMode: "multi-point" });
-  }, [sel.selectedStep, quest]);
+  }, [sel.selectedStep, sel.floor, quest]);
 
   return (
     <>
@@ -720,38 +735,39 @@ export const NpcObjectToolsPanel: React.FC = () => {
         <ObjectToolsSection
           selectedObjectColor={currentTargetObjectData.color}
           onSelectedObjectColorChange={(color) => {
+            // Store in UI state for next point to be added
+            EditorStore.setUi({ selectedObjectColor: color });
+            // Update ALL points in the object so the entire island has the same color
             EditorStore.patchQuest((draft) => {
               const t =
                 draft.questSteps[sel.selectedStep]?.highlights.object?.[
                   sel.targetIndex
                 ];
               if (!t) return;
-              const list = t.objectLocation ?? (t.objectLocation = []);
-              if (list.length === 0) {
-                list.push({ lat: 0, lng: 0, color, numberLabel: "" });
-              } else {
-                list[list.length - 1].color = color;
+              const list = t.objectLocation;
+              if (list && list.length > 0) {
+                list.forEach((point) => {
+                  point.color = color;
+                });
               }
             });
           }}
           objectNumberLabel={currentTargetObjectData.numberLabel}
           onObjectNumberLabelChange={(label) => {
+            // Store in UI state for next point to be added
+            EditorStore.setUi({ objectNumberLabel: label });
+            // Update ALL points in the object so the label centering works correctly
             EditorStore.patchQuest((draft) => {
               const t =
                 draft.questSteps[sel.selectedStep]?.highlights.object?.[
                   sel.targetIndex
                 ];
               if (!t) return;
-              const list = t.objectLocation ?? (t.objectLocation = []);
-              if (list.length === 0) {
-                list.push({
-                  lat: 0,
-                  lng: 0,
-                  color: "#FFFFFF",
-                  numberLabel: label,
+              const list = t.objectLocation;
+              if (list && list.length > 0) {
+                list.forEach((point) => {
+                  point.numberLabel = label;
                 });
-              } else {
-                list[list.length - 1].numberLabel = label;
               }
             });
           }}
