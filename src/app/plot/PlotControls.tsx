@@ -123,12 +123,14 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
   const [playerName, setPlayerName] = useState<string>(
     restricted?.defaultPlayerName ?? ""
   );
+
   useEffect(() => {
     const player = window.localStorage.getItem("plotPlayerName");
     if (player) {
       setPlayerName(player);
     }
   }, []);
+
   const totalSteps = quest?.questSteps.length ?? 0;
   const step = quest?.questSteps?.[sel.selectedStep];
   const stepDescription = step?.stepDescription ?? "";
@@ -163,8 +165,36 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
       const nextStepData = state.quest?.questSteps[next];
       const nextStepId = nextStepData?.stepId ?? -1;
 
+      // Sanity check: log step navigation details
+      console.log("[PlotControls] prevStep:", {
+        from: curr,
+        to: next,
+        stepId: nextStepId,
+        hasStepData: !!nextStepData,
+        stepIdType: typeof nextStepData?.stepId,
+      });
+      if (nextStepId <= 0) {
+        console.warn("[PlotControls] Warning: Invalid stepId for step", next + 1);
+      }
+
+      // Check if the new step has any valid targets
+      const hasValidTarget =
+        (nextStepData?.highlights.npc ?? []).some(
+          (n) =>
+            n.npcLocation &&
+            Number.isFinite(n.npcLocation.lat) &&
+            Number.isFinite(n.npcLocation.lng)
+        ) ||
+        (nextStepData?.highlights.object ?? []).some((o) =>
+          (o.objectLocation ?? []).some(
+            (loc) => loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
+          )
+        );
+
       EditorStore.autoSelectFirstValidTargetForStep(next);
-      requestFlyToCurrentTargetAt(5, "auto-select");
+      if (hasValidTarget) {
+        requestFlyToCurrentTargetAt(5, "auto-select");
+      }
 
       // Update restrictedMode with new stepId
       EditorStore.enableRestrictedMode({
@@ -176,9 +206,15 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
         allowRadius: true,
       });
 
-      // Update URL to reflect new step (1-indexed)
+      // Update URL to reflect new step (1-indexed) with actual stepId
       if (questName) {
-        navigate(`/plot/${encodeURIComponent(questName)}/${next + 1}`, {
+        const url =
+          nextStepId > 0
+            ? `/plot/${encodeURIComponent(questName)}/${
+                next + 1
+              }?stepId=${nextStepId}`
+            : `/plot/${encodeURIComponent(questName)}/${next + 1}`;
+        navigate(url, {
           replace: true,
         });
       }
@@ -194,8 +230,36 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
       const nextStepData = state.quest?.questSteps[next];
       const nextStepId = nextStepData?.stepId ?? -1;
 
+      // Sanity check: log step navigation details
+      console.log("[PlotControls] nextStep:", {
+        from: curr,
+        to: next,
+        stepId: nextStepId,
+        hasStepData: !!nextStepData,
+        stepIdType: typeof nextStepData?.stepId,
+      });
+      if (nextStepId <= 0) {
+        console.warn("[PlotControls] Warning: Invalid stepId for step", next + 1);
+      }
+
+      // Check if the new step has any valid targets
+      const hasValidTarget =
+        (nextStepData?.highlights.npc ?? []).some(
+          (n) =>
+            n.npcLocation &&
+            Number.isFinite(n.npcLocation.lat) &&
+            Number.isFinite(n.npcLocation.lng)
+        ) ||
+        (nextStepData?.highlights.object ?? []).some((o) =>
+          (o.objectLocation ?? []).some(
+            (loc) => loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
+          )
+        );
+
       EditorStore.autoSelectFirstValidTargetForStep(next);
-      requestFlyToCurrentTargetAt(5, "auto-select");
+      if (hasValidTarget) {
+        requestFlyToCurrentTargetAt(5, "auto-select");
+      }
 
       // Update restrictedMode with new stepId
       EditorStore.enableRestrictedMode({
@@ -207,9 +271,15 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
         allowRadius: true,
       });
 
-      // Update URL to reflect new step (1-indexed)
+      // Update URL to reflect new step (1-indexed) with actual stepId
       if (questName) {
-        navigate(`/plot/${encodeURIComponent(questName)}/${next + 1}`, {
+        const url =
+          nextStepId > 0
+            ? `/plot/${encodeURIComponent(questName)}/${
+                next + 1
+              }?stepId=${nextStepId}`
+            : `/plot/${encodeURIComponent(questName)}/${next + 1}`;
+        navigate(url, {
           replace: true,
         });
       }
@@ -287,7 +357,7 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
           </button>
         </div>
 
-        <div className="plot-step-controls">
+        <div className="plot-step-controls" style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <button
             onClick={prevStep}
             className="control-btn"
@@ -297,7 +367,7 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
           >
             ←
           </button>
-          <label className="plot-step-label">
+          <label className="plot-step-label" style={{ margin: "0 4px" }}>
             Step: {sel.selectedStep + 1} / {totalSteps}
           </label>
           <button

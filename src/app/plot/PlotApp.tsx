@@ -17,6 +17,7 @@ import { PlotGuide } from "./PlotGuide";
 import { clearImageCache } from "../../idb/imageCache";
 
 import PlotTargetsPanel from "./PlotTargetPanel";
+import PlotBottomBar from "./PlotBottomBar";
 
 type RouteParams = { questName: string; step: string };
 
@@ -115,6 +116,7 @@ export const PlotApp: React.FC = () => {
       left={left}
       right={right}
       center={center}
+      controlBar={<PlotBottomBar />}
       initialLeftWidth={360}
       minLeftWidth={260}
       storageKey="rs3qb_plot_workspace_v1"
