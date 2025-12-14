@@ -142,7 +142,15 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
     EditorStore.setSelection({ floor: nf });
     EditorStore.patchQuest((draft) => {
       const s = draft.questSteps[state.selection.selectedStep];
-      if (s) s.floor = nf;
+      if (!s) return;
+      s.floor = nf;
+      // Also set floor on the currently selected NPC or object
+      const { targetType, targetIndex } = state.selection;
+      if (targetType === "npc" && s.highlights.npc[targetIndex]) {
+        s.highlights.npc[targetIndex].floor = nf;
+      } else if (targetType === "object" && s.highlights.object[targetIndex]) {
+        s.highlights.object[targetIndex].floor = nf;
+      }
     });
   }, []);
 
@@ -153,7 +161,15 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
     EditorStore.setSelection({ floor: nf });
     EditorStore.patchQuest((draft) => {
       const s = draft.questSteps[state.selection.selectedStep];
-      if (s) s.floor = nf;
+      if (!s) return;
+      s.floor = nf;
+      // Also set floor on the currently selected NPC or object
+      const { targetType, targetIndex } = state.selection;
+      if (targetType === "npc" && s.highlights.npc[targetIndex]) {
+        s.highlights.npc[targetIndex].floor = nf;
+      } else if (targetType === "object" && s.highlights.object[targetIndex]) {
+        s.highlights.object[targetIndex].floor = nf;
+      }
     });
   }, []);
 
