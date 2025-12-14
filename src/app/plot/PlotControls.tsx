@@ -177,24 +177,26 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
         console.warn("[PlotControls] Warning: Invalid stepId for step", next + 1);
       }
 
+      // Helper to match editorStore's hasValidLoc logic
+      const hasValidLoc = (loc?: { lat: number; lng: number } | null) =>
+        !!loc && (loc.lat !== 0 || loc.lng !== 0);
+
       // Check if the new step has any valid targets
+      const npcs = nextStepData?.highlights.npc ?? [];
+      const objects = nextStepData?.highlights.object ?? [];
       const hasValidTarget =
-        (nextStepData?.highlights.npc ?? []).some(
-          (n) =>
-            n.npcLocation &&
-            Number.isFinite(n.npcLocation.lat) &&
-            Number.isFinite(n.npcLocation.lng)
-        ) ||
-        (nextStepData?.highlights.object ?? []).some((o) =>
-          (o.objectLocation ?? []).some(
-            (loc) => loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
-          )
-        );
+        npcs.some((n) => hasValidLoc(n.npcLocation)) ||
+        objects.some((o) => (o.objectLocation ?? []).some((loc) => hasValidLoc(loc)));
+
+      console.log("[PlotControls] prevStep targets:", {
+        npcs: npcs.length,
+        objects: objects.length,
+        hasValidTarget,
+        npcLocations: npcs.map((n) => n.npcLocation),
+        objectLocations: objects.map((o) => o.objectLocation),
+      });
 
       EditorStore.autoSelectFirstValidTargetForStep(next);
-      if (hasValidTarget) {
-        requestFlyToCurrentTargetAt(5, "auto-select");
-      }
 
       // Update restrictedMode with new stepId
       EditorStore.enableRestrictedMode({
@@ -217,6 +219,14 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
         navigate(url, {
           replace: true,
         });
+      }
+
+      // Delay fly request to ensure state updates have propagated
+      if (hasValidTarget) {
+        console.log("[PlotControls] Flying to target (delayed)...");
+        setTimeout(() => {
+          requestFlyToCurrentTargetAt(5, "auto-select");
+        }, 50);
       }
     }
   }, [navigate, questName]);
@@ -242,24 +252,26 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
         console.warn("[PlotControls] Warning: Invalid stepId for step", next + 1);
       }
 
+      // Helper to match editorStore's hasValidLoc logic
+      const hasValidLoc = (loc?: { lat: number; lng: number } | null) =>
+        !!loc && (loc.lat !== 0 || loc.lng !== 0);
+
       // Check if the new step has any valid targets
+      const npcs = nextStepData?.highlights.npc ?? [];
+      const objects = nextStepData?.highlights.object ?? [];
       const hasValidTarget =
-        (nextStepData?.highlights.npc ?? []).some(
-          (n) =>
-            n.npcLocation &&
-            Number.isFinite(n.npcLocation.lat) &&
-            Number.isFinite(n.npcLocation.lng)
-        ) ||
-        (nextStepData?.highlights.object ?? []).some((o) =>
-          (o.objectLocation ?? []).some(
-            (loc) => loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
-          )
-        );
+        npcs.some((n) => hasValidLoc(n.npcLocation)) ||
+        objects.some((o) => (o.objectLocation ?? []).some((loc) => hasValidLoc(loc)));
+
+      console.log("[PlotControls] nextStep targets:", {
+        npcs: npcs.length,
+        objects: objects.length,
+        hasValidTarget,
+        npcLocations: npcs.map((n) => n.npcLocation),
+        objectLocations: objects.map((o) => o.objectLocation),
+      });
 
       EditorStore.autoSelectFirstValidTargetForStep(next);
-      if (hasValidTarget) {
-        requestFlyToCurrentTargetAt(5, "auto-select");
-      }
 
       // Update restrictedMode with new stepId
       EditorStore.enableRestrictedMode({
@@ -282,6 +294,14 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
         navigate(url, {
           replace: true,
         });
+      }
+
+      // Delay fly request to ensure state updates have propagated
+      if (hasValidTarget) {
+        console.log("[PlotControls] Flying to target (delayed)...");
+        setTimeout(() => {
+          requestFlyToCurrentTargetAt(5, "auto-select");
+        }, 50);
       }
     }
   }, [navigate, questName]);

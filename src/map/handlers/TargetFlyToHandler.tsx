@@ -25,12 +25,22 @@ const TargetFlyToHandler: React.FC = () => {
     tokenRef.current = req.token;
 
     const { quest, selection: sel } = EditorStore.getState();
+    console.log("[TargetFlyToHandler] flyTo request:", {
+      source: req.source,
+      selectedStep: sel.selectedStep,
+      targetType: sel.targetType,
+      targetIndex: sel.targetIndex,
+      hasQuest: !!quest,
+    });
+
     if (!quest) {
+      console.log("[TargetFlyToHandler] No quest, aborting");
       EditorStore.setUi({ flyToTargetRequest: undefined });
       return;
     }
     const step = quest.questSteps?.[sel.selectedStep];
     if (!step?.highlights) {
+      console.log("[TargetFlyToHandler] No step highlights, aborting");
       EditorStore.setUi({ flyToTargetRequest: undefined });
       return;
     }
@@ -43,8 +53,13 @@ const TargetFlyToHandler: React.FC = () => {
       const npc = (step.highlights.npc ?? [])[sel.targetIndex] as
         | NpcHighlight
         | undefined;
+      console.log("[TargetFlyToHandler] NPC target:", {
+        npc: npc?.npcName,
+        location: npc?.npcLocation,
+      });
       if (npc?.npcLocation) {
         const v = convertManualCoordToVisual(npc.npcLocation);
+        console.log("[TargetFlyToHandler] Visual coords:", v);
         if (v) {
           centerLat = v.lat - 2;
           centerLng = v.lng + 8;
@@ -58,6 +73,11 @@ const TargetFlyToHandler: React.FC = () => {
       const pts = (obj?.objectLocation ?? []).filter(
         (p) => p && (p.lat !== 0 || p.lng !== 0)
       );
+      console.log("[TargetFlyToHandler] Object target:", {
+        obj: obj?.name,
+        locations: obj?.objectLocation,
+        validPts: pts.length,
+      });
       if (pts.length > 0) {
         // average of all valid object tiles in visual space, then +0.5,+0.5
         let sumLat = 0;
@@ -75,9 +95,11 @@ const TargetFlyToHandler: React.FC = () => {
     }
 
     if (centerLat === null || centerLng === null) {
+      console.log("[TargetFlyToHandler] No valid center, aborting");
       EditorStore.setUi({ flyToTargetRequest: undefined });
       return;
     }
+    console.log("[TargetFlyToHandler] Flying to:", { centerLat, centerLng, targetFloor });
 
     // sync floor to the target's floor
     if (sel.floor !== targetFloor) {

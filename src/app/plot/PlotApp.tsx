@@ -47,7 +47,6 @@ export const PlotApp: React.FC = () => {
       );
 
       EditorStore.autoSelectFirstValidTargetForStep(boundedIndex);
-      requestFlyToCurrentTargetAt(5, "quest-load");
 
       const stepMeta = (bundle.steps as PlotQuestBundle["steps"])[boundedIndex];
       const stepId = stepMeta?.stepId ?? -1;
@@ -60,6 +59,12 @@ export const PlotApp: React.FC = () => {
         allowObject: true,
         allowRadius: true,
       });
+
+      // Delay fly request to ensure state updates have propagated
+      setTimeout(() => {
+        console.log("[PlotApp] Flying to target after load...");
+        requestFlyToCurrentTargetAt(5, "quest-load");
+      }, 100);
 
       console.log("[PlotApp] Quest loaded successfully");
     } catch (e) {
