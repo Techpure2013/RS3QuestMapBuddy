@@ -222,6 +222,7 @@ export type QuestStep = {
   additionalStepInformation?: string[];
   highlights: QuestHighlights;
   floor: number;
+  stepId?: number;
 };
 
 export type QuestImage = {
@@ -284,6 +285,7 @@ type StepIn = {
   additionalStepInformation?: unknown;
   highlights?: QuestHighlights;
   floor?: number;
+  stepId?: number;
 };
 export type PlotQuestBundle = {
   quest: { name: string };
@@ -368,6 +370,7 @@ export function bundleToQuest(b: QuestBundle): Quest {
       additionalStepInformation: toLinesArray(s.additionalStepInformation),
       highlights: s.highlights ?? { npc: [], object: [] },
       floor: Number.isFinite(s.floor as number) ? (s.floor as number) : 0,
+      stepId: typeof s.stepId === "number" ? s.stepId : undefined,
     })),
     questDetails: {
       Quest: b.details.Quest,

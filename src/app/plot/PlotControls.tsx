@@ -1,6 +1,10 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEditorSelector } from "../../state/useEditorSelector";
-import { EditorStore } from "../../state/editorStore";
+import {
+  EditorStore,
+  requestFlyToCurrentTargetAt,
+} from "../../state/editorStore";
 
 import {
   NpcLocation,
@@ -108,6 +112,8 @@ function validatePlotState(playerName: string): ValidationResult {
 }
 
 const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
+  const navigate = useNavigate();
+  const { questName } = useParams<{ questName: string; step: string }>();
   const quest = useEditorSelector((s) => s.quest);
   const sel = useEditorSelector((s) => s.selection);
   const ui = useEditorSelector((s) => s.ui);
@@ -117,7 +123,12 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
   const [playerName, setPlayerName] = useState<string>(
     restricted?.defaultPlayerName ?? ""
   );
-
+  useEffect(() => {
+    const player = window.localStorage.getItem("plotPlayerName");
+    if (player) {
+      setPlayerName(player);
+    }
+  }, []);
   const totalSteps = quest?.questSteps.length ?? 0;
   const step = quest?.questSteps?.[sel.selectedStep];
   const stepDescription = step?.stepDescription ?? "";
@@ -144,12 +155,73 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
     });
   }, []);
 
+  const prevStep = useCallback(() => {
+    const state = EditorStore.getState();
+    const curr = state.selection.selectedStep;
+    if (curr > 0) {
+      const next = curr - 1;
+      const nextStepData = state.quest?.questSteps[next];
+      const nextStepId = nextStepData?.stepId ?? -1;
+
+      EditorStore.autoSelectFirstValidTargetForStep(next);
+      requestFlyToCurrentTargetAt(5, "auto-select");
+
+      // Update restrictedMode with new stepId
+      EditorStore.enableRestrictedMode({
+        enabled: true,
+        stepIndex: next,
+        stepId: nextStepId,
+        allowNpc: true,
+        allowObject: true,
+        allowRadius: true,
+      });
+
+      // Update URL to reflect new step (1-indexed)
+      if (questName) {
+        navigate(`/plot/${encodeURIComponent(questName)}/${next + 1}`, {
+          replace: true,
+        });
+      }
+    }
+  }, [navigate, questName]);
+
+  const nextStep = useCallback(() => {
+    const state = EditorStore.getState();
+    const curr = state.selection.selectedStep;
+    const max = (state.quest?.questSteps.length ?? 1) - 1;
+    if (curr < max) {
+      const next = curr + 1;
+      const nextStepData = state.quest?.questSteps[next];
+      const nextStepId = nextStepData?.stepId ?? -1;
+
+      EditorStore.autoSelectFirstValidTargetForStep(next);
+      requestFlyToCurrentTargetAt(5, "auto-select");
+
+      // Update restrictedMode with new stepId
+      EditorStore.enableRestrictedMode({
+        enabled: true,
+        stepIndex: next,
+        stepId: nextStepId,
+        allowNpc: true,
+        allowObject: true,
+        allowRadius: true,
+      });
+
+      // Update URL to reflect new step (1-indexed)
+      if (questName) {
+        navigate(`/plot/${encodeURIComponent(questName)}/${next + 1}`, {
+          replace: true,
+        });
+      }
+    }
+  }, [navigate, questName]);
+
   const handleSubmit = useCallback(async () => {
     if (submitting) return;
 
     const normalizedName = playerName.trim();
     if (normalizedName.length === 0) return;
-
+    window.localStorage.setItem("plotPlayerName", normalizedName);
     const validation = validatePlotState(normalizedName);
     if (validation.ok === false) {
       showErrorToast(validation.error);
@@ -215,9 +287,29 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
           </button>
         </div>
 
-        <label className="plot-step-label">
-          Step: {sel.selectedStep + 1} / {totalSteps}
-        </label>
+        <div className="plot-step-controls">
+          <button
+            onClick={prevStep}
+            className="control-btn"
+            type="button"
+            disabled={sel.selectedStep === 0}
+            title="Previous step"
+          >
+            ←
+          </button>
+          <label className="plot-step-label">
+            Step: {sel.selectedStep + 1} / {totalSteps}
+          </label>
+          <button
+            onClick={nextStep}
+            className="control-btn"
+            type="button"
+            disabled={sel.selectedStep >= totalSteps - 1}
+            title="Next step"
+          >
+            →
+          </button>
+        </div>
 
         <div className="plot-step-description" title={stepDescription}>
           {stepDescription}
