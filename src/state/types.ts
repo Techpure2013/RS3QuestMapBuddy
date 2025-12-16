@@ -220,6 +220,7 @@ export type QuestStep = {
   itemsNeeded?: string[];
   itemsRecommended?: string[];
   additionalStepInformation?: string[];
+  dialogOptions?: string[];
   highlights: QuestHighlights;
   floor: number;
   stepId?: number;
@@ -254,6 +255,7 @@ export type NormalizedQuestStep = {
   itemsNeeded: string[];
   itemsRecommended: string[];
   additionalStepInformation: string[];
+  dialogOptions: string[];
   highlights: QuestHighlights;
   floor: number;
 };
@@ -283,6 +285,7 @@ type StepIn = {
   itemsNeeded?: unknown;
   itemsRecommended?: unknown;
   additionalStepInformation?: unknown;
+  dialogOptions?: unknown;
   highlights?: QuestHighlights;
   floor?: number;
   stepId?: number;
@@ -305,6 +308,7 @@ export type PlotQuestBundle = {
     itemsNeeded: string[];
     itemsRecommended: string[];
     additionalStepInformation: string[];
+    dialogOptions?: string[];
     highlights: {
       npc: unknown[];
       object: unknown[];
@@ -368,6 +372,7 @@ export function bundleToQuest(b: QuestBundle): Quest {
       itemsNeeded: toLinesArray(s.itemsNeeded),
       itemsRecommended: toLinesArray(s.itemsRecommended),
       additionalStepInformation: toLinesArray(s.additionalStepInformation),
+      dialogOptions: toLinesArray(s.dialogOptions),
       highlights: s.highlights ?? { npc: [], object: [] },
       floor: Number.isFinite(s.floor as number) ? (s.floor as number) : 0,
       stepId: typeof s.stepId === "number" ? s.stepId : undefined,
@@ -402,6 +407,7 @@ export type PanelId =
   | "itemsNeeded"
   | "itemsRecommended"
   | "additionalInfo"
+  | "dialogOptions"
   | "questDetails"
   | "questImagePaste"
   | "questImages"
@@ -441,6 +447,7 @@ export function questToBundle(q: Quest): QuestBundleNormalized {
       itemsNeeded: toLinesArray(s.itemsNeeded),
       itemsRecommended: toLinesArray(s.itemsRecommended),
       additionalStepInformation: toLinesArray(s.additionalStepInformation),
+      dialogOptions: toLinesArray(s.dialogOptions),
       highlights: s.highlights ?? { npc: [], object: [] },
       floor: Number.isFinite(s.floor) ? s.floor : 0,
     })),

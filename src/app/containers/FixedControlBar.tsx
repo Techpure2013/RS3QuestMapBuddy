@@ -158,6 +158,7 @@ const StepControlBar: React.FC = React.memo(() => {
         itemsNeeded: [],
         itemsRecommended: [],
         additionalStepInformation: [],
+        dialogOptions: [],
       });
 
       // capture the authoritative index from the draft

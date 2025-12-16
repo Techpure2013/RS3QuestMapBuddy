@@ -9,6 +9,7 @@ export function createDefaultQuest(): Quest {
         itemsNeeded: [],
         itemsRecommended: [],
         additionalStepInformation: [],
+        dialogOptions: [],
         highlights: { npc: [], object: [] },
         floor: 0,
       },

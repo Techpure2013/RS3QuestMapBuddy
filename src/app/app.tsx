@@ -9,6 +9,7 @@ import QuestDetailsPanel from "./containers/QuestDetailsPanel";
 import ItemsNeededPanel from "./containers/ItemsNeededPanel";
 import ItemsRecommendedPanel from "./containers/ItemsRecommendedPanel";
 import AdditionalInfoPanel from "./containers/AdditionalInfoPanel";
+import DialogOptionsPanel from "./containers/DialogOptionsPanel";
 import QuestImagesPanelContainer from "./containers/QuestImagesPanel";
 import NpcObjectToolsPanel from "./containers/NpcObjectToolsPanel";
 import QuestImagePastePanel from "./containers/QuestImagePastePanel";
@@ -31,7 +32,7 @@ const App: React.FC = () => {
       <>
         {isAuthed && (
           <>
-            <Panel defaultOpen={true} title="Quest Details" compact>
+            <Panel defaultOpen={false} title="Quest Details" compact>
               <QuestDetailsPanel />
             </Panel>
             <Panel defaultOpen={false} title="Items Needed" compact>
@@ -43,10 +44,13 @@ const App: React.FC = () => {
             <Panel defaultOpen={false} title="Additional Information" compact>
               <AdditionalInfoPanel />
             </Panel>
-            <Panel defaultOpen={true} title="Quest Rewards" compact>
+            <Panel defaultOpen={false} title="Dialog Options" compact>
+              <DialogOptionsPanel />
+            </Panel>
+            <Panel defaultOpen={false} title="Quest Rewards" compact>
               <QuestRewardsPanel />
             </Panel>
-            <Panel defaultOpen={true} title="NPC/Object Tools" compact>
+            <Panel defaultOpen={false} title="NPC/Object Tools" compact>
               <NpcObjectToolsPanel />
             </Panel>
           </>
@@ -116,7 +120,7 @@ const App: React.FC = () => {
       minRightWidth={280}
       maxLeftWidth={600}
       maxRightWidth={600}
-      storageKey="rs3qb_workspace_v2"
+      storageKey="rs3qb_workspace_v3"
     />
   );
 };
