@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { autoGrow } from "./../../state/editorStore";
+import { RichText } from "../../utils/RichText";
+import { FormattingToolbar } from "../components/FormattingToolbar";
 
 export interface AdditionalInfoSectionProps {
   value: string;
@@ -33,6 +35,11 @@ export const AdditionalInfoSection: React.FC<AdditionalInfoSectionProps> = ({
     <div className="panel-section">
       <div className="item-list full-width">
         <strong>Additional Info</strong>
+        <FormattingToolbar
+          textareaRef={taRef}
+          value={localValue}
+          onChange={setLocalValue}
+        />
         <textarea
           ref={taRef}
           value={localValue}
@@ -45,7 +52,9 @@ export const AdditionalInfoSection: React.FC<AdditionalInfoSectionProps> = ({
         {lines.length > 0 && (
           <ul style={{ marginTop: 6, paddingLeft: 18 }}>
             {lines.map((s, i) => (
-              <li key={`${i}-${s}`}>{s}</li>
+              <li key={`${i}-${s}`}>
+                <RichText>{s}</RichText>
+              </li>
             ))}
           </ul>
         )}

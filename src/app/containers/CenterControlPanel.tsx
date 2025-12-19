@@ -22,6 +22,9 @@ import { clearObservedChatheads } from "idb/chatheadsObserved";
 import { useAuth } from "./../../state/useAuth";
 import { fetchMe } from "./../../api/auth";
 import { buildPlotLink } from "utils/plotLinks";
+import { RichText, stripFormatting } from "../../utils/RichText";
+import { ColorPicker } from "../components/ColorPicker";
+import { ImagePicker } from "../components/ImagePicker";
 
 export const CenterControls: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -36,6 +39,8 @@ export const CenterControls: React.FC = () => {
   const [showEditor, setShowEditor] = useState<boolean>(true);
   const [localStepDesc, setLocalStepDesc] = useState(stepDescription);
   const [hasStepChanges, setHasStepChanges] = useState(false);
+  const [showColorPicker, setShowColorPicker] = useState(false);
+  const [showImagePicker, setShowImagePicker] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   useEffect(() => {
     const handler = (e: Event) => {
@@ -82,6 +87,42 @@ export const CenterControls: React.FC = () => {
     setLocalStepDesc(stepDescription);
     setHasStepChanges(false);
   };
+
+  // Wrap selected text with formatting markers
+  const wrapSelection = (prefix: string, suffix: string) => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const text = localStepDesc;
+    const selectedText = text.substring(start, end);
+
+    const newText =
+      text.substring(0, start) +
+      prefix +
+      selectedText +
+      suffix +
+      text.substring(end);
+
+    handleStepChange(newText);
+
+    // Restore cursor position after the wrapped text
+    requestAnimationFrame(() => {
+      textarea.focus();
+      const newCursorPos = start + prefix.length + selectedText.length + suffix.length;
+      textarea.setSelectionRange(newCursorPos, newCursorPos);
+    });
+  };
+
+  const formatButtons = [
+    { label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 } },
+    { label: "I", title: "Italic (*text*)", prefix: "*", suffix: "*", style: { fontStyle: "italic" } },
+    { label: "U", title: "Underline (__text__)", prefix: "__", suffix: "__", style: { textDecoration: "underline" } },
+    { label: "S", title: "Strikethrough (~~text~~)", prefix: "~~", suffix: "~~", style: { textDecoration: "line-through" } },
+    { label: "x²", title: "Superscript (^text or ^(text))", prefix: "^(", suffix: ")", style: { fontSize: "0.7em" } },
+    { label: "🔗", title: "Link ([text](url))", prefix: "[", suffix: "](https://)", style: {} },
+  ] as const;
 
   // Enhanced quest picker with cleanup
   const handlePick = useCallback(async (name: string) => {
@@ -449,6 +490,129 @@ export const CenterControls: React.FC = () => {
                   </span>
                 )}
               </label>
+              {/* Formatting Toolbar */}
+              <div
+                style={{
+                  display: "flex",
+                  gap: 4,
+                  marginBottom: 6,
+                  flexWrap: "wrap",
+                }}
+              >
+                {formatButtons.map((btn) => (
+                  <button
+                    key={btn.label}
+                    type="button"
+                    title={btn.title}
+                    onClick={() => wrapSelection(btn.prefix, btn.suffix)}
+                    style={{
+                      padding: "3px 8px",
+                      fontSize: "0.75rem",
+                      background: "#374151",
+                      border: "1px solid #4b5563",
+                      borderRadius: 3,
+                      color: "#e5e7eb",
+                      cursor: "pointer",
+                      minWidth: 28,
+                      ...btn.style,
+                    }}
+                  >
+                    {btn.label}
+                  </button>
+                ))}
+                {/* Clear formatting button */}
+                <button
+                  type="button"
+                  title="Remove all formatting"
+                  onClick={() => {
+                    const stripped = stripFormatting(localStepDesc);
+                    if (stripped !== localStepDesc) {
+                      handleStepChange(stripped);
+                    }
+                  }}
+                  style={{
+                    padding: "3px 8px",
+                    fontSize: "0.75rem",
+                    background: "#7f1d1d",
+                    border: "1px solid #991b1b",
+                    borderRadius: 3,
+                    color: "#fca5a5",
+                    cursor: "pointer",
+                  }}
+                >
+                  ✕ Clear
+                </button>
+                {/* Color picker button */}
+                <div style={{ position: "relative" }}>
+                  <button
+                    type="button"
+                    title="Color ([#hex]{text} or [r,g,b]{text})"
+                    onClick={() => setShowColorPicker(!showColorPicker)}
+                    style={{
+                      padding: "3px 8px",
+                      fontSize: "0.75rem",
+                      background: "linear-gradient(90deg, #ef4444, #f59e0b, #22c55e, #3b82f6, #a855f7)",
+                      border: showColorPicker ? "2px solid #fff" : "1px solid #4b5563",
+                      borderRadius: 3,
+                      color: "#fff",
+                      cursor: "pointer",
+                      textShadow: "0 1px 2px rgba(0,0,0,0.5)",
+                    }}
+                  >
+                    Color
+                  </button>
+                  {showColorPicker && (
+                    <ColorPicker
+                      onSelect={(colorCode) => {
+                        wrapSelection(`${colorCode}{`, "}");
+                        setShowColorPicker(false);
+                      }}
+                      onClose={() => setShowColorPicker(false)}
+                    />
+                  )}
+                </div>
+                {/* Image picker button */}
+                <div style={{ position: "relative" }}>
+                  <button
+                    type="button"
+                    title="Insert image (![alt](url) or ![alt|size](url))"
+                    onClick={() => setShowImagePicker(!showImagePicker)}
+                    style={{
+                      padding: "3px 8px",
+                      fontSize: "0.75rem",
+                      background: "#065f46",
+                      border: showImagePicker ? "2px solid #fff" : "1px solid #047857",
+                      borderRadius: 3,
+                      color: "#6ee7b7",
+                      cursor: "pointer",
+                    }}
+                  >
+                    🖼 Image
+                  </button>
+                  {showImagePicker && (
+                    <ImagePicker
+                      onSelect={(markup) => {
+                        const textarea = textareaRef.current;
+                        if (!textarea) return;
+
+                        // Insert after selected text (or at cursor if no selection)
+                        const end = textarea.selectionEnd;
+                        const newText = localStepDesc.substring(0, end) + markup + localStepDesc.substring(end);
+                        handleStepChange(newText);
+
+                        setShowImagePicker(false);
+
+                        requestAnimationFrame(() => {
+                          textarea.focus();
+                          const newPos = end + markup.length;
+                          textarea.setSelectionRange(newPos, newPos);
+                        });
+                      }}
+                      onClose={() => setShowImagePicker(false)}
+                    />
+                  )}
+                </div>
+              </div>
               <textarea
                 ref={textareaRef}
                 value={localStepDesc}
@@ -482,6 +646,35 @@ export const CenterControls: React.FC = () => {
                   lineHeight: 1.5,
                 }}
               />
+              {/* Rich Text Preview */}
+              {localStepDesc && (
+                <div
+                  style={{
+                    marginTop: 8,
+                    padding: "8px 10px",
+                    background: "#111827",
+                    border: "1px solid #374151",
+                    borderRadius: 4,
+                    fontSize: "0.8125rem",
+                    lineHeight: 1.5,
+                    color: "#e5e7eb",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "0.625rem",
+                      color: "#6b7280",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.05em",
+                      display: "block",
+                      marginBottom: 4,
+                    }}
+                  >
+                    Preview
+                  </span>
+                  <RichText>{localStepDesc}</RichText>
+                </div>
+              )}
             </div>
 
             {hasStepChanges && (

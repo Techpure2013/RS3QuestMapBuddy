@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { autoGrow } from "./../../state/editorStore";
+import { RichText } from "../../utils/RichText";
+import { FormattingToolbar } from "../components/FormattingToolbar";
 
 export interface ItemsNeededSectionProps {
   value: string;
@@ -33,6 +35,12 @@ export const ItemsNeededSection: React.FC<ItemsNeededSectionProps> = ({
     <div className="panel-section">
       <div className="item-list">
         <strong>Items Needed</strong>
+        <FormattingToolbar
+          textareaRef={taRef}
+          value={localValue}
+          onChange={setLocalValue}
+          defaultCollapsed={true}
+        />
         <textarea
           ref={taRef}
           value={localValue}
@@ -45,7 +53,7 @@ export const ItemsNeededSection: React.FC<ItemsNeededSectionProps> = ({
         {lines.length > 0 && (
           <ul style={{ marginTop: 6, paddingLeft: 18 }}>
             {lines.map((s, i) => (
-              <li key={`${i}-${s}`}>{s}</li>
+              <li key={`${i}-${s}`}><RichText>{s}</RichText></li>
             ))}
           </ul>
         )}
