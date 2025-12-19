@@ -5,6 +5,7 @@ import {
   EditorStore,
   requestFlyToCurrentTargetAt,
 } from "../../state/editorStore";
+import { RichText, stripFormatting } from "../../utils/RichText";
 
 import {
   NpcLocation,
@@ -417,8 +418,8 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
           </button>
         </div>
 
-        <div className="plot-step-description" title={stepDescription}>
-          {stepDescription}
+        <div className="plot-step-description" title={stripFormatting(stepDescription)}>
+          <RichText>{stepDescription}</RichText>
         </div>
       </div>
 
