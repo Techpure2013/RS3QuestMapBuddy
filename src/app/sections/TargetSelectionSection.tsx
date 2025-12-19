@@ -2,10 +2,10 @@ import React, { useCallback } from "react";
 import type { Clipboard, Quest } from "../../state/types";
 import type { NpcHighlight, ObjectHighlight } from "../../state/types";
 import EditorStore from "./../../state/editorStore";
+import { useEditorSelector } from "../../state/useEditorSelector";
 import {
   IconCircle,
   IconCircleDashed,
-  IconVectorTriangle,
 } from "@tabler/icons-react";
 
 interface TargetSelectionSectionProps {
@@ -48,7 +48,8 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
     bottomLeft: { lat: null, lng: null },
     topRight: { lat: null, lng: null },
   };
-  const captureMode = EditorStore.getState().ui.captureMode;
+  const captureMode = useEditorSelector((s) => s.ui.captureMode);
+  const radiusFirstCorner = useEditorSelector((s) => s.ui.radiusFirstCorner);
 
   const setHoveredPoint = useCallback(
     (
@@ -165,36 +166,60 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
       ? "Radius on (Object)"
       : "Switch to Radius (Object)";
 
+  // Get current radius values for selected target
+  const currentTarget =
+    targetType === "npc"
+      ? npcItems[targetIndex]
+      : objectItems[targetIndex];
+  const currentRadius =
+    targetType === "npc"
+      ? (currentTarget as NpcHighlight)?.wanderRadius
+      : (currentTarget as ObjectHighlight)?.objectRadius;
+  const hasBL = currentRadius?.bottomLeft?.lat != null && currentRadius?.bottomLeft?.lng != null;
+  const hasTR = currentRadius?.topRight?.lat != null && currentRadius?.topRight?.lng != null;
+
   return (
     <div className="panel-section" style={{ paddingTop: 6, paddingBottom: 6 }}>
-      {/* Top row: Type + Radius + Name */}
+      {/* Row 1: Name field (full width) */}
+      <div className="control-group" style={{ margin: 0, marginBottom: 10 }}>
+        <label style={labelCss}>Name</label>
+        <input
+          type="text"
+          value={targetNameValue}
+          onChange={(e) => onTargetNameChange(e.target.value)}
+          placeholder={targetType === "npc" ? "NPC Name" : "Object Name"}
+          style={{ ...inputCss, width: "100%" }}
+        />
+      </div>
+
+      {/* Row 2: Type + Mode + Radius controls */}
       <div
         className="editor-controls-grid"
         style={{
-          display: "grid",
-          gridTemplateColumns: "0.75fr auto 1fr",
-          gap: 10,
+          display: "flex",
+          gap: 8,
           alignItems: "end",
+          flexWrap: "wrap",
         }}
       >
         {/* Target Type */}
         <div className="control-group" style={{ margin: 0 }}>
-          <label style={labelCss}>Target Type</label>
+          <label style={labelCss}>Type</label>
           <select
             value={targetType}
             onChange={(e) =>
               onTargetTypeChange(e.target.value as "npc" | "object")
             }
-            style={inputCss}
+            style={{ ...inputCss, minWidth: 80 }}
           >
             <option value="npc">NPC</option>
             <option value="object">Object</option>
           </select>
         </div>
 
-        {/* Radius pill toggle */}
+        {/* Radius toggle */}
         <div className="control-group" style={{ margin: 0 }}>
-          <label style={{ ...labelCss, visibility: "hidden" }}>Radius</label>
+          <label style={labelCss}>Radius</label>
           <button
             onClick={toggleRadius}
             type="button"
@@ -214,102 +239,119 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
             {isRadius ? (
               <>
                 <IconCircle style={iconStyle} />
-                <span style={{ fontWeight: 600, letterSpacing: 0.2 }}>
-                  Radius
-                </span>
+                <span style={{ fontWeight: 600, letterSpacing: 0.2 }}>ON</span>
               </>
             ) : (
               <>
                 <IconCircleDashed style={iconStyle} />
-                <span style={{ fontWeight: 600, color: "#cbd5e1" }}>
-                  Radius
-                </span>
+                <span style={{ fontWeight: 600, color: "#cbd5e1" }}>OFF</span>
               </>
             )}
           </button>
         </div>
 
-        {/* Name */}
+        {/* Clear Radius button */}
         <div className="control-group" style={{ margin: 0 }}>
-          <label style={labelCss}>Name</label>
-          <div style={{ display: "flex", gap: 8 }}>
-            <input
-              type="text"
-              value={targetNameValue}
-              onChange={(e) => onTargetNameChange(e.target.value)}
-              placeholder={targetType === "npc" ? "NPC Name" : "Object Name"}
-              style={{ ...inputCss, width: "100%" }}
-            />
-            {/* Optional: small hint badge showing current capture mode */}
+          <label style={{ ...labelCss, visibility: "hidden" }}>Clear</label>
+          <button
+            onClick={clearCurrentRadius}
+            type="button"
+            title="Clear the radius for the selected target"
+            style={{
+              height: 28,
+              padding: "0 10px",
+              borderRadius: 6,
+              border: "1px solid #4b5563",
+              background: "#1f2937",
+              color: "#e5e7eb",
+              cursor: "pointer",
+              fontSize: 12,
+              transition: "all 120ms ease",
+            }}
+            onMouseEnter={(e) => {
+              Object.assign(e.currentTarget.style, {
+                borderColor: "#ef4444",
+                color: "#fecaca",
+                background: "#7f1d1d",
+              });
+            }}
+            onMouseLeave={(e) => {
+              Object.assign(e.currentTarget.style, {
+                borderColor: "#4b5563",
+                color: "#e5e7eb",
+                background: "#1f2937",
+              });
+            }}
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+
+      {/* Row 3: Radius display - show when in radius mode OR when radius is set */}
+      {(isRadius || (hasBL && hasTR)) && (
+        <div
+          style={{
+            display: "flex",
+            gap: 8,
+            marginTop: 8,
+            padding: "8px 10px",
+            background: hasBL && hasTR ? "rgba(16, 185, 129, 0.05)" : "rgba(59, 130, 246, 0.05)",
+            border: hasBL && hasTR ? "1px solid #10b981" : "1px solid #3b82f6",
+            borderRadius: 6,
+          }}
+        >
+          {/* Bottom Left */}
+          <div style={{ flex: 1 }}>
             <div
-              title={
-                isRadius
-                  ? "Placing: Radius"
-                  : targetType === "npc"
-                  ? "Placing: Single point"
-                  : "Placing: Multi points"
-              }
               style={{
-                alignSelf: "center",
-                minWidth: 92,
-                height: 28,
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 6,
-                padding: "0 10px",
-                borderRadius: 8,
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: 0.3,
-                border: "1px solid #334155",
-                background: "#0b1220",
-                color: isRadius ? "#10b981" : "#60a5fa",
+                fontSize: 10,
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: 0.5,
+                color: radiusFirstCorner || (hasBL && hasTR) ? "#34d399" : "#9ca3af",
+                marginBottom: 2,
               }}
             >
-              <IconVectorTriangle
-                style={{ width: 12, height: 12, opacity: 0.9 }}
-              />
-              {isRadius ? "Radius" : targetType === "npc" ? "Single" : "Points"}
+              Bottom Left
+            </div>
+            <div style={{ fontSize: 11, color: "#e5e7eb", fontFamily: "monospace" }}>
+              {hasBL && hasTR ? (
+                `${currentRadius!.bottomLeft!.lat}, ${currentRadius!.bottomLeft!.lng}`
+              ) : radiusFirstCorner ? (
+                `${radiusFirstCorner.lat}, ${radiusFirstCorner.lng}`
+              ) : (
+                <span style={{ color: "#6b7280", fontStyle: "italic" }}>Click map...</span>
+              )}
+            </div>
+          </div>
+
+          {/* Top Right */}
+          <div style={{ flex: 1 }}>
+            <div
+              style={{
+                fontSize: 10,
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: 0.5,
+                color: hasBL && hasTR ? "#34d399" : "#9ca3af",
+                marginBottom: 2,
+              }}
+            >
+              Top Right
+            </div>
+            <div style={{ fontSize: 11, color: "#e5e7eb", fontFamily: "monospace" }}>
+              {hasBL && hasTR ? (
+                `${currentRadius!.topRight!.lat}, ${currentRadius!.topRight!.lng}`
+              ) : radiusFirstCorner ? (
+                <span style={{ color: "#6b7280", fontStyle: "italic" }}>Click again...</span>
+              ) : (
+                <span style={{ color: "#6b7280", fontStyle: "italic" }}>—</span>
+              )}
             </div>
           </div>
         </div>
-        <button
-          onClick={clearCurrentRadius}
-          type="button"
-          title="Clear the radius for the selected target"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 6,
-            height: 28,
-            padding: "0 10px",
-            marginLeft: 8,
-            borderRadius: 999,
-            border: "1px solid #4b5563",
-            background: "linear-gradient(180deg,#111827,#0b1220)",
-            color: "#e5e7eb",
-            cursor: "pointer",
-            transition: "all 120ms ease",
-          }}
-          onMouseEnter={(e) => {
-            Object.assign(e.currentTarget.style, {
-              borderColor: "#ef4444",
-              color: "#fecaca",
-              boxShadow: "0 0 0 1px rgba(239,68,68,0.15)",
-            });
-          }}
-          onMouseLeave={(e) => {
-            Object.assign(e.currentTarget.style, {
-              borderColor: "#4b5563",
-              color: "#e5e7eb",
-              boxShadow: "none",
-            });
-          }}
-        >
-          Clear Radius
-        </button>
-      </div>
+      )}
 
       {/* Targets */}
       <div className="control-group" style={{ marginTop: 10 }}>

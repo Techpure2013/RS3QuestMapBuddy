@@ -115,6 +115,7 @@ export interface UiState {
   restrictedMode?: RestrictedPlotMode | null;
   previewSubmission?: PlotSubmissionRow | null;
   isAlt1Environment: boolean;
+  radiusFirstCorner?: { lat: number; lng: number } | null;
 }
 
 export interface HighlightNpc {

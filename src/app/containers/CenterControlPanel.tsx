@@ -41,7 +41,9 @@ export const CenterControls: React.FC = () => {
   const [hasStepChanges, setHasStepChanges] = useState(false);
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [showImagePicker, setShowImagePicker] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => {
     const handler = (e: Event) => {
       const ce = e as CustomEvent<{ show: boolean }>;
@@ -72,20 +74,63 @@ export const CenterControls: React.FC = () => {
 
   const handleStepChange = (text: string) => {
     setLocalStepDesc(text);
-    setHasStepChanges(text !== stepDescription);
+    const changed = text !== stepDescription;
+    setHasStepChanges(changed);
+    setSaveStatus("idle");
+
+    // Clear existing auto-save timer
+    if (autoSaveTimerRef.current) {
+      clearTimeout(autoSaveTimerRef.current);
+    }
+
+    // Set new auto-save timer (1.5 seconds after last change)
+    if (changed) {
+      autoSaveTimerRef.current = setTimeout(() => {
+        setSaveStatus("saving");
+        EditorStore.patchQuest((draft) => {
+          const step = draft.questSteps[selection.selectedStep];
+          if (step) step.stepDescription = text;
+        });
+        setHasStepChanges(false);
+        setSaveStatus("saved");
+        // Reset status after 2 seconds
+        setTimeout(() => setSaveStatus("idle"), 2000);
+      }, 1500);
+    }
   };
 
+  // Cleanup timer on unmount or step change
+  useEffect(() => {
+    return () => {
+      if (autoSaveTimerRef.current) {
+        clearTimeout(autoSaveTimerRef.current);
+      }
+    };
+  }, [selection.selectedStep]);
+
   const handleStepSave = () => {
+    // Clear auto-save timer since we're saving manually
+    if (autoSaveTimerRef.current) {
+      clearTimeout(autoSaveTimerRef.current);
+    }
+    setSaveStatus("saving");
     EditorStore.patchQuest((draft) => {
       const step = draft.questSteps[selection.selectedStep];
       if (step) step.stepDescription = localStepDesc;
     });
     setHasStepChanges(false);
+    setSaveStatus("saved");
+    setTimeout(() => setSaveStatus("idle"), 2000);
   };
 
   const handleStepDiscard = () => {
+    // Clear auto-save timer
+    if (autoSaveTimerRef.current) {
+      clearTimeout(autoSaveTimerRef.current);
+    }
     setLocalStepDesc(stepDescription);
     setHasStepChanges(false);
+    setSaveStatus("idle");
   };
 
   // Wrap selected text with formatting markers
@@ -475,7 +520,7 @@ export const CenterControls: React.FC = () => {
                 }}
               >
                 Step {selection.selectedStep + 1}
-                {hasStepChanges && (
+                {hasStepChanges && saveStatus === "idle" && (
                   <span
                     style={{
                       marginLeft: 6,
@@ -486,7 +531,35 @@ export const CenterControls: React.FC = () => {
                       borderRadius: 3,
                     }}
                   >
-                    Modified
+                    Typing...
+                  </span>
+                )}
+                {saveStatus === "saving" && (
+                  <span
+                    style={{
+                      marginLeft: 6,
+                      fontSize: "0.625rem",
+                      color: "#60a5fa",
+                      background: "rgba(96, 165, 250, 0.1)",
+                      padding: "2px 6px",
+                      borderRadius: 3,
+                    }}
+                  >
+                    Saving...
+                  </span>
+                )}
+                {saveStatus === "saved" && (
+                  <span
+                    style={{
+                      marginLeft: 6,
+                      fontSize: "0.625rem",
+                      color: "#34d399",
+                      background: "rgba(52, 211, 153, 0.1)",
+                      padding: "2px 6px",
+                      borderRadius: 3,
+                    }}
+                  >
+                    ✓ Saved
                   </span>
                 )}
               </label>
@@ -680,25 +753,15 @@ export const CenterControls: React.FC = () => {
             {hasStepChanges && (
               <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 <button
-                  onClick={handleStepSave}
-                  className="button--add"
-                  style={{
-                    fontSize: "0.6875rem",
-                    whiteSpace: "nowrap",
-                    padding: "5px 10px",
-                  }}
-                >
-                  Save (Ctrl+S)
-                </button>
-                <button
                   onClick={handleStepDiscard}
                   style={{
                     fontSize: "0.6875rem",
                     whiteSpace: "nowrap",
                     padding: "5px 10px",
                   }}
+                  title="Discard changes (Esc)"
                 >
-                  Discard (Esc)
+                  Discard
                 </button>
               </div>
             )}

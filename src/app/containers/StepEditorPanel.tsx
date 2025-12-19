@@ -2,7 +2,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import { EditorStore } from "../../state/editorStore";
-import { IconDeviceFloppy, IconX } from "@tabler/icons-react";
+import { IconX } from "@tabler/icons-react";
 
 export const StepEditorPanel: React.FC = () => {
   const quest = useEditorSelector((s) => s.quest);
@@ -13,13 +13,25 @@ export const StepEditorPanel: React.FC = () => {
 
   const [localValue, setLocalValue] = useState(stepDescription);
   const [hasChanges, setHasChanges] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Sync with store when step changes
   useEffect(() => {
     setLocalValue(stepDescription);
     setHasChanges(false);
+    setSaveStatus("idle");
   }, [sel.selectedStep, stepDescription]);
+
+  // Cleanup timer on unmount or step change
+  useEffect(() => {
+    return () => {
+      if (autoSaveTimerRef.current) {
+        clearTimeout(autoSaveTimerRef.current);
+      }
+    };
+  }, [sel.selectedStep]);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -32,27 +44,58 @@ export const StepEditorPanel: React.FC = () => {
   const handleChange = useCallback(
     (text: string) => {
       setLocalValue(text);
-      setHasChanges(text !== stepDescription);
+      const changed = text !== stepDescription;
+      setHasChanges(changed);
+      setSaveStatus("idle");
+
+      // Clear existing auto-save timer
+      if (autoSaveTimerRef.current) {
+        clearTimeout(autoSaveTimerRef.current);
+      }
+
+      // Set new auto-save timer (1.5 seconds after last change)
+      if (changed) {
+        autoSaveTimerRef.current = setTimeout(() => {
+          setSaveStatus("saving");
+          EditorStore.patchQuest((draft) => {
+            const step = draft.questSteps[sel.selectedStep];
+            if (step) step.stepDescription = text;
+          });
+          setHasChanges(false);
+          setSaveStatus("saved");
+          setTimeout(() => setSaveStatus("idle"), 2000);
+        }, 1500);
+      }
     },
-    [stepDescription]
+    [stepDescription, sel.selectedStep]
   );
 
   const handleSave = useCallback(() => {
+    if (autoSaveTimerRef.current) {
+      clearTimeout(autoSaveTimerRef.current);
+    }
+    setSaveStatus("saving");
     EditorStore.patchQuest((draft) => {
       const step = draft.questSteps[sel.selectedStep];
       if (step) step.stepDescription = localValue;
     });
     setHasChanges(false);
+    setSaveStatus("saved");
+    setTimeout(() => setSaveStatus("idle"), 2000);
   }, [localValue, sel.selectedStep]);
 
   const handleDiscard = useCallback(() => {
+    if (autoSaveTimerRef.current) {
+      clearTimeout(autoSaveTimerRef.current);
+    }
     setLocalValue(stepDescription);
     setHasChanges(false);
+    setSaveStatus("idle");
   }, [stepDescription]);
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-      // Ctrl+S or Cmd+S to save
+      // Ctrl+S or Cmd+S to save immediately
       if ((e.ctrlKey || e.metaKey) && e.key === "s") {
         e.preventDefault();
         handleSave();
@@ -92,7 +135,7 @@ export const StepEditorPanel: React.FC = () => {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          {hasChanges && (
+          {hasChanges && saveStatus === "idle" && (
             <span
               style={{
                 fontSize: "0.6875rem",
@@ -103,51 +146,59 @@ export const StepEditorPanel: React.FC = () => {
                 fontWeight: 500,
               }}
             >
-              Modified
+              Typing...
+            </span>
+          )}
+          {saveStatus === "saving" && (
+            <span
+              style={{
+                fontSize: "0.6875rem",
+                color: "#60a5fa",
+                background: "rgba(96, 165, 250, 0.1)",
+                padding: "2px 6px",
+                borderRadius: 4,
+                fontWeight: 500,
+              }}
+            >
+              Saving...
+            </span>
+          )}
+          {saveStatus === "saved" && (
+            <span
+              style={{
+                fontSize: "0.6875rem",
+                color: "#34d399",
+                background: "rgba(52, 211, 153, 0.1)",
+                padding: "2px 6px",
+                borderRadius: 4,
+                fontWeight: 500,
+              }}
+            >
+              ✓ Saved
             </span>
           )}
         </div>
 
         <div style={{ display: "flex", gap: 6 }}>
           {hasChanges && (
-            <>
-              <button
-                onClick={handleDiscard}
-                style={{
-                  padding: "4px 8px",
-                  fontSize: "0.75rem",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 4,
-                  background: "#374151",
-                  border: "1px solid #4b5563",
-                  borderRadius: 4,
-                  color: "#d1d5db",
-                }}
-                title="Discard changes (Esc)"
-              >
-                <IconX size={14} />
-                Discard
-              </button>
-              <button
-                onClick={handleSave}
-                style={{
-                  padding: "4px 8px",
-                  fontSize: "0.75rem",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 4,
-                  background: "#10b981",
-                  border: "1px solid #059669",
-                  borderRadius: 4,
-                  color: "white",
-                }}
-                title="Save changes (Ctrl+S)"
-              >
-                <IconDeviceFloppy size={14} />
-                Save
-              </button>
-            </>
+            <button
+              onClick={handleDiscard}
+              style={{
+                padding: "4px 8px",
+                fontSize: "0.75rem",
+                display: "flex",
+                alignItems: "center",
+                gap: 4,
+                background: "#374151",
+                border: "1px solid #4b5563",
+                borderRadius: 4,
+                color: "#d1d5db",
+              }}
+              title="Discard changes (Esc)"
+            >
+              <IconX size={14} />
+              Discard
+            </button>
           )}
         </div>
       </div>
@@ -209,7 +260,7 @@ export const StepEditorPanel: React.FC = () => {
           </div>
           {hasChanges && (
             <span style={{ color: "#9ca3af", fontStyle: "italic" }}>
-              Press Ctrl+S to save, Esc to discard
+              Auto-saves after 1.5s • Esc to discard
             </span>
           )}
         </div>

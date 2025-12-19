@@ -246,7 +246,32 @@ const InternalMapLayers: React.FC = () => {
   );
 
   const MapClickHandler: React.FC<{ disabled: boolean }> = ({ disabled }) => {
-    const firstCornerRef = useRef<{ lat: number; lng: number } | null>(null);
+    const captureMode = useEditorSelector((s) => s.ui.captureMode);
+    const currentTargetIndex = useEditorSelector((s) => s.selection.targetIndex);
+    const currentTargetType = useEditorSelector((s) => s.selection.targetType);
+
+    // Reset first corner only when exiting radius mode or changing targets
+    const prevCaptureModeRef = useRef(captureMode);
+    const prevTargetIndexRef = useRef(currentTargetIndex);
+    const prevTargetTypeRef = useRef(currentTargetType);
+
+    useEffect(() => {
+      const prevMode = prevCaptureModeRef.current;
+      const prevIndex = prevTargetIndexRef.current;
+      const prevType = prevTargetTypeRef.current;
+
+      // Only reset if target changed OR if we left radius mode
+      const targetChanged = prevIndex !== currentTargetIndex || prevType !== currentTargetType;
+      const leftRadiusMode = prevMode === "radius" && captureMode !== "radius";
+
+      if (targetChanged || leftRadiusMode) {
+        EditorStore.setUi({ radiusFirstCorner: null });
+      }
+
+      prevCaptureModeRef.current = captureMode;
+      prevTargetIndexRef.current = currentTargetIndex;
+      prevTargetTypeRef.current = currentTargetType;
+    }, [captureMode, currentTargetIndex, currentTargetType]);
 
     useMapEvents({
       click: async (e) => {
@@ -286,16 +311,32 @@ const InternalMapLayers: React.FC = () => {
         const mode = currentUi.captureMode;
         const sel = EditorStore.getState().selection;
         const rm = EditorStore.getState().ui.restrictedMode;
+
         if (rm?.enabled) {
-          const allow =
-            (sel.targetType === "npc" && rm.allowNpc) ||
-            (sel.targetType === "object" && rm.allowObject) ||
-            (currentUi.captureMode === "radius" && rm.allowRadius);
-          if (sel.selectedStep !== rm.stepIndex || !allow) {
+          // Radius mode bypasses step restriction - user explicitly enabled it for current target
+          const isRadiusMode = currentUi.captureMode === "radius" && rm.allowRadius;
+
+          if (!isRadiusMode) {
+            // Normal capture modes require step to match
+            const allow =
+              (sel.targetType === "npc" && rm.allowNpc) ||
+              (sel.targetType === "object" && rm.allowObject);
+            if (sel.selectedStep !== rm.stepIndex || !allow) {
+              return;
+            }
+          }
+        }
+
+        // Handle radius first click BEFORE patchQuest
+        if (mode === "radius") {
+          const firstCorner = currentUi.radiusFirstCorner;
+          if (!firstCorner) {
+            // First click - store in UI state and return early
+            EditorStore.setUi({ radiusFirstCorner: snappedCoord });
             return;
           }
         }
-        // FIXED: Use patchQuest instead of produce + setQuest
+
         EditorStore.patchQuest((draft) => {
           const sel = EditorStore.getState().selection;
           const step = draft.questSteps[sel.selectedStep];
@@ -334,11 +375,10 @@ const InternalMapLayers: React.FC = () => {
               t.objectLocation = current;
             }
           } else if (mode === "radius") {
-            const firstCorner = firstCornerRef.current;
-            if (!firstCorner) {
-              firstCornerRef.current = snappedCoord;
-              return;
-            }
+            // Second click - first click was handled before patchQuest
+            const firstCorner = EditorStore.getState().ui.radiusFirstCorner;
+            if (!firstCorner) return; // Safety check
+
             const finalMinLat = Math.min(firstCorner.lat, snappedCoord.lat);
             const finalMaxLat = Math.max(firstCorner.lat, snappedCoord.lat);
             const finalMinLng = Math.min(firstCorner.lng, snappedCoord.lng);
@@ -351,11 +391,6 @@ const InternalMapLayers: React.FC = () => {
               sel.targetType === "npc" ? "wanderRadius" : "objectRadius";
             (highlightTarget as unknown as Record<string, unknown>)[radiusKey] =
               payload;
-            firstCornerRef.current = null;
-            EditorStore.setUi({
-              captureMode:
-                sel.targetType === "object" ? "multi-point" : "single",
-            });
           } else if (mode === "wanderRadius") {
             if (sel.targetType === "npc") {
               const radius = EditorStore.getState().ui.wanderRadiusInput;
@@ -382,6 +417,15 @@ const InternalMapLayers: React.FC = () => {
             EditorStore.setUi({ captureMode: "single" });
           }
         });
+
+        // Clear first corner and turn off radius mode after second click completes
+        if (mode === "radius" && currentUi.radiusFirstCorner) {
+          const sel = EditorStore.getState().selection;
+          EditorStore.setUi({
+            radiusFirstCorner: null,
+            captureMode: sel.targetType === "npc" ? "single" : "multi-point",
+          });
+        }
       },
     });
 
