@@ -422,8 +422,13 @@ export const EditorStore = {
   reset() {
     this.update(
       (draft) => {
-        Object.assign(draft, initialState);
-        draft.ui.restrictedMode = null;
+        // Spread each nested object to avoid assigning frozen Immer references
+        draft.version = initialState.version;
+        draft.quest = null;
+        draft.clipboard = { ...initialState.clipboard };
+        draft.selection = { ...initialState.selection };
+        draft.ui = { ...initialState.ui, restrictedMode: null };
+        draft.highlights = { ...initialState.highlights };
       },
       ["quest", "selection", "ui", "highlights", "clipboard"]
     );
