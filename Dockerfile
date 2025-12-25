@@ -16,9 +16,8 @@ WORKDIR /app
 COPY . .
 
 # Build for subpath /RS3QuestBuddyEditor/
-# If you updated webpack.config.js output.publicPath to /RS3QuestBuddyEditor/,
-# this can be just `npm run build`. Keeping PUBLIC_URL is optional.
-RUN sh -c 'cd /app && PUBLIC_URL=/RS3QuestBuddyEditor npm run build'
+# NODE_ENV=production enables chunking and contenthash for cache busting
+RUN sh -c 'cd /app && NODE_ENV=production PUBLIC_URL=/RS3QuestBuddyEditor npm run build'
 
 # ---- runtime ----
 FROM nginx:alpine AS runner

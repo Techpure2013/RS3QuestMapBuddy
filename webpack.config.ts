@@ -1,16 +1,60 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+
+const isProduction = process.env.NODE_ENV === "production";
+
 module.exports = {
   entry: { main: "./src/app/entrance/index.tsx" }, // Entry point for your application
   output: {
-    filename: "js/[name].bundle.js",
+    // Use contenthash for cache busting - hash changes only when content changes
+    filename: isProduction ? "js/[name].[contenthash:8].js" : "js/[name].bundle.js",
+    chunkFilename: isProduction ? "js/[name].[contenthash:8].chunk.js" : "js/[name].chunk.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
     publicPath: "/RS3QuestBuddyEditor/",
   },
-  mode: "development",
-  devtool: "eval-source-map",
+  mode: isProduction ? "production" : "development",
+  devtool: isProduction ? "source-map" : "eval-source-map",
+  optimization: {
+    moduleIds: "deterministic",
+    runtimeChunk: "single",
+    splitChunks: {
+      chunks: "all",
+      maxInitialRequests: 25,
+      minSize: 20000,
+      cacheGroups: {
+        // React and related packages
+        react: {
+          test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+          name: "vendor-react",
+          chunks: "all",
+          priority: 40,
+        },
+        // Leaflet and map-related packages
+        leaflet: {
+          test: /[\\/]node_modules[\\/](leaflet|react-leaflet)[\\/]/,
+          name: "vendor-leaflet",
+          chunks: "all",
+          priority: 30,
+        },
+        // UI libraries (tabler icons, etc.)
+        ui: {
+          test: /[\\/]node_modules[\\/](@tabler|@mantine)[\\/]/,
+          name: "vendor-ui",
+          chunks: "all",
+          priority: 20,
+        },
+        // All other vendor code
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+          priority: 10,
+        },
+      },
+    },
+  },
   externals: ["sharp", "canvas", "electron/common"],
   resolve: {
     extensions: [".wasm", ".tsx", ".ts", ".mjs", ".jsx", ".js"],
