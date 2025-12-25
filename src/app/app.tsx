@@ -17,6 +17,7 @@ import ChatheadsPanel from "./containers/ChatheadsPanel";
 import NpcSearchPanel from "./containers/SearchPanels/NpcSearchPanel";
 import MapAreaSearchPanel from "./containers/SearchPanels/MapAreaSearchPanel";
 import ObjectSearchPanel from "./containers/SearchPanels/ObjectSearchPanel";
+import ExportsPanel from "./containers/ExportsPanel";
 import MapCenter from "./map/MapCenter";
 import CenterControls from "./containers/CenterControlPanel";
 import Panel from "./sections/panel";
@@ -89,6 +90,9 @@ const App: React.FC = () => {
         </Panel>
         <Panel defaultOpen={false} title="Map Area Search" compact>
           <MapAreaSearchPanel />
+        </Panel>
+        <Panel defaultOpen={false} title="Saved Library" compact>
+          <ExportsPanel />
         </Panel>
       </>
     ),

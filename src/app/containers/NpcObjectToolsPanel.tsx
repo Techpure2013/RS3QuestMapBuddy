@@ -29,6 +29,7 @@ import {
   upsertChathead,
 } from "./../../api/chathead";
 import { getApiBase } from "./../../utils/apiBase";
+import { ExportsStore } from "../../state/exportsStore";
 
 const normName = (s: string): string => s.trim().replace(/\s+/g, " ");
 
@@ -551,6 +552,30 @@ export const NpcObjectToolsPanel: React.FC = () => {
     EditorStore.setUi({ captureMode: "multi-point" });
   }, [sel.selectedStep, sel.floor, quest]);
 
+  const onSaveNpcToLibrary = useCallback(() => {
+    const step = quest?.questSteps?.[sel.selectedStep];
+    const npc = step?.highlights.npc?.[sel.targetIndex];
+    if (!npc) {
+      alert("No NPC selected to save.");
+      return;
+    }
+    const questName = quest?.questDetails?.Quest || "Unknown Quest";
+    ExportsStore.saveNpc(npc, questName);
+    alert(`Saved "${npc.npcName || "Unnamed NPC"}" to library!`);
+  }, [quest, sel.selectedStep, sel.targetIndex]);
+
+  const onSaveObjectToLibrary = useCallback(() => {
+    const step = quest?.questSteps?.[sel.selectedStep];
+    const obj = step?.highlights.object?.[sel.targetIndex];
+    if (!obj) {
+      alert("No Object selected to save.");
+      return;
+    }
+    const questName = quest?.questDetails?.Quest || "Unknown Quest";
+    ExportsStore.saveObject(obj, questName);
+    alert(`Saved "${obj.name || "Unnamed Object"}" to library!`);
+  }, [quest, sel.selectedStep, sel.targetIndex]);
+
   return (
     <>
       <TargetSelectionSection
@@ -730,6 +755,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
           onResetNpcLocation={onResetNpcLocation}
           onAddNpc={onAddNpc}
           onDeleteNpc={onDeleteNpc}
+          onSaveToLibrary={onSaveNpcToLibrary}
         />
       ) : (
         <ObjectToolsSection
@@ -780,6 +806,7 @@ export const NpcObjectToolsPanel: React.FC = () => {
               );
             })
           }
+          onSaveToLibrary={onSaveObjectToLibrary}
         />
       )}
     </>

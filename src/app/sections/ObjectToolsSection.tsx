@@ -7,6 +7,7 @@ export const ObjectToolsSection: React.FC<{
   onObjectNumberLabelChange: (v: string) => void;
   onAddObject: () => void;
   onDeleteObject: () => void;
+  onSaveToLibrary?: () => void;
 }> = ({
   selectedObjectColor,
   onSelectedObjectColorChange,
@@ -14,6 +15,7 @@ export const ObjectToolsSection: React.FC<{
   onObjectNumberLabelChange,
   onAddObject,
   onDeleteObject,
+  onSaveToLibrary,
 }) => (
   <div className="panel-section editor-controls-grid">
     <div className="control-group">
@@ -44,6 +46,16 @@ export const ObjectToolsSection: React.FC<{
         <button onClick={onDeleteObject} className="button--delete">
           Delete Object
         </button>
+        {onSaveToLibrary && (
+          <button
+            onClick={onSaveToLibrary}
+            className="button--add"
+            style={{ background: "#065f46" }}
+            title="Save this Object to your library for use in other quests"
+          >
+            Save to Library
+          </button>
+        )}
       </div>
     </div>
   </div>

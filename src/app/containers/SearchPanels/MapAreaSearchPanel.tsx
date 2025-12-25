@@ -20,6 +20,24 @@ const areaKey = (a: MapArea): string =>
 
 const ALL_AREAS: MapArea[] = allMapAreasData as MapArea[];
 
+const CHUNK_SIZE = 64;
+
+// Parse grid coordinates like "40,69" or "40, 69"
+const parseGridCoords = (input: string): { x: number; y: number } | null => {
+  const match = input.trim().match(/^(\d+)\s*,\s*(\d+)$/);
+  if (!match) return null;
+  const x = parseInt(match[1], 10);
+  const y = parseInt(match[2], 10);
+  if (isNaN(x) || isNaN(y)) return null;
+  return { x, y };
+};
+
+// Convert grid coords to map center position
+const gridToMapCenter = (x: number, y: number): { lat: number; lng: number } => ({
+  lat: y * CHUNK_SIZE + CHUNK_SIZE / 2,
+  lng: x * CHUNK_SIZE + CHUNK_SIZE / 2,
+});
+
 const MapAreaSearchPanel: React.FC = () => {
   const ui = useEditorSelector((s) => s.ui);
 
@@ -32,9 +50,14 @@ const MapAreaSearchPanel: React.FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
+  // Check if the search term is a grid coordinate
+  const gridCoords = useMemo(() => parseGridCoords(term), [term]);
+
   const filtered: MapArea[] = useMemo(() => {
     const t = term.trim().toLowerCase();
     if (t.length < 1) return [];
+    // Don't filter areas if it's a grid coordinate search
+    if (gridCoords) return [];
     const results = ALL_AREAS.filter((a) =>
       a.name.toLowerCase().includes(t)
     ).sort((a, b) => a.name.localeCompare(b.name));
@@ -44,12 +67,12 @@ const MapAreaSearchPanel: React.FC = () => {
       if (!m.has(k)) m.set(k, a);
     }
     return Array.from(m.values());
-  }, [term]);
+  }, [term, gridCoords]);
 
   useEffect(() => {
-    setIsOpen(filtered.length > 0);
+    setIsOpen(filtered.length > 0 || gridCoords !== null);
     setHighlightedIndex(-1);
-  }, [filtered.length]);
+  }, [filtered.length, gridCoords]);
 
   useEffect(() => {
     const onDocClick = (e: MouseEvent) => {
@@ -87,7 +110,37 @@ const MapAreaSearchPanel: React.FC = () => {
     inputRef.current?.focus();
   }, []);
 
+  const handleGridSelect = useCallback((x: number, y: number) => {
+    if (!EditorStore.getState().ui.navReturn) {
+      requestCaptureNavReturn(true);
+    }
+    const center = gridToMapCenter(x, y);
+    // Create a virtual area for the grid chunk
+    const gridArea: MapArea = {
+      mapId: -1,
+      name: `Grid ${x}, ${y}`,
+      center: [center.lng, center.lat],
+      bounds: [
+        [x * CHUNK_SIZE, y * CHUNK_SIZE],
+        [x * CHUNK_SIZE + CHUNK_SIZE, y * CHUNK_SIZE + CHUNK_SIZE],
+      ],
+    };
+    EditorStore.setHighlights({ selectedArea: null });
+    requestFlyToAreaAt(gridArea, 2);
+    setIsOpen(false);
+    setHighlightedIndex(-1);
+    setIsKeyboardNav(false);
+    inputRef.current?.focus();
+  }, []);
+
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // Handle Enter for grid coordinates even if dropdown isn't open
+    if (e.key === "Enter" && gridCoords) {
+      e.preventDefault();
+      handleGridSelect(gridCoords.x, gridCoords.y);
+      return;
+    }
+
     if (!isOpen || filtered.length === 0) return;
 
     switch (e.key) {
@@ -148,14 +201,38 @@ const MapAreaSearchPanel: React.FC = () => {
           type="text"
           value={term}
           onChange={(e) => setTerm(e.target.value)}
-          onFocus={() => setIsOpen(filtered.length > 0)}
+          onFocus={() => setIsOpen(filtered.length > 0 || gridCoords !== null)}
           onKeyDown={onKeyDown}
-          placeholder="Search for a map area..."
+          placeholder="Area name or grid coords (x,y)"
           className="search-input"
         />
       </div>
 
-      {isOpen && filtered.length > 0 && (
+      {/* Grid coordinate result */}
+      {isOpen && gridCoords && (
+        <ul className="map-area-results" ref={listRef}>
+          <li
+            onClick={() => handleGridSelect(gridCoords.x, gridCoords.y)}
+            onMouseEnter={() => {
+              setIsKeyboardNav(false);
+              setHighlightedIndex(0);
+            }}
+            className="map-area-result-item highlighted"
+            style={{ borderLeft: "3px solid #10b981" }}
+          >
+            <div className="map-area-result-content">
+              <span className="map-area-name">Grid {gridCoords.x}, {gridCoords.y}</span>
+              <span className="map-area-id" style={{ color: "#10b981" }}>Grid Coordinate</span>
+            </div>
+            <div className="map-area-coords">
+              Press Enter to navigate
+            </div>
+          </li>
+        </ul>
+      )}
+
+      {/* Area results */}
+      {isOpen && !gridCoords && filtered.length > 0 && (
         <ul className="map-area-results" ref={listRef}>
           {filtered.map((area, index) => (
             <li
@@ -182,7 +259,7 @@ const MapAreaSearchPanel: React.FC = () => {
         </ul>
       )}
 
-      {isOpen && term.trim().length >= 1 && filtered.length === 0 && (
+      {isOpen && term.trim().length >= 1 && filtered.length === 0 && !gridCoords && (
         <div className="search-no-results">No areas found</div>
       )}
     </div>
