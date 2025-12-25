@@ -1,4 +1,4 @@
-import { get, set } from "idb-keyval";
+import { get, set, del } from "idb-keyval";
 
 // Note to myself: Bump this key if you change the cache shape
 const NPC_CACHE_KEY = "npc-cache-v1";
@@ -106,4 +106,8 @@ export function addNpcLocationToCache(
     entry.updatedAt = new Date().toISOString();
   }
   return next;
+}
+
+export async function clearNpcCache(): Promise<void> {
+  await del(NPC_CACHE_KEY);
 }

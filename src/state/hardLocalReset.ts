@@ -1,8 +1,12 @@
 import { clearImageCache } from "idb/imageCache";
 import { clearObservedChatheads } from "idb/chatheadsObserved";
 import { clearPendingChatheads } from "idb/chatheadQueue";
+import { clearActiveBundle } from "idb/bundleStore";
+import { clearNpcCache } from "idb/npcStore";
+import { clearQuestListFullCache } from "api/questListService";
 import { del } from "idb-keyval";
 import { EditorStore } from "./editorStore";
+import { ExportsStore } from "./exportsStore";
 
 const EDITOR_STATE_KEY = "rs3qb:editor_state:v3";
 
@@ -12,8 +16,13 @@ export async function hardLocalReset(): Promise<void> {
       clearImageCache(),
       clearObservedChatheads(),
       clearPendingChatheads(),
+      clearActiveBundle(),
+      clearNpcCache(),
+      clearQuestListFullCache(),
       del(EDITOR_STATE_KEY),
     ]);
+    // Clear exports from localStorage
+    ExportsStore.clearAll();
   } finally {
     // Reset in-memory state and force a reload so all components remount cleanly
     EditorStore.reset();

@@ -1,4 +1,4 @@
-import { get, set } from "idb-keyval";
+import { get, set, del } from "idb-keyval";
 import { QuestListFullCache } from "state/questList";
 const KEY = "quest-list-all-full-v1";
 
@@ -10,4 +10,8 @@ export async function saveQuestListFullCache(
   cache: QuestListFullCache
 ): Promise<void> {
   await set(KEY, cache);
+}
+
+export async function clearQuestListFullCache(): Promise<void> {
+  await del(KEY);
 }
