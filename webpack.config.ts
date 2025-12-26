@@ -120,11 +120,28 @@ module.exports = {
 
     proxy: [
       {
-        context: ["/api"],
-
-        target: "http://127.0.0.1:42069",
-
+        context: ["/api/images"],
+        target: "https://techpure.dev",
         changeOrigin: true,
+        secure: true,
+        cookieDomainRewrite: "",
+        onProxyReq: (proxyReq: any, req: any) => {
+          // Forward cookies from the original request
+          if (req.headers.cookie) {
+            proxyReq.setHeader("Cookie", req.headers.cookie);
+          }
+        },
+      },
+      {
+        context: ["/api"],
+        target: "http://127.0.0.1:42069",
+        changeOrigin: true,
+      },
+      {
+        context: ["/images"],
+        target: "https://techpure.dev",
+        changeOrigin: true,
+        secure: true,
       },
     ],
   },

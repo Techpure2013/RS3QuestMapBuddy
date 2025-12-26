@@ -20,9 +20,9 @@ export function getApiBase(): string {
   const host =
     typeof window !== "undefined" ? window.location.hostname : "localhost";
 
-  // Dev: point to Fastify API
+  // Dev: use empty string for relative URLs so webpack proxy handles routing
   if (isLocalHost(host)) {
-    return "http://127.0.0.1:42069";
+    return "";
   }
 
   const cfg = typeof window !== "undefined" ? window.__APP_CONFIG__ : undefined;
