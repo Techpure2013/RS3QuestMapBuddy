@@ -64,13 +64,17 @@ export const QuestImagePastePanel: React.FC = () => {
 
   const handleAddQuestImage = useCallback(
     (imageUrl: string, width: number, height: number) => {
+      // Extract just the filename from the full URL path
+      // e.g., "/images/Do No Evil/filename.webp" -> "filename.webp"
+      const filename = imageUrl.split("/").pop() || imageUrl;
+
       EditorStore.patchQuest((draft) => {
         const list = draft.questImages ?? (draft.questImages = []);
         const stepDescription =
           draft.questSteps[selectedStep]?.stepDescription ?? `Step ${stepKey}`;
         const newImg: QuestImage = {
           step: stepKey,
-          src: imageUrl,
+          src: filename,
           width,
           height,
           stepDescription,

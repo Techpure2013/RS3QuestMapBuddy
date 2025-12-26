@@ -27,7 +27,7 @@ export interface QuestImagesPanelProps {
 
 export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
   questName,
-  previewBaseUrl = "https://techpure.dev/RS3QuestBuddy/Images",
+  previewBaseUrl = "https://techpure.dev/images",
 
   questImageList,
   onRemoveQuestImage,

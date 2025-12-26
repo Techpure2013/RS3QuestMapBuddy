@@ -63,7 +63,7 @@ export const QuestImagesPanelContainer: React.FC = () => {
         isOpen={true}
         onToggle={() => {}}
         questName={quest?.questName ?? ""}
-        previewBaseUrl="https://techpure.dev/RS3QuestBuddy/Images"
+        previewBaseUrl="https://techpure.dev/images"
         questImageList={quest?.questImages ?? []}
         onRemoveQuestImage={onRemoveQuestImage}
         onEditImage={onEditImage}
