@@ -6,7 +6,6 @@ import { clearNpcCache } from "idb/npcStore";
 import { clearQuestListFullCache } from "api/questListService";
 import { del } from "idb-keyval";
 import { EditorStore } from "./editorStore";
-import { ExportsStore } from "./exportsStore";
 
 const EDITOR_STATE_KEY = "rs3qb:editor_state:v3";
 
@@ -21,8 +20,7 @@ export async function hardLocalReset(): Promise<void> {
       clearQuestListFullCache(),
       del(EDITOR_STATE_KEY),
     ]);
-    // Clear exports from localStorage
-    ExportsStore.clearAll();
+    // NOTE: ExportsStore (Saved Library) is intentionally preserved through resets
   } finally {
     // Reset in-memory state and force a reload so all components remount cleanly
     EditorStore.reset();

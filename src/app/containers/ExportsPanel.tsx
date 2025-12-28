@@ -1,5 +1,5 @@
 // src/app/containers/ExportsPanel.tsx
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import {
   ExportsStore,
   useExportsStore,
@@ -9,13 +9,44 @@ import {
 import { EditorStore } from "../../state/editorStore";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import type { NpcHighlight, ObjectHighlight } from "../../state/types";
-import { IconTrash, IconDownload, IconX } from "@tabler/icons-react";
+import { IconTrash, IconDownload, IconUpload, IconX } from "@tabler/icons-react";
 
 const ExportsPanel: React.FC = () => {
   const exports = useExportsStore();
   const quest = useEditorSelector((s) => s.quest);
   const sel = useEditorSelector((s) => s.selection);
   const [activeTab, setActiveTab] = useState<"npcs" | "objects">("npcs");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleImportFromFile = useCallback(() => {
+    fileInputRef.current?.click();
+  }, []);
+
+  const handleFileChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files?.[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const content = e.target?.result as string;
+          const data = JSON.parse(content);
+          const result = ExportsStore.importFromData(data, true);
+          alert(
+            `Imported ${result.npcsAdded} NPCs and ${result.objectsAdded} Objects`
+          );
+        } catch (err) {
+          console.error("Failed to import file:", err);
+          alert("Failed to import file. Make sure it's a valid exports JSON.");
+        }
+      };
+      reader.readAsText(file);
+      // Reset input so same file can be selected again
+      event.target.value = "";
+    },
+    []
+  );
 
   const handleImportNpc = useCallback(
     (savedNpc: SavedNpc) => {
@@ -132,7 +163,16 @@ const ExportsPanel: React.FC = () => {
 
   return (
     <div className="exports-panel">
-      {/* Header with export button */}
+      {/* Hidden file input for import */}
+      <input
+        type="file"
+        ref={fileInputRef}
+        onChange={handleFileChange}
+        accept=".json"
+        style={{ display: "none" }}
+      />
+
+      {/* Header with import/export buttons */}
       <div
         style={{
           display: "flex",
@@ -144,18 +184,32 @@ const ExportsPanel: React.FC = () => {
         <span style={{ fontSize: 12, color: "#9ca3af" }}>
           {exports.npcs.length} NPCs, {exports.objects.length} Objects saved
         </span>
-        <button
-          onClick={handleExportToFile}
-          style={{
-            ...buttonStyle,
-            background: "#1e3a5f",
-            color: "#93c5fd",
-          }}
-          title="Download all exports as JSON file"
-        >
-          <IconDownload size={14} />
-          Export File
-        </button>
+        <div style={{ display: "flex", gap: 4 }}>
+          <button
+            onClick={handleImportFromFile}
+            style={{
+              ...buttonStyle,
+              background: "#065f46",
+              color: "#a7f3d0",
+            }}
+            title="Import from JSON file"
+          >
+            <IconUpload size={14} />
+            Import
+          </button>
+          <button
+            onClick={handleExportToFile}
+            style={{
+              ...buttonStyle,
+              background: "#1e3a5f",
+              color: "#93c5fd",
+            }}
+            title="Download all exports as JSON file"
+          >
+            <IconDownload size={14} />
+            Export
+          </button>
+        </div>
       </div>
 
       {/* Tabs */}

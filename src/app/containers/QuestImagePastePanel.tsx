@@ -56,8 +56,8 @@ export const QuestImagePastePanel: React.FC = () => {
   const safeFileName = useCallback(
     (ext: "webp" | "png" | "jpg" | "jpeg"): string => {
       const safeBase = questName.normalize("NFKC").replace(/[^a-z0-9_]/gi, "");
-      const index = Date.now();
-      return `${safeBase || "quest"}_step_${stepKey}_${index}.${ext}`;
+      // Send base filename - server will add sequential index
+      return `${safeBase || "quest"}_step_${stepKey}.${ext}`;
     },
     [questName, stepKey]
   );

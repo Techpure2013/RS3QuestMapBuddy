@@ -176,6 +176,27 @@ export const ExportsStore = {
     saveToStorage();
     notify();
   },
+
+  // Import data from file (merge with existing)
+  importFromData(data: Partial<ExportsState>, merge = true): { npcsAdded: number; objectsAdded: number } {
+    const npcsToAdd = Array.isArray(data.npcs) ? data.npcs : [];
+    const objectsToAdd = Array.isArray(data.objects) ? data.objects : [];
+
+    if (merge) {
+      state = {
+        npcs: [...state.npcs, ...npcsToAdd],
+        objects: [...state.objects, ...objectsToAdd],
+      };
+    } else {
+      state = {
+        npcs: npcsToAdd,
+        objects: objectsToAdd,
+      };
+    }
+    saveToStorage();
+    notify();
+    return { npcsAdded: npcsToAdd.length, objectsAdded: objectsToAdd.length };
+  },
 };
 
 // React hook for subscribing to exports store
