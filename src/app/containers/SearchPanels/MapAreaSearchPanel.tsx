@@ -69,10 +69,14 @@ const MapAreaSearchPanel: React.FC = () => {
     return Array.from(m.values());
   }, [term, gridCoords]);
 
+  // Open dropdown when there are results or typing
   useEffect(() => {
-    setIsOpen(filtered.length > 0 || gridCoords !== null);
+    const shouldOpen = filtered.length > 0 || gridCoords !== null;
+    if (shouldOpen) {
+      setIsOpen(true);
+    }
     setHighlightedIndex(-1);
-  }, [filtered.length, gridCoords]);
+  }, [term, filtered.length, gridCoords]);
 
   useEffect(() => {
     const onDocClick = (e: MouseEvent) => {
