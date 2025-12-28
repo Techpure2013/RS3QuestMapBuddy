@@ -24,7 +24,6 @@ export const Panel: React.FC<PanelProps> = ({
       style={{
         margin: compact ? "4px 6px" : "6px 8px",
         borderRadius: 6,
-        overflow: "hidden",
         border: "1px solid #374151",
         background: "#111827",
       }}
