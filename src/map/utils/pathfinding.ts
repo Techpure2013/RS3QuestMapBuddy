@@ -1813,6 +1813,8 @@ export async function debugArea(centerX: number, centerY: number, floor: number,
 // ============ PATH SAVING/LOADING ============
 // Save and retrieve paths from the server database
 
+export type PathType = 'to_step' | 'within_step';
+
 export interface SavedPath {
   id: number;
   name: string | null;
@@ -1826,6 +1828,8 @@ export interface SavedPath {
   tiles: TileCoord[];
   tile_count: number;
   quest_step_id: number | null;
+  path_type: PathType;
+  sequence: number;
   created_at: string;
   updated_at: string;
 }
@@ -1855,6 +1859,8 @@ export async function savePath(
     name?: string;
     description?: string;
     quest_step_id?: number;
+    path_type?: PathType;
+    sequence?: number;
   }
 ): Promise<SavedPath | null> {
   if (!waypoints || waypoints.length < 2) {
@@ -1881,6 +1887,8 @@ export async function savePath(
         end_floor: endFloor,
         tiles,
         quest_step_id: options?.quest_step_id || null,
+        path_type: options?.path_type || 'to_step',
+        sequence: options?.sequence ?? 0,
       }),
     });
 

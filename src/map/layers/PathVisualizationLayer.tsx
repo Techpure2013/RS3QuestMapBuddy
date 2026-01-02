@@ -299,22 +299,22 @@ const PathVisualizationLayerComponent: React.FC<PathVisualizationLayerProps> = (
 
       marker.on("mouseout", () => {
         // Only re-enable if we're not currently dragging
-        if (!marker.options.isDragging) {
+        if (!(marker.options as any).isDragging) {
           map.dragging.enable();
         }
       });
 
       // Click to select
       marker.on("click", (e) => {
-        L.DomEvent.stopPropagation(e);
-        L.DomEvent.preventDefault(e);
+        L.DomEvent.stopPropagation(e.originalEvent);
+        L.DomEvent.preventDefault(e.originalEvent);
         onWaypointSelect?.(isSelected ? null : wpIndex);
       });
 
       // Make marker draggable by handling mousedown + map mousemove
       marker.on("mousedown", (e) => {
-        L.DomEvent.stopPropagation(e);
-        L.DomEvent.preventDefault(e);
+        L.DomEvent.stopPropagation(e.originalEvent);
+        L.DomEvent.preventDefault(e.originalEvent);
 
         // If not selected, select it first - user can drag on next interaction
         if (!isSelected) {

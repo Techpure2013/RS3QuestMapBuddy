@@ -276,6 +276,7 @@ export type NormalizedQuestStep = {
   dialogOptions: string[];
   highlights: QuestHighlights;
   floor: number;
+  pathToStep?: QuestPath;
 };
 
 export type QuestBundle = {
@@ -307,6 +308,7 @@ type StepIn = {
   highlights?: QuestHighlights;
   floor?: number;
   stepId?: number;
+  pathToStep?: QuestPath;
 };
 export type PlotQuestBundle = {
   quest: { name: string };
@@ -334,6 +336,8 @@ export type PlotQuestBundle = {
     floor: number;
     // Server can add this; we consume it if present
     stepId?: number;
+    // Path from previous step to this step
+    pathToStep?: QuestPath;
   }>;
   images: Array<{
     step: string;
@@ -394,6 +398,7 @@ export function bundleToQuest(b: QuestBundle): Quest {
       highlights: s.highlights ?? { npc: [], object: [] },
       floor: Number.isFinite(s.floor as number) ? (s.floor as number) : 0,
       stepId: typeof s.stepId === "number" ? s.stepId : undefined,
+      pathToStep: s.pathToStep,
     })),
     questDetails: {
       Quest: b.details.Quest,
@@ -468,6 +473,7 @@ export function questToBundle(q: Quest): QuestBundleNormalized {
       dialogOptions: toLinesArray(s.dialogOptions),
       highlights: s.highlights ?? { npc: [], object: [] },
       floor: Number.isFinite(s.floor) ? s.floor : 0,
+      pathToStep: s.pathToStep,
     })),
     images: (q.questImages ?? []).map((img) => ({
       step: String(img.step ?? ""), // ENSURE STRING
