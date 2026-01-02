@@ -11,6 +11,7 @@
     "@types/leaflet": "^1.9.16",
     "@types/lodash": "^4.17.20",
     "@types/node": "^22.13.4",
+    "@types/pako": "^2.0.4",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@types/typescript": "^0.4.29",
@@ -44,6 +45,7 @@
     "immer": "^10.1.1",
     "levenshtein-edit-distance": "^3.0.1",
     "lodash": "^4.17.21",
+    "pako": "^2.1.0",
     "react-router-dom": "^7.1.5",
     "socket.io-client": "^4.8.1",
     "use-debounce": "10.0.5"

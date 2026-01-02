@@ -25,6 +25,7 @@ import { buildPlotLink } from "utils/plotLinks";
 import { RichText, stripFormatting } from "../../utils/RichText";
 import { ColorPicker } from "../components/ColorPicker";
 import { ImagePicker } from "../components/ImagePicker";
+import { StepLinkPicker } from "../components/StepLinkPicker";
 
 export const CenterControls: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -41,6 +42,7 @@ export const CenterControls: React.FC = () => {
   const [hasStepChanges, setHasStepChanges] = useState(false);
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [showImagePicker, setShowImagePicker] = useState(false);
+  const [showStepLinkPicker, setShowStepLinkPicker] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -685,6 +687,39 @@ export const CenterControls: React.FC = () => {
                     />
                   )}
                 </div>
+                {/* Step link picker button */}
+                <div style={{ position: "relative" }}>
+                  <button
+                    type="button"
+                    title="Link to another step (step(N){text})"
+                    onClick={() => setShowStepLinkPicker(!showStepLinkPicker)}
+                    style={{
+                      padding: "3px 8px",
+                      fontSize: "0.75rem",
+                      background: "#0f766e",
+                      border: showStepLinkPicker ? "2px solid #fff" : "1px solid #14b8a6",
+                      borderRadius: 3,
+                      color: "#5eead4",
+                      cursor: "pointer",
+                    }}
+                  >
+                    ⤴ Step
+                  </button>
+                  {showStepLinkPicker && (
+                    <StepLinkPicker
+                      selectedText={(() => {
+                        const textarea = textareaRef.current;
+                        if (!textarea) return "";
+                        return localStepDesc.substring(textarea.selectionStart, textarea.selectionEnd);
+                      })()}
+                      onSelect={(stepNumber) => {
+                        wrapSelection(`step(${stepNumber}){`, "}");
+                        setShowStepLinkPicker(false);
+                      }}
+                      onClose={() => setShowStepLinkPicker(false)}
+                    />
+                  )}
+                </div>
               </div>
               <textarea
                 ref={textareaRef}
@@ -745,7 +780,17 @@ export const CenterControls: React.FC = () => {
                   >
                     Preview
                   </span>
-                  <RichText>{localStepDesc}</RichText>
+                  <RichText
+                    onStepClick={(step) => {
+                      // Step numbers in UI are 1-indexed, but internally 0-indexed
+                      const stepIndex = step - 1;
+                      if (stepIndex >= 0 && quest?.questSteps && stepIndex < quest.questSteps.length) {
+                        EditorStore.autoSelectFirstValidTargetForStep(stepIndex);
+                      }
+                    }}
+                  >
+                    {localStepDesc}
+                  </RichText>
                 </div>
               )}
             </div>

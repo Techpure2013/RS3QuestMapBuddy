@@ -18,6 +18,7 @@ import NpcSearchPanel from "./containers/SearchPanels/NpcSearchPanel";
 import MapAreaSearchPanel from "./containers/SearchPanels/MapAreaSearchPanel";
 import ObjectSearchPanel from "./containers/SearchPanels/ObjectSearchPanel";
 import ExportsPanel from "./containers/ExportsPanel";
+import PathToolsPanel from "./containers/PathToolsPanel";
 import MapCenter from "./map/MapCenter";
 import CenterControls from "./containers/CenterControlPanel";
 import Panel from "./sections/panel";
@@ -53,6 +54,9 @@ const App: React.FC = () => {
             </Panel>
             <Panel defaultOpen={false} title="NPC/Object Tools" compact>
               <NpcObjectToolsPanel />
+            </Panel>
+            <Panel defaultOpen={false} title="Pathfinding" compact>
+              <PathToolsPanel />
             </Panel>
           </>
         )}

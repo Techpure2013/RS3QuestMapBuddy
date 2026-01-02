@@ -130,11 +130,17 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
                         <label>Step Description</label>
                         <select
                           value={img.stepDescription ?? ""}
-                          onChange={(e) =>
+                          onChange={(e) => {
+                            const selectedLabel = e.target.value;
+                            const matchedOpt = stepSelectOptions.find(
+                              (opt) => opt.label === selectedLabel
+                            );
+                            // Update both step (STRING) and stepDescription when selecting from dropdown
                             onEditImage(i, {
-                              stepDescription: e.target.value,
-                            })
-                          }
+                              stepDescription: selectedLabel,
+                              ...(matchedOpt ? { step: matchedOpt.value } : {}),
+                            });
+                          }}
                         >
                           <option value="">— Select description —</option>
                           {stepSelectOptions.map((opt) => (
@@ -142,7 +148,7 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
                               key={opt.value + opt.label}
                               value={opt.label}
                             >
-                              {opt.label}
+                              {opt.value}. {opt.label}
                             </option>
                           ))}
                         </select>

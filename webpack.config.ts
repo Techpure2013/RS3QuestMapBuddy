@@ -143,6 +143,13 @@ module.exports = {
         changeOrigin: true,
         secure: true,
       },
+      {
+        context: ["/runeapps-collision"],
+        target: "https://techpure.dev",
+        changeOrigin: true,
+        secure: true,
+        pathRewrite: { "^/runeapps-collision": "/api/runeapps-proxy" },
+      },
     ],
   },
 };

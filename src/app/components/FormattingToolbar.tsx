@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { stripFormatting } from "../../utils/RichText";
 import { ColorPicker } from "./ColorPicker";
 import { ImagePicker } from "./ImagePicker";
+import { StepLinkPicker } from "./StepLinkPicker";
 
 const FORMAT_BUTTONS = [
   { label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 } },
@@ -29,6 +30,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
   const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [showImagePicker, setShowImagePicker] = useState(false);
+  const [showStepLinkPicker, setShowStepLinkPicker] = useState(false);
 
   const wrapSelection = (prefix: string, suffix: string) => {
     const textarea = textareaRef.current;
@@ -192,6 +194,36 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
                   });
                 }}
                 onClose={() => setShowImagePicker(false)}
+              />
+            )}
+          </div>
+          {/* Step link picker button */}
+          <div style={{ position: "relative" }}>
+            <button
+              type="button"
+              title="Link to another step (step(N){text})"
+              onClick={() => setShowStepLinkPicker(!showStepLinkPicker)}
+              style={{
+                ...buttonStyle,
+                background: "#0f766e",
+                border: showStepLinkPicker ? "2px solid #fff" : "1px solid #14b8a6",
+                color: "#5eead4",
+              }}
+            >
+              ⤴ Step
+            </button>
+            {showStepLinkPicker && (
+              <StepLinkPicker
+                selectedText={(() => {
+                  const textarea = textareaRef.current;
+                  if (!textarea) return "";
+                  return value.substring(textarea.selectionStart, textarea.selectionEnd);
+                })()}
+                onSelect={(stepNumber) => {
+                  wrapSelection(`step(${stepNumber}){`, "}");
+                  setShowStepLinkPicker(false);
+                }}
+                onClose={() => setShowStepLinkPicker(false)}
               />
             )}
           </div>

@@ -116,6 +116,13 @@ export interface UiState {
   previewSubmission?: PlotSubmissionRow | null;
   isAlt1Environment: boolean;
   radiusFirstCorner?: { lat: number; lng: number } | null;
+  showAllPaths?: boolean;
+  isGeneratingPath?: boolean;
+  showCollisionDebug?: boolean;
+  showTransportDebug?: boolean;
+  transportDisplayMode?: "nodes" | "links" | "all";
+  transportCategory?: "all" | "vertical" | "teleport" | "fairy_ring" | "spirit_tree" | "aerial" | "ground" | "water" | "shortcuts";
+  transportEditMode?: boolean;
 }
 
 export interface HighlightNpc {

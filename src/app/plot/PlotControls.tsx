@@ -419,7 +419,17 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
         </div>
 
         <div className="plot-step-description" title={stripFormatting(stepDescription)}>
-          <RichText>{stepDescription}</RichText>
+          <RichText
+            onStepClick={(step) => {
+              // Step numbers in UI are 1-indexed, but internally 0-indexed
+              const stepIndex = step - 1;
+              if (stepIndex >= 0 && quest?.questSteps && stepIndex < quest.questSteps.length) {
+                EditorStore.autoSelectFirstValidTargetForStep(stepIndex);
+              }
+            }}
+          >
+            {stepDescription}
+          </RichText>
         </div>
       </div>
 

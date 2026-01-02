@@ -190,6 +190,22 @@ export type QuestHighlights = {
 };
 
 /* ==========================================================================
+   Path / Pathing Types
+   ========================================================================== */
+
+export type PathWaypoint = {
+  lat: number;
+  lng: number;
+};
+
+export type QuestPath = {
+  waypoints: PathWaypoint[];
+  floor: number;
+  fromStepIndex?: number;
+  toStepIndex?: number;
+};
+
+/* ==========================================================================
    Clipboard (discriminated union)
    ========================================================================== */
 
@@ -224,6 +240,8 @@ export type QuestStep = {
   highlights: QuestHighlights;
   floor: number;
   stepId?: number;
+  /** Path from previous step to this step's first highlight */
+  pathToStep?: QuestPath;
 };
 
 export type QuestImage = {

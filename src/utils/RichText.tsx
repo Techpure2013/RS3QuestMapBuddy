@@ -18,6 +18,7 @@ import React from "react";
  * - ![alt|32](url)       → Image with custom size
  * - {{img:url}}          → Image shorthand (48px)
  * - {{img:url|64}}       → Image shorthand with size
+ * - step(22){text}       → Step link (jump to step 22)
  *
  * Combinations work: __**bold underline**__ or ~~*italic strikethrough*~~
  */
@@ -32,7 +33,8 @@ type TextNode =
 	| { type: "superscript"; children: TextNode[] }
 	| { type: "color"; color: string; children: TextNode[] }
 	| { type: "link"; url: string; children: TextNode[] }
-	| { type: "image"; url: string; alt: string; size?: number };
+	| { type: "image"; url: string; alt: string; size?: number }
+	| { type: "steplink"; step: number; children: TextNode[] };
 
 // Token patterns in order of precedence (most specific first)
 const patterns: Array<{
@@ -42,6 +44,7 @@ const patterns: Array<{
 	getUrl?: (match: RegExpMatchArray) => string;
 	getAlt?: (match: RegExpMatchArray) => string;
 	getSize?: (match: RegExpMatchArray) => number | undefined;
+	getStep?: (match: RegExpMatchArray) => number;
 }> = [
 	// Image with size: ![alt|size](url) - e.g., ![NPC|32](https://...)
 	{
@@ -65,6 +68,12 @@ const patterns: Array<{
 		getUrl: (m) => m[1],
 		getSize: (m) => (m[2] ? parseInt(m[2], 10) : undefined),
 		getAlt: () => "",
+	},
+	// Step link: step(22){text} - link to another step in the quest
+	{
+		regex: /step\((\d+)\)\{(.+?)\}(?!\})/,
+		type: "steplink",
+		getStep: (m) => parseInt(m[1], 10),
 	},
 	// Color with hex: [#FFFFFF]{text} - use lazy match to handle nested content
 	{
@@ -117,6 +126,7 @@ function parseRichText(text: string): TextNode[] {
 			url?: string;
 			alt?: string;
 			size?: number;
+			step?: number;
 		} | null = null;
 
 		// Find the earliest matching pattern
@@ -132,6 +142,9 @@ function parseRichText(text: string): TextNode[] {
 					} else if (pattern.type === "image") {
 						// Images don't have inner content to parse
 						content = "";
+					} else if (pattern.type === "steplink") {
+						// Step link: step(N){text} - content is in group 2
+						content = match[2];
 					} else {
 						content = match[1];
 					}
@@ -145,6 +158,7 @@ function parseRichText(text: string): TextNode[] {
 						url: pattern.getUrl?.(match),
 						alt: pattern.getAlt?.(match),
 						size: pattern.getSize?.(match),
+						step: pattern.getStep?.(match),
 					};
 				}
 			}
@@ -190,6 +204,12 @@ function parseRichText(text: string): TextNode[] {
 					url: earliestMatch.url,
 					children: innerNodes,
 				});
+			} else if (earliestMatch.type === "steplink" && earliestMatch.step !== undefined) {
+				nodes.push({
+					type: "steplink",
+					step: earliestMatch.step,
+					children: innerNodes,
+				});
 			} else {
 				nodes.push({
 					type: earliestMatch.type,
@@ -209,6 +229,7 @@ function parseRichText(text: string): TextNode[] {
 
 interface RenderOptions {
 	inheritColor?: string;
+	onStepClick?: (step: number) => void;
 }
 
 function renderNodes(
@@ -282,6 +303,27 @@ function renderNodes(
 					</a>
 				);
 
+			case "steplink":
+				return (
+					<a
+						key={key}
+						href="#"
+						onClick={(e) => {
+							e.preventDefault();
+							e.stopPropagation();
+							options.onStepClick?.(node.step);
+						}}
+						style={{
+							color: options.inheritColor || "#22c55e",
+							textDecoration: "underline",
+							cursor: "pointer",
+						}}
+						title={`Go to step ${node.step}`}
+					>
+						{renderNodes(node.children, key, options)}
+					</a>
+				);
+
 			case "image":
 				const imgSize = node.size || 48;
 				return (
@@ -343,6 +385,8 @@ export interface RichTextProps {
 	children: string;
 	/** Fallback for plain text if parsing fails */
 	fallbackToPlain?: boolean;
+	/** Callback when a step link is clicked */
+	onStepClick?: (step: number) => void;
 }
 
 /**
@@ -354,10 +398,12 @@ export interface RichTextProps {
  * <RichText>**bold** and *italic* text</RichText>
  * <RichText>[#FF0000]{red text} and __underlined__</RichText>
  * <RichText>H^2O and x^(super script)</RichText>
+ * <RichText onStepClick={(step) => goToStep(step)}>step(22){Skip to step 22}</RichText>
  */
 export const RichText: React.FC<RichTextProps> = ({
 	children,
 	fallbackToPlain = true,
+	onStepClick,
 }) => {
 	if (typeof children !== "string") {
 		return <>{children}</>;
@@ -365,7 +411,7 @@ export const RichText: React.FC<RichTextProps> = ({
 
 	try {
 		const nodes = parseRichText(children);
-		return <>{renderNodes(nodes, "rt")}</>;
+		return <>{renderNodes(nodes, "rt", { onStepClick })}</>;
 	} catch (error) {
 		console.error("RichText parsing error:", error);
 		if (fallbackToPlain) {
@@ -379,10 +425,10 @@ export const RichText: React.FC<RichTextProps> = ({
  * Parse rich text and return React nodes directly
  * Useful when you need more control over rendering
  */
-export function parseAndRender(text: string): React.ReactNode {
+export function parseAndRender(text: string, onStepClick?: (step: number) => void): React.ReactNode {
 	try {
 		const nodes = parseRichText(text);
-		return <>{renderNodes(nodes, "rt")}</>;
+		return <>{renderNodes(nodes, "rt", { onStepClick })}</>;
 	} catch {
 		return text;
 	}
@@ -415,6 +461,9 @@ export function stripFormatting(text: string): string {
 
 		// Image shorthand: {{img:url}} or {{img:url|size}} -> empty
 		result = result.replace(/\{\{img:(https?:\/\/[^|}]+)(?:\|\d+)?\}\}/g, "");
+
+		// Step link: step(N){text} -> text
+		result = result.replace(/step\(\d+\)\{(.+?)\}(?!\})/g, "$1");
 
 		// Color with hex: [#FFFFFF]{text} -> text
 		result = result.replace(/\[(#[0-9A-Fa-f]{3,8})\]\{(.+?)\}(?!\})/g, "$2");

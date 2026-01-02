@@ -20,7 +20,7 @@ export async function searchNpcs(
     limit: String(limit),
   });
   return httpJson<NpcSearchRow[]>(
-    `${base}/api/npcs/search?${params.toString()}`,
+    `${base}/api/npcs?${params.toString()}`,
     {
       method: "GET",
     }

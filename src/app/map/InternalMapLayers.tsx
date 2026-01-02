@@ -1,5 +1,5 @@
 // src/app/map/InternalMapLayers.tsx
-import React, { useCallback, useEffect, useMemo, useRef } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useMap, useMapEvents } from "react-leaflet";
 import L from "leaflet";
 import { produce } from "immer";
@@ -26,6 +26,12 @@ import NavReturnCaptureHandler from "map/handlers/NavReturnCaptureHandler";
 import RestoreViewHandler from "map/handlers/RestoreViewHandler";
 import SearchHighlightFlyToHandler from "map/handlers/SearchHighlightFlyToHandler";
 import { PlotSubmissionRow } from "api/plotSubmissionsAdmin";
+import { PathVisualizationLayer } from "../../map/layers/PathVisualizationLayer";
+import { CollisionDebugLayer } from "../../map/layers/CollisionDebugLayer";
+import { CollisionEditorLayer, useCollisionEditorState } from "../../map/layers/CollisionEditorLayer";
+import { TransportEditorLayer, useTransportEditorState } from "../../map/layers/TransportEditorLayer";
+import { TransportVisualizationLayer } from "../../map/layers/TransportVisualizationLayer";
+import type { QuestPath } from "../../state/types";
 
 const snapToTileCoordinate = (
   latlng: L.LatLng
@@ -226,6 +232,12 @@ const InternalMapLayers: React.FC = () => {
   const targetIndex = selection.targetIndex;
   const floor = selection.floor;
 
+  // Transport refresh counter - increment to trigger visualization refresh after creating/editing transports
+  const [transportRefreshKey, setTransportRefreshKey] = useState(0);
+  const handleTransportCreated = useCallback(() => {
+    setTransportRefreshKey((k) => k + 1);
+  }, []);
+
   const handleFloorChange = useCallback(
     (newFloor: number) => {
       if (!HandleFloorIncreaseDecrease(newFloor)) return;
@@ -249,6 +261,9 @@ const InternalMapLayers: React.FC = () => {
     const captureMode = useEditorSelector((s) => s.ui.captureMode);
     const currentTargetIndex = useEditorSelector((s) => s.selection.targetIndex);
     const currentTargetType = useEditorSelector((s) => s.selection.targetType);
+    const transportEditMode = useEditorSelector((s) => s.ui.transportEditMode);
+    const { enabled: collisionEditorEnabled } = useCollisionEditorState();
+    const { enabled: transportEditorEnabled } = useTransportEditorState();
 
     // Reset first corner only when exiting radius mode or changing targets
     const prevCaptureModeRef = useRef(captureMode);
@@ -276,6 +291,9 @@ const InternalMapLayers: React.FC = () => {
     useMapEvents({
       click: async (e) => {
         if (disabled) return;
+
+        // Skip normal click handling when collision editor, transport editor, or transport edit mode is active
+        if (collisionEditorEnabled || transportEditorEnabled || transportEditMode) return;
 
         const snappedCoord = snapToTileCoordinate(e.latlng);
         const currentUi = EditorStore.getState().ui;
@@ -502,6 +520,21 @@ const InternalMapLayers: React.FC = () => {
       : { type: "none" };
   }, [quest, selection.selectedStep, floor]);
 
+  // Extract paths from quest steps for visualization
+  const questPaths = useMemo<QuestPath[]>(() => {
+    if (!quest) return [];
+    const paths: QuestPath[] = [];
+    quest.questSteps.forEach((step, index) => {
+      if (step.pathToStep && step.pathToStep.waypoints.length >= 2) {
+        paths.push({
+          ...step.pathToStep,
+          toStepIndex: index,
+        });
+      }
+    });
+    return paths;
+  }, [quest]);
+
   const highlightGeometry = useMemo<SelectionGeometry>(() => {
     const selObj = highlights.selectedObjectFromSearch;
     const hiNpc = highlights.highlightedNpc;
@@ -592,6 +625,41 @@ const InternalMapLayers: React.FC = () => {
       <SelectionHighlightLayer
         geometry={highlightGeometry}
         pane="highlightPane"
+      />
+      {/* Path visualization for step-to-step navigation */}
+      <PathVisualizationLayer
+        paths={questPaths}
+        currentStepIndex={selectedStep}
+        currentFloor={floor}
+        showAllPaths={ui.showAllPaths ?? false}
+      />
+      {/* Collision debug overlay - only shows tiles loaded for path generation */}
+      <CollisionDebugLayer
+        floor={floor}
+        enabled={ui.showCollisionDebug ?? false}
+        refreshKey={questPaths.length}
+      />
+      {/* Collision editor - interactive tile editing mode */}
+      <CollisionEditorLayer
+        floor={floor}
+        refreshKey={questPaths.length}
+      />
+      {/* Transport editor - interactive transport placement mode */}
+      <TransportEditorLayer
+        floor={floor}
+        onTransportCreated={handleTransportCreated}
+      />
+      {/* Transport visualization - shows all transport links on map */}
+      <TransportVisualizationLayer
+        floor={floor}
+        enabled={ui.showTransportDebug ?? false}
+        showGlobal={true}
+        showPositionBased={true}
+        displayMode={ui.transportDisplayMode ?? "nodes"}
+        category={ui.transportCategory ?? "all"}
+        editMode={ui.transportEditMode ?? false}
+        refreshKey={transportRefreshKey}
+        onTransportUpdated={handleTransportCreated}
       />
       <MapUIOverlay />
     </>
