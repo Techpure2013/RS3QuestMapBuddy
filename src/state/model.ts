@@ -123,6 +123,9 @@ export interface UiState {
   transportDisplayMode?: "nodes" | "links" | "all";
   transportCategory?: "all" | "vertical" | "teleport" | "fairy_ring" | "spirit_tree" | "aerial" | "ground" | "water" | "shortcuts";
   transportEditMode?: boolean;
+  // Path editing
+  pathEditMode?: boolean;
+  selectedWaypointIndex?: number | null;
 }
 
 export interface HighlightNpc {

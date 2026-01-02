@@ -632,6 +632,18 @@ const InternalMapLayers: React.FC = () => {
         currentStepIndex={selectedStep}
         currentFloor={floor}
         showAllPaths={ui.showAllPaths ?? false}
+        editMode={ui.pathEditMode ?? false}
+        selectedWaypointIndex={ui.selectedWaypointIndex}
+        onWaypointSelect={(index) => EditorStore.setUi({ selectedWaypointIndex: index })}
+        onWaypointDragEnd={(index, newPos) => {
+          // Update the waypoint position when drag ends
+          EditorStore.patchQuest((draft) => {
+            const step = draft.questSteps[selectedStep];
+            if (step?.pathToStep?.waypoints?.[index]) {
+              step.pathToStep.waypoints[index] = newPos;
+            }
+          });
+        }}
       />
       {/* Collision debug overlay - only shows tiles loaded for path generation */}
       <CollisionDebugLayer

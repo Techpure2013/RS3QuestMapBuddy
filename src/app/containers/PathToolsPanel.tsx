@@ -5,7 +5,8 @@ import { EditorStore } from "../../state/editorStore";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import { generateStepToStepPath, getStepEndpoint, clearCollisionCache, debugCollisionArea, collisionEditorState, saveAllCollisionFiles, getModifiedCollisionFiles, DIRECTION_BITS, savePath, loadCustomTransports, deleteTransport, transportEditorState, type CustomTransport, type TransportType } from "../../map/utils/pathfinding";
 import type { QuestPath } from "../../state/types";
-import { IconRoute, IconTrash, IconEye, IconEyeOff, IconLoader2, IconRefresh, IconGridDots, IconPencil, IconWalk, IconX, IconDeviceFloppy, IconCloudUpload, IconStairs, IconArrowUp, IconArrowDown, IconArrowsUpDown, IconHelp } from "@tabler/icons-react";
+import { IconRoute, IconTrash, IconEye, IconEyeOff, IconLoader2, IconRefresh, IconGridDots, IconPencil, IconWalk, IconX, IconDeviceFloppy, IconCloudUpload, IconStairs, IconArrowUp, IconArrowDown, IconArrowsUpDown, IconHelp, IconChevronUp, IconChevronDown, IconChevronLeft, IconChevronRight, IconPlayerPlay } from "@tabler/icons-react";
+import type { PathWaypoint } from "../../state/types";
 
 // Helper tooltip component - uses Portal to escape overflow:hidden containers
 const HelpBox: React.FC<{ text: string }> = ({ text }) => {
@@ -223,8 +224,93 @@ const PathToolsPanel: React.FC = () => {
         step.pathToStep = undefined;
       }
     });
+    EditorStore.setUi({ pathEditMode: false, selectedWaypointIndex: null });
     setStatus("Path cleared");
   }, [selection.selectedStep]);
+
+  // Nudge a waypoint by dx/dy tiles
+  const handleNudgeWaypoint = useCallback((waypointIndex: number, dx: number, dy: number) => {
+    EditorStore.patchQuest((draft) => {
+      const step = draft.questSteps[selection.selectedStep];
+      if (step?.pathToStep?.waypoints?.[waypointIndex]) {
+        step.pathToStep.waypoints[waypointIndex].lat += dy;
+        step.pathToStep.waypoints[waypointIndex].lng += dx;
+      }
+    });
+  }, [selection.selectedStep]);
+
+  // Recalculate path through a via point (selected waypoint)
+  const handleRecalculateThroughWaypoint = useCallback(async (waypointIndex: number) => {
+    if (!quest || !currentStep?.pathToStep?.waypoints) {
+      setStatus("No path to recalculate");
+      return;
+    }
+
+    const waypoints = currentStep.pathToStep.waypoints;
+    const viaPoint = waypoints[waypointIndex];
+    if (!viaPoint) {
+      setStatus("Invalid waypoint");
+      return;
+    }
+
+    // Get start and end points
+    const startWp = waypoints[0];
+    const endWp = waypoints[waypoints.length - 1];
+    const floor = currentStep.pathToStep.floor;
+
+    setGenerating(true);
+    setStatus("Recalculating path through waypoint...");
+    EditorStore.setUi({ isGeneratingPath: true });
+
+    try {
+      // Import the findPath function dynamically to avoid circular deps
+      const { findPath } = await import("../../map/utils/pathfinding");
+
+      // Path from start to via point
+      const pathToVia = await findPath(
+        startWp.lat, startWp.lng,
+        viaPoint.lat, viaPoint.lng,
+        floor
+      );
+
+      // Path from via point to end
+      const pathFromVia = await findPath(
+        viaPoint.lat, viaPoint.lng,
+        endWp.lat, endWp.lng,
+        floor
+      );
+
+      if (!pathToVia || pathToVia.length < 1) {
+        setStatus("Could not find path to via point");
+        return;
+      }
+
+      if (!pathFromVia || pathFromVia.length < 1) {
+        setStatus("Could not find path from via point to end");
+        return;
+      }
+
+      // Combine paths (remove duplicate via point)
+      const combinedPath = [...pathToVia, ...pathFromVia.slice(1)];
+
+      // Update the path
+      EditorStore.patchQuest((draft) => {
+        const step = draft.questSteps[selection.selectedStep];
+        if (step?.pathToStep) {
+          step.pathToStep.waypoints = combinedPath;
+        }
+      });
+
+      setStatus(`Path recalculated: ${combinedPath.length} waypoints`);
+      EditorStore.setUi({ selectedWaypointIndex: null });
+    } catch (err) {
+      console.error("Path recalculation failed:", err);
+      setStatus("Path recalculation failed");
+    } finally {
+      setGenerating(false);
+      EditorStore.setUi({ isGeneratingPath: false });
+    }
+  }, [quest, currentStep, selection.selectedStep]);
 
   // Generate paths for all steps
   const handleGenerateAllPaths = useCallback(async () => {
@@ -529,6 +615,204 @@ const PathToolsPanel: React.FC = () => {
             <IconTrash size={16} />
             Clear Path for This Step
           </button>
+        )}
+
+        {/* Path Edit Mode Toggle */}
+        {hasPathToCurrentStep && (
+          <>
+            <button
+              onClick={() => {
+                const newMode = !ui.pathEditMode;
+                EditorStore.setUi({
+                  pathEditMode: newMode,
+                  selectedWaypointIndex: newMode ? null : undefined,
+                });
+              }}
+              style={{
+                ...buttonStyle,
+                background: ui.pathEditMode ? "#0891b2" : "#0f172a",
+                color: ui.pathEditMode ? "#cffafe" : "#9ca3af",
+                border: "1px solid #1e293b",
+              }}
+              title="Enable path editing to drag waypoints and adjust the route"
+            >
+              <IconPencil size={16} />
+              {ui.pathEditMode ? "Path Edit Mode ON" : "Edit Path Waypoints"}
+            </button>
+
+            {/* Waypoint List - shown when edit mode is on */}
+            {ui.pathEditMode && currentStep?.pathToStep?.waypoints && (
+              <div style={{
+                background: "#0f172a",
+                borderRadius: 4,
+                padding: 8,
+                marginBottom: 6,
+              }}>
+                <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 6, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span>Waypoints ({currentStep.pathToStep.waypoints.length})</span>
+                  <HelpBox text="Click a waypoint marker on the map to select it, then drag to move. Use nudge buttons to fine-tune position. Changes will recalculate the path through that point." />
+                </div>
+
+                {/* Selected waypoint info and nudge controls */}
+                {ui.selectedWaypointIndex !== null && ui.selectedWaypointIndex !== undefined && (
+                  <div style={{
+                    background: "#1e293b",
+                    borderRadius: 4,
+                    padding: 8,
+                    marginBottom: 8,
+                  }}>
+                    <div style={{ fontSize: 11, color: "#FF00FF", fontWeight: 600, marginBottom: 6 }}>
+                      Selected: Waypoint #{ui.selectedWaypointIndex}
+                    </div>
+                    <div style={{ fontSize: 10, color: "#9ca3af", marginBottom: 8 }}>
+                      Position: ({currentStep.pathToStep.waypoints[ui.selectedWaypointIndex]?.lat}, {currentStep.pathToStep.waypoints[ui.selectedWaypointIndex]?.lng})
+                    </div>
+
+                    {/* Nudge controls */}
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+                      <button
+                        onClick={() => {
+                          const wp = currentStep.pathToStep?.waypoints[ui.selectedWaypointIndex!];
+                          if (wp) {
+                            handleNudgeWaypoint(ui.selectedWaypointIndex!, 0, 1);
+                          }
+                        }}
+                        style={{
+                          padding: "4px 12px",
+                          background: "#1e3a5f",
+                          color: "#93c5fd",
+                          border: "1px solid #374151",
+                          borderRadius: 3,
+                          cursor: "pointer",
+                          fontSize: 10,
+                        }}
+                        title="Move waypoint north (+Y)"
+                      >
+                        <IconChevronUp size={14} />
+                      </button>
+                      <div style={{ display: "flex", gap: 2 }}>
+                        <button
+                          onClick={() => handleNudgeWaypoint(ui.selectedWaypointIndex!, -1, 0)}
+                          style={{
+                            padding: "4px 12px",
+                            background: "#1e3a5f",
+                            color: "#93c5fd",
+                            border: "1px solid #374151",
+                            borderRadius: 3,
+                            cursor: "pointer",
+                            fontSize: 10,
+                          }}
+                          title="Move waypoint west (-X)"
+                        >
+                          <IconChevronLeft size={14} />
+                        </button>
+                        <button
+                          onClick={() => handleNudgeWaypoint(ui.selectedWaypointIndex!, 1, 0)}
+                          style={{
+                            padding: "4px 12px",
+                            background: "#1e3a5f",
+                            color: "#93c5fd",
+                            border: "1px solid #374151",
+                            borderRadius: 3,
+                            cursor: "pointer",
+                            fontSize: 10,
+                          }}
+                          title="Move waypoint east (+X)"
+                        >
+                          <IconChevronRight size={14} />
+                        </button>
+                      </div>
+                      <button
+                        onClick={() => handleNudgeWaypoint(ui.selectedWaypointIndex!, 0, -1)}
+                        style={{
+                          padding: "4px 12px",
+                          background: "#1e3a5f",
+                          color: "#93c5fd",
+                          border: "1px solid #374151",
+                          borderRadius: 3,
+                          cursor: "pointer",
+                          fontSize: 10,
+                        }}
+                        title="Move waypoint south (-Y)"
+                      >
+                        <IconChevronDown size={14} />
+                      </button>
+                    </div>
+
+                    {/* Recalculate through this point */}
+                    <button
+                      onClick={() => handleRecalculateThroughWaypoint(ui.selectedWaypointIndex!)}
+                      disabled={generating}
+                      style={{
+                        ...buttonStyle,
+                        marginTop: 8,
+                        marginBottom: 0,
+                        background: generating ? "#1e3a5f" : "#059669",
+                        color: generating ? "#9ca3af" : "#d1fae5",
+                        fontSize: 10,
+                        padding: "6px 10px",
+                      }}
+                      title="Recalculate the path to go through this waypoint's new position"
+                    >
+                      <IconPlayerPlay size={14} />
+                      Recalculate Through This Point
+                    </button>
+                  </div>
+                )}
+
+                {/* Scrollable waypoint list */}
+                <div style={{
+                  maxHeight: 150,
+                  overflowY: "auto",
+                  fontSize: 10,
+                }}>
+                  {currentStep.pathToStep.waypoints.filter((_, i) => {
+                    // Show start, end, and every Nth waypoint
+                    const total = currentStep.pathToStep!.waypoints.length;
+                    const interval = Math.max(1, Math.floor(total / 15));
+                    return i === 0 || i === total - 1 || i % interval === 0 || i === ui.selectedWaypointIndex;
+                  }).map((wp, displayIdx) => {
+                    // Find actual index
+                    const total = currentStep.pathToStep!.waypoints.length;
+                    const interval = Math.max(1, Math.floor(total / 15));
+                    let actualIdx = 0;
+                    let count = 0;
+                    for (let i = 0; i < total; i++) {
+                      if (i === 0 || i === total - 1 || i % interval === 0 || i === ui.selectedWaypointIndex) {
+                        if (count === displayIdx) {
+                          actualIdx = i;
+                          break;
+                        }
+                        count++;
+                      }
+                    }
+                    const isSelected = actualIdx === ui.selectedWaypointIndex;
+                    const isEndpoint = actualIdx === 0 || actualIdx === total - 1;
+
+                    return (
+                      <div
+                        key={actualIdx}
+                        onClick={() => EditorStore.setUi({ selectedWaypointIndex: isSelected ? null : actualIdx })}
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          padding: "3px 6px",
+                          background: isSelected ? "#FF00FF33" : "transparent",
+                          borderRadius: 2,
+                          cursor: "pointer",
+                          color: isSelected ? "#FF00FF" : isEndpoint ? "#FFD700" : "#9ca3af",
+                          borderLeft: isSelected ? "2px solid #FF00FF" : "2px solid transparent",
+                        }}
+                      >
+                        <span>#{actualIdx} {isEndpoint ? (actualIdx === 0 ? "(Start)" : "(End)") : ""}</span>
+                        <span>({wp.lat}, {wp.lng})</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </>
         )}
       </div>
 

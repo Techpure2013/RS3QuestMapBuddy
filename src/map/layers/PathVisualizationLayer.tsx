@@ -1,16 +1,22 @@
 // src/map/layers/PathVisualizationLayer.tsx
-// Renders quest paths on the map
+// Renders quest paths on the map with optional editing capabilities
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
-import type { QuestPath } from "../../state/types";
+import type { QuestPath, PathWaypoint } from "../../state/types";
 
 interface PathVisualizationLayerProps {
   paths: QuestPath[];
   currentStepIndex: number;
   currentFloor: number;
   showAllPaths?: boolean;
+  // Edit mode props
+  editMode?: boolean;
+  selectedWaypointIndex?: number | null;
+  onWaypointSelect?: (index: number | null) => void;
+  onWaypointDrag?: (index: number, newPos: PathWaypoint) => void;
+  onWaypointDragEnd?: (index: number, newPos: PathWaypoint) => void;
 }
 
 // Path styling
@@ -101,9 +107,15 @@ const PathVisualizationLayerComponent: React.FC<PathVisualizationLayerProps> = (
   currentStepIndex,
   currentFloor,
   showAllPaths = false,
+  editMode = false,
+  selectedWaypointIndex,
+  onWaypointSelect,
+  onWaypointDrag,
+  onWaypointDragEnd,
 }) => {
   const map = useMap();
   const layerRef = useRef<L.LayerGroup | null>(null);
+  const editLayerRef = useRef<L.LayerGroup | null>(null);
 
   useEffect(() => {
     // Ensure panes exist
@@ -203,6 +215,163 @@ const PathVisualizationLayerComponent: React.FC<PathVisualizationLayerProps> = (
       }
     };
   }, [map, paths, currentStepIndex, currentFloor, showAllPaths]);
+
+  // Edit mode: render draggable waypoint markers
+  useEffect(() => {
+    // Ensure edit pane exists with higher z-index
+    ensurePane(map, "pathEditPane", "590");
+    const editPane = map.getPane("pathEditPane");
+    if (editPane) {
+      editPane.style.pointerEvents = "auto"; // Allow interaction
+    }
+
+    // Create edit layer group if needed
+    if (!editLayerRef.current) {
+      editLayerRef.current = new L.LayerGroup().addTo(map);
+    }
+
+    const editLayer = editLayerRef.current;
+    editLayer.clearLayers();
+
+    if (!editMode) return;
+
+    // Find current path
+    const currentPath = paths.find((p) => p.toStepIndex === currentStepIndex);
+    if (!currentPath || !currentPath.waypoints || currentPath.waypoints.length < 2) return;
+
+    const waypoints = currentPath.waypoints;
+
+    // Determine which waypoints to show markers for
+    // Show every Nth waypoint to avoid clutter, plus always show start/end
+    const waypointInterval = Math.max(1, Math.floor(waypoints.length / 20));
+    const indicesToShow = new Set<number>();
+    indicesToShow.add(0); // Start
+    indicesToShow.add(waypoints.length - 1); // End
+    for (let i = waypointInterval; i < waypoints.length - 1; i += waypointInterval) {
+      indicesToShow.add(i);
+    }
+    // Always include selected waypoint
+    if (selectedWaypointIndex !== null && selectedWaypointIndex !== undefined) {
+      indicesToShow.add(selectedWaypointIndex);
+    }
+
+    // Create draggable markers
+    indicesToShow.forEach((wpIndex) => {
+      const wp = waypoints[wpIndex];
+      const isSelected = wpIndex === selectedWaypointIndex;
+      const isEndpoint = wpIndex === 0 || wpIndex === waypoints.length - 1;
+
+      // Create draggable marker
+      const marker = L.circleMarker([wp.lat + 0.5, wp.lng + 0.5], {
+        radius: isSelected ? 10 : isEndpoint ? 8 : 6,
+        color: isSelected ? "#FF00FF" : isEndpoint ? "#FFFFFF" : "#00FFFF",
+        fillColor: isSelected ? "#FF00FF" : isEndpoint ? (wpIndex === 0 ? "#00FF00" : "#FFD700") : "#00FFFF",
+        fillOpacity: isSelected ? 0.9 : 0.7,
+        weight: isSelected ? 3 : 2,
+        pane: "pathEditPane",
+        interactive: true,
+      });
+
+      // Add index label
+      const label = L.marker([wp.lat + 0.5, wp.lng + 0.5], {
+        icon: L.divIcon({
+          className: "waypoint-label",
+          html: `<div style="
+            background: ${isSelected ? '#FF00FF' : 'rgba(0,0,0,0.7)'};
+            color: white;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 9px;
+            font-weight: bold;
+            white-space: nowrap;
+            transform: translate(-50%, -150%);
+          ">${wpIndex}</div>`,
+          iconSize: [0, 0],
+        }),
+        pane: "pathEditPane",
+        interactive: false,
+      });
+
+      // Immediately disable map dragging when mouse enters a waypoint marker
+      marker.on("mouseover", () => {
+        map.dragging.disable();
+      });
+
+      marker.on("mouseout", () => {
+        // Only re-enable if we're not currently dragging
+        if (!marker.options.isDragging) {
+          map.dragging.enable();
+        }
+      });
+
+      // Click to select
+      marker.on("click", (e) => {
+        L.DomEvent.stopPropagation(e);
+        L.DomEvent.preventDefault(e);
+        onWaypointSelect?.(isSelected ? null : wpIndex);
+      });
+
+      // Make marker draggable by handling mousedown + map mousemove
+      marker.on("mousedown", (e) => {
+        L.DomEvent.stopPropagation(e);
+        L.DomEvent.preventDefault(e);
+
+        // If not selected, select it first - user can drag on next interaction
+        if (!isSelected) {
+          onWaypointSelect?.(wpIndex);
+          return;
+        }
+
+        // Start dragging
+        (marker.options as any).isDragging = true;
+        map.dragging.disable();
+
+        const onMouseMove = (moveEvent: L.LeafletMouseEvent) => {
+          if (!(marker.options as any).isDragging) return;
+          const newLat = Math.floor(moveEvent.latlng.lat + 0.5) - 0.5;
+          const newLng = Math.floor(moveEvent.latlng.lng + 0.5) - 0.5;
+          marker.setLatLng([newLat + 0.5, newLng + 0.5]);
+          label.setLatLng([newLat + 0.5, newLng + 0.5]);
+          onWaypointDrag?.(wpIndex, { lat: newLat + 0.5, lng: newLng + 0.5 });
+        };
+
+        const onMouseUp = (upEvent: L.LeafletMouseEvent) => {
+          if (!(marker.options as any).isDragging) return;
+          (marker.options as any).isDragging = false;
+          map.dragging.enable();
+          map.off("mousemove", onMouseMove);
+          map.off("mouseup", onMouseUp);
+          document.removeEventListener("mouseup", onDocumentMouseUp);
+          const finalLat = Math.floor(upEvent.latlng.lat + 0.5);
+          const finalLng = Math.floor(upEvent.latlng.lng + 0.5);
+          onWaypointDragEnd?.(wpIndex, { lat: finalLat, lng: finalLng });
+        };
+
+        // Also listen on document in case mouse leaves the map
+        const onDocumentMouseUp = () => {
+          if (!(marker.options as any).isDragging) return;
+          (marker.options as any).isDragging = false;
+          map.dragging.enable();
+          map.off("mousemove", onMouseMove);
+          map.off("mouseup", onMouseUp);
+          document.removeEventListener("mouseup", onDocumentMouseUp);
+        };
+
+        map.on("mousemove", onMouseMove);
+        map.on("mouseup", onMouseUp);
+        document.addEventListener("mouseup", onDocumentMouseUp);
+      });
+
+      editLayer.addLayer(marker);
+      editLayer.addLayer(label);
+    });
+
+    return () => {
+      if (editLayerRef.current) {
+        editLayerRef.current.clearLayers();
+      }
+    };
+  }, [map, paths, currentStepIndex, editMode, selectedWaypointIndex, onWaypointSelect, onWaypointDrag, onWaypointDragEnd]);
 
   return null;
 };
