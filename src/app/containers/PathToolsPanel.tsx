@@ -1,10 +1,101 @@
 // src/app/containers/PathToolsPanel.tsx
 import React, { useCallback, useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import { EditorStore } from "../../state/editorStore";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import { generateStepToStepPath, getStepEndpoint, clearCollisionCache, debugCollisionArea, collisionEditorState, saveAllCollisionFiles, getModifiedCollisionFiles, DIRECTION_BITS, savePath, loadCustomTransports, deleteTransport, transportEditorState, type CustomTransport, type TransportType } from "../../map/utils/pathfinding";
 import type { QuestPath } from "../../state/types";
-import { IconRoute, IconTrash, IconEye, IconEyeOff, IconLoader2, IconRefresh, IconGridDots, IconPencil, IconWalk, IconX, IconDeviceFloppy, IconCloudUpload, IconStairs, IconArrowUp, IconArrowDown, IconArrowsUpDown } from "@tabler/icons-react";
+import { IconRoute, IconTrash, IconEye, IconEyeOff, IconLoader2, IconRefresh, IconGridDots, IconPencil, IconWalk, IconX, IconDeviceFloppy, IconCloudUpload, IconStairs, IconArrowUp, IconArrowDown, IconArrowsUpDown, IconHelp } from "@tabler/icons-react";
+
+// Helper tooltip component - uses Portal to escape overflow:hidden containers
+const HelpBox: React.FC<{ text: string }> = ({ text }) => {
+  const [show, setShow] = useState(false);
+  const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
+  const iconRef = React.useRef<HTMLSpanElement>(null);
+
+  const handleClick = () => {
+    if (!show && iconRef.current) {
+      const rect = iconRef.current.getBoundingClientRect();
+      // Position tooltip so it doesn't go off screen
+      const tooltipWidth = 220;
+      const tooltipHeight = 160; // approximate
+
+      // Position to the left of the icon, not covering it
+      let left = rect.left - tooltipWidth - 8;
+      let top = rect.top - 20; // Align roughly with icon
+
+      // If would go off left edge, position to the right of icon instead
+      if (left < 8) {
+        left = rect.right + 8;
+      }
+      // If would go off right edge, position below
+      if (left + tooltipWidth > window.innerWidth - 8) {
+        left = Math.max(8, window.innerWidth - tooltipWidth - 8);
+        top = rect.bottom + 8;
+      }
+      // Keep on screen vertically
+      if (top < 8) top = 8;
+      if (top + tooltipHeight > window.innerHeight - 8) {
+        top = window.innerHeight - tooltipHeight - 8;
+      }
+
+      setPos({ top, left });
+    }
+    setShow(!show);
+  };
+
+  const tooltip = show && pos ? (
+    <div
+      style={{
+        position: "fixed",
+        top: pos.top,
+        left: pos.left,
+        padding: "8px 10px",
+        background: "#1e293b",
+        border: "1px solid #374151",
+        borderRadius: 4,
+        fontSize: 11,
+        color: "#d1d5db",
+        lineHeight: 1.4,
+        width: 220,
+        zIndex: 99999,
+        boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
+      }}
+    >
+      {text}
+      <div
+        style={{
+          marginTop: 6,
+          fontSize: 10,
+          color: "#6b7280",
+          fontStyle: "italic",
+        }}
+      >
+        Click ? to close
+      </div>
+    </div>
+  ) : null;
+
+  return (
+    <>
+      <span
+        ref={iconRef}
+        onClick={handleClick}
+        style={{
+          cursor: "pointer",
+          color: show ? "#60a5fa" : "#6b7280",
+          marginLeft: 6,
+          display: "inline-flex",
+          alignItems: "center",
+        }}
+        title="Click for help"
+      >
+        <IconHelp size={14} />
+      </span>
+      {tooltip && ReactDOM.createPortal(tooltip, document.body)}
+    </>
+  );
+};
 
 const PathToolsPanel: React.FC = () => {
   const quest = useEditorSelector((s) => s.quest);
@@ -362,18 +453,20 @@ const PathToolsPanel: React.FC = () => {
     justifyContent: "center",
     marginBottom: 6,
     transition: "background 0.15s ease",
+    boxSizing: "border-box",
   };
 
   return (
-    <div className="path-tools-panel">
+    <div className="path-tools-panel" style={{ overflow: "hidden", boxSizing: "border-box", width: "100%" }}>
       <div style={{ marginBottom: 12 }}>
-        <div style={{ fontSize: 11, color: "#9ca3af", marginBottom: 8 }}>
-          Step {selection.selectedStep + 1} of {quest?.questSteps.length ?? 0}
+        <div style={{ fontSize: 11, color: "#9ca3af", marginBottom: 8, display: "flex", alignItems: "center", flexWrap: "wrap" }}>
+          <span>Step {selection.selectedStep + 1} of {quest?.questSteps.length ?? 0}</span>
           {hasPathToCurrentStep && (
             <span style={{ color: "#10b981", marginLeft: 8 }}>
               (has path: {currentStep?.pathToStep?.waypoints.length} points)
             </span>
           )}
+          <HelpBox text="Paths are auto-generated routes between quest steps. Select a step (not step 1), then click 'Generate Path' to create a walking route from the previous step's NPC/Object to this step's NPC/Object." />
         </div>
 
         {/* Generate path for current step */}
@@ -444,8 +537,9 @@ const PathToolsPanel: React.FC = () => {
         paddingTop: 12,
         marginTop: 12
       }}>
-        <div style={{ fontSize: 11, color: "#6b7280", marginBottom: 8 }}>
-          Batch Operations
+        <div style={{ fontSize: 11, color: "#6b7280", marginBottom: 8, display: "flex", alignItems: "center" }}>
+          <span>Batch Operations</span>
+          <HelpBox text="Generate paths for all steps at once, or save to server. 'Show All Paths' displays every path. 'Show Collision Debug' shows walkable/blocked tiles (red=blocked). 'Show Transport Links' shows teleports, stairs, etc. Enable 'Edit Transport Positions' under Transport Links to move/delete existing transports." />
         </div>
 
         {/* Generate all paths */}
@@ -649,8 +743,9 @@ const PathToolsPanel: React.FC = () => {
         paddingTop: 12,
         marginTop: 12
       }}>
-        <div style={{ fontSize: 11, color: "#6b7280", marginBottom: 8 }}>
-          Collision Editor
+        <div style={{ fontSize: 11, color: "#6b7280", marginBottom: 8, display: "flex", alignItems: "center" }}>
+          <span>Collision Editor</span>
+          <HelpBox text="Fix pathfinding issues by editing collision data. Enable the editor, choose a mode (Walkable/Blocked/Directional), then click+drag on the map to paint tiles. 'Directional' mode lets you block specific movement directions. Save edits when done." />
         </div>
 
         {/* Toggle collision editor */}
@@ -981,12 +1076,16 @@ const PathToolsPanel: React.FC = () => {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            cursor: "pointer",
           }}
-          onClick={() => setTransportsExpanded(!transportsExpanded)}
         >
-          <span>Transport Editor</span>
-          <span style={{ fontSize: 10 }}>{transportsExpanded ? "▼" : "▶"}</span>
+          <span
+            style={{ cursor: "pointer", display: "flex", alignItems: "center", flex: 1 }}
+            onClick={() => setTransportsExpanded(!transportsExpanded)}
+          >
+            Transport Editor
+            <span style={{ fontSize: 10, marginLeft: 6 }}>{transportsExpanded ? "▼" : "▶"}</span>
+          </span>
+          <HelpBox text="Add transport links (stairs, teleports, fairy rings, etc.) to help pathfinding. Enable editor, select type, click map for FROM, then TO. Shift+Click after FROM to set a second corner for multi-tile areas. In Edit Mode: click a marker to select it, click map to move it, Shift+Click to resize multi-tile bounds, Delete/Backspace to remove." />
         </div>
 
         {transportsExpanded && (
