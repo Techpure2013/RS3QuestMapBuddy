@@ -241,6 +241,23 @@ const PathToolsPanel: React.FC = () => {
     });
   }, [selection.selectedStep]);
 
+  // Delete a waypoint (not start/end)
+  const handleDeleteWaypoint = useCallback((waypointIndex: number) => {
+    EditorStore.patchQuest((draft) => {
+      const step = draft.questSteps[selection.selectedStep];
+      if (step?.pathToStep?.waypoints) {
+        const total = step.pathToStep.waypoints.length;
+        // Don't delete start or end waypoints
+        if (waypointIndex > 0 && waypointIndex < total - 1) {
+          step.pathToStep.waypoints.splice(waypointIndex, 1);
+        }
+      }
+    });
+    // Deselect after deletion
+    EditorStore.setUi({ selectedWaypointIndex: null });
+    setStatus("Waypoint deleted");
+  }, [selection.selectedStep]);
+
   // Recalculate path through a via point (selected waypoint)
   const handleRecalculateThroughWaypoint = useCallback(async (waypointIndex: number) => {
     if (!quest || !currentStep?.pathToStep?.waypoints) {
@@ -759,6 +776,33 @@ const PathToolsPanel: React.FC = () => {
                       <IconPlayerPlay size={14} />
                       Recalculate Through This Point
                     </button>
+
+                    {/* Delete waypoint button - only for non-endpoint waypoints */}
+                    {(() => {
+                      const total = currentStep.pathToStep?.waypoints.length ?? 0;
+                      const isEndpoint = ui.selectedWaypointIndex === 0 || ui.selectedWaypointIndex === total - 1;
+                      return (
+                        <button
+                          onClick={() => handleDeleteWaypoint(ui.selectedWaypointIndex!)}
+                          disabled={isEndpoint}
+                          style={{
+                            ...buttonStyle,
+                            marginTop: 6,
+                            marginBottom: 0,
+                            background: isEndpoint ? "#1e293b" : "#7f1d1d",
+                            color: isEndpoint ? "#6b7280" : "#fecaca",
+                            fontSize: 10,
+                            padding: "6px 10px",
+                            opacity: isEndpoint ? 0.5 : 1,
+                            cursor: isEndpoint ? "not-allowed" : "pointer",
+                          }}
+                          title={isEndpoint ? "Cannot delete start/end waypoints" : "Delete this waypoint"}
+                        >
+                          <IconTrash size={14} />
+                          {isEndpoint ? "Cannot Delete (Endpoint)" : "Delete Waypoint"}
+                        </button>
+                      );
+                    })()}
                   </div>
                 )}
 
