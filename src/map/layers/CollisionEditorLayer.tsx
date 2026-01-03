@@ -11,6 +11,11 @@ import {
   makeAreaBlocked,
   addAreaDirections,
   removeAreaDirections,
+  makeLineWalkable,
+  makeLineBlocked,
+  addLineDirections,
+  removeLineDirections,
+  getLineTiles,
   loadCollisionForDebug,
   getFilesForArea,
   collisionEditorState,
@@ -28,10 +33,12 @@ const CollisionEditorLayerComponent: React.FC<CollisionEditorLayerProps> = ({
   const map = useMap();
   const [enabled, setEnabled] = useState(collisionEditorState.enabled);
   const [mode, setMode] = useState(collisionEditorState.mode);
+  const [drawShape, setDrawShape] = useState(collisionEditorState.drawShape);
   const [isSelecting, setIsSelecting] = useState(false);
   const [selectionStart, setSelectionStart] = useState<L.LatLng | null>(null);
   const [selectionEnd, setSelectionEnd] = useState<L.LatLng | null>(null);
   const selectionRectRef = useRef<L.Rectangle | null>(null);
+  const selectionLineRef = useRef<L.Polyline | null>(null);
   const cursorMarkerRef = useRef<L.CircleMarker | null>(null);
 
   // Subscribe to global state changes
@@ -39,6 +46,7 @@ const CollisionEditorLayerComponent: React.FC<CollisionEditorLayerProps> = ({
     const unsubscribe = collisionEditorState.subscribe(() => {
       setEnabled(collisionEditorState.enabled);
       setMode(collisionEditorState.mode);
+      setDrawShape(collisionEditorState.drawShape);
     });
     return unsubscribe;
   }, []);
@@ -75,7 +83,7 @@ const CollisionEditorLayerComponent: React.FC<CollisionEditorLayerProps> = ({
     await Promise.all(files.map(f => loadCollisionForDebug(f.x, f.y, floor)));
   }, [floor]);
 
-  // Apply edits to selected area
+  // Apply edits to selected area or line
   const applyEdits = useCallback(async (start: L.LatLng, end: L.LatLng) => {
     const startTile = toTileCoords(start);
     const endTile = toTileCoords(end);
@@ -88,60 +96,124 @@ const CollisionEditorLayerComponent: React.FC<CollisionEditorLayerProps> = ({
     // Ensure collision data is loaded
     await ensureDataLoaded(minX, minY, maxX, maxY);
 
-    // Apply the edit based on current mode
+    // Apply the edit based on current mode and shape
     const currentMode = collisionEditorState.mode;
-    console.log(`%c🎯 Applying edit: mode=${currentMode}, area=(${minX},${minY})-(${maxX},${maxY})`, 'color: cyan');
-    if (currentMode === "walkable") {
-      makeAreaWalkable(minX, minY, maxX, maxY, floor);
-    } else if (currentMode === "blocked") {
-      makeAreaBlocked(minX, minY, maxX, maxY, floor);
-    } else if (currentMode === "directional") {
-      const dirBits = collisionEditorState.selectedDirections;
-      const action = collisionEditorState.directionalAction;
-      console.log(`%c🎯 Directional: action=${action}, bits=${dirBits} (${dirBits.toString(2).padStart(8, '0')})`, 'color: cyan');
-      if (action === "block") {
-        removeAreaDirections(minX, minY, maxX, maxY, floor, dirBits);
-      } else {
-        addAreaDirections(minX, minY, maxX, maxY, floor, dirBits);
+    const currentShape = collisionEditorState.drawShape;
+
+    if (currentShape === "line") {
+      // Line mode - draw a 1-tile-wide line from start to end
+      console.log(`%c🎯 Applying line edit: mode=${currentMode}, (${startTile.x},${startTile.y})->(${endTile.x},${endTile.y})`, 'color: cyan');
+      if (currentMode === "walkable") {
+        makeLineWalkable(startTile.x, startTile.y, endTile.x, endTile.y, floor);
+      } else if (currentMode === "blocked") {
+        makeLineBlocked(startTile.x, startTile.y, endTile.x, endTile.y, floor);
+      } else if (currentMode === "directional") {
+        const dirBits = collisionEditorState.selectedDirections;
+        const action = collisionEditorState.directionalAction;
+        console.log(`%c🎯 Directional: action=${action}, bits=${dirBits} (${dirBits.toString(2).padStart(8, '0')})`, 'color: cyan');
+        if (action === "block") {
+          removeLineDirections(startTile.x, startTile.y, endTile.x, endTile.y, floor, dirBits);
+        } else {
+          addLineDirections(startTile.x, startTile.y, endTile.x, endTile.y, floor, dirBits);
+        }
+      }
+    } else {
+      // Rectangle mode - fill the entire area
+      console.log(`%c🎯 Applying rect edit: mode=${currentMode}, area=(${minX},${minY})-(${maxX},${maxY})`, 'color: cyan');
+      if (currentMode === "walkable") {
+        makeAreaWalkable(minX, minY, maxX, maxY, floor);
+      } else if (currentMode === "blocked") {
+        makeAreaBlocked(minX, minY, maxX, maxY, floor);
+      } else if (currentMode === "directional") {
+        const dirBits = collisionEditorState.selectedDirections;
+        const action = collisionEditorState.directionalAction;
+        console.log(`%c🎯 Directional: action=${action}, bits=${dirBits} (${dirBits.toString(2).padStart(8, '0')})`, 'color: cyan');
+        if (action === "block") {
+          removeAreaDirections(minX, minY, maxX, maxY, floor, dirBits);
+        } else {
+          addAreaDirections(minX, minY, maxX, maxY, floor, dirBits);
+        }
       }
     }
   }, [floor, toTileCoords, ensureDataLoaded]);
 
-  // Update selection rectangle
+  // Update selection rectangle or line
   useEffect(() => {
     if (!enabled) {
       if (selectionRectRef.current) {
         map.removeLayer(selectionRectRef.current);
         selectionRectRef.current = null;
       }
+      if (selectionLineRef.current) {
+        map.removeLayer(selectionLineRef.current);
+        selectionLineRef.current = null;
+      }
       return;
     }
 
-    if (selectionStart && selectionEnd) {
-      // Use tile-snapped bounds so visual matches actual edit area
-      const bounds = tileToVisualBounds(selectionStart, selectionEnd);
-      // Color: green for walkable, red for blocked, cyan for directional
-      const color = mode === "walkable" ? "#00ff00" : mode === "blocked" ? "#ff0000" : "#00ffff";
+    // Color: green for walkable, red for blocked, cyan for directional
+    const color = mode === "walkable" ? "#00ff00" : mode === "blocked" ? "#ff0000" : "#00ffff";
 
-      if (selectionRectRef.current) {
-        selectionRectRef.current.setBounds(bounds);
-        selectionRectRef.current.setStyle({
-          color,
-          fillColor: color,
-        });
+    if (selectionStart && selectionEnd) {
+      if (drawShape === "line") {
+        // Line mode - show a polyline through tile centers
+        if (selectionRectRef.current) {
+          map.removeLayer(selectionRectRef.current);
+          selectionRectRef.current = null;
+        }
+
+        const startTile = toTileCoords(selectionStart);
+        const endTile = toTileCoords(selectionEnd);
+        const lineTiles = getLineTiles(startTile.x, startTile.y, endTile.x, endTile.y);
+
+        // Convert to lat/lng points (tile centers)
+        const latLngs: L.LatLngExpression[] = lineTiles.map(t => [t.y + 0.5, t.x + 0.5]);
+
+        if (selectionLineRef.current) {
+          selectionLineRef.current.setLatLngs(latLngs);
+          selectionLineRef.current.setStyle({ color });
+        } else {
+          selectionLineRef.current = L.polyline(latLngs, {
+            color,
+            weight: 4,
+            opacity: 0.8,
+          }).addTo(map);
+        }
       } else {
-        selectionRectRef.current = L.rectangle(bounds, {
-          color,
-          weight: 2,
-          fillOpacity: 0.3,
-          fillColor: color,
-        }).addTo(map);
+        // Rectangle mode - show a filled rectangle
+        if (selectionLineRef.current) {
+          map.removeLayer(selectionLineRef.current);
+          selectionLineRef.current = null;
+        }
+
+        const bounds = tileToVisualBounds(selectionStart, selectionEnd);
+
+        if (selectionRectRef.current) {
+          selectionRectRef.current.setBounds(bounds);
+          selectionRectRef.current.setStyle({
+            color,
+            fillColor: color,
+          });
+        } else {
+          selectionRectRef.current = L.rectangle(bounds, {
+            color,
+            weight: 2,
+            fillOpacity: 0.3,
+            fillColor: color,
+          }).addTo(map);
+        }
       }
-    } else if (selectionRectRef.current) {
-      map.removeLayer(selectionRectRef.current);
-      selectionRectRef.current = null;
+    } else {
+      if (selectionRectRef.current) {
+        map.removeLayer(selectionRectRef.current);
+        selectionRectRef.current = null;
+      }
+      if (selectionLineRef.current) {
+        map.removeLayer(selectionLineRef.current);
+        selectionLineRef.current = null;
+      }
     }
-  }, [map, enabled, selectionStart, selectionEnd, mode, tileToVisualBounds]);
+  }, [map, enabled, selectionStart, selectionEnd, mode, drawShape, tileToVisualBounds, toTileCoords]);
 
   // Update cursor marker on mouse move
   useEffect(() => {
@@ -242,6 +314,10 @@ const CollisionEditorLayerComponent: React.FC<CollisionEditorLayerProps> = ({
         map.removeLayer(selectionRectRef.current);
         selectionRectRef.current = null;
       }
+      if (selectionLineRef.current) {
+        map.removeLayer(selectionLineRef.current);
+        selectionLineRef.current = null;
+      }
       if (cursorMarkerRef.current) {
         map.removeLayer(cursorMarkerRef.current);
         cursorMarkerRef.current = null;
@@ -267,6 +343,7 @@ export const CollisionEditorLayer = React.memo(CollisionEditorLayerComponent);
 export function useCollisionEditorState() {
   const [enabled, setEnabled] = useState(collisionEditorState.enabled);
   const [mode, setMode] = useState(collisionEditorState.mode);
+  const [drawShape, setDrawShape] = useState(collisionEditorState.drawShape);
   const [selectedDirections, setSelectedDirections] = useState(collisionEditorState.selectedDirections);
   const [directionalAction, setDirectionalAction] = useState(collisionEditorState.directionalAction);
 
@@ -274,11 +351,12 @@ export function useCollisionEditorState() {
     const unsubscribe = collisionEditorState.subscribe(() => {
       setEnabled(collisionEditorState.enabled);
       setMode(collisionEditorState.mode);
+      setDrawShape(collisionEditorState.drawShape);
       setSelectedDirections(collisionEditorState.selectedDirections);
       setDirectionalAction(collisionEditorState.directionalAction);
     });
     return unsubscribe;
   }, []);
 
-  return { enabled, mode, selectedDirections, directionalAction };
+  return { enabled, mode, drawShape, selectedDirections, directionalAction };
 }

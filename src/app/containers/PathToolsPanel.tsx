@@ -108,6 +108,7 @@ const PathToolsPanel: React.FC = () => {
   // Collision editor state
   const [collisionEditorEnabled, setCollisionEditorEnabled] = useState(collisionEditorState.enabled);
   const [collisionEditorMode, setCollisionEditorMode] = useState(collisionEditorState.mode);
+  const [collisionDrawShape, setCollisionDrawShape] = useState(collisionEditorState.drawShape);
   const [selectedDirections, setSelectedDirections] = useState(collisionEditorState.selectedDirections);
   const [directionalAction, setDirectionalAction] = useState(collisionEditorState.directionalAction);
 
@@ -142,6 +143,7 @@ const PathToolsPanel: React.FC = () => {
     const unsubscribe = collisionEditorState.subscribe(() => {
       setCollisionEditorEnabled(collisionEditorState.enabled);
       setCollisionEditorMode(collisionEditorState.mode);
+      setCollisionDrawShape(collisionEditorState.drawShape);
       setSelectedDirections(collisionEditorState.selectedDirections);
       setDirectionalAction(collisionEditorState.directionalAction);
     });
@@ -1093,6 +1095,40 @@ const PathToolsPanel: React.FC = () => {
               title="Edit specific directions on tiles"
             >
               Directional
+            </button>
+          </div>
+        )}
+
+        {/* Draw shape toggle - Rectangle vs Line */}
+        {collisionEditorEnabled && (
+          <div style={{ display: "flex", gap: 6, marginBottom: 6 }}>
+            <button
+              onClick={() => collisionEditorState.setDrawShape("rectangle")}
+              style={{
+                ...buttonStyle,
+                flex: 1,
+                background: collisionDrawShape === "rectangle" ? "#7c3aed" : "#0f172a",
+                color: collisionDrawShape === "rectangle" ? "#ede9fe" : "#9ca3af",
+                border: "1px solid #1e293b",
+                marginBottom: 0,
+              }}
+              title="Draw filled rectangles"
+            >
+              Rectangle
+            </button>
+            <button
+              onClick={() => collisionEditorState.setDrawShape("line")}
+              style={{
+                ...buttonStyle,
+                flex: 1,
+                background: collisionDrawShape === "line" ? "#7c3aed" : "#0f172a",
+                color: collisionDrawShape === "line" ? "#ede9fe" : "#9ca3af",
+                border: "1px solid #1e293b",
+                marginBottom: 0,
+              }}
+              title="Draw 1-tile-wide lines for detailed work"
+            >
+              Line
             </button>
           </div>
         )}

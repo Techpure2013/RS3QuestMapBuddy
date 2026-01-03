@@ -918,9 +918,17 @@ export function clearCollisionCache(): void {
 export const collisionEditorState = {
   enabled: false,
   mode: "walkable" as "walkable" | "blocked" | "directional",
+  drawShape: "rectangle" as "rectangle" | "line",  // Drawing shape: filled rectangle or 1-tile line
   selectedDirections: 255,  // Bitmask of directions to edit (default: all)
   directionalAction: "block" as "block" | "unblock",
   listeners: new Set<() => void>(),
+
+  setDrawShape(shape: "rectangle" | "line") {
+    this.drawShape = shape;
+    this.notifyListeners();
+    console.log(`%cCollision Editor Shape: ${shape === 'rectangle' ? '⬛ Rectangle' : '➖ Line'}`,
+      'color: cyan');
+  },
 
   setEnabled(value: boolean) {
     this.enabled = value;
@@ -929,6 +937,7 @@ export const collisionEditorState = {
       value ? 'color: lime; font-weight: bold' : 'color: orange; font-weight: bold');
     if (value) {
       console.log(`Mode: ${this.mode === 'walkable' ? '🟢 Walkable' : this.mode === 'blocked' ? '🔴 Blocked' : '🎯 Directional'}`);
+      console.log(`Shape: ${this.drawShape === 'rectangle' ? '⬛ Rectangle' : '➖ Line'}`);
       console.log('Click and drag on the map to select tiles');
     }
   },
@@ -1144,6 +1153,114 @@ export function removeAreaDirections(
     }
   }
   console.log(`%c🚫 Removed directions from ${count} tiles (bits: ${directionBits.toString(2).padStart(8, '0')})`, 'color: red');
+  notifyCollisionDataChanged();
+  return count;
+}
+
+// ============ LINE DRAWING (Bresenham's algorithm) ============
+
+// Get all tiles along a line from (x0,y0) to (x1,y1)
+export function getLineTiles(x0: number, y0: number, x1: number, y1: number): Array<{x: number, y: number}> {
+  const tiles: Array<{x: number, y: number}> = [];
+
+  const dx = Math.abs(x1 - x0);
+  const dy = Math.abs(y1 - y0);
+  const sx = x0 < x1 ? 1 : -1;
+  const sy = y0 < y1 ? 1 : -1;
+  let err = dx - dy;
+
+  let x = x0;
+  let y = y0;
+
+  while (true) {
+    tiles.push({ x, y });
+
+    if (x === x1 && y === y1) break;
+
+    const e2 = 2 * err;
+    if (e2 > -dy) {
+      err -= dy;
+      x += sx;
+    }
+    if (e2 < dx) {
+      err += dx;
+      y += sy;
+    }
+  }
+
+  return tiles;
+}
+
+// Make a line of tiles walkable
+export function makeLineWalkable(
+  x0: number, y0: number,
+  x1: number, y1: number,
+  floor: number
+): number {
+  const tiles = getLineTiles(x0, y0, x1, y1);
+  let count = 0;
+  for (const tile of tiles) {
+    if (makeTileWalkable(tile.x, tile.y, floor)) {
+      count++;
+    }
+  }
+  console.log(`%c✅ Made ${count} tiles walkable (line)`, 'color: lime');
+  notifyCollisionDataChanged();
+  return count;
+}
+
+// Make a line of tiles blocked
+export function makeLineBlocked(
+  x0: number, y0: number,
+  x1: number, y1: number,
+  floor: number
+): number {
+  const tiles = getLineTiles(x0, y0, x1, y1);
+  let count = 0;
+  for (const tile of tiles) {
+    if (makeTileBlocked(tile.x, tile.y, floor)) {
+      count++;
+    }
+  }
+  console.log(`%c🚫 Made ${count} tiles blocked (line)`, 'color: red');
+  notifyCollisionDataChanged();
+  return count;
+}
+
+// Add directions along a line
+export function addLineDirections(
+  x0: number, y0: number,
+  x1: number, y1: number,
+  floor: number,
+  directionBits: number
+): number {
+  const tiles = getLineTiles(x0, y0, x1, y1);
+  let count = 0;
+  for (const tile of tiles) {
+    if (addTileDirections(tile.x, tile.y, floor, directionBits)) {
+      count++;
+    }
+  }
+  console.log(`%c✅ Added directions to ${count} tiles (line, bits: ${directionBits.toString(2).padStart(8, '0')})`, 'color: lime');
+  notifyCollisionDataChanged();
+  return count;
+}
+
+// Remove directions along a line
+export function removeLineDirections(
+  x0: number, y0: number,
+  x1: number, y1: number,
+  floor: number,
+  directionBits: number
+): number {
+  const tiles = getLineTiles(x0, y0, x1, y1);
+  let count = 0;
+  for (const tile of tiles) {
+    if (removeTileDirections(tile.x, tile.y, floor, directionBits)) {
+      count++;
+    }
+  }
+  console.log(`%c🚫 Removed directions from ${count} tiles (line, bits: ${directionBits.toString(2).padStart(8, '0')})`, 'color: red');
   notifyCollisionDataChanged();
   return count;
 }
