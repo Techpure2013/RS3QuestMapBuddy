@@ -43,14 +43,12 @@ const CollisionEditorLayerComponent: React.FC<CollisionEditorLayerProps> = ({
     return unsubscribe;
   }, []);
 
-  // Convert lat/lng to tile coordinates (matching the map's offset system)
+  // Convert lat/lng to tile coordinates (raw world coordinates for collision data)
   const toTileCoords = useCallback((latlng: L.LatLng) => {
-    // Match the offset logic from snapToTileCoordinate in InternalMapLayers
-    // storedLng = Math.floor(latlng.lng - 0.5)
-    // storedLat = Math.floor(latlng.lat + 0.5)
+    // Collision data uses raw world coordinates - no offset needed
     return {
-      x: Math.floor(latlng.lng - 0.5),
-      y: Math.floor(latlng.lat + 0.5),
+      x: Math.floor(latlng.lng),
+      y: Math.floor(latlng.lat),
     };
   }, []);
 
@@ -64,10 +62,9 @@ const CollisionEditorLayerComponent: React.FC<CollisionEditorLayerProps> = ({
     const minY = Math.min(startTile.y, endTile.y);
     const maxY = Math.max(startTile.y, endTile.y);
 
-    // Convert back to visual coordinates (add offsets for tile display)
-    // Southwest corner of min tile, Northeast corner of max tile
-    const sw = L.latLng(minY - 0.5, minX + 0.5);
-    const ne = L.latLng(maxY + 0.5, maxX + 1.5);
+    // Convert to visual bounds - tile at (x,y) occupies space from (y,x) to (y+1,x+1)
+    const sw = L.latLng(minY, minX);
+    const ne = L.latLng(maxY + 1, maxX + 1);
 
     return L.latLngBounds(sw, ne);
   }, [toTileCoords]);
@@ -161,8 +158,8 @@ const CollisionEditorLayerComponent: React.FC<CollisionEditorLayerProps> = ({
 
     const onMouseMove = (e: L.LeafletMouseEvent) => {
       const tile = toTileCoords(e.latlng);
-      // Visual center adjusted: y, x + 1.0
-      const center = L.latLng(tile.y, tile.x + 1.0);
+      // Center of the tile at (x, y) is at (y + 0.5, x + 0.5)
+      const center = L.latLng(tile.y + 0.5, tile.x + 0.5);
 
       if (cursorMarkerRef.current) {
         cursorMarkerRef.current.setLatLng(center);
