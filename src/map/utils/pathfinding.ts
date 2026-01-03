@@ -1613,23 +1613,61 @@ export async function saveCollisionFile(fileX: number, fileY: number, floor: num
   }
 }
 
-// Save all modified collision files to server
+// Helper: Convert Uint8Array to base64 string
+function uint8ArrayToBase64(data: Uint8Array): string {
+  let binary = '';
+  for (let i = 0; i < data.length; i++) {
+    binary += String.fromCharCode(data[i]);
+  }
+  return btoa(binary);
+}
+
+// Save all modified collision files to server using batch endpoint
 export async function saveAllCollisionFiles(): Promise<{ saved: number; failed: number }> {
   const files = getModifiedCollisionFiles();
-  let saved = 0;
-  let failed = 0;
 
-  for (const file of files) {
-    const success = await saveCollisionFile(file.fileX, file.fileY, file.floor);
-    if (success) {
-      saved++;
-    } else {
-      failed++;
-    }
+  if (files.length === 0) {
+    console.log('%cNo collision files to save', 'color: orange');
+    return { saved: 0, failed: 0 };
   }
 
-  console.log(`%cSaved ${saved} collision files, ${failed} failed`, saved > 0 ? 'color: lime' : 'color: orange');
-  return { saved, failed };
+  console.log(`%c📦 Preparing ${files.length} collision files for batch save...`, 'color: cyan');
+
+  // Convert files to base64 format for batch request
+  const batchFiles = files.map(file => ({
+    fileX: file.fileX,
+    fileY: file.fileY,
+    floor: file.floor,
+    data: uint8ArrayToBase64(file.data),
+  }));
+
+  try {
+    const res = await fetch(`${getApiBase()}/api/collision/save-batch`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({ files: batchFiles }),
+    });
+
+    if (!res.ok) {
+      console.error(`Batch save failed: ${res.status} ${res.statusText}`);
+      return { saved: 0, failed: files.length };
+    }
+
+    const result = await res.json();
+    console.log(`%c✅ Batch save complete: ${result.savedCount}/${result.totalCount} files saved`,
+      result.savedCount === result.totalCount ? 'color: lime' : 'color: orange');
+
+    return {
+      saved: result.savedCount ?? 0,
+      failed: (result.totalCount ?? files.length) - (result.savedCount ?? 0)
+    };
+  } catch (err) {
+    console.error('Batch save failed:', err);
+    return { saved: 0, failed: files.length };
+  }
 }
 
 // Download collision file as binary
