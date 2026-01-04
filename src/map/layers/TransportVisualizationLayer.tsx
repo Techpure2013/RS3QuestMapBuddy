@@ -194,6 +194,20 @@ const TransportVisualizationLayerComponent: React.FC<TransportVisualizationLayer
     });
   }, [enabled]);
 
+  // Listen for transport data changes (from imports, creates, deletes, etc.)
+  useEffect(() => {
+    const handleTransportDataChanged = () => {
+      console.log('%c🔄 Transport data changed event received', 'color: orange');
+      setLoaded(true); // Ensure we re-render
+      setRefreshCounter(c => c + 1);
+    };
+
+    window.addEventListener('transportDataChanged', handleTransportDataChanged);
+    return () => {
+      window.removeEventListener('transportDataChanged', handleTransportDataChanged);
+    };
+  }, []);
+
   // Reload transport data when refreshKey changes (e.g., after creating/editing a transport)
   useEffect(() => {
     if (!enabled || refreshKey === 0) return; // Skip initial load

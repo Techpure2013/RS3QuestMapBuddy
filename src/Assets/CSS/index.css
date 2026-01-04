@@ -1560,6 +1560,15 @@ textarea {
   filter: brightness(0%) grayscale(100%) opacity(0.2);
 }
 
+/* Collision debug overlay - prevent blurry interpolation */
+.collision-debug-tile,
+.collision-debug-tile img {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
 .map-walls {
   filter: saturate(1.7);
 }
@@ -3960,4 +3969,21 @@ textarea {
 .admin-submissions-list::-webkit-scrollbar-thumb:hover,
 .submission-preview::-webkit-scrollbar-thumb:hover {
   background: #4b5563;
+}
+
+/* ==========================================================================
+   KEYBIND MODAL STYLES
+   ========================================================================== */
+
+.keybind-row:hover {
+  background: rgba(55, 65, 81, 0.3);
+}
+
+.keybind-row.editing {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.keybind-key-capture:focus {
+  border-color: #3b82f6;
+  outline: none;
 }

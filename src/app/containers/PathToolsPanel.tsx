@@ -3,7 +3,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { EditorStore } from "../../state/editorStore";
 import { useEditorSelector } from "../../state/useEditorSelector";
-import { generateStepToStepPath, getStepEndpoint, clearCollisionCache, debugCollisionArea, collisionEditorState, saveAllCollisionFiles, getModifiedCollisionFiles, DIRECTION_BITS, savePath, loadCustomTransports, deleteTransport, transportEditorState, type CustomTransport, type TransportType } from "../../map/utils/pathfinding";
+import { generateStepToStepPath, getStepEndpoint, clearCollisionCache, debugCollisionArea, collisionEditorState, saveAllCollisionFiles, getModifiedCollisionFiles, savePath, loadCustomTransports, deleteTransport, transportEditorState, reloadTransports, setDebugDirectionsMode, getDebugDirectionsMode, type CustomTransport, type TransportType } from "../../map/utils/pathfinding";
 import type { QuestPath } from "../../state/types";
 import { IconRoute, IconTrash, IconEye, IconEyeOff, IconLoader2, IconRefresh, IconGridDots, IconPencil, IconWalk, IconX, IconDeviceFloppy, IconCloudUpload, IconStairs, IconArrowUp, IconArrowDown, IconArrowsUpDown, IconHelp, IconChevronUp, IconChevronDown, IconChevronLeft, IconChevronRight, IconPlayerPlay } from "@tabler/icons-react";
 import type { PathWaypoint } from "../../state/types";
@@ -109,8 +109,9 @@ const PathToolsPanel: React.FC = () => {
   const [collisionEditorEnabled, setCollisionEditorEnabled] = useState(collisionEditorState.enabled);
   const [collisionEditorMode, setCollisionEditorMode] = useState(collisionEditorState.mode);
   const [collisionDrawShape, setCollisionDrawShape] = useState(collisionEditorState.drawShape);
-  const [selectedDirections, setSelectedDirections] = useState(collisionEditorState.selectedDirections);
-  const [directionalAction, setDirectionalAction] = useState(collisionEditorState.directionalAction);
+
+  // Debug directions mode (shows direction bits on collision tiles)
+  const [debugDirections, setDebugDirections] = useState(getDebugDirectionsMode());
 
   // Transport editor state
   const [transportsExpanded, setTransportsExpanded] = useState(false);
@@ -144,8 +145,6 @@ const PathToolsPanel: React.FC = () => {
       setCollisionEditorEnabled(collisionEditorState.enabled);
       setCollisionEditorMode(collisionEditorState.mode);
       setCollisionDrawShape(collisionEditorState.drawShape);
-      setSelectedDirections(collisionEditorState.selectedDirections);
-      setDirectionalAction(collisionEditorState.directionalAction);
     });
     return unsubscribe;
   }, []);
@@ -512,8 +511,11 @@ const PathToolsPanel: React.FC = () => {
     setTransportsLoading(true);
     setStatus("Loading transports...");
     try {
+      // Load for panel display
       const loaded = await loadCustomTransports();
       setTransports(loaded);
+      // Also reload the visualization cache (triggers map update via event)
+      await reloadTransports();
       setStatus(`Loaded ${loaded.length} transports`);
     } catch (err) {
       console.error("Failed to load transports:", err);
@@ -974,6 +976,28 @@ const PathToolsPanel: React.FC = () => {
           {ui.showCollisionDebug ? "Hide Collision Debug" : "Show Collision Debug"}
         </button>
 
+        {/* Toggle debug directions mode - only show when collision debug is on */}
+        {ui.showCollisionDebug && (
+          <button
+            onClick={() => {
+              const newMode = !debugDirections;
+              setDebugDirections(newMode);
+              setDebugDirectionsMode(newMode);
+            }}
+            style={{
+              ...buttonStyle,
+              background: debugDirections ? "#7c3aed" : "#0f172a",
+              color: debugDirections ? "#ede9fe" : "#9ca3af",
+              border: "1px solid #1e293b",
+              marginTop: 4,
+              fontSize: 11,
+            }}
+            title="Show direction bits on each tile (green=walkable, red=blocked for each direction). Each tile shows 8 edge indicators: N/S/E/W and diagonals."
+          >
+            🔍 {debugDirections ? "Direction Debug ON" : "Show Direction Bits"}
+          </button>
+        )}
+
         {/* Toggle transport visualization */}
         <button
           onClick={() => EditorStore.setUi({ showTransportDebug: !ui.showTransportDebug })}
@@ -1075,7 +1099,7 @@ const PathToolsPanel: React.FC = () => {
       }}>
         <div style={{ fontSize: 11, color: "#6b7280", marginBottom: 8, display: "flex", alignItems: "center" }}>
           <span>Collision Editor</span>
-          <HelpBox text="Fix pathfinding issues by editing collision data. Enable the editor, choose a mode (Walkable/Blocked/Directional), then click+drag on the map to paint tiles. 'Directional' mode lets you block specific movement directions. Save edits when done." />
+          <HelpBox text="Fix pathfinding issues by editing collision data. Enable the editor, choose Walkable or Blocked mode, then click+drag on the map to paint tiles. Use Line mode to draw walls along tile edges. Save edits when done." />
         </div>
 
         {/* Toggle collision editor */}
@@ -1126,24 +1150,10 @@ const PathToolsPanel: React.FC = () => {
               <IconX size={16} />
               Blocked
             </button>
-            <button
-              onClick={() => collisionEditorState.setMode("directional")}
-              style={{
-                ...buttonStyle,
-                flex: 1,
-                background: collisionEditorMode === "directional" ? "#0891b2" : "#0f172a",
-                color: collisionEditorMode === "directional" ? "#cffafe" : "#9ca3af",
-                border: "1px solid #1e293b",
-                marginBottom: 0,
-              }}
-              title="Edit specific directions on tiles"
-            >
-              Directional
-            </button>
           </div>
         )}
 
-        {/* Draw shape toggle - Rectangle vs Line */}
+        {/* Draw shape toggle - Rectangle vs Line vs Wall */}
         {collisionEditorEnabled && (
           <div style={{ display: "flex", gap: 6, marginBottom: 6 }}>
             <button
@@ -1165,212 +1175,19 @@ const PathToolsPanel: React.FC = () => {
               style={{
                 ...buttonStyle,
                 flex: 1,
-                background: collisionDrawShape === "line" ? "#7c3aed" : "#0f172a",
-                color: collisionDrawShape === "line" ? "#ede9fe" : "#9ca3af",
+                background: collisionDrawShape === "line" ? "#f97316" : "#0f172a",
+                color: collisionDrawShape === "line" ? "#ffedd5" : "#9ca3af",
                 border: "1px solid #1e293b",
                 marginBottom: 0,
               }}
-              title="Draw 1-tile-wide lines for detailed work"
+              title="Draw walls along tile edges (blocks movement perpendicular to line)"
             >
-              Line
+              Line/Wall
             </button>
           </div>
         )}
 
-        {/* Directional mode controls */}
-        {collisionEditorEnabled && collisionEditorMode === "directional" && (
-          <div style={{
-            padding: 8,
-            background: "#0f172a",
-            borderRadius: 4,
-            marginBottom: 6,
-          }}>
-            {/* Block/Unblock action toggle */}
-            <div style={{ display: "flex", gap: 6, marginBottom: 8 }}>
-              <button
-                onClick={() => collisionEditorState.setDirectionalAction("block")}
-                style={{
-                  ...buttonStyle,
-                  flex: 1,
-                  background: directionalAction === "block" ? "#dc2626" : "#1e293b",
-                  color: directionalAction === "block" ? "#fecaca" : "#9ca3af",
-                  border: "1px solid #374151",
-                  marginBottom: 0,
-                  padding: "4px 8px",
-                  fontSize: 11,
-                }}
-                title="Block selected directions (remove walkability)"
-              >
-                Block
-              </button>
-              <button
-                onClick={() => collisionEditorState.setDirectionalAction("unblock")}
-                style={{
-                  ...buttonStyle,
-                  flex: 1,
-                  background: directionalAction === "unblock" ? "#16a34a" : "#1e293b",
-                  color: directionalAction === "unblock" ? "#dcfce7" : "#9ca3af",
-                  border: "1px solid #374151",
-                  marginBottom: 0,
-                  padding: "4px 8px",
-                  fontSize: 11,
-                }}
-                title="Unblock selected directions (add walkability)"
-              >
-                Unblock
-              </button>
-            </div>
-
-            {/* Direction selection grid */}
-            <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 4 }}>
-              Select directions to {directionalAction}:
-            </div>
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: 4,
-              maxWidth: 120,
-              margin: "0 auto",
-            }}>
-              {/* Row 1: NW, N, NE */}
-              {[
-                { bit: DIRECTION_BITS.NORTHWEST, label: "NW" },
-                { bit: DIRECTION_BITS.NORTH, label: "N" },
-                { bit: DIRECTION_BITS.NORTHEAST, label: "NE" },
-              ].map(({ bit, label }) => (
-                <button
-                  key={label}
-                  onClick={() => collisionEditorState.toggleDirection(bit)}
-                  style={{
-                    padding: "4px",
-                    fontSize: 10,
-                    fontWeight: 600,
-                    background: (selectedDirections & bit) ? "#0891b2" : "#1e293b",
-                    color: (selectedDirections & bit) ? "#cffafe" : "#6b7280",
-                    border: "1px solid #374151",
-                    borderRadius: 3,
-                    cursor: "pointer",
-                  }}
-                >
-                  {label}
-                </button>
-              ))}
-              {/* Row 2: W, center, E */}
-              <button
-                onClick={() => collisionEditorState.toggleDirection(DIRECTION_BITS.WEST)}
-                style={{
-                  padding: "4px",
-                  fontSize: 10,
-                  fontWeight: 600,
-                  background: (selectedDirections & DIRECTION_BITS.WEST) ? "#0891b2" : "#1e293b",
-                  color: (selectedDirections & DIRECTION_BITS.WEST) ? "#cffafe" : "#6b7280",
-                  border: "1px solid #374151",
-                  borderRadius: 3,
-                  cursor: "pointer",
-                }}
-              >
-                W
-              </button>
-              <div style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 14,
-                color: "#4b5563",
-              }}>
-                ●
-              </div>
-              <button
-                onClick={() => collisionEditorState.toggleDirection(DIRECTION_BITS.EAST)}
-                style={{
-                  padding: "4px",
-                  fontSize: 10,
-                  fontWeight: 600,
-                  background: (selectedDirections & DIRECTION_BITS.EAST) ? "#0891b2" : "#1e293b",
-                  color: (selectedDirections & DIRECTION_BITS.EAST) ? "#cffafe" : "#6b7280",
-                  border: "1px solid #374151",
-                  borderRadius: 3,
-                  cursor: "pointer",
-                }}
-              >
-                E
-              </button>
-              {/* Row 3: SW, S, SE */}
-              {[
-                { bit: DIRECTION_BITS.SOUTHWEST, label: "SW" },
-                { bit: DIRECTION_BITS.SOUTH, label: "S" },
-                { bit: DIRECTION_BITS.SOUTHEAST, label: "SE" },
-              ].map(({ bit, label }) => (
-                <button
-                  key={label}
-                  onClick={() => collisionEditorState.toggleDirection(bit)}
-                  style={{
-                    padding: "4px",
-                    fontSize: 10,
-                    fontWeight: 600,
-                    background: (selectedDirections & bit) ? "#0891b2" : "#1e293b",
-                    color: (selectedDirections & bit) ? "#cffafe" : "#6b7280",
-                    border: "1px solid #374151",
-                    borderRadius: 3,
-                    cursor: "pointer",
-                  }}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-
-            {/* Quick select buttons */}
-            <div style={{ display: "flex", gap: 4, marginTop: 8, justifyContent: "center" }}>
-              <button
-                onClick={() => collisionEditorState.setSelectedDirections(255)}
-                style={{
-                  padding: "2px 6px",
-                  fontSize: 9,
-                  background: "#1e293b",
-                  color: "#9ca3af",
-                  border: "1px solid #374151",
-                  borderRadius: 3,
-                  cursor: "pointer",
-                }}
-              >
-                All
-              </button>
-              <button
-                onClick={() => collisionEditorState.setSelectedDirections(0)}
-                style={{
-                  padding: "2px 6px",
-                  fontSize: 9,
-                  background: "#1e293b",
-                  color: "#9ca3af",
-                  border: "1px solid #374151",
-                  borderRadius: 3,
-                  cursor: "pointer",
-                }}
-              >
-                None
-              </button>
-              <button
-                onClick={() => collisionEditorState.setSelectedDirections(
-                  DIRECTION_BITS.NORTH | DIRECTION_BITS.SOUTH | DIRECTION_BITS.EAST | DIRECTION_BITS.WEST
-                )}
-                style={{
-                  padding: "2px 6px",
-                  fontSize: 9,
-                  background: "#1e293b",
-                  color: "#9ca3af",
-                  border: "1px solid #374151",
-                  borderRadius: 3,
-                  cursor: "pointer",
-                }}
-              >
-                Cardinals
-              </button>
-            </div>
-          </div>
-        )}
-
-        {collisionEditorEnabled && collisionEditorMode !== "directional" && (
+        {collisionEditorEnabled && (
           <div style={{
             fontSize: 10,
             color: "#6b7280",
@@ -1379,20 +1196,9 @@ const PathToolsPanel: React.FC = () => {
             background: "#0f172a",
             borderRadius: 4,
           }}>
-            Click and drag on the map to select tiles. Selected tiles will be marked as {collisionEditorMode}.
-          </div>
-        )}
-
-        {collisionEditorEnabled && collisionEditorMode === "directional" && (
-          <div style={{
-            fontSize: 10,
-            color: "#6b7280",
-            marginTop: 6,
-            padding: 8,
-            background: "#0f172a",
-            borderRadius: 4,
-          }}>
-            Click and drag to {directionalAction} the selected directions on tiles.
+            {collisionDrawShape === "line"
+              ? `Click and drag to draw a wall along tile edges. Movement will be blocked perpendicular to the wall. Use "${collisionEditorMode}" to ${collisionEditorMode === "walkable" ? "remove" : "add"} walls.`
+              : `Click and drag on the map to select tiles. Selected tiles will be marked as ${collisionEditorMode}.`}
           </div>
         )}
 

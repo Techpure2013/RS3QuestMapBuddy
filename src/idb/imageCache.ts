@@ -14,6 +14,9 @@ const CACHE_META_KEY = "rs3qb:img_cache_meta";
 const MAX_CACHE_SIZE_MB = 100; // 100MB limit
 const MAX_CACHE_SIZE_BYTES = MAX_CACHE_SIZE_MB * 1024 * 1024;
 
+// Track failed URLs to avoid repeated fetch attempts
+const failedUrls = new Set<string>();
+
 interface CacheMeta {
   totalSize: number;
   itemCount: number;
@@ -173,28 +176,54 @@ export async function clearImageCache(): Promise<void> {
   console.log("Image cache cleared");
 }
 
+// Track in-flight fetches to prevent duplicate requests (includes cache checks)
+const pendingFetches = new Map<string, Promise<Blob>>();
+
+
 /**
- * Fetch an image with caching
+ * Fetch an image with caching - silently skips URLs that have failed before
  */
 export async function fetchImageWithCache(url: string): Promise<Blob> {
-  // Try cache first
-  const cached = await getCachedImage(url);
-  if (cached) {
-    console.log("Using cached image:", url);
-    return cached;
+  // Already failed before - silently reject
+  if (failedUrls.has(url)) {
+    throw new Error("URL previously failed");
   }
 
-  // Fetch from network
-  console.log("Fetching image from network:", url);
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch image: ${response.status}`);
+  // Check if there's already a pending operation for this URL
+  const pending = pendingFetches.get(url);
+  if (pending) {
+    return pending;
   }
 
-  const blob = await response.blob();
+  // Create the full operation promise and store it IMMEDIATELY
+  const operationPromise = (async () => {
+    // Try cache first
+    const cached = await getCachedImage(url);
+    if (cached) {
+      return cached;
+    }
 
-  // Cache for next time (async, don't wait)
-  void setCachedImage(url, blob);
+    // Fetch from network
+    const response = await fetch(url);
+    if (!response.ok) {
+      failedUrls.add(url);
+      throw new Error("Fetch failed");
+    }
 
-  return blob;
+    const blob = await response.blob();
+    void setCachedImage(url, blob);
+    return blob;
+  })();
+
+  // Store the promise BEFORE awaiting it
+  pendingFetches.set(url, operationPromise);
+
+  // Clean up and mark as failed on error
+  operationPromise.catch(() => {
+    failedUrls.add(url);
+  }).finally(() => {
+    pendingFetches.delete(url);
+  });
+
+  return operationPromise;
 }

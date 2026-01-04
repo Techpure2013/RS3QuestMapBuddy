@@ -99,6 +99,10 @@ const loadingPromises = new Map<string, Promise<Uint8Array | null>>();
 
 // Cache for rendered collision images (blob URLs for debug visualization)
 const collisionImageCache = new Map<string, string>();
+// Separate cache for debug direction images (higher resolution with direction indicators)
+const collisionDebugImageCache = new Map<string, string>();
+// Global flag for debug direction visualization mode
+let debugDirectionsEnabled = false;
 
 // Transportation link for pathfinding
 interface TransportLink {
@@ -246,12 +250,20 @@ export async function reloadTransports(): Promise<void> {
   transportLoadPromise = null;
   await loadTransportationData();
   console.log('%c🔄 Transport cache reloaded', 'color: lime');
+  notifyTransportDataChanged();
 }
 
 // Get transport links from a position (position-specific only, like stairs/ladders)
 function getTransportLinks(x: number, y: number, level: number): TransportLink[] {
   const key = getTransportKey(x, y, level);
   return transportCache.get(key) || [];
+}
+
+// Check if a tile has any transport links (used to allow pathfinding to doors/stairs even if collision blocked)
+function hasTransportLink(x: number, y: number, level: number): boolean {
+  const key = getTransportKey(x, y, level);
+  const links = transportCache.get(key);
+  return links !== undefined && links.length > 0;
 }
 
 // Get global teleports (lodestones, spells, jewelry - usable from anywhere)
@@ -399,7 +411,7 @@ async function getTileData(x: number, y: number, floor: number): Promise<number>
 }
 
 // Synchronous tile data lookup (requires preloading)
-function getTileDataSync(x: number, y: number, floor: number): number {
+export function getTileDataSync(x: number, y: number, floor: number): number {
   const { fileX, fileY } = getFileCoords(x, y);
   const cacheKey = getFileCacheKey(fileX, fileY, floor);
   const data = collisionCache.get(cacheKey);
@@ -670,14 +682,22 @@ function runWeightedAStar(
     // Check all 8 walking directions (same level only)
     let validMoves = 0;
     for (const dir of ALL_DIRECTIONS) {
-      if (!canMove(current.x, current.y, current.level, dir)) {
+      const vec = DIRECTION_VECTORS[dir];
+      const neighborX = current.x + vec.x;
+      const neighborY = current.y + vec.y;
+
+      // Allow movement if:
+      // 1. Normal collision check passes, OR
+      // 2. The neighbor tile has a transport link (door/stairs/ladder/etc)
+      //    This lets us path to doors even if collision shows them as blocked
+      const canWalk = canMove(current.x, current.y, current.level, dir);
+      const neighborHasTransport = hasTransportLink(neighborX, neighborY, current.level);
+
+      if (!canWalk && !neighborHasTransport) {
         continue;
       }
       validMoves++;
 
-      const vec = DIRECTION_VECTORS[dir];
-      const neighborX = current.x + vec.x;
-      const neighborY = current.y + vec.y;
       const neighborKey = coordKey(neighborX, neighborY, current.level);
 
       if (closedSet.has(neighborKey)) continue;
@@ -914,20 +934,38 @@ export function clearCollisionCache(): void {
 
 // ============ COLLISION EDITOR MODE ============
 
+// Last edit info for nudge feature
+interface LastEditInfo {
+  shape: "rectangle" | "line";
+  mode: "walkable" | "blocked";
+  floor: number;
+  // For rectangle: bounds
+  minX: number;
+  minY: number;
+  maxX: number;
+  maxY: number;
+  // For line: start/end points
+  startX: number;
+  startY: number;
+  endX: number;
+  endY: number;
+  // Original tile data to restore on nudge
+  originalData: Map<string, number>; // "x,y" -> original byte
+}
+
 // Global state for collision editor (can be controlled from console)
 export const collisionEditorState = {
   enabled: false,
-  mode: "walkable" as "walkable" | "blocked" | "directional",
-  drawShape: "rectangle" as "rectangle" | "line",  // Drawing shape: filled rectangle or 1-tile line
-  selectedDirections: 255,  // Bitmask of directions to edit (default: all)
-  directionalAction: "block" as "block" | "unblock",
+  mode: "walkable" as "walkable" | "blocked",
+  drawShape: "rectangle" as "rectangle" | "line",  // Drawing shape: filled rectangle or line (wall on tile edges)
+  lastEdit: null as LastEditInfo | null,
   listeners: new Set<() => void>(),
 
   setDrawShape(shape: "rectangle" | "line") {
     this.drawShape = shape;
     this.notifyListeners();
-    console.log(`%cCollision Editor Shape: ${shape === 'rectangle' ? '⬛ Rectangle' : '➖ Line'}`,
-      'color: cyan');
+    const shapeNames = { rectangle: '⬛ Rectangle', line: '🧱 Line (Wall)' };
+    console.log(`%cCollision Editor Shape: ${shapeNames[shape]}`, 'color: cyan');
   },
 
   setEnabled(value: boolean) {
@@ -936,35 +974,19 @@ export const collisionEditorState = {
     console.log(`%c${value ? '✏️ Collision Editor ENABLED' : '🚫 Collision Editor DISABLED'}`,
       value ? 'color: lime; font-weight: bold' : 'color: orange; font-weight: bold');
     if (value) {
-      console.log(`Mode: ${this.mode === 'walkable' ? '🟢 Walkable' : this.mode === 'blocked' ? '🔴 Blocked' : '🎯 Directional'}`);
-      console.log(`Shape: ${this.drawShape === 'rectangle' ? '⬛ Rectangle' : '➖ Line'}`);
+      console.log(`Mode: ${this.mode === 'walkable' ? '🟢 Walkable' : '🔴 Blocked'}`);
+      const shapeNames = { rectangle: '⬛ Rectangle', line: '🧱 Line (Wall)' };
+      console.log(`Shape: ${shapeNames[this.drawShape]}`);
       console.log('Click and drag on the map to select tiles');
     }
   },
 
-  setMode(mode: "walkable" | "blocked" | "directional") {
+  setMode(mode: "walkable" | "blocked") {
     this.mode = mode;
     this.notifyListeners();
-    const modeEmoji = mode === 'walkable' ? '🟢 Walkable' : mode === 'blocked' ? '🔴 Blocked' : '🎯 Directional';
-    const color = mode === 'walkable' ? 'color: lime' : mode === 'blocked' ? 'color: red' : 'color: cyan';
+    const modeEmoji = mode === 'walkable' ? '🟢 Walkable' : '🔴 Blocked';
+    const color = mode === 'walkable' ? 'color: lime' : 'color: red';
     console.log(`%cCollision Editor Mode: ${modeEmoji}`, color);
-  },
-
-  setSelectedDirections(bits: number) {
-    this.selectedDirections = bits & 0xFF;
-    this.notifyListeners();
-  },
-
-  toggleDirection(bit: number) {
-    this.selectedDirections ^= bit;
-    this.notifyListeners();
-  },
-
-  setDirectionalAction(action: "block" | "unblock") {
-    this.directionalAction = action;
-    this.notifyListeners();
-    console.log(`%cDirectional Action: ${action === 'block' ? '🚫 Block' : '✅ Unblock'}`,
-      action === 'block' ? 'color: red' : 'color: lime');
   },
 
   toggle() {
@@ -978,6 +1000,91 @@ export const collisionEditorState = {
 
   notifyListeners() {
     this.listeners.forEach(listener => listener());
+  },
+
+  // Save edit info for nudge feature
+  saveLastEdit(info: Omit<LastEditInfo, 'originalData'>, originalData: Map<string, number>) {
+    this.lastEdit = { ...info, originalData };
+    console.log('%c📝 Edit saved for nudge', 'color: cyan');
+  },
+
+  // Clear last edit (e.g., when mode changes or editor disabled)
+  clearLastEdit() {
+    this.lastEdit = null;
+  },
+
+  // Nudge the last edit by dx, dy tiles
+  nudgeLastEdit(dx: number, dy: number) {
+    if (!this.lastEdit) {
+      console.log('%c⚠️ No edit to nudge', 'color: orange');
+      return;
+    }
+
+    const edit = this.lastEdit;
+    console.log(`%c🔄 Nudging last edit by (${dx}, ${dy})`, 'color: cyan');
+
+    // Step 1: Restore original data
+    for (const [key, value] of edit.originalData.entries()) {
+      const [x, y] = key.split(',').map(Number);
+      setTileCollision(x, y, edit.floor, value);
+    }
+
+    // Step 2: Calculate new bounds/positions
+    const newMinX = edit.minX + dx;
+    const newMinY = edit.minY + dy;
+    const newMaxX = edit.maxX + dx;
+    const newMaxY = edit.maxY + dy;
+    const newStartX = edit.startX + dx;
+    const newStartY = edit.startY + dy;
+    const newEndX = edit.endX + dx;
+    const newEndY = edit.endY + dy;
+
+    // Step 3: Save new original data for the nudged position
+    const newOriginalData = new Map<string, number>();
+
+    if (edit.shape === "line") {
+      const tiles = getLineTiles(newStartX, newStartY, newEndX, newEndY);
+      for (const t of tiles) {
+        const key = `${t.x},${t.y}`;
+        newOriginalData.set(key, getTileDataSync(t.x, t.y, edit.floor));
+      }
+    } else {
+      for (let y = newMinY; y <= newMaxY; y++) {
+        for (let x = newMinX; x <= newMaxX; x++) {
+          const key = `${x},${y}`;
+          newOriginalData.set(key, getTileDataSync(x, y, edit.floor));
+        }
+      }
+    }
+
+    // Step 4: Apply edit at new position
+    if (edit.shape === "line") {
+      // Line mode uses makeWall
+      const removeWall = edit.mode === "walkable";
+      makeWall(newStartX, newStartY, newEndX, newEndY, edit.floor, removeWall);
+    } else {
+      if (edit.mode === "walkable") {
+        makeAreaWalkable(newMinX, newMinY, newMaxX, newMaxY, edit.floor);
+      } else {
+        makeAreaBlocked(newMinX, newMinY, newMaxX, newMaxY, edit.floor);
+      }
+    }
+
+    // Step 5: Update lastEdit with new positions
+    this.lastEdit = {
+      ...edit,
+      minX: newMinX,
+      minY: newMinY,
+      maxX: newMaxX,
+      maxY: newMaxY,
+      startX: newStartX,
+      startY: newStartY,
+      endX: newEndX,
+      endY: newEndY,
+      originalData: newOriginalData,
+    };
+
+    console.log(`%c✅ Nudged to (${newMinX},${newMinY})-(${newMaxX},${newMaxY})`, 'color: lime');
   },
 };
 
@@ -994,7 +1101,7 @@ export function toggleCollisionEditor() {
   collisionEditorState.toggle();
 }
 
-export function setCollisionEditorMode(mode: "walkable" | "blocked" | "directional") {
+export function setCollisionEditorMode(mode: "walkable" | "blocked") {
   collisionEditorState.setMode(mode);
 }
 
@@ -1002,8 +1109,21 @@ export function setCollisionEditorMode(mode: "walkable" | "blocked" | "direction
 
 // Notify listeners that collision data has changed
 export function notifyCollisionDataChanged(): void {
+  // Clear the image cache so tiles re-render with new data
+  const cacheSize = collisionImageCache.size;
+  collisionImageCache.clear();
+  console.log(`%c📢 notifyCollisionDataChanged: cleared ${cacheSize} cached images`, 'color: cyan');
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new CustomEvent('collisionDataChanged'));
+    console.log('  Dispatched collisionDataChanged event');
+  }
+}
+
+// Notify listeners that transport data has changed
+export function notifyTransportDataChanged(): void {
+  console.log('%c📢 notifyTransportDataChanged', 'color: orange');
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('transportDataChanged'));
   }
 }
 
@@ -1270,6 +1390,222 @@ export function refreshCollisionImage(fileX: number, fileY: number, floor: numbe
   const cacheKey = getFileCacheKey(fileX, fileY, floor);
   collisionImageCache.delete(cacheKey);
   console.log(`Invalidated collision image cache for file (${fileX}, ${fileY}) floor ${floor}`);
+}
+
+// ============ WALL DRAWING (Inter-tile boundaries) ============
+
+// Wall segment: represents a boundary between two tiles
+interface WallSegment {
+  // The two tiles adjacent to this wall
+  tile1: { x: number; y: number };
+  tile2: { x: number; y: number };
+  // Direction blocked: from tile1's perspective (e.g., EAST means wall is on east side of tile1)
+  direction: DirectionType;
+}
+
+// Get wall segments along a line from (x0,y0) to (x1,y1)
+// Returns segments that represent inter-tile boundaries
+export function getWallSegments(x0: number, y0: number, x1: number, y1: number): WallSegment[] {
+  const segments: WallSegment[] = [];
+
+  const dx = x1 - x0;
+  const dy = y1 - y0;
+  const length = Math.max(Math.abs(dx), Math.abs(dy));
+
+  if (length === 0) return segments;
+
+  // Step through the line
+  for (let i = 0; i <= length; i++) {
+    const t = i / length;
+    const x = x0 + dx * t;
+    const y = y0 + dy * t;
+
+    // Check if we're on a vertical edge (between x and x+1)
+    const fracX = x - Math.floor(x);
+    if (fracX > 0.3 && fracX < 0.7) {
+      // Near vertical edge - create E/W wall
+      const tileX = Math.floor(x);
+      const tileY = Math.floor(y);
+      const segment: WallSegment = {
+        tile1: { x: tileX, y: tileY },
+        tile2: { x: tileX + 1, y: tileY },
+        direction: Direction.EAST,
+      };
+      // Avoid duplicates
+      if (!segments.some(s =>
+        s.tile1.x === segment.tile1.x && s.tile1.y === segment.tile1.y &&
+        s.direction === segment.direction
+      )) {
+        segments.push(segment);
+      }
+    }
+
+    // Check if we're on a horizontal edge (between y and y+1)
+    const fracY = y - Math.floor(y);
+    if (fracY > 0.3 && fracY < 0.7) {
+      // Near horizontal edge - create N/S wall
+      const tileX = Math.floor(x);
+      const tileY = Math.floor(y);
+      const segment: WallSegment = {
+        tile1: { x: tileX, y: tileY },
+        tile2: { x: tileX, y: tileY + 1 },
+        direction: Direction.NORTH,
+      };
+      // Avoid duplicates
+      if (!segments.some(s =>
+        s.tile1.x === segment.tile1.x && s.tile1.y === segment.tile1.y &&
+        s.direction === segment.direction
+      )) {
+        segments.push(segment);
+      }
+    }
+  }
+
+  return segments;
+}
+
+// Get wall segments for a line drawn on tile edges
+// The wall runs ALONG the line, blocking movement ACROSS it
+export function getWallSegmentsSimple(x0: number, y0: number, x1: number, y1: number): WallSegment[] {
+  const segments: WallSegment[] = [];
+
+  const dx = x1 - x0;
+  const dy = y1 - y0;
+
+  // Determine if this is primarily horizontal or vertical
+  const isHorizontal = Math.abs(dx) >= Math.abs(dy);
+
+  if (isHorizontal) {
+    // Horizontal wall - runs along a Y boundary between rows of tiles
+    // Use the Y coordinate as the edge location (wall is between y-1 and y)
+    const edgeY = y0; // The wall runs along this Y coordinate
+    const minX = Math.min(x0, x1);
+    const maxX = Math.max(x0, x1);
+
+    // Create wall segments for each tile boundary along this horizontal line
+    for (let x = minX; x < maxX; x++) {
+      // Wall between tile (x, edgeY-1) and tile (x, edgeY)
+      // This blocks NORTH movement from (x, edgeY-1) and SOUTH movement from (x, edgeY)
+      segments.push({
+        tile1: { x: x, y: edgeY - 1 },
+        tile2: { x: x, y: edgeY },
+        direction: Direction.NORTH, // From tile1's perspective
+      });
+    }
+  } else {
+    // Vertical wall - runs along an X boundary between columns of tiles
+    // Use the X coordinate as the edge location (wall is between x-1 and x)
+    const edgeX = x0; // The wall runs along this X coordinate
+    const minY = Math.min(y0, y1);
+    const maxY = Math.max(y0, y1);
+
+    // Create wall segments for each tile boundary along this vertical line
+    for (let y = minY; y < maxY; y++) {
+      // Wall between tile (edgeX-1, y) and tile (edgeX, y)
+      // This blocks EAST movement from (edgeX-1, y) and WEST movement from (edgeX, y)
+      segments.push({
+        tile1: { x: edgeX - 1, y: y },
+        tile2: { x: edgeX, y: y },
+        direction: Direction.EAST, // From tile1's perspective
+      });
+    }
+  }
+
+  return segments;
+}
+
+// Apply a wall - blocks movement in both directions across the boundary
+// Also blocks diagonal movement that would cross the wall
+export function applyWall(segment: WallSegment, floor: number, remove: boolean = false): void {
+  const { tile1, tile2, direction } = segment;
+  const inverseDir = DIRECTION_INVERSE[direction];
+
+  // For a wall, we need to block:
+  // 1. The cardinal direction perpendicular to the wall
+  // 2. The two diagonal directions that would cross the wall
+  //
+  // Horizontal wall (NORTH/SOUTH):
+  //   - tile1 (below): blocks NORTH, NORTHEAST, NORTHWEST
+  //   - tile2 (above): blocks SOUTH, SOUTHEAST, SOUTHWEST
+  //
+  // Vertical wall (EAST/WEST):
+  //   - tile1 (left): blocks EAST, NORTHEAST, SOUTHEAST
+  //   - tile2 (right): blocks WEST, NORTHWEST, SOUTHWEST
+
+  let tile1Bits: number;
+  let tile2Bits: number;
+
+  if (direction === Direction.NORTH) {
+    // Horizontal wall - tile1 is south, tile2 is north
+    tile1Bits = DIRECTION_BITS.NORTH | DIRECTION_BITS.NORTHEAST | DIRECTION_BITS.NORTHWEST;
+    tile2Bits = DIRECTION_BITS.SOUTH | DIRECTION_BITS.SOUTHEAST | DIRECTION_BITS.SOUTHWEST;
+  } else if (direction === Direction.SOUTH) {
+    // Horizontal wall - tile1 is north, tile2 is south
+    tile1Bits = DIRECTION_BITS.SOUTH | DIRECTION_BITS.SOUTHEAST | DIRECTION_BITS.SOUTHWEST;
+    tile2Bits = DIRECTION_BITS.NORTH | DIRECTION_BITS.NORTHEAST | DIRECTION_BITS.NORTHWEST;
+  } else if (direction === Direction.EAST) {
+    // Vertical wall - tile1 is west, tile2 is east
+    tile1Bits = DIRECTION_BITS.EAST | DIRECTION_BITS.NORTHEAST | DIRECTION_BITS.SOUTHEAST;
+    tile2Bits = DIRECTION_BITS.WEST | DIRECTION_BITS.NORTHWEST | DIRECTION_BITS.SOUTHWEST;
+  } else if (direction === Direction.WEST) {
+    // Vertical wall - tile1 is east, tile2 is west
+    tile1Bits = DIRECTION_BITS.WEST | DIRECTION_BITS.NORTHWEST | DIRECTION_BITS.SOUTHWEST;
+    tile2Bits = DIRECTION_BITS.EAST | DIRECTION_BITS.NORTHEAST | DIRECTION_BITS.SOUTHEAST;
+  } else {
+    // Shouldn't happen for walls, but fallback to just the cardinal direction
+    tile1Bits = DIRECTION_BITS_LOOKUP[direction];
+    tile2Bits = DIRECTION_BITS_LOOKUP[inverseDir];
+  }
+
+  console.log(`  applyWall: tile1=(${tile1.x},${tile1.y}) bits=${tile1Bits.toString(2).padStart(8,'0')} | tile2=(${tile2.x},${tile2.y}) bits=${tile2Bits.toString(2).padStart(8,'0')} | remove=${remove}`);
+
+  if (remove) {
+    // Add back the directions (make walkable)
+    const r1 = addTileDirections(tile1.x, tile1.y, floor, tile1Bits);
+    const r2 = addTileDirections(tile2.x, tile2.y, floor, tile2Bits);
+    if (!r1 || !r2) console.warn(`  ⚠️ applyWall: addTileDirections returned false (r1=${r1}, r2=${r2}) - tile data not loaded?`);
+  } else {
+    // Remove the directions (block)
+    const r1 = removeTileDirections(tile1.x, tile1.y, floor, tile1Bits);
+    const r2 = removeTileDirections(tile2.x, tile2.y, floor, tile2Bits);
+    if (!r1 || !r2) console.warn(`  ⚠️ applyWall: removeTileDirections returned false (r1=${r1}, r2=${r2}) - tile data not loaded?`);
+  }
+}
+
+// Draw a wall along a line (blocks movement perpendicular to the line)
+export function makeWall(
+  x0: number, y0: number,
+  x1: number, y1: number,
+  floor: number,
+  remove: boolean = false
+): number {
+  console.log(`%c🧱 makeWall called: (${x0},${y0})->(${x1},${y1}) floor=${floor} remove=${remove}`, 'color: orange; font-weight: bold');
+
+  const segments = getWallSegmentsSimple(x0, y0, x1, y1);
+  console.log(`  Generated ${segments.length} wall segments:`, segments);
+
+  if (segments.length === 0) {
+    console.warn('  ⚠️ No wall segments generated! Check if start and end points are the same.');
+  }
+
+  for (const segment of segments) {
+    applyWall(segment, floor, remove);
+  }
+
+  const action = remove ? 'Removed' : 'Created';
+  console.log(`%c🧱 ${action} wall with ${segments.length} segments`, remove ? 'color: lime' : 'color: orange');
+  notifyCollisionDataChanged();
+  console.log('  notifyCollisionDataChanged() called - image cache cleared');
+  return segments.length;
+}
+
+// Remove a wall along a line (restores movement)
+export function removeWall(
+  x0: number, y0: number,
+  x1: number, y1: number,
+  floor: number
+): number {
+  return makeWall(x0, y0, x1, y1, floor, true);
 }
 
 // ============ MOBILITY ABILITIES (SURGE/DIVE/ESCAPE) ============
@@ -2268,65 +2604,431 @@ if (typeof window !== 'undefined') {
   console.log('  listTransports({floor, transport_type}) - List transports');
   console.log('  deleteTransport(id) - Delete a transport');
   console.log('  showTransportTypes() - Show all transport types');
+  console.log('%c🧪 Directional Bit Testing:', 'color: #ef4444');
+  console.log('  testTileBits(x, y, floor) - Full bit breakdown of a tile');
+  console.log('  testWallEffect(x, y, floor, "N"|"S"|"E"|"W") - Test wall between tiles');
+  console.log('  inspectCacheData(x, y, floor) - Show raw cache data for tile');
+  console.log('  compareCacheVsSave(fileX, fileY, floor) - Stats on what will be saved');
+  console.log('  testDirectionEdit(x, y, floor, bits, true/false) - Test bit modification');
+  console.log('  listCachedFiles() - List all collision files in cache');
+  console.log('  DIRECTION_BITS - {WEST:1, NORTH:2, EAST:4, SOUTH:8, NW:16, NE:32, SE:64, SW:128}');
+}
+
+// ============ DIRECTIONAL BIT TESTING FUNCTIONS ============
+
+/**
+ * Full detailed breakdown of a tile's walkability bits
+ */
+export function testTileBits(x: number, y: number, floor: number): void {
+  const byte = getTileDataSync(x, y, floor);
+
+  console.log(`%c🔍 Tile (${x}, ${y}) floor ${floor}`, 'color: cyan; font-weight: bold');
+  console.log(`  Raw byte: ${byte} (0x${byte.toString(16).padStart(2, '0')})`);
+  console.log(`  Binary:   ${byte.toString(2).padStart(8, '0')}`);
+  console.log('');
+  console.log('  Direction breakdown (1=FREE, 0=BLOCKED):');
+  console.log(`    WEST (1):      ${(byte & 1) ? '✅ FREE' : '❌ BLOCKED'}  bit 0`);
+  console.log(`    NORTH (2):     ${(byte & 2) ? '✅ FREE' : '❌ BLOCKED'}  bit 1`);
+  console.log(`    EAST (4):      ${(byte & 4) ? '✅ FREE' : '❌ BLOCKED'}  bit 2`);
+  console.log(`    SOUTH (8):     ${(byte & 8) ? '✅ FREE' : '❌ BLOCKED'}  bit 3`);
+  console.log(`    NORTHWEST (16):${(byte & 16) ? '✅ FREE' : '❌ BLOCKED'}  bit 4`);
+  console.log(`    NORTHEAST (32):${(byte & 32) ? '✅ FREE' : '❌ BLOCKED'}  bit 5`);
+  console.log(`    SOUTHEAST (64):${(byte & 64) ? '✅ FREE' : '❌ BLOCKED'}  bit 6`);
+  console.log(`    SOUTHWEST (128):${(byte & 128) ? '✅ FREE' : '❌ BLOCKED'} bit 7`);
+  console.log('');
+
+  if (byte === 255) {
+    console.log('  Status: %cFULLY WALKABLE', 'color: lime');
+  } else if (byte === 0) {
+    console.log('  Status: %cFULLY BLOCKED', 'color: red');
+  } else {
+    const freeCount = [1,2,4,8,16,32,64,128].filter(b => byte & b).length;
+    console.log(`  Status: %cPARTIAL (${freeCount}/8 directions free)`, 'color: yellow');
+  }
+
+  // Show file info
+  const { fileX, fileY } = getFileCoords(x, y);
+  const localX = ((x % META.tilesPerFile) + META.tilesPerFile) % META.tilesPerFile;
+  const localY = ((y % META.tilesPerFile) + META.tilesPerFile) % META.tilesPerFile;
+  const index = localY * META.tilesPerFile + localX;
+  console.log('');
+  console.log(`  File: (${fileX}, ${fileY})`);
+  console.log(`  Local coords: (${localX}, ${localY})`);
+  console.log(`  Array index: ${index}`);
+}
+
+/**
+ * Test wall creation between two adjacent tiles
+ * Now also blocks diagonals that would cross the wall
+ */
+export function testWallEffect(x: number, y: number, floor: number, direction: 'N' | 'S' | 'E' | 'W'): void {
+  console.log(`%c🧱 Testing wall effect at (${x}, ${y}) blocking ${direction}`, 'color: orange; font-weight: bold');
+
+  // Wall definitions: cardinal + diagonals that cross the wall
+  const wallDefs: Record<string, {
+    dx: number, dy: number,
+    tileBits: number, neighborBits: number,
+    name: string
+  }> = {
+    'N': {
+      dx: 0, dy: 1,
+      tileBits: DIRECTION_BITS.NORTH | DIRECTION_BITS.NORTHEAST | DIRECTION_BITS.NORTHWEST,
+      neighborBits: DIRECTION_BITS.SOUTH | DIRECTION_BITS.SOUTHEAST | DIRECTION_BITS.SOUTHWEST,
+      name: 'NORTH'
+    },
+    'S': {
+      dx: 0, dy: -1,
+      tileBits: DIRECTION_BITS.SOUTH | DIRECTION_BITS.SOUTHEAST | DIRECTION_BITS.SOUTHWEST,
+      neighborBits: DIRECTION_BITS.NORTH | DIRECTION_BITS.NORTHEAST | DIRECTION_BITS.NORTHWEST,
+      name: 'SOUTH'
+    },
+    'E': {
+      dx: 1, dy: 0,
+      tileBits: DIRECTION_BITS.EAST | DIRECTION_BITS.NORTHEAST | DIRECTION_BITS.SOUTHEAST,
+      neighborBits: DIRECTION_BITS.WEST | DIRECTION_BITS.NORTHWEST | DIRECTION_BITS.SOUTHWEST,
+      name: 'EAST'
+    },
+    'W': {
+      dx: -1, dy: 0,
+      tileBits: DIRECTION_BITS.WEST | DIRECTION_BITS.NORTHWEST | DIRECTION_BITS.SOUTHWEST,
+      neighborBits: DIRECTION_BITS.EAST | DIRECTION_BITS.NORTHEAST | DIRECTION_BITS.SOUTHEAST,
+      name: 'WEST'
+    },
+  };
+
+  const info = wallDefs[direction];
+  const neighborX = x + info.dx;
+  const neighborY = y + info.dy;
+
+  // Read current values
+  const tileBefore = getTileDataSync(x, y, floor);
+  const neighborBefore = getTileDataSync(neighborX, neighborY, floor);
+
+  console.log('');
+  console.log('BEFORE wall:');
+  console.log(`  Tile (${x}, ${y}):       ${tileBefore.toString(2).padStart(8, '0')}`);
+  console.log(`    Will block bits: ${info.tileBits.toString(2).padStart(8, '0')} (${info.name} + diagonals)`);
+  console.log(`  Neighbor (${neighborX}, ${neighborY}): ${neighborBefore.toString(2).padStart(8, '0')}`);
+  console.log(`    Will block bits: ${info.neighborBits.toString(2).padStart(8, '0')} (inverse + diagonals)`);
+
+  // Apply wall (blocks cardinal + diagonals)
+  console.log('');
+  console.log('Applying wall (with diagonals)...');
+  removeTileDirections(x, y, floor, info.tileBits);
+  removeTileDirections(neighborX, neighborY, floor, info.neighborBits);
+
+  // Read new values
+  const tileAfter = getTileDataSync(x, y, floor);
+  const neighborAfter = getTileDataSync(neighborX, neighborY, floor);
+
+  console.log('');
+  console.log('AFTER wall:');
+  console.log(`  Tile (${x}, ${y}):       ${tileAfter.toString(2).padStart(8, '0')}`);
+  console.log(`  Neighbor (${neighborX}, ${neighborY}): ${neighborAfter.toString(2).padStart(8, '0')}`);
+
+  // Verify all bits are blocked
+  const tileSuccess = (tileAfter & info.tileBits) === 0;
+  const neighborSuccess = (neighborAfter & info.neighborBits) === 0;
+  const success = tileSuccess && neighborSuccess;
+
+  console.log('');
+  console.log(`  Tile blocked correctly: ${tileSuccess ? '✅' : '❌'}`);
+  console.log(`  Neighbor blocked correctly: ${neighborSuccess ? '✅' : '❌'}`);
+  console.log(success ? '%c✅ Wall correctly blocks cardinal + diagonals!' : '%c❌ Wall NOT correctly applied!', success ? 'color: lime' : 'color: red');
+
+  notifyCollisionDataChanged();
+}
+
+/**
+ * Inspect raw cache data for a tile
+ */
+export function inspectCacheData(x: number, y: number, floor: number): void {
+  const { fileX, fileY } = getFileCoords(x, y);
+  const cacheKey = getFileCacheKey(fileX, fileY, floor);
+  const data = collisionCache.get(cacheKey);
+
+  console.log(`%c📦 Cache inspection for tile (${x}, ${y}) floor ${floor}`, 'color: yellow; font-weight: bold');
+  console.log(`  Cache key: "${cacheKey}"`);
+  console.log(`  File: (${fileX}, ${fileY})`);
+
+  if (!data) {
+    console.log('%c  ❌ No data in cache!', 'color: red');
+    return;
+  }
+
+  console.log(`  Cache data length: ${data.length} bytes`);
+  console.log(`  Expected: ${META.tilesPerFile * META.tilesPerFile} bytes (${META.tilesPerFile}x${META.tilesPerFile})`);
+
+  const localX = ((x % META.tilesPerFile) + META.tilesPerFile) % META.tilesPerFile;
+  const localY = ((y % META.tilesPerFile) + META.tilesPerFile) % META.tilesPerFile;
+  const index = localY * META.tilesPerFile + localX;
+
+  console.log(`  Local coords: (${localX}, ${localY})`);
+  console.log(`  Array index: ${index}`);
+  console.log(`  Value at index: ${data[index]} (0x${data[index].toString(16).padStart(2, '0')}) = ${data[index].toString(2).padStart(8, '0')}`);
+
+  // Show surrounding context
+  console.log('');
+  console.log('  Surrounding 5x5 area (raw bytes):');
+  for (let dy = 2; dy >= -2; dy--) {
+    let row = '    ';
+    for (let dx = -2; dx <= 2; dx++) {
+      const lx = localX + dx;
+      const ly = localY + dy;
+      if (lx >= 0 && lx < META.tilesPerFile && ly >= 0 && ly < META.tilesPerFile) {
+        const idx = ly * META.tilesPerFile + lx;
+        const val = data[idx];
+        row += val.toString(16).padStart(2, '0') + ' ';
+      } else {
+        row += '-- ';
+      }
+    }
+    if (dy === 0) row += ' <-- target row';
+    console.log(row);
+  }
+}
+
+/**
+ * Compare what's in cache vs what will be sent to server
+ */
+export function compareCacheVsSave(fileX: number, fileY: number, floor: number): void {
+  const cacheKey = getFileCacheKey(fileX, fileY, floor);
+  const data = collisionCache.get(cacheKey);
+
+  console.log(`%c📤 Cache vs Save comparison for file (${fileX}, ${fileY}) floor ${floor}`, 'color: magenta; font-weight: bold');
+
+  if (!data) {
+    console.log('%c  ❌ No data in cache!', 'color: red');
+    return;
+  }
+
+  // Count different tile types
+  let fullyWalkable = 0;
+  let fullyBlocked = 0;
+  let partial = 0;
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] === 255) fullyWalkable++;
+    else if (data[i] === 0) fullyBlocked++;
+    else partial++;
+  }
+
+  console.log(`  Total tiles: ${data.length}`);
+  console.log(`  Fully walkable (255): ${fullyWalkable}`);
+  console.log(`  Fully blocked (0): ${fullyBlocked}`);
+  console.log(`  Partial/walls: ${partial}`);
+
+  // Show what base64 would look like (first 100 chars)
+  const base64 = uint8ArrayToBase64(data);
+  console.log(`  Base64 length: ${base64.length} chars`);
+  console.log(`  Base64 preview: ${base64.substring(0, 100)}...`);
+
+  // Sample some partial tiles
+  if (partial > 0) {
+    console.log('');
+    console.log('  Sample partial tiles (up to 10):');
+    let count = 0;
+    for (let i = 0; i < data.length && count < 10; i++) {
+      if (data[i] !== 255 && data[i] !== 0) {
+        const localY = Math.floor(i / META.tilesPerFile);
+        const localX = i % META.tilesPerFile;
+        const worldX = fileX * META.tilesPerFile + localX;
+        const worldY = fileY * META.tilesPerFile + localY;
+        console.log(`    (${worldX}, ${worldY}): ${data[i].toString(2).padStart(8, '0')} = ${data[i]}`);
+        count++;
+      }
+    }
+  }
+}
+
+/**
+ * Test modifying direction bits directly
+ */
+export function testDirectionEdit(x: number, y: number, floor: number, dirBits: number, add: boolean): void {
+  console.log(`%c🔧 Testing direction edit at (${x}, ${y}) floor ${floor}`, 'color: cyan; font-weight: bold');
+  console.log(`  Direction bits: ${dirBits} (${dirBits.toString(2).padStart(8, '0')})`);
+  console.log(`  Operation: ${add ? 'ADD (make walkable)' : 'REMOVE (block)'}`);
+
+  const before = getTileDataSync(x, y, floor);
+  console.log(`  BEFORE: ${before} (${before.toString(2).padStart(8, '0')})`);
+
+  if (add) {
+    addTileDirections(x, y, floor, dirBits);
+  } else {
+    removeTileDirections(x, y, floor, dirBits);
+  }
+
+  const after = getTileDataSync(x, y, floor);
+  console.log(`  AFTER:  ${after} (${after.toString(2).padStart(8, '0')})`);
+
+  // Calculate expected
+  const expected = add ? (before | dirBits) : (before & ~dirBits);
+  const success = after === (expected & 0xFF);
+
+  console.log(`  Expected: ${expected & 0xFF} (${(expected & 0xFF).toString(2).padStart(8, '0')})`);
+  console.log(success ? '%c  ✅ Correct!' : '%c  ❌ MISMATCH!', success ? 'color: lime' : 'color: red');
+
+  notifyCollisionDataChanged();
+}
+
+/**
+ * Show all files currently in the collision cache
+ */
+export function listCachedFiles(): void {
+  console.log('%c📂 Cached collision files:', 'color: yellow; font-weight: bold');
+
+  const files = getModifiedCollisionFiles();
+  if (files.length === 0) {
+    console.log('  No files in cache');
+    return;
+  }
+
+  for (const file of files) {
+    let fullyWalkable = 0;
+    let fullyBlocked = 0;
+    let partial = 0;
+
+    for (let i = 0; i < file.data.length; i++) {
+      if (file.data[i] === 255) fullyWalkable++;
+      else if (file.data[i] === 0) fullyBlocked++;
+      else partial++;
+    }
+
+    console.log(`  File (${file.fileX}, ${file.fileY}) floor ${file.floor}: ${file.data.length} bytes - walkable:${fullyWalkable} blocked:${fullyBlocked} partial:${partial}`);
+  }
+}
+
+// Export test functions to window
+if (typeof window !== 'undefined') {
+  (window as any).testTileBits = testTileBits;
+  (window as any).testWallEffect = testWallEffect;
+  (window as any).inspectCacheData = inspectCacheData;
+  (window as any).compareCacheVsSave = compareCacheVsSave;
+  (window as any).testDirectionEdit = testDirectionEdit;
+  (window as any).listCachedFiles = listCachedFiles;
 }
 
 // Render collision data to a canvas and return blob URL
-// Shows WALKABLE areas: green = can walk, red = blocked
-function renderCollisionToImage(data: Uint8Array, fileX: number, fileY: number, floor: number): string {
-  const size = META.tilesPerFile; // 1280
-  const scale = 1; // 1 pixel per tile
+// Shows WALKABLE areas: green = can walk, red = blocked, yellow = partial (walls)
+// When debugDirections is true, renders at higher resolution with direction indicators
+function renderCollisionToImage(
+  data: Uint8Array,
+  fileX: number,
+  fileY: number,
+  floor: number,
+  debugDirections: boolean = false
+): string {
+  const tilesPerFile = META.tilesPerFile; // 1280
+
+  if (debugDirections) {
+    // High-resolution mode: 4x4 pixels per tile with direction indicators
+    const scale = 4;
+    const size = tilesPerFile * scale;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d')!;
+
+    // Clear canvas
+    ctx.fillStyle = 'rgba(0, 0, 0, 0)';
+    ctx.fillRect(0, 0, size, size);
+
+    for (let tileY = 0; tileY < tilesPerFile; tileY++) {
+      for (let tileX = 0; tileX < tilesPerFile; tileX++) {
+        const index = tileY * tilesPerFile + tileX;
+        const walkableByte = data[index] || 0;
+
+        // Calculate pixel position (flip Y for canvas - origin at top-left)
+        const canvasY = (tilesPerFile - 1 - tileY) * scale;
+        const canvasX = tileX * scale;
+
+        // Draw base tile color
+        if (walkableByte === 255) {
+          ctx.fillStyle = 'rgba(0, 255, 0, 0.3)';
+        } else if (walkableByte === 0) {
+          ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+        } else {
+          // Partial - draw direction indicators
+          ctx.fillStyle = 'rgba(64, 64, 64, 0.3)';
+        }
+        ctx.fillRect(canvasX, canvasY, scale, scale);
+
+        // For partial tiles, draw direction indicators
+        if (walkableByte !== 255 && walkableByte !== 0) {
+          // Direction bit positions in 4x4 grid (canvas coords, Y flipped so py=0 is visual top = game north):
+          // [NW] [N ] [NE]     Visual: top row
+          // [W ]     [E ]              middle
+          // [SW] [S ] [SE]             bottom row = game south
+
+          const drawDir = (bit: number, px: number, py: number, w: number, h: number) => {
+            const isWalkable = (walkableByte & bit) !== 0;
+            ctx.fillStyle = isWalkable ? 'rgba(0, 255, 0, 0.9)' : 'rgba(255, 0, 0, 0.9)';
+            ctx.fillRect(canvasX + px, canvasY + py, w, h);
+          };
+
+          // Cardinals (larger indicators) - py=0 is top of cell = north edge, py=3 is bottom = south edge
+          drawDir(DIRECTION_BITS.NORTH, 1, 0, 2, 1);     // N - top center (visual top = north)
+          drawDir(DIRECTION_BITS.SOUTH, 1, 3, 2, 1);     // S - bottom center (visual bottom = south)
+          drawDir(DIRECTION_BITS.WEST, 0, 1, 1, 2);      // W - left center
+          drawDir(DIRECTION_BITS.EAST, 3, 1, 1, 2);      // E - right center
+
+          // Diagonals (corner indicators)
+          drawDir(DIRECTION_BITS.NORTHWEST, 0, 0, 1, 1); // NW - top-left
+          drawDir(DIRECTION_BITS.NORTHEAST, 3, 0, 1, 1); // NE - top-right
+          drawDir(DIRECTION_BITS.SOUTHWEST, 0, 3, 1, 1); // SW - bottom-left
+          drawDir(DIRECTION_BITS.SOUTHEAST, 3, 3, 1, 1); // SE - bottom-right
+        }
+      }
+    }
+
+    const dataUrl = canvas.toDataURL('image/png');
+    console.log(`%c🔍 Rendered DEBUG collision image for file (${fileX}, ${fileY}) floor ${floor}`, 'color: magenta');
+    return dataUrl;
+  }
+
+  // Standard mode: 1 pixel per tile
+  const size = tilesPerFile;
 
   const canvas = document.createElement('canvas');
-  canvas.width = size * scale;
-  canvas.height = size * scale;
+  canvas.width = size;
+  canvas.height = size;
   const ctx = canvas.getContext('2d')!;
 
   // Create ImageData for efficient pixel manipulation
-  const imageData = ctx.createImageData(size * scale, size * scale);
+  const imageData = ctx.createImageData(size, size);
   const pixels = imageData.data;
 
   for (let tileY = 0; tileY < size; tileY++) {
     for (let tileX = 0; tileX < size; tileX++) {
       const index = tileY * size + tileX;
-      const blockedByte = data[index] || 0;
-
-      // Byte already represents walkable bits: SET = can walk
-      const walkableByte = blockedByte;
+      const walkableByte = data[index] || 0;
 
       // Calculate pixel position (flip Y for canvas - origin at top-left)
-      const canvasY = (size - 1 - tileY) * scale;
-      const canvasX = tileX * scale;
+      const canvasY = size - 1 - tileY;
+      const canvasX = tileX;
 
-      // Determine color based on walkability (now using walkable bits)
+      // Determine color based on walkability
       let r = 0, g = 0, b = 0, a = 0;
 
       // Walkable bits: SET = FREE, CLEAR = BLOCKED
       if (walkableByte === 255) {
-        // All bits set = all directions walkable - green
+        // All directions walkable - green
         r = 0; g = 255; b = 0; a = 100;
       } else if (walkableByte === 0) {
-        // No bits set = completely blocked - red
+        // Completely blocked - red
         r = 255; g = 0; b = 0; a = 180;
       } else {
-        // Partially walkable - color based on how many directions are FREE
-        const freeDirs = countBits(walkableByte);
-        const openness = freeDirs / 8; // 0-1, more set bits = more walkable
-        r = Math.floor(255 * (1 - openness));
-        g = Math.floor(255 * openness);
-        b = 0;
-        a = 150;
+        // Partially walkable (walls/directional) - yellow
+        r = 255; g = 255; b = 0; a = 180;
       }
 
       // Set pixel
-      for (let dy = 0; dy < scale; dy++) {
-        for (let dx = 0; dx < scale; dx++) {
-          const pixelIndex = ((canvasY + dy) * size * scale + (canvasX + dx)) * 4;
-          pixels[pixelIndex] = r;
-          pixels[pixelIndex + 1] = g;
-          pixels[pixelIndex + 2] = b;
-          pixels[pixelIndex + 3] = a;
-        }
-      }
+      const pixelIndex = (canvasY * size + canvasX) * 4;
+      pixels[pixelIndex] = r;
+      pixels[pixelIndex + 1] = g;
+      pixels[pixelIndex + 2] = b;
+      pixels[pixelIndex + 3] = a;
     }
   }
 
@@ -2334,19 +3036,10 @@ function renderCollisionToImage(data: Uint8Array, fileX: number, fileY: number, 
 
   // Convert to blob URL
   const dataUrl = canvas.toDataURL('image/png');
-  console.log(`%c🖼️ Rendered collision image for file (${fileX}, ${fileY}) floor ${floor}`, 'color: magenta');
+  console.log(`%c🖼️ Rendered collision image for file (${fileX}, ${fileY}) floor ${floor}`, 'color: yellow');
   return dataUrl;
 }
 
-// Count set bits in a byte
-function countBits(n: number): number {
-  let count = 0;
-  while (n) {
-    count += n & 1;
-    n >>= 1;
-  }
-  return count;
-}
 
 // Get all cached collision file keys
 export function getCachedTileKeys(): string[] {
@@ -2361,9 +3054,12 @@ export function getCachedTileKeys(): string[] {
 
 // Get cached image URL for a collision file
 export function getCachedTileImageUrl(key: string): string | null {
+  // Use debug cache when debug directions mode is enabled
+  const cache = debugDirectionsEnabled ? collisionDebugImageCache : collisionImageCache;
+
   // Check if we already rendered this
-  if (collisionImageCache.has(key)) {
-    return collisionImageCache.get(key)!;
+  if (cache.has(key)) {
+    return cache.get(key)!;
   }
 
   // Check if we have the data to render
@@ -2379,9 +3075,27 @@ export function getCachedTileImageUrl(key: string): string | null {
   }
 
   // Render and cache
-  const imageUrl = renderCollisionToImage(data, parsed.x, parsed.y, parsed.floor);
-  collisionImageCache.set(key, imageUrl);
+  const imageUrl = renderCollisionToImage(data, parsed.x, parsed.y, parsed.floor, debugDirectionsEnabled);
+  cache.set(key, imageUrl);
   return imageUrl;
+}
+
+// Toggle debug directions mode
+export function setDebugDirectionsMode(enabled: boolean): void {
+  if (debugDirectionsEnabled !== enabled) {
+    debugDirectionsEnabled = enabled;
+    // Clear BOTH caches to force complete re-render
+    collisionImageCache.clear();
+    collisionDebugImageCache.clear();
+    // Dispatch event to trigger re-render
+    window.dispatchEvent(new Event('collisionDataChanged'));
+    console.log(`%c🔍 Debug directions mode: ${enabled ? 'ON' : 'OFF'}`, 'color: magenta');
+  }
+}
+
+// Get current debug directions mode
+export function getDebugDirectionsMode(): boolean {
+  return debugDirectionsEnabled;
 }
 
 // Parse a tile cache key back to coordinates
@@ -2409,10 +3123,11 @@ export function getTileBounds(fileX: number, fileY: number): [[number, number], 
   const tilesPerFile = META.tilesPerFile; // 1280
 
   // Calculate world coordinate bounds for this file
-  const westX = fileX * tilesPerFile;
-  const eastX = (fileX + 1) * tilesPerFile;
-  const southY = fileY * tilesPerFile;
-  const northY = (fileY + 1) * tilesPerFile;
+  // Offset by -0.5 to align collision overlay with visual tile grid
+  const westX = fileX * tilesPerFile - 0.5;
+  const eastX = (fileX + 1) * tilesPerFile - 0.5;
+  const southY = fileY * tilesPerFile - 0.5;
+  const northY = (fileY + 1) * tilesPerFile - 0.5;
 
   // Leaflet bounds: [[south, west], [north, east]] = [[minLat, minLng], [maxLat, maxLng]]
   // Since lat=y and lng=x:
@@ -2615,8 +3330,8 @@ export async function createTransport(transport: NewTransport): Promise<CustomTr
     const created = await response.json() as CustomTransport;
     console.log(`%c✅ Transport created: ${created.name} (ID: ${created.id})`, 'color: lime');
 
-    // Reload cache
-    await loadCustomTransports();
+    // Reload cache and notify UI
+    await reloadTransports();
 
     return created;
   } catch (err) {
@@ -2646,8 +3361,8 @@ export async function createTransportsBulk(transports: NewTransport[]): Promise<
     const result = await response.json();
     console.log(`%c✅ Bulk created ${result.created} transports`, 'color: lime');
 
-    // Reload cache
-    await loadCustomTransports();
+    // Reload cache and notify UI
+    await reloadTransports();
 
     return result;
   } catch (err) {

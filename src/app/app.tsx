@@ -1,9 +1,16 @@
 // src/app/index.tsx
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import "./../Assets/CSS/index.css";
 import "./../Assets/CSS/leafless.css";
 
 import WorkspaceLayout from "./../feature/WorkspaceLayouts";
+import {
+  initializeKeybinds,
+  KeybindHandler,
+  KeybindModal,
+  KeybindToast,
+  TransportWheel,
+} from "../keybinds";
 import StepControlBar from "./containers/FixedControlBar"; // export default from the fixed version
 import QuestDetailsPanel from "./containers/QuestDetailsPanel";
 import ItemsNeededPanel from "./containers/ItemsNeededPanel";
@@ -28,6 +35,11 @@ import AdminPlotSubmissions from "./admin/PlotSubmissionAdmin";
 
 const App: React.FC = () => {
   const { isAuthed } = useAuth();
+
+  // Initialize keybind system on mount
+  useEffect(() => {
+    initializeKeybinds();
+  }, []);
 
   const leftDock = useMemo(
     () => (
@@ -117,19 +129,25 @@ const App: React.FC = () => {
   const controlBar = useMemo(() => <StepControlBar />, []);
 
   return (
-    <WorkspaceLayout
-      left={leftDock}
-      right={rightDock}
-      center={center}
-      controlBar={controlBar}
-      initialLeftWidth={380}
-      initialRightWidth={380}
-      minLeftWidth={280}
-      minRightWidth={280}
-      maxLeftWidth={600}
-      maxRightWidth={600}
-      storageKey="rs3qb_workspace_v3"
-    />
+    <>
+      <WorkspaceLayout
+        left={leftDock}
+        right={rightDock}
+        center={center}
+        controlBar={controlBar}
+        initialLeftWidth={380}
+        initialRightWidth={380}
+        minLeftWidth={280}
+        minRightWidth={280}
+        maxLeftWidth={600}
+        maxRightWidth={600}
+        storageKey="rs3qb_workspace_v3"
+      />
+      <KeybindHandler />
+      <KeybindModal />
+      <KeybindToast />
+      <TransportWheel />
+    </>
   );
 };
 

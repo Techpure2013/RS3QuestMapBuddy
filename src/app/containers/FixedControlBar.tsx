@@ -6,8 +6,9 @@ import {
   requestFlyToCurrentTargetAt,
 } from "../../state/editorStore";
 import { HandleFloorIncreaseDecrease } from "../../map/utils/MapFunctions";
-import { IconGridDots } from "@tabler/icons-react";
+import { IconGridDots, IconKeyboard } from "@tabler/icons-react";
 import { hardLocalReset } from "./../../state/hardLocalReset";
+import { keybindStore } from "../../keybinds";
 
 const StepControlBar: React.FC = React.memo(() => {
   // Minimal subscriptions (primitives only)
@@ -335,6 +336,17 @@ const StepControlBar: React.FC = React.memo(() => {
         <IconGridDots size={14} style={{ marginRight: 4 }} />
         {showGrids ? "Grids: On" : "Grids: Off"}
       </button>
+      {/* Keyboard Shortcuts */}
+      <button
+        onClick={() => keybindStore.setModalOpen(true)}
+        className="control-btn"
+        type="button"
+        title="Keyboard Shortcuts (Shift + ?)"
+        style={{ minWidth: 32, padding: "4px 8px" }}
+      >
+        <IconKeyboard size={16} />
+      </button>
+
       <button
         onClick={async () => {
           const ok = confirm(
