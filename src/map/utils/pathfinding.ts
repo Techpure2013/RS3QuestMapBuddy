@@ -2,6 +2,14 @@
 // A* pathfinding using binary collision data from Leridon's format
 
 import type { PathWaypoint } from "../../state/types";
+import {
+  getCollisionTile,
+  setCollisionTile,
+  invalidateCollisionTile,
+  invalidateCollisionTiles,
+  clearCollisionTileCache,
+  getCollisionCacheStats,
+} from "../../idb/collisionTileStore";
 
 // Binary collision data format:
 // Fetched from API: /api/collision/{floor}/0/{fileX}-{fileY}.png (raw binary)
@@ -117,6 +125,47 @@ interface TransportLink {
   toLevel: number;
   time: number;
   name: string;
+  transport_type?: TransportType; // Type of transport (stairs, ladder, teleport, etc.)
+}
+
+// Transport types that can legitimately change floors
+// - Vertical: stairs, ladders, etc. (physical floor changes)
+// - Teleportation: magic transports that can go anywhere
+// - Flight: aerial transports that can change elevation
+const FLOOR_CHANGING_TRANSPORT_TYPES = new Set<TransportType>([
+  // Physical vertical movement
+  "stairs", "ladder", "trapdoor", "rope",
+  // Teleportation (can go anywhere)
+  "teleport", "lodestone", "fairy_ring", "spirit_tree", "portal", "jewelry_teleport", "archaeology_journal",
+  // Aerial transport (can change elevation)
+  "gnome_glider", "balloon", "eagle", "magic_carpet",
+]);
+
+/**
+ * Check if a transport type can change floors
+ * Returns true for vertical transports and teleportation
+ */
+function canTransportChangeFloors(transportType?: TransportType): boolean {
+  if (!transportType) return false;
+  return FLOOR_CHANGING_TRANSPORT_TYPES.has(transportType);
+}
+
+/**
+ * Check if a transport type is a vertical transport (physical floor change)
+ * Used for floor tracking in PlayerPositionTracker
+ */
+export function isVerticalTransport(transportType?: TransportType): boolean {
+  if (!transportType) return false;
+  // Only physical vertical movement (not teleportation)
+  return transportType === "stairs" || transportType === "ladder" ||
+         transportType === "trapdoor" || transportType === "rope";
+}
+
+/**
+ * Check if a transport changes floors
+ */
+function isFloorChangingTransport(link: TransportLink): boolean {
+  return link.fromLevel !== link.toLevel;
 }
 
 // Cache for transportation data indexed by location
@@ -170,6 +219,7 @@ export async function loadTransportationData(): Promise<void> {
             toLevel: t.to_floor,
             time: t.travel_time || 1,
             name: t.name,
+            transport_type: t.transport_type, // Include transport type for filtering
           };
 
           // Check if this is a global teleport (usable from anywhere)
@@ -218,6 +268,7 @@ export async function loadTransportationData(): Promise<void> {
               toLevel: t.from_floor,
               time: t.travel_time || 1,
               name: reverseName,
+              transport_type: t.transport_type, // Include transport type for filtering
             };
 
             const reverseKey = getTransportKey(reverseLink.fromX, reverseLink.fromY, reverseLink.fromLevel);
@@ -340,10 +391,11 @@ function getApiBase(): string {
       : window.location.origin);
 }
 
-// Load a collision file from the API
+// Load a collision file from IDB cache or API
 async function loadCollisionFile(fileX: number, fileY: number, floor: number): Promise<Uint8Array | null> {
   const cacheKey = getFileCacheKey(fileX, fileY, floor);
 
+  // Check in-memory cache first (fastest)
   if (collisionCache.has(cacheKey)) {
     return collisionCache.get(cacheKey) ?? null;
   }
@@ -353,6 +405,18 @@ async function loadCollisionFile(fileX: number, fileY: number, floor: number): P
   }
 
   const loadPromise = (async (): Promise<Uint8Array | null> => {
+    // Try IDB cache first
+    try {
+      const cachedData = await getCollisionTile(floor, fileX, fileY);
+      if (cachedData) {
+        console.log(`%c💾 Loaded collision file ${cacheKey} from IDB cache`, 'color: cyan');
+        collisionCache.set(cacheKey, cachedData);
+        return cachedData;
+      }
+    } catch (err) {
+      console.warn(`IDB cache check failed for ${cacheKey}:`, err);
+    }
+
     // Fetch from API - zoom=0 means raw collision data
     const url = `${getApiBase()}/api/collision/${floor}/0/${fileX}-${fileY}.png`;
 
@@ -368,8 +432,12 @@ async function loadCollisionFile(fileX: number, fileY: number, floor: number): P
       const arrayBuffer = await response.arrayBuffer();
       const data = new Uint8Array(arrayBuffer);
 
-      console.log(`%c📦 Loaded collision file ${cacheKey}: ${data.length} bytes`, 'color: cyan');
+      console.log(`%c📦 Loaded collision file ${cacheKey} from API: ${data.length} bytes`, 'color: cyan');
       collisionCache.set(cacheKey, data);
+
+      // Save to IDB cache for future use
+      void setCollisionTile(floor, fileX, fileY, data);
+
       return data;
     } catch (err) {
       console.error(`Failed to load collision file ${cacheKey}:`, err);
@@ -735,9 +803,19 @@ function runWeightedAStar(
       console.log(`    Valid walking moves: ${validMoves}, heap now: ${openHeap.length}`);
     }
 
-    // Check transport links (stairs, ladders, etc.)
+    // Check transport links (stairs, ladders, doors, shortcuts, etc.)
     const transportLinks = getTransportLinks(current.x, current.y, current.level);
     for (const link of transportLinks) {
+      // Filter transports: only certain types can change floors
+      // - Vertical transports (stairs, ladders, etc.)
+      // - Teleportation (lodestones, fairy rings, etc.)
+      // - Aerial transport (gliders, balloons, etc.)
+      // Non-floor-changing transports (doors, shortcuts) must stay on same floor
+      if (isFloorChangingTransport(link) && !canTransportChangeFloors(link.transport_type)) {
+        // This transport changes floors but isn't a valid floor-changing type - skip it
+        continue;
+      }
+
       const neighborKey = coordKey(link.toX, link.toY, link.toLevel);
 
       if (closedSet.has(neighborKey)) continue;
@@ -924,12 +1002,75 @@ export async function generateStepToStepPath(
   );
 }
 
-// Clear the collision cache
-export function clearCollisionCache(): void {
+// Clear the collision cache (in-memory and IDB)
+export async function clearCollisionCache(): Promise<void> {
   collisionCache.clear();
   loadingPromises.clear();
   collisionImageCache.clear();
-  console.log(`%c🗑️ Collision cache cleared`, 'color: orange; font-weight: bold');
+
+  // Also clear IDB cache
+  try {
+    await clearCollisionTileCache();
+  } catch (err) {
+    console.error('Failed to clear IDB collision cache:', err);
+  }
+
+  console.log(`%c🗑️ Collision cache cleared (memory + IDB)`, 'color: orange; font-weight: bold');
+}
+
+// Invalidate specific collision tiles (memory + IDB) and optionally re-fetch
+export async function invalidateCollisionCacheTiles(
+  tiles: Array<{ floor: number; fileX: number; fileY: number }>,
+  refetch: boolean = true
+): Promise<void> {
+  if (tiles.length === 0) return;
+
+  console.log(`%c🔄 Invalidating ${tiles.length} collision tiles from remote update`, 'color: orange');
+
+  // Remove from in-memory caches
+  for (const { floor, fileX, fileY } of tiles) {
+    const cacheKey = getFileCacheKey(fileX, fileY, floor);
+    collisionCache.delete(cacheKey);
+    loadingPromises.delete(cacheKey);
+    collisionImageCache.delete(cacheKey);
+  }
+
+  // Remove from IDB cache
+  try {
+    await invalidateCollisionTiles(tiles);
+  } catch (err) {
+    console.error('Failed to invalidate IDB collision tiles:', err);
+  }
+
+  // Re-fetch the tiles from server if requested
+  if (refetch) {
+    console.log(`%c📥 Re-fetching ${tiles.length} invalidated tiles`, 'color: cyan');
+    const promises = tiles.map(({ floor, fileX, fileY }) =>
+      loadCollisionFile(fileX, fileY, floor)
+    );
+    await Promise.allSettled(promises);
+  }
+
+  // Notify listeners that collision data has changed
+  notifyCollisionDataChanged();
+}
+
+// Get collision cache statistics (IDB)
+export async function getCollisionStats(): Promise<{
+  memoryCacheSize: number;
+  idbStats: { totalSizeMB: number; itemCount: number; lastCleanup: Date; version: number } | null;
+}> {
+  let idbStats = null;
+  try {
+    idbStats = await getCollisionCacheStats();
+  } catch (err) {
+    console.error('Failed to get IDB stats:', err);
+  }
+
+  return {
+    memoryCacheSize: collisionCache.size,
+    idbStats,
+  };
 }
 
 // ============ COLLISION EDITOR MODE ============
@@ -2055,6 +2196,11 @@ export async function saveCollisionFile(fileX: number, fileY: number, floor: num
 
     if (res.ok) {
       console.log(`%c✅ Saved collision file (${fileX}, ${fileY}) floor ${floor}`, 'color: lime');
+
+      // Invalidate old IDB cache and save new data
+      await invalidateCollisionTile(floor, fileX, fileY);
+      await setCollisionTile(floor, fileX, fileY, data);
+
       return true;
     } else {
       console.error(`Failed to save collision file: ${res.status} ${res.statusText}`);
@@ -2112,6 +2258,32 @@ export async function saveAllCollisionFiles(): Promise<{ saved: number; failed: 
     const result = await res.json();
     console.log(`%c✅ Batch save complete: ${result.savedCount}/${result.totalCount} files saved`,
       result.savedCount === result.totalCount ? 'color: lime' : 'color: orange');
+
+    // Invalidate old IDB cache and save new data for successfully saved files
+    if (result.results && Array.isArray(result.results)) {
+      const savedTiles = result.results
+        .filter((r: { ok: boolean }) => r.ok)
+        .map((r: { floor: number; fileX: number; fileY: number }) => ({
+          floor: r.floor,
+          fileX: r.fileX,
+          fileY: r.fileY,
+        }));
+
+      if (savedTiles.length > 0) {
+        // Invalidate old tiles
+        await invalidateCollisionTiles(savedTiles);
+
+        // Save new data to IDB
+        for (const tile of savedTiles) {
+          const file = files.find(
+            f => f.floor === tile.floor && f.fileX === tile.fileX && f.fileY === tile.fileY
+          );
+          if (file) {
+            await setCollisionTile(tile.floor, tile.fileX, tile.fileY, file.data);
+          }
+        }
+      }
+    }
 
     return {
       saved: result.savedCount ?? 0,
@@ -2502,6 +2674,8 @@ if (typeof window !== 'undefined') {
   (window as any).debugArea = debugArea;
   (window as any).debugPathfind = debugPathfind;
   (window as any).clearCollisionCache = clearCollisionCache;
+  (window as any).getCollisionStats = getCollisionStats;
+  (window as any).invalidateCollisionTiles = invalidateCollisionTiles;
   (window as any).loadTransportationData = loadTransportationData;
   (window as any).reloadTransports = reloadTransports;
   (window as any).loadCollisionForDebug = loadCollisionForDebug;

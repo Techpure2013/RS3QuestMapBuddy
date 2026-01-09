@@ -61,15 +61,19 @@ export const NpcSearch: React.FC<NpcSearchProps> = ({
       // Case-insensitive handled by server via lower(name) like
       const results = await searchNpcs(name, 15);
       console.log(results);
-      // Persist into IndexedDB cache
+
+      // Filter out unmapped NPCs (0,0 coordinates)
+      const mappedResults = results.filter(npc => !(npc.lat === 0 && npc.lng === 0));
+
+      // Persist into IndexedDB cache (still cache all results for reference)
       const cache = await loadNpcCache();
       const nextCache = addNpcSearchResultsToCache(cache, results);
       await saveNpcCache(nextCache);
 
-      setAllMatches(results);
-      if (results.length > 0) {
+      setAllMatches(mappedResults);
+      if (mappedResults.length > 0) {
         setCurrentIndex(0);
-        onNpcHighlight(results[0]);
+        onNpcHighlight(mappedResults[0]);
       } else {
         setCurrentIndex(-1);
         onNpcHighlight(null);
@@ -119,6 +123,13 @@ export const NpcSearch: React.FC<NpcSearchProps> = ({
     return `${cur.name} (F${cur.floor})`;
   }, [currentIndex, allMatches]);
 
+  // Check if current NPC is unmapped (0,0 coordinates)
+  const isUnmapped = useMemo(() => {
+    if (currentIndex < 0 || allMatches.length === 0) return false;
+    const cur = allMatches[currentIndex];
+    return cur.lat === 0 && cur.lng === 0;
+  }, [currentIndex, allMatches]);
+
   return (
     <div className="npc-search-container">
       <strong>NPC Search</strong>
@@ -140,12 +151,29 @@ export const NpcSearch: React.FC<NpcSearchProps> = ({
               {currentIndex + 1} of {allMatches.length}
             </span>
           </div>
+          {isUnmapped && (
+            <div className="npc-unmapped-warning" style={{
+              background: "#7f1d1d",
+              color: "#fecaca",
+              padding: "4px 8px",
+              borderRadius: 4,
+              fontSize: "0.8rem",
+              marginBottom: 4,
+            }}>
+              This NPC has no mapped location. Use Next/Previous to find a mapped instance.
+            </div>
+          )}
           <div className="npc-cycler-buttons">
             <button onClick={handlePrevious}>Previous</button>
             <button onClick={handleNext}>Next</button>
           </div>
-          <button onClick={handleChoose} className="button--add">
-            Choose this NPC
+          <button
+            onClick={handleChoose}
+            className="button--add"
+            disabled={isUnmapped}
+            title={isUnmapped ? "Cannot select unmapped NPC" : "Choose this NPC"}
+          >
+            {isUnmapped ? "Unmapped" : "Choose this NPC"}
           </button>
         </div>
       )}

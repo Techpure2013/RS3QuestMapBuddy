@@ -86,7 +86,7 @@ export const Panel: React.FC<PanelProps> = ({
           style={{
             padding: compact ? "6px 8px" : "8px 10px",
             background: "#0b1220",
-            overflow: "hidden",
+            overflow: "visible",
             boxSizing: "border-box",
           }}
         >

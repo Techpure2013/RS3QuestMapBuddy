@@ -30,8 +30,13 @@ function extractValidNpcs(npcs: NpcHighlight[]) {
   return npcs
     .filter((n) => {
       const loc = n?.npcLocation as NpcLocation | undefined;
+      // Must have valid coordinates AND a non-empty name
       return Boolean(
-        loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
+        loc &&
+        Number.isFinite(loc.lat) &&
+        Number.isFinite(loc.lng) &&
+        n.npcName &&
+        n.npcName.trim().length > 0
       );
     })
     .map((n) => {
@@ -45,6 +50,16 @@ function extractValidNpcs(npcs: NpcHighlight[]) {
         ? { id: n.id, ...base }
         : base;
     });
+}
+
+// Check if there are NPCs with coordinates but missing names
+function hasUnnamedNpcs(npcs: NpcHighlight[]): boolean {
+  return npcs.some((n) => {
+    const loc = n?.npcLocation as NpcLocation | undefined;
+    const hasValidLoc = loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng);
+    const hasNoName = !n.npcName || n.npcName.trim().length === 0;
+    return hasValidLoc && hasNoName;
+  });
 }
 
 function extractValidObjects(objects: ObjectHighlight[]) {
@@ -91,8 +106,17 @@ function validatePlotState(playerName: string): ValidationResult {
     return { ok: false, error: "Invalid step." };
   }
 
-  const npc = extractValidNpcs(step.highlights.npc ?? []);
+  const rawNpcs = step.highlights.npc ?? [];
+  const npc = extractValidNpcs(rawNpcs);
   const object = extractValidObjects(step.highlights.object ?? []);
+
+  // Check if user added NPCs with locations but forgot to set names
+  if (hasUnnamedNpcs(rawNpcs)) {
+    return {
+      ok: false,
+      error: "One or more NPCs are missing a name. Please search and select an NPC name for each.",
+    };
+  }
 
   if (npc.length === 0 && object.length === 0) {
     return {
