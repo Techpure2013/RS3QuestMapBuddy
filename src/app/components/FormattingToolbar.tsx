@@ -10,7 +10,7 @@ const FORMAT_BUTTONS = [
   { label: "U", title: "Underline (__text__)", prefix: "__", suffix: "__", style: { textDecoration: "underline" } },
   { label: "S", title: "Strikethrough (~~text~~)", prefix: "~~", suffix: "~~", style: { textDecoration: "line-through" } },
   { label: "x\u00B2", title: "Superscript (^text or ^(text))", prefix: "^(", suffix: ")", style: { fontSize: "0.7em" } },
-  { label: "\uD83D\uDD17", title: "Link ([text](url))", prefix: "[", suffix: "](https://)", style: {} },
+  { label: "\uD83D\uDD17", title: "Link ([text](url))", prefix: "[", suffix: "]()", style: {} },
 ] as const;
 
 export interface FormattingToolbarProps {
