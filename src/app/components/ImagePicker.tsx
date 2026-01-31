@@ -132,7 +132,7 @@ export const ImagePicker: React.FC<ImagePickerProps> = ({ onSelect, onClose }) =
       style={{
         position: "absolute",
         top: "100%",
-        left: 0,
+        right: 0,
         marginTop: 4,
         background: "#1f2937",
         border: "1px solid #374151",

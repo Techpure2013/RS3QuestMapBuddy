@@ -16,4 +16,5 @@ yarn-error.log*
 pnpm-debug.log*
 .idea
 *.suo
-.claude
+.claude/
+.omc/
