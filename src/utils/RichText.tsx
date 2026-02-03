@@ -23,6 +23,20 @@ import React from "react";
  * Combinations work: __**bold underline**__ or ~~*italic strikethrough*~~
  */
 
+interface TableStyle {
+	borderColor: string;
+	headerBgColor: string;
+	headerTextColor: string;
+	evenRowBgColor: string;
+	oddRowBgColor: string;
+}
+
+interface TableData {
+	headers: string[];
+	rows: string[][];
+	style: TableStyle;
+}
+
 type TextNode =
 	| { type: "text"; content: string }
 	| { type: "bold"; children: TextNode[] }
@@ -34,7 +48,64 @@ type TextNode =
 	| { type: "color"; color: string; children: TextNode[] }
 	| { type: "link"; url: string; children: TextNode[] }
 	| { type: "image"; url: string; alt: string; size?: number }
-	| { type: "steplink"; step: number; children: TextNode[] };
+	| { type: "steplink"; step: number; children: TextNode[] }
+	| { type: "table"; table: TableData };
+
+// Parse table syntax: {{table|border:#color|hbg:#color|htx:#color|ebg:#color|obg:#color|h1|h2||r1c1|r1c2||r2c1|r2c2}}
+function parseTableSyntax(content: string): TableData | null {
+	const parts = content.split("|");
+	if (parts.length < 2) return null;
+
+	const style: TableStyle = {
+		borderColor: "#4b5563",
+		headerBgColor: "#1f2937",
+		headerTextColor: "#fbbf24",
+		evenRowBgColor: "#111827",
+		oddRowBgColor: "#1a1a2e",
+	};
+
+	let dataStart = 0;
+
+	// Parse style options at the beginning
+	for (let i = 0; i < parts.length; i++) {
+		const part = parts[i].trim();
+		if (part.startsWith("border:")) {
+			style.borderColor = part.substring(7);
+			dataStart = i + 1;
+		} else if (part.startsWith("hbg:")) {
+			style.headerBgColor = part.substring(4);
+			dataStart = i + 1;
+		} else if (part.startsWith("htx:")) {
+			style.headerTextColor = part.substring(4);
+			dataStart = i + 1;
+		} else if (part.startsWith("ebg:")) {
+			style.evenRowBgColor = part.substring(4);
+			dataStart = i + 1;
+		} else if (part.startsWith("obg:")) {
+			style.oddRowBgColor = part.substring(4);
+			dataStart = i + 1;
+		} else {
+			break;
+		}
+	}
+
+	// Rejoin remaining parts and split by || to get rows
+	const dataContent = parts.slice(dataStart).join("|");
+	const rowStrings = dataContent.split("||").filter(r => r.trim());
+
+	if (rowStrings.length < 1) return null;
+
+	// First row is headers
+	const headers = rowStrings[0].split("|").map(h => h.replace(/\\\|/g, "|").trim());
+	const rows: string[][] = [];
+
+	for (let i = 1; i < rowStrings.length; i++) {
+		const cells = rowStrings[i].split("|").map(c => c.replace(/\\\|/g, "|").trim());
+		rows.push(cells);
+	}
+
+	return { headers, rows, style };
+}
 
 // Token patterns in order of precedence (most specific first)
 const patterns: Array<{
@@ -45,7 +116,14 @@ const patterns: Array<{
 	getAlt?: (match: RegExpMatchArray) => string;
 	getSize?: (match: RegExpMatchArray) => number | undefined;
 	getStep?: (match: RegExpMatchArray) => number;
+	getTable?: (match: RegExpMatchArray) => TableData | null;
 }> = [
+	// Table: {{table|...}}
+	{
+		regex: /\{\{table\|((?:[^{}]|\{[^{}]*\})*)\}\}/,
+		type: "table",
+		getTable: (m) => parseTableSyntax(m[1]),
+	},
 	// Image with size: ![alt|size](url) - e.g., ![NPC|32](https://...)
 	// URL regex allows balanced parentheses for wiki URLs like Memory_fragment_(Daughter_of_Chaos).png
 	{
@@ -130,6 +208,7 @@ function parseRichText(text: string): TextNode[] {
 			alt?: string;
 			size?: number;
 			step?: number;
+			table?: TableData | null;
 		} | null = null;
 
 		// Find the earliest matching pattern
@@ -162,6 +241,7 @@ function parseRichText(text: string): TextNode[] {
 						alt: pattern.getAlt?.(match),
 						size: pattern.getSize?.(match),
 						step: pattern.getStep?.(match),
+						table: pattern.getTable?.(match),
 					};
 				}
 			}
@@ -190,6 +270,11 @@ function parseRichText(text: string): TextNode[] {
 				url: earliestMatch.url,
 				alt: earliestMatch.alt || "",
 				size: earliestMatch.size,
+			});
+		} else if (earliestMatch.type === "table" && earliestMatch.table) {
+			nodes.push({
+				type: "table",
+				table: earliestMatch.table,
 			});
 		} else {
 			// Recursively parse the content inside the matched pattern
@@ -378,6 +463,70 @@ function renderNodes(
 					</span>
 				);
 
+			case "table":
+				const { table } = node;
+				return (
+					<div
+						key={key}
+						style={{
+							overflowX: "auto",
+							margin: "8px 0",
+						}}
+					>
+						<table
+							style={{
+								borderCollapse: "collapse",
+								border: `1px solid ${table.style.borderColor}`,
+								fontSize: "0.85rem",
+								width: "100%",
+							}}
+						>
+							<thead>
+								<tr style={{ background: table.style.headerBgColor }}>
+									{table.headers.map((header, hi) => (
+										<th
+											key={hi}
+											style={{
+												padding: "6px 10px",
+												color: table.style.headerTextColor,
+												border: `1px solid ${table.style.borderColor}`,
+												textAlign: "left",
+												fontWeight: "bold",
+												whiteSpace: "nowrap",
+											}}
+										>
+											{header}
+										</th>
+									))}
+								</tr>
+							</thead>
+							<tbody>
+								{table.rows.map((row, ri) => (
+									<tr
+										key={ri}
+										style={{
+											background: ri % 2 === 0 ? table.style.evenRowBgColor : table.style.oddRowBgColor,
+										}}
+									>
+										{row.map((cell, ci) => (
+											<td
+												key={ci}
+												style={{
+													padding: "6px 10px",
+													color: "#e5e7eb",
+													border: `1px solid ${table.style.borderColor}`,
+												}}
+											>
+												{cell}
+											</td>
+										))}
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+				);
+
 			default:
 				return null;
 		}
@@ -464,6 +613,9 @@ export function stripFormatting(text: string): string {
 
 		// Image shorthand: {{img:url}} or {{img:url|size}} -> empty
 		result = result.replace(/\{\{img:(https?:\/\/[^|}]+)(?:\|\d+)?\}\}/g, "");
+
+		// Table: {{table|...}} -> [Table]
+		result = result.replace(/\{\{table\|((?:[^{}]|\{[^{}]*\})*)\}\}/g, "[Table]");
 
 		// Step link: step(N){text} -> text
 		result = result.replace(/step\(\d+\)\{(.+?)\}(?!\})/g, "$1");

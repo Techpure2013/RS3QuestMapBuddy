@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { RichText } from "../../utils/RichText";
 import { FormattingToolbar } from "../components/FormattingToolbar";
+import { TableCreator } from "../components/TableCreator";
 import { EditorStore } from "../../state/editorStore";
 
 export const StepDescriptionSection: React.FC<{
@@ -11,6 +12,23 @@ export const StepDescriptionSection: React.FC<{
   onChange: (text: string) => void;
 }> = ({ stepNumber, value, editing, onToggleEdit, onChange }) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [showTableCreator, setShowTableCreator] = useState(false);
+
+  const handleInsertTable = (markup: string) => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const end = textarea.selectionEnd;
+    const newText = value.substring(0, end) + markup + value.substring(end);
+    onChange(newText);
+    setShowTableCreator(false);
+
+    requestAnimationFrame(() => {
+      textarea.focus();
+      const newPos = end + markup.length;
+      textarea.setSelectionRange(newPos, newPos);
+    });
+  };
 
   const handleStepClick = (step: number) => {
     const stepIndex = step - 1;
@@ -31,12 +49,31 @@ export const StepDescriptionSection: React.FC<{
       </label>
       {editing && (
         <>
-          <FormattingToolbar
-            textareaRef={textareaRef}
-            value={value}
-            onChange={onChange}
-            defaultCollapsed
-          />
+          <div style={{ display: "flex", gap: 8, marginBottom: 6, alignItems: "center" }}>
+            <button
+              type="button"
+              title="Create table (paste from wiki or build manually)"
+              onClick={() => setShowTableCreator(true)}
+              style={{
+                padding: "6px 12px",
+                background: "#7c3aed",
+                border: "1px solid #8b5cf6",
+                borderRadius: 4,
+                color: "#ddd6fe",
+                cursor: "pointer",
+                fontSize: "0.8rem",
+                fontWeight: 500,
+              }}
+            >
+              ⊞ Table
+            </button>
+            <FormattingToolbar
+              textareaRef={textareaRef}
+              value={value}
+              onChange={onChange}
+              defaultCollapsed
+            />
+          </div>
           <textarea
             ref={textareaRef}
             value={value}
@@ -44,6 +81,12 @@ export const StepDescriptionSection: React.FC<{
             rows={6}
           />
         </>
+      )}
+      {showTableCreator && (
+        <TableCreator
+          onInsert={handleInsertTable}
+          onClose={() => setShowTableCreator(false)}
+        />
       )}
     </div>
   );

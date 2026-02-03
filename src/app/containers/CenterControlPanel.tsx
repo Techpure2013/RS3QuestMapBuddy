@@ -26,6 +26,8 @@ import { RichText, stripFormatting } from "../../utils/RichText";
 import { ColorPicker } from "../components/ColorPicker";
 import { ImagePicker } from "../components/ImagePicker";
 import { StepLinkPicker } from "../components/StepLinkPicker";
+import { TableCreator } from "../components/TableCreator";
+import { IconTable } from "@tabler/icons-react";
 
 export const CenterControls: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -43,6 +45,7 @@ export const CenterControls: React.FC = () => {
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [showImagePicker, setShowImagePicker] = useState(false);
   const [showStepLinkPicker, setShowStepLinkPicker] = useState(false);
+  const [showTableCreator, setShowTableCreator] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -720,6 +723,23 @@ export const CenterControls: React.FC = () => {
                     />
                   )}
                 </div>
+                {/* Table creator button */}
+                <button
+                  type="button"
+                  title="Create table (paste from wiki or build manually)"
+                  onClick={() => setShowTableCreator(true)}
+                  style={{
+                    padding: "3px 8px",
+                    fontSize: "0.75rem",
+                    background: "#7c3aed",
+                    border: "1px solid #8b5cf6",
+                    borderRadius: 3,
+                    color: "#ddd6fe",
+                    cursor: "pointer",
+                  }}
+                >
+                  ⊞ Table
+                </button>
               </div>
               <textarea
                 ref={textareaRef}
@@ -819,6 +839,28 @@ export const CenterControls: React.FC = () => {
         onClose={() => setOpen(false)}
         onPick={handlePick}
       />
+
+      {showTableCreator && (
+        <TableCreator
+          onInsert={(markup) => {
+            const textarea = textareaRef.current;
+            if (!textarea) return;
+
+            const end = textarea.selectionEnd;
+            const newText = localStepDesc.substring(0, end) + markup + localStepDesc.substring(end);
+            handleStepChange(newText);
+
+            setShowTableCreator(false);
+
+            requestAnimationFrame(() => {
+              textarea.focus();
+              const newPos = end + markup.length;
+              textarea.setSelectionRange(newPos, newPos);
+            });
+          }}
+          onClose={() => setShowTableCreator(false)}
+        />
+      )}
     </>
   );
 };

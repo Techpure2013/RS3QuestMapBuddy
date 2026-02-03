@@ -3,6 +3,7 @@ import { stripFormatting } from "../../utils/RichText";
 import { ColorPicker } from "./ColorPicker";
 import { ImagePicker } from "./ImagePicker";
 import { StepLinkPicker } from "./StepLinkPicker";
+import { TableCreator } from "./TableCreator";
 
 const FORMAT_BUTTONS = [
   { label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 } },
@@ -31,6 +32,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [showImagePicker, setShowImagePicker] = useState(false);
   const [showStepLinkPicker, setShowStepLinkPicker] = useState(false);
+  const [showTableCreator, setShowTableCreator] = useState(false);
 
   const wrapSelection = (prefix: string, suffix: string) => {
     const textarea = textareaRef.current;
@@ -227,7 +229,43 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
               />
             )}
           </div>
+          {/* Table creator button */}
+          <button
+            type="button"
+            title="Create table (paste from wiki or build manually)"
+            onClick={() => setShowTableCreator(true)}
+            style={{
+              ...buttonStyle,
+              background: "#7c3aed",
+              border: "1px solid #8b5cf6",
+              color: "#ddd6fe",
+            }}
+          >
+            ⊞ Table
+          </button>
         </div>
+      )}
+      {/* Table Creator Modal */}
+      {showTableCreator && (
+        <TableCreator
+          onInsert={(markup) => {
+            const textarea = textareaRef.current;
+            if (!textarea) return;
+
+            const end = textarea.selectionEnd;
+            const newText = value.substring(0, end) + markup + value.substring(end);
+            onChange(newText);
+
+            setShowTableCreator(false);
+
+            requestAnimationFrame(() => {
+              textarea.focus();
+              const newPos = end + markup.length;
+              textarea.setSelectionRange(newPos, newPos);
+            });
+          }}
+          onClose={() => setShowTableCreator(false)}
+        />
       )}
     </div>
   );

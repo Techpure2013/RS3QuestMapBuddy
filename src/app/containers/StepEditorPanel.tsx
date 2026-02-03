@@ -3,6 +3,8 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import { EditorStore } from "../../state/editorStore";
 import { IconX } from "@tabler/icons-react";
+import { FormattingToolbar } from "../components/FormattingToolbar";
+import { TableCreator } from "../components/TableCreator";
 
 export const StepEditorPanel: React.FC = () => {
   const quest = useEditorSelector((s) => s.quest);
@@ -14,6 +16,7 @@ export const StepEditorPanel: React.FC = () => {
   const [localValue, setLocalValue] = useState(stepDescription);
   const [hasChanges, setHasChanges] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
+  const [showTableCreator, setShowTableCreator] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -69,6 +72,22 @@ export const StepEditorPanel: React.FC = () => {
     },
     [stepDescription, sel.selectedStep]
   );
+
+  const handleInsertTable = useCallback((markup: string) => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const end = textarea.selectionEnd;
+    const newText = localValue.substring(0, end) + markup + localValue.substring(end);
+    handleChange(newText);
+    setShowTableCreator(false);
+
+    requestAnimationFrame(() => {
+      textarea.focus();
+      const newPos = end + markup.length;
+      textarea.setSelectionRange(newPos, newPos);
+    });
+  }, [localValue, handleChange]);
 
   const handleSave = useCallback(() => {
     if (autoSaveTimerRef.current) {
@@ -205,6 +224,32 @@ export const StepEditorPanel: React.FC = () => {
 
       {/* Editor Area */}
       <div style={{ padding: 12 }}>
+        {/* Formatting Tools */}
+        <div style={{ display: "flex", gap: 8, marginBottom: 8, alignItems: "center" }}>
+          <button
+            type="button"
+            title="Create table (paste from wiki or build manually)"
+            onClick={() => setShowTableCreator(true)}
+            style={{
+              padding: "6px 12px",
+              background: "#7c3aed",
+              border: "1px solid #8b5cf6",
+              borderRadius: 4,
+              color: "#ddd6fe",
+              cursor: "pointer",
+              fontSize: "0.8rem",
+              fontWeight: 500,
+            }}
+          >
+            ⊞ Table
+          </button>
+          <FormattingToolbar
+            textareaRef={textareaRef}
+            value={localValue}
+            onChange={handleChange}
+            defaultCollapsed
+          />
+        </div>
         <textarea
           ref={textareaRef}
           value={localValue}
@@ -265,6 +310,12 @@ export const StepEditorPanel: React.FC = () => {
           )}
         </div>
       </div>
+      {showTableCreator && (
+        <TableCreator
+          onInsert={handleInsertTable}
+          onClose={() => setShowTableCreator(false)}
+        />
+      )}
     </div>
   );
 };
