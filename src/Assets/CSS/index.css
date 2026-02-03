@@ -290,6 +290,7 @@ textarea {
   padding: 8px;
   transition: all var(--transition-base);
   margin-bottom: 8px;
+  overflow: visible; /* Allow dropdowns (ColorPicker, etc.) to show in Firefox */
 }
 
 .panel-section:hover {

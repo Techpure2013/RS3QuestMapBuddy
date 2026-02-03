@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { stripFormatting } from "../../utils/RichText";
 import { ColorPicker } from "./ColorPicker";
 import { ImagePicker } from "./ImagePicker";
 import { StepLinkPicker } from "./StepLinkPicker";
 import { TableCreator } from "./TableCreator";
+import { HotkeySettings } from "./HotkeySettings";
+import { useEditorHotkeys, getHotkeyForAction } from "../hooks/useEditorHotkeys";
 
 const FORMAT_BUTTONS = [
-  { label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 } },
-  { label: "I", title: "Italic (*text*)", prefix: "*", suffix: "*", style: { fontStyle: "italic" } },
-  { label: "U", title: "Underline (__text__)", prefix: "__", suffix: "__", style: { textDecoration: "underline" } },
-  { label: "S", title: "Strikethrough (~~text~~)", prefix: "~~", suffix: "~~", style: { textDecoration: "line-through" } },
-  { label: "x\u00B2", title: "Superscript (^text or ^(text))", prefix: "^(", suffix: ")", style: { fontSize: "0.7em" } },
-  { label: "\uD83D\uDD17", title: "Link ([text](url))", prefix: "[", suffix: "]()", style: {} },
+  { id: "bold", label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 }, cursorOffset: 0 },
+  { id: "italic", label: "I", title: "Italic (*text*)", prefix: "*", suffix: "*", style: { fontStyle: "italic" }, cursorOffset: 0 },
+  { id: "underline", label: "U", title: "Underline (__text__)", prefix: "__", suffix: "__", style: { textDecoration: "underline" }, cursorOffset: 0 },
+  { id: "strikethrough", label: "S", title: "Strikethrough (~~text~~)", prefix: "~~", suffix: "~~", style: { textDecoration: "line-through" }, cursorOffset: 0 },
+  { id: "superscript", label: "x\u00B2", title: "Superscript (^text or ^(text))", prefix: "^(", suffix: ")", style: { fontSize: "0.7em" }, cursorOffset: 0 },
+  { id: "link", label: "\uD83D\uDD17", title: "Link ([text](url))", prefix: "[", suffix: "]()", style: {}, cursorOffset: 1 },
 ] as const;
 
 export interface FormattingToolbarProps {
@@ -33,37 +35,66 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
   const [showImagePicker, setShowImagePicker] = useState(false);
   const [showStepLinkPicker, setShowStepLinkPicker] = useState(false);
   const [showTableCreator, setShowTableCreator] = useState(false);
+  const [showHotkeySettings, setShowHotkeySettings] = useState(false);
 
-  const wrapSelection = (prefix: string, suffix: string) => {
+  const wrapSelection = useCallback((prefix: string, suffix: string, cursorOffset: number = 0) => {
     const textarea = textareaRef.current;
     if (!textarea) return;
 
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
-    const selectedText = value.substring(start, end);
+    const currentValue = textarea.value; // Use textarea value directly for freshness
+    const selectedText = currentValue.substring(start, end);
 
     const newText =
-      value.substring(0, start) +
+      currentValue.substring(0, start) +
       prefix +
       selectedText +
       suffix +
-      value.substring(end);
+      currentValue.substring(end);
 
     onChange(newText);
 
-    // Restore cursor position after the wrapped text
+    // Restore cursor position after the wrapped text (minus cursorOffset)
     requestAnimationFrame(() => {
       textarea.focus();
-      const newCursorPos = start + prefix.length + selectedText.length + suffix.length;
+      const newCursorPos = start + prefix.length + selectedText.length + suffix.length - cursorOffset;
       textarea.setSelectionRange(newCursorPos, newCursorPos);
     });
-  };
+  }, [textareaRef, onChange]);
 
-  const handleClearFormatting = () => {
-    const stripped = stripFormatting(value);
-    if (stripped !== value) {
+  const handleClearFormatting = useCallback(() => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    const currentValue = textarea.value;
+    const stripped = stripFormatting(currentValue);
+    if (stripped !== currentValue) {
       onChange(stripped);
     }
+  }, [textareaRef, onChange]);
+
+  // Hotkey actions
+  const hotkeyActions = {
+    onBold: useCallback(() => wrapSelection("**", "**", 0), [wrapSelection]),
+    onItalic: useCallback(() => wrapSelection("*", "*", 0), [wrapSelection]),
+    onUnderline: useCallback(() => wrapSelection("__", "__", 0), [wrapSelection]),
+    onStrikethrough: useCallback(() => wrapSelection("~~", "~~", 0), [wrapSelection]),
+    onSuperscript: useCallback(() => wrapSelection("^(", ")", 0), [wrapSelection]),
+    onLink: useCallback(() => wrapSelection("[", "]()", 1), [wrapSelection]),
+    onColor: useCallback(() => setShowColorPicker(true), []),
+    onImage: useCallback(() => setShowImagePicker(true), []),
+    onStepLink: useCallback(() => setShowStepLinkPicker(true), []),
+    onTable: useCallback(() => setShowTableCreator(true), []),
+    onClear: handleClearFormatting,
+  };
+
+  // Register hotkeys (scoped to textarea)
+  useEditorHotkeys(hotkeyActions, true, textareaRef as React.RefObject<HTMLElement>);
+
+  // Helper to build tooltip with hotkey
+  const getTooltip = (baseTitle: string, actionId: string) => {
+    const hotkey = getHotkeyForAction(actionId);
+    return hotkey ? `${baseTitle} (${hotkey})` : baseTitle;
   };
 
   const buttonStyle: React.CSSProperties = {
@@ -92,15 +123,17 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
 
   return (
     <div style={{ marginBottom: 6 }}>
-      <button
-        type="button"
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        style={toggleStyle}
-        title={isCollapsed ? "Show formatting toolbar" : "Hide formatting toolbar"}
-      >
-        <span style={{ fontSize: "0.7rem" }}>{isCollapsed ? "▶" : "▼"}</span>
-        Format
-      </button>
+      <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
+        <button
+          type="button"
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          style={toggleStyle}
+          title={isCollapsed ? "Show formatting toolbar" : "Hide formatting toolbar"}
+        >
+          <span style={{ fontSize: "0.7rem" }}>{isCollapsed ? "▶" : "▼"}</span>
+          Format
+        </button>
+      </div>
       {!isCollapsed && (
         <div
           style={{
@@ -114,8 +147,8 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
             <button
               key={btn.label}
               type="button"
-              title={btn.title}
-              onClick={() => wrapSelection(btn.prefix, btn.suffix)}
+              title={getTooltip(btn.title, btn.id)}
+              onClick={() => wrapSelection(btn.prefix, btn.suffix, btn.cursorOffset)}
               style={{ ...buttonStyle, ...btn.style }}
             >
               {btn.label}
@@ -124,7 +157,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           {/* Clear formatting button */}
           <button
             type="button"
-            title="Remove all formatting"
+            title={getTooltip("Remove all formatting", "clear")}
             onClick={handleClearFormatting}
             style={{
               ...buttonStyle,
@@ -139,7 +172,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           <div style={{ position: "relative" }}>
             <button
               type="button"
-              title="Color ([#hex]{text} or [r,g,b]{text})"
+              title={getTooltip("Color ([#hex]{text} or [r,g,b]{text})", "color")}
               onClick={() => setShowColorPicker(!showColorPicker)}
               style={{
                 ...buttonStyle,
@@ -165,7 +198,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           <div style={{ position: "relative" }}>
             <button
               type="button"
-              title="Insert image (![alt](url) or ![alt|size](url))"
+              title={getTooltip("Insert image (![alt](url) or ![alt|size](url))", "image")}
               onClick={() => setShowImagePicker(!showImagePicker)}
               style={{
                 ...buttonStyle,
@@ -203,7 +236,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           <div style={{ position: "relative" }}>
             <button
               type="button"
-              title="Link to another step (step(N){text})"
+              title={getTooltip("Link to another step (step(N){text})", "steplink")}
               onClick={() => setShowStepLinkPicker(!showStepLinkPicker)}
               style={{
                 ...buttonStyle,
@@ -232,7 +265,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           {/* Table creator button */}
           <button
             type="button"
-            title="Create table (paste from wiki or build manually)"
+            title={getTooltip("Create table (paste from wiki or build manually)", "table")}
             onClick={() => setShowTableCreator(true)}
             style={{
               ...buttonStyle,
@@ -242,6 +275,20 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
             }}
           >
             ⊞ Table
+          </button>
+          {/* Hotkey settings button */}
+          <button
+            type="button"
+            title="Customize keyboard shortcuts"
+            onClick={() => setShowHotkeySettings(true)}
+            style={{
+              ...buttonStyle,
+              background: "#1e40af",
+              border: "1px solid #3b82f6",
+              color: "#93c5fd",
+            }}
+          >
+            ⌨
           </button>
         </div>
       )}
@@ -266,6 +313,10 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           }}
           onClose={() => setShowTableCreator(false)}
         />
+      )}
+      {/* Hotkey Settings Modal */}
+      {showHotkeySettings && (
+        <HotkeySettings onClose={() => setShowHotkeySettings(false)} />
       )}
     </div>
   );

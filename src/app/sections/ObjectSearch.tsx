@@ -1,6 +1,5 @@
 // src/editor/sections/ObjectSearch.tsx
 import React, { useState, useEffect } from "react";
-import { buildObjectsJsonUrl } from "./../../utils/appBase";
 
 export interface MapObject {
   id: number;
@@ -29,19 +28,13 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
   areaSearchResults,
   onClearAreaSearchResults,
 }) => {
-  const [searchMode, setSearchMode] = useState<"name" | "area">("name");
-  const [searchTerm, setSearchTerm] = useState("");
   const [allMatches, setAllMatches] = useState<MapObject[]>([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
-  const [isLoading, setIsLoading] = useState(false);
   const [showCycler, setShowCycler] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const [isKeyboardNav, setIsKeyboardNav] = useState(false);
 
   const listRef = React.useRef<HTMLUListElement>(null);
-
-  // Cache for letter-based search
-  const [dataCache, setDataCache] = useState<Record<string, MapObject[]>>({});
 
   // Highlight the current object when the index changes (for cycler view)
   useEffect(() => {
@@ -54,12 +47,12 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
 
   // Listen for results from the area search
   useEffect(() => {
-    if (searchMode === "area" && areaSearchResults.length > 0) {
+    if (areaSearchResults.length > 0) {
       setAllMatches(areaSearchResults);
       setCurrentIndex(0);
       setShowCycler(false); // Default to list view for area search
     }
-  }, [areaSearchResults, searchMode]);
+  }, [areaSearchResults]);
 
   // Scroll into view for keyboard navigation
   useEffect(() => {
@@ -70,100 +63,6 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
       }
     }
   }, [highlightedIndex, isKeyboardNav]);
-
-  const handleNameSearch = async () => {
-    if (searchTerm.length < 3) {
-      setAllMatches([]);
-      setCurrentIndex(-1);
-      onObjectHighlight(null);
-      return;
-    }
-
-    onClearAreaSearchResults();
-
-    const firstLetter = (searchTerm[0] || "").toUpperCase();
-    let searchData: MapObject[] = [];
-
-    if (dataCache[firstLetter]) {
-      searchData = dataCache[firstLetter];
-    } else {
-      setIsLoading(true);
-      try {
-        const url = `https://techpure.dev/RS3QuestBuddyEditor/Objects_By_Letter/${firstLetter}.json`;
-        const response = await fetch(url, { credentials: "omit" });
-        if (!response.ok) {
-          throw new Error(`Failed to fetch ${url}: ${response.status}`);
-        }
-        const jsonData: MapObject[] = await response.json();
-        setDataCache((prev) => ({ ...prev, [firstLetter]: jsonData }));
-        searchData = jsonData;
-      } catch (error) {
-        console.error("Failed to fetch object data:", error);
-        alert(
-          `Failed to load object data for letter "${firstLetter}". ` +
-            `Ensure Objects_By_Letter/${firstLetter}.json is deployed under the site root or your subpath.`
-        );
-        setAllMatches([]);
-        setCurrentIndex(-1);
-        return;
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    const term = searchTerm.toLowerCase();
-    const results = searchData.filter((obj) =>
-      obj.name.toLowerCase().includes(term)
-    );
-
-    setAllMatches(results);
-    setCurrentIndex(results.length > 0 ? 0 : -1);
-    setHighlightedIndex(-1);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      void handleNameSearch();
-      return;
-    }
-
-    if (!allMatches.length || showCycler) return;
-
-    switch (e.key) {
-      case "ArrowDown":
-        e.preventDefault();
-        setIsKeyboardNav(true);
-        setHighlightedIndex((prev) =>
-          prev < allMatches.length - 1 ? prev + 1 : prev
-        );
-        break;
-      case "ArrowUp":
-        e.preventDefault();
-        setIsKeyboardNav(true);
-        setHighlightedIndex((prev) => (prev > 0 ? prev - 1 : -1));
-        break;
-      case "Escape":
-        e.preventDefault();
-        setHighlightedIndex(-1);
-        setIsKeyboardNav(false);
-        break;
-    }
-  };
-
-  const handleModeChange = (mode: "name" | "area") => {
-    setSearchMode(mode);
-    setSearchTerm("");
-    setAllMatches([]);
-    setCurrentIndex(-1);
-    setHighlightedIndex(-1);
-    onClearAreaSearchResults();
-
-    // Deactivate area search when switching modes
-    if (mode === "name") {
-      onToggleAreaSearch(false);
-    }
-  };
 
   const handleNext = () => {
     if (allMatches.length === 0) return;
@@ -180,10 +79,10 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
   const handleChoose = () => {
     if (currentIndex >= 0 && allMatches[currentIndex]) {
       onObjectSelect(allMatches[currentIndex]);
-      setSearchTerm("");
       setAllMatches([]);
       setCurrentIndex(-1);
       setHighlightedIndex(-1);
+      onClearAreaSearchResults();
     }
   };
 
@@ -207,58 +106,28 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
         <label>Object Search</label>
       </div>
 
-      <div className="search-mode-switcher">
+      <div className="area-search-controls">
         <button
-          className={`switcher-button ${searchMode === "name" ? "active" : ""}`}
-          onClick={() => handleModeChange("name")}
+          onClick={() => onToggleAreaSearch(!isAreaSearchActive)}
+          className={`area-search-toggle ${
+            isAreaSearchActive ? "active" : ""
+          }`}
         >
-          Search by Name
-        </button>
-        <button
-          className={`switcher-button ${searchMode === "area" ? "active" : ""}`}
-          onClick={() => handleModeChange("area")}
-        >
-          Search by Area
-        </button>
-      </div>
-
-      {searchMode === "name" && (
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="Type object name (min 3 chars) and press Enter"
-          className="search-input"
-        />
-      )}
-
-      {searchMode === "area" && (
-        <div className="area-search-controls">
-          <button
-            onClick={() => onToggleAreaSearch(!isAreaSearchActive)}
-            className={`area-search-toggle ${
-              isAreaSearchActive ? "active" : ""
-            }`}
-          >
-            {isAreaSearchActive ? (
-              <>
-                <span className="pulse-indicator"></span>
-                Click on map to search...
-              </>
-            ) : (
-              "Activate Area Search"
-            )}
-          </button>
-          {isAreaSearchActive && (
-            <p className="help-text">
-              Click anywhere on the map to search for objects in that area
-            </p>
+          {isAreaSearchActive ? (
+            <>
+              <span className="pulse-indicator"></span>
+              Click on map to search...
+            </>
+          ) : (
+            "Activate Area Search"
           )}
-        </div>
-      )}
-
-      {isLoading && <div className="search-loading">Loading...</div>}
+        </button>
+        {isAreaSearchActive && (
+          <p className="help-text">
+            Click anywhere on the map to search for objects in that area
+          </p>
+        )}
+      </div>
 
       {allMatches.length > 0 && (
         <div className="control-group" style={{ marginTop: "8px" }}>
@@ -312,7 +181,13 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
           {allMatches.map((obj, index) => (
             <li
               key={`${obj.id}-${index}`}
-              onClick={() => onObjectSelect(obj)}
+              onClick={() => {
+                onObjectSelect(obj);
+                setAllMatches([]);
+                setCurrentIndex(-1);
+                setHighlightedIndex(-1);
+                onClearAreaSearchResults();
+              }}
               onMouseEnter={() => handleMouseEnter(index)}
               className={index === highlightedIndex ? "highlighted" : ""}
             >
@@ -321,15 +196,6 @@ export const ObjectSearch: React.FC<ObjectSearchProps> = ({
           ))}
         </ul>
       )}
-
-      {searchMode === "name" &&
-        searchTerm.length >= 3 &&
-        !isLoading &&
-        allMatches.length === 0 && (
-          <div className="search-no-results">
-            No objects found matching "{searchTerm}"
-          </div>
-        )}
     </div>
   );
 };

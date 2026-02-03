@@ -15,6 +15,7 @@ export {
   pathActions,
   uiActions,
   navigationActions,
+  editorActions,
   generalActions,
   registerAllActions,
 } from "./actions";

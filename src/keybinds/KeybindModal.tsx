@@ -53,6 +53,7 @@ export const KeybindModal: React.FC = () => {
       radius: [],
       ui: [],
       navigation: [],
+      editor: [],
       general: [],
     };
     keybinds.forEach((kb) => groups[kb.category].push(kb));

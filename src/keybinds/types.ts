@@ -18,6 +18,7 @@ export type KeybindCategory =
   | "radius"
   | "ui"
   | "navigation"
+  | "editor"
   | "general";
 
 // Single keybind definition
@@ -51,6 +52,7 @@ export const CATEGORY_LABELS: Record<KeybindCategory, string> = {
   radius: "NPC/Object Radius",
   ui: "UI Toggles",
   navigation: "Navigation",
+  editor: "Step Editor",
   general: "General",
 };
 
@@ -62,5 +64,6 @@ export const CATEGORY_ORDER: KeybindCategory[] = [
   "radius",
   "ui",
   "navigation",
+  "editor",
   "general",
 ];

@@ -226,6 +226,131 @@ export const DEFAULT_KEYBINDS: KeybindDef[] = [
   },
 
   // ============================================================================
+  // Step Editor
+  // ============================================================================
+  // Text Formatting
+  {
+    id: "editor.bold",
+    label: "Bold",
+    description: "Make selected text bold (**text**)",
+    category: "editor",
+    defaultKey: { key: "b", ctrl: true },
+  },
+  {
+    id: "editor.italic",
+    label: "Italic",
+    description: "Make selected text italic (*text*)",
+    category: "editor",
+    defaultKey: { key: "i", ctrl: true },
+  },
+  {
+    id: "editor.underline",
+    label: "Underline",
+    description: "Underline selected text (__text__)",
+    category: "editor",
+    defaultKey: { key: "u", ctrl: true },
+  },
+  {
+    id: "editor.strikethrough",
+    label: "Strikethrough",
+    description: "Strikethrough selected text (~~text~~)",
+    category: "editor",
+    defaultKey: { key: "s", ctrl: true, shift: true },
+  },
+  {
+    id: "editor.superscript",
+    label: "Superscript",
+    description: "Make selected text superscript (^text)",
+    category: "editor",
+    defaultKey: { key: ".", ctrl: true, shift: true },
+  },
+  {
+    id: "editor.link",
+    label: "Insert Link",
+    description: "Wrap selected text as a link ([text](url))",
+    category: "editor",
+    defaultKey: { key: "k", ctrl: true },
+  },
+  {
+    id: "editor.color",
+    label: "Color Picker",
+    description: "Open color picker for text coloring",
+    category: "editor",
+    defaultKey: { key: "h", ctrl: true, shift: true },
+  },
+  {
+    id: "editor.image",
+    label: "Insert Image",
+    description: "Open image picker to insert an image",
+    category: "editor",
+    defaultKey: { key: "g", ctrl: true, shift: true },
+  },
+  {
+    id: "editor.stepLink",
+    label: "Step Link",
+    description: "Insert a link to another step",
+    category: "editor",
+    defaultKey: { key: "j", ctrl: true, shift: true },
+  },
+  {
+    id: "editor.table",
+    label: "Insert Table",
+    description: "Open table creator to insert a table",
+    category: "editor",
+    defaultKey: { key: "t", ctrl: true, shift: true },
+  },
+  {
+    id: "editor.clearFormatting",
+    label: "Clear Formatting",
+    description: "Remove all formatting from text",
+    category: "editor",
+    defaultKey: { key: "\\", ctrl: true },
+  },
+  // Editor Actions
+  {
+    id: "editor.undo",
+    label: "Undo Description",
+    description: "Undo last step description edit",
+    category: "editor",
+    defaultKey: { key: "z", ctrl: true },
+  },
+  {
+    id: "editor.redo",
+    label: "Redo Description",
+    description: "Redo step description edit",
+    category: "editor",
+    defaultKey: { key: "z", ctrl: true, shift: true },
+  },
+  {
+    id: "editor.toggleTarget",
+    label: "Toggle NPC/Object",
+    description: "Switch between NPC and Object target type",
+    category: "editor",
+    defaultKey: { key: "Tab", alt: true },
+  },
+  {
+    id: "editor.addNpc",
+    label: "Add NPC",
+    description: "Add a new NPC to the current step",
+    category: "editor",
+    defaultKey: { key: "n", ctrl: true, shift: true },
+  },
+  {
+    id: "editor.addObject",
+    label: "Add Object",
+    description: "Add a new object to the current step",
+    category: "editor",
+    defaultKey: { key: "o", ctrl: true, shift: true },
+  },
+  {
+    id: "editor.addStep",
+    label: "Add Step",
+    description: "Add a new step after current",
+    category: "editor",
+    defaultKey: { key: "Enter", ctrl: true, shift: true },
+  },
+
+  // ============================================================================
   // General
   // ============================================================================
   {

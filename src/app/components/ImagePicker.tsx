@@ -132,58 +132,58 @@ export const ImagePicker: React.FC<ImagePickerProps> = ({ onSelect, onClose }) =
       style={{
         position: "absolute",
         top: "100%",
-        right: 0,
+        left: 0,
         marginTop: 4,
         background: "#1f2937",
         border: "1px solid #374151",
         borderRadius: 6,
         padding: 12,
         zIndex: 1200,
-        width: 300,
+        width: 280,
         boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
       }}
     >
       {/* Preview */}
-      <div style={{ display: "flex", gap: 10, marginBottom: 12, alignItems: "center" }}>
-        <div
-          style={{
-            width: 64,
-            height: 64,
-            background: "#111827",
-            border: "1px solid #374151",
-            borderRadius: 4,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            overflow: "hidden",
-            flexShrink: 0,
-          }}
-        >
-          {previewUrl && !previewError ? (
-            <img
-              src={previewUrl}
-              alt={alt || "Preview"}
-              style={{
-                maxWidth: 64,
-                maxHeight: 64,
-                objectFit: "contain",
-              }}
-              onLoad={() => setPreviewLoading(false)}
-              onError={() => {
-                setPreviewError(true);
-                setPreviewLoading(false);
-              }}
-            />
-          ) : (
-            <span style={{ fontSize: "0.6rem", color: "#6b7280", textAlign: "center" }}>
-              {previewError ? "Failed" : previewLoading ? "..." : "No preview"}
-            </span>
-          )}
-        </div>
-        <div style={{ flex: 1 }}>
-          <div style={{ fontSize: "0.7rem", color: "#9ca3af", marginBottom: 2 }}>
-            Max: {sizeNum}px
+      <div style={{ display: "flex", gap: 12, marginBottom: 12, alignItems: "flex-start" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
+          <div
+            style={{
+              width: 64,
+              height: 64,
+              background: "#111827",
+              border: "1px solid #374151",
+              borderRadius: 4,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "hidden",
+              flexShrink: 0,
+            }}
+          >
+            {previewUrl && !previewError ? (
+              <img
+                src={previewUrl}
+                alt={alt || "Preview"}
+                style={{
+                  maxWidth: 64,
+                  maxHeight: 64,
+                  objectFit: "contain",
+                }}
+                onLoad={() => setPreviewLoading(false)}
+                onError={() => {
+                  setPreviewError(true);
+                  setPreviewLoading(false);
+                }}
+              />
+            ) : (
+              <span style={{ fontSize: "0.6rem", color: "#6b7280", textAlign: "center", padding: 4 }}>
+                {previewError ? "Failed" : previewLoading ? "Loading..." : "No preview"}
+              </span>
+            )}
           </div>
+          <span style={{ fontSize: "0.6rem", color: "#6b7280" }}>Max: {sizeNum}px</span>
+        </div>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", minHeight: 64 }}>
           <button
             type="button"
             onClick={handlePreview}
@@ -192,6 +192,8 @@ export const ImagePicker: React.FC<ImagePickerProps> = ({ onSelect, onClose }) =
               ...buttonStyle,
               opacity: isValidUrl ? 1 : 0.5,
               cursor: isValidUrl ? "pointer" : "not-allowed",
+              width: "100%",
+              padding: "8px 12px",
             }}
           >
             Preview
@@ -244,7 +246,7 @@ export const ImagePicker: React.FC<ImagePickerProps> = ({ onSelect, onClose }) =
             max={256}
             value={size}
             onChange={(e) => setSize(e.target.value)}
-            style={{ ...inputStyle, width: 70 }}
+            style={{ ...inputStyle, width: 60, textAlign: "center" }}
           />
           {/* Quick size buttons */}
           {[24, 32, 48, 64].map((s) => (
@@ -255,7 +257,9 @@ export const ImagePicker: React.FC<ImagePickerProps> = ({ onSelect, onClose }) =
               style={{
                 ...buttonStyle,
                 background: parseInt(size) === s ? "#3b82f6" : "#374151",
-                minWidth: 32,
+                border: parseInt(size) === s ? "1px solid #60a5fa" : "1px solid #4b5563",
+                flex: 1,
+                textAlign: "center",
               }}
             >
               {s}

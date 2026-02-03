@@ -27,6 +27,8 @@ import { ColorPicker } from "../components/ColorPicker";
 import { ImagePicker } from "../components/ImagePicker";
 import { StepLinkPicker } from "../components/StepLinkPicker";
 import { TableCreator } from "../components/TableCreator";
+import { useEditorHotkeys, getHotkeyForAction } from "../hooks/useEditorHotkeys";
+import { editorActions } from "../../keybinds/actions";
 import { IconTable } from "@tabler/icons-react";
 
 export const CenterControls: React.FC = () => {
@@ -49,6 +51,11 @@ export const CenterControls: React.FC = () => {
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Undo/Redo stack for step description
+  const undoStackRef = useRef<string[]>([]);
+  const redoStackRef = useRef<string[]>([]);
+  const isUndoRedoRef = useRef(false); // Flag to prevent adding undo entry during undo/redo
   useEffect(() => {
     const handler = (e: Event) => {
       const ce = e as CustomEvent<{ show: boolean }>;
@@ -63,10 +70,13 @@ export const CenterControls: React.FC = () => {
   useEffect(() => {
     void refresh();
   }, [refresh]);
-  // Sync step description
+  // Sync step description and reset undo/redo on step change
   useEffect(() => {
     setLocalStepDesc(stepDescription);
     setHasStepChanges(false);
+    // Reset undo/redo stacks when switching steps
+    undoStackRef.current = [];
+    redoStackRef.current = [];
   }, [selection.selectedStep, stepDescription]);
 
   // Auto-resize textarea as content grows
@@ -77,7 +87,19 @@ export const CenterControls: React.FC = () => {
     }
   }, [localStepDesc]);
 
-  const handleStepChange = (text: string) => {
+  const handleStepChange = (text: string, skipUndo: boolean = false) => {
+    // Push current state to undo stack (unless this is an undo/redo operation)
+    if (!skipUndo && !isUndoRedoRef.current && localStepDesc !== text) {
+      undoStackRef.current.push(localStepDesc);
+      // Limit stack size to 50 entries
+      if (undoStackRef.current.length > 50) {
+        undoStackRef.current.shift();
+      }
+      // Clear redo stack on new change
+      redoStackRef.current = [];
+    }
+    isUndoRedoRef.current = false;
+
     setLocalStepDesc(text);
     const changed = text !== stepDescription;
     setHasStepChanges(changed);
@@ -139,7 +161,8 @@ export const CenterControls: React.FC = () => {
   };
 
   // Wrap selected text with formatting markers
-  const wrapSelection = (prefix: string, suffix: string) => {
+  // cursorOffset: how many characters back from the end to place cursor (default 0 = end)
+  const wrapSelection = (prefix: string, suffix: string, cursorOffset: number = 0) => {
     const textarea = textareaRef.current;
     if (!textarea) return;
 
@@ -157,22 +180,186 @@ export const CenterControls: React.FC = () => {
 
     handleStepChange(newText);
 
-    // Restore cursor position after the wrapped text
+    // Restore cursor position after the wrapped text (minus cursorOffset)
     requestAnimationFrame(() => {
       textarea.focus();
-      const newCursorPos = start + prefix.length + selectedText.length + suffix.length;
+      const newCursorPos = start + prefix.length + selectedText.length + suffix.length - cursorOffset;
       textarea.setSelectionRange(newCursorPos, newCursorPos);
     });
   };
 
   const formatButtons = [
-    { label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 } },
-    { label: "I", title: "Italic (*text*)", prefix: "*", suffix: "*", style: { fontStyle: "italic" } },
-    { label: "U", title: "Underline (__text__)", prefix: "__", suffix: "__", style: { textDecoration: "underline" } },
-    { label: "S", title: "Strikethrough (~~text~~)", prefix: "~~", suffix: "~~", style: { textDecoration: "line-through" } },
-    { label: "x²", title: "Superscript (^text or ^(text))", prefix: "^(", suffix: ")", style: { fontSize: "0.7em" } },
-    { label: "🔗", title: "Link ([text](url))", prefix: "[", suffix: "](https://)", style: {} },
+    { id: "bold", label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 }, cursorOffset: 0 },
+    { id: "italic", label: "I", title: "Italic (*text*)", prefix: "*", suffix: "*", style: { fontStyle: "italic" }, cursorOffset: 0 },
+    { id: "underline", label: "U", title: "Underline (__text__)", prefix: "__", suffix: "__", style: { textDecoration: "underline" }, cursorOffset: 0 },
+    { id: "strikethrough", label: "S", title: "Strikethrough (~~text~~)", prefix: "~~", suffix: "~~", style: { textDecoration: "line-through" }, cursorOffset: 0 },
+    { id: "superscript", label: "x²", title: "Superscript (^text or ^(text))", prefix: "^(", suffix: ")", style: { fontSize: "0.7em" }, cursorOffset: 0 },
+    { id: "link", label: "🔗", title: "Link ([text](url))", prefix: "[", suffix: "]()", style: {}, cursorOffset: 1 },
   ] as const;
+
+  // Helper to build tooltip with hotkey
+  const getTooltip = (baseTitle: string, actionId: string) => {
+    const hotkey = getHotkeyForAction(actionId);
+    return hotkey ? `${baseTitle} (${hotkey})` : baseTitle;
+  };
+
+  // Hotkey actions for the editor
+  const handleClearFormatting = useCallback(() => {
+    const stripped = stripFormatting(localStepDesc);
+    if (stripped !== localStepDesc) {
+      handleStepChange(stripped);
+    }
+  }, [localStepDesc]);
+
+  // Undo handler
+  const handleUndo = useCallback(() => {
+    if (undoStackRef.current.length === 0) return;
+    const previousState = undoStackRef.current.pop()!;
+    redoStackRef.current.push(localStepDesc);
+    isUndoRedoRef.current = true;
+    handleStepChange(previousState, true);
+  }, [localStepDesc]);
+
+  // Redo handler
+  const handleRedo = useCallback(() => {
+    if (redoStackRef.current.length === 0) return;
+    const nextState = redoStackRef.current.pop()!;
+    undoStackRef.current.push(localStepDesc);
+    isUndoRedoRef.current = true;
+    handleStepChange(nextState, true);
+  }, [localStepDesc]);
+
+  // Toggle between NPC and Object target
+  const handleToggleTarget = useCallback(() => {
+    const currentType = selection.targetType;
+    const newType = currentType === "npc" ? "object" : "npc";
+    EditorStore.setSelection({ targetType: newType, targetIndex: 0 });
+    requestFlyToCurrentTargetAt(5, "selection");
+  }, [selection.targetType]);
+
+  // Add NPC to current step
+  const handleAddNpc = useCallback(() => {
+    if (!quest) return;
+    EditorStore.patchQuest((draft) => {
+      const step = draft.questSteps[selection.selectedStep];
+      if (!step) return;
+      if (!step.highlights) step.highlights = { npc: [], object: [] };
+      if (!step.highlights.npc) step.highlights.npc = [];
+      step.highlights.npc.push({
+        npcName: "New NPC",
+        npcLocation: { lat: 0, lng: 0 },
+      });
+    });
+    // Select the new NPC
+    const step = quest.questSteps[selection.selectedStep];
+    const newIndex = (step?.highlights?.npc?.length ?? 0);
+    EditorStore.setSelection({ targetType: "npc", targetIndex: newIndex });
+  }, [quest, selection.selectedStep]);
+
+  // Add Object to current step
+  const handleAddObject = useCallback(() => {
+    if (!quest) return;
+    EditorStore.patchQuest((draft) => {
+      const step = draft.questSteps[selection.selectedStep];
+      if (!step) return;
+      if (!step.highlights) step.highlights = { npc: [], object: [] };
+      if (!step.highlights.object) step.highlights.object = [];
+      step.highlights.object.push({
+        name: "New Object",
+        objectLocation: [],
+      });
+    });
+    // Select the new object
+    const step = quest.questSteps[selection.selectedStep];
+    const newIndex = (step?.highlights?.object?.length ?? 0);
+    EditorStore.setSelection({ targetType: "object", targetIndex: newIndex });
+  }, [quest, selection.selectedStep]);
+
+  // Add new step after current
+  const handleAddStep = useCallback(() => {
+    if (!quest) return;
+    const insertIndex = selection.selectedStep + 1;
+    EditorStore.patchQuest((draft) => {
+      const newStep = {
+        stepDescription: "",
+        floor: draft.questSteps[selection.selectedStep]?.floor ?? 0,
+        highlights: { npc: [], object: [] },
+      };
+      draft.questSteps.splice(insertIndex, 0, newStep);
+    });
+    // Select the new step
+    EditorStore.setSelection({ selectedStep: insertIndex, targetIndex: 0 });
+  }, [quest, selection.selectedStep]);
+
+  // Formatting callbacks
+  const handleBold = useCallback(() => wrapSelection("**", "**", 0), [wrapSelection]);
+  const handleItalic = useCallback(() => wrapSelection("*", "*", 0), [wrapSelection]);
+  const handleUnderlineFormat = useCallback(() => wrapSelection("__", "__", 0), [wrapSelection]);
+  const handleStrikethrough = useCallback(() => wrapSelection("~~", "~~", 0), [wrapSelection]);
+  const handleSuperscript = useCallback(() => wrapSelection("^(", ")", 0), [wrapSelection]);
+  const handleLink = useCallback(() => wrapSelection("[", "]()", 1), [wrapSelection]);
+  const handleColor = useCallback(() => setShowColorPicker(true), []);
+  const handleImage = useCallback(() => setShowImagePicker(true), []);
+  const handleStepLink = useCallback(() => setShowStepLinkPicker(true), []);
+  const handleTable = useCallback(() => setShowTableCreator(true), []);
+
+  const hotkeyActions = {
+    onBold: handleBold,
+    onItalic: handleItalic,
+    onUnderline: handleUnderlineFormat,
+    onStrikethrough: handleStrikethrough,
+    onSuperscript: handleSuperscript,
+    onLink: handleLink,
+    onColor: handleColor,
+    onImage: handleImage,
+    onStepLink: handleStepLink,
+    onTable: handleTable,
+    onClear: handleClearFormatting,
+    onUndo: handleUndo,
+    onRedo: handleRedo,
+    onToggleTarget: handleToggleTarget,
+    onAddNpc: handleAddNpc,
+    onAddObject: handleAddObject,
+    onAddStep: handleAddStep,
+    onSave: handleStepSave,
+  };
+
+  // Register hotkeys (scoped to textarea for text formatting)
+  useEditorHotkeys(hotkeyActions, true, textareaRef as React.RefObject<HTMLElement>);
+
+  // Register editor callbacks with the global keybind system
+  useEffect(() => {
+    editorActions.registerCallbacks({
+      // Formatting
+      bold: handleBold,
+      italic: handleItalic,
+      underline: handleUnderlineFormat,
+      strikethrough: handleStrikethrough,
+      superscript: handleSuperscript,
+      link: handleLink,
+      color: handleColor,
+      image: handleImage,
+      stepLink: handleStepLink,
+      table: handleTable,
+      clearFormatting: handleClearFormatting,
+      // Actions
+      undo: handleUndo,
+      redo: handleRedo,
+      toggleTarget: handleToggleTarget,
+      addNpc: handleAddNpc,
+      addObject: handleAddObject,
+      addStep: handleAddStep,
+    });
+
+    return () => {
+      editorActions.unregisterCallbacks();
+    };
+  }, [
+    handleBold, handleItalic, handleUnderlineFormat, handleStrikethrough,
+    handleSuperscript, handleLink, handleColor, handleImage, handleStepLink,
+    handleTable, handleClearFormatting, handleUndo, handleRedo,
+    handleToggleTarget, handleAddNpc, handleAddObject, handleAddStep
+  ]);
 
   // Enhanced quest picker with cleanup
   const handlePick = useCallback(async (name: string) => {
@@ -581,8 +768,8 @@ export const CenterControls: React.FC = () => {
                   <button
                     key={btn.label}
                     type="button"
-                    title={btn.title}
-                    onClick={() => wrapSelection(btn.prefix, btn.suffix)}
+                    title={getTooltip(btn.title, btn.id)}
+                    onClick={() => wrapSelection(btn.prefix, btn.suffix, btn.cursorOffset)}
                     style={{
                       padding: "3px 8px",
                       fontSize: "0.75rem",
@@ -601,7 +788,7 @@ export const CenterControls: React.FC = () => {
                 {/* Clear formatting button */}
                 <button
                   type="button"
-                  title="Remove all formatting"
+                  title={getTooltip("Remove all formatting", "clear")}
                   onClick={() => {
                     const stripped = stripFormatting(localStepDesc);
                     if (stripped !== localStepDesc) {
@@ -624,7 +811,7 @@ export const CenterControls: React.FC = () => {
                 <div style={{ position: "relative" }}>
                   <button
                     type="button"
-                    title="Color ([#hex]{text} or [r,g,b]{text})"
+                    title={getTooltip("Color ([#hex]{text} or [r,g,b]{text})", "color")}
                     onClick={() => setShowColorPicker(!showColorPicker)}
                     style={{
                       padding: "3px 8px",
@@ -653,7 +840,7 @@ export const CenterControls: React.FC = () => {
                 <div style={{ position: "relative" }}>
                   <button
                     type="button"
-                    title="Insert image (![alt](url) or ![alt|size](url))"
+                    title={getTooltip("Insert image (![alt](url) or ![alt|size](url))", "image")}
                     onClick={() => setShowImagePicker(!showImagePicker)}
                     style={{
                       padding: "3px 8px",
@@ -694,7 +881,7 @@ export const CenterControls: React.FC = () => {
                 <div style={{ position: "relative" }}>
                   <button
                     type="button"
-                    title="Link to another step (step(N){text})"
+                    title={getTooltip("Link to another step (step(N){text})", "steplink")}
                     onClick={() => setShowStepLinkPicker(!showStepLinkPicker)}
                     style={{
                       padding: "3px 8px",
@@ -726,7 +913,7 @@ export const CenterControls: React.FC = () => {
                 {/* Table creator button */}
                 <button
                   type="button"
-                  title="Create table (paste from wiki or build manually)"
+                  title={getTooltip("Create table (paste from wiki or build manually)", "table")}
                   onClick={() => setShowTableCreator(true)}
                   style={{
                     padding: "3px 8px",
@@ -786,6 +973,8 @@ export const CenterControls: React.FC = () => {
                     fontSize: "0.8125rem",
                     lineHeight: 1.5,
                     color: "#e5e7eb",
+                    maxHeight: 200,
+                    overflowY: "auto",
                   }}
                 >
                   <span
@@ -861,6 +1050,7 @@ export const CenterControls: React.FC = () => {
           onClose={() => setShowTableCreator(false)}
         />
       )}
+
     </>
   );
 };

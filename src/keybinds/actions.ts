@@ -225,6 +225,133 @@ export const navigationActions = {
 };
 
 // ============================================================================
+// Editor Actions (Step Editor - callbacks registered by CenterControlPanel)
+// ============================================================================
+
+// Callback registry for editor actions that need component state
+const editorCallbacks: {
+  // Formatting
+  bold?: () => void;
+  italic?: () => void;
+  underline?: () => void;
+  strikethrough?: () => void;
+  superscript?: () => void;
+  link?: () => void;
+  color?: () => void;
+  image?: () => void;
+  stepLink?: () => void;
+  table?: () => void;
+  clearFormatting?: () => void;
+  // Actions
+  undo?: () => void;
+  redo?: () => void;
+  toggleTarget?: () => void;
+  addNpc?: () => void;
+  addObject?: () => void;
+  addStep?: () => void;
+} = {};
+
+export const editorActions = {
+  // Register callbacks from CenterControlPanel
+  registerCallbacks(callbacks: typeof editorCallbacks) {
+    Object.assign(editorCallbacks, callbacks);
+  },
+
+  // Unregister callbacks (for cleanup)
+  unregisterCallbacks() {
+    // Formatting
+    editorCallbacks.bold = undefined;
+    editorCallbacks.italic = undefined;
+    editorCallbacks.underline = undefined;
+    editorCallbacks.strikethrough = undefined;
+    editorCallbacks.superscript = undefined;
+    editorCallbacks.link = undefined;
+    editorCallbacks.color = undefined;
+    editorCallbacks.image = undefined;
+    editorCallbacks.stepLink = undefined;
+    editorCallbacks.table = undefined;
+    editorCallbacks.clearFormatting = undefined;
+    // Actions
+    editorCallbacks.undo = undefined;
+    editorCallbacks.redo = undefined;
+    editorCallbacks.toggleTarget = undefined;
+    editorCallbacks.addNpc = undefined;
+    editorCallbacks.addObject = undefined;
+    editorCallbacks.addStep = undefined;
+  },
+
+  // Formatting actions
+  bold: () => {
+    editorCallbacks.bold?.();
+  },
+
+  italic: () => {
+    editorCallbacks.italic?.();
+  },
+
+  underline: () => {
+    editorCallbacks.underline?.();
+  },
+
+  strikethrough: () => {
+    editorCallbacks.strikethrough?.();
+  },
+
+  superscript: () => {
+    editorCallbacks.superscript?.();
+  },
+
+  link: () => {
+    editorCallbacks.link?.();
+  },
+
+  color: () => {
+    editorCallbacks.color?.();
+  },
+
+  image: () => {
+    editorCallbacks.image?.();
+  },
+
+  stepLink: () => {
+    editorCallbacks.stepLink?.();
+  },
+
+  table: () => {
+    editorCallbacks.table?.();
+  },
+
+  clearFormatting: () => {
+    editorCallbacks.clearFormatting?.();
+  },
+
+  // Editor actions
+  undo: () => {
+    editorCallbacks.undo?.();
+  },
+
+  redo: () => {
+    editorCallbacks.redo?.();
+  },
+
+  toggleTarget: () => {
+    editorCallbacks.toggleTarget?.();
+  },
+
+  addNpc: () => {
+    editorCallbacks.addNpc?.();
+  },
+
+  addObject: () => {
+    editorCallbacks.addObject?.();
+  },
+
+  addStep: () => {
+    editorCallbacks.addStep?.();
+  },
+};
+
+// ============================================================================
 // General Actions
 // ============================================================================
 
@@ -285,6 +412,26 @@ export function registerAllActions() {
   keybindStore.registerAction("nav.stepNext", navigationActions.stepNext);
   keybindStore.registerAction("nav.floorUp", navigationActions.floorUp);
   keybindStore.registerAction("nav.floorDown", navigationActions.floorDown);
+
+  // Editor - Formatting
+  keybindStore.registerAction("editor.bold", editorActions.bold);
+  keybindStore.registerAction("editor.italic", editorActions.italic);
+  keybindStore.registerAction("editor.underline", editorActions.underline);
+  keybindStore.registerAction("editor.strikethrough", editorActions.strikethrough);
+  keybindStore.registerAction("editor.superscript", editorActions.superscript);
+  keybindStore.registerAction("editor.link", editorActions.link);
+  keybindStore.registerAction("editor.color", editorActions.color);
+  keybindStore.registerAction("editor.image", editorActions.image);
+  keybindStore.registerAction("editor.stepLink", editorActions.stepLink);
+  keybindStore.registerAction("editor.table", editorActions.table);
+  keybindStore.registerAction("editor.clearFormatting", editorActions.clearFormatting);
+  // Editor - Actions
+  keybindStore.registerAction("editor.undo", editorActions.undo);
+  keybindStore.registerAction("editor.redo", editorActions.redo);
+  keybindStore.registerAction("editor.toggleTarget", editorActions.toggleTarget);
+  keybindStore.registerAction("editor.addNpc", editorActions.addNpc);
+  keybindStore.registerAction("editor.addObject", editorActions.addObject);
+  keybindStore.registerAction("editor.addStep", editorActions.addStep);
 
   // General
   keybindStore.registerAction("general.flyTo", generalActions.flyToTarget);
