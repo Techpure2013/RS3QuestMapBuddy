@@ -6,15 +6,15 @@ import { keybindStore } from "./keybindStore";
 import { keyEventMatches, isInputElement } from "./utils";
 
 /**
- * Check if the event is the modal trigger (? or Ctrl+/)
+ * Check if the event is the modal trigger (Ctrl+Shift+? or Ctrl+/)
  */
 function isModalTrigger(e: KeyboardEvent): boolean {
-  // ? key (Shift+/)
-  if (e.key === "?" || (e.shiftKey && e.key === "/")) {
-    return !e.ctrlKey && !e.altKey && !e.metaKey;
+  // Ctrl+Shift+? (Ctrl+Shift+/)
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === "?" || e.key === "/")) {
+    return true;
   }
   // Ctrl+/
-  if ((e.ctrlKey || e.metaKey) && e.key === "/") {
+  if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key === "/") {
     return true;
   }
   return false;
@@ -35,24 +35,15 @@ export const KeybindHandler: React.FC = () => {
         return;
       }
 
-      // Skip if typing in input/textarea
-      const inInput = isInputElement(e.target);
-
-      // Handle modal trigger: Ctrl+/ works everywhere, ? only works outside inputs
+      // Handle modal trigger (Ctrl+Shift+? or Ctrl+/) - works everywhere including inputs
       if (isModalTrigger(e)) {
-        // Only allow ? to open modal when NOT in an input
-        const isQuestionMark = e.key === "?" || (e.shiftKey && e.key === "/");
-        const isCtrlSlash = (e.ctrlKey || e.metaKey) && e.key === "/";
-
-        if (isCtrlSlash || !inInput) {
-          e.preventDefault();
-          keybindStore.setModalOpen(true);
-          return;
-        }
+        e.preventDefault();
+        keybindStore.setModalOpen(true);
+        return;
       }
 
-      // Skip other keybinds if in input
-      if (inInput) {
+      // Skip other keybinds if typing in input/textarea
+      if (isInputElement(e.target)) {
         return;
       }
 
