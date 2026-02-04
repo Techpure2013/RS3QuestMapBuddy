@@ -1,4 +1,5 @@
 import { recordNpcLocation } from "./recordNpcLocations";
+import { lookupNpcIdByName } from "../api/npcApi";
 import type { Quest } from "../state/types";
 
 export async function recordQuestNpcLocations(quest: Quest): Promise<{
@@ -33,17 +34,33 @@ export async function recordQuestNpcLocations(quest: Quest): Promise<{
     for (const npc of step.highlights.npc ?? []) {
       const npcName = npc.npcName || "(unnamed)";
 
-      // Skip if no ID
-      if (!npc.id || !Number.isFinite(npc.id)) {
+      // Try to get NPC ID - use existing or backfill by name lookup
+      let npcId = npc.id;
+      if (!npcId || !Number.isFinite(npcId)) {
+        // Attempt to backfill ID by looking up the NPC name
+        if (npcName && npcName !== "(unnamed)") {
+          console.log(`🔍 Backfilling ID for "${npcName}" (step ${stepIndex + 1})...`);
+          const lookedUpId = await lookupNpcIdByName(npcName);
+          if (lookedUpId) {
+            npcId = lookedUpId;
+            console.log(`✅ Found ID ${npcId} for "${npcName}"`);
+          } else {
+            console.log(`❌ Could not find ID for "${npcName}" in database`);
+          }
+        }
+      }
+
+      // Skip if still no valid ID after backfill attempt
+      if (!npcId || !Number.isFinite(npcId)) {
         skipped++;
         details.push({
           npcName,
-          npcId: npc.id ?? 0,
+          npcId: npcId ?? 0,
           result: "skipped",
-          reason: "No valid NPC ID",
+          reason: "No valid NPC ID (backfill failed)",
         });
         console.log(
-          `⏭️  Skipped ${npcName} (step ${stepIndex + 1}): No valid ID`
+          `⏭️  Skipped ${npcName} (step ${stepIndex + 1}): No valid ID and backfill failed`
         );
         continue;
       }
@@ -54,12 +71,12 @@ export async function recordQuestNpcLocations(quest: Quest): Promise<{
         skipped++;
         details.push({
           npcName,
-          npcId: npc.id,
+          npcId,
           result: "skipped",
           reason: "Location not set (0,0)",
         });
         console.log(
-          `⏭️  Skipped ${npcName} (ID: ${npc.id}, step ${
+          `⏭️  Skipped ${npcName} (ID: ${npcId}, step ${
             stepIndex + 1
           }): Location not set`
         );
@@ -67,7 +84,7 @@ export async function recordQuestNpcLocations(quest: Quest): Promise<{
       }
 
       try {
-        await recordNpcLocation(npc.id, npcName, {
+        await recordNpcLocation(npcId, npcName, {
           lat: loc.lat,
           lng: loc.lng,
           floor,
@@ -75,11 +92,11 @@ export async function recordQuestNpcLocations(quest: Quest): Promise<{
         recorded++;
         details.push({
           npcName,
-          npcId: npc.id,
+          npcId,
           result: "success",
         });
         console.log(
-          `✅ Recorded: ${npcName} (ID: ${npc.id}) at {${loc.lat}, ${
+          `✅ Recorded: ${npcName} (ID: ${npcId}) at {${loc.lat}, ${
             loc.lng
           }, F${floor}} (step ${stepIndex + 1})`
         );
@@ -87,12 +104,12 @@ export async function recordQuestNpcLocations(quest: Quest): Promise<{
         failed++;
         details.push({
           npcName,
-          npcId: npc.id,
+          npcId,
           result: "failed",
           reason: err instanceof Error ? err.message : "Unknown error",
         });
         console.error(
-          `❌ Failed: ${npcName} (ID: ${npc.id}, step ${stepIndex + 1})`,
+          `❌ Failed: ${npcName} (ID: ${npcId}, step ${stepIndex + 1})`,
           err
         );
       }

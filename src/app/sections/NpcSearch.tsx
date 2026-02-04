@@ -61,18 +61,24 @@ export const NpcSearch: React.FC<NpcSearchProps> = ({
       // Increased limit to 50 for better coverage
       const results = await searchNpcs(name, 50);
 
-      // Filter out unmapped NPCs (0,0 coordinates)
-      const mappedResults = results.filter(npc => !(npc.lat === 0 && npc.lng === 0));
+      // Sort results: mapped NPCs first, then unmapped (0,0)
+      const sortedResults = [...results].sort((a, b) => {
+        const aUnmapped = a.lat === 0 && a.lng === 0;
+        const bUnmapped = b.lat === 0 && b.lng === 0;
+        if (aUnmapped && !bUnmapped) return 1;  // unmapped goes after
+        if (!aUnmapped && bUnmapped) return -1; // mapped goes before
+        return 0;
+      });
 
       // Persist into IndexedDB cache (still cache all results for reference)
       const cache = await loadNpcCache();
       const nextCache = addNpcSearchResultsToCache(cache, results);
       await saveNpcCache(nextCache);
 
-      setAllMatches(mappedResults);
-      if (mappedResults.length > 0) {
+      setAllMatches(sortedResults);
+      if (sortedResults.length > 0) {
         setCurrentIndex(0);
-        onNpcHighlight(mappedResults[0]);
+        onNpcHighlight(sortedResults[0]);
       } else {
         setCurrentIndex(-1);
         onNpcHighlight(null);
@@ -152,14 +158,14 @@ export const NpcSearch: React.FC<NpcSearchProps> = ({
           </div>
           {isUnmapped && (
             <div className="npc-unmapped-warning" style={{
-              background: "#7f1d1d",
-              color: "#fecaca",
+              background: "#78350f",
+              color: "#fef3c7",
               padding: "4px 8px",
               borderRadius: 4,
               fontSize: "0.8rem",
               marginBottom: 4,
             }}>
-              This NPC has no mapped location. Use Next/Previous to find a mapped instance.
+              ⚠️ No mapped location yet. You can still select this NPC and place it manually, or use Next/Previous to find a mapped instance.
             </div>
           )}
           <div className="npc-cycler-buttons">
@@ -169,10 +175,9 @@ export const NpcSearch: React.FC<NpcSearchProps> = ({
           <button
             onClick={handleChoose}
             className="button--add"
-            disabled={isUnmapped}
-            title={isUnmapped ? "Cannot select unmapped NPC" : "Choose this NPC"}
+            title={isUnmapped ? "Select this NPC (no mapped location yet)" : "Choose this NPC"}
           >
-            {isUnmapped ? "Unmapped" : "Choose this NPC"}
+            {isUnmapped ? "Choose (Unmapped)" : "Choose this NPC"}
           </button>
         </div>
       )}

@@ -14,8 +14,8 @@ export async function recordNpcLocation(
   npcName: string,
   coord: { lat: number; lng: number; floor: number }
 ): Promise<void> {
-  // Persist to DB (server dedups exact matches)
-  await addNpcLocation(npcId, coord);
+  // Persist to DB (server dedups exact matches, auto-creates NPC if needed)
+  await addNpcLocation(npcId, coord, npcName);
 
   // Persist/merge to local cache
   const cache = await loadNpcCache();

@@ -62,6 +62,20 @@ function hasUnnamedNpcs(npcs: NpcHighlight[]): boolean {
   });
 }
 
+// Check if there are NPCs with names/locations but missing IDs (not selected via search)
+// These NPCs risk being silently lost if the server can't backfill the ID by name
+function getNpcsWithoutIds(npcs: NpcHighlight[]): string[] {
+  return npcs
+    .filter((n) => {
+      const loc = n?.npcLocation as NpcLocation | undefined;
+      const hasValidLoc = loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng);
+      const hasName = n.npcName && n.npcName.trim().length > 0;
+      const hasNoId = typeof n.id !== "number" || !Number.isFinite(n.id);
+      return hasValidLoc && hasName && hasNoId;
+    })
+    .map((n) => n.npcName?.trim() ?? "Unknown");
+}
+
 function extractValidObjects(objects: ObjectHighlight[]) {
   return objects
     .map((o) => {
@@ -115,6 +129,18 @@ function validatePlotState(playerName: string): ValidationResult {
     return {
       ok: false,
       error: "One or more NPCs are missing a name. Please search and select an NPC name for each.",
+    };
+  }
+
+  // Check if user typed NPC names manually instead of selecting from search
+  // These NPCs may be silently lost if the server can't find them by name
+  const npcsWithoutIds = getNpcsWithoutIds(rawNpcs);
+  if (npcsWithoutIds.length > 0) {
+    const names = npcsWithoutIds.slice(0, 3).join(", ");
+    const suffix = npcsWithoutIds.length > 3 ? ` and ${npcsWithoutIds.length - 3} more` : "";
+    return {
+      ok: false,
+      error: `NPC(s) not selected from search: ${names}${suffix}. Please use the NPC search to select each NPC so it can be properly saved.`,
     };
   }
 
