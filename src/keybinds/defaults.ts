@@ -251,13 +251,6 @@ export const DEFAULT_KEYBINDS: KeybindDef[] = [
     defaultKey: { key: "u", ctrl: true },
   },
   {
-    id: "editor.strikethrough",
-    label: "Strikethrough",
-    description: "Strikethrough selected text (~~text~~)",
-    category: "editor",
-    defaultKey: { key: "s", ctrl: true, shift: true },
-  },
-  {
     id: "editor.superscript",
     label: "Superscript",
     description: "Make selected text superscript (^text)",

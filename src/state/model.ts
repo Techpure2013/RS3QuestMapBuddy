@@ -126,6 +126,8 @@ export interface UiState {
   // Path editing
   pathEditMode?: boolean;
   selectedWaypointIndex?: number | null;
+  // Focus target name input after adding new NPC/Object
+  focusTargetName?: boolean;
 }
 
 export interface HighlightNpc {

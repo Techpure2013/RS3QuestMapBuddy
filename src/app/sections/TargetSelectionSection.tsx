@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useRef, useEffect } from "react";
 import type { Clipboard, Quest } from "../../state/types";
 import type { NpcHighlight, ObjectHighlight } from "../../state/types";
 import EditorStore from "./../../state/editorStore";
@@ -50,6 +50,20 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
   };
   const captureMode = useEditorSelector((s) => s.ui.captureMode);
   const radiusFirstCorner = useEditorSelector((s) => s.ui.radiusFirstCorner);
+  const focusTargetName = useEditorSelector((s) => s.ui.focusTargetName);
+
+  // Ref for name input to enable focus on new NPC/Object creation
+  const nameInputRef = useRef<HTMLInputElement>(null);
+
+  // Focus and select name input when focusTargetName flag is set
+  useEffect(() => {
+    if (focusTargetName && nameInputRef.current) {
+      nameInputRef.current.focus();
+      nameInputRef.current.select();
+      // Clear the flag after focusing
+      EditorStore.setUi({ focusTargetName: false });
+    }
+  }, [focusTargetName]);
 
   const setHoveredPoint = useCallback(
     (
@@ -184,6 +198,7 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
       <div className="control-group" style={{ margin: 0, marginBottom: 10 }}>
         <label style={labelCss}>Name</label>
         <input
+          ref={nameInputRef}
           type="text"
           value={targetNameValue}
           onChange={(e) => onTargetNameChange(e.target.value)}

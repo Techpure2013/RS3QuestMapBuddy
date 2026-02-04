@@ -1,5 +1,7 @@
-import { useEffect, useCallback } from "react";
-import { loadHotkeys, matchesHotkey, HotkeyMapping } from "../components/HotkeySettings";
+import { useEffect, useCallback, useState } from "react";
+import { keybindStore } from "../../keybinds/keybindStore";
+import { keyEventMatches } from "../../keybinds/utils";
+import type { KeyCombo } from "../../keybinds/types";
 
 export interface HotkeyActions {
   onBold?: () => void;
@@ -13,7 +15,6 @@ export interface HotkeyActions {
   onStepLink?: () => void;
   onTable?: () => void;
   onClear?: () => void;
-  onSave?: () => void;
   onUndo?: () => void;
   onRedo?: () => void;
   onToggleTarget?: () => void;
@@ -23,24 +24,22 @@ export interface HotkeyActions {
 }
 
 const ACTION_MAP: Record<string, keyof HotkeyActions> = {
-  bold: "onBold",
-  italic: "onItalic",
-  underline: "onUnderline",
-  strikethrough: "onStrikethrough",
-  superscript: "onSuperscript",
-  link: "onLink",
-  color: "onColor",
-  image: "onImage",
-  steplink: "onStepLink",
-  table: "onTable",
-  clear: "onClear",
-  save: "onSave",
-  undo: "onUndo",
-  redo: "onRedo",
-  toggleTarget: "onToggleTarget",
-  addNpc: "onAddNpc",
-  addObject: "onAddObject",
-  addStep: "onAddStep",
+  "editor.bold": "onBold",
+  "editor.italic": "onItalic",
+  "editor.underline": "onUnderline",
+  "editor.superscript": "onSuperscript",
+  "editor.link": "onLink",
+  "editor.color": "onColor",
+  "editor.image": "onImage",
+  "editor.stepLink": "onStepLink",
+  "editor.table": "onTable",
+  "editor.clearFormatting": "onClear",
+  "editor.undo": "onUndo",
+  "editor.redo": "onRedo",
+  "editor.toggleTarget": "onToggleTarget",
+  "editor.addNpc": "onAddNpc",
+  "editor.addObject": "onAddObject",
+  "editor.addStep": "onAddStep",
 };
 
 export function useEditorHotkeys(
@@ -48,6 +47,15 @@ export function useEditorHotkeys(
   enabled: boolean = true,
   targetRef?: React.RefObject<HTMLElement | null>
 ) {
+  // Force re-render when keybinds change
+  const [, forceUpdate] = useState(0);
+
+  useEffect(() => {
+    return keybindStore.subscribe(() => {
+      forceUpdate((n) => n + 1);
+    });
+  }, []);
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (!enabled) return;
@@ -58,11 +66,16 @@ export function useEditorHotkeys(
         return;
       }
 
-      const hotkeys = loadHotkeys();
+      const keybinds = keybindStore.getResolvedKeybinds();
 
-      for (const hotkey of hotkeys) {
-        if (matchesHotkey(e, hotkey)) {
-          const actionKey = ACTION_MAP[hotkey.id];
+      for (const keybind of keybinds) {
+        // Skip if no key is set or if not in our action map
+        if (!keybind.currentKey || !ACTION_MAP[keybind.id]) {
+          continue;
+        }
+
+        if (keyEventMatches(e, keybind.currentKey)) {
+          const actionKey = ACTION_MAP[keybind.id];
           const action = actionKey ? actions[actionKey] : undefined;
 
           if (action) {
@@ -79,21 +92,53 @@ export function useEditorHotkeys(
 
   useEffect(() => {
     const element = targetRef?.current || document;
-    element.addEventListener("keydown", handleKeyDown as EventListener);
-    return () => element.removeEventListener("keydown", handleKeyDown as EventListener);
+    element.addEventListener("keydown", handleKeyDown as EventListener, true);
+    return () => element.removeEventListener("keydown", handleKeyDown as EventListener, true);
   }, [handleKeyDown, targetRef]);
 }
 
 // Helper to get current hotkey for display in tooltips
-export function getHotkeyForAction(actionId: string): string | null {
-  const hotkeys = loadHotkeys();
-  const hotkey = hotkeys.find(h => h.id === actionId);
-  if (!hotkey) return null;
+// Maps old action IDs to new keybind IDs
+const OLD_TO_NEW_ID_MAP: Record<string, string> = {
+  bold: "editor.bold",
+  italic: "editor.italic",
+  underline: "editor.underline",
+  superscript: "editor.superscript",
+  link: "editor.link",
+  color: "editor.color",
+  image: "editor.image",
+  steplink: "editor.stepLink",
+  table: "editor.table",
+  clear: "editor.clearFormatting",
+  undo: "editor.undo",
+  redo: "editor.redo",
+  toggleTarget: "editor.toggleTarget",
+  addNpc: "editor.addNpc",
+  addObject: "editor.addObject",
+  addStep: "editor.addStep",
+};
 
+export function getHotkeyForAction(actionId: string): string | null {
+  // Support both old and new ID formats
+  const keybindId = OLD_TO_NEW_ID_MAP[actionId] || actionId;
+  const keybind = keybindStore.getKeybind(keybindId);
+
+  if (!keybind || !keybind.currentKey) return null;
+
+  const combo = keybind.currentKey;
   const parts: string[] = [];
-  if (hotkey.ctrl) parts.push("Ctrl");
-  if (hotkey.shift) parts.push("Shift");
-  if (hotkey.alt) parts.push("Alt");
-  parts.push(hotkey.key.toUpperCase());
+
+  if (combo.ctrl) parts.push("Ctrl");
+  if (combo.shift) parts.push("Shift");
+  if (combo.alt) parts.push("Alt");
+  if (combo.meta) parts.push("Cmd");
+
+  // Format key nicely
+  let keyName = combo.key;
+  if (keyName.length === 1) {
+    keyName = keyName.toUpperCase();
+  }
+
+  parts.push(keyName);
   return parts.join("+");
 }

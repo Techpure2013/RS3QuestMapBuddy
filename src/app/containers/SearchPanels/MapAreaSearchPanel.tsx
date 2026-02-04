@@ -13,12 +13,14 @@ import {
 } from "../../../state/editorStore";
 import { useEditorSelector } from "../../../state/useEditorSelector";
 import type { MapArea } from "../../../state/model";
+import { getMapLocations, type MapLocation } from "../../../api/mapLocationsApi";
 import allMapAreasData from "../../../map/Map Data/combinedMapData.json";
 
 const areaKey = (a: MapArea): string =>
   `${a.mapId}|${a.name}|${a.bounds[0][0]},${a.bounds[0][1]}|${a.bounds[1][0]},${a.bounds[1][1]}`;
 
-const ALL_AREAS: MapArea[] = allMapAreasData as MapArea[];
+// Local fallback data
+const LOCAL_AREAS: MapArea[] = allMapAreasData as MapArea[];
 
 const CHUNK_SIZE = 64;
 
@@ -38,6 +40,14 @@ const gridToMapCenter = (x: number, y: number): { lat: number; lng: number } => 
   lng: x * CHUNK_SIZE + CHUNK_SIZE / 2,
 });
 
+// Convert MapLocation from API to MapArea
+const locationToArea = (loc: MapLocation): MapArea => ({
+  mapId: loc.mapId,
+  name: loc.name,
+  center: loc.center,
+  bounds: loc.bounds,
+});
+
 const MapAreaSearchPanel: React.FC = () => {
   const ui = useEditorSelector((s) => s.ui);
 
@@ -46,9 +56,48 @@ const MapAreaSearchPanel: React.FC = () => {
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
   const [isKeyboardNav, setIsKeyboardNav] = useState<boolean>(false);
 
+  // Database state
+  const [dbAreas, setDbAreas] = useState<MapArea[] | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [useDatabase, setUseDatabase] = useState(true);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
+
+  // Load all areas from database on mount
+  useEffect(() => {
+    let cancelled = false;
+    const loadAreas = async () => {
+      setIsLoading(true);
+      try {
+        const locations = await getMapLocations(undefined, 1000);
+        if (!cancelled) {
+          setDbAreas(locations.map(locationToArea));
+          setUseDatabase(true);
+        }
+      } catch (err) {
+        console.warn("Failed to load map locations from API, using local data:", err);
+        if (!cancelled) {
+          setUseDatabase(false);
+        }
+      } finally {
+        if (!cancelled) {
+          setIsLoading(false);
+        }
+      }
+    };
+    loadAreas();
+    return () => { cancelled = true; };
+  }, []);
+
+  // Use database areas if available, otherwise fall back to local
+  const ALL_AREAS = useMemo(() => {
+    if (useDatabase && dbAreas !== null) {
+      return dbAreas;
+    }
+    return LOCAL_AREAS;
+  }, [dbAreas, useDatabase]);
 
   // Check if the search term is a grid coordinate
   const gridCoords = useMemo(() => parseGridCoords(term), [term]);
@@ -67,7 +116,7 @@ const MapAreaSearchPanel: React.FC = () => {
       if (!m.has(k)) m.set(k, a);
     }
     return Array.from(m.values());
-  }, [term, gridCoords]);
+  }, [term, gridCoords, ALL_AREAS]);
 
   // Open dropdown when there are results or typing
   useEffect(() => {
@@ -199,7 +248,11 @@ const MapAreaSearchPanel: React.FC = () => {
       </div>
 
       <div className="control-group">
-        <label>Map Area Search</label>
+        <label>
+          Map Area Search
+          {isLoading && <span style={{ marginLeft: 6, fontSize: "0.75em", color: "#9ca3af" }}>(loading...)</span>}
+          {!isLoading && !useDatabase && <span style={{ marginLeft: 6, fontSize: "0.75em", color: "#f59e0b" }}>(local)</span>}
+        </label>
         <input
           ref={inputRef}
           type="text"

@@ -234,7 +234,6 @@ const editorCallbacks: {
   bold?: () => void;
   italic?: () => void;
   underline?: () => void;
-  strikethrough?: () => void;
   superscript?: () => void;
   link?: () => void;
   color?: () => void;
@@ -263,7 +262,6 @@ export const editorActions = {
     editorCallbacks.bold = undefined;
     editorCallbacks.italic = undefined;
     editorCallbacks.underline = undefined;
-    editorCallbacks.strikethrough = undefined;
     editorCallbacks.superscript = undefined;
     editorCallbacks.link = undefined;
     editorCallbacks.color = undefined;
@@ -291,10 +289,6 @@ export const editorActions = {
 
   underline: () => {
     editorCallbacks.underline?.();
-  },
-
-  strikethrough: () => {
-    editorCallbacks.strikethrough?.();
   },
 
   superscript: () => {
@@ -417,7 +411,6 @@ export function registerAllActions() {
   keybindStore.registerAction("editor.bold", editorActions.bold);
   keybindStore.registerAction("editor.italic", editorActions.italic);
   keybindStore.registerAction("editor.underline", editorActions.underline);
-  keybindStore.registerAction("editor.strikethrough", editorActions.strikethrough);
   keybindStore.registerAction("editor.superscript", editorActions.superscript);
   keybindStore.registerAction("editor.link", editorActions.link);
   keybindStore.registerAction("editor.color", editorActions.color);

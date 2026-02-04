@@ -26,6 +26,7 @@ import MapAreaSearchPanel from "./containers/SearchPanels/MapAreaSearchPanel";
 import ObjectSearchPanel from "./containers/SearchPanels/ObjectSearchPanel";
 import ExportsPanel from "./containers/ExportsPanel";
 import PathToolsPanel from "./containers/PathToolsPanel";
+import MapLocationEditor from "./containers/MapLocationEditor";
 import MapCenter from "./map/MapCenter";
 import CenterControls from "./containers/CenterControlPanel";
 import Panel from "./sections/panel";
@@ -93,6 +94,9 @@ const App: React.FC = () => {
             </Panel>
             <Panel defaultOpen={false} title="Image Paste" compact>
               <QuestImagePastePanel />
+            </Panel>
+            <Panel defaultOpen={false} title="Map Locations" compact>
+              <MapLocationEditor />
             </Panel>
           </>
         )}

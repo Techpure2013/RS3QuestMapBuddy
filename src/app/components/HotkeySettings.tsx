@@ -17,7 +17,6 @@ export const DEFAULT_HOTKEYS: HotkeyMapping[] = [
   { id: "bold", label: "Bold", description: "**text**", key: "b", ctrl: true, shift: false, alt: false },
   { id: "italic", label: "Italic", description: "*text*", key: "i", ctrl: true, shift: false, alt: false },
   { id: "underline", label: "Underline", description: "__text__", key: "u", ctrl: true, shift: false, alt: false },
-  { id: "strikethrough", label: "Strikethrough", description: "~~text~~", key: "s", ctrl: true, shift: true, alt: false },
   { id: "superscript", label: "Superscript", description: "^(text)", key: ".", ctrl: true, shift: true, alt: false },
   { id: "link", label: "Link", description: "[text](url)", key: "k", ctrl: true, shift: false, alt: false },
   { id: "color", label: "Color Picker", description: "Open color picker", key: "h", ctrl: true, shift: true, alt: false },

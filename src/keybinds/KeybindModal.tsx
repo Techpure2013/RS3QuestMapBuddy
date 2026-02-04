@@ -12,14 +12,14 @@ export const KeybindModal: React.FC = () => {
   const [editingKeybind, setEditingKeybind] = useState(keybindStore.editingKeybind);
   const [filter, setFilter] = useState<KeybindCategory | "all">("all");
   const [search, setSearch] = useState("");
-  const [, forceUpdate] = useState(0);
+  const [storeVersion, setStoreVersion] = useState(0);
 
   // Subscribe to store changes
   useEffect(() => {
     return keybindStore.subscribe(() => {
       setModalOpen(keybindStore.modalOpen);
       setEditingKeybind(keybindStore.editingKeybind);
-      forceUpdate((n) => n + 1);
+      setStoreVersion((n) => n + 1);
     });
   }, []);
 
@@ -42,7 +42,8 @@ export const KeybindModal: React.FC = () => {
     }
 
     return list;
-  }, [filter, search, modalOpen]); // modalOpen dependency to refresh on reopen
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter, search, modalOpen, storeVersion]); // storeVersion triggers recalc when keybinds change
 
   // Group by category
   const grouped = useMemo(() => {

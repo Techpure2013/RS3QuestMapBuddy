@@ -27,8 +27,10 @@ import { ColorPicker } from "../components/ColorPicker";
 import { ImagePicker } from "../components/ImagePicker";
 import { StepLinkPicker } from "../components/StepLinkPicker";
 import { TableCreator } from "../components/TableCreator";
+import { QuickInsertPicker } from "../components/QuickInsertPicker";
 import { useEditorHotkeys, getHotkeyForAction } from "../hooks/useEditorHotkeys";
 import { editorActions } from "../../keybinds/actions";
+import { keybindStore } from "../../keybinds/keybindStore";
 import { IconTable } from "@tabler/icons-react";
 
 export const CenterControls: React.FC = () => {
@@ -48,9 +50,16 @@ export const CenterControls: React.FC = () => {
   const [showImagePicker, setShowImagePicker] = useState(false);
   const [showStepLinkPicker, setShowStepLinkPicker] = useState(false);
   const [showTableCreator, setShowTableCreator] = useState(false);
+  const [showQuickInsert, setShowQuickInsert] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Subscribe to keybind changes to update tooltips
+  const [, forceKeybindUpdate] = useState(0);
+  useEffect(() => {
+    return keybindStore.subscribe(() => forceKeybindUpdate((n) => n + 1));
+  }, []);
 
   // Undo/Redo stack for step description
   const undoStackRef = useRef<string[]>([]);
@@ -192,7 +201,6 @@ export const CenterControls: React.FC = () => {
     { id: "bold", label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 }, cursorOffset: 0 },
     { id: "italic", label: "I", title: "Italic (*text*)", prefix: "*", suffix: "*", style: { fontStyle: "italic" }, cursorOffset: 0 },
     { id: "underline", label: "U", title: "Underline (__text__)", prefix: "__", suffix: "__", style: { textDecoration: "underline" }, cursorOffset: 0 },
-    { id: "strikethrough", label: "S", title: "Strikethrough (~~text~~)", prefix: "~~", suffix: "~~", style: { textDecoration: "line-through" }, cursorOffset: 0 },
     { id: "superscript", label: "x²", title: "Superscript (^text or ^(text))", prefix: "^(", suffix: ")", style: { fontSize: "0.7em" }, cursorOffset: 0 },
     { id: "link", label: "🔗", title: "Link ([text](url))", prefix: "[", suffix: "]()", style: {}, cursorOffset: 1 },
   ] as const;
@@ -240,39 +248,45 @@ export const CenterControls: React.FC = () => {
   // Add NPC to current step
   const handleAddNpc = useCallback(() => {
     if (!quest) return;
+    // Calculate the new index BEFORE patching (it will be at the current length)
+    const step = quest.questSteps[selection.selectedStep];
+    const newIndex = step?.highlights?.npc?.length ?? 0;
+
     EditorStore.patchQuest((draft) => {
-      const step = draft.questSteps[selection.selectedStep];
-      if (!step) return;
-      if (!step.highlights) step.highlights = { npc: [], object: [] };
-      if (!step.highlights.npc) step.highlights.npc = [];
-      step.highlights.npc.push({
+      const draftStep = draft.questSteps[selection.selectedStep];
+      if (!draftStep) return;
+      if (!draftStep.highlights) draftStep.highlights = { npc: [], object: [] };
+      if (!draftStep.highlights.npc) draftStep.highlights.npc = [];
+      draftStep.highlights.npc.push({
         npcName: "New NPC",
         npcLocation: { lat: 0, lng: 0 },
       });
     });
-    // Select the new NPC
-    const step = quest.questSteps[selection.selectedStep];
-    const newIndex = (step?.highlights?.npc?.length ?? 0);
+    // Select the new NPC, enable coordinate capture, and focus name input
     EditorStore.setSelection({ targetType: "npc", targetIndex: newIndex });
+    EditorStore.setUi({ captureMode: "single", focusTargetName: true });
   }, [quest, selection.selectedStep]);
 
   // Add Object to current step
   const handleAddObject = useCallback(() => {
     if (!quest) return;
+    // Calculate the new index BEFORE patching (it will be at the current length)
+    const step = quest.questSteps[selection.selectedStep];
+    const newIndex = step?.highlights?.object?.length ?? 0;
+
     EditorStore.patchQuest((draft) => {
-      const step = draft.questSteps[selection.selectedStep];
-      if (!step) return;
-      if (!step.highlights) step.highlights = { npc: [], object: [] };
-      if (!step.highlights.object) step.highlights.object = [];
-      step.highlights.object.push({
+      const draftStep = draft.questSteps[selection.selectedStep];
+      if (!draftStep) return;
+      if (!draftStep.highlights) draftStep.highlights = { npc: [], object: [] };
+      if (!draftStep.highlights.object) draftStep.highlights.object = [];
+      draftStep.highlights.object.push({
         name: "New Object",
         objectLocation: [],
       });
     });
-    // Select the new object
-    const step = quest.questSteps[selection.selectedStep];
-    const newIndex = (step?.highlights?.object?.length ?? 0);
+    // Select the new object, enable coordinate capture, and focus name input
     EditorStore.setSelection({ targetType: "object", targetIndex: newIndex });
+    EditorStore.setUi({ captureMode: "multi-point", focusTargetName: true });
   }, [quest, selection.selectedStep]);
 
   // Add new step after current
@@ -295,7 +309,6 @@ export const CenterControls: React.FC = () => {
   const handleBold = useCallback(() => wrapSelection("**", "**", 0), [wrapSelection]);
   const handleItalic = useCallback(() => wrapSelection("*", "*", 0), [wrapSelection]);
   const handleUnderlineFormat = useCallback(() => wrapSelection("__", "__", 0), [wrapSelection]);
-  const handleStrikethrough = useCallback(() => wrapSelection("~~", "~~", 0), [wrapSelection]);
   const handleSuperscript = useCallback(() => wrapSelection("^(", ")", 0), [wrapSelection]);
   const handleLink = useCallback(() => wrapSelection("[", "]()", 1), [wrapSelection]);
   const handleColor = useCallback(() => setShowColorPicker(true), []);
@@ -307,7 +320,6 @@ export const CenterControls: React.FC = () => {
     onBold: handleBold,
     onItalic: handleItalic,
     onUnderline: handleUnderlineFormat,
-    onStrikethrough: handleStrikethrough,
     onSuperscript: handleSuperscript,
     onLink: handleLink,
     onColor: handleColor,
@@ -334,7 +346,6 @@ export const CenterControls: React.FC = () => {
       bold: handleBold,
       italic: handleItalic,
       underline: handleUnderlineFormat,
-      strikethrough: handleStrikethrough,
       superscript: handleSuperscript,
       link: handleLink,
       color: handleColor,
@@ -355,7 +366,7 @@ export const CenterControls: React.FC = () => {
       editorActions.unregisterCallbacks();
     };
   }, [
-    handleBold, handleItalic, handleUnderlineFormat, handleStrikethrough,
+    handleBold, handleItalic, handleUnderlineFormat,
     handleSuperscript, handleLink, handleColor, handleImage, handleStepLink,
     handleTable, handleClearFormatting, handleUndo, handleRedo,
     handleToggleTarget, handleAddNpc, handleAddObject, handleAddStep
@@ -877,6 +888,46 @@ export const CenterControls: React.FC = () => {
                     />
                   )}
                 </div>
+                {/* Quick Insert picker button */}
+                <div style={{ position: "relative" }}>
+                  <button
+                    type="button"
+                    title="Quick insert (lodestones, prayers, map icons)"
+                    onClick={() => setShowQuickInsert(!showQuickInsert)}
+                    style={{
+                      padding: "3px 8px",
+                      fontSize: "0.75rem",
+                      background: "#7c2d12",
+                      border: showQuickInsert ? "2px solid #fff" : "1px solid #c2410c",
+                      borderRadius: 3,
+                      color: "#fdba74",
+                      cursor: "pointer",
+                    }}
+                  >
+                    ⚡ Quick
+                  </button>
+                  {showQuickInsert && (
+                    <QuickInsertPicker
+                      onSelect={(markup) => {
+                        const textarea = textareaRef.current;
+                        if (!textarea) return;
+
+                        const end = textarea.selectionEnd;
+                        const newText = localStepDesc.substring(0, end) + markup + localStepDesc.substring(end);
+                        handleStepChange(newText);
+
+                        setShowQuickInsert(false);
+
+                        requestAnimationFrame(() => {
+                          textarea.focus();
+                          const newPos = end + markup.length;
+                          textarea.setSelectionRange(newPos, newPos);
+                        });
+                      }}
+                      onClose={() => setShowQuickInsert(false)}
+                    />
+                  )}
+                </div>
                 {/* Step link picker button */}
                 <div style={{ position: "relative" }}>
                   <button
@@ -941,6 +992,23 @@ export const CenterControls: React.FC = () => {
                     e.preventDefault();
                     handleStepDiscard();
                   }
+                }}
+                onDoubleClick={(e) => {
+                  // Remove trailing space from double-click word selection
+                  const textarea = e.currentTarget;
+                  // Use setTimeout to let browser selection happen first
+                  setTimeout(() => {
+                    const start = textarea.selectionStart;
+                    const end = textarea.selectionEnd;
+                    const text = textarea.value;
+                    const selectedText = text.substring(start, end);
+
+                    // If selection ends with whitespace, trim it
+                    if (selectedText && /\s+$/.test(selectedText)) {
+                      const trimmed = selectedText.replace(/\s+$/, '');
+                      textarea.setSelectionRange(start, start + trimmed.length);
+                    }
+                  }, 0);
                 }}
                 placeholder="Describe this step..."
                 style={{

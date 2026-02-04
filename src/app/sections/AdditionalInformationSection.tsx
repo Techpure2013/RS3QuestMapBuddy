@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { autoGrow } from "./../../state/editorStore";
+import { autoGrow, EditorStore } from "./../../state/editorStore";
 import { RichText } from "../../utils/RichText";
 import { FormattingToolbar } from "../components/FormattingToolbar";
+import { useEditorSelector } from "../../state/useEditorSelector";
 
 export interface AdditionalInfoSectionProps {
   value: string;
@@ -14,6 +15,7 @@ export const AdditionalInfoSection: React.FC<AdditionalInfoSectionProps> = ({
 }) => {
   const [localValue, setLocalValue] = useState(value);
   const taRef = useRef<HTMLTextAreaElement>(null);
+  const quest = useEditorSelector((s) => s.quest);
 
   useEffect(() => {
     setLocalValue(value);
@@ -53,7 +55,16 @@ export const AdditionalInfoSection: React.FC<AdditionalInfoSectionProps> = ({
           <ul style={{ marginTop: 6, paddingLeft: 18 }}>
             {lines.map((s, i) => (
               <li key={`${i}-${s}`}>
-                <RichText>{s}</RichText>
+                <RichText
+                  onStepClick={(step) => {
+                    const stepIndex = step - 1;
+                    if (stepIndex >= 0 && quest?.questSteps && stepIndex < quest.questSteps.length) {
+                      EditorStore.autoSelectFirstValidTargetForStep(stepIndex);
+                    }
+                  }}
+                >
+                  {s}
+                </RichText>
               </li>
             ))}
           </ul>

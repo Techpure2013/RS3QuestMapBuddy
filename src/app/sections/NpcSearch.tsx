@@ -49,8 +49,7 @@ export const NpcSearch: React.FC<NpcSearchProps> = ({
 
   const doSearch = async () => {
     const name = term.trim();
-    console.log(name);
-    if (name.length < 4) {
+    if (name.length < 2) {
       setAllMatches([]);
       setCurrentIndex(-1);
       onNpcHighlight(null);
@@ -59,8 +58,8 @@ export const NpcSearch: React.FC<NpcSearchProps> = ({
     setIsLoading(true);
     try {
       // Case-insensitive handled by server via lower(name) like
-      const results = await searchNpcs(name, 15);
-      console.log(results);
+      // Increased limit to 50 for better coverage
+      const results = await searchNpcs(name, 50);
 
       // Filter out unmapped NPCs (0,0 coordinates)
       const mappedResults = results.filter(npc => !(npc.lat === 0 && npc.lng === 0));

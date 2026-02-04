@@ -8,7 +8,6 @@ import React from "react";
  * - *italics*            → Italic text
  * - ***bold italics***   → Bold + Italic text
  * - __underline__        → Underlined text
- * - ~~strikethrough~~    → Strikethrough text
  * - ^superscript         → Superscript (single word)
  * - ^(super script)      → Superscript (multiple words)
  * - [#FFFFFF]{text}      → Colored text (hex)
@@ -20,7 +19,7 @@ import React from "react";
  * - {{img:url|64}}       → Image shorthand with size
  * - step(22){text}       → Step link (jump to step 22)
  *
- * Combinations work: __**bold underline**__ or ~~*italic strikethrough*~~
+ * Combinations work: __**bold underline**__ or __*italic underline*__
  */
 
 interface TableStyle {
@@ -43,7 +42,6 @@ type TextNode =
 	| { type: "italic"; children: TextNode[] }
 	| { type: "bolditalic"; children: TextNode[] }
 	| { type: "underline"; children: TextNode[] }
-	| { type: "strikethrough"; children: TextNode[] }
 	| { type: "superscript"; children: TextNode[] }
 	| { type: "color"; color: string; children: TextNode[] }
 	| { type: "link"; url: string; children: TextNode[] }
@@ -150,8 +148,9 @@ const patterns: Array<{
 		getAlt: () => "",
 	},
 	// Step link: step(22){text} - link to another step in the quest
+	// Use (.*?) to allow empty content - will fallback to "Step N" display
 	{
-		regex: /step\((\d+)\)\{(.+?)\}(?!\})/,
+		regex: /step\((\d+)\)\{(.*?)\}(?!\})/,
 		type: "steplink",
 		getStep: (m) => parseInt(m[1], 10),
 	},
@@ -185,8 +184,6 @@ const patterns: Array<{
 	{ regex: /\*\*__(.+?)__\*\*/, type: "bold" },
 	// Underline: __text__ - use lazy match
 	{ regex: /__(.+?)__/, type: "underline" },
-	// Strikethrough: ~~text~~ - use lazy match
-	{ regex: /~~(.+?)~~/, type: "strikethrough" },
 	// Superscript with parentheses: ^(text with spaces)
 	{ regex: /\^\(([^)]+)\)/, type: "superscript" },
 	// Superscript single word: ^word
@@ -356,11 +353,6 @@ function renderNodes(
 					<u key={key}>{renderNodes(node.children, key, options)}</u>
 				);
 
-			case "strikethrough":
-				return (
-					<s key={key}>{renderNodes(node.children, key, options)}</s>
-				);
-
 			case "superscript":
 				return (
 					<sup key={key} style={{ fontSize: "0.75em", verticalAlign: "super" }}>
@@ -392,6 +384,9 @@ function renderNodes(
 				);
 
 			case "steplink":
+				// Fallback to "Step N" if no content provided
+				const hasContent = node.children.length > 0 &&
+					!(node.children.length === 1 && node.children[0].type === "text" && node.children[0].content === "");
 				return (
 					<a
 						key={key}
@@ -408,7 +403,7 @@ function renderNodes(
 						}}
 						title={`Go to step ${node.step}`}
 					>
-						{renderNodes(node.children, key, options)}
+						{hasContent ? renderNodes(node.children, key, options) : `Step ${node.step}`}
 					</a>
 				);
 
@@ -617,8 +612,8 @@ export function stripFormatting(text: string): string {
 		// Table: {{table|...}} -> [Table]
 		result = result.replace(/\{\{table\|((?:[^{}]|\{[^{}]*\})*)\}\}/g, "[Table]");
 
-		// Step link: step(N){text} -> text
-		result = result.replace(/step\(\d+\)\{(.+?)\}(?!\})/g, "$1");
+		// Step link: step(N){text} -> text (or "Step N" if empty)
+		result = result.replace(/step\((\d+)\)\{(.*?)\}(?!\})/g, (_, num, content) => content || `Step ${num}`);
 
 		// Color with hex: [#FFFFFF]{text} -> text
 		result = result.replace(/\[(#[0-9A-Fa-f]{3,8})\]\{(.+?)\}(?!\})/g, "$2");
@@ -643,9 +638,6 @@ export function stripFormatting(text: string): string {
 
 		// Underline: __text__ -> text
 		result = result.replace(/__(.+?)__/g, "$1");
-
-		// Strikethrough: ~~text~~ -> text
-		result = result.replace(/~~(.+?)~~/g, "$1");
 
 		// Superscript with parentheses: ^(text) -> text
 		result = result.replace(/\^\(([^)]+)\)/g, "$1");

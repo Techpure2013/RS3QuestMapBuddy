@@ -1,17 +1,17 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { stripFormatting } from "../../utils/RichText";
 import { ColorPicker } from "./ColorPicker";
 import { ImagePicker } from "./ImagePicker";
 import { StepLinkPicker } from "./StepLinkPicker";
 import { TableCreator } from "./TableCreator";
-import { HotkeySettings } from "./HotkeySettings";
+import { QuickInsertPicker } from "./QuickInsertPicker";
+import { keybindStore } from "../../keybinds/keybindStore";
 import { useEditorHotkeys, getHotkeyForAction } from "../hooks/useEditorHotkeys";
 
 const FORMAT_BUTTONS = [
   { id: "bold", label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 }, cursorOffset: 0 },
   { id: "italic", label: "I", title: "Italic (*text*)", prefix: "*", suffix: "*", style: { fontStyle: "italic" }, cursorOffset: 0 },
   { id: "underline", label: "U", title: "Underline (__text__)", prefix: "__", suffix: "__", style: { textDecoration: "underline" }, cursorOffset: 0 },
-  { id: "strikethrough", label: "S", title: "Strikethrough (~~text~~)", prefix: "~~", suffix: "~~", style: { textDecoration: "line-through" }, cursorOffset: 0 },
   { id: "superscript", label: "x\u00B2", title: "Superscript (^text or ^(text))", prefix: "^(", suffix: ")", style: { fontSize: "0.7em" }, cursorOffset: 0 },
   { id: "link", label: "\uD83D\uDD17", title: "Link ([text](url))", prefix: "[", suffix: "]()", style: {}, cursorOffset: 1 },
 ] as const;
@@ -35,7 +35,13 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
   const [showImagePicker, setShowImagePicker] = useState(false);
   const [showStepLinkPicker, setShowStepLinkPicker] = useState(false);
   const [showTableCreator, setShowTableCreator] = useState(false);
-  const [showHotkeySettings, setShowHotkeySettings] = useState(false);
+  const [showQuickInsert, setShowQuickInsert] = useState(false);
+
+  // Subscribe to keybind changes to update tooltips
+  const [, forceUpdate] = useState(0);
+  useEffect(() => {
+    return keybindStore.subscribe(() => forceUpdate((n) => n + 1));
+  }, []);
 
   const wrapSelection = useCallback((prefix: string, suffix: string, cursorOffset: number = 0) => {
     const textarea = textareaRef.current;
@@ -78,7 +84,6 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
     onBold: useCallback(() => wrapSelection("**", "**", 0), [wrapSelection]),
     onItalic: useCallback(() => wrapSelection("*", "*", 0), [wrapSelection]),
     onUnderline: useCallback(() => wrapSelection("__", "__", 0), [wrapSelection]),
-    onStrikethrough: useCallback(() => wrapSelection("~~", "~~", 0), [wrapSelection]),
     onSuperscript: useCallback(() => wrapSelection("^(", ")", 0), [wrapSelection]),
     onLink: useCallback(() => wrapSelection("[", "]()", 1), [wrapSelection]),
     onColor: useCallback(() => setShowColorPicker(true), []),
@@ -232,6 +237,43 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
               />
             )}
           </div>
+          {/* Quick Insert picker button */}
+          <div style={{ position: "relative" }}>
+            <button
+              type="button"
+              title="Quick insert (lodestones, prayers, map icons)"
+              onClick={() => setShowQuickInsert(!showQuickInsert)}
+              style={{
+                ...buttonStyle,
+                background: "#7c2d12",
+                border: showQuickInsert ? "2px solid #fff" : "1px solid #c2410c",
+                color: "#fdba74",
+              }}
+            >
+              ⚡ Quick
+            </button>
+            {showQuickInsert && (
+              <QuickInsertPicker
+                onSelect={(markup) => {
+                  const textarea = textareaRef.current;
+                  if (!textarea) return;
+
+                  const end = textarea.selectionEnd;
+                  const newText = value.substring(0, end) + markup + value.substring(end);
+                  onChange(newText);
+
+                  setShowQuickInsert(false);
+
+                  requestAnimationFrame(() => {
+                    textarea.focus();
+                    const newPos = end + markup.length;
+                    textarea.setSelectionRange(newPos, newPos);
+                  });
+                }}
+                onClose={() => setShowQuickInsert(false)}
+              />
+            )}
+          </div>
           {/* Step link picker button */}
           <div style={{ position: "relative" }}>
             <button
@@ -280,7 +322,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           <button
             type="button"
             title="Customize keyboard shortcuts"
-            onClick={() => setShowHotkeySettings(true)}
+            onClick={() => keybindStore.setModalOpen(true)}
             style={{
               ...buttonStyle,
               background: "#1e40af",
@@ -313,10 +355,6 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           }}
           onClose={() => setShowTableCreator(false)}
         />
-      )}
-      {/* Hotkey Settings Modal */}
-      {showHotkeySettings && (
-        <HotkeySettings onClose={() => setShowHotkeySettings(false)} />
       )}
     </div>
   );

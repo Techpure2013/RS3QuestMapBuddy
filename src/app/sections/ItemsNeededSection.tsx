@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { autoGrow } from "./../../state/editorStore";
+import { autoGrow, EditorStore } from "./../../state/editorStore";
 import { RichText } from "../../utils/RichText";
 import { FormattingToolbar } from "../components/FormattingToolbar";
+import { useEditorSelector } from "../../state/useEditorSelector";
 
 export interface ItemsNeededSectionProps {
   value: string;
@@ -14,6 +15,7 @@ export const ItemsNeededSection: React.FC<ItemsNeededSectionProps> = ({
 }) => {
   const [localValue, setLocalValue] = useState(value);
   const taRef = useRef<HTMLTextAreaElement>(null);
+  const quest = useEditorSelector((s) => s.quest);
 
   useEffect(() => {
     setLocalValue(value);
@@ -53,7 +55,18 @@ export const ItemsNeededSection: React.FC<ItemsNeededSectionProps> = ({
         {lines.length > 0 && (
           <ul style={{ marginTop: 6, paddingLeft: 18 }}>
             {lines.map((s, i) => (
-              <li key={`${i}-${s}`}><RichText>{s}</RichText></li>
+              <li key={`${i}-${s}`}>
+                <RichText
+                  onStepClick={(step) => {
+                    const stepIndex = step - 1;
+                    if (stepIndex >= 0 && quest?.questSteps && stepIndex < quest.questSteps.length) {
+                      EditorStore.autoSelectFirstValidTargetForStep(stepIndex);
+                    }
+                  }}
+                >
+                  {s}
+                </RichText>
+              </li>
             ))}
           </ul>
         )}
