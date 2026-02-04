@@ -35,15 +35,24 @@ export const KeybindHandler: React.FC = () => {
         return;
       }
 
-      // Handle modal trigger (? or Ctrl+/) - works even in inputs
+      // Skip if typing in input/textarea
+      const inInput = isInputElement(e.target);
+
+      // Handle modal trigger: Ctrl+/ works everywhere, ? only works outside inputs
       if (isModalTrigger(e)) {
-        e.preventDefault();
-        keybindStore.setModalOpen(true);
-        return;
+        // Only allow ? to open modal when NOT in an input
+        const isQuestionMark = e.key === "?" || (e.shiftKey && e.key === "/");
+        const isCtrlSlash = (e.ctrlKey || e.metaKey) && e.key === "/";
+
+        if (isCtrlSlash || !inInput) {
+          e.preventDefault();
+          keybindStore.setModalOpen(true);
+          return;
+        }
       }
 
-      // Skip if typing in input/textarea (except for modal trigger which we handled above)
-      if (isInputElement(e.target)) {
+      // Skip other keybinds if in input
+      if (inInput) {
         return;
       }
 
