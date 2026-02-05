@@ -18,6 +18,7 @@ import { useEditorSelector } from "./../../state/useEditorSelector";
 import { recordQuestNpcLocations } from "./../../feature/npcPublisher";
 import { clearImageCache } from "../../idb/imageCache";
 import { clearObservedChatheads } from "idb/chatheadsObserved";
+import { fetchWikiGuide } from "../../api/wikiApi";
 
 import { useAuth } from "./../../state/useAuth";
 import { fetchMe } from "./../../api/auth";
@@ -54,6 +55,8 @@ export const CenterControls: React.FC = () => {
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isRefreshingWiki, setIsRefreshingWiki] = useState(false);
+  const [wikiRefreshMessage, setWikiRefreshMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   // Subscribe to keybind changes to update tooltips
   const [, forceKeybindUpdate] = useState(0);
@@ -560,6 +563,106 @@ export const CenterControls: React.FC = () => {
     }
   }, []);
 
+  const handleWikiRefresh = useCallback(async () => {
+    const questNameVal = quest?.questName?.trim();
+    if (!questNameVal || !quest) {
+      alert("Load a quest first.");
+      return;
+    }
+    try {
+      setIsRefreshingWiki(true);
+      setWikiRefreshMessage(null);
+
+      // Fetch wiki data (GET only - no server changes)
+      const wikiData = await fetchWikiGuide(questNameVal);
+      console.log('Wiki data received:', wikiData);
+      console.log('First step dialog options:', wikiData?.steps?.[0]?.dialogOptions);
+
+      if (!wikiData || !wikiData.steps || wikiData.steps.length === 0) {
+        setWikiRefreshMessage({ type: "error", text: "Wiki guide not found or empty" });
+        return;
+      }
+
+      // Merge wiki steps into local quest state (LOCAL ONLY - not published)
+      const currentSteps = quest.questSteps || [];
+      const wikiStepCount = wikiData.steps.length;
+
+      // Create new steps array: merge wiki data with existing local data
+      // Wiki items REPLACE existing items (don't preserve old incorrect data)
+      const mergedSteps = wikiData.steps.map((wikiStep, idx) => {
+        const existing = currentSteps[idx];
+
+        return {
+          stepDescription: wikiStep.stepDescription,
+          // Wiki items always win - don't fall back to existing (which may have old incorrect data)
+          itemsNeeded: wikiStep.itemsNeeded || [],
+          itemsRecommended: wikiStep.itemsRecommended || [],
+          // Wiki additional info (sub-steps) replaces existing
+          additionalStepInformation: wikiStep.additionalStepInformation || [],
+          // Wiki dialog options always win
+          dialogOptions: wikiStep.dialogOptions || [],
+          // Preserve highlights, floor, stepId, pathToStep from existing
+          highlights: existing?.highlights || { npc: [], object: [] },
+          floor: existing?.floor ?? 0,
+          stepId: existing?.stepId,
+          pathToStep: existing?.pathToStep,
+        };
+      });
+
+      // Update local state (does NOT publish to server)
+      // Merge quest-level items into questDetails
+      const updatedQuestDetails = {
+        ...quest.questDetails,
+        ItemsRequired: wikiData.itemsNeeded?.length > 0
+          ? wikiData.itemsNeeded
+          : quest.questDetails.ItemsRequired,
+        Recommended: wikiData.itemsRecommended?.length > 0
+          ? wikiData.itemsRecommended
+          : quest.questDetails.Recommended,
+      };
+
+      const updatedQuest = {
+        ...quest,
+        questSteps: mergedSteps,
+        questDetails: updatedQuestDetails,
+      };
+      // Log steps that have items
+      console.log('=== WIKI REFRESH DEBUG ===');
+      console.log('Total steps from wiki:', wikiData.steps.length);
+      for (const wikiStep of wikiData.steps) {
+        if (wikiStep.itemsNeeded?.length > 0 || wikiStep.itemsRecommended?.length > 0) {
+          console.log(`Wiki Step ${wikiStep.stepNumber}: itemsNeeded=[${wikiStep.itemsNeeded?.join('; ')}], itemsRecommended=[${wikiStep.itemsRecommended?.join('; ')}]`);
+        }
+      }
+      console.log('=== MERGED STEPS DEBUG ===');
+      for (let i = 0; i < mergedSteps.length; i++) {
+        const ms = mergedSteps[i];
+        if (ms.itemsNeeded?.length > 0 || ms.itemsRecommended?.length > 0) {
+          console.log(`Merged Step ${i + 1}: itemsNeeded=[${ms.itemsNeeded?.join('; ')}], itemsRecommended=[${ms.itemsRecommended?.join('; ')}]`);
+        }
+      }
+      console.log('Quest-level items needed:', wikiData.itemsNeeded);
+      console.log('Quest-level items recommended:', wikiData.itemsRecommended);
+      EditorStore.setQuest(updatedQuest);
+
+      // Save to local IndexedDB
+      await saveActiveBundle(questToBundle(updatedQuest));
+
+      const stepsChanged = wikiStepCount !== currentSteps.length ?
+        ` (was ${currentSteps.length}, now ${wikiStepCount})` : '';
+      setWikiRefreshMessage({
+        type: "success",
+        text: `✓ Loaded ${wikiStepCount} steps from wiki${stepsChanged}. Publish to save to server.`
+      });
+    } catch (err) {
+      setWikiRefreshMessage({ type: "error", text: err instanceof Error ? err.message : "Failed to refresh" });
+    } finally {
+      setIsRefreshingWiki(false);
+      // Clear message after 8 seconds (longer to read the publish reminder)
+      setTimeout(() => setWikiRefreshMessage(null), 8000);
+    }
+  }, [quest]);
+
   return (
     <>
       <div
@@ -654,7 +757,29 @@ export const CenterControls: React.FC = () => {
               >
                 Copy Plot Link
               </button>
+              <button
+                onClick={() => void handleWikiRefresh()}
+                disabled={busy || isRefreshingWiki || !quest}
+                style={{ fontSize: "0.75rem", padding: "5px 12px" }}
+                title="Fetch latest quest steps from RuneScape Wiki"
+              >
+                {isRefreshingWiki ? "Refreshing..." : "🔄 Wiki Refresh"}
+              </button>
             </>
+          )}
+          {wikiRefreshMessage && (
+            <span
+              style={{
+                fontSize: "0.7rem",
+                padding: "3px 8px",
+                borderRadius: 3,
+                marginLeft: 8,
+                background: wikiRefreshMessage.type === "success" ? "rgba(34, 197, 94, 0.2)" : "rgba(239, 68, 68, 0.2)",
+                color: wikiRefreshMessage.type === "success" ? "#4ade80" : "#f87171",
+              }}
+            >
+              {wikiRefreshMessage.text}
+            </span>
           )}
 
           <div

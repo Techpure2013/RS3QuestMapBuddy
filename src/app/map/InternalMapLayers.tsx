@@ -325,6 +325,70 @@ const InternalMapLayers: React.FC = () => {
           return;
         }
 
+        // MAP LOCATION RECORDING MODE - 3-click flow: center, corner1, corner2
+        if (currentUi.mapLocationRecordMode) {
+          const recordMode = currentUi.mapLocationRecordMode;
+
+          if (recordMode === "center") {
+            console.log("📍 Map Location: Center set at", snappedCoord);
+            EditorStore.setUi({
+              mapLocationCenter: snappedCoord,
+              mapLocationRecordMode: "corner1",
+            });
+            window.dispatchEvent(new CustomEvent("mapLocationRecordProgress", {
+              detail: { step: "center", coord: snappedCoord }
+            }));
+            return;
+          }
+
+          if (recordMode === "corner1") {
+            console.log("📍 Map Location: Corner 1 set at", snappedCoord);
+            EditorStore.setUi({
+              mapLocationCorner1: snappedCoord,
+              mapLocationRecordMode: "corner2",
+            });
+            window.dispatchEvent(new CustomEvent("mapLocationRecordProgress", {
+              detail: { step: "corner1", coord: snappedCoord }
+            }));
+            return;
+          }
+
+          if (recordMode === "corner2") {
+            const center = currentUi.mapLocationCenter;
+            const corner1 = currentUi.mapLocationCorner1;
+
+            if (!center || !corner1) {
+              console.error("❌ Map Location: Missing center or corner1");
+              EditorStore.setUi({ mapLocationRecordMode: null });
+              return;
+            }
+
+            // Calculate bounds from corner1 and corner2
+            const minLat = Math.min(corner1.lat, snappedCoord.lat);
+            const maxLat = Math.max(corner1.lat, snappedCoord.lat);
+            const minLng = Math.min(corner1.lng, snappedCoord.lng);
+            const maxLng = Math.max(corner1.lng, snappedCoord.lng);
+
+            console.log("📍 Map Location: Complete!", { center, bounds: [[minLat, minLng], [maxLat, maxLng]] });
+
+            // Dispatch completion event with all data
+            window.dispatchEvent(new CustomEvent("mapLocationRecordComplete", {
+              detail: {
+                center: [center.lat, center.lng],
+                bounds: [[minLat, minLng], [maxLat, maxLng]],
+              }
+            }));
+
+            // Reset recording mode
+            EditorStore.setUi({
+              mapLocationRecordMode: null,
+              mapLocationCenter: null,
+              mapLocationCorner1: null,
+            });
+            return;
+          }
+        }
+
         // NORMAL CAPTURE MODE LOGIC
         const mode = currentUi.captureMode;
         const sel = EditorStore.getState().selection;

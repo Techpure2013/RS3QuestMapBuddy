@@ -128,6 +128,11 @@ export interface UiState {
   selectedWaypointIndex?: number | null;
   // Focus target name input after adding new NPC/Object
   focusTargetName?: boolean;
+
+  // Map location recording mode (click center, then click corners for bounds)
+  mapLocationRecordMode?: "center" | "corner1" | "corner2" | null;
+  mapLocationCenter?: { lat: number; lng: number } | null;
+  mapLocationCorner1?: { lat: number; lng: number } | null;
 }
 
 export interface HighlightNpc {

@@ -368,14 +368,16 @@ export const QuestDetailsEditor: React.FC<QuestDetailsEditorProps> = ({
         <h3>Quest Details</h3>
         <div className="quest-details-actions">
           {questJson?.questName && !isEditing && (
-            <button
-              onClick={handleRefresh}
-              className="refresh-button"
-              title="Refresh quest data from database"
-              disabled={isLoading}
-            >
-              <IconRefresh size={18} />
-            </button>
+            <>
+              <button
+                onClick={handleRefresh}
+                className="refresh-button"
+                title="Refresh quest data from database"
+                disabled={isLoading}
+              >
+                <IconRefresh size={18} />
+              </button>
+            </>
           )}
           {isEditing ? (
             <>
