@@ -72,7 +72,10 @@ const WikiField: React.FC<{
   onDragStart: (data: DragData) => void;
   onDragEnd: () => void;
   isDragging: boolean;
-}> = ({ stepIndex, field, content, isSelected, onToggleSelect, onDragStart, onDragEnd, isDragging }) => {
+  isLinking: boolean;
+  onStartLink: () => void;
+  onCancelLink: () => void;
+}> = ({ stepIndex, field, content, isSelected, onToggleSelect, onDragStart, onDragEnd, isDragging, isLinking, onStartLink, onCancelLink }) => {
   const handleDragStart = (e: React.DragEvent) => {
     const data: DragData = { sourceStepIndex: stepIndex, fieldName: field, content };
     e.dataTransfer.setData("application/json", JSON.stringify(data));
@@ -95,8 +98,8 @@ const WikiField: React.FC<{
       style={{
         marginBottom: 8,
         padding: 8,
-        background: isSelected ? "rgba(34, 197, 94, 0.15)" : "rgba(255, 255, 255, 0.03)",
-        border: `1px solid ${isSelected ? "#22c55e" : "#374151"}`,
+        background: isLinking ? "rgba(168, 85, 247, 0.2)" : isSelected ? "rgba(34, 197, 94, 0.15)" : "rgba(255, 255, 255, 0.03)",
+        border: `1px solid ${isLinking ? "#a855f7" : isSelected ? "#22c55e" : "#374151"}`,
         borderRadius: 4,
         cursor: "pointer",
         opacity: isDragging ? 0.5 : 1,
@@ -112,8 +115,9 @@ const WikiField: React.FC<{
           style={{ marginTop: 2, cursor: "pointer", accentColor: "#22c55e" }}
         />
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 11, color: "#9ca3af", marginBottom: 2, fontWeight: 500 }}>
+          <div style={{ fontSize: 11, color: isLinking ? "#a855f7" : "#9ca3af", marginBottom: 2, fontWeight: 500, display: "flex", alignItems: "center", gap: 6 }}>
             {FIELD_LABELS[field]}
+            {isLinking && <span style={{ fontSize: 9, color: "#a855f7" }}>Click target →</span>}
           </div>
           {typeof content === "string" ? (
             <div style={{ fontSize: 13, color: "#e5e7eb", whiteSpace: "pre-wrap", lineHeight: 1.4 }}>
@@ -127,6 +131,25 @@ const WikiField: React.FC<{
             </ul>
           )}
         </div>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            isLinking ? onCancelLink() : onStartLink();
+          }}
+          style={{
+            padding: "2px 4px",
+            fontSize: 9,
+            background: isLinking ? "#a855f7" : "#8b5cf6",
+            border: "none",
+            borderRadius: 2,
+            color: "#fff",
+            cursor: "pointer",
+            whiteSpace: "nowrap",
+          }}
+          title={isLinking ? "Cancel" : "Click, then click target field"}
+        >
+          {isLinking ? "✕" : "→"}
+        </button>
         <div
           draggable
           onDragStart={handleDragStart}
@@ -157,7 +180,9 @@ const LocalField: React.FC<{
   onDrop: (targetStep: number, targetField: FieldName, data: DragData) => void;
   onClearDrop: () => void;
   dragActive: boolean;
-}> = ({ stepIndex, field, content, pendingDrop, onDrop, onClearDrop, dragActive }) => {
+  linkingActive: boolean;
+  onLinkClick: () => void;
+}> = ({ stepIndex, field, content, pendingDrop, onDrop, onClearDrop, dragActive, linkingActive, onLinkClick }) => {
   const [isOver, setIsOver] = useState(false);
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -182,34 +207,39 @@ const LocalField: React.FC<{
   };
 
   const hasContent = content !== null && (typeof content === "string" ? content.length > 0 : content.length > 0);
-  const showDropZone = dragActive || isOver || pendingDrop;
+  const showDropZone = dragActive || isOver || pendingDrop || linkingActive;
 
   return (
     <div
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
+      onClick={linkingActive ? onLinkClick : undefined}
       style={{
         marginBottom: 8,
         padding: 8,
-        background: pendingDrop
+        background: linkingActive
+          ? "rgba(168, 85, 247, 0.15)"
+          : pendingDrop
           ? "rgba(234, 179, 8, 0.15)"
           : isOver
           ? "rgba(59, 130, 246, 0.2)"
           : "rgba(255, 255, 255, 0.03)",
         border: `1px ${isOver ? "dashed" : "solid"} ${
-          pendingDrop ? "#eab308" : isOver ? "#3b82f6" : "#374151"
+          linkingActive ? "#a855f7" : pendingDrop ? "#eab308" : isOver ? "#3b82f6" : "#374151"
         }`,
         borderRadius: 4,
         minHeight: showDropZone && !hasContent ? 40 : undefined,
         transition: "all 0.15s ease",
+        cursor: linkingActive ? "pointer" : undefined,
       }}
     >
-      <div style={{ fontSize: 11, color: "#9ca3af", marginBottom: 2, fontWeight: 500 }}>
+      <div style={{ fontSize: 11, color: linkingActive ? "#a855f7" : "#9ca3af", marginBottom: 2, fontWeight: 500, display: "flex", alignItems: "center", gap: 6 }}>
         {FIELD_LABELS[field]}
+        {linkingActive && <span style={{ fontSize: 9, color: "#a855f7" }}>Click to link here</span>}
         {pendingDrop && (
           <span
-            onClick={onClearDrop}
+            onClick={(e) => { e.stopPropagation(); onClearDrop(); }}
             style={{
               marginLeft: 8,
               background: "#eab308",
@@ -334,7 +364,10 @@ const WikiStepCard: React.FC<{
   onDragStart: (data: DragData) => void;
   onDragEnd: () => void;
   draggingField: DragData | null;
-}> = ({ step, stepIndex, selectedFields, onToggleField, onSelectAll, onFullOverwrite, onDragStart, onDragEnd, draggingField }) => {
+  linkingField: FieldName | null;
+  onStartFieldLink: (field: FieldName, content: string | string[]) => void;
+  onCancelLink: () => void;
+}> = ({ step, stepIndex, selectedFields, onToggleField, onSelectAll, onFullOverwrite, onDragStart, onDragEnd, draggingField, linkingField, onStartFieldLink, onCancelLink }) => {
   if (!step) {
     return (
       <div
@@ -362,8 +395,8 @@ const WikiStepCard: React.FC<{
       style={{
         padding: 12,
         marginBottom: 8,
-        background: selectedFields.size > 0 ? "rgba(34, 197, 94, 0.12)" : "rgba(34, 197, 94, 0.08)",
-        border: `1px solid ${selectedFields.size > 0 ? "#22c55e88" : "#22c55e55"}`,
+        background: linkingField ? "rgba(168, 85, 247, 0.12)" : selectedFields.size > 0 ? "rgba(34, 197, 94, 0.12)" : "rgba(34, 197, 94, 0.08)",
+        border: `1px solid ${linkingField ? "#a855f788" : selectedFields.size > 0 ? "#22c55e88" : "#22c55e55"}`,
         borderRadius: 6,
       }}
     >
@@ -435,6 +468,7 @@ const WikiStepCard: React.FC<{
           const content = getFieldContent(step, field);
           if (!content) return null;
           const isDragging = draggingField?.sourceStepIndex === stepIndex && draggingField?.fieldName === field;
+          const isFieldLinking = linkingField === field;
           return (
             <WikiField
               key={field}
@@ -446,6 +480,9 @@ const WikiStepCard: React.FC<{
               onDragStart={onDragStart}
               onDragEnd={onDragEnd}
               isDragging={isDragging}
+              isLinking={isFieldLinking}
+              onStartLink={() => onStartFieldLink(field, content)}
+              onCancelLink={onCancelLink}
             />
           );
         })
@@ -465,7 +502,9 @@ const LocalStepCard: React.FC<{
   onClearFieldDrop: (key: string) => void;
   onClearInsertDrop: (key: string) => void;
   dragActive: boolean;
-}> = ({ step, stepIndex, pendingDrops, pendingInserts, onFieldDrop, onInsertDrop, onClearFieldDrop, onClearInsertDrop, dragActive }) => {
+  linkingActive: boolean;
+  onFieldLinkClick: (field: FieldName) => void;
+}> = ({ step, stepIndex, pendingDrops, pendingInserts, onFieldDrop, onInsertDrop, onClearFieldDrop, onClearInsertDrop, dragActive, linkingActive, onFieldLinkClick }) => {
   const fields: FieldName[] = ["description", "itemsNeeded", "itemsRecommended", "dialogOptions", "additionalInfo"];
 
   const beforeKey = `insert-${stepIndex}-before`;
@@ -514,9 +553,10 @@ const LocalStepCard: React.FC<{
       style={{
         padding: 12,
         marginBottom: 8,
-        background: "rgba(59, 130, 246, 0.08)",
-        border: "1px solid #3b82f655",
+        background: linkingActive ? "rgba(168, 85, 247, 0.08)" : "rgba(59, 130, 246, 0.08)",
+        border: `1px solid ${linkingActive ? "#a855f755" : "#3b82f655"}`,
         borderRadius: 6,
+        transition: "all 0.15s ease",
       }}
     >
       {/* Insert Before zone */}
@@ -551,6 +591,11 @@ const LocalStepCard: React.FC<{
         >
           Step {stepIndex + 1}
         </span>
+        {linkingActive && (
+          <span style={{ fontSize: 10, color: "#a855f7", fontWeight: 500 }}>
+            Click a field below to link
+          </span>
+        )}
       </div>
 
       {/* Field drop zones */}
@@ -568,6 +613,8 @@ const LocalStepCard: React.FC<{
             onDrop={onFieldDrop}
             onClearDrop={() => onClearFieldDrop(dropKey)}
             dragActive={dragActive}
+            linkingActive={linkingActive}
+            onLinkClick={() => onFieldLinkClick(field)}
           />
         );
       })}
@@ -588,7 +635,10 @@ const LocalStepCard: React.FC<{
 
 export const WikiMergeModal: React.FC = () => {
   const isOpen = useMergeIsOpen();
-  const { questName, wikiSteps, localSteps } = MergeStore.getState();
+  const { questName, wikiSteps, localSteps: initialLocalSteps } = MergeStore.getState();
+
+  // Current local steps (updated when we make immediate changes like Full Overwrite or Link)
+  const [currentLocalSteps, setCurrentLocalSteps] = useState<QuestStep[]>(initialLocalSteps);
 
   // Selected fields per wiki step: Map<stepIndex, Set<fieldName>>
   const [selectedFields, setSelectedFields] = useState<Map<number, Set<FieldName>>>(new Map());
@@ -602,7 +652,8 @@ export const WikiMergeModal: React.FC = () => {
   // Currently dragging field
   const [draggingField, setDraggingField] = useState<DragData | null>(null);
 
-
+  // Click-to-link mode: which wiki step/field is being linked (null = not linking)
+  const [linkingSource, setLinkingSource] = useState<{ stepIndex: number; field: FieldName; content: string | string[] } | null>(null);
 
   // Keyboard handler
   const handleKeyDown = useCallback(
@@ -627,8 +678,10 @@ export const WikiMergeModal: React.FC = () => {
       setPendingDrops(new Map());
       setPendingInserts(new Map());
       setDraggingField(null);
+      setLinkingSource(null);
+      setCurrentLocalSteps(initialLocalSteps);
     }
-  }, [isOpen]);
+  }, [isOpen, initialLocalSteps]);
 
   // Calculate pending count
   const pendingCount = selectedFields.size + pendingDrops.size + pendingInserts.size;
@@ -725,10 +778,11 @@ export const WikiMergeModal: React.FC = () => {
       draft.questSteps = updatedSteps;
     });
 
-    // Save to IndexedDB
+    // Save to IndexedDB and update local view
     const updatedQuest = EditorStore.getState().quest;
     if (updatedQuest) {
       saveActiveBundle(questToBundle(updatedQuest));
+      setCurrentLocalSteps([...updatedQuest.questSteps]);
     }
 
     // Clear any selections for this step
@@ -744,7 +798,7 @@ export const WikiMergeModal: React.FC = () => {
     if (wikiSteps.length === 0) return;
 
     const confirm = window.confirm(
-      `This will overwrite ALL ${localSteps.length} local steps with ${wikiSteps.length} wiki steps. Continue?`
+      `This will overwrite ALL ${currentLocalSteps.length} local steps with ${wikiSteps.length} wiki steps. Continue?`
     );
     if (!confirm) return;
 
@@ -781,6 +835,50 @@ export const WikiMergeModal: React.FC = () => {
     setPendingDrops(new Map());
     setPendingInserts(new Map());
     MergeStore.closeMerge();
+  };
+
+  // Handle click-to-link: apply wiki field to a specific local field
+  const handleLinkToLocalField = (localStepIndex: number, localField: FieldName) => {
+    if (!linkingSource) return;
+
+    const quest = EditorStore.getState().quest;
+    if (!quest) return;
+
+    // Create updated steps array
+    const updatedSteps = [...quest.questSteps];
+
+    // Ensure the local step exists (create if needed)
+    while (updatedSteps.length <= localStepIndex) {
+      updatedSteps.push({
+        stepDescription: "",
+        itemsNeeded: [],
+        itemsRecommended: [],
+        dialogOptions: [],
+        additionalStepInformation: [],
+        highlights: { npc: [], object: [] },
+        floor: 0,
+      });
+    }
+
+    // Apply the linked field content
+    const localStep = { ...updatedSteps[localStepIndex] };
+    applyFieldContent(localStep, localField, linkingSource.content);
+    updatedSteps[localStepIndex] = localStep;
+
+    // Apply to store
+    EditorStore.patchQuest((draft) => {
+      draft.questSteps = updatedSteps;
+    });
+
+    // Save to IndexedDB and update local view
+    const updatedQuest = EditorStore.getState().quest;
+    if (updatedQuest) {
+      saveActiveBundle(questToBundle(updatedQuest));
+      setCurrentLocalSteps([...updatedQuest.questSteps]);
+    }
+
+    // Clear linking mode
+    setLinkingSource(null);
   };
 
   // Handle field drop onto local step field
@@ -841,7 +939,7 @@ export const WikiMergeModal: React.FC = () => {
     }
 
     // Start with local steps copy
-    const finalSteps: QuestStep[] = localSteps.map((step) => ({ ...step }));
+    const finalSteps: QuestStep[] = currentLocalSteps.map((step) => ({ ...step }));
 
     // Track insertions to apply at the end (to avoid index shifting issues)
     const insertsBefore: Map<number, QuestStep[]> = new Map();
@@ -957,7 +1055,7 @@ export const WikiMergeModal: React.FC = () => {
   if (!isOpen) return null;
 
   // Calculate step counts for display
-  const maxSteps = Math.max(wikiSteps.length, localSteps.length);
+  const maxSteps = Math.max(wikiSteps.length, currentLocalSteps.length);
 
   return (
     <div
@@ -1081,7 +1179,7 @@ export const WikiMergeModal: React.FC = () => {
             }}
           >
             <span style={{ fontSize: 13, fontWeight: 600, color: "#3b82f6" }}>
-              Local Steps ({localSteps.length}) - Drop Targets
+              Local Steps ({currentLocalSteps.length}) - Drop Targets
             </span>
           </div>
         </div>
@@ -1108,6 +1206,9 @@ export const WikiMergeModal: React.FC = () => {
                 onDragStart={setDraggingField}
                 onDragEnd={() => setDraggingField(null)}
                 draggingField={draggingField}
+                linkingField={linkingSource?.stepIndex === i ? linkingSource.field : null}
+                onStartFieldLink={(field, content) => setLinkingSource({ stepIndex: i, field, content })}
+                onCancelLink={() => setLinkingSource(null)}
               />
             ))}
 
@@ -1138,7 +1239,7 @@ export const WikiMergeModal: React.FC = () => {
             {Array.from({ length: maxSteps }, (_, i) => (
               <LocalStepCard
                 key={`local-${i}`}
-                step={localSteps[i] || null}
+                step={currentLocalSteps[i] || null}
                 stepIndex={i}
                 pendingDrops={pendingDrops}
                 pendingInserts={pendingInserts}
@@ -1147,10 +1248,12 @@ export const WikiMergeModal: React.FC = () => {
                 onClearFieldDrop={handleClearFieldDrop}
                 onClearInsertDrop={handleClearInsertDrop}
                 dragActive={!!draggingField}
+                linkingActive={linkingSource !== null}
+                onFieldLinkClick={(field) => handleLinkToLocalField(i, field)}
               />
             ))}
 
-            {localSteps.length === 0 && (
+            {currentLocalSteps.length === 0 && (
               <div style={{ color: "#6b7280", textAlign: "center", padding: 24 }}>
                 No local steps available
               </div>
