@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 const STORAGE_KEY = "richtext-color-palette";
 
@@ -29,6 +29,27 @@ function rgbToHex(r: number, g: number, b: number): string {
       .join("")
       .toUpperCase()
   );
+}
+
+// Convert HSV to RGB
+function hsvToRgb(h: number, s: number, v: number): { r: number; g: number; b: number } {
+  const c = v * s;
+  const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+  const m = v - c;
+  let r = 0, g = 0, b = 0;
+
+  if (h < 60) { r = c; g = x; b = 0; }
+  else if (h < 120) { r = x; g = c; b = 0; }
+  else if (h < 180) { r = 0; g = c; b = x; }
+  else if (h < 240) { r = 0; g = x; b = c; }
+  else if (h < 300) { r = x; g = 0; b = c; }
+  else { r = c; g = 0; b = x; }
+
+  return {
+    r: Math.round((r + m) * 255),
+    g: Math.round((g + m) * 255),
+    b: Math.round((b + m) * 255),
+  };
 }
 
 function loadPalette(): SavedColor[] {
@@ -67,13 +88,14 @@ interface ColorPickerProps {
 
 export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) => {
   const [palette, setPalette] = useState<SavedColor[]>([]);
-  const [hexInput, setHexInput] = useState("#");
-  const [rgbR, setRgbR] = useState("");
-  const [rgbG, setRgbG] = useState("");
-  const [rgbB, setRgbB] = useState("");
   const [previewColor, setPreviewColor] = useState("#FFFFFF");
   const [useRgbFormat, setUseRgbFormat] = useState(false);
+  const [hue, setHue] = useState(0);
+  const [isDraggingSwatch, setIsDraggingSwatch] = useState(false);
+  const [isDraggingHue, setIsDraggingHue] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const swatchRef = useRef<HTMLCanvasElement>(null);
+  const hueRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     setPalette(loadPalette());
@@ -90,52 +112,111 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [onClose]);
 
-  // Update preview when hex changes
-  useEffect(() => {
-    if (/^#[0-9A-Fa-f]{6}$/.test(hexInput)) {
-      setPreviewColor(hexInput);
-      const rgb = hexToRgb(hexInput);
-      if (rgb) {
-        setRgbR(rgb.r.toString());
-        setRgbG(rgb.g.toString());
-        setRgbB(rgb.b.toString());
-      }
-    }
-  }, [hexInput]);
+  // Draw the saturation/value swatch
+  const drawSwatch = useCallback(() => {
+    const canvas = swatchRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-  // Update preview when RGB changes
-  useEffect(() => {
-    const r = parseInt(rgbR) || 0;
-    const g = parseInt(rgbG) || 0;
-    const b = parseInt(rgbB) || 0;
-    if (r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255) {
-      const hex = rgbToHex(r, g, b);
-      setPreviewColor(hex);
-      if (rgbR && rgbG && rgbB) {
-        setHexInput(hex);
+    const width = canvas.width;
+    const height = canvas.height;
+
+    // Draw color gradient (saturation horizontal, value vertical)
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        const s = x / width;
+        const v = 1 - y / height;
+        const { r, g, b } = hsvToRgb(hue, s, v);
+        ctx.fillStyle = `rgb(${r},${g},${b})`;
+        ctx.fillRect(x, y, 1, 1);
       }
     }
-  }, [rgbR, rgbG, rgbB]);
+  }, [hue]);
+
+  // Draw the hue bar
+  const drawHueBar = useCallback(() => {
+    const canvas = hueRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const width = canvas.width;
+    const height = canvas.height;
+
+    // Draw hue gradient
+    for (let x = 0; x < width; x++) {
+      const h = (x / width) * 360;
+      const { r, g, b } = hsvToRgb(h, 1, 1);
+      ctx.fillStyle = `rgb(${r},${g},${b})`;
+      ctx.fillRect(x, 0, 1, height);
+    }
+  }, []);
+
+  useEffect(() => {
+    drawSwatch();
+    drawHueBar();
+  }, [drawSwatch, drawHueBar]);
+
+  // Handle swatch click/drag
+  const handleSwatchInteraction = useCallback((e: React.MouseEvent<HTMLCanvasElement> | MouseEvent) => {
+    const canvas = swatchRef.current;
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    const x = Math.max(0, Math.min(canvas.width, (e.clientX - rect.left) * (canvas.width / rect.width)));
+    const y = Math.max(0, Math.min(canvas.height, (e.clientY - rect.top) * (canvas.height / rect.height)));
+
+    const s = x / canvas.width;
+    const v = 1 - y / canvas.height;
+    const { r, g, b } = hsvToRgb(hue, s, v);
+    setPreviewColor(rgbToHex(r, g, b));
+  }, [hue]);
+
+  // Handle hue bar click/drag
+  const handleHueInteraction = useCallback((e: React.MouseEvent<HTMLCanvasElement> | MouseEvent) => {
+    const canvas = hueRef.current;
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    const x = Math.max(0, Math.min(canvas.width, (e.clientX - rect.left) * (canvas.width / rect.width)));
+    const newHue = (x / canvas.width) * 360;
+    setHue(newHue);
+  }, []);
+
+  // Mouse move/up handlers for dragging
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (isDraggingSwatch) handleSwatchInteraction(e);
+      if (isDraggingHue) handleHueInteraction(e);
+    };
+    const handleMouseUp = () => {
+      setIsDraggingSwatch(false);
+      setIsDraggingHue(false);
+    };
+
+    if (isDraggingSwatch || isDraggingHue) {
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+      return () => {
+        document.removeEventListener("mousemove", handleMouseMove);
+        document.removeEventListener("mouseup", handleMouseUp);
+      };
+    }
+  }, [isDraggingSwatch, isDraggingHue, handleSwatchInteraction, handleHueInteraction]);
 
   const handleApply = () => {
     if (useRgbFormat) {
-      const r = parseInt(rgbR) || 0;
-      const g = parseInt(rgbG) || 0;
-      const b = parseInt(rgbB) || 0;
-      onSelect(`[${r},${g},${b}]`);
+      const rgb = hexToRgb(previewColor);
+      if (rgb) {
+        onSelect(`[${rgb.r},${rgb.g},${rgb.b}]`);
+      } else {
+        onSelect(`[${previewColor}]`);
+      }
     } else {
       onSelect(`[${previewColor}]`);
     }
   };
 
   const handleSelectFromPalette = (color: string) => {
-    setHexInput(color);
-    const rgb = hexToRgb(color);
-    if (rgb) {
-      setRgbR(rgb.r.toString());
-      setRgbG(rgb.g.toString());
-      setRgbB(rgb.b.toString());
-    }
     setPreviewColor(color);
   };
 
@@ -149,22 +230,11 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
     }
   };
 
-  const handleToggleFavorite = (hex: string) => {
-    const newPalette = palette.map((c) =>
-      c.hex === hex ? { ...c, favorite: !c.favorite } : c
-    );
-    setPalette(newPalette);
-    savePalette(newPalette);
-  };
-
   const handleRemoveFromPalette = (hex: string) => {
     const newPalette = palette.filter((c) => c.hex !== hex);
     setPalette(newPalette);
     savePalette(newPalette);
   };
-
-  const favorites = palette.filter((c) => c.favorite);
-  const nonFavorites = palette.filter((c) => !c.favorite);
 
   const buttonStyle: React.CSSProperties = {
     padding: "4px 8px",
@@ -193,6 +263,46 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
         boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
       }}
     >
+      {/* Color Swatch */}
+      <div style={{ marginBottom: 10 }}>
+        <canvas
+          ref={swatchRef}
+          width={256}
+          height={120}
+          style={{
+            width: "100%",
+            height: 120,
+            borderRadius: 4,
+            cursor: "crosshair",
+            display: "block",
+          }}
+          onMouseDown={(e) => {
+            setIsDraggingSwatch(true);
+            handleSwatchInteraction(e);
+          }}
+        />
+      </div>
+
+      {/* Hue Bar */}
+      <div style={{ marginBottom: 10 }}>
+        <canvas
+          ref={hueRef}
+          width={256}
+          height={16}
+          style={{
+            width: "100%",
+            height: 16,
+            borderRadius: 3,
+            cursor: "pointer",
+            display: "block",
+          }}
+          onMouseDown={(e) => {
+            setIsDraggingHue(true);
+            handleHueInteraction(e);
+          }}
+        />
+      </div>
+
       {/* Preview */}
       <div style={{ display: "flex", gap: 8, marginBottom: 10, alignItems: "center" }}>
         <div
@@ -213,93 +323,6 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
         <button onClick={handleAddToPalette} style={buttonStyle} title="Add to palette">
           + Save
         </button>
-      </div>
-
-      {/* Hex Input */}
-      <div style={{ marginBottom: 8 }}>
-        <label style={{ fontSize: "0.65rem", color: "#9ca3af", display: "block", marginBottom: 3 }}>
-          HEX
-        </label>
-        <input
-          type="text"
-          value={hexInput}
-          onChange={(e) => setHexInput(e.target.value.toUpperCase())}
-          placeholder="#FFFFFF"
-          maxLength={7}
-          style={{
-            width: "100%",
-            padding: "5px 8px",
-            background: "#111827",
-            border: "1px solid #374151",
-            borderRadius: 3,
-            color: "#e5e7eb",
-            fontSize: "0.8rem",
-            fontFamily: "monospace",
-          }}
-        />
-      </div>
-
-      {/* RGB Input */}
-      <div style={{ marginBottom: 10 }}>
-        <label style={{ fontSize: "0.65rem", color: "#9ca3af", display: "block", marginBottom: 3 }}>
-          RGB
-        </label>
-        <div style={{ display: "flex", gap: 6 }}>
-          <input
-            type="number"
-            min={0}
-            max={255}
-            value={rgbR}
-            onChange={(e) => setRgbR(e.target.value)}
-            placeholder="R"
-            style={{
-              flex: 1,
-              padding: "5px 6px",
-              background: "#111827",
-              border: "1px solid #374151",
-              borderRadius: 3,
-              color: "#ef4444",
-              fontSize: "0.8rem",
-              fontFamily: "monospace",
-            }}
-          />
-          <input
-            type="number"
-            min={0}
-            max={255}
-            value={rgbG}
-            onChange={(e) => setRgbG(e.target.value)}
-            placeholder="G"
-            style={{
-              flex: 1,
-              padding: "5px 6px",
-              background: "#111827",
-              border: "1px solid #374151",
-              borderRadius: 3,
-              color: "#22c55e",
-              fontSize: "0.8rem",
-              fontFamily: "monospace",
-            }}
-          />
-          <input
-            type="number"
-            min={0}
-            max={255}
-            value={rgbB}
-            onChange={(e) => setRgbB(e.target.value)}
-            placeholder="B"
-            style={{
-              flex: 1,
-              padding: "5px 6px",
-              background: "#111827",
-              border: "1px solid #374151",
-              borderRadius: 3,
-              color: "#3b82f6",
-              fontSize: "0.8rem",
-              fontFamily: "monospace",
-            }}
-          />
-        </div>
       </div>
 
       {/* Format Toggle */}
@@ -348,19 +371,24 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
         </div>
       </div>
 
-      {/* Favorites */}
-      {favorites.length > 0 && (
+
+      {/* Saved Palette */}
+      {palette.length > 0 && (
         <div style={{ marginBottom: 10 }}>
-          <div style={{ fontSize: "0.65rem", color: "#fbbf24", marginBottom: 4 }}>★ Favorites</div>
+          <div style={{ fontSize: "0.65rem", color: "#9ca3af", marginBottom: 4 }}>Saved Colors</div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-            {favorites.map((c) => (
-              <div key={c.hex} style={{ position: "relative" }}>
+            {palette.map((c) => (
+              <div
+                key={c.hex}
+                style={{ position: "relative" }}
+                className="saved-color-item"
+              >
                 <button
                   onClick={() => handleSelectFromPalette(c.hex)}
                   title={c.hex}
                   style={{
-                    width: 24,
-                    height: 24,
+                    width: 20,
+                    height: 20,
                     background: c.hex,
                     border: previewColor === c.hex ? "2px solid #fff" : "1px solid #4b5563",
                     borderRadius: 3,
@@ -369,76 +397,28 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
                   }}
                 />
                 <button
-                  onClick={() => handleToggleFavorite(c.hex)}
-                  title="Unfavorite"
+                  onClick={() => handleRemoveFromPalette(c.hex)}
+                  title="Remove"
                   style={{
                     position: "absolute",
                     top: -4,
                     right: -4,
-                    width: 12,
-                    height: 12,
-                    background: "#fbbf24",
+                    width: 10,
+                    height: 10,
+                    background: "#ef4444",
                     border: "none",
                     borderRadius: "50%",
                     cursor: "pointer",
-                    fontSize: "8px",
-                    lineHeight: "10px",
                     padding: 0,
-                    color: "#000",
+                    fontSize: 7,
+                    lineHeight: "10px",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
-                  ★
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Saved Palette */}
-      {nonFavorites.length > 0 && (
-        <div style={{ marginBottom: 10 }}>
-          <div style={{ fontSize: "0.65rem", color: "#9ca3af", marginBottom: 4 }}>Saved Colors</div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-            {nonFavorites.map((c) => (
-              <div key={c.hex} style={{ position: "relative" }}>
-                <button
-                  onClick={() => handleSelectFromPalette(c.hex)}
-                  onContextMenu={(e) => {
-                    e.preventDefault();
-                    handleRemoveFromPalette(c.hex);
-                  }}
-                  title={`${c.hex} (right-click to remove)`}
-                  style={{
-                    width: 24,
-                    height: 24,
-                    background: c.hex,
-                    border: previewColor === c.hex ? "2px solid #fff" : "1px solid #4b5563",
-                    borderRadius: 3,
-                    cursor: "pointer",
-                    padding: 0,
-                  }}
-                />
-                <button
-                  onClick={() => handleToggleFavorite(c.hex)}
-                  title="Add to favorites"
-                  style={{
-                    position: "absolute",
-                    top: -4,
-                    right: -4,
-                    width: 12,
-                    height: 12,
-                    background: "#4b5563",
-                    border: "none",
-                    borderRadius: "50%",
-                    cursor: "pointer",
-                    fontSize: "8px",
-                    lineHeight: "10px",
-                    padding: 0,
-                    color: "#9ca3af",
-                  }}
-                >
-                  ☆
+                  ×
                 </button>
               </div>
             ))}

@@ -19,6 +19,8 @@ import { recordQuestNpcLocations } from "./../../feature/npcPublisher";
 import { clearImageCache } from "../../idb/imageCache";
 import { clearObservedChatheads } from "idb/chatheadsObserved";
 import { fetchWikiGuide } from "../../api/wikiApi";
+import { MergeStore } from "../../state/mergeStore";
+import { WikiMergeModal } from "../components/WikiMerge";
 
 import { useAuth } from "./../../state/useAuth";
 import { fetchMe } from "./../../api/auth";
@@ -583,76 +585,13 @@ export const CenterControls: React.FC = () => {
         return;
       }
 
-      // Merge wiki steps into local quest state (LOCAL ONLY - not published)
-      const currentSteps = quest.questSteps || [];
-      const wikiStepCount = wikiData.steps.length;
+      // Open merge modal for user to review changes
+      MergeStore.openMerge(questNameVal, wikiData.steps, quest.questSteps || []);
 
-      // Create new steps array: merge wiki data with existing local data
-      // Wiki items REPLACE existing items (don't preserve old incorrect data)
-      const mergedSteps = wikiData.steps.map((wikiStep, idx) => {
-        const existing = currentSteps[idx];
-
-        return {
-          stepDescription: wikiStep.stepDescription,
-          // Wiki items always win - don't fall back to existing (which may have old incorrect data)
-          itemsNeeded: wikiStep.itemsNeeded || [],
-          itemsRecommended: wikiStep.itemsRecommended || [],
-          // Wiki additional info (sub-steps) replaces existing
-          additionalStepInformation: wikiStep.additionalStepInformation || [],
-          // Wiki dialog options always win
-          dialogOptions: wikiStep.dialogOptions || [],
-          // Preserve highlights, floor, stepId, pathToStep from existing
-          highlights: existing?.highlights || { npc: [], object: [] },
-          floor: existing?.floor ?? 0,
-          stepId: existing?.stepId,
-          pathToStep: existing?.pathToStep,
-        };
-      });
-
-      // Update local state (does NOT publish to server)
-      // Merge quest-level items into questDetails
-      const updatedQuestDetails = {
-        ...quest.questDetails,
-        ItemsRequired: wikiData.itemsNeeded?.length > 0
-          ? wikiData.itemsNeeded
-          : quest.questDetails.ItemsRequired,
-        Recommended: wikiData.itemsRecommended?.length > 0
-          ? wikiData.itemsRecommended
-          : quest.questDetails.Recommended,
-      };
-
-      const updatedQuest = {
-        ...quest,
-        questSteps: mergedSteps,
-        questDetails: updatedQuestDetails,
-      };
-      // Log steps that have items
-      console.log('=== WIKI REFRESH DEBUG ===');
-      console.log('Total steps from wiki:', wikiData.steps.length);
-      for (const wikiStep of wikiData.steps) {
-        if (wikiStep.itemsNeeded?.length > 0 || wikiStep.itemsRecommended?.length > 0) {
-          console.log(`Wiki Step ${wikiStep.stepNumber}: itemsNeeded=[${wikiStep.itemsNeeded?.join('; ')}], itemsRecommended=[${wikiStep.itemsRecommended?.join('; ')}]`);
-        }
-      }
-      console.log('=== MERGED STEPS DEBUG ===');
-      for (let i = 0; i < mergedSteps.length; i++) {
-        const ms = mergedSteps[i];
-        if (ms.itemsNeeded?.length > 0 || ms.itemsRecommended?.length > 0) {
-          console.log(`Merged Step ${i + 1}: itemsNeeded=[${ms.itemsNeeded?.join('; ')}], itemsRecommended=[${ms.itemsRecommended?.join('; ')}]`);
-        }
-      }
-      console.log('Quest-level items needed:', wikiData.itemsNeeded);
-      console.log('Quest-level items recommended:', wikiData.itemsRecommended);
-      EditorStore.setQuest(updatedQuest);
-
-      // Save to local IndexedDB
-      await saveActiveBundle(questToBundle(updatedQuest));
-
-      const stepsChanged = wikiStepCount !== currentSteps.length ?
-        ` (was ${currentSteps.length}, now ${wikiStepCount})` : '';
+      // Clear the refreshing state - modal will handle the rest
       setWikiRefreshMessage({
         type: "success",
-        text: `✓ Loaded ${wikiStepCount} steps from wiki${stepsChanged}. Publish to save to server.`
+        text: `Found ${wikiData.steps.length} steps from wiki. Review changes in the merge dialog.`
       });
     } catch (err) {
       setWikiRefreshMessage({ type: "error", text: err instanceof Error ? err.message : "Failed to refresh" });
@@ -1244,6 +1183,7 @@ export const CenterControls: React.FC = () => {
         />
       )}
 
+      <WikiMergeModal />
     </>
   );
 };
