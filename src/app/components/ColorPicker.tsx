@@ -376,19 +376,22 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
       {palette.length > 0 && (
         <div style={{ marginBottom: 10 }}>
           <div style={{ fontSize: "0.65rem", color: "#9ca3af", marginBottom: 4 }}>Saved Colors</div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
             {palette.map((c) => (
               <div
                 key={c.hex}
-                style={{ position: "relative" }}
-                className="saved-color-item"
+                style={{
+                  position: "relative",
+                  width: 24,
+                  height: 24,
+                }}
               >
                 <button
                   onClick={() => handleSelectFromPalette(c.hex)}
                   title={c.hex}
                   style={{
-                    width: 20,
-                    height: 20,
+                    width: 24,
+                    height: 24,
                     background: c.hex,
                     border: previewColor === c.hex ? "2px solid #fff" : "1px solid #4b5563",
                     borderRadius: 3,
@@ -396,30 +399,27 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
                     padding: 0,
                   }}
                 />
-                <button
-                  onClick={() => handleRemoveFromPalette(c.hex)}
+                <div
+                  onClick={(e) => { e.stopPropagation(); handleRemoveFromPalette(c.hex); }}
                   title="Remove"
                   style={{
                     position: "absolute",
-                    top: -4,
-                    right: -4,
-                    width: 10,
-                    height: 10,
-                    background: "#ef4444",
-                    border: "none",
-                    borderRadius: "50%",
+                    top: 0,
+                    right: -6,
+                    width: 8,
+                    height: 8,
+                    background: "#dc2626",
+                    border: "1px solid #111",
+                    borderRadius: 2,
                     cursor: "pointer",
-                    padding: 0,
                     fontSize: 7,
-                    lineHeight: "10px",
+                    lineHeight: "6px",
                     color: "#fff",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    textAlign: "center",
+                    fontWeight: "bold",
                   }}
-                >
-                  ×
-                </button>
+                >×</div>
+                
               </div>
             ))}
           </div>

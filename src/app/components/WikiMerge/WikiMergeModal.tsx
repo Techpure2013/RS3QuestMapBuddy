@@ -655,6 +655,12 @@ export const WikiMergeModal: React.FC = () => {
   // Click-to-link mode: which wiki step/field is being linked (null = not linking)
   const [linkingSource, setLinkingSource] = useState<{ stepIndex: number; field: FieldName; content: string | string[] } | null>(null);
 
+  // Feedback message for immediate actions (link, full overwrite)
+  const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
+
+  // Count of immediate changes made (link, full overwrite)
+  const [immediateChangesCount, setImmediateChangesCount] = useState(0);
+
   // Keyboard handler
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -680,8 +686,18 @@ export const WikiMergeModal: React.FC = () => {
       setDraggingField(null);
       setLinkingSource(null);
       setCurrentLocalSteps(initialLocalSteps);
+      setFeedbackMessage(null);
+      setImmediateChangesCount(0);
     }
   }, [isOpen, initialLocalSteps]);
+
+  // Auto-clear feedback message after 3 seconds
+  useEffect(() => {
+    if (feedbackMessage) {
+      const timer = setTimeout(() => setFeedbackMessage(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [feedbackMessage]);
 
   // Calculate pending count
   const pendingCount = selectedFields.size + pendingDrops.size + pendingInserts.size;
@@ -785,6 +801,10 @@ export const WikiMergeModal: React.FC = () => {
       setCurrentLocalSteps([...updatedQuest.questSteps]);
     }
 
+    // Show feedback and increment counter
+    setFeedbackMessage(`✓ Overwrote Step ${wikiIndex + 1} with wiki data`);
+    setImmediateChangesCount((c) => c + 1);
+
     // Clear any selections for this step
     setSelectedFields((prev) => {
       const next = new Map(prev);
@@ -876,6 +896,10 @@ export const WikiMergeModal: React.FC = () => {
       saveActiveBundle(questToBundle(updatedQuest));
       setCurrentLocalSteps([...updatedQuest.questSteps]);
     }
+
+    // Show feedback and increment counter
+    setFeedbackMessage(`✓ Linked ${FIELD_LABELS[linkingSource.field]} from Step ${linkingSource.stepIndex + 1} → Step ${localStepIndex + 1}`);
+    setImmediateChangesCount((c) => c + 1);
 
     // Clear linking mode
     setLinkingSource(null);
@@ -1145,6 +1169,26 @@ export const WikiMergeModal: React.FC = () => {
           Drop on a field to merge, or use Insert zones to add new steps.
         </div>
 
+        {/* Feedback Toast */}
+        {feedbackMessage && (
+          <div
+            style={{
+              padding: "8px 16px",
+              background: "rgba(34, 197, 94, 0.2)",
+              borderBottom: "1px solid #22c55e",
+              fontSize: 13,
+              color: "#22c55e",
+              fontWeight: 500,
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+            }}
+          >
+            {feedbackMessage}
+            <span style={{ marginLeft: "auto", fontSize: 11, color: "#9ca3af" }}>Applied immediately</span>
+          </div>
+        )}
+
         {/* Column Headers */}
         <div
           style={{
@@ -1274,9 +1318,14 @@ export const WikiMergeModal: React.FC = () => {
         >
           {/* Status */}
           <div style={{ flex: 1, fontSize: 13, color: "#9ca3af" }}>
+            {immediateChangesCount > 0 && (
+              <span style={{ marginRight: 12 }}>
+                <span style={{ color: "#22c55e", fontWeight: 500 }}>{immediateChangesCount}</span> applied
+              </span>
+            )}
             {totalSelectedFields > 0 || pendingDrops.size > 0 || pendingInserts.size > 0 ? (
               <span>
-                <span style={{ color: "#22c55e", fontWeight: 500 }}>{totalSelectedFields}</span> fields selected
+                <span style={{ color: "#a855f7", fontWeight: 500 }}>{totalSelectedFields}</span> fields selected
                 {pendingDrops.size > 0 && (
                   <span>, <span style={{ color: "#eab308", fontWeight: 500 }}>{pendingDrops.size}</span> field drops</span>
                 )}
@@ -1284,9 +1333,9 @@ export const WikiMergeModal: React.FC = () => {
                   <span>, <span style={{ color: "#3b82f6", fontWeight: 500 }}>{pendingInserts.size}</span> inserts</span>
                 )}
               </span>
-            ) : (
+            ) : immediateChangesCount === 0 ? (
               <span>Select fields with checkboxes or drag to specific locations</span>
-            )}
+            ) : null}
           </div>
 
           {/* Keyboard hints */}
@@ -1326,20 +1375,20 @@ export const WikiMergeModal: React.FC = () => {
             Cancel
           </button>
           <button
-            onClick={handleApply}
-            disabled={totalSelectedFields === 0 && pendingDrops.size === 0 && pendingInserts.size === 0}
+            onClick={totalSelectedFields > 0 || pendingDrops.size > 0 || pendingInserts.size > 0 ? handleApply : () => MergeStore.closeMerge()}
+            disabled={totalSelectedFields === 0 && pendingDrops.size === 0 && pendingInserts.size === 0 && immediateChangesCount === 0}
             style={{
               padding: "8px 16px",
-              background: totalSelectedFields > 0 || pendingDrops.size > 0 || pendingInserts.size > 0 ? "#22c55e" : "#374151",
+              background: totalSelectedFields > 0 || pendingDrops.size > 0 || pendingInserts.size > 0 || immediateChangesCount > 0 ? "#22c55e" : "#374151",
               border: "none",
               borderRadius: 4,
-              color: totalSelectedFields > 0 || pendingDrops.size > 0 || pendingInserts.size > 0 ? "#fff" : "#6b7280",
-              cursor: totalSelectedFields > 0 || pendingDrops.size > 0 || pendingInserts.size > 0 ? "pointer" : "not-allowed",
+              color: totalSelectedFields > 0 || pendingDrops.size > 0 || pendingInserts.size > 0 || immediateChangesCount > 0 ? "#fff" : "#6b7280",
+              cursor: totalSelectedFields > 0 || pendingDrops.size > 0 || pendingInserts.size > 0 || immediateChangesCount > 0 ? "pointer" : "not-allowed",
               fontSize: 13,
               fontWeight: 500,
             }}
           >
-            Import Selected
+            {totalSelectedFields > 0 || pendingDrops.size > 0 || pendingInserts.size > 0 ? "Import Selected" : immediateChangesCount > 0 ? "Done" : "Import Selected"}
           </button>
         </div>
       </div>
