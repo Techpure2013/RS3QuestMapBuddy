@@ -276,6 +276,7 @@ const SelectionHighlightLayerComponent: React.FC<
   const [zoom, setZoom] = useState<number>(map.getZoom());
 
   const chatheadVariant = useEditorSelector((s) => s.selection.chatheadVariant);
+  const captureMode = useEditorSelector((s) => s.ui.captureMode);
   // Get hover state from store
   const storeHoveredTargetType = useEditorSelector(
     (s) => s.selection.hoveredTargetType
@@ -454,13 +455,16 @@ const SelectionHighlightLayerComponent: React.FC<
 
             if (result.success) {
               const icon = createChatheadIcon(result.dataUrl);
-              L.marker([point.lat + 0.5, point.lng + 0.5], {
+              const marker = L.marker([point.lat + 0.5, point.lng + 0.5], {
                 icon,
                 pane,
                 zIndexOffset: isSelected ? 1000 : 0,
-              })
-                .bindPopup(popupContent)
-                .addTo(currentLayer);
+                interactive: captureMode !== "radius",
+              });
+              if (captureMode !== "radius") {
+                marker.bindPopup(popupContent);
+              }
+              marker.addTo(currentLayer);
 
               if (isSelected) {
                 L.circle([point.lat + 0.5, point.lng + 0.5], {
@@ -569,13 +573,16 @@ const SelectionHighlightLayerComponent: React.FC<
                 if (!isActive) return;
                 console.log(`✅ Object image loaded: ${obj.name}`);
                 const icon = createObstacleIcon(resizedDataUrl);
-                L.marker([loc.lat + 0.5, loc.lng + 0.5], {
+                const marker = L.marker([loc.lat + 0.5, loc.lng + 0.5], {
                   icon,
                   pane,
                   zIndexOffset: isObjSelected ? 1000 : 0,
-                })
-                  .bindPopup(popupContent)
-                  .addTo(currentLayer);
+                  interactive: captureMode !== "radius",
+                });
+                if (captureMode !== "radius") {
+                  marker.bindPopup(popupContent);
+                }
+                marker.addTo(currentLayer);
 
                 // Add selection highlight circle for selected object
                 if (isObjSelected) {
@@ -793,6 +800,7 @@ const SelectionHighlightLayerComponent: React.FC<
     isActiveType,
     selectedIndex,
     chatheadVariant,
+    captureMode,
   ]);
 
   return null;
