@@ -372,10 +372,11 @@ const InternalMapLayers: React.FC = () => {
             console.log("📍 Map Location: Complete!", { center, bounds: [[minLat, minLng], [maxLat, maxLng]] });
 
             // Dispatch completion event with all data
+            // Format: [lng, lat] to match AreaFlyToHandler expectations
             window.dispatchEvent(new CustomEvent("mapLocationRecordComplete", {
               detail: {
-                center: [center.lat, center.lng],
-                bounds: [[minLat, minLng], [maxLat, maxLng]],
+                center: [center.lng, center.lat],
+                bounds: [[minLng, minLat], [maxLng, maxLat]],
               }
             }));
 

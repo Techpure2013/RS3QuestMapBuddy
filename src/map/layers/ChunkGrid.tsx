@@ -28,10 +28,10 @@ const ChunkGridLayer: React.FC = () => {
       const drawnChunks = drawnChunksRef.current;
 
       // 1. Calculate all chunks that SHOULD be visible.
-      const startX = Math.floor(bounds.getWest() / chunkSize);
-      const endX = Math.ceil(bounds.getEast() / chunkSize);
-      const startY = Math.floor(bounds.getSouth() / chunkSize);
-      const endY = Math.ceil(bounds.getNorth() / chunkSize);
+      const startX = Math.max(0, Math.floor(bounds.getWest() / chunkSize));
+      const endX = Math.min(100, Math.ceil(bounds.getEast() / chunkSize));
+      const startY = Math.max(0, Math.floor(bounds.getSouth() / chunkSize));
+      const endY = Math.min(200, Math.ceil(bounds.getNorth() / chunkSize));
 
       for (let x = startX; x < endX; x++) {
         for (let y = startY; y < endY; y++) {
