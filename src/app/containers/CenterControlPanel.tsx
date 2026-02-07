@@ -82,6 +82,7 @@ export const CenterControls: React.FC = () => {
   const undoStackRef = useRef<string[]>([]);
   const redoStackRef = useRef<string[]>([]);
   const isUndoRedoRef = useRef(false); // Flag to prevent adding undo entry during undo/redo
+  const prevStepRef = useRef(selection.selectedStep);
   useEffect(() => {
     const handler = (e: Event) => {
       const ce = e as CustomEvent<{ show: boolean }>;
@@ -98,8 +99,29 @@ export const CenterControls: React.FC = () => {
   }, [refresh]);
   // Sync step description and reset undo/redo on step change
   useEffect(() => {
+    // Auto-save pending changes for the previous step before switching
+    if (prevStepRef.current !== selection.selectedStep) {
+      // Clear pending auto-save timer
+      if (autoSaveTimerRef.current) {
+        clearTimeout(autoSaveTimerRef.current);
+        autoSaveTimerRef.current = null;
+      }
+      // Flush unsaved edits to the previous step
+      const prevStep = prevStepRef.current;
+      const prevDesc = EditorStore.getState().quest?.questSteps?.[prevStep]?.stepDescription ?? "";
+      if (localStepDesc !== prevDesc) {
+        EditorStore.patchQuest((draft) => {
+          const step = draft.questSteps[prevStep];
+          if (step) step.stepDescription = localStepDesc;
+          syncQuestImageDescriptions(draft);
+        });
+      }
+      prevStepRef.current = selection.selectedStep;
+    }
+
     setLocalStepDesc(stepDescription);
     setHasStepChanges(false);
+    setSaveStatus("idle");
     // Reset undo/redo stacks when switching steps
     undoStackRef.current = [];
     redoStackRef.current = [];
