@@ -7,6 +7,7 @@ import { TableCreator } from "./TableCreator";
 import { QuickInsertPicker } from "./QuickInsertPicker";
 import { keybindStore } from "../../keybinds/keybindStore";
 import { useEditorHotkeys, getHotkeyForAction } from "../hooks/useEditorHotkeys";
+import { EditorStore } from "../../state/editorStore";
 
 const FORMAT_BUTTONS = [
   { id: "bold", label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 }, cursorOffset: 0 },
@@ -15,6 +16,93 @@ const FORMAT_BUTTONS = [
   { id: "superscript", label: "x\u00B2", title: "Superscript (^text or ^(text))", prefix: "^(", suffix: ")", style: { fontSize: "0.7em" }, cursorOffset: 0 },
   { id: "link", label: "\uD83D\uDD17", title: "Link ([text](url))", prefix: "[", suffix: "]()", style: {}, cursorOffset: 1 },
 ] as const;
+
+/**
+ * Split text into segments that are either inside a formatted block or outside one.
+ * Formatted blocks (color, images, step links) are skipped by auto-highlight.
+ */
+export function splitColorSegments(text: string): { text: string; colored: boolean }[] {
+  const segments: { text: string; colored: boolean }[] = [];
+  // Match: images ![alt](url), color blocks [#HEX]{...}, step links step(N){...}
+  const colorBlockRe = /!\[[^\]]*\]\([^)]*\)|\[[^\]]*\]\{[^}]*\}|step\(\d+\)\{[^}]*\}/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = colorBlockRe.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      segments.push({ text: text.slice(lastIndex, match.index), colored: false });
+    }
+    segments.push({ text: match[0], colored: true });
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) {
+    segments.push({ text: text.slice(lastIndex), colored: false });
+  }
+  return segments;
+}
+
+/**
+ * Apply auto-highlight patterns to text, skipping already-colored regions.
+ * Each pattern is applied in order; once a region is wrapped it won't be
+ * re-wrapped by subsequent patterns.
+ */
+export function autoHighlight(text: string, color: string, patterns: RegExp[]): string {
+  let segments = splitColorSegments(text);
+
+  for (const pattern of patterns) {
+    const nextSegments: { text: string; colored: boolean }[] = [];
+    for (const seg of segments) {
+      if (seg.colored) {
+        nextSegments.push(seg);
+        continue;
+      }
+      // Apply pattern to this uncolored segment
+      const src = seg.text;
+      const re = new RegExp(pattern.source, pattern.flags.includes("g") ? pattern.flags : pattern.flags + "g");
+      let last = 0;
+      let m: RegExpExecArray | null;
+      while ((m = re.exec(src)) !== null) {
+        if (m.index > last) {
+          nextSegments.push({ text: src.slice(last, m.index), colored: false });
+        }
+        nextSegments.push({ text: `[${color}]{${m[0]}}`, colored: true });
+        last = m.index + m[0].length;
+        if (m[0].length === 0) { re.lastIndex++; } // prevent infinite loop on zero-length match
+      }
+      if (last < src.length) {
+        nextSegments.push({ text: src.slice(last), colored: false });
+      }
+    }
+    segments = nextSegments;
+  }
+  return segments.map((s) => s.text).join("");
+}
+
+// ── Auto-highlight pattern definitions ──
+
+export const CHAT_PATTERNS = [/\([^)]+\)/gi];
+
+export const LODESTONE_PATTERNS = [
+  /\b\w[\w\s]*?\s+lodestone\b/gi,         // "X Lodestone"
+  /(?<!\w)[A-Z]{3}(?!\w)/g,               // Fairy ring codes (standalone 3-letter uppercase)
+];
+
+export const ACTION_VERBS = [
+  "Go upstairs", "Go downstairs", "Talk to", "Speak to", "Interact",
+  "Use", "Climb", "Cook", "Mine", "Fish", "Chop",
+  "Search", "Open", "Enter", "Exit", "Cross",
+  "Inspect", "Investigate", "Read", "Pick", "Picklock",
+  "Dig", "Craft", "Smith", "Fletch", "Light", "Pray",
+  "Activate", "Operate", "Pull", "Push", "Squeeze",
+  "Jump", "Swing", "Buy", "Sell", "Trade",
+];
+export const ACTION_PATTERNS = [
+  new RegExp(`\\b(${ACTION_VERBS.join("|")})\\b`, "gi"),
+];
+
+export const KILL_VERBS = ["Kill", "Defeat", "Slay", "Fight", "Attack", "Destroy"];
+export const KILL_PATTERNS = [
+  new RegExp(`\\b(${KILL_VERBS.join("|")})\\b`, "gi"),
+];
 
 export interface FormattingToolbarProps {
   textareaRef: React.RefObject<HTMLTextAreaElement | null>;
@@ -173,6 +261,110 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           >
             ✕ Clear
           </button>
+          {/* ── Auto-highlight buttons ── */}
+          <span style={{ color: "#4b5563", fontSize: "0.85rem", userSelect: "none", padding: "0 2px" }}>|</span>
+          <button
+            type="button"
+            title="Auto-highlight chat text in parentheses (green)"
+            onClick={() => onChange(autoHighlight(value, "#00FF00", CHAT_PATTERNS))}
+            style={{
+              padding: "3px 8px",
+              fontSize: "0.7rem",
+              background: "#1f2937",
+              border: "1px solid #4b5563",
+              borderLeft: "3px solid #00FF00",
+              borderRadius: 3,
+              color: "#e5e7eb",
+              cursor: "pointer",
+            }}
+          >
+            Chat
+          </button>
+          <button
+            type="button"
+            title="Auto-highlight lodestone/fairy ring references (yellow)"
+            onClick={() => onChange(autoHighlight(value, "#FFFF00", LODESTONE_PATTERNS))}
+            style={{
+              padding: "3px 8px",
+              fontSize: "0.7rem",
+              background: "#1f2937",
+              border: "1px solid #4b5563",
+              borderLeft: "3px solid #FFFF00",
+              borderRadius: 3,
+              color: "#e5e7eb",
+              cursor: "pointer",
+            }}
+          >
+            Lode
+          </button>
+          <button
+            type="button"
+            title="Auto-highlight action verbs (cyan)"
+            onClick={() => onChange(autoHighlight(value, "#00FFFF", ACTION_PATTERNS))}
+            style={{
+              padding: "3px 8px",
+              fontSize: "0.7rem",
+              background: "#1f2937",
+              border: "1px solid #4b5563",
+              borderLeft: "3px solid #00FFFF",
+              borderRadius: 3,
+              color: "#e5e7eb",
+              cursor: "pointer",
+            }}
+          >
+            Action
+          </button>
+          <button
+            type="button"
+            title="Auto-highlight kill/combat verbs (red)"
+            onClick={() => onChange(autoHighlight(value, "#FF0000", KILL_PATTERNS))}
+            style={{
+              padding: "3px 8px",
+              fontSize: "0.7rem",
+              background: "#1f2937",
+              border: "1px solid #4b5563",
+              borderLeft: "3px solid #FF0000",
+              borderRadius: 3,
+              color: "#e5e7eb",
+              cursor: "pointer",
+            }}
+          >
+            Kill
+          </button>
+          <button
+            type="button"
+            title="Auto-highlight NPC/object names from step highlights (orange)"
+            onClick={() => {
+              const edState = EditorStore.getState();
+              const steps = edState.quest?.questSteps ?? [];
+              const nameSet = new Set<string>();
+              for (const s of steps) {
+                for (const n of (s.highlights?.npc ?? []) as any[]) { if (n.npcName) nameSet.add(n.npcName); }
+                for (const o of (s.highlights?.object ?? []) as any[]) { if (o.name) nameSet.add(o.name); }
+              }
+              const allNames = Array.from(nameSet);
+              if (allNames.length === 0) return;
+              // Sort longest first so "King Roald III" matches before "King Roald"
+              allNames.sort((a, b) => b.length - a.length);
+              const npcPatterns = allNames.map(
+                (name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi")
+              );
+              onChange(autoHighlight(value, "#FFA500", npcPatterns));
+            }}
+            style={{
+              padding: "3px 8px",
+              fontSize: "0.7rem",
+              background: "#1f2937",
+              border: "1px solid #4b5563",
+              borderLeft: "3px solid #FFA500",
+              borderRadius: 3,
+              color: "#e5e7eb",
+              cursor: "pointer",
+            }}
+          >
+            NPC
+          </button>
+          <span style={{ color: "#4b5563", fontSize: "0.85rem", userSelect: "none", padding: "0 2px" }}>|</span>
           {/* Color picker button */}
           <div style={{ position: "relative" }}>
             <button
