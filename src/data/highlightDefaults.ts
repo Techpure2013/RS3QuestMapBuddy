@@ -242,3 +242,5 @@ export const DEFAULT_GAME_TERMS: readonly string[] = Object.freeze([
   "Castle Wars", "Pest Control", "Soul Wars", "Barbarian Assault",
   "Fight Kiln", "Fight Cauldron", "Dominion Tower", "Shattered Worlds",
 ]);
+
+export const DEFAULT_LOCATION_NAMES: readonly string[] = [...DEFAULT_RS3_LOCATION_NAMES];

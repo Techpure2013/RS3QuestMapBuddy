@@ -9,6 +9,7 @@ import {
   DEFAULT_COMMON_WORD_EXCLUSIONS,
   DEFAULT_COMMON_WORDS,
   DEFAULT_GAME_TERMS,
+  DEFAULT_LOCATION_NAMES,
 } from "../data/highlightDefaults";
 
 const STORAGE_KEY = "rs3qb:highlight-settings:v1";
@@ -20,6 +21,7 @@ export interface HighlightSettingsState {
   commonWordExclusions: string[];
   commonWords: string[];
   gameTerms: string[];
+  locationNames: string[];
 }
 
 type Listener = (state: HighlightSettingsState) => void;
@@ -32,6 +34,7 @@ function getDefaults(): HighlightSettingsState {
     commonWordExclusions: [...DEFAULT_COMMON_WORD_EXCLUSIONS],
     commonWords: [...DEFAULT_COMMON_WORDS],
     gameTerms: [...DEFAULT_GAME_TERMS],
+    locationNames: [...DEFAULT_LOCATION_NAMES],
   };
 }
 
@@ -52,6 +55,7 @@ function loadFromStorage(): HighlightSettingsState {
         commonWordExclusions: parsed.commonWordExclusions ?? defaults.commonWordExclusions,
         commonWords: parsed.commonWords ?? defaults.commonWords,
         gameTerms: parsed.gameTerms ?? defaults.gameTerms,
+        locationNames: parsed.locationNames ?? defaults.locationNames,
       };
     }
   } catch (e) {
@@ -151,6 +155,15 @@ export const HighlightSettingsStore = {
     return [new RegExp(`\\b(${verbs.map(escapeRegex).join("|")})\\b`, "gi")];
   },
 
+  // Build location name regex patterns from current state
+  getLocationPatterns(): RegExp[] {
+    const names = state.locationNames;
+    if (names.length === 0) return [];
+    // Sort longest-first so "Varrock Palace" matches before "Varrock"
+    const sorted = [...names].sort((a, b) => b.length - a.length);
+    return sorted.map((name) => new RegExp(`\\b${escapeRegex(name)}\\b`, "gi"));
+  },
+
   // Export current settings as JSON string for sharing
   exportToJson(): string {
     return JSON.stringify(state, null, 2);
@@ -163,6 +176,7 @@ export const HighlightSettingsStore = {
       const validKeys: (keyof HighlightSettingsState)[] = [
         "actionVerbs", "killVerbs", "rs3LocationNames",
         "commonWordExclusions", "commonWords", "gameTerms",
+        "locationNames",
       ];
 
       // Validate that at least one valid key exists with an array value

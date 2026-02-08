@@ -940,6 +940,7 @@ export const CenterControls: React.FC = () => {
                   { label: "Kill", color: "#FF0000" },
                   { label: "NPC", color: "#FFA500" },
                   { label: "Obj", color: "#FFA500" },
+                  { label: "Loc", color: "#FFFF00" },
                 ].map((btn) => (
                   <button
                     key={btn.label}
@@ -1406,6 +1407,27 @@ export const CenterControls: React.FC = () => {
                     </button>
                     <button
                       type="button"
+                      title="Auto-highlight location names — ALL steps (yellow)"
+                      onClick={() => {
+                        EditorStore.patchQuest((draft) => {
+                          for (const step of draft.questSteps) {
+                            step.stepDescription = autoHighlight(step.stepDescription, "#FFFF00", HighlightSettingsStore.getLocationPatterns());
+                            if (step.additionalStepInformation) {
+                              step.additionalStepInformation = step.additionalStepInformation.map(
+                                (info) => autoHighlight(info, "#FFFF00", HighlightSettingsStore.getLocationPatterns())
+                              );
+                            }
+                          }
+                          syncQuestImageDescriptions(draft);
+                        });
+                        handleStepChange(autoHighlight(localStepDesc, "#FFFF00", HighlightSettingsStore.getLocationPatterns()));
+                      }}
+                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FFFF00", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
+                    >
+                      Loc
+                    </button>
+                    <button
+                      type="button"
                       title="Auto-highlight proper nouns (excl. NPCs/objects) — ALL steps (orange)"
                       onClick={async () => {
                         const edState = EditorStore.getState();
@@ -1429,7 +1451,12 @@ export const CenterControls: React.FC = () => {
 
                         // Exclude known RS3 location/city names that are NOT NPCs
                         for (const loc of HighlightSettingsStore.getState().rs3LocationNames) {
-                          excludeLower.add(loc.toLowerCase());
+                          const lower = loc.toLowerCase();
+                          excludeLower.add(lower);
+                          // Also exclude base form without possessive 's (e.g. "Doric's" → "doric")
+                          if (lower.endsWith("'s")) {
+                            excludeLower.add(lower.slice(0, -2));
+                          }
                         }
 
                         // Extract proper nouns from step text

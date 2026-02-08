@@ -271,8 +271,13 @@ const HighlightSettingsPanel: React.FC = () => {
     },
     {
       key: "rs3LocationNames",
-      label: "Location Exclusions",
-      description: "Excluded from NPC auto-highlight",
+      label: "NPC Exclusions",
+      description: "Excluded from NPC auto-highlight (location/city names that aren't NPCs)",
+    },
+    {
+      key: "locationNames",
+      label: "Location Names",
+      description: "Highlighted yellow by the Loc button",
     },
     {
       key: "commonWordExclusions",

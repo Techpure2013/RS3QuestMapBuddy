@@ -316,6 +316,23 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           </button>
           <button
             type="button"
+            title="Auto-highlight location names (yellow)"
+            onClick={() => onChange(autoHighlight(value, "#FFFF00", HighlightSettingsStore.getLocationPatterns()))}
+            style={{
+              padding: "3px 8px",
+              fontSize: "0.7rem",
+              background: "#1f2937",
+              border: "1px solid #4b5563",
+              borderLeft: "3px solid #FFFF00",
+              borderRadius: 3,
+              color: "#e5e7eb",
+              cursor: "pointer",
+            }}
+          >
+            Loc
+          </button>
+          <button
+            type="button"
             title="Auto-highlight NPC/object names from step highlights (orange)"
             onClick={() => {
               const edState = EditorStore.getState();
