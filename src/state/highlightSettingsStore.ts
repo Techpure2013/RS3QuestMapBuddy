@@ -150,6 +150,62 @@ export const HighlightSettingsStore = {
     if (verbs.length === 0) return [];
     return [new RegExp(`\\b(${verbs.map(escapeRegex).join("|")})\\b`, "gi")];
   },
+
+  // Export current settings as JSON string for sharing
+  exportToJson(): string {
+    return JSON.stringify(state, null, 2);
+  },
+
+  // Import settings from JSON string (merge or replace)
+  importFromJson(json: string, merge = false): { success: boolean; error?: string } {
+    try {
+      const parsed = JSON.parse(json) as Partial<HighlightSettingsState>;
+      const validKeys: (keyof HighlightSettingsState)[] = [
+        "actionVerbs", "killVerbs", "rs3LocationNames",
+        "commonWordExclusions", "commonWords", "gameTerms",
+      ];
+
+      // Validate that at least one valid key exists with an array value
+      const hasValidData = validKeys.some(
+        (k) => Array.isArray(parsed[k]) && parsed[k]!.length > 0
+      );
+      if (!hasValidData) {
+        return { success: false, error: "No valid highlight settings found in file" };
+      }
+
+      if (merge) {
+        // Merge: add new words that don't already exist (case-insensitive dedup)
+        const newState = { ...state };
+        for (const key of validKeys) {
+          if (Array.isArray(parsed[key])) {
+            const existing = new Set(state[key].map((w) => w.toLowerCase()));
+            const toAdd = (parsed[key] as string[]).filter(
+              (w) => typeof w === "string" && w.trim() && !existing.has(w.toLowerCase())
+            );
+            newState[key] = [...state[key], ...toAdd];
+          }
+        }
+        state = newState;
+      } else {
+        // Replace: overwrite lists that exist in the import, keep others
+        const newState = { ...state };
+        for (const key of validKeys) {
+          if (Array.isArray(parsed[key])) {
+            newState[key] = (parsed[key] as string[]).filter(
+              (w) => typeof w === "string" && w.trim()
+            );
+          }
+        }
+        state = newState;
+      }
+
+      saveToStorage();
+      notify();
+      return { success: true };
+    } catch {
+      return { success: false, error: "Invalid JSON format" };
+    }
+  },
 };
 
 // React hook for subscribing to highlight settings store

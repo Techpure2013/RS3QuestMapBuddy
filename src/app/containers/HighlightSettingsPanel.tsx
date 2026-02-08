@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   useHighlightSettings,
   HighlightSettingsStore,
@@ -307,6 +307,46 @@ const HighlightSettingsPanel: React.FC = () => {
     setAddInputs((prev) => ({ ...prev, [key]: value }));
   };
 
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleExport = () => {
+    const json = HighlightSettingsStore.exportToJson();
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "highlight-settings.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = (merge: boolean) => {
+    const input = fileInputRef.current;
+    if (!input) return;
+    input.dataset.merge = merge ? "true" : "false";
+    input.click();
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const merge = e.target.dataset.merge === "true";
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = HighlightSettingsStore.importFromJson(
+        reader.result as string,
+        merge
+      );
+      if (result.success) {
+        alert(merge ? "Settings merged successfully!" : "Settings imported successfully!");
+      } else {
+        alert(`Import failed: ${result.error}`);
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = "";
+  };
+
   return (
     <div style={{ padding: "4px 0" }}>
       {categories.map((cat) => (
@@ -322,6 +362,82 @@ const HighlightSettingsPanel: React.FC = () => {
           onAddInputChange={(value) => handleAddInputChange(cat.key, value)}
         />
       ))}
+
+      {/* Import / Export Section */}
+      <div
+        style={{
+          marginTop: 8,
+          padding: 8,
+          background: "#1f2937",
+          border: "1px solid #374151",
+          borderRadius: 6,
+        }}
+      >
+        <div
+          style={{
+            fontSize: 11,
+            fontWeight: 600,
+            color: "#9ca3af",
+            marginBottom: 6,
+          }}
+        >
+          Share Settings
+        </div>
+        <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+          <button
+            onClick={handleExport}
+            style={{
+              fontSize: 11,
+              fontWeight: 600,
+              color: "#fff",
+              background: "#2563eb",
+              border: "none",
+              borderRadius: 4,
+              padding: "4px 10px",
+              cursor: "pointer",
+            }}
+          >
+            Export
+          </button>
+          <button
+            onClick={() => handleImport(false)}
+            style={{
+              fontSize: 11,
+              fontWeight: 600,
+              color: "#fff",
+              background: "#059669",
+              border: "none",
+              borderRadius: 4,
+              padding: "4px 10px",
+              cursor: "pointer",
+            }}
+          >
+            Import (Replace)
+          </button>
+          <button
+            onClick={() => handleImport(true)}
+            style={{
+              fontSize: 11,
+              fontWeight: 600,
+              color: "#fff",
+              background: "#d97706",
+              border: "none",
+              borderRadius: 4,
+              padding: "4px 10px",
+              cursor: "pointer",
+            }}
+          >
+            Import (Merge)
+          </button>
+        </div>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept=".json"
+          onChange={handleFileChange}
+          style={{ display: "none" }}
+        />
+      </div>
     </div>
   );
 };
