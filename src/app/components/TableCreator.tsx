@@ -230,11 +230,13 @@ export const TableCreator: React.FC<TableCreatorProps> = ({ onInsert, onClose })
     setFavoriteColors(loadFavoriteColors());
   }, []);
 
-  // Close on click outside
+  // Close on click outside (with confirmation)
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        onClose();
+        if (window.confirm("Close Table Creator? Any unsaved changes will be lost.")) {
+          onClose();
+        }
       }
     };
     document.addEventListener("mousedown", handleClickOutside);

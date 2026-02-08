@@ -79,10 +79,10 @@ export function autoHighlight(text: string, color: string, patterns: RegExp[]): 
 
 // ── Auto-highlight pattern definitions ──
 
-export const CHAT_PATTERNS = [/\([^)]+\)/gi];
+export const CHAT_PATTERNS = [/\(Chat\s+[\d•·.\-~✓✗×]+\)/gi];
 
 export const LODESTONE_PATTERNS = [
-  /\b\w[\w\s]*?\s+lodestone\b/gi,         // "X Lodestone"
+  /\b(?!(?:of|the|in|at|to|from|by|for|with|near|and|or)\s)(\w+(?:\s+\w+)?)\s+lodestone\b/gi,  // "X Lodestone" (1-2 words, skip prepositions)
   /(?<!\w)[A-Z]{3}(?!\w)/g,               // Fairy ring codes (standalone 3-letter uppercase)
 ];
 
@@ -93,7 +93,7 @@ export const ACTION_VERBS = [
   "Inspect", "Investigate", "Read", "Pick", "Picklock",
   "Dig", "Craft", "Smith", "Fletch", "Light", "Pray",
   "Activate", "Operate", "Pull", "Push", "Squeeze",
-  "Jump", "Swing", "Buy", "Sell", "Trade",
+  "Jump", "Swing", "Buy", "Sell", "Trade", "Wear", "Equip", "Unequip", "Take", "Pick up", "Pick-up", "Drop"
 ];
 export const ACTION_PATTERNS = [
   new RegExp(`\\b(${ACTION_VERBS.join("|")})\\b`, "gi"),
@@ -344,7 +344,6 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
               }
               const allNames = Array.from(nameSet);
               if (allNames.length === 0) return;
-              // Sort longest first so "King Roald III" matches before "King Roald"
               allNames.sort((a, b) => b.length - a.length);
               const npcPatterns = allNames.map(
                 (name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi")
@@ -509,20 +508,6 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
             }}
           >
             ⊞ Table
-          </button>
-          {/* Hotkey settings button */}
-          <button
-            type="button"
-            title="Customize keyboard shortcuts"
-            onClick={() => keybindStore.setModalOpen(true)}
-            style={{
-              ...buttonStyle,
-              background: "#1e40af",
-              border: "1px solid #3b82f6",
-              color: "#93c5fd",
-            }}
-          >
-            ⌨
           </button>
         </div>
       )}

@@ -175,7 +175,7 @@ export const QuickInsertPicker: React.FC<QuickInsertPickerProps> = ({
         border: "1px solid #374151",
         borderRadius: 6,
         padding: 8,
-        zIndex: 1000,
+        zIndex: 1200,
         width: 360,
         maxHeight: 450,
         display: "flex",

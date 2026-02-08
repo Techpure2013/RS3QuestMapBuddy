@@ -19,6 +19,7 @@ import { recordQuestNpcLocations } from "./../../feature/npcPublisher";
 import { clearImageCache } from "../../idb/imageCache";
 import { clearObservedChatheads } from "idb/chatheadsObserved";
 import { fetchWikiGuide } from "../../api/wikiApi";
+import { searchNpcs } from "../../api/npcApi";
 import { MergeStore } from "../../state/mergeStore";
 import { WikiMergeModal } from "../components/WikiMerge";
 
@@ -66,6 +67,7 @@ export const CenterControls: React.FC = () => {
   const [showStepLinkPicker, setShowStepLinkPicker] = useState(false);
   const [showTableCreator, setShowTableCreator] = useState(false);
   const [showQuickInsert, setShowQuickInsert] = useState(false);
+  const [showAutoHighlight, setShowAutoHighlight] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -929,461 +931,97 @@ export const CenterControls: React.FC = () => {
                 >
                   ✕ Clear
                 </button>
-                {/* ── Auto-highlight buttons (apply to ALL steps) ── */}
                 <span style={{ color: "#4b5563", fontSize: "0.85rem", userSelect: "none", padding: "0 2px" }}>|</span>
+                {/* Quick Color buttons - wrap selected text in color */}
+                {[
+                  { label: "Chat", color: "#00FF00" },
+                  { label: "Action", color: "#00FFFF" },
+                  { label: "Kill", color: "#FF0000" },
+                  { label: "NPC", color: "#FFA500" },
+                  { label: "Obj", color: "#FFA500" },
+                ].map((btn) => (
+                  <button
+                    key={btn.label}
+                    type="button"
+                    title={`Apply ${btn.label} color to selected text`}
+                    onClick={() => wrapSelection(`[${btn.color}]{`, "}")}
+                    style={{
+                      padding: "3px 8px",
+                      fontSize: "0.7rem",
+                      background: "#1f2937",
+                      border: "1px solid #4b5563",
+                      borderLeft: `3px solid ${btn.color}`,
+                      borderRadius: 3,
+                      color: "#e5e7eb",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {btn.label}
+                  </button>
+                ))}
                 <button
                   type="button"
-                  title="Auto-highlight chat text in parentheses — ALL steps (green)"
+                  title="Apply Lode color to selected text (+ auto-insert lodestone image)"
                   onClick={() => {
-                    EditorStore.patchQuest((draft) => {
-                      for (const step of draft.questSteps) {
-                        step.stepDescription = autoHighlight(step.stepDescription, "#00FF00", CHAT_PATTERNS);
-                        if (step.additionalStepInformation) {
-                          step.additionalStepInformation = step.additionalStepInformation.map(
-                            (info) => autoHighlight(info, "#00FF00", CHAT_PATTERNS)
-                          );
+                    const textarea = textareaRef.current;
+                    if (!textarea) return;
+                    const start = textarea.selectionStart;
+                    const end = textarea.selectionEnd;
+                    const selectedText = localStepDesc.substring(start, end);
+
+                    // Look up lodestone image
+                    const searchKey = selectedText.toLowerCase().trim();
+                    let lodestoneImg = "";
+                    if (searchKey) {
+                      for (const t of QUICK_INSERT_THUMBNAILS) {
+                        if (t.category === "lodestone") {
+                          const tName = t.name.toLowerCase();
+                          if (tName === searchKey || tName.includes(searchKey) || searchKey.includes(tName)) {
+                            lodestoneImg = ` ![${t.name}|24](${t.imageUrl})`;
+                            break;
+                          }
                         }
-                      }
-                      syncQuestImageDescriptions(draft);
-                    });
-                    handleStepChange(autoHighlight(localStepDesc, "#00FF00", CHAT_PATTERNS));
-                  }}
-                  style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #00FF00", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
-                >
-                  Chat
-                </button>
-                <button
-                  type="button"
-                  title="Auto-highlight lodestone/fairy ring references — ALL steps (yellow)"
-                  onClick={() => {
-                    // Build lodestone name → image lookup
-                    const lodestoneMap = new Map<string, { name: string; imageUrl: string }>();
-                    for (const t of QUICK_INSERT_THUMBNAILS) {
-                      if (t.category === "lodestone") {
-                        lodestoneMap.set(t.name.toLowerCase(), { name: t.name, imageUrl: t.imageUrl });
                       }
                     }
 
-                    // After coloring, insert lodestone images next to [#FFFF00]{...lodestone} blocks
-                    const insertLodestoneImages = (text: string): string => {
-                      // First apply existing lodestone/fairy ring pattern highlighting
-                      let result = autoHighlight(text, "#FFFF00", LODESTONE_PATTERNS);
+                    // Build replacement: [#FFFF00]{text} + optional lodestone image
+                    const replacement = `[#FFFF00]{${selectedText}}${lodestoneImg}`;
+                    const newText = localStepDesc.substring(0, start) + replacement + localStepDesc.substring(end);
+                    handleStepChange(newText);
 
-                      // Build location name patterns from lodestone thumbnails (sorted longest-first)
-                      const lodestoneEntries = Array.from(lodestoneMap.entries())
-                        .sort((a, b) => b[0].length - a[0].length);
-
-                      // Build extended patterns: "Draynor Village", "Karamja Island", etc.
-                      const locationSuffixes = ["Village", "City", "Town", "Castle", "Island", "Province", "Camp"];
-                      const allPatterns: { pattern: RegExp; key: string }[] = [];
-
-                      // First add extended (longer) patterns, then base names
-                      for (const [key, val] of lodestoneEntries) {
-                        for (const suffix of locationSuffixes) {
-                          if (!val.name.toLowerCase().includes(suffix.toLowerCase())) {
-                            const extName = `${val.name} ${suffix}`;
-                            const escaped = extName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                            allPatterns.push({ pattern: new RegExp(`\\b${escaped}\\b`, 'gi'), key });
-                          }
-                        }
-                      }
-                      // Then add base name patterns
-                      for (const [key, val] of lodestoneEntries) {
-                        const escaped = val.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                        allPatterns.push({ pattern: new RegExp(`\\b${escaped}\\b`, 'gi'), key });
-                      }
-
-                      // Second pass: highlight standalone location names that aren't already colored
-                      for (const { pattern: namePattern } of allPatterns) {
-                        const segments = splitColorSegments(result);
-                        let rebuilt = '';
-                        for (const seg of segments) {
-                          if (seg.colored) {
-                            rebuilt += seg.text;
-                          } else {
-                            rebuilt += seg.text.replace(namePattern, (m) => `[#FFFF00]{${m}}`);
-                          }
-                        }
-                        result = rebuilt;
-                      }
-
-                      // Third pass: insert lodestone images after ANY [#FFFF00]{...} block that matches a lodestone name
-                      result = result.replace(
-                        /\[#FFFF00\]\{([^}]+)\}/gi,
-                        (match, inner) => {
-                          // Strip " lodestone" suffix if present for matching
-                          let searchName = inner.trim();
-                          const lodeMatch = searchName.match(/^(.+?)\s+lodestone$/i);
-                          if (lodeMatch) {
-                            searchName = lodeMatch[1].trim();
-                          }
-                          const searchKey = searchName.toLowerCase();
-
-                          // Try exact match
-                          let found = lodestoneMap.get(searchKey);
-
-                          // Strip location suffixes for matching
-                          if (!found) {
-                            const suffixRe = /\s+(Village|City|Town|Castle|Island|Province|Camp)$/i;
-                            const strippedName = searchName.replace(suffixRe, '').trim().toLowerCase();
-                            if (strippedName !== searchKey) {
-                              found = lodestoneMap.get(strippedName);
-                              if (!found) {
-                                for (const [k, v] of lodestoneMap) {
-                                  if (strippedName.includes(k) || k.includes(strippedName)) {
-                                    found = v;
-                                    break;
-                                  }
-                                }
-                              }
-                            }
-                          }
-
-                          // Try partial match
-                          if (!found) {
-                            for (const [k, v] of lodestoneMap) {
-                              if (searchKey.includes(k) || k.includes(searchKey)) {
-                                found = v;
-                                break;
-                              }
-                            }
-                          }
-
-                          // Only append image if not already present
-                          if (found && !match.includes(`![${found.name}|24]`)) {
-                            return `${match} ![${found.name}|24](${found.imageUrl})`;
-                          }
-                          return match;
-                        }
-                      );
-
-                      // Avoid duplicate images: clean up any double image insertions
-                      // Pattern: image immediately followed by the same image
-                      for (const [, val] of lodestoneMap) {
-                        const imgTag = `![${val.name}|24](${val.imageUrl})`;
-                        const doubleImg = imgTag + imgTag;
-                        while (result.includes(doubleImg)) {
-                          result = result.replace(doubleImg, imgTag);
-                        }
-                      }
-
-                      return result;
-                    };
-
-                    EditorStore.patchQuest((draft) => {
-                      for (const step of draft.questSteps) {
-                        step.stepDescription = insertLodestoneImages(step.stepDescription);
-                        if (step.additionalStepInformation) {
-                          step.additionalStepInformation = step.additionalStepInformation.map(
-                            (info: string) => insertLodestoneImages(info)
-                          );
-                        }
-                      }
-                      syncQuestImageDescriptions(draft);
+                    requestAnimationFrame(() => {
+                      textarea.focus();
+                      const newPos = start + replacement.length;
+                      textarea.setSelectionRange(newPos, newPos);
                     });
-                    handleStepChange(insertLodestoneImages(localStepDesc));
                   }}
-                  style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FFFF00", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
+                  style={{
+                    padding: "3px 8px",
+                    fontSize: "0.7rem",
+                    background: "#1f2937",
+                    border: "1px solid #4b5563",
+                    borderLeft: "3px solid #FFFF00",
+                    borderRadius: 3,
+                    color: "#e5e7eb",
+                    cursor: "pointer",
+                  }}
                 >
                   Lode
                 </button>
                 <button
                   type="button"
-                  title="Auto-highlight action verbs — ALL steps (cyan)"
-                  onClick={() => {
-                    EditorStore.patchQuest((draft) => {
-                      for (const step of draft.questSteps) {
-                        step.stepDescription = autoHighlight(step.stepDescription, "#00FFFF", ACTION_PATTERNS);
-                        if (step.additionalStepInformation) {
-                          step.additionalStepInformation = step.additionalStepInformation.map(
-                            (info) => autoHighlight(info, "#00FFFF", ACTION_PATTERNS)
-                          );
-                        }
-                      }
-                      syncQuestImageDescriptions(draft);
-                    });
-                    handleStepChange(autoHighlight(localStepDesc, "#00FFFF", ACTION_PATTERNS));
+                  title="Apply underline to selected text (directions)"
+                  onClick={() => wrapSelection("__", "__")}
+                  style={{
+                    padding: "3px 8px",
+                    fontSize: "0.7rem",
+                    background: "#1f2937",
+                    border: "1px solid #4b5563",
+                    borderLeft: "3px solid #FF69B4",
+                    borderRadius: 3,
+                    color: "#e5e7eb",
+                    cursor: "pointer",
                   }}
-                  style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #00FFFF", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
-                >
-                  Action
-                </button>
-                <button
-                  type="button"
-                  title="Auto-highlight kill/combat verbs — ALL steps (red)"
-                  onClick={() => {
-                    EditorStore.patchQuest((draft) => {
-                      for (const step of draft.questSteps) {
-                        step.stepDescription = autoHighlight(step.stepDescription, "#FF0000", KILL_PATTERNS);
-                        if (step.additionalStepInformation) {
-                          step.additionalStepInformation = step.additionalStepInformation.map(
-                            (info) => autoHighlight(info, "#FF0000", KILL_PATTERNS)
-                          );
-                        }
-                      }
-                      syncQuestImageDescriptions(draft);
-                    });
-                    handleStepChange(autoHighlight(localStepDesc, "#FF0000", KILL_PATTERNS));
-                  }}
-                  style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FF0000", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
-                >
-                  Kill
-                </button>
-                <button
-                  type="button"
-                  title="Auto-highlight NPC/proper nouns — ALL steps (orange)"
-                  onClick={() => {
-                    const edState = EditorStore.getState();
-                    const steps = edState.quest?.questSteps ?? [];
-
-                    // First try highlights (if any exist)
-                    const nameSet = new Set<string>();
-                    for (const s of steps) {
-                      for (const n of s.highlights?.npc ?? []) { if (n.npcName && n.npcName !== "New NPC") nameSet.add(n.npcName); }
-                      for (const o of s.highlights?.object ?? []) { if (o.name && o.name !== "New Object") nameSet.add(o.name); }
-                    }
-
-                    // Also extract proper nouns from step text to supplement highlights
-                    {
-                      const COMMON_WORDS = new Set([
-                        // Articles, prepositions, conjunctions
-                        "The", "A", "An", "To", "From", "With", "In", "On", "At", "By",
-                        "For", "And", "Or", "But", "Of", "As", "If", "So", "Up", "Down",
-                        "Into", "Out", "Through", "Over", "Under", "Between", "About",
-                        "After", "Before", "During", "Until", "While", "Near", "Around",
-                        // Common verbs / words in quest guides
-                        "Go", "Head", "Walk", "Run", "Travel", "Return", "Continue",
-                        "Take", "Give", "Get", "Make", "Find", "Look", "See", "Need",
-                        "Follow", "Leave", "Move", "Turn", "Bring", "Put", "Set",
-                        "Start", "Begin", "End", "Finish", "Complete", "Choose",
-                        "Select", "Click", "Right", "Left", "North", "South", "East", "West",
-                        "Northeast", "Northwest", "Southeast", "Southwest",
-                        "Talk", "Speak", "Interact", "Use", "Climb", "Cook", "Mine",
-                        "Fish", "Chop", "Search", "Open", "Enter", "Exit", "Cross",
-                        "Inspect", "Investigate", "Read", "Pick", "Picklock", "Dig",
-                        "Craft", "Smith", "Fletch", "Light", "Pray", "Activate",
-                        "Operate", "Pull", "Push", "Squeeze", "Jump", "Swing",
-                        "Kill", "Defeat", "Slay", "Fight", "Attack", "Destroy",
-                        "Teleport", "Bank", "Equip", "Wear", "Wield", "Drop", "Eat", "Drink",
-                        "Buy", "Sell", "Trade", "Pay", "Receive", "Obtain", "Collect",
-                        "Go", "Inside", "Outside", "Nearby", "Next", "Then", "Now",
-                        "This", "That", "These", "Those", "There", "Here", "Where",
-                        "You", "Your", "He", "She", "They", "His", "Her", "Their", "Its",
-                        "Will", "Can", "Should", "Must", "May", "Would", "Could",
-                        "Have", "Has", "Had", "Do", "Does", "Did", "Is", "Are", "Was", "Were",
-                        "Be", "Been", "Being", "Not", "No", "Yes", "All", "Some", "Any",
-                        "Each", "Every", "Both", "Few", "Many", "Much", "More", "Most",
-                        "Other", "Another", "New", "Old", "First", "Last", "Second", "Third",
-                        "Same", "Different", "Item", "Items", "Quest", "Step", "Level",
-                        "Note", "Warning", "Tip", "Optional", "Required", "Recommended",
-                        "Once", "Again", "Also", "Just", "Only", "Back", "Off",
-                        "Cut", "Chop", "Pick", "Grab", "Check", "Try", "Ask", "Tell",
-                        "Wait", "Stop", "Keep", "Watch", "Pass", "Reach", "Cross",
-                        "Examine", "Loot", "Claim", "Agree", "Accept", "Decline", "Refuse",
-                        "Ring", "Fairy", "Lodestone",
-                        // Location-indicator words (these make a phrase a place, not an NPC)
-                        "Village", "City", "Town", "Castle", "Palace", "Temple", "Cave",
-                        "Dungeon", "Tower", "Mine", "Forest", "Swamp", "Island", "Mountain",
-                        "Port", "Monastery", "Abbey", "Church", "Chapel", "Hall", "House",
-                        "Manor", "Keep", "Fort", "Fortress", "Ruins", "Garden", "Gardens",
-                        "Square", "Market", "Bridge", "Gate", "Gates", "Wall", "Walls",
-                        "Road", "Path", "Trail", "River", "Lake", "Sea", "Bay", "Harbour",
-                        "Dock", "Docks", "Shore", "Beach", "Desert", "Jungle", "Marsh",
-                        "Plateau", "Valley", "Hills", "Hill", "Woods", "Camp", "Outpost",
-                        "Quarter", "District", "Arena", "Pit", "Lair", "Den", "Nest",
-                        "Passage", "Tunnel", "Basement", "Cellar", "Attic", "Floor",
-                        "Room", "Chamber", "Cavern", "Sanctum", "Altar", "Shrine",
-                        "Store", "Shop", "Stall",
-                      ]);
-
-                      // Also make lowercase versions for case-insensitive check
-                      const commonLower = new Set(Array.from(COMMON_WORDS).map(w => w.toLowerCase()));
-
-                      for (const s of steps) {
-                        const text = s.stepDescription ?? "";
-                        // Find sequences of capitalized words (1-4 consecutive)
-                        const capitalWordRe = /\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,3})\b/g;
-                        let m: RegExpExecArray | null;
-                        while ((m = capitalWordRe.exec(text)) !== null) {
-                          const phrase = m[1];
-                          const words = phrase.split(/\s+/);
-                          // Keep the phrase if at least one word is NOT a common word
-                          const hasProperNoun = words.some(w => !commonLower.has(w.toLowerCase()));
-                          if (hasProperNoun && words.length <= 4) {
-                            // Trim leading/trailing common words from multi-word phrases
-                            let start = 0;
-                            let end = words.length;
-                            while (start < end && commonLower.has(words[start].toLowerCase())) start++;
-                            while (end > start && commonLower.has(words[end - 1].toLowerCase())) end--;
-                            if (start < end) {
-                              nameSet.add(words.slice(start, end).join(" "));
-                            }
-                          }
-                        }
-
-                        // Also check additionalStepInformation
-                        for (const info of s.additionalStepInformation ?? []) {
-                          let m2: RegExpExecArray | null;
-                          const re2 = /\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,3})\b/g;
-                          while ((m2 = re2.exec(info)) !== null) {
-                            const phrase = m2[1];
-                            const words = phrase.split(/\s+/);
-                            const hasProperNoun = words.some(w => !commonLower.has(w.toLowerCase()));
-                            if (hasProperNoun && words.length <= 4) {
-                              let start = 0;
-                              let end = words.length;
-                              while (start < end && commonLower.has(words[start].toLowerCase())) start++;
-                              while (end > start && commonLower.has(words[end - 1].toLowerCase())) end--;
-                              if (start < end) {
-                                nameSet.add(words.slice(start, end).join(" "));
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-
-                    // Filter out lodestone location names so they don't get NPC-highlighted
-                    const lodestoneNames = new Set(
-                      QUICK_INSERT_THUMBNAILS
-                        .filter((t) => t.category === "lodestone")
-                        .map((t) => t.name.toLowerCase())
-                    );
-                    for (const name of nameSet) {
-                      if (lodestoneNames.has(name.toLowerCase())) nameSet.delete(name);
-                    }
-
-                    console.log("NPC auto-highlight: found names:", Array.from(nameSet));
-                    const allNames = Array.from(nameSet);
-                    if (allNames.length === 0) return;
-                    allNames.sort((a, b) => b.length - a.length);
-                    const npcPatterns = allNames.map(
-                      (name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi")
-                    );
-                    EditorStore.patchQuest((draft) => {
-                      for (const step of draft.questSteps) {
-                        step.stepDescription = autoHighlight(step.stepDescription, "#FFA500", npcPatterns);
-                        if (step.additionalStepInformation) {
-                          step.additionalStepInformation = step.additionalStepInformation.map(
-                            (info) => autoHighlight(info, "#FFA500", npcPatterns)
-                          );
-                        }
-                      }
-                      syncQuestImageDescriptions(draft);
-                    });
-                    handleStepChange(autoHighlight(localStepDesc, "#FFA500", npcPatterns));
-                  }}
-                  style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FFA500", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
-                >
-                  NPC
-                </button>
-                <button
-                  type="button"
-                  title="Auto-format compass directions and floor references — ALL steps (magenta)"
-                  onClick={() => {
-                    // Helper function to get ordinal suffix
-                    const getOrdinalSuffix = (n: number): string => {
-                      if (n % 100 >= 11 && n % 100 <= 13) return "th";
-                      switch (n % 10) {
-                        case 1: return "st";
-                        case 2: return "nd";
-                        case 3: return "rd";
-                        default: return "th";
-                      }
-                    };
-
-                    // Auto-format directions and floors
-                    const autoFormatDirectionsAndFloors = (text: string): string => {
-                      const segments = splitColorSegments(text);
-                      let result = '';
-
-                      for (const seg of segments) {
-                        if (seg.colored) {
-                          result += seg.text;
-                          continue;
-                        }
-
-                        let processed = seg.text;
-
-                        // FIRST: Process floor references (more specific patterns)
-                        // Match floor references: "ground floor", "1st floor", "2nd floor", etc.
-                        processed = processed.replace(
-                          /\b(ground\s+floor|(\d+)(st|nd|rd|th)\s+floor|basement|top\s+floor)\b/gi,
-                          (match, _full, floorNum, _suffix) => {
-                            // Check if already underlined or has superscript notation
-                            const beforeMatch = processed.substring(0, processed.indexOf(match));
-                            const afterMatch = processed.substring(processed.indexOf(match) + match.length);
-
-                            // Skip if already formatted (check for __ before or after, or ^( after)
-                            if (beforeMatch.endsWith('__') || afterMatch.startsWith('__') || afterMatch.startsWith('^(')) {
-                              return match;
-                            }
-
-                            const lowerMatch = match.toLowerCase().trim();
-
-                            // Special cases: basement and top floor (no UK/US difference)
-                            if (lowerMatch === 'basement' || lowerMatch === 'top floor') {
-                              return `__${match}__`;
-                            }
-
-                            // Ground floor case
-                            if (lowerMatch === 'ground floor') {
-                              return `__ground floor__^(UK) / __1st floor__^(US)`;
-                            }
-
-                            // Numbered floors (1st, 2nd, 3rd, etc.)
-                            if (floorNum) {
-                              const ukNum = parseInt(floorNum, 10);
-                              const usNum = ukNum + 1;
-                              const ukSuffix = getOrdinalSuffix(ukNum);
-                              const usSuffix = getOrdinalSuffix(usNum);
-
-                              return `__${ukNum}${ukSuffix} floor__^(UK) / __${usNum}${usSuffix} floor__^(US)`;
-                            }
-
-                            return match;
-                          }
-                        );
-
-                        // SECOND: Process compass directions
-                        // Match directions: north, south, east, west, northeast, etc.
-                        processed = processed.replace(
-                          /\b(north-?east|north-?west|south-?east|south-?west|north|south|east|west|northern|southern|eastern|western)\b/gi,
-                          (match) => {
-                            // Check if already underlined
-                            const beforeMatch = processed.substring(0, processed.indexOf(match));
-                            const afterMatch = processed.substring(processed.indexOf(match) + match.length);
-
-                            // Skip if already formatted
-                            if (beforeMatch.endsWith('__') || afterMatch.startsWith('__')) {
-                              return match;
-                            }
-
-                            return `__${match}__`;
-                          }
-                        );
-
-                        result += processed;
-                      }
-
-                      return result;
-                    };
-
-                    // Apply to all steps
-                    EditorStore.patchQuest((draft) => {
-                      for (const step of draft.questSteps) {
-                        step.stepDescription = autoFormatDirectionsAndFloors(step.stepDescription);
-                        if (step.additionalStepInformation) {
-                          step.additionalStepInformation = step.additionalStepInformation.map(
-                            (info) => autoFormatDirectionsAndFloors(info)
-                          );
-                        }
-                      }
-                      syncQuestImageDescriptions(draft);
-                    });
-                    handleStepChange(autoFormatDirectionsAndFloors(localStepDesc));
-                  }}
-                  style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FF69B4", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
                 >
                   Dir
                 </button>
@@ -1548,6 +1186,686 @@ export const CenterControls: React.FC = () => {
                 >
                   ⊞ Table
                 </button>
+              </div>
+              {/* Auto-Highlight All Steps - collapsible */}
+              <div style={{ marginBottom: 4 }}>
+                <button
+                  type="button"
+                  onClick={() => setShowAutoHighlight(!showAutoHighlight)}
+                  style={{
+                    padding: "2px 8px",
+                    fontSize: "0.65rem",
+                    background: "#1f2937",
+                    border: "1px solid #374151",
+                    borderRadius: 3,
+                    color: "#9ca3af",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                  }}
+                >
+                  <span style={{ fontSize: "0.6rem" }}>{showAutoHighlight ? "▼" : "▶"}</span>
+                  Auto-Highlight All Steps
+                </button>
+                {showAutoHighlight && (
+                  <div style={{ display: "flex", gap: 4, marginTop: 4, flexWrap: "wrap" }}>
+                    <button
+                      type="button"
+                      title="Auto-highlight chat text in parentheses — ALL steps (green)"
+                      onClick={() => {
+                        EditorStore.patchQuest((draft) => {
+                          for (const step of draft.questSteps) {
+                            step.stepDescription = autoHighlight(step.stepDescription, "#00FF00", CHAT_PATTERNS);
+                            if (step.additionalStepInformation) {
+                              step.additionalStepInformation = step.additionalStepInformation.map(
+                                (info) => autoHighlight(info, "#00FF00", CHAT_PATTERNS)
+                              );
+                            }
+                          }
+                          syncQuestImageDescriptions(draft);
+                        });
+                        handleStepChange(autoHighlight(localStepDesc, "#00FF00", CHAT_PATTERNS));
+                      }}
+                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #00FF00", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
+                    >
+                      Chat
+                    </button>
+                    <button
+                      type="button"
+                      title="Auto-highlight lodestone/fairy ring references — ALL steps (yellow)"
+                      onClick={() => {
+                        // Build lodestone name → image lookup
+                        const lodestoneMap = new Map<string, { name: string; imageUrl: string }>();
+                        for (const t of QUICK_INSERT_THUMBNAILS) {
+                          if (t.category === "lodestone") {
+                            lodestoneMap.set(t.name.toLowerCase(), { name: t.name, imageUrl: t.imageUrl });
+                          }
+                        }
+
+                        // After coloring, insert lodestone images next to [#FFFF00]{...lodestone} blocks
+                        const insertLodestoneImages = (text: string): string => {
+                          // First apply existing lodestone/fairy ring pattern highlighting
+                          let result = autoHighlight(text, "#FFFF00", LODESTONE_PATTERNS);
+
+                          // Build location name patterns from lodestone thumbnails (sorted longest-first)
+                          const lodestoneEntries = Array.from(lodestoneMap.entries())
+                            .sort((a, b) => b[0].length - a[0].length);
+
+                          // Build extended patterns: "Draynor Village", "Karamja Island", etc.
+                          const locationSuffixes = ["Village", "City", "Town", "Castle", "Island", "Province", "Camp"];
+                          const allPatterns: { pattern: RegExp; key: string }[] = [];
+
+                          // First add extended (longer) patterns, then base names
+                          for (const [key, val] of lodestoneEntries) {
+                            for (const suffix of locationSuffixes) {
+                              if (!val.name.toLowerCase().includes(suffix.toLowerCase())) {
+                                const extName = `${val.name} ${suffix}`;
+                                const escaped = extName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                                allPatterns.push({ pattern: new RegExp(`\\b${escaped}\\b`, 'gi'), key });
+                              }
+                            }
+                          }
+                          // Then add base name patterns (with negative lookahead for geographic suffixes)
+                          const geoSuffixes = "Swamp|Marsh|Cave|Caves|Forest|Wood|Woods|Mountain|Mountains|Desert|Jungle|Plains|River|Lake|Sea|Bay|Mine|Mines|Quarry|Field|Fields|Pass|Gorge|Sewers|Catacombs|Cemetery|Graveyard|Crater|Reef";
+                          for (const [key, val] of lodestoneEntries) {
+                            const escaped = val.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                            allPatterns.push({ pattern: new RegExp(`\\b${escaped}(?!\\s+(?:${geoSuffixes}))\\b`, 'gi'), key });
+                          }
+
+                          // Second pass: highlight standalone location names that aren't already colored
+                          for (const { pattern: namePattern } of allPatterns) {
+                            const segments = splitColorSegments(result);
+                            let rebuilt = '';
+                            for (const seg of segments) {
+                              if (seg.colored) {
+                                rebuilt += seg.text;
+                              } else {
+                                rebuilt += seg.text.replace(namePattern, (m) => `[#FFFF00]{${m}}`);
+                              }
+                            }
+                            result = rebuilt;
+                          }
+
+                          // Third pass: insert lodestone images after ANY [#FFFF00]{...} block that matches a lodestone name
+                          // Use a regex that also captures what follows the block to check for existing images
+                          result = result.replace(
+                            /\[#FFFF00\]\{([^}]+)\}(\s*!\[[^\]]*\]\([^)]*\))*/gi,
+                            (match, inner) => {
+                              // If match already contains an image, skip
+                              if (match.includes('![')) return match;
+
+                              // Strip " lodestone" suffix if present for matching
+                              let searchName = inner.trim();
+                              const lodeMatch = searchName.match(/^(.+?)\s+lodestone$/i);
+                              if (lodeMatch) {
+                                searchName = lodeMatch[1].trim();
+                              }
+                              const searchKey = searchName.toLowerCase();
+
+                              // Try exact match
+                              let found = lodestoneMap.get(searchKey);
+
+                              // Strip location suffixes for matching
+                              if (!found) {
+                                const suffixRe = /\s+(Village|City|Town|Castle|Island|Province|Camp)$/i;
+                                const strippedName = searchName.replace(suffixRe, '').trim().toLowerCase();
+                                if (strippedName !== searchKey) {
+                                  found = lodestoneMap.get(strippedName);
+                                  if (!found) {
+                                    for (const [k, v] of lodestoneMap) {
+                                      if (strippedName.includes(k) || k.includes(strippedName)) {
+                                        found = v;
+                                        break;
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+
+                              // Try partial match
+                              if (!found) {
+                                for (const [k, v] of lodestoneMap) {
+                                  if (searchKey.includes(k) || k.includes(searchKey)) {
+                                    found = v;
+                                    break;
+                                  }
+                                }
+                              }
+
+                              // Append image
+                              if (found) {
+                                return `[#FFFF00]{${inner}} ![${found.name}|24](${found.imageUrl})`;
+                              }
+                              return match;
+                            }
+                          );
+
+                          return result;
+                        };
+
+                        EditorStore.patchQuest((draft) => {
+                          for (const step of draft.questSteps) {
+                            step.stepDescription = insertLodestoneImages(step.stepDescription);
+                            if (step.additionalStepInformation) {
+                              step.additionalStepInformation = step.additionalStepInformation.map(
+                                (info: string) => insertLodestoneImages(info)
+                              );
+                            }
+                          }
+                          syncQuestImageDescriptions(draft);
+                        });
+                        handleStepChange(insertLodestoneImages(localStepDesc));
+                      }}
+                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FFFF00", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
+                    >
+                      Lode
+                    </button>
+                    <button
+                      type="button"
+                      title="Auto-highlight action verbs — ALL steps (cyan)"
+                      onClick={() => {
+                        EditorStore.patchQuest((draft) => {
+                          for (const step of draft.questSteps) {
+                            step.stepDescription = autoHighlight(step.stepDescription, "#00FFFF", ACTION_PATTERNS);
+                            if (step.additionalStepInformation) {
+                              step.additionalStepInformation = step.additionalStepInformation.map(
+                                (info) => autoHighlight(info, "#00FFFF", ACTION_PATTERNS)
+                              );
+                            }
+                          }
+                          syncQuestImageDescriptions(draft);
+                        });
+                        handleStepChange(autoHighlight(localStepDesc, "#00FFFF", ACTION_PATTERNS));
+                      }}
+                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #00FFFF", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
+                    >
+                      Action
+                    </button>
+                    <button
+                      type="button"
+                      title="Auto-highlight kill/combat verbs — ALL steps (red)"
+                      onClick={() => {
+                        EditorStore.patchQuest((draft) => {
+                          for (const step of draft.questSteps) {
+                            step.stepDescription = autoHighlight(step.stepDescription, "#FF0000", KILL_PATTERNS);
+                            if (step.additionalStepInformation) {
+                              step.additionalStepInformation = step.additionalStepInformation.map(
+                                (info) => autoHighlight(info, "#FF0000", KILL_PATTERNS)
+                              );
+                            }
+                          }
+                          syncQuestImageDescriptions(draft);
+                        });
+                        handleStepChange(autoHighlight(localStepDesc, "#FF0000", KILL_PATTERNS));
+                      }}
+                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FF0000", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
+                    >
+                      Kill
+                    </button>
+                    <button
+                      type="button"
+                      title="Auto-highlight proper nouns (excl. NPCs/objects) — ALL steps (orange)"
+                      onClick={async () => {
+                        const edState = EditorStore.getState();
+                        const steps = edState.quest?.questSteps ?? [];
+
+                        // Collect NPC + object names to EXCLUDE (handled by their own buttons)
+                        const excludeLower = new Set<string>();
+                        for (const s of steps) {
+                          for (const n of s.highlights?.npc ?? []) {
+                            if (n.npcName && n.npcName !== "New NPC") excludeLower.add(n.npcName.toLowerCase());
+                          }
+                          for (const o of s.highlights?.object ?? []) {
+                            if (o.name && o.name !== "New Object") excludeLower.add(o.name.toLowerCase());
+                          }
+                        }
+
+                        // Also exclude lodestone location names
+                        for (const t of QUICK_INSERT_THUMBNAILS) {
+                          if (t.category === "lodestone") excludeLower.add(t.name.toLowerCase());
+                        }
+
+                        // Extract proper nouns from step text
+                        const nameSet = new Set<string>();
+
+                        // Always include NPC names from highlights (confirmed NPCs)
+                        for (const s of steps) {
+                          for (const n of s.highlights?.npc ?? []) {
+                            if (n.npcName && n.npcName !== "New NPC") nameSet.add(n.npcName);
+                          }
+                        }
+                        const COMMON_WORDS = new Set([
+                          "The", "A", "An", "To", "From", "With", "In", "On", "At", "By",
+                          "For", "And", "Or", "But", "Of", "As", "If", "So", "Up", "Down",
+                          "Into", "Out", "Through", "Over", "Under", "Between", "About",
+                          "After", "Before", "During", "Until", "While", "Near", "Around",
+                          "Go", "Head", "Walk", "Run", "Travel", "Return", "Continue",
+                          "Take", "Give", "Get", "Make", "Find", "Look", "See", "Need",
+                          "Follow", "Leave", "Move", "Turn", "Bring", "Put", "Set",
+                          "Start", "Begin", "End", "Finish", "Complete", "Choose",
+                          "Select", "Click", "Right", "Left", "North", "South", "East", "West",
+                          "Northeast", "Northwest", "Southeast", "Southwest",
+                          "Talk", "Speak", "Interact", "Use", "Climb", "Cook", "Mine",
+                          "Fish", "Chop", "Search", "Open", "Enter", "Exit", "Cross",
+                          "Inspect", "Investigate", "Read", "Pick", "Picklock", "Dig",
+                          "Craft", "Smith", "Fletch", "Light", "Pray", "Activate",
+                          "Operate", "Pull", "Push", "Squeeze", "Jump", "Swing",
+                          "Kill", "Defeat", "Slay", "Fight", "Attack", "Destroy",
+                          "Teleport", "Bank", "Equip", "Wear", "Wield", "Drop", "Eat", "Drink",
+                          "Buy", "Sell", "Trade", "Pay", "Receive", "Obtain", "Collect",
+                          "Go", "Inside", "Outside", "Nearby", "Next", "Then", "Now",
+                          "This", "That", "These", "Those", "There", "Here", "Where",
+                          "You", "Your", "He", "She", "They", "His", "Her", "Their", "Its",
+                          "Will", "Can", "Should", "Must", "May", "Would", "Could",
+                          "Have", "Has", "Had", "Do", "Does", "Did", "Is", "Are", "Was", "Were",
+                          "Be", "Been", "Being", "Not", "No", "Yes", "All", "Some", "Any",
+                          "Each", "Every", "Both", "Few", "Many", "Much", "More", "Most",
+                          "Other", "Another", "New", "Old", "First", "Last", "Second", "Third",
+                          "Same", "Different", "Item", "Items", "Quest", "Step", "Level",
+                          "Note", "Warning", "Tip", "Optional", "Required", "Recommended",
+                          "Once", "Again", "Also", "Just", "Only", "Back", "Off",
+                          "Cut", "Chop", "Pick", "Grab", "Check", "Try", "Ask", "Tell",
+                          "Wait", "Stop", "Keep", "Watch", "Pass", "Reach", "Cross",
+                          "Examine", "Loot", "Claim", "Agree", "Accept", "Decline", "Refuse",
+                          "Ring", "Fairy", "Lodestone",
+                          "Village", "City", "Town", "Castle", "Palace", "Temple", "Cave",
+                          "Dungeon", "Tower", "Mine", "Forest", "Swamp", "Island", "Mountain",
+                          "Port", "Monastery", "Abbey", "Church", "Chapel", "Hall", "House",
+                          "Manor", "Keep", "Fort", "Fortress", "Ruins", "Garden", "Gardens",
+                          "Square", "Market", "Bridge", "Gate", "Gates", "Wall", "Walls",
+                          "Road", "Path", "Trail", "River", "Lake", "Sea", "Bay", "Harbour",
+                          "Dock", "Docks", "Shore", "Beach", "Desert", "Jungle", "Marsh",
+                          "Plateau", "Valley", "Hills", "Hill", "Woods", "Camp", "Outpost",
+                          "Quarter", "District", "Arena", "Pit", "Lair", "Den", "Nest",
+                          "Passage", "Tunnel", "Basement", "Cellar", "Attic", "Floor",
+                          "Room", "Chamber", "Cavern", "Sanctum", "Altar", "Shrine",
+                          "Store", "Shop", "Stall",
+                        ]);
+                        const commonLower = new Set(Array.from(COMMON_WORDS).map(w => w.toLowerCase()));
+
+                        const GAME_TERMS = new Set([
+                          // ── Skills ──
+                          "Attack", "Strength", "Defence", "Constitution", "Ranged", "Prayer",
+                          "Magic", "Runecrafting", "Construction", "Dungeoneering", "Agility",
+                          "Herblore", "Thieving", "Crafting", "Fletching", "Slayer", "Hunter",
+                          "Mining", "Smithing", "Fishing", "Cooking", "Firemaking", "Woodcutting",
+                          "Farming", "Summoning", "Divination", "Invention", "Archaeology", "Necromancy",
+
+                          // ── Runes ──
+                          "Air", "Water", "Earth", "Fire", "Mind", "Body", "Cosmic", "Chaos",
+                          "Nature", "Law", "Death", "Blood", "Soul", "Astral", "Mud", "Lava",
+                          "Steam", "Mist", "Dust", "Smoke", "Wrath", "Armadyl",
+                          "Air Rune", "Water Rune", "Earth Rune", "Fire Rune", "Mind Rune",
+                          "Body Rune", "Cosmic Rune", "Chaos Rune", "Nature Rune", "Law Rune",
+                          "Death Rune", "Blood Rune", "Soul Rune", "Astral Rune", "Mud Rune",
+                          "Lava Rune", "Steam Rune", "Mist Rune", "Dust Rune", "Smoke Rune",
+                          "Wrath Rune", "Armadyl Rune", "Bone Rune", "Spirit Rune", "Flesh Rune",
+                          "Miasma Rune", "Rune Essence", "Pure Essence",
+
+                          // ── Transportation ──
+                          "Fairy Ring", "Fairy Rings", "Spirit Tree", "Spirit Trees",
+                          "Magic Carpet", "Gnome Glider", "Charter Ship", "Canoe",
+                          "Eagle Transport", "Mine Cart", "Agility Shortcut",
+                          "Lodestone Network", "Wilderness Obelisk",
+
+                          // ── Combat terms ──
+                          "Special Attack", "Life Points", "Prayer Points", "Summoning Points",
+                          "Combat Level", "Run Energy", "Combat Triangle", "Adrenaline",
+                          "Full Manual", "Revolution", "Legacy Combat Mode",
+                          "Basic Abilities", "Threshold Abilities", "Ultimate Abilities",
+
+                          // ── Equipment / Items ──
+                          "Dramen Staff", "Lunar Staff", "Ring of Charos", "Ghostspeak Amulet",
+                          "Iban's Staff", "Amulet of Glory", "Ring of Dueling", "Games Necklace",
+                          "Combat Bracelet", "Ring of Wealth", "Amulet of Fury", "Ring of Life",
+                          "Amulet of Power", "Bracelet of Clay", "Crystal Bow", "Silver Sickle",
+                          "Holy Symbol", "Unholy Symbol", "Reaper Necklace",
+                          "Gold Bar", "Silver Bar", "Bronze Bar", "Iron Bar", "Steel Bar",
+                          "Mithril Bar", "Adamant Bar", "Rune Bar", "Orikalkum Bar", "Elder Rune Bar",
+                          "Tinderbox", "Hammer", "Chisel", "Knife", "Spade", "Rope",
+                          "Bucket", "Jug", "Vial", "Pestle", "Mortar",
+
+                          // ── Metal / Material tiers ──
+                          "Bronze", "Iron", "Steel", "Mithril", "Adamant", "Adamantite",
+                          "Rune", "Runite", "Dragon", "Orikalkum", "Necronium", "Bane",
+                          "Barrows", "Crystal", "Elder Rune", "Obsidian",
+
+                          // ── Potions ──
+                          "Attack Potion", "Strength Potion", "Defence Potion", "Magic Potion",
+                          "Ranging Potion", "Prayer Potion", "Super Attack", "Super Strength",
+                          "Super Defence", "Super Magic", "Super Ranging", "Restore Potion",
+                          "Super Restore", "Saradomin Brew", "Zamorak Brew", "Antifire Potion",
+                          "Super Antifire", "Antipoison", "Super Antipoison", "Energy Potion",
+                          "Super Energy", "Overload", "Adrenaline Potion", "Aggression Potion",
+
+                          // ── Food ──
+                          "Shark", "Lobster", "Swordfish", "Salmon", "Tuna", "Trout",
+                          "Bass", "Monkfish", "Manta Ray", "Rocktail", "Sailfish",
+                          "Sea Turtle", "Cooked Chicken", "Cooked Meat",
+                          "Great Gunkan", "Rocktail Soup",
+
+                          // ── Spells (commonly referenced in quests) ──
+                          "High Level Alchemy", "Low Level Alchemy", "Superheat Item",
+                          "Telekinetic Grab", "Bones to Bananas", "Bones to Peaches",
+                          "Air Strike", "Water Strike", "Earth Strike", "Fire Strike",
+                          "Air Bolt", "Water Bolt", "Earth Bolt", "Fire Bolt",
+                          "Air Blast", "Water Blast", "Earth Blast", "Fire Blast",
+                          "Air Wave", "Water Wave", "Earth Wave", "Fire Wave",
+                          "Air Surge", "Water Surge", "Earth Surge", "Fire Surge",
+                          "Ice Barrage", "Blood Barrage", "Smoke Barrage", "Shadow Barrage",
+                          "Ice Blitz", "Blood Blitz", "Smoke Blitz", "Shadow Blitz",
+                          "Ice Burst", "Blood Burst", "Smoke Burst", "Shadow Burst",
+                          "Crumble Undead", "Slayer Dart", "Vengeance",
+                          "Animate Dead", "Incite Fear", "Exsanguinate", "Smoke Cloud",
+
+                          // ── Prayers / Curses ──
+                          "Protect from Magic", "Protect from Ranged", "Protect from Melee",
+                          "Protect from Necromancy", "Protect Item", "Soul Split",
+                          "Deflect Magic", "Deflect Ranged", "Deflect Melee", "Deflect Necromancy",
+                          "Piety", "Rigour", "Augury", "Turmoil", "Anguish", "Torment",
+
+                          // ── Logs / Wood ──
+                          "Oak Logs", "Willow Logs", "Teak Logs", "Maple Logs",
+                          "Yew Logs", "Magic Logs", "Elder Logs",
+
+                          // ── Bones ──
+                          "Big Bones", "Dragon Bones", "Wyvern Bones", "Dagannoth Bones",
+
+                          // ── Gems ──
+                          "Sapphire", "Emerald", "Ruby", "Diamond", "Dragonstone", "Onyx",
+
+                          // ── Ores ──
+                          "Copper Ore", "Tin Ore", "Iron Ore", "Coal", "Gold Ore",
+                          "Mithril Ore", "Adamantite Ore", "Runite Ore",
+
+                          // ── Summoning familiars (commonly referenced) ──
+                          "War Tortoise", "Pack Yak", "Pack Mammoth", "Spirit Wolf",
+                          "Spirit Terrorbird", "Bunyip", "Unicorn Stallion", "Steel Titan",
+                          "Iron Titan", "Abyssal Titan",
+
+                          // ── Weapon / Armour types ──
+                          "Scimitar", "Longsword", "Battleaxe", "Warhammer", "Halberd",
+                          "Crossbow", "Shortbow", "Longbow", "Platebody", "Chainbody",
+                          "Platelegs", "Plateskirt", "Full Helm", "Kiteshield",
+
+                          // ── Game locations / Concepts ──
+                          "Grand Exchange", "Slayer Tower", "Invention Guild",
+                          "Champions' Guild", "Warriors' Guild", "Heroes' Guild", "Legends' Guild",
+                          "Quest Point", "Quest Points", "Quest Cape", "Skill Cape",
+                          "Clue Scroll", "Treasure Trail", "Slayer Master", "Slayer Task",
+                          "Player-owned Port", "Player-owned House",
+
+                          // ── Minigames ──
+                          "Castle Wars", "Pest Control", "Soul Wars", "Barbarian Assault",
+                          "Fight Kiln", "Fight Cauldron", "Dominion Tower", "Shattered Worlds",
+                        ]);
+                        const gameTermsLower = new Set(Array.from(GAME_TERMS).map(t => t.toLowerCase()));
+
+                        const singleWordCandidates = new Set<string>();
+
+                        const extractFromText = (text: string) => {
+                          const capitalWordRe = /\b([A-Z][a-z]+(?:\s+(?:the|of|de|van|von|al|el|da|du|le|la)\s+[A-Z][a-z]+|\s+[A-Z][a-z]+){0,5})\b/g;
+                          let m: RegExpExecArray | null;
+                          while ((m = capitalWordRe.exec(text)) !== null) {
+                            const phrase = m[1];
+                            const words = phrase.split(/\s+/);
+                            const hasProperNoun = words.some(w => !commonLower.has(w.toLowerCase()));
+                            if (hasProperNoun && words.length <= 6) {
+                              let start = 0;
+                              let end = words.length;
+                              while (start < end && commonLower.has(words[start].toLowerCase())) start++;
+                              while (end > start && commonLower.has(words[end - 1].toLowerCase())) end--;
+                              if (start < end) {
+                                const candidate = words.slice(start, end).join(" ");
+                                const candLower = candidate.toLowerCase();
+                                // Skip NPC/object names and game terms
+                                if (!excludeLower.has(candLower) && !gameTermsLower.has(candLower)) {
+                                  if (candidate.split(/\s+/).length >= 2) {
+                                    // Multi-word proper nouns: include directly
+                                    nameSet.add(candidate);
+                                  } else {
+                                    // Single-word: collect for API verification
+                                    singleWordCandidates.add(candidate);
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        };
+
+                        for (const s of steps) {
+                          extractFromText(s.stepDescription ?? "");
+                          for (const info of s.additionalStepInformation ?? []) {
+                            extractFromText(info);
+                          }
+                        }
+
+                        // Verify single-word proper nouns against NPC search API
+                        if (singleWordCandidates.size > 0) {
+                          const checks = Array.from(singleWordCandidates).map(async (candidate) => {
+                            try {
+                              const results = await searchNpcs(candidate, 5);
+                              const exactMatch = results.some(
+                                (npc) => npc.name.toLowerCase() === candidate.toLowerCase()
+                              );
+                              if (exactMatch) nameSet.add(candidate);
+                            } catch {
+                              // API error — skip this candidate
+                            }
+                          });
+                          await Promise.all(checks);
+                        }
+
+                        console.log("Proper noun auto-highlight: found names:", Array.from(nameSet));
+                        const allNames = Array.from(nameSet);
+                        if (allNames.length === 0) return;
+                        allNames.sort((a, b) => b.length - a.length);
+                        const npcPatterns = allNames.map(
+                          (name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi")
+                        );
+                        EditorStore.patchQuest((draft) => {
+                          for (const step of draft.questSteps) {
+                            step.stepDescription = autoHighlight(step.stepDescription, "#FFA500", npcPatterns);
+                            if (step.additionalStepInformation) {
+                              step.additionalStepInformation = step.additionalStepInformation.map(
+                                (info) => autoHighlight(info, "#FFA500", npcPatterns)
+                              );
+                            }
+                          }
+                          syncQuestImageDescriptions(draft);
+                        });
+                        handleStepChange(autoHighlight(localStepDesc, "#FFA500", npcPatterns));
+                      }}
+                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FFA500", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
+                    >
+                      NPC
+                    </button>
+                    <button
+                      type="button"
+                      title="Auto-highlight objects — ALL steps (purple)"
+                      onClick={() => {
+                        const edState = EditorStore.getState();
+                        const steps = edState.quest?.questSteps ?? [];
+
+                        // Common English words to exclude from auto-highlighting
+                        const COMMON_WORD_EXCLUSIONS = new Set([
+                          "area", "shed", "door", "wall", "gate", "key", "bar", "ring", "bag", "box",
+                          "pot", "cup", "hat", "log", "rock", "rope", "bone", "ore", "map", "net",
+                          "rod", "saw", "bow", "jug", "pie", "tin", "egg", "oil", "ash", "hay",
+                          "bed", "can", "jar", "pan", "wire", "pipe", "lamp", "sign", "tree", "bush",
+                          "seed", "leaf", "cage", "trap", "cart", "boot", "belt", "hide", "note",
+                          "book", "page", "tab", "rack", "bench", "chair", "table", "chest", "stool",
+                          "well", "pool", "mill", "wheel", "sink", "tap", "plank", "board", "step",
+                          "pile", "path", "road", "bridge", "tower", "post", "pole", "block", "slab",
+                          "stone", "brick", "sand", "dust", "dirt", "mud", "snow", "ice", "fire",
+                          "light", "edge", "bank", "hill", "cave", "hole", "pit", "gap", "bay",
+                          "dock", "den", "nest", "yard", "camp", "site", "base", "fort", "lid",
+                          "top", "end", "tip", "point", "blade", "bolt", "pin", "hook", "knob",
+                          "handle", "bit", "chip", "drop", "rag", "strip", "band", "knot", "link",
+                          "chain", "cord", "line", "gear", "ramp", "ledge", "nook", "face", "side",
+                          "part", "room", "hall", "floor", "ground", "place", "spot", "way", "set",
+                          "use", "run", "cut", "dig", "mix", "pull", "push", "turn", "move",
+                        ]);
+
+                        // Collect object names from highlights + base words
+                        const nameSet = new Set<string>();
+                        for (const s of steps) {
+                          for (const o of s.highlights?.object ?? []) {
+                            if (o.name && o.name !== "New Object") {
+                              // Skip single-word names that are common English words
+                              const isSingleWord = o.name.split(/\s+/).length === 1;
+                              if (isSingleWord && COMMON_WORD_EXCLUSIONS.has(o.name.toLowerCase())) continue;
+                              nameSet.add(o.name);
+                              // For multi-word names, also add the last word as a match target
+                              // e.g. "Crystal saw" → also match "saw", "Enchanted key" → also match "key"
+                              const words = o.name.split(/\s+/);
+                              if (words.length >= 2) {
+                                const baseWord = words[words.length - 1];
+                                if (baseWord.length >= 3 && !COMMON_WORD_EXCLUSIONS.has(baseWord.toLowerCase())) {
+                                  nameSet.add(baseWord);
+                                }
+                              }
+                            }
+                          }
+                        }
+
+                        console.log("Object auto-highlight: found names:", Array.from(nameSet));
+                        const allNames = Array.from(nameSet);
+                        if (allNames.length === 0) return;
+                        allNames.sort((a, b) => b.length - a.length);
+                        const objPatterns = allNames.map(
+                          (name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi")
+                        );
+                        EditorStore.patchQuest((draft) => {
+                          for (const step of draft.questSteps) {
+                            step.stepDescription = autoHighlight(step.stepDescription, "#FFA500", objPatterns);
+                            if (step.additionalStepInformation) {
+                              step.additionalStepInformation = step.additionalStepInformation.map(
+                                (info) => autoHighlight(info, "#FFA500", objPatterns)
+                              );
+                            }
+                          }
+                          syncQuestImageDescriptions(draft);
+                        });
+                        handleStepChange(autoHighlight(localStepDesc, "#FFA500", objPatterns));
+                      }}
+                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FFA500", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
+                    >
+                      Obj
+                    </button>
+                    <button
+                      type="button"
+                      title="Auto-format compass directions and floor references — ALL steps (magenta)"
+                      onClick={() => {
+                        // Helper function to get ordinal suffix
+                        const getOrdinalSuffix = (n: number): string => {
+                          if (n % 100 >= 11 && n % 100 <= 13) return "th";
+                          switch (n % 10) {
+                            case 1: return "st";
+                            case 2: return "nd";
+                            case 3: return "rd";
+                            default: return "th";
+                          }
+                        };
+
+                        // Auto-format directions and floors
+                        const autoFormatDirectionsAndFloors = (text: string): string => {
+                          const segments = splitColorSegments(text);
+                          let result = '';
+
+                          for (const seg of segments) {
+                            if (seg.colored) {
+                              result += seg.text;
+                              continue;
+                            }
+
+                            let processed = seg.text;
+
+                            // FIRST: Process floor references (more specific patterns)
+                            // Match floor references: "ground floor", "1st floor", "2nd floor", etc.
+                            processed = processed.replace(
+                              /\b(ground\s+floor|(\d+)(st|nd|rd|th)\s+floor|basement|top\s+floor)\b/gi,
+                              (match, _full, floorNum, _suffix, offset) => {
+                                // Check if already underlined or has superscript notation
+                                const beforeMatch = processed.substring(0, offset);
+                                const afterMatch = processed.substring(offset + match.length);
+
+                                // Skip if already formatted (check for __ before or after, or ^( after)
+                                if (beforeMatch.endsWith('__') || afterMatch.startsWith('__') || afterMatch.startsWith('^(')) {
+                                  return match;
+                                }
+
+                                const lowerMatch = match.toLowerCase().trim();
+
+                                // Special cases: basement and top floor (no UK/US difference)
+                                if (lowerMatch === 'basement' || lowerMatch === 'top floor') {
+                                  return `__${match}__`;
+                                }
+
+                                // Ground floor case
+                                if (lowerMatch === 'ground floor') {
+                                  return `__ground floor__^(UK) / __1st floor__^(US)`;
+                                }
+
+                                // Numbered floors (1st, 2nd, 3rd, etc.)
+                                if (floorNum) {
+                                  const ukNum = parseInt(floorNum, 10);
+                                  const usNum = ukNum + 1;
+                                  const ukSuffix = getOrdinalSuffix(ukNum);
+                                  const usSuffix = getOrdinalSuffix(usNum);
+
+                                  return `__${ukNum}${ukSuffix} floor__^(UK) / __${usNum}${usSuffix} floor__^(US)`;
+                                }
+
+                                return match;
+                              }
+                            );
+
+                            // SECOND: Process compass directions
+                            // Match directions: north, south, east, west, northeast, etc.
+                            processed = processed.replace(
+                              /\b(north\s*[-–—]\s*east|north\s*[-–—]\s*west|south\s*[-–—]\s*east|south\s*[-–—]\s*west|north-?east|north-?west|south-?east|south-?west|north|south|east|west|northern|southern|eastern|western)\b/gi,
+                              (match, _p1, offset) => {
+                                // Check if already underlined
+                                const beforeMatch = processed.substring(0, offset);
+                                const afterMatch = processed.substring(offset + match.length);
+
+                                // Skip if already formatted
+                                if (beforeMatch.endsWith('__') || afterMatch.startsWith('__')) {
+                                  return match;
+                                }
+
+                                return `__${match}__`;
+                              }
+                            );
+
+                            result += processed;
+                          }
+
+                          return result;
+                        };
+
+                        // Apply to all steps
+                        EditorStore.patchQuest((draft) => {
+                          for (const step of draft.questSteps) {
+                            step.stepDescription = autoFormatDirectionsAndFloors(step.stepDescription);
+                            if (step.additionalStepInformation) {
+                              step.additionalStepInformation = step.additionalStepInformation.map(
+                                (info) => autoFormatDirectionsAndFloors(info)
+                              );
+                            }
+                          }
+                          syncQuestImageDescriptions(draft);
+                        });
+                        handleStepChange(autoFormatDirectionsAndFloors(localStepDesc));
+                      }}
+                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FF69B4", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
+                    >
+                      Dir
+                    </button>
+                  </div>
+                )}
               </div>
               <textarea
                 ref={textareaRef}
