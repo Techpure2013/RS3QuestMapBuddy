@@ -27,6 +27,7 @@ import ObjectSearchPanel from "./containers/SearchPanels/ObjectSearchPanel";
 import ExportsPanel from "./containers/ExportsPanel";
 import PathToolsPanel from "./containers/PathToolsPanel";
 import MapLocationEditor from "./containers/MapLocationEditor";
+import HighlightSettingsPanel from "./containers/HighlightSettingsPanel";
 import MapCenter from "./map/MapCenter";
 import CenterControls from "./containers/CenterControlPanel";
 import Panel from "./sections/panel";
@@ -97,6 +98,9 @@ const App: React.FC = () => {
             </Panel>
             <Panel defaultOpen={false} title="Map Locations" compact>
               <MapLocationEditor />
+            </Panel>
+            <Panel defaultOpen={false} title="Highlight Settings" compact>
+              <HighlightSettingsPanel />
             </Panel>
           </>
         )}

@@ -8,6 +8,7 @@ import { QuickInsertPicker } from "./QuickInsertPicker";
 import { keybindStore } from "../../keybinds/keybindStore";
 import { useEditorHotkeys, getHotkeyForAction } from "../hooks/useEditorHotkeys";
 import { EditorStore } from "../../state/editorStore";
+import { HighlightSettingsStore } from "../../state/highlightSettingsStore";
 
 const FORMAT_BUTTONS = [
   { id: "bold", label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 }, cursorOffset: 0 },
@@ -84,24 +85,6 @@ export const CHAT_PATTERNS = [/\(Chat\s+[\d•·.\-~✓✗×]+\)/gi];
 export const LODESTONE_PATTERNS = [
   /\b(?!(?:of|the|in|at|to|from|by|for|with|near|and|or)\s)(\w+(?:\s+\w+)?)\s+lodestone\b/gi,  // "X Lodestone" (1-2 words, skip prepositions)
   /(?<!\w)[A-Z]{3}(?!\w)/g,               // Fairy ring codes (standalone 3-letter uppercase)
-];
-
-export const ACTION_VERBS = [
-  "Go upstairs", "Go downstairs", "Talk to", "Speak to", "Interact",
-  "Use", "Climb", "Cook", "Mine", "Fish", "Chop",
-  "Search", "Open", "Enter", "Exit", "Cross",
-  "Inspect", "Investigate", "Read", "Pick", "Picklock",
-  "Dig", "Craft", "Smith", "Fletch", "Light", "Pray",
-  "Activate", "Operate", "Pull", "Push", "Squeeze",
-  "Jump", "Swing", "Buy", "Sell", "Trade", "Wear", "Equip", "Unequip", "Take", "Pick up", "Pick-up", "Drop"
-];
-export const ACTION_PATTERNS = [
-  new RegExp(`\\b(${ACTION_VERBS.join("|")})\\b`, "gi"),
-];
-
-export const KILL_VERBS = ["Kill", "Defeat", "Slay", "Fight", "Attack", "Destroy"];
-export const KILL_PATTERNS = [
-  new RegExp(`\\b(${KILL_VERBS.join("|")})\\b`, "gi"),
 ];
 
 export interface FormattingToolbarProps {
@@ -300,7 +283,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           <button
             type="button"
             title="Auto-highlight action verbs (cyan)"
-            onClick={() => onChange(autoHighlight(value, "#00FFFF", ACTION_PATTERNS))}
+            onClick={() => onChange(autoHighlight(value, "#00FFFF", HighlightSettingsStore.getActionPatterns()))}
             style={{
               padding: "3px 8px",
               fontSize: "0.7rem",
@@ -317,7 +300,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           <button
             type="button"
             title="Auto-highlight kill/combat verbs (red)"
-            onClick={() => onChange(autoHighlight(value, "#FF0000", KILL_PATTERNS))}
+            onClick={() => onChange(autoHighlight(value, "#FF0000", HighlightSettingsStore.getKillPatterns()))}
             style={{
               padding: "3px 8px",
               fontSize: "0.7rem",

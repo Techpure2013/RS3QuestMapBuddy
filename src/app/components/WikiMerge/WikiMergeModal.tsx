@@ -1,7 +1,7 @@
 // src/app/components/WikiMerge/WikiMergeModal.tsx
 // Side-by-side comparison modal for wiki merge with field-level selection and drag-and-drop
 
-import React, { useEffect, useCallback, useRef, useState } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import { MergeStore } from "../../../state/mergeStore";
 import { useMergeIsOpen } from "../../../state/useMergeSelector";
 import { EditorStore } from "../../../state/editorStore";
@@ -667,9 +667,6 @@ export const WikiMergeModal: React.FC = () => {
   // Count of immediate changes made (link, full overwrite)
   const [immediateChangesCount, setImmediateChangesCount] = useState(0);
 
-  // Refs for synchronized scrolling
-  const leftScrollRef = useRef<HTMLDivElement>(null);
-  const rightScrollRef = useRef<HTMLDivElement>(null);
 
   // Keyboard handler
   const handleKeyDown = useCallback(
@@ -709,30 +706,6 @@ export const WikiMergeModal: React.FC = () => {
     }
   }, [feedbackMessage]);
 
-  // Synchronize scroll between wiki and local columns
-  useEffect(() => {
-    const left = leftScrollRef.current;
-    const right = rightScrollRef.current;
-    if (!left || !right) return;
-
-    let syncing = false;
-    const syncScroll = (source: HTMLDivElement, target: HTMLDivElement) => {
-      if (syncing) return;
-      syncing = true;
-      target.scrollTop = source.scrollTop;
-      syncing = false;
-    };
-
-    const handleLeftScroll = () => syncScroll(left, right);
-    const handleRightScroll = () => syncScroll(right, left);
-
-    left.addEventListener("scroll", handleLeftScroll);
-    right.addEventListener("scroll", handleRightScroll);
-    return () => {
-      left.removeEventListener("scroll", handleLeftScroll);
-      right.removeEventListener("scroll", handleRightScroll);
-    };
-  }, [isOpen]);
 
   // Calculate pending count
   const pendingCount = selectedFields.size + pendingDrops.size + pendingInserts.size;
@@ -1268,7 +1241,6 @@ export const WikiMergeModal: React.FC = () => {
         <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
           {/* Left: Wiki steps */}
           <div
-            ref={leftScrollRef}
             style={{
               flex: 1,
               overflow: "auto",
@@ -1311,7 +1283,6 @@ export const WikiMergeModal: React.FC = () => {
 
           {/* Right: Local steps */}
           <div
-            ref={rightScrollRef}
             style={{
               flex: 1,
               overflow: "auto",
