@@ -1491,13 +1491,7 @@ export const CenterControls: React.FC = () => {
                                 const candLower = candidate.toLowerCase();
                                 // Skip NPC/object names and game terms
                                 if (!excludeLower.has(candLower) && !gameTermsLower.has(candLower)) {
-                                  if (candidate.split(/\s+/).length >= 2) {
-                                    // Multi-word proper nouns: include directly
-                                    nameSet.add(candidate);
-                                  } else {
-                                    // Single-word: collect for API verification
-                                    singleWordCandidates.add(candidate);
-                                  }
+                                  singleWordCandidates.add(candidate);
                                 }
                               }
                             }
@@ -1511,7 +1505,7 @@ export const CenterControls: React.FC = () => {
                           }
                         }
 
-                        // Verify single-word proper nouns against NPC search API
+                        // Verify proper noun candidates against NPC search API
                         if (singleWordCandidates.size > 0) {
                           const checks = Array.from(singleWordCandidates).map(async (candidate) => {
                             try {
@@ -1532,7 +1526,7 @@ export const CenterControls: React.FC = () => {
                         if (allNames.length === 0) return;
                         allNames.sort((a, b) => b.length - a.length);
                         const npcPatterns = allNames.map(
-                          (name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi")
+                          (name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:'s)?\\b`, "gi")
                         );
                         EditorStore.patchQuest((draft) => {
                           for (const step of draft.questSteps) {

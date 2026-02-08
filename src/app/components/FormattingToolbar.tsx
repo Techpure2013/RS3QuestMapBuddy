@@ -346,7 +346,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
               if (allNames.length === 0) return;
               allNames.sort((a, b) => b.length - a.length);
               const npcPatterns = allNames.map(
-                (name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi")
+                (name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:'s)?\\b`, "gi")
               );
               onChange(autoHighlight(value, "#FFA500", npcPatterns));
             }}
