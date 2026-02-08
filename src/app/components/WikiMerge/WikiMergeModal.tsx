@@ -310,9 +310,7 @@ const InsertZone: React.FC<{
     }
   };
 
-  if (!dragActive && !isOver && !hasPending) {
-    return null;
-  }
+  const isVisible = dragActive || isOver || hasPending;
 
   return (
     <div
@@ -320,34 +318,42 @@ const InsertZone: React.FC<{
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
       style={{
-        padding: "6px 12px",
-        marginBottom: position === "before" ? 4 : 0,
-        marginTop: position === "after" ? 4 : 0,
+        padding: isVisible ? "6px 12px" : "2px 0",
+        marginBottom: position === "before" ? (isVisible ? 4 : 0) : 0,
+        marginTop: position === "after" ? (isVisible ? 4 : 0) : 0,
         background: hasPending
           ? "rgba(234, 179, 8, 0.15)"
           : isOver
           ? "rgba(59, 130, 246, 0.2)"
-          : "rgba(59, 130, 246, 0.05)",
-        border: `1px dashed ${hasPending ? "#eab308" : isOver ? "#3b82f6" : "#3b82f655"}`,
+          : isVisible
+          ? "rgba(59, 130, 246, 0.05)"
+          : "transparent",
+        border: isVisible
+          ? `1px dashed ${hasPending ? "#eab308" : isOver ? "#3b82f6" : "#3b82f655"}`
+          : "1px dashed transparent",
         borderRadius: 4,
         fontSize: 11,
         color: hasPending ? "#eab308" : isOver ? "#3b82f6" : "#6b7280",
-        textAlign: "center",
+        textAlign: "center" as const,
         transition: "all 0.15s ease",
+        minHeight: isVisible ? undefined : 4,
+        overflow: "hidden",
       }}
     >
-      {hasPending && pendingInfo ? (
-        <span>
-          Insert from Step {pendingInfo.sourceStep + 1} ({FIELD_LABELS[pendingInfo.sourceField]})
-          <span
-            onClick={onClearPending}
-            style={{ marginLeft: 6, cursor: "pointer", fontWeight: 600 }}
-          >
-            ✕
+      {isVisible && (
+        hasPending && pendingInfo ? (
+          <span>
+            Insert from Step {pendingInfo.sourceStep + 1} ({FIELD_LABELS[pendingInfo.sourceField]})
+            <span
+              onClick={onClearPending}
+              style={{ marginLeft: 6, cursor: "pointer", fontWeight: 600 }}
+            >
+              ✕
+            </span>
           </span>
-        </span>
-      ) : (
-        `Insert ${position}`
+        ) : (
+          `Insert ${position}`
+        )
       )}
     </div>
   );
@@ -661,6 +667,10 @@ export const WikiMergeModal: React.FC = () => {
   // Count of immediate changes made (link, full overwrite)
   const [immediateChangesCount, setImmediateChangesCount] = useState(0);
 
+  // Refs for synchronized scrolling
+  const leftScrollRef = useRef<HTMLDivElement>(null);
+  const rightScrollRef = useRef<HTMLDivElement>(null);
+
   // Keyboard handler
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -699,9 +709,35 @@ export const WikiMergeModal: React.FC = () => {
     }
   }, [feedbackMessage]);
 
+  // Synchronize scroll between wiki and local columns
+  useEffect(() => {
+    const left = leftScrollRef.current;
+    const right = rightScrollRef.current;
+    if (!left || !right) return;
+
+    let syncing = false;
+    const syncScroll = (source: HTMLDivElement, target: HTMLDivElement) => {
+      if (syncing) return;
+      syncing = true;
+      target.scrollTop = source.scrollTop;
+      syncing = false;
+    };
+
+    const handleLeftScroll = () => syncScroll(left, right);
+    const handleRightScroll = () => syncScroll(right, left);
+
+    left.addEventListener("scroll", handleLeftScroll);
+    right.addEventListener("scroll", handleRightScroll);
+    return () => {
+      left.removeEventListener("scroll", handleLeftScroll);
+      right.removeEventListener("scroll", handleRightScroll);
+    };
+  }, [isOpen]);
+
   // Calculate pending count
   const pendingCount = selectedFields.size + pendingDrops.size + pendingInserts.size;
-  const totalSelectedFields = Array.from(selectedFields.values()).reduce((sum, set) => sum + set.size, 0);
+  let totalSelectedFields = 0;
+  selectedFields.forEach((fieldSet) => { totalSelectedFields += fieldSet.size; });
 
   // Close handler
   const handleClose = () => {
@@ -716,10 +752,10 @@ export const WikiMergeModal: React.FC = () => {
 
   // Toggle field selection for a wiki step
   const handleToggleField = (stepIndex: number, field: FieldName) => {
-    setSelectedFields((prev) => {
-      const next = new Map(prev);
-      const stepFields = next.get(stepIndex) || new Set();
-      const newStepFields = new Set(stepFields);
+    setSelectedFields((prev: Map<number, Set<FieldName>>) => {
+      const next = new Map<number, Set<FieldName>>(prev);
+      const stepFields = next.get(stepIndex) || new Set<FieldName>();
+      const newStepFields = new Set<FieldName>(stepFields);
       if (newStepFields.has(field)) {
         newStepFields.delete(field);
       } else {
@@ -741,9 +777,9 @@ export const WikiMergeModal: React.FC = () => {
     const fields: FieldName[] = ["description", "itemsNeeded", "itemsRecommended", "dialogOptions", "additionalInfo"];
     const availableFields = fields.filter((f) => hasFieldContent(step, f));
 
-    setSelectedFields((prev) => {
-      const next = new Map(prev);
-      const currentSelected = next.get(stepIndex) || new Set();
+    setSelectedFields((prev: Map<number, Set<FieldName>>) => {
+      const next = new Map<number, Set<FieldName>>(prev);
+      const currentSelected = next.get(stepIndex) || new Set<FieldName>();
       const allSelected = availableFields.every((f) => currentSelected.has(f));
 
       if (allSelected) {
@@ -1232,6 +1268,7 @@ export const WikiMergeModal: React.FC = () => {
         <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
           {/* Left: Wiki steps */}
           <div
+            ref={leftScrollRef}
             style={{
               flex: 1,
               overflow: "auto",
@@ -1274,6 +1311,7 @@ export const WikiMergeModal: React.FC = () => {
 
           {/* Right: Local steps */}
           <div
+            ref={rightScrollRef}
             style={{
               flex: 1,
               overflow: "auto",

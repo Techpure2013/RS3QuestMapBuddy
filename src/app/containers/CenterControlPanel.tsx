@@ -1426,6 +1426,70 @@ export const CenterControls: React.FC = () => {
                           if (t.category === "lodestone") excludeLower.add(t.name.toLowerCase());
                         }
 
+                        // Exclude known RS3 location/city names that are NOT NPCs
+                        const RS3_LOCATION_NAMES = [
+                          // Major cities
+                          "Varrock", "Lumbridge", "Falador", "Ardougne", "Yanille", "Rellekka",
+                          "Taverley", "Taverly", "Burthorpe", "Edgeville", "Draynor", "Canifis",
+                          "Prifddinas", "Menaphos", "Keldagrim", "Zanaris",
+                          // Towns and villages
+                          "Catherby", "Seers", "Camelot", "Rimmington", "Ooglog", "Nardah",
+                          "Shilo", "Witchaven", "Hemenster", "Barbarian", "Seer's",
+                          "Brimhaven", "Darkmeyer", "Slepe", "Ashdale",
+                          "Burgh de Rott", "Mort'ton", "Phasmatys", "Port Phasmatys",
+                          "Sorcerer's Tower", "Goblin Village", "Sinclair", "Khazard",
+                          "McGrubor's Wood", "Jiggig", "Oo'glog",
+                          "Burntmeat", "Troll Stronghold", "Trollheim",
+                          // Regions
+                          "Misthalin", "Asgarnia", "Kandarin", "Morytania", "Tirannwn",
+                          "Karamja", "Kharidian", "Fremennik", "Wilderness", "Feldip",
+                          "Anachronia", "Forinthry",
+                          // Fremennik locations
+                          "Jatizso", "Neitiznot", "Miscellania", "Etceteria",
+                          "Waterbirth", "Waterbirth Island", "Ungael", "Lunar Isle",
+                          // Desert locations
+                          "Pollnivneach", "Sophanem", "Uzer", "Al Kharid",
+                          "Bedabin", "Bandit Camp", "Duel Arena", "Dominion Tower",
+                          "Ullek", "Het's Oasis",
+                          // Elven locations
+                          "Lletya", "Isafdar", "Arandar", "Tyras",
+                          // Eastern Lands / Arc
+                          "Waiko", "Aminishi", "Cyclosis", "Goshima",
+                          "Tuai Leit", "The Arc",
+                          // Islands
+                          "Entrana", "Crandor", "Ape Atoll", "Marim",
+                          "Mos Le'Harmless", "Harmony Island", "Braindeath Island",
+                          "Crash Island", "Tutorial Island",
+                          // Landmarks and specific areas
+                          "Lumbridge Swamp", "Port Sarim", "Eagles' Peak", "Fort Forinthry",
+                          "White Wolf", "White Wolf Mountain", "Grand Exchange",
+                          "Barbarian Village", "Champions' Guild", "Warriors' Guild",
+                          "Heroes' Guild", "Legends' Guild", "Cooks' Guild",
+                          "Crafting Guild", "Mining Guild", "Fishing Guild",
+                          "Ranging Guild", "Slayer Tower", "Wizards' Tower",
+                          "Dark Wizards' Tower", "Duel Arena",
+                          "Mage Training Arena", "Fight Caves", "Fight Kiln",
+                          "Barrows", "God Wars Dungeon", "Stronghold of Security",
+                          "Stronghold", "Daemonheim",
+                          // Underground cities
+                          "Dorgesh-Kaan", "Dorgeshuun",
+                          // Dungeons
+                          "Taverley Dungeon", "Brimhaven Dungeon",
+                          "Asgarnian Ice Dungeon", "Edgeville Dungeon",
+                          "Varrock Sewers", "Kalphite Hive", "Kalphite",
+                          // Other planes
+                          "Freneskae", "Tarddiad", "Abbinah", "Vampyrium",
+                          "Erebus", "Senntisten",
+                          // God-related names (locations, not NPCs)
+                          "Bandos", "Armadyl", "Saradomin", "Zamorak",
+                          "Seren", "Zaros", "Guthix",
+                          // Commonly confused with NPCs
+                          "Reldo", "Khazard", "Dorgesh",
+                        ];
+                        for (const loc of RS3_LOCATION_NAMES) {
+                          excludeLower.add(loc.toLowerCase());
+                        }
+
                         // Extract proper nouns from step text
                         const nameSet = new Set<string>();
 
@@ -1823,9 +1887,9 @@ export const CenterControls: React.FC = () => {
                             );
 
                             // SECOND: Process compass directions
-                            // Match directions: north, south, east, west, northeast, etc.
+                            // Match directions: north, south, east, west, northeast, northern, northernmost, etc.
                             processed = processed.replace(
-                              /\b(north\s*[-–—]\s*east|north\s*[-–—]\s*west|south\s*[-–—]\s*east|south\s*[-–—]\s*west|north-?east|north-?west|south-?east|south-?west|north|south|east|west|northern|southern|eastern|western)\b/gi,
+                              /\b(north\s*[-–—]\s*east(?:ern(?:most)?)?|north\s*[-–—]\s*west(?:ern(?:most)?)?|south\s*[-–—]\s*east(?:ern(?:most)?)?|south\s*[-–—]\s*west(?:ern(?:most)?)?|north-?east(?:ern(?:most)?)?|north-?west(?:ern(?:most)?)?|south-?east(?:ern(?:most)?)?|south-?west(?:ern(?:most)?)?|northernmost|southernmost|easternmost|westernmost|northern|southern|eastern|western|north|south|east|west)\b/gi,
                               (match, _p1, offset) => {
                                 // Check if already underlined
                                 const beforeMatch = processed.substring(0, offset);

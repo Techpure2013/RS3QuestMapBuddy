@@ -131,15 +131,15 @@ export const MapLocationEditor: React.FC = () => {
 
       if (!editingLocation) return;
 
-      // Format from event is [lng, lat] to match AreaFlyToHandler
+      // Format from event is [lat, lng] to match database storage format
       setEditingLocation({
         ...editingLocation,
-        centerLng: String(Math.round(detail.center[0])),
-        centerLat: String(Math.round(detail.center[1])),
-        boundsMinLng: String(Math.round(detail.bounds[0][0])),
-        boundsMinLat: String(Math.round(detail.bounds[0][1])),
-        boundsMaxLng: String(Math.round(detail.bounds[1][0])),
-        boundsMaxLat: String(Math.round(detail.bounds[1][1])),
+        centerLat: String(Math.round(detail.center[0])),
+        centerLng: String(Math.round(detail.center[1])),
+        boundsMinLat: String(Math.round(detail.bounds[0][0])),
+        boundsMinLng: String(Math.round(detail.bounds[0][1])),
+        boundsMaxLat: String(Math.round(detail.bounds[1][0])),
+        boundsMaxLng: String(Math.round(detail.bounds[1][1])),
       });
 
       setSuccessMsg("Coordinates captured from map! Review and save.");
