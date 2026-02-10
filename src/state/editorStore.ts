@@ -223,8 +223,8 @@ export const EditorStore = {
     });
   },
 
-  async newQuest(): Promise<void> {
-    const q = createDefaultQuest();
+  async newQuest(name?: string): Promise<void> {
+    const q = createDefaultQuest(name);
     // Replace quest
     this.setQuest(q);
     await clearObservedChatheads();

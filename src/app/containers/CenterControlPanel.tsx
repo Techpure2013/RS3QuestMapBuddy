@@ -727,10 +727,12 @@ export const CenterControls: React.FC = () => {
             <>
               <button
                 onClick={async () => {
+                  const name = window.prompt("Enter quest name:");
+                  if (!name) return;
                   try {
                     setBusy(true);
                     await clearImageCache();
-                    await EditorStore.newQuest();
+                    await EditorStore.newQuest(name.trim());
                   } finally {
                     setBusy(false);
                   }

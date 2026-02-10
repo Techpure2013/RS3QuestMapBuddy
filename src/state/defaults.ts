@@ -1,8 +1,9 @@
 import type { Quest } from "./types";
 
-export function createDefaultQuest(): Quest {
+export function createDefaultQuest(name?: string): Quest {
+  const questName = name || "New Quest";
   return {
-    questName: "New Quest",
+    questName: questName,
     questSteps: [
       {
         stepDescription: "This is the first step of your new quest.",
@@ -15,7 +16,7 @@ export function createDefaultQuest(): Quest {
       },
     ],
     questDetails: {
-      Quest: "New Quest",
+      Quest: questName,
       StartPoint: "",
       MemberRequirement: "Free to Play",
       OfficialLength: "Short",
