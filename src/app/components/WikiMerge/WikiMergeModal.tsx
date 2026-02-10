@@ -788,13 +788,17 @@ export const WikiMergeModal: React.FC = () => {
       });
     }
 
-    // Overwrite with wiki data
+    // Overwrite with wiki data (preserve local dialog options — wiki parser doesn't reliably capture them)
     const localStep = { ...updatedSteps[wikiIndex] };
     if (wikiStep.stepDescription) localStep.stepDescription = wikiStep.stepDescription;
     if (wikiStep.itemsNeeded?.length) localStep.itemsNeeded = [...wikiStep.itemsNeeded];
     if (wikiStep.itemsRecommended?.length) localStep.itemsRecommended = [...wikiStep.itemsRecommended];
-    if (wikiStep.dialogOptions?.length) localStep.dialogOptions = [...wikiStep.dialogOptions];
-    if (wikiStep.additionalStepInformation?.length) localStep.additionalStepInformation = [...wikiStep.additionalStepInformation];
+    if (!localStep.dialogOptions?.length && wikiStep.dialogOptions?.length) {
+      localStep.dialogOptions = [...wikiStep.dialogOptions];
+    }
+    if (!localStep.additionalStepInformation?.length && wikiStep.additionalStepInformation?.length) {
+      localStep.additionalStepInformation = [...wikiStep.additionalStepInformation];
+    }
 
     updatedSteps[wikiIndex] = localStep;
 
@@ -826,24 +830,49 @@ export const WikiMergeModal: React.FC = () => {
   const handleFullQuestOverwrite = () => {
     if (wikiSteps.length === 0) return;
 
-    const confirm = window.confirm(
-      `This will overwrite ALL ${currentLocalSteps.length} local steps with ${wikiSteps.length} wiki steps. Continue?`
-    );
-    if (!confirm) return;
-
     const quest = EditorStore.getState().quest;
     if (!quest) return;
 
-    // Create new steps array from wiki data
-    const updatedSteps: QuestStep[] = wikiSteps.map((wikiStep) => {
+    // Count steps with plotted highlights for warning
+    let stepsWithHighlights = 0;
+    let totalNpcs = 0;
+    let totalObjects = 0;
+    for (const step of quest.questSteps) {
+      const npcCount = step.highlights?.npc?.length ?? 0;
+      const objCount = step.highlights?.object?.length ?? 0;
+      if (npcCount > 0 || objCount > 0) {
+        stepsWithHighlights++;
+        totalNpcs += npcCount;
+        totalObjects += objCount;
+      }
+    }
+
+    let warningMsg = `This will overwrite ALL ${currentLocalSteps.length} local steps with ${wikiSteps.length} wiki steps.`;
+    if (stepsWithHighlights > 0) {
+      const parts: string[] = [];
+      if (totalNpcs > 0) parts.push(`${totalNpcs} NPC location${totalNpcs > 1 ? "s" : ""}`);
+      if (totalObjects > 0) parts.push(`${totalObjects} object location${totalObjects > 1 ? "s" : ""}`);
+      warningMsg += `\n\n${stepsWithHighlights} step${stepsWithHighlights > 1 ? "s have" : " has"} plotted map locations (${parts.join(" and ")}). These will be preserved.`;
+    }
+    warningMsg += "\n\nContinue?";
+
+    const confirm = window.confirm(warningMsg);
+    if (!confirm) return;
+
+    // Create new steps array from wiki data, preserving local highlights and dialog options
+    const updatedSteps: QuestStep[] = wikiSteps.map((wikiStep, idx) => {
+      const localStep = quest.questSteps[idx];
       const newStep: QuestStep = {
         stepDescription: wikiStep.stepDescription || "",
         itemsNeeded: wikiStep.itemsNeeded?.length ? [...wikiStep.itemsNeeded] : [],
         itemsRecommended: wikiStep.itemsRecommended?.length ? [...wikiStep.itemsRecommended] : [],
-        dialogOptions: wikiStep.dialogOptions?.length ? [...wikiStep.dialogOptions] : [],
-        additionalStepInformation: wikiStep.additionalStepInformation?.length ? [...wikiStep.additionalStepInformation] : [],
-        highlights: { npc: [], object: [] },
-        floor: 0,
+        dialogOptions: localStep?.dialogOptions?.length ? [...localStep.dialogOptions] : (wikiStep.dialogOptions?.length ? [...wikiStep.dialogOptions] : []),
+        additionalStepInformation: localStep?.additionalStepInformation?.length ? [...localStep.additionalStepInformation] : (wikiStep.additionalStepInformation?.length ? [...wikiStep.additionalStepInformation] : []),
+        // Preserve plotted locations and floor from local step
+        highlights: localStep?.highlights ?? { npc: [], object: [] },
+        floor: localStep?.floor ?? 0,
+        stepId: localStep?.stepId,
+        pathToStep: localStep?.pathToStep,
       };
       return newStep;
     });

@@ -18,7 +18,28 @@ import { useEditorSelector } from "./../../state/useEditorSelector";
 import { recordQuestNpcLocations } from "./../../feature/npcPublisher";
 import { clearImageCache } from "../../idb/imageCache";
 import { clearObservedChatheads } from "idb/chatheadsObserved";
-import { fetchWikiGuide } from "../../api/wikiApi";
+import { fetchWikiGuide, type WikiQuestStep } from "../../api/wikiApi";
+
+/** Strip UK floor references and superscript [US] tags in wiki text, keeping only US floor numbers */
+function cleanFloorText(text: string): string {
+  // Remove UK floor references: "2nd floor[UK]", "ground floor[UK]", etc.
+  let cleaned = text.replace(/(?:ground\s+floor|(?:\d+(?:st|nd|rd|th)\s+floor))\[UK\]/gi, "");
+  // Convert [US] tag to superscript
+  cleaned = cleaned.replace(/\[US\]/g, "^([US])");
+  return cleaned;
+}
+
+/** Apply floor text cleanup to all text fields in wiki steps */
+function cleanWikiStepFloorText(steps: WikiQuestStep[]): WikiQuestStep[] {
+  return steps.map(step => ({
+    ...step,
+    stepDescription: cleanFloorText(step.stepDescription || ""),
+    additionalStepInformation: (step.additionalStepInformation || []).map(cleanFloorText),
+    dialogOptions: (step.dialogOptions || []).map(cleanFloorText),
+    itemsNeeded: (step.itemsNeeded || []).map(cleanFloorText),
+    itemsRecommended: (step.itemsRecommended || []).map(cleanFloorText),
+  }));
+}
 import { searchNpcs } from "../../api/npcApi";
 import { MergeStore } from "../../state/mergeStore";
 import { WikiMergeModal } from "../components/WikiMerge";
@@ -635,8 +656,11 @@ export const CenterControls: React.FC = () => {
         return;
       }
 
+      // Clean floor text: strip UK floor references, keep US only
+      const cleanedSteps = cleanWikiStepFloorText(wikiData.steps);
+
       // Open merge modal for user to review changes
-      MergeStore.openMerge(questNameVal, wikiData.steps, quest.questSteps || []);
+      MergeStore.openMerge(questNameVal, cleanedSteps, quest.questSteps || []);
 
       // Clear the refreshing state - modal will handle the rest
       setWikiRefreshMessage({
@@ -1632,7 +1656,7 @@ export const CenterControls: React.FC = () => {
                             // FIRST: Process floor references (more specific patterns)
                             // Match floor references: "ground floor", "1st floor", "2nd floor", etc.
                             processed = processed.replace(
-                              /\b(ground\s+floor|(\d+)(st|nd|rd|th)\s+floor|basement|top\s+floor)\b/gi,
+                              /\b(ground\s+floor|(\d+)(st|nd|rd|th)\s+floor|basement|top\s+floor)\b(?:\^?\(?\[US\]\)?)?/gi,
                               (match, _full, floorNum, _suffix, offset) => {
                                 // Check if already underlined or has superscript notation
                                 const beforeMatch = processed.substring(0, offset);
@@ -1650,19 +1674,18 @@ export const CenterControls: React.FC = () => {
                                   return `__${match}__`;
                                 }
 
-                                // Ground floor case
+                                // Ground floor case (UK ground = US 1st)
                                 if (lowerMatch === 'ground floor') {
-                                  return `__ground floor__^(UK) / __1st floor__^(US)`;
+                                  return `__1st floor__^([US])`;
                                 }
 
-                                // Numbered floors (1st, 2nd, 3rd, etc.)
+                                // Numbered floors — convert UK to US (+1)
                                 if (floorNum) {
                                   const ukNum = parseInt(floorNum, 10);
                                   const usNum = ukNum + 1;
-                                  const ukSuffix = getOrdinalSuffix(ukNum);
                                   const usSuffix = getOrdinalSuffix(usNum);
 
-                                  return `__${ukNum}${ukSuffix} floor__^(UK) / __${usNum}${usSuffix} floor__^(US)`;
+                                  return `__${usNum}${usSuffix} floor__^([US])`;
                                 }
 
                                 return match;
