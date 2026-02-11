@@ -142,14 +142,20 @@ export const CenterControls: React.FC = () => {
         });
       }
       prevStepRef.current = selection.selectedStep;
-    }
 
-    setLocalStepDesc(stepDescription);
-    setHasStepChanges(false);
-    setSaveStatus("idle");
-    // Reset undo/redo stacks when switching steps
-    undoStackRef.current = [];
-    redoStackRef.current = [];
+      // Reset undo/redo stacks only when actually switching steps
+      undoStackRef.current = [];
+      redoStackRef.current = [];
+      setLocalStepDesc(stepDescription);
+      setHasStepChanges(false);
+      setSaveStatus("idle");
+    } else if (stepDescription !== localStepDesc) {
+      // External change on the same step (e.g. wiki merge, quest reload)
+      // Only sync if it wasn't our own auto-save (auto-save sets stepDescription = localStepDesc)
+      setLocalStepDesc(stepDescription);
+      setHasStepChanges(false);
+      setSaveStatus("idle");
+    }
   }, [selection.selectedStep, stepDescription]);
 
   // Auto-resize textarea as content grows
@@ -268,7 +274,7 @@ export const CenterControls: React.FC = () => {
     if (!textarea) return;
 
     const cursor = textarea.selectionStart;
-    const currentValue = textarea.value;
+    const currentValue = localStepDesc;
 
     const blockRe = /\[[^\]]*\]\{[^}]*\}/g;
     let match: RegExpExecArray | null;
@@ -277,11 +283,15 @@ export const CenterControls: React.FC = () => {
       const blockEnd = blockStart + match[0].length;
       if (cursor >= blockStart && cursor <= blockEnd) {
         const inner = match[0].replace(/^\[[^\]]*\]\{/, "").replace(/\}$/, "");
+        const newText = currentValue.substring(0, blockStart) + inner + currentValue.substring(blockEnd);
+        handleStepChange(newText);
 
-        // Use execCommand so the change is natively undoable via Ctrl+Z
-        textarea.focus();
-        textarea.setSelectionRange(blockStart, blockEnd);
-        document.execCommand("insertText", false, inner);
+        // Restore cursor inside the unwrapped text
+        requestAnimationFrame(() => {
+          textarea.focus();
+          const newCursor = blockStart + inner.length;
+          textarea.setSelectionRange(newCursor, newCursor);
+        });
         return;
       }
     }

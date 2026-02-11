@@ -60,6 +60,9 @@ export function useEditorHotkeys(
     (e: KeyboardEvent) => {
       if (!enabled) return;
 
+      // Don't intercept keys while keybind modal is recording
+      if (keybindStore.modalOpen) return;
+
       // Don't trigger if we're in an input that's not our target
       const target = e.target as HTMLElement;
       if (targetRef?.current && !targetRef.current.contains(target)) {

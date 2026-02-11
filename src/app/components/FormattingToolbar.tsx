@@ -155,15 +155,19 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
       const blockEnd = blockStart + match[0].length;
       if (cursor >= blockStart && cursor <= blockEnd) {
         const inner = match[0].replace(/^\[[^\]]*\]\{/, "").replace(/\}$/, "");
+        const newText = currentValue.substring(0, blockStart) + inner + currentValue.substring(blockEnd);
+        onChange(newText);
 
-        // Use execCommand so the change is natively undoable via Ctrl+Z
-        textarea.focus();
-        textarea.setSelectionRange(blockStart, blockEnd);
-        document.execCommand("insertText", false, inner);
+        // Restore cursor inside the unwrapped text
+        requestAnimationFrame(() => {
+          textarea.focus();
+          const newCursor = blockStart + inner.length;
+          textarea.setSelectionRange(newCursor, newCursor);
+        });
         return;
       }
     }
-  }, [textareaRef]);
+  }, [textareaRef, onChange]);
 
   const handleClearFormatting = useCallback(() => {
     const textarea = textareaRef.current;
