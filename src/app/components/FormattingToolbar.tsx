@@ -140,6 +140,31 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
     });
   }, [textareaRef, onChange]);
 
+  const unwrapSelectionColor = useCallback(() => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const cursor = textarea.selectionStart;
+    const currentValue = textarea.value;
+
+    // Find the color block surrounding the cursor: [color]{...}
+    const blockRe = /\[[^\]]*\]\{[^}]*\}/g;
+    let match: RegExpExecArray | null;
+    while ((match = blockRe.exec(currentValue)) !== null) {
+      const blockStart = match.index;
+      const blockEnd = blockStart + match[0].length;
+      if (cursor >= blockStart && cursor <= blockEnd) {
+        const inner = match[0].replace(/^\[[^\]]*\]\{/, "").replace(/\}$/, "");
+
+        // Use execCommand so the change is natively undoable via Ctrl+Z
+        textarea.focus();
+        textarea.setSelectionRange(blockStart, blockEnd);
+        document.execCommand("insertText", false, inner);
+        return;
+      }
+    }
+  }, [textareaRef]);
+
   const handleClearFormatting = useCallback(() => {
     const textarea = textareaRef.current;
     if (!textarea) return;
@@ -244,124 +269,69 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           >
             ✕ Clear
           </button>
-          {/* ── Auto-highlight buttons ── */}
+          {/* ── Quick Color buttons ── */}
           <span style={{ color: "#4b5563", fontSize: "0.85rem", userSelect: "none", padding: "0 2px" }}>|</span>
+          {[
+            { label: "Chat", color: "#00FF00" },
+            { label: "Action", color: "#00FFFF" },
+            { label: "Kill", color: "#FF0000" },
+            { label: "NPC", color: "#FFA500" },
+            { label: "Obj", color: "#FFA500" },
+            { label: "Loc", color: "#FFFF00" },
+            { label: "Lode", color: "#FFFF00" },
+          ].map((btn) => (
+            <button
+              key={btn.label}
+              type="button"
+              title={`Apply ${btn.label} color to selected text`}
+              onClick={() => wrapSelection(`[${btn.color}]{`, "}")}
+              style={{
+                padding: "3px 8px",
+                fontSize: "0.7rem",
+                background: "#1f2937",
+                border: "1px solid #4b5563",
+                borderLeft: `3px solid ${btn.color}`,
+                borderRadius: 3,
+                color: "#e5e7eb",
+                cursor: "pointer",
+              }}
+            >
+              {btn.label}
+            </button>
+          ))}
           <button
             type="button"
-            title="Auto-highlight chat text in parentheses (green)"
-            onClick={() => onChange(autoHighlight(value, "#00FF00", CHAT_PATTERNS))}
+            title="Apply underline to selected text (directions)"
+            onClick={() => wrapSelection("__", "__")}
             style={{
               padding: "3px 8px",
               fontSize: "0.7rem",
               background: "#1f2937",
               border: "1px solid #4b5563",
-              borderLeft: "3px solid #00FF00",
+              borderLeft: "3px solid #FF69B4",
               borderRadius: 3,
               color: "#e5e7eb",
               cursor: "pointer",
             }}
           >
-            Chat
+            Dir
           </button>
           <button
             type="button"
-            title="Auto-highlight lodestone/fairy ring references (yellow)"
-            onClick={() => onChange(autoHighlight(value, "#FFFF00", LODESTONE_PATTERNS))}
+            title="Remove color from block at cursor"
+            onClick={unwrapSelectionColor}
             style={{
               padding: "3px 8px",
               fontSize: "0.7rem",
               background: "#1f2937",
               border: "1px solid #4b5563",
-              borderLeft: "3px solid #FFFF00",
+              borderLeft: "3px solid #6b7280",
               borderRadius: 3,
-              color: "#e5e7eb",
+              color: "#9ca3af",
               cursor: "pointer",
             }}
           >
-            Lode
-          </button>
-          <button
-            type="button"
-            title="Auto-highlight action verbs (cyan)"
-            onClick={() => onChange(autoHighlight(value, "#00FFFF", HighlightSettingsStore.getActionPatterns()))}
-            style={{
-              padding: "3px 8px",
-              fontSize: "0.7rem",
-              background: "#1f2937",
-              border: "1px solid #4b5563",
-              borderLeft: "3px solid #00FFFF",
-              borderRadius: 3,
-              color: "#e5e7eb",
-              cursor: "pointer",
-            }}
-          >
-            Action
-          </button>
-          <button
-            type="button"
-            title="Auto-highlight kill/combat verbs (red)"
-            onClick={() => onChange(autoHighlight(value, "#FF0000", HighlightSettingsStore.getKillPatterns()))}
-            style={{
-              padding: "3px 8px",
-              fontSize: "0.7rem",
-              background: "#1f2937",
-              border: "1px solid #4b5563",
-              borderLeft: "3px solid #FF0000",
-              borderRadius: 3,
-              color: "#e5e7eb",
-              cursor: "pointer",
-            }}
-          >
-            Kill
-          </button>
-          <button
-            type="button"
-            title="Auto-highlight location names (yellow)"
-            onClick={() => onChange(autoHighlight(value, "#FFFF00", HighlightSettingsStore.getLocationPatterns()))}
-            style={{
-              padding: "3px 8px",
-              fontSize: "0.7rem",
-              background: "#1f2937",
-              border: "1px solid #4b5563",
-              borderLeft: "3px solid #FFFF00",
-              borderRadius: 3,
-              color: "#e5e7eb",
-              cursor: "pointer",
-            }}
-          >
-            Loc
-          </button>
-          <button
-            type="button"
-            title="Auto-highlight NPC/object names from step highlights (orange)"
-            onClick={() => {
-              const edState = EditorStore.getState();
-              const steps = edState.quest?.questSteps ?? [];
-              const nameSet = new Set<string>();
-              for (const s of steps) {
-                for (const n of (s.highlights?.npc ?? []) as any[]) { if (n.npcName) nameSet.add(n.npcName); }
-                for (const o of (s.highlights?.object ?? []) as any[]) { if (o.name) nameSet.add(o.name); }
-              }
-              const allNames = Array.from(nameSet);
-              if (allNames.length === 0) return;
-              allNames.sort((a, b) => b.length - a.length);
-              const npcPatterns = allNames.map(
-                (name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:'s)?\\b`, "gi")
-              );
-              onChange(autoHighlight(value, "#FFA500", npcPatterns));
-            }}
-            style={{
-              padding: "3px 8px",
-              fontSize: "0.7rem",
-              background: "#1f2937",
-              border: "1px solid #4b5563",
-              borderLeft: "3px solid #FFA500",
-              borderRadius: 3,
-              color: "#e5e7eb",
-              cursor: "pointer",
-            }}
-          >
-            NPC
+            Uncolor
           </button>
           <span style={{ color: "#4b5563", fontSize: "0.85rem", userSelect: "none", padding: "0 2px" }}>|</span>
           {/* Color picker button */}

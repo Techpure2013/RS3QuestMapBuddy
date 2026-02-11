@@ -262,6 +262,7 @@ export type Quest = {
   questDetails: QuestDetails;
   questImages: QuestImage[];
   rewards: QuestRewards;
+  lastEditedBy?: string;
 };
 
 /* ==========================================================================
@@ -285,6 +286,7 @@ export type QuestBundle = {
   steps: QuestStep[];
   images: QuestImage[];
   rewards: QuestRewards;
+  lastEditedBy?: string;
 };
 
 export type QuestBundleNormalized = {
@@ -293,6 +295,7 @@ export type QuestBundleNormalized = {
   steps: NormalizedQuestStep[];
   images: QuestImage[];
   rewards: QuestRewards;
+  lastEditedBy?: string;
 };
 
 /* ==========================================================================
@@ -389,6 +392,7 @@ export function bundleToQuest(b: QuestBundle): Quest {
   };
   return {
     questName: b.quest.name,
+    lastEditedBy: (b as any).lastEditedBy,
     questSteps: sorted.map((s) => ({
       stepDescription: s.stepDescription ?? "",
       itemsNeeded: toLinesArray(s.itemsNeeded),
@@ -455,6 +459,7 @@ export const DOCK_ZONES: ReadonlyArray<DockZoneId> = ["left", "right"] as const;
 export function questToBundle(q: Quest): QuestBundleNormalized {
   return {
     quest: { name: q.questName },
+    ...(q.lastEditedBy ? { lastEditedBy: q.lastEditedBy } : {}),
     details: {
       Quest: q.questDetails.Quest,
       StartPoint: q.questDetails.StartPoint ?? "",

@@ -590,6 +590,29 @@ export const NpcObjectToolsPanel: React.FC = () => {
         onPasteList={handlePasteList}
         onCopySelected={handleCopySelected}
         onPasteSelected={handlePasteSelected}
+        onDeleteNpc={(index: number) => {
+          EditorStore.patchQuest((draft) => {
+            draft.questSteps[sel.selectedStep].highlights.npc.splice(index, 1);
+          });
+          // Adjust selection if needed
+          const npcCount = (quest?.questSteps?.[sel.selectedStep]?.highlights.npc?.length ?? 1) - 1;
+          if (sel.targetIndex >= npcCount && npcCount > 0) {
+            EditorStore.setSelection({ targetIndex: npcCount - 1 });
+          } else if (npcCount === 0) {
+            EditorStore.setSelection({ targetIndex: 0 });
+          }
+        }}
+        onDeleteObject={(index: number) => {
+          EditorStore.patchQuest((draft) => {
+            draft.questSteps[sel.selectedStep].highlights.object.splice(index, 1);
+          });
+          const objCount = (quest?.questSteps?.[sel.selectedStep]?.highlights.object?.length ?? 1) - 1;
+          if (sel.targetIndex >= objCount && objCount > 0) {
+            EditorStore.setSelection({ targetIndex: objCount - 1 });
+          } else if (objCount === 0) {
+            EditorStore.setSelection({ targetIndex: 0 });
+          }
+        }}
         onDeleteObjectLocation={(locIdx: number) => {
           EditorStore.patchQuest((draft) => {
             const t =

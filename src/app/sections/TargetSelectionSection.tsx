@@ -21,6 +21,8 @@ interface TargetSelectionSectionProps {
   onCopySelected: () => void;
   onPasteSelected: () => void;
   onDeleteObjectLocation: (locationIndex: number) => void;
+  onDeleteNpc: (index: number) => void;
+  onDeleteObject: (index: number) => void;
   targetNameValue: string;
   onTargetNameChange: (name: string) => void;
 }
@@ -38,6 +40,8 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
   onCopySelected,
   onPasteSelected,
   onDeleteObjectLocation,
+  onDeleteNpc,
+  onDeleteObject,
   targetNameValue,
   onTargetNameChange,
 }) => {
@@ -412,12 +416,33 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
                       borderLeft: isActive ? "3px solid #2563eb" : undefined,
                     }}
                   >
-                    <span style={{ fontSize: 13, color: "#e5e7eb" }}>
+                    <span style={{ fontSize: 13, color: "#e5e7eb", flex: 1 }}>
                       {displayName}
                     </span>
-                    <span style={{ fontSize: 11, color: "#9ca3af" }}>
+                    <span style={{ fontSize: 11, color: "#9ca3af", marginRight: 6 }}>
                       {isUnset ? "{unset}" : `{${loc.lat}, ${loc.lng}}`}
                     </span>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onDeleteNpc(index);
+                      }}
+                      title={`Remove ${displayName}`}
+                      style={{
+                        padding: "0 6px",
+                        height: 20,
+                        fontSize: 12,
+                        lineHeight: "18px",
+                        background: "#1f2937",
+                        border: "1px solid #334155",
+                        borderRadius: 4,
+                        color: "#9ca3af",
+                        cursor: "pointer",
+                        flexShrink: 0,
+                      }}
+                    >
+                      ×
+                    </button>
                   </li>
                 );
               })}
@@ -465,16 +490,38 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
                       style={{
                         display: "flex",
                         justifyContent: "space-between",
+                        alignItems: "center",
                       }}
                     >
-                      <span style={{ fontSize: 13, color: "#e5e7eb" }}>
+                      <span style={{ fontSize: 13, color: "#e5e7eb", flex: 1 }}>
                         {displayName}
                       </span>
-                      <span style={{ fontSize: 11, color: "#9ca3af" }}>
+                      <span style={{ fontSize: 11, color: "#9ca3af", marginRight: 6 }}>
                         {pts.length === 0
                           ? "No points"
                           : `${pts.length} point${pts.length > 1 ? "s" : ""}`}
                       </span>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onDeleteObject(index);
+                        }}
+                        title={`Remove ${displayName}`}
+                        style={{
+                          padding: "0 6px",
+                          height: 20,
+                          fontSize: 12,
+                          lineHeight: "18px",
+                          background: "#1f2937",
+                          border: "1px solid #334155",
+                          borderRadius: 4,
+                          color: "#9ca3af",
+                          cursor: "pointer",
+                          flexShrink: 0,
+                        }}
+                      >
+                        ×
+                      </button>
                     </div>
 
                     {isActive && pts.length > 0 && (

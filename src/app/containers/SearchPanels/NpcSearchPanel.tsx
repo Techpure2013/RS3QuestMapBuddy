@@ -24,14 +24,36 @@ export const NpcSearchPanel: React.FC = () => {
     const sel = EditorStore.getState().selection;
 
     EditorStore.patchQuest((draft) => {
-      const t =
-        draft.questSteps[sel.selectedStep]?.highlights.npc?.[sel.targetIndex];
-      if (!t) return;
-      t.id = npc.id;
-      t.npcName = npc.name;
-      t.npcLocation = { lat: npc.lat, lng: npc.lng };
-      t.floor = npc.floor;
+      const step = draft.questSteps[sel.selectedStep];
+      if (!step) return;
+
+      const existing = step.highlights?.npc?.[sel.targetIndex];
+      if (existing) {
+        // Update existing NPC
+        existing.id = npc.id;
+        existing.npcName = npc.name;
+        existing.npcLocation = { lat: npc.lat, lng: npc.lng };
+        existing.floor = npc.floor;
+      } else {
+        // Auto-create new NPC highlight
+        if (!step.highlights) step.highlights = { npc: [], object: [] };
+        if (!step.highlights.npc) step.highlights.npc = [];
+        step.highlights.npc.push({
+          id: npc.id,
+          npcName: npc.name,
+          npcLocation: { lat: npc.lat, lng: npc.lng },
+          wanderRadius: { bottomLeft: { lat: null, lng: null }, topRight: { lat: null, lng: null } },
+          floor: npc.floor,
+        } as any);
+      }
     });
+
+    // Update selection to point to the NPC (might be newly added)
+    const updatedStep = EditorStore.getState().quest?.questSteps?.[sel.selectedStep];
+    const npcCount = updatedStep?.highlights?.npc?.length ?? 0;
+    if (npcCount > 0) {
+      EditorStore.setSelection({ targetType: "npc", targetIndex: npcCount - 1 });
+    }
 
     EditorStore.setHighlights({ highlightedNpc: null });
     requestFlyToCurrentTargetAt(5, "selection");

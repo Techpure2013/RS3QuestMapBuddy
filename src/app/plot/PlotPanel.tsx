@@ -187,6 +187,42 @@ const PlotPanel: React.FC = () => {
     }
   }, [clipboard, step, sel.selectedStep, sel.targetIndex, sel.targetType]);
 
+  const onDeleteNpc = useCallback(
+    (index: number) => {
+      EditorStore.patchQuest((draft) => {
+        const s = draft.questSteps[sel.selectedStep];
+        if (!s?.highlights?.npc) return;
+        s.highlights.npc.splice(index, 1);
+      });
+      const updatedStep = EditorStore.getState().quest?.questSteps?.[sel.selectedStep];
+      const count = updatedStep?.highlights?.npc?.length ?? 0;
+      if (sel.targetIndex >= count && count > 0) {
+        EditorStore.setSelection({ targetIndex: count - 1 });
+      } else if (count === 0) {
+        EditorStore.setSelection({ targetIndex: 0 });
+      }
+    },
+    [sel.selectedStep, sel.targetIndex]
+  );
+
+  const onDeleteObject = useCallback(
+    (index: number) => {
+      EditorStore.patchQuest((draft) => {
+        const s = draft.questSteps[sel.selectedStep];
+        if (!s?.highlights?.object) return;
+        s.highlights.object.splice(index, 1);
+      });
+      const updatedStep = EditorStore.getState().quest?.questSteps?.[sel.selectedStep];
+      const count = updatedStep?.highlights?.object?.length ?? 0;
+      if (sel.targetIndex >= count && count > 0) {
+        EditorStore.setSelection({ targetIndex: count - 1 });
+      } else if (count === 0) {
+        EditorStore.setSelection({ targetIndex: 0 });
+      }
+    },
+    [sel.selectedStep, sel.targetIndex]
+  );
+
   const submitPlot = useCallback(async () => {
     const sp = new URLSearchParams(location.search);
     const stepIdFromUrl = Number(sp.get("stepId") ?? "");
@@ -349,6 +385,8 @@ const PlotPanel: React.FC = () => {
           onPasteList={onPasteList}
           onCopySelected={onCopySelected}
           onPasteSelected={onPasteSelected}
+          onDeleteNpc={onDeleteNpc}
+          onDeleteObject={onDeleteObject}
           onDeleteObjectLocation={removeObjectLocation}
           targetNameValue={targetNameValue}
           onTargetNameChange={onTargetNameChange}

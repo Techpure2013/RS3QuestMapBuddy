@@ -79,6 +79,7 @@ export const CenterControls: React.FC = () => {
   const selection = useEditorSelector((s) => s.selection);
 
   const questName = quest?.questName ?? "(none)";
+  const lastEditedBy = quest?.lastEditedBy ?? "";
   const stepDescription =
     quest?.questSteps?.[selection.selectedStep]?.stepDescription ?? "";
   const [showEditor, setShowEditor] = useState<boolean>(true);
@@ -262,6 +263,30 @@ export const CenterControls: React.FC = () => {
     });
   };
 
+  const unwrapSelectionColor = () => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const cursor = textarea.selectionStart;
+    const currentValue = textarea.value;
+
+    const blockRe = /\[[^\]]*\]\{[^}]*\}/g;
+    let match: RegExpExecArray | null;
+    while ((match = blockRe.exec(currentValue)) !== null) {
+      const blockStart = match.index;
+      const blockEnd = blockStart + match[0].length;
+      if (cursor >= blockStart && cursor <= blockEnd) {
+        const inner = match[0].replace(/^\[[^\]]*\]\{/, "").replace(/\}$/, "");
+
+        // Use execCommand so the change is natively undoable via Ctrl+Z
+        textarea.focus();
+        textarea.setSelectionRange(blockStart, blockEnd);
+        document.execCommand("insertText", false, inner);
+        return;
+      }
+    }
+  };
+
   const formatButtons = [
     { id: "bold", label: "B", title: "Bold (**text**)", prefix: "**", suffix: "**", style: { fontWeight: 700 }, cursorOffset: 0 },
     { id: "italic", label: "I", title: "Italic (*text*)", prefix: "*", suffix: "*", style: { fontStyle: "italic" }, cursorOffset: 0 },
@@ -403,6 +428,9 @@ export const CenterControls: React.FC = () => {
 
   // Register hotkeys (scoped to textarea for text formatting)
   useEditorHotkeys(hotkeyActions, true, textareaRef as React.RefObject<HTMLElement>);
+
+  // Register undo/redo at document level so they work even when textarea doesn't have focus
+  useEditorHotkeys({ onUndo: handleUndo, onRedo: handleRedo }, true);
 
   // Register editor callbacks with the global keybind system
   useEffect(() => {
@@ -568,6 +596,9 @@ export const CenterControls: React.FC = () => {
       return;
     }
 
+    const editorName = window.prompt("Enter your editor name:");
+    if (!editorName) return;
+
     try {
       setBusy(true);
 
@@ -594,6 +625,8 @@ export const CenterControls: React.FC = () => {
         }
         normalized = active;
       }
+
+      normalized.lastEditedBy = editorName.trim();
 
       await saveQuestBundle(normalized);
       await saveActiveBundle(normalized);
@@ -714,6 +747,11 @@ export const CenterControls: React.FC = () => {
             }}
           >
             Quest: <strong style={{ color: "#e5e7eb" }}>{questName}</strong>
+            {lastEditedBy && (
+              <div style={{ color: "#6b7280", fontWeight: 400, marginTop: 2 }}>
+                Last edited by: <span style={{ color: "#9ca3af" }}>{lastEditedBy}</span>
+              </div>
+            )}
           </div>
 
           <button
@@ -1052,6 +1090,23 @@ export const CenterControls: React.FC = () => {
                   }}
                 >
                   Dir
+                </button>
+                <button
+                  type="button"
+                  title="Remove color from block at cursor"
+                  onClick={unwrapSelectionColor}
+                  style={{
+                    padding: "3px 8px",
+                    fontSize: "0.7rem",
+                    background: "#1f2937",
+                    border: "1px solid #4b5563",
+                    borderLeft: "3px solid #6b7280",
+                    borderRadius: 3,
+                    color: "#9ca3af",
+                    cursor: "pointer",
+                  }}
+                >
+                  Uncolor
                 </button>
                 <span style={{ color: "#4b5563", fontSize: "0.85rem", userSelect: "none", padding: "0 2px" }}>|</span>
                 {/* Color picker button */}
