@@ -244,6 +244,7 @@ const editorCallbacks: {
   // Actions
   undo?: () => void;
   redo?: () => void;
+  uncolor?: () => void;
   toggleTarget?: () => void;
   addNpc?: () => void;
   addObject?: () => void;
@@ -326,6 +327,10 @@ export const editorActions = {
 
   redo: () => {
     editorCallbacks.redo?.();
+  },
+
+  uncolor: () => {
+    editorCallbacks.uncolor?.();
   },
 
   toggleTarget: () => {
@@ -421,6 +426,7 @@ export function registerAllActions() {
   // Editor - Actions
   keybindStore.registerAction("editor.undo", editorActions.undo);
   keybindStore.registerAction("editor.redo", editorActions.redo);
+  keybindStore.registerAction("editor.uncolor", editorActions.uncolor);
   keybindStore.registerAction("editor.toggleTarget", editorActions.toggleTarget);
   keybindStore.registerAction("editor.addNpc", editorActions.addNpc);
   keybindStore.registerAction("editor.addObject", editorActions.addObject);

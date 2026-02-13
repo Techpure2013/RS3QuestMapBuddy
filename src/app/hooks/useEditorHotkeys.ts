@@ -17,6 +17,7 @@ export interface HotkeyActions {
   onClear?: () => void;
   onUndo?: () => void;
   onRedo?: () => void;
+  onUncolor?: () => void;
   onToggleTarget?: () => void;
   onAddNpc?: () => void;
   onAddObject?: () => void;
@@ -36,6 +37,7 @@ const ACTION_MAP: Record<string, keyof HotkeyActions> = {
   "editor.clearFormatting": "onClear",
   "editor.undo": "onUndo",
   "editor.redo": "onRedo",
+  "editor.uncolor": "onUncolor",
   "editor.toggleTarget": "onToggleTarget",
   "editor.addNpc": "onAddNpc",
   "editor.addObject": "onAddObject",
@@ -115,6 +117,7 @@ const OLD_TO_NEW_ID_MAP: Record<string, string> = {
   clear: "editor.clearFormatting",
   undo: "editor.undo",
   redo: "editor.redo",
+  uncolor: "editor.uncolor",
   toggleTarget: "editor.toggleTarget",
   addNpc: "editor.addNpc",
   addObject: "editor.addObject",

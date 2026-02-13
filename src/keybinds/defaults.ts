@@ -315,6 +315,13 @@ export const DEFAULT_KEYBINDS: KeybindDef[] = [
     defaultKey: { key: "z", ctrl: true, shift: true },
   },
   {
+    id: "editor.uncolor",
+    label: "Uncolor",
+    description: "Remove color formatting from the block at cursor",
+    category: "editor",
+    defaultKey: null,
+  },
+  {
     id: "editor.toggleTarget",
     label: "Toggle NPC/Object",
     description: "Switch between NPC and Object target type",

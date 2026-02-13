@@ -107,6 +107,7 @@ export const CenterControls: React.FC = () => {
   const undoStackRef = useRef<string[]>([]);
   const redoStackRef = useRef<string[]>([]);
   const isUndoRedoRef = useRef(false); // Flag to prevent adding undo entry during undo/redo
+  const isOurSaveRef = useRef(false); // Flag to distinguish our auto-save from external changes
   const prevStepRef = useRef(selection.selectedStep);
   useEffect(() => {
     const handler = (e: Event) => {
@@ -149,9 +150,11 @@ export const CenterControls: React.FC = () => {
       setLocalStepDesc(stepDescription);
       setHasStepChanges(false);
       setSaveStatus("idle");
+    } else if (isOurSaveRef.current) {
+      // Our own auto-save updated stepDescription — ignore, undo stack is preserved
+      isOurSaveRef.current = false;
     } else if (stepDescription !== localStepDesc) {
-      // External change on the same step (e.g. wiki merge, quest reload)
-      // Only sync if it wasn't our own auto-save (auto-save sets stepDescription = localStepDesc)
+      // Truly external change (wiki merge, quest reload) — sync local state
       setLocalStepDesc(stepDescription);
       setHasStepChanges(false);
       setSaveStatus("idle");
@@ -192,6 +195,7 @@ export const CenterControls: React.FC = () => {
     // Set new auto-save timer (1.5 seconds after last change)
     if (changed) {
       autoSaveTimerRef.current = setTimeout(() => {
+        isOurSaveRef.current = true;
         setSaveStatus("saving");
         EditorStore.patchQuest((draft) => {
           const step = draft.questSteps[selection.selectedStep];
@@ -220,6 +224,7 @@ export const CenterControls: React.FC = () => {
     if (autoSaveTimerRef.current) {
       clearTimeout(autoSaveTimerRef.current);
     }
+    isOurSaveRef.current = true;
     setSaveStatus("saving");
     EditorStore.patchQuest((draft) => {
       const step = draft.questSteps[selection.selectedStep];
@@ -429,6 +434,7 @@ export const CenterControls: React.FC = () => {
     onClear: handleClearFormatting,
     onUndo: handleUndo,
     onRedo: handleRedo,
+    onUncolor: unwrapSelectionColor,
     onToggleTarget: handleToggleTarget,
     onAddNpc: handleAddNpc,
     onAddObject: handleAddObject,
@@ -459,6 +465,7 @@ export const CenterControls: React.FC = () => {
       // Actions
       undo: handleUndo,
       redo: handleRedo,
+      uncolor: unwrapSelectionColor,
       toggleTarget: handleToggleTarget,
       addNpc: handleAddNpc,
       addObject: handleAddObject,
