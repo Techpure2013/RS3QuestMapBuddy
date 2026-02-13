@@ -19,6 +19,8 @@ import { recordQuestNpcLocations } from "./../../feature/npcPublisher";
 import { clearImageCache } from "../../idb/imageCache";
 import { clearObservedChatheads } from "idb/chatheadsObserved";
 import { fetchWikiGuide, type WikiQuestStep } from "../../api/wikiApi";
+import { EditorNameModal } from "../sections/EditorNameModal";
+import { getEditorName, setEditorName } from "../../idb/editorNameStore";
 
 /** Strip UK floor references and superscript [US] tags in wiki text, keeping only US floor numbers */
 function cleanFloorText(text: string): string {
@@ -96,11 +98,18 @@ export const CenterControls: React.FC = () => {
   const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isRefreshingWiki, setIsRefreshingWiki] = useState(false);
   const [wikiRefreshMessage, setWikiRefreshMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+  const [editorNameModal, setEditorNameModal] = useState<{ resolve: (name: string | null) => void } | null>(null);
 
   // Subscribe to keybind changes to update tooltips
   const [, forceKeybindUpdate] = useState(0);
   useEffect(() => {
     return keybindStore.subscribe(() => forceKeybindUpdate((n) => n + 1));
+  }, []);
+
+  const promptEditorName = useCallback((): Promise<string | null> => {
+    return new Promise((resolve) => {
+      setEditorNameModal({ resolve });
+    });
   }, []);
 
   // Undo/Redo stack for step description
@@ -613,8 +622,12 @@ export const CenterControls: React.FC = () => {
       return;
     }
 
-    const editorName = window.prompt("Enter your editor name:");
-    if (!editorName) return;
+    let editorName = await getEditorName();
+    if (!editorName) {
+      editorName = await promptEditorName();
+      if (!editorName) return;
+      await setEditorName(editorName);
+    }
 
     try {
       setBusy(true);
@@ -1913,6 +1926,19 @@ export const CenterControls: React.FC = () => {
         onClose={() => setOpen(false)}
         onPick={handlePick}
       />
+
+      {editorNameModal && (
+        <EditorNameModal
+          onConfirm={(name) => {
+            editorNameModal.resolve(name);
+            setEditorNameModal(null);
+          }}
+          onCancel={() => {
+            editorNameModal.resolve(null);
+            setEditorNameModal(null);
+          }}
+        />
+      )}
 
       {showTableCreator && (
         <TableCreator

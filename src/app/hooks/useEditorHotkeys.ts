@@ -1,6 +1,6 @@
 import { useEffect, useCallback, useState } from "react";
 import { keybindStore } from "../../keybinds/keybindStore";
-import { keyEventMatches } from "../../keybinds/utils";
+import { keyEventMatches, isInputElement } from "../../keybinds/utils";
 import type { KeyCombo } from "../../keybinds/types";
 
 export interface HotkeyActions {
@@ -68,6 +68,12 @@ export function useEditorHotkeys(
       // Don't trigger if we're in an input that's not our target
       const target = e.target as HTMLElement;
       if (targetRef?.current && !targetRef.current.contains(target)) {
+        return;
+      }
+
+      // When registered at document level (no targetRef), don't steal
+      // Ctrl+Z / Ctrl+Shift+Z from other inputs — let native undo work
+      if (!targetRef && isInputElement(target)) {
         return;
       }
 
