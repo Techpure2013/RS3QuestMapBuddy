@@ -57,7 +57,7 @@ const TargetFlyToHandler: React.FC = () => {
         npc: npc?.npcName,
         location: npc?.npcLocation,
       });
-      if (npc?.npcLocation) {
+      if (npc?.npcLocation && (npc.npcLocation.lat !== 0 || npc.npcLocation.lng !== 0)) {
         const v = convertManualCoordToVisual(npc.npcLocation);
         console.log("[TargetFlyToHandler] Visual coords:", v);
         if (v) {
