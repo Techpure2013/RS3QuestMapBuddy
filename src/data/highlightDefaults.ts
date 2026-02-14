@@ -17,6 +17,14 @@ export const DEFAULT_KILL_VERBS: readonly string[] = Object.freeze([
 ]);
 
 export const DEFAULT_RS3_LOCATION_NAMES: readonly string[] = Object.freeze([
+  // Directional city variants (matched as whole locations to prevent direction-word false positives)
+  "East Ardougne", "West Ardougne",
+  "North Ardougne", "South Ardougne",
+  "North Falador", "South Falador",
+  "East Varrock", "West Varrock",
+  "North Varrock", "South Varrock",
+  "East Karamja", "West Karamja",
+  "North Yanille", "South Yanille",
   // Major cities
   "Varrock", "Lumbridge", "Falador", "Ardougne", "Yanille", "Rellekka",
   "Taverley", "Taverly", "Burthorpe", "Edgeville", "Draynor", "Canifis",

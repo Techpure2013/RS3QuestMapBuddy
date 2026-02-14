@@ -88,6 +88,11 @@ function escapeRegex(str: string): string {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+/** Replace straight apostrophes with a character class matching all common quote variants */
+function apostropheFlexible(pattern: string): string {
+  return pattern.replace(/'/g, "['''‛]");
+}
+
 export const HighlightSettingsStore = {
   getState(): HighlightSettingsState {
     return state;
@@ -161,7 +166,7 @@ export const HighlightSettingsStore = {
     if (names.length === 0) return [];
     // Sort longest-first so "Varrock Palace" matches before "Varrock"
     const sorted = [...names].sort((a, b) => b.length - a.length);
-    return sorted.map((name) => new RegExp(`\\b${escapeRegex(name)}\\b`, "gi"));
+    return sorted.map((name) => new RegExp(`\\b${apostropheFlexible(escapeRegex(name))}\\b`, "gi"));
   },
 
   // Export current settings as JSON string for sharing

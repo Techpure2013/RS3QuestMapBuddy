@@ -1805,6 +1805,17 @@ export const CenterControls: React.FC = () => {
                                   return match;
                                 }
 
+                                // Skip if this direction word is right before a colored location block
+                                // (e.g., "North " followed by "[#FFFF00]{Ardougne}")
+                                if (/^\s*$/.test(afterMatch)) {
+                                  // Direction is at the end of this uncolored segment
+                                  // Check if next segment is a colored block (location)
+                                  const segIdx = segments.indexOf(seg);
+                                  if (segIdx >= 0 && segIdx + 1 < segments.length && segments[segIdx + 1].colored) {
+                                    return match; // Don't underline - it's part of a location name
+                                  }
+                                }
+
                                 return `__${match}__`;
                               }
                             );
