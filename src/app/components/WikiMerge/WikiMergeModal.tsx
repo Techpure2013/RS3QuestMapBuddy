@@ -9,6 +9,7 @@ import { saveActiveBundle } from "../../../idb/bundleStore";
 import { questToBundle } from "../../../state/types";
 import type { WikiQuestStep } from "../../../api/wikiApi";
 import type { QuestStep } from "../../../state/types";
+import { computeAlignments, buildAlignmentMap } from "../../../utils/merge/stepAligner";
 
 // Field names for selection and drag-drop
 type FieldName = "description" | "itemsNeeded" | "itemsRecommended" | "dialogOptions" | "additionalInfo";
@@ -833,46 +834,76 @@ export const WikiMergeModal: React.FC = () => {
     const quest = EditorStore.getState().quest;
     if (!quest) return;
 
-    // Count steps with plotted highlights for warning
-    let stepsWithHighlights = 0;
-    let totalNpcs = 0;
-    let totalObjects = 0;
-    for (const step of quest.questSteps) {
-      const npcCount = step.highlights?.npc?.length ?? 0;
-      const objCount = step.highlights?.object?.length ?? 0;
-      if (npcCount > 0 || objCount > 0) {
-        stepsWithHighlights++;
-        totalNpcs += npcCount;
-        totalObjects += objCount;
+    // Compute alignments FIRST so we can show the mapping in the confirm dialog
+    const alignments = computeAlignments(wikiSteps, quest.questSteps);
+    const alignMap = buildAlignmentMap(alignments);
+
+    // Build a mapping summary showing which highlights go where
+    const mappingLines: string[] = [];
+    let transferCount = 0;
+    let orphanedCount = 0;
+
+    for (let wi = 0; wi < wikiSteps.length; wi++) {
+      const matchedIdx = alignMap.get(wi);
+      if (matchedIdx == null) continue;
+      const local = quest.questSteps[matchedIdx];
+      const npcCount = local?.highlights?.npc?.length ?? 0;
+      const objCount = local?.highlights?.object?.length ?? 0;
+      if (npcCount === 0 && objCount === 0) continue;
+
+      const parts: string[] = [];
+      if (npcCount > 0) parts.push(`${npcCount} NPC`);
+      if (objCount > 0) parts.push(`${objCount} obj`);
+      const score = alignments.find(a => a.wikiIndex === wi)?.score ?? 0;
+
+      if (matchedIdx === wi) {
+        mappingLines.push(`  Step ${wi + 1}: keeps ${parts.join(", ")} (${Math.round(score * 100)}% match)`);
+      } else {
+        mappingLines.push(`  Step ${matchedIdx + 1} -> ${wi + 1}: moves ${parts.join(", ")} (${Math.round(score * 100)}% match)`);
+      }
+      transferCount++;
+    }
+
+    // Find local steps with highlights that have NO match (will be lost)
+    const matchedLocalIndices = new Set(alignments.map(a => a.localIndex));
+    for (let li = 0; li < quest.questSteps.length; li++) {
+      const local = quest.questSteps[li];
+      const npcCount = local?.highlights?.npc?.length ?? 0;
+      const objCount = local?.highlights?.object?.length ?? 0;
+      if ((npcCount > 0 || objCount > 0) && !matchedLocalIndices.has(li)) {
+        const parts: string[] = [];
+        if (npcCount > 0) parts.push(`${npcCount} NPC`);
+        if (objCount > 0) parts.push(`${objCount} obj`);
+        mappingLines.push(`  Step ${li + 1}: LOST (${parts.join(", ")}) - no matching wiki step`);
+        orphanedCount++;
       }
     }
 
     let warningMsg = `This will overwrite ALL ${currentLocalSteps.length} local steps with ${wikiSteps.length} wiki steps.`;
-    if (stepsWithHighlights > 0) {
-      const parts: string[] = [];
-      if (totalNpcs > 0) parts.push(`${totalNpcs} NPC location${totalNpcs > 1 ? "s" : ""}`);
-      if (totalObjects > 0) parts.push(`${totalObjects} object location${totalObjects > 1 ? "s" : ""}`);
-      warningMsg += `\n\n${stepsWithHighlights} step${stepsWithHighlights > 1 ? "s have" : " has"} plotted map locations (${parts.join(" and ")}). These will be preserved.`;
+    if (mappingLines.length > 0) {
+      warningMsg += `\n\nMap data transfers (${transferCount} matched${orphanedCount > 0 ? `, ${orphanedCount} lost` : ""}):\n${mappingLines.join("\n")}`;
     }
     warningMsg += "\n\nContinue?";
 
     const confirm = window.confirm(warningMsg);
     if (!confirm) return;
 
-    // Create new steps array from wiki data, preserving local highlights and dialog options
-    const updatedSteps: QuestStep[] = wikiSteps.map((wikiStep, idx) => {
-      const localStep = quest.questSteps[idx];
+    const updatedSteps: QuestStep[] = wikiSteps.map((wikiStep, wikiIdx) => {
+      // Find the LOCAL step that best matches this wiki step's content
+      const matchedLocalIdx = alignMap.get(wikiIdx);
+      const matchedLocal = matchedLocalIdx != null ? quest.questSteps[matchedLocalIdx] : undefined;
+
       const newStep: QuestStep = {
         stepDescription: wikiStep.stepDescription || "",
         itemsNeeded: wikiStep.itemsNeeded?.length ? [...wikiStep.itemsNeeded] : [],
         itemsRecommended: wikiStep.itemsRecommended?.length ? [...wikiStep.itemsRecommended] : [],
-        dialogOptions: localStep?.dialogOptions?.length ? [...localStep.dialogOptions] : (wikiStep.dialogOptions?.length ? [...wikiStep.dialogOptions] : []),
-        additionalStepInformation: localStep?.additionalStepInformation?.length ? [...localStep.additionalStepInformation] : (wikiStep.additionalStepInformation?.length ? [...wikiStep.additionalStepInformation] : []),
-        // Preserve plotted locations and floor from local step
-        highlights: localStep?.highlights ?? { npc: [], object: [] },
-        floor: localStep?.floor ?? 0,
-        stepId: localStep?.stepId,
-        pathToStep: localStep?.pathToStep,
+        dialogOptions: matchedLocal?.dialogOptions?.length ? [...matchedLocal.dialogOptions] : (wikiStep.dialogOptions?.length ? [...wikiStep.dialogOptions] : []),
+        additionalStepInformation: matchedLocal?.additionalStepInformation?.length ? [...matchedLocal.additionalStepInformation] : (wikiStep.additionalStepInformation?.length ? [...wikiStep.additionalStepInformation] : []),
+        // Carry map data from the MATCHED local step (by text similarity)
+        highlights: matchedLocal?.highlights ?? { npc: [], object: [] },
+        floor: matchedLocal?.floor ?? 0,
+        stepId: matchedLocal?.stepId,
+        pathToStep: matchedLocal?.pathToStep,
       };
       return newStep;
     });

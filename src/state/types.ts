@@ -231,6 +231,13 @@ export type QuestDetails = {
   EnemiesToDefeat: string[];
 };
 
+export type StepCompletionConditions = {
+  type: "dialog" | "location" | "items" | "mixed";
+  dialog?: string[];
+  location?: Array<{ lat: number; lng: number; floor?: number; radius?: number }>;
+  items?: Array<{ name: string; quantity: number }>;
+};
+
 export type QuestStep = {
   stepDescription: string;
   itemsNeeded?: string[];
@@ -242,6 +249,8 @@ export type QuestStep = {
   stepId?: number;
   /** Path from previous step to this step's first highlight */
   pathToStep?: QuestPath;
+  /** Completion conditions for auto-advance in RS3QuestBuddyBeta */
+  completionConditions?: StepCompletionConditions | null;
 };
 
 export type QuestImage = {
@@ -278,6 +287,7 @@ export type NormalizedQuestStep = {
   highlights: QuestHighlights;
   floor: number;
   pathToStep?: QuestPath;
+  completionConditions?: StepCompletionConditions | null;
 };
 
 export type QuestBundle = {
@@ -312,6 +322,7 @@ type StepIn = {
   floor?: number;
   stepId?: number;
   pathToStep?: QuestPath;
+  completionConditions?: unknown;
 };
 export type PlotQuestBundle = {
   quest: { name: string };
@@ -403,6 +414,7 @@ export function bundleToQuest(b: QuestBundle): Quest {
       floor: Number.isFinite(s.floor as number) ? (s.floor as number) : 0,
       stepId: typeof s.stepId === "number" ? s.stepId : undefined,
       pathToStep: s.pathToStep,
+      completionConditions: (s as any).completionConditions ?? null,
     })),
     questDetails: {
       Quest: b.details.Quest,
@@ -479,6 +491,7 @@ export function questToBundle(q: Quest): QuestBundleNormalized {
       highlights: s.highlights ?? { npc: [], object: [] },
       floor: Number.isFinite(s.floor) ? s.floor : 0,
       pathToStep: s.pathToStep,
+      completionConditions: s.completionConditions ?? null,
     })),
     images: (q.questImages ?? []).map((img) => ({
       step: String(img.step ?? ""), // ENSURE STRING

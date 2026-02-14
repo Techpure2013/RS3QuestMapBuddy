@@ -95,6 +95,10 @@ export const CenterControls: React.FC = () => {
   const [showAutoHighlight, setShowAutoHighlight] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const quickInsertBtnRef = useRef<HTMLButtonElement>(null);
+  const colorPickerBtnRef = useRef<HTMLButtonElement>(null);
+  const imagePickerBtnRef = useRef<HTMLButtonElement>(null);
+  const stepLinkBtnRef = useRef<HTMLButtonElement>(null);
   const autoSaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isRefreshingWiki, setIsRefreshingWiki] = useState(false);
   const [wikiRefreshMessage, setWikiRefreshMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
@@ -1142,6 +1146,7 @@ export const CenterControls: React.FC = () => {
                 {/* Color picker button */}
                 <div style={{ position: "relative" }}>
                   <button
+                    ref={colorPickerBtnRef}
                     type="button"
                     title={getTooltip("Color ([#hex]{text} or [r,g,b]{text})", "color")}
                     onClick={() => setShowColorPicker(!showColorPicker)}
@@ -1160,6 +1165,7 @@ export const CenterControls: React.FC = () => {
                   </button>
                   {showColorPicker && (
                     <ColorPicker
+                      anchorRef={colorPickerBtnRef}
                       onSelect={(colorCode) => {
                         wrapSelection(`${colorCode}{`, "}");
                         setShowColorPicker(false);
@@ -1171,6 +1177,7 @@ export const CenterControls: React.FC = () => {
                 {/* Image picker button */}
                 <div style={{ position: "relative" }}>
                   <button
+                    ref={imagePickerBtnRef}
                     type="button"
                     title={getTooltip("Insert image (![alt](url) or ![alt|size](url))", "image")}
                     onClick={() => setShowImagePicker(!showImagePicker)}
@@ -1188,6 +1195,7 @@ export const CenterControls: React.FC = () => {
                   </button>
                   {showImagePicker && (
                     <ImagePicker
+                      anchorRef={imagePickerBtnRef}
                       onSelect={(markup) => {
                         const textarea = textareaRef.current;
                         if (!textarea) return;
@@ -1212,6 +1220,7 @@ export const CenterControls: React.FC = () => {
                 {/* Quick Insert picker button */}
                 <div style={{ position: "relative" }}>
                   <button
+                    ref={quickInsertBtnRef}
                     type="button"
                     title="Quick insert (lodestones, prayers, map icons)"
                     onClick={() => setShowQuickInsert(!showQuickInsert)}
@@ -1229,6 +1238,7 @@ export const CenterControls: React.FC = () => {
                   </button>
                   {showQuickInsert && (
                     <QuickInsertPicker
+                      anchorRef={quickInsertBtnRef}
                       onSelect={(markup) => {
                         const textarea = textareaRef.current;
                         if (!textarea) return;
@@ -1252,6 +1262,7 @@ export const CenterControls: React.FC = () => {
                 {/* Step link picker button */}
                 <div style={{ position: "relative" }}>
                   <button
+                    ref={stepLinkBtnRef}
                     type="button"
                     title={getTooltip("Link to another step (step(N){text})", "steplink")}
                     onClick={() => setShowStepLinkPicker(!showStepLinkPicker)}
@@ -1269,6 +1280,7 @@ export const CenterControls: React.FC = () => {
                   </button>
                   {showStepLinkPicker && (
                     <StepLinkPicker
+                      anchorRef={stepLinkBtnRef}
                       selectedText={(() => {
                         const textarea = textareaRef.current;
                         if (!textarea) return "";

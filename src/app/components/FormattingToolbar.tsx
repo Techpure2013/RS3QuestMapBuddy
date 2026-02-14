@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import { stripFormatting } from "../../utils/RichText";
 import { ColorPicker } from "./ColorPicker";
 import { ImagePicker } from "./ImagePicker";
@@ -107,6 +107,11 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
   const [showStepLinkPicker, setShowStepLinkPicker] = useState(false);
   const [showTableCreator, setShowTableCreator] = useState(false);
   const [showQuickInsert, setShowQuickInsert] = useState(false);
+
+  const colorBtnRef = useRef<HTMLButtonElement>(null);
+  const imageBtnRef = useRef<HTMLButtonElement>(null);
+  const quickInsertBtnRef = useRef<HTMLButtonElement>(null);
+  const stepLinkBtnRef = useRef<HTMLButtonElement>(null);
 
   // Subscribe to keybind changes to update tooltips
   const [, forceUpdate] = useState(0);
@@ -341,6 +346,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           {/* Color picker button */}
           <div style={{ position: "relative" }}>
             <button
+              ref={colorBtnRef}
               type="button"
               title={getTooltip("Color ([#hex]{text} or [r,g,b]{text})", "color")}
               onClick={() => setShowColorPicker(!showColorPicker)}
@@ -356,6 +362,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
             </button>
             {showColorPicker && (
               <ColorPicker
+                anchorRef={colorBtnRef}
                 onSelect={(colorCode) => {
                   wrapSelection(`${colorCode}{`, "}");
                   setShowColorPicker(false);
@@ -367,6 +374,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           {/* Image picker button */}
           <div style={{ position: "relative" }}>
             <button
+              ref={imageBtnRef}
               type="button"
               title={getTooltip("Insert image (![alt](url) or ![alt|size](url))", "image")}
               onClick={() => setShowImagePicker(!showImagePicker)}
@@ -381,6 +389,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
             </button>
             {showImagePicker && (
               <ImagePicker
+                anchorRef={imageBtnRef}
                 onSelect={(markup) => {
                   const textarea = textareaRef.current;
                   if (!textarea) return;
@@ -405,6 +414,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           {/* Quick Insert picker button */}
           <div style={{ position: "relative" }}>
             <button
+              ref={quickInsertBtnRef}
               type="button"
               title="Quick insert (lodestones, prayers, map icons)"
               onClick={() => setShowQuickInsert(!showQuickInsert)}
@@ -419,6 +429,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
             </button>
             {showQuickInsert && (
               <QuickInsertPicker
+                anchorRef={quickInsertBtnRef}
                 onSelect={(markup) => {
                   const textarea = textareaRef.current;
                   if (!textarea) return;
@@ -442,6 +453,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           {/* Step link picker button */}
           <div style={{ position: "relative" }}>
             <button
+              ref={stepLinkBtnRef}
               type="button"
               title={getTooltip("Link to another step (step(N){text})", "steplink")}
               onClick={() => setShowStepLinkPicker(!showStepLinkPicker)}
@@ -456,6 +468,7 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
             </button>
             {showStepLinkPicker && (
               <StepLinkPicker
+                anchorRef={stepLinkBtnRef}
                 selectedText={(() => {
                   const textarea = textareaRef.current;
                   if (!textarea) return "";

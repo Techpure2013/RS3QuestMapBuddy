@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
+import ReactDOM from "react-dom";
 
 export interface ImagePickerProps {
   onSelect: (markup: string) => void;
   onClose: () => void;
+  anchorRef?: React.RefObject<HTMLButtonElement | null>;
 }
 
 /**
@@ -43,7 +45,7 @@ function resolveWikiImageUrl(inputUrl: string): string {
   return url;
 }
 
-export const ImagePicker: React.FC<ImagePickerProps> = ({ onSelect, onClose }) => {
+export const ImagePicker: React.FC<ImagePickerProps> = ({ onSelect, onClose, anchorRef }) => {
   const [url, setUrl] = useState("");
   const [size, setSize] = useState("48");
   const [alt, setAlt] = useState("");
@@ -53,6 +55,13 @@ export const ImagePicker: React.FC<ImagePickerProps> = ({ onSelect, onClose }) =
   const [resolvedUrl, setResolvedUrl] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const urlInputRef = useRef<HTMLInputElement>(null);
+  const [anchorPos, setAnchorPos] = useState<{ top: number; left: number } | null>(null);
+
+  useEffect(() => {
+    if (!anchorRef?.current) return;
+    const rect = anchorRef.current.getBoundingClientRect();
+    setAnchorPos({ top: rect.bottom + 4, left: rect.left });
+  }, [anchorRef]);
 
   // Focus URL input on mount
   useEffect(() => {
@@ -125,20 +134,20 @@ export const ImagePicker: React.FC<ImagePickerProps> = ({ onSelect, onClose }) =
     fontSize: "0.8rem",
   };
 
-  return (
+  const pickerContent = (
     <div
       ref={containerRef}
       onKeyDown={handleKeyDown}
       style={{
-        position: "absolute",
-        top: "100%",
-        left: 0,
-        marginTop: 4,
+        position: anchorPos ? "fixed" : "absolute",
+        top: anchorPos ? anchorPos.top : "100%",
+        left: anchorPos ? anchorPos.left : 0,
+        marginTop: anchorPos ? 0 : 4,
         background: "#1f2937",
         border: "1px solid #374151",
         borderRadius: 6,
         padding: 12,
-        zIndex: 1200,
+        zIndex: 10000,
         width: 280,
         boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
       }}
@@ -329,6 +338,10 @@ export const ImagePicker: React.FC<ImagePickerProps> = ({ onSelect, onClose }) =
       </div>
     </div>
   );
+
+  return anchorPos
+    ? ReactDOM.createPortal(pickerContent, document.body)
+    : pickerContent;
 };
 
 export default ImagePicker;

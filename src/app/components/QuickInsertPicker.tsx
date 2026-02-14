@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import ReactDOM from "react-dom";
 import {
   QUICK_INSERT_THUMBNAILS,
   THUMBNAIL_CATEGORIES,
@@ -16,6 +17,7 @@ import {
 export interface QuickInsertPickerProps {
   onSelect: (markup: string) => void;
   onClose: () => void;
+  anchorRef?: React.RefObject<HTMLButtonElement | null>;
 }
 
 type CategoryType = QuickInsertThumbnail["category"] | "custom";
@@ -31,6 +33,7 @@ const ALL_CATEGORIES: Record<CategoryType, { label: string; icon: string }> = {
 export const QuickInsertPicker: React.FC<QuickInsertPickerProps> = ({
   onSelect,
   onClose,
+  anchorRef,
 }) => {
   const [activeCategory, setActiveCategory] = useState<CategoryType>("lodestone");
   const [search, setSearch] = useState("");
@@ -43,6 +46,14 @@ export const QuickInsertPicker: React.FC<QuickInsertPickerProps> = ({
   });
   const containerRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [anchorPos, setAnchorPos] = useState<{ top: number; left: number } | null>(null);
+
+  // Calculate position from anchor button
+  useEffect(() => {
+    if (!anchorRef?.current) return;
+    const rect = anchorRef.current.getBoundingClientRect();
+    setAnchorPos({ top: rect.bottom + 4, left: rect.left });
+  }, [anchorRef]);
 
   // Load custom thumbnails on mount
   useEffect(() => {
@@ -163,19 +174,19 @@ export const QuickInsertPicker: React.FC<QuickInsertPickerProps> = ({
     e.target.value = '';
   };
 
-  return (
+  const pickerContent = (
     <div
       ref={containerRef}
       style={{
-        position: "absolute",
-        top: "100%",
-        left: 0,
-        marginTop: 4,
+        position: anchorPos ? "fixed" : "absolute",
+        top: anchorPos ? anchorPos.top : "100%",
+        left: anchorPos ? anchorPos.left : 0,
+        marginTop: anchorPos ? 0 : 4,
         background: "#1f2937",
         border: "1px solid #374151",
         borderRadius: 6,
         padding: 8,
-        zIndex: 1200,
+        zIndex: 10000,
         width: 360,
         maxHeight: 450,
         display: "flex",
@@ -626,6 +637,10 @@ export const QuickInsertPicker: React.FC<QuickInsertPickerProps> = ({
       </div>
     </div>
   );
+
+  return anchorPos
+    ? ReactDOM.createPortal(pickerContent, document.body)
+    : pickerContent;
 };
 
 export default QuickInsertPicker;

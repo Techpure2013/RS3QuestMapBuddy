@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import ReactDOM from "react-dom";
 
 const STORAGE_KEY = "richtext-color-palette";
 
@@ -84,9 +85,10 @@ const DEFAULT_COLORS = [
 interface ColorPickerProps {
   onSelect: (colorCode: string) => void;
   onClose: () => void;
+  anchorRef?: React.RefObject<HTMLButtonElement | null>;
 }
 
-export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) => {
+export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose, anchorRef }) => {
   const [palette, setPalette] = useState<SavedColor[]>([]);
   const [previewColor, setPreviewColor] = useState("#FFFFFF");
   const [useRgbFormat, setUseRgbFormat] = useState(false);
@@ -96,6 +98,13 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
   const containerRef = useRef<HTMLDivElement>(null);
   const swatchRef = useRef<HTMLCanvasElement>(null);
   const hueRef = useRef<HTMLCanvasElement>(null);
+  const [anchorPos, setAnchorPos] = useState<{ top: number; left: number } | null>(null);
+
+  useEffect(() => {
+    if (!anchorRef?.current) return;
+    const rect = anchorRef.current.getBoundingClientRect();
+    setAnchorPos({ top: rect.bottom + 4, left: rect.left });
+  }, [anchorRef]);
 
   useEffect(() => {
     setPalette(loadPalette());
@@ -246,19 +255,19 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
     cursor: "pointer",
   };
 
-  return (
+  const pickerContent = (
     <div
       ref={containerRef}
       style={{
-        position: "absolute",
-        top: "100%",
-        left: 0,
-        marginTop: 4,
+        position: anchorPos ? "fixed" : "absolute",
+        top: anchorPos ? anchorPos.top : "100%",
+        left: anchorPos ? anchorPos.left : 0,
+        marginTop: anchorPos ? 0 : 4,
         background: "#1f2937",
         border: "1px solid #374151",
         borderRadius: 6,
         padding: 12,
-        zIndex: 1200,
+        zIndex: 10000,
         width: 280,
         boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
       }}
@@ -444,6 +453,10 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ onSelect, onClose }) =
       </div>
     </div>
   );
+
+  return anchorPos
+    ? ReactDOM.createPortal(pickerContent, document.body)
+    : pickerContent;
 };
 
 export default ColorPicker;

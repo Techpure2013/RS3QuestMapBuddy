@@ -1,13 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
+import ReactDOM from "react-dom";
 
 /** Simple picker for step links - just asks for step number */
 export const StepLinkPicker: React.FC<{
   selectedText: string;
   onSelect: (stepNumber: number) => void;
   onClose: () => void;
-}> = ({ selectedText, onSelect, onClose }) => {
+  anchorRef?: React.RefObject<HTMLButtonElement | null>;
+}> = ({ selectedText, onSelect, onClose, anchorRef }) => {
   const [stepNumber, setStepNumber] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const [anchorPos, setAnchorPos] = useState<{ top: number; left: number } | null>(null);
+
+  useEffect(() => {
+    if (!anchorRef?.current) return;
+    const rect = anchorRef.current.getBoundingClientRect();
+    setAnchorPos({ top: rect.bottom + 4, left: rect.left });
+  }, [anchorRef]);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -21,18 +30,18 @@ export const StepLinkPicker: React.FC<{
 
   const displayText = selectedText || `Skip to step ${stepNumber || "N"}`;
 
-  return (
+  const pickerContent = (
     <div
       style={{
-        position: "absolute",
-        top: "100%",
-        left: 0,
-        zIndex: 1000,
+        position: anchorPos ? "fixed" : "absolute",
+        top: anchorPos ? anchorPos.top : "100%",
+        left: anchorPos ? anchorPos.left : 0,
+        zIndex: 10000,
         background: "#1f2937",
         border: "1px solid #374151",
         borderRadius: 6,
         padding: 12,
-        marginTop: 4,
+        marginTop: anchorPos ? 0 : 4,
         minWidth: 180,
         boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
       }}
@@ -105,6 +114,10 @@ export const StepLinkPicker: React.FC<{
       </div>
     </div>
   );
+
+  return anchorPos
+    ? ReactDOM.createPortal(pickerContent, document.body)
+    : pickerContent;
 };
 
 export default StepLinkPicker;

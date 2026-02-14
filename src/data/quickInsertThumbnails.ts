@@ -259,6 +259,14 @@ export const QUICK_INSERT_THUMBNAILS: QuickInsertThumbnail[] = [
     defaultSize: 24,
   },
   {
+    id: "prayer-protect-necromancy",
+    name: "Protect from Necromancy",
+    category: "prayer",
+    wikiUrl: "https://runescape.wiki/w/File:Protect_from_Necromancy.png",
+    imageUrl: "https://runescape.wiki/images/Protect_from_Necromancy.png",
+    defaultSize: 24,
+  },
+  {
     id: "prayer-soul-split",
     name: "Soul Split",
     category: "prayer",

@@ -17,6 +17,7 @@ import ItemsNeededPanel from "./containers/ItemsNeededPanel";
 import ItemsRecommendedPanel from "./containers/ItemsRecommendedPanel";
 import AdditionalInfoPanel from "./containers/AdditionalInfoPanel";
 import DialogOptionsPanel from "./containers/DialogOptionsPanel";
+import CompletionConditionsPanel from "./containers/CompletionConditionsPanel";
 import QuestImagesPanelContainer from "./containers/QuestImagesPanel";
 import NpcObjectToolsPanel from "./containers/NpcObjectToolsPanel";
 import QuestImagePastePanel from "./containers/QuestImagePastePanel";
@@ -62,6 +63,9 @@ const App: React.FC = () => {
             </Panel>
             <Panel defaultOpen={false} title="Dialog Options" compact>
               <DialogOptionsPanel />
+            </Panel>
+            <Panel defaultOpen={false} title="Completion Conditions" compact>
+              <CompletionConditionsPanel />
             </Panel>
             <Panel defaultOpen={false} title="Quest Rewards" compact>
               <QuestRewardsPanel />
