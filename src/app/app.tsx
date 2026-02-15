@@ -23,7 +23,6 @@ import NpcObjectToolsPanel from "./containers/NpcObjectToolsPanel";
 import QuestImagePastePanel from "./containers/QuestImagePastePanel";
 import ChatheadsPanel from "./containers/ChatheadsPanel";
 import NpcSearchPanel from "./containers/SearchPanels/NpcSearchPanel";
-import MapAreaSearchPanel from "./containers/SearchPanels/MapAreaSearchPanel";
 import ObjectSearchPanel from "./containers/SearchPanels/ObjectSearchPanel";
 import ExportsPanel from "./containers/ExportsPanel";
 import PathToolsPanel from "./containers/PathToolsPanel";
@@ -115,9 +114,6 @@ const App: React.FC = () => {
         </Panel>
         <Panel defaultOpen={false} title="Object Search" compact>
           <ObjectSearchPanel />
-        </Panel>
-        <Panel defaultOpen={false} title="Map Area Search" compact>
-          <MapAreaSearchPanel />
         </Panel>
         <Panel defaultOpen={false} title="Saved Library" compact>
           <ExportsPanel />
