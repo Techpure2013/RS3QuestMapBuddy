@@ -27,6 +27,8 @@ const SearchHighlightFlyToHandler: React.FC = () => {
 
     // Pick target and compute visual center with your desired offsets
     if (npc) {
+      // Skip NPCs with no real coordinates (0,0 means unset)
+      if (npc.lat === 0 && npc.lng === 0) return;
       // Sync floor first
       const sel = EditorStore.getState().selection;
       if (sel.floor !== npc.floor) {
@@ -41,6 +43,8 @@ const SearchHighlightFlyToHandler: React.FC = () => {
     }
 
     if (obj) {
+      // Skip objects with no real coordinates (0,0 means unset)
+      if (obj.lat === 0 && obj.lng === 0) return;
       const sel = EditorStore.getState().selection;
       if (sel.floor !== obj.floor) {
         EditorStore.setSelection({ floor: obj.floor });
