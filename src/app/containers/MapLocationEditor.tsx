@@ -1,7 +1,7 @@
 // src/app/containers/MapLocationEditor.tsx
 // Editor panel for managing map locations (areas) in the database
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import {
   getMapLocations,
   createMapLocation,
@@ -42,6 +42,24 @@ const emptyEditForm = (): EditingLocation => ({
   isNew: true,
 });
 
+const CHUNK_SIZE = 64;
+
+// Parse grid coordinates like "40,69" or "40, 69"
+const parseGridCoords = (input: string): { x: number; y: number } | null => {
+  const match = input.trim().match(/^(\d+)\s*,\s*(\d+)$/);
+  if (!match) return null;
+  const x = parseInt(match[1], 10);
+  const y = parseInt(match[2], 10);
+  if (isNaN(x) || isNaN(y)) return null;
+  return { x, y };
+};
+
+// Convert grid coords to map center position
+const gridToMapCenter = (x: number, y: number): { lat: number; lng: number } => ({
+  lat: y * CHUNK_SIZE + CHUNK_SIZE / 2,
+  lng: x * CHUNK_SIZE + CHUNK_SIZE / 2,
+});
+
 export const MapLocationEditor: React.FC = () => {
   const [locations, setLocations] = useState<MapLocation[]>([]);
   const [search, setSearch] = useState("");
@@ -59,6 +77,9 @@ export const MapLocationEditor: React.FC = () => {
 
   // Dropdown menu state
   const [openMenuId, setOpenMenuId] = useState<number | null>(null);
+
+  // Grid coordinate detection
+  const gridCoords = useMemo(() => parseGridCoords(search), [search]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -281,6 +302,25 @@ export const MapLocationEditor: React.FC = () => {
     requestFlyToAreaAt(area, 2);
   };
 
+  // Fly to grid coordinates
+  const handleGridSelect = useCallback((x: number, y: number) => {
+    if (!EditorStore.getState().ui.navReturn) {
+      requestCaptureNavReturn(true);
+    }
+    const center = gridToMapCenter(x, y);
+    const gridArea: MapArea = {
+      mapId: -1,
+      name: `Grid ${x}, ${y}`,
+      center: [center.lng, center.lat],
+      bounds: [
+        [x * CHUNK_SIZE, y * CHUNK_SIZE],
+        [x * CHUNK_SIZE + CHUNK_SIZE, y * CHUNK_SIZE + CHUNK_SIZE],
+      ],
+    };
+    EditorStore.setHighlights({ selectedArea: null });
+    requestFlyToAreaAt(gridArea, 2);
+  }, []);
+
   // Styles
   const panelStyle: React.CSSProperties = {
     background: "#111827",
@@ -337,11 +377,35 @@ export const MapLocationEditor: React.FC = () => {
       {/* Search */}
       <input
         type="text"
-        placeholder="Search locations..."
+        placeholder="Search locations or grid coords (x,y)..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" && gridCoords) {
+            e.preventDefault();
+            handleGridSelect(gridCoords.x, gridCoords.y);
+          }
+        }}
         style={{ ...inputStyle, marginBottom: 12 }}
       />
+
+      {/* Grid coordinate hint */}
+      {gridCoords && (
+        <div
+          onClick={() => handleGridSelect(gridCoords.x, gridCoords.y)}
+          style={{
+            background: "#065f46",
+            color: "#6ee7b7",
+            padding: "8px 10px",
+            borderRadius: 4,
+            marginBottom: 12,
+            fontSize: 13,
+            cursor: "pointer",
+          }}
+        >
+          Grid {gridCoords.x}, {gridCoords.y} — click or press Enter to fly there
+        </div>
+      )}
 
       {/* Messages */}
       {error && (
