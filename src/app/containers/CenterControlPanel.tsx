@@ -22,25 +22,21 @@ import { fetchWikiGuide, type WikiQuestStep } from "../../api/wikiApi";
 import { EditorNameModal } from "../sections/EditorNameModal";
 import { getEditorName, setEditorName } from "../../idb/editorNameStore";
 
-/** Obscure an email or name for privacy in screenshots */
+/** Obscure an email for privacy in screenshots; nicknames are shown as-is */
 function obscureEmail(input: string): string {
-  if (input.includes("@")) {
-    const [local, domain] = input.split("@");
-    const localPart = local.length === 1 ? local : local.substring(0, 2) + "***";
+  if (!input.includes("@")) return input;
 
-    const dotIndex = domain.lastIndexOf(".");
-    if (dotIndex > 0) {
-      const domainName = domain.substring(0, dotIndex);
-      const tld = domain.substring(dotIndex);
-      const domainPart = domainName.length === 1 ? domainName : domainName.substring(0, 2) + "***";
-      return `${localPart}@${domainPart}${tld}`;
-    }
-    return `${localPart}@${domain}`;
+  const [local, domain] = input.split("@");
+  const localPart = local.length === 1 ? local : local.substring(0, 2) + "***";
+
+  const dotIndex = domain.lastIndexOf(".");
+  if (dotIndex > 0) {
+    const domainName = domain.substring(0, dotIndex);
+    const tld = domain.substring(dotIndex);
+    const domainPart = domainName.length === 1 ? domainName : domainName.substring(0, 2) + "***";
+    return `${localPart}@${domainPart}${tld}`;
   }
-
-  // Non-email: show first 2 chars or just the name if it's short
-  if (input.length <= 2) return input;
-  return input.substring(0, 2) + "*".repeat(input.length - 2);
+  return `${localPart}@${domain}`;
 }
 
 /** Strip UK floor references and superscript [US] tags in wiki text, keeping only US floor numbers */
