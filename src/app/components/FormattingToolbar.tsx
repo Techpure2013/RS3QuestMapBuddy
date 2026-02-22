@@ -84,7 +84,7 @@ export const CHAT_PATTERNS = [/\(Chat\s+[\d•·.\-~✓✗×]+\)/gi];
 
 export const LODESTONE_PATTERNS = [
   /\b(?!(?:of|the|in|at|to|from|by|for|with|near|and|or)\s)(\w+(?:\s+\w+)?)\s+lodestone\b/gi,  // "X Lodestone" (1-2 words, skip prepositions)
-  /(?<!\w)[A-Z]{3}(?!\w)/g,               // Fairy ring codes (standalone 3-letter uppercase)
+  /(?<!\w)[ABCD][IJKL][PQRS](?!\w)/g,     // Fairy ring codes (e.g. AJR, CKS, DLS)
 ];
 
 export interface FormattingToolbarProps {

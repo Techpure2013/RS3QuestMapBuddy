@@ -898,8 +898,8 @@ export const CenterControls: React.FC = () => {
               <>
                 <span style={{ fontSize: 12, color: "#9ca3af" }}>
                   Logged in as{" "}
-                  <strong style={{ color: "#e5e7eb" }}>
-                    {email ?? "admin"}
+                  <strong style={{ color: "#e5e7eb" }} title={email ?? "admin"}>
+                    {obscureEmail(email ?? "admin")}
                   </strong>
                 </span>
                 <button
