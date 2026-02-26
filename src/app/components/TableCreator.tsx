@@ -6,6 +6,8 @@ interface TableCell {
   content: string;
   bgColor?: string;
   textColor?: string;
+  colspan?: number;
+  rowspan?: number;
 }
 
 interface TableData {
@@ -73,13 +75,214 @@ const DEFAULT_TABLE: TableData = {
   oddRowBgColor: "#2a2318",
 };
 
+// Clean wiki markup from cell content, leaving only readable text
+function cleanWikiContent(text: string): string {
+  return text
+    // [[File:Name.png|30px]] or [[File:Name.png]] → strip entirely
+    .replace(/\[\[File:[^\]]+\]\]/gi, '')
+    // [[Category:...]] → strip entirely
+    .replace(/\[\[Category:[^\]]+\]\]/gi, '')
+    // [[Link|Display text]] → Display text
+    .replace(/\[\[([^\]]*?\|)([^\]]*?)\]\]/g, '$2')
+    // [[Simple link]] → Simple link
+    .replace(/\[\[([^\]]+)\]\]/g, '$1')
+    // {{Template|params}} → strip
+    .replace(/\{\{[^}]*\}\}/g, '')
+    // <br />, <br>, <br/> → space
+    .replace(/<br\s*\/?>/gi, ' ')
+    // Other HTML tags → strip
+    .replace(/<[^>]+>/g, '')
+    // Clean up multiple spaces
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Parse wiki cell attributes (style, colspan, rowspan, bgcolor) from a cell string
+// Splits on the first | that is NOT inside [[ ]] or {{ }} brackets,
+// but only if the part before it looks like HTML attributes.
+function parseCellAttributes(cellText: string): TableCell {
+  const trimmed = cellText.trim();
+
+  // Find the first | that's NOT inside [[ ]] or {{ }}
+  let bracketDepth = 0;
+  let braceDepth = 0;
+  let splitIndex = -1;
+
+  for (let i = 0; i < trimmed.length; i++) {
+    const ch = trimmed[i];
+    const next = trimmed[i + 1];
+
+    if (ch === '[' && next === '[') { bracketDepth++; i++; continue; }
+    if (ch === ']' && next === ']') { bracketDepth = Math.max(0, bracketDepth - 1); i++; continue; }
+    if (ch === '{' && next === '{') { braceDepth++; i++; continue; }
+    if (ch === '}' && next === '}') { braceDepth = Math.max(0, braceDepth - 1); i++; continue; }
+
+    if (ch === '|' && bracketDepth === 0 && braceDepth === 0) {
+      splitIndex = i;
+      break;
+    }
+  }
+
+  if (splitIndex === -1) {
+    // No attribute separator found, whole thing is content
+    return { content: cleanWikiContent(trimmed) };
+  }
+
+  const attrPart = trimmed.substring(0, splitIndex).trim();
+  const contentPart = trimmed.substring(splitIndex + 1).trim();
+
+  // Verify attrPart looks like HTML attributes (not wiki content)
+  const hasAttributes = /(?:style|class|colspan|rowspan|bgcolor|width|align|valign|scope|id|data-)\s*=/i.test(attrPart);
+
+  if (!hasAttributes) {
+    // The | was part of content (like in [[File:...|size]]), not an attribute separator
+    return { content: cleanWikiContent(trimmed) };
+  }
+
+  // Parse attributes
+  const result: TableCell = {
+    content: cleanWikiContent(contentPart),
+  };
+
+  // Parse colspan
+  const colspanMatch = attrPart.match(/colspan\s*=\s*"?(\d+)"?/i);
+  if (colspanMatch) result.colspan = parseInt(colspanMatch[1]);
+
+  // Parse rowspan
+  const rowspanMatch = attrPart.match(/rowspan\s*=\s*"?(\d+)"?/i);
+  if (rowspanMatch) result.rowspan = parseInt(rowspanMatch[1]);
+
+  // Parse background color from style or bgcolor attribute
+  const bgStyleMatch = attrPart.match(/background(?:-color)?\s*:\s*([^;"]+)/i);
+  const bgAttrMatch = attrPart.match(/bgcolor\s*=\s*"?([^";}\s]+)"?/i);
+  if (bgStyleMatch) result.bgColor = bgStyleMatch[1].trim();
+  else if (bgAttrMatch) result.bgColor = bgAttrMatch[1].trim();
+
+  // Parse text color from style
+  const colorMatch = attrPart.match(/(?:^|;)\s*color\s*:\s*([^;"]+)/i);
+  if (colorMatch) result.textColor = colorMatch[1].trim();
+
+  return result;
+}
+
+// Flatten multi-row headers (e.g. "Colour" rowspan=2 + "Value" colspan=4, then Circle/Triangle/Square/Pentagon)
+// into a single header row by resolving spans and picking the bottom-most cell for each column.
+function flattenHeaderRows(headerRows: TableCell[][]): TableCell[] {
+  if (headerRows.length === 0) return [];
+  if (headerRows.length === 1) return headerRows[0];
+
+  // Calculate total columns from the row with the most (accounting for colspan)
+  let totalCols = 0;
+  for (const row of headerRows) {
+    let cols = 0;
+    for (const cell of row) cols += (cell.colspan || 1);
+    totalCols = Math.max(totalCols, cols);
+  }
+
+  // Build grid: occupied[r][c] = the TableCell occupying that position, or null
+  const occupied: (TableCell | null)[][] = headerRows.map(() =>
+    new Array(totalCols).fill(null)
+  );
+
+  for (let r = 0; r < headerRows.length; r++) {
+    let c = 0;
+    for (const cell of headerRows[r]) {
+      // Find next unoccupied column
+      while (c < totalCols && occupied[r][c] !== null) c++;
+      if (c >= totalCols) break;
+
+      const cs = cell.colspan || 1;
+      const rs = cell.rowspan || 1;
+
+      // Mark all positions this cell occupies
+      for (let dr = 0; dr < rs && (r + dr) < headerRows.length; dr++) {
+        for (let dc = 0; dc < cs && (c + dc) < totalCols; dc++) {
+          occupied[r + dr][c + dc] = cell;
+        }
+      }
+      c += cs;
+    }
+  }
+
+  // For each column, pick the bottom-most cell that isn't a parent span
+  // (prefer the most specific sub-header over a spanning parent)
+  const result: TableCell[] = [];
+  for (let c = 0; c < totalCols; c++) {
+    let best: TableCell | null = null;
+    for (let r = headerRows.length - 1; r >= 0; r--) {
+      if (occupied[r][c]) {
+        best = occupied[r][c];
+        break;
+      }
+    }
+    result.push(best
+      ? { content: best.content, bgColor: best.bgColor, textColor: best.textColor }
+      : { content: '' }
+    );
+  }
+  return result;
+}
+
+// Pre-process tab-separated text: merge lines that are continuations of multi-line cells.
+// Skips title lines (zero-tab lines before a header row).
+// Keeps standalone numeric rows (like "10" in a grid where trailing empty cells have no tabs).
+function mergeMultiLineCells(lines: string[]): string[] {
+  if (lines.length <= 1) return lines;
+
+  const tabCounts = lines.map(l => (l.match(/\t/g) || []).length);
+  const maxTabs = Math.max(...tabCounts);
+  if (maxTabs === 0) return lines; // not tab-separated
+
+  const merged: string[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    if (tabCounts[i] === 0) {
+      const content = lines[i].trim();
+
+      // Skip empty lines
+      if (!content) continue;
+
+      // Content is just a number → standalone row (e.g. row "10" in a grid)
+      if (/^\d+$/.test(content)) {
+        merged.push(lines[i]);
+        continue;
+      }
+
+      // First zero-tab line (before any tabbed lines added): check if next line
+      // looks like a header row. If yes, this is a title — skip it.
+      // If no, this is a multi-line cell start — merge forward.
+      if (merged.length === 0 && i + 1 < lines.length && tabCounts[i + 1] > 0) {
+        const nextCells = lines[i + 1].split(/\t/).map(c => c.trim());
+        const looksLikeHeader = nextCells.every(c => c.length < 30 && !/^\d+(\.\d+)?$/.test(c))
+          && nextCells.filter(c => c !== '').length > nextCells.length / 2;
+        if (looksLikeHeader) {
+          continue; // title before header — skip
+        }
+        // Not a header next — merge forward into it (multi-line cell)
+        lines[i + 1] = lines[i] + ' ' + lines[i + 1];
+        continue;
+      }
+
+      // Merge backward into previous line
+      if (merged.length > 0) {
+        merged[merged.length - 1] += ' ' + lines[i];
+        continue;
+      }
+    }
+    merged.push(lines[i]);
+  }
+  return merged;
+}
+
 // Parse wiki table format (MediaWiki style)
 function parseWikiTable(text: string): TableData | null {
   const lines = text.trim().split("\n");
+  const headerRows: TableCell[][] = [];
+  let currentHeaderRow: TableCell[] = [];
   const headers: TableCell[] = [];
   const rows: TableCell[][] = [];
   let currentRow: TableCell[] = [];
   let inTable = false;
+  let pastHeaders = false; // once we see data cells, no more header rows
 
   for (const line of lines) {
     const trimmed = line.trim();
@@ -92,65 +295,155 @@ function parseWikiTable(text: string): TableData | null {
 
     // Table end
     if (trimmed === "|}") {
-      if (currentRow.length > 0) {
-        rows.push(currentRow);
-      }
+      if (currentHeaderRow.length > 0) headerRows.push(currentHeaderRow);
+      if (currentRow.length > 0) rows.push(currentRow);
       break;
     }
 
     if (!inTable) continue;
 
-    // Header row marker
+    // Row separator
     if (trimmed.startsWith("|-")) {
+      if (currentHeaderRow.length > 0) {
+        headerRows.push(currentHeaderRow);
+        currentHeaderRow = [];
+      }
       if (currentRow.length > 0) {
-        if (headers.length === 0 && rows.length === 0) {
-          // First row becomes headers if we haven't set them
-        } else {
-          rows.push(currentRow);
-        }
+        rows.push(currentRow);
         currentRow = [];
       }
       continue;
     }
 
     // Header cells (!)
-    if (trimmed.startsWith("!")) {
-      const cellContent = trimmed.substring(1).split("!!").map(c => c.trim());
+    if (trimmed.startsWith("!") && !pastHeaders) {
+      const cellContent = trimmed.substring(1).split("!!");
       for (const content of cellContent) {
-        // Strip any wiki formatting like colspan, style, etc.
-        const cleanContent = content.replace(/^[^|]*\|/, "").trim();
-        headers.push({ content: cleanContent || content });
+        currentHeaderRow.push(parseCellAttributes(content));
       }
       continue;
     }
 
     // Regular cells (|)
     if (trimmed.startsWith("|") && !trimmed.startsWith("|-") && !trimmed.startsWith("{|") && !trimmed.startsWith("|}")) {
-      const cellContent = trimmed.substring(1).split("||").map(c => c.trim());
+      pastHeaders = true;
+      if (currentHeaderRow.length > 0) {
+        headerRows.push(currentHeaderRow);
+        currentHeaderRow = [];
+      }
+      const cellContent = trimmed.substring(1).split("||");
       for (const content of cellContent) {
-        // Strip any wiki formatting
-        const cleanContent = content.replace(/^[^|]*\|/, "").trim();
-        currentRow.push({ content: cleanContent || content });
+        currentRow.push(parseCellAttributes(content));
       }
     }
   }
 
-  // Handle simple pipe-delimited tables (like copying from rendered wiki)
+  // Flush remaining header row
+  if (currentHeaderRow.length > 0) headerRows.push(currentHeaderRow);
+
+  // Flatten multi-row headers into a single row
+  if (headerRows.length > 0) {
+    headers.push(...flattenHeaderRows(headerRows));
+  }
+
+  // Handle simple tab/space-delimited tables (like copying from rendered wiki)
   if (headers.length === 0 && rows.length === 0) {
-    const simpleLines = text.trim().split("\n").filter(l => l.trim());
+    let simpleLines = text.trim().split("\n").filter(l => l.trim());
+
+    // Pre-process: merge multi-line cells in tab-separated content
+    simpleLines = mergeMultiLineCells(simpleLines);
+
     if (simpleLines.length >= 1) {
-      // First line as headers
-      const headerCells = simpleLines[0].split(/\t|  +/).filter(c => c.trim());
-      if (headerCells.length > 1) {
-        for (const h of headerCells) {
-          headers.push({ content: h.trim() });
+      // Detect if tab-separated
+      const isTabSeparated = simpleLines.some(l => l.includes('\t'));
+      const splitPattern = isTabSeparated ? /\t/ : /  +/;
+
+      // Split all lines into cells
+      const allCells = simpleLines.map(line => {
+        const cells = line.split(splitPattern).map(c => c.trim());
+        if (!isTabSeparated) {
+          while (cells.length > 0 && cells[0] === '') cells.shift();
         }
-        // Rest as rows
-        for (let i = 1; i < simpleLines.length; i++) {
-          const rowCells = simpleLines[i].split(/\t|  +/).filter(c => c.trim());
-          if (rowCells.length > 0) {
-            rows.push(rowCells.map(c => ({ content: c.trim() })));
+        return cells;
+      });
+
+      // Fix wiki grid alignment: if data rows have one more cell than the header
+      // (row-number column present in data but missing from header), prepend an
+      // empty cell to the header so columns align correctly.
+      if (isTabSeparated && allCells.length > 2) {
+        const headerLen = allCells[0].length;
+        const maxDataLen = Math.max(...allCells.slice(1).map(r => r.length));
+        if (maxDataLen === headerLen + 1) {
+          const firstCellsAreNumbers = allCells.slice(1).filter(r => r[0]?.trim()).every(r => /^\d+$/.test(r[0].trim()));
+          if (firstCellsAreNumbers) {
+            allCells[0] = ['', ...allCells[0]];
           }
+        }
+      }
+
+      // Determine column count from the WIDEST line (not just the first)
+      const colCount = Math.max(...allCells.map(c => c.length));
+
+      if (colCount > 1) {
+        // Find partial header rows: initial lines with fewer columns than colCount
+        let dataStartIdx = 0;
+        while (dataStartIdx < allCells.length && allCells[dataStartIdx].length < colCount) {
+          dataStartIdx++;
+        }
+
+        // Check if the first full-width line looks like a header row
+        if (dataStartIdx < allCells.length) {
+          const firstFull = allCells[dataStartIdx];
+          const isHeaderLine = firstFull.every(c => c.length < 50 && !/^\d+(\.\d+)?$/.test(c))
+            && firstFull.filter(c => c !== '').length > firstFull.length / 2;
+          if (isHeaderLine) {
+            dataStartIdx++; // include as a header line
+          }
+        }
+
+        // Build headers from header lines
+        const headerLines = allCells.slice(0, dataStartIdx);
+        if (headerLines.length === 0) {
+          // No headers detected, auto-generate
+          for (let i = 0; i < colCount; i++) headers.push({ content: `Column ${i + 1}` });
+        } else if (headerLines.length === 1) {
+          // Single header line
+          for (let i = 0; i < colCount; i++) {
+            headers.push({ content: headerLines[0][i] || '' });
+          }
+        } else {
+          // Multiple partial header lines (e.g. "Colour | Value" then "Circle | Triangle | Square | Pentagon")
+          // Take the widest partial row and prepend cells from earlier rows to fill the gap
+          const widest = [...headerLines.reduce((a, b) => a.length >= b.length ? a : b)];
+          const needed = colCount - widest.length;
+          const combined: string[] = [];
+          if (needed > 0) {
+            combined.push(...headerLines[0].slice(0, needed));
+            // Remaining cells from the first row are group labels for the sub-headers
+            const groupLabels = headerLines[0].slice(needed);
+            if (groupLabels.length > 0) {
+              const cellsPerGroup = Math.ceil(widest.length / groupLabels.length);
+              for (let j = 0; j < widest.length; j++) {
+                const groupIdx = Math.min(Math.floor(j / cellsPerGroup), groupLabels.length - 1);
+                const label = groupLabels[groupIdx];
+                if (label && widest[j] && label !== widest[j]) {
+                  widest[j] = `${label}: ${widest[j]}`;
+                }
+              }
+            }
+          }
+          combined.push(...widest);
+          while (combined.length < colCount) combined.push('');
+          for (let i = 0; i < colCount; i++) {
+            headers.push({ content: combined[i] });
+          }
+        }
+
+        // Build data rows
+        for (let i = dataStartIdx; i < allCells.length; i++) {
+          const rowCells = allCells[i].slice(0, colCount);
+          while (rowCells.length < colCount) rowCells.push('');
+          rows.push(rowCells.map(c => ({ content: c })));
         }
       }
     }
@@ -860,9 +1153,12 @@ Or paste tab-separated content from a rendered wiki table.`}
                 {table.headers.map((h, i) => (
                   <th
                     key={i}
+                    colSpan={h.colspan}
+                    rowSpan={h.rowspan}
                     style={{
                       padding: "8px 12px",
-                      color: table.headerTextColor,
+                      color: h.textColor || table.headerTextColor,
+                      background: h.bgColor || undefined,
                       border: `1px solid ${table.borderColor}`,
                       textAlign: "left",
                       fontWeight: "bold",
@@ -879,9 +1175,12 @@ Or paste tab-separated content from a rendered wiki table.`}
                   {row.map((cell, ci) => (
                     <td
                       key={ci}
+                      colSpan={cell.colspan}
+                      rowSpan={cell.rowspan}
                       style={{
                         padding: "8px 12px",
-                        color: "#e5e7eb",
+                        color: cell.textColor || "#e5e7eb",
+                        background: cell.bgColor || undefined,
                         border: `1px solid ${table.borderColor}`,
                       }}
                     >
