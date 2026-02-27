@@ -162,15 +162,19 @@ export const CenterControls: React.FC = () => {
         clearTimeout(autoSaveTimerRef.current);
         autoSaveTimerRef.current = null;
       }
-      // Flush unsaved edits to the previous step
-      const prevStep = prevStepRef.current;
-      const prevDesc = EditorStore.getState().quest?.questSteps?.[prevStep]?.stepDescription ?? "";
-      if (localStepDesc !== prevDesc) {
-        EditorStore.patchQuest((draft) => {
-          const step = draft.questSteps[prevStep];
-          if (step) step.stepDescription = localStepDesc;
-          syncQuestImageDescriptions(draft);
-        });
+      // Only flush unsaved edits when switching steps within the SAME quest.
+      // When switching quests, prevStepRef is set to -1 by handlePick to prevent
+      // stale data from the old quest leaking into the new quest.
+      if (prevStepRef.current >= 0) {
+        const prevStep = prevStepRef.current;
+        const prevDesc = EditorStore.getState().quest?.questSteps?.[prevStep]?.stepDescription ?? "";
+        if (localStepDesc !== prevDesc) {
+          EditorStore.patchQuest((draft) => {
+            const step = draft.questSteps[prevStep];
+            if (step) step.stepDescription = localStepDesc;
+            syncQuestImageDescriptions(draft);
+          });
+        }
       }
       prevStepRef.current = selection.selectedStep;
 
@@ -560,6 +564,15 @@ export const CenterControls: React.FC = () => {
           console.log("⚠️ No valid targets found in step 1");
         }
       }
+
+      // Step 3.5: Clear pending auto-save to prevent stale data leaking into new quest
+      if (autoSaveTimerRef.current) {
+        clearTimeout(autoSaveTimerRef.current);
+        autoSaveTimerRef.current = null;
+      }
+      // Signal quest switch to the step-change useEffect — prevents it from
+      // flushing localStepDesc (which belongs to the OLD quest) into the new quest
+      prevStepRef.current = -1;
 
       // Step 4: Reset all state
       console.log("🔄 Resetting editor state...");
