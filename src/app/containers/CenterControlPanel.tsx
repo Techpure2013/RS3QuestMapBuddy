@@ -1808,13 +1808,9 @@ export const CenterControls: React.FC = () => {
                                   return `__1st floor__^([US])`;
                                 }
 
-                                // Numbered floors — convert UK to US (+1)
+                                // Numbered floors — already US after wiki cleanup, just underline
                                 if (floorNum) {
-                                  const ukNum = parseInt(floorNum, 10);
-                                  const usNum = ukNum + 1;
-                                  const usSuffix = getOrdinalSuffix(usNum);
-
-                                  return `__${usNum}${usSuffix} floor__^([US])`;
+                                  return `__${match}__`;
                                 }
 
                                 return match;
