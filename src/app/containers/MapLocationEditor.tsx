@@ -51,7 +51,7 @@ const parseGridCoords = (input: string): { x: number; y: number } | null => {
   const x = parseInt(match[1], 10);
   const y = parseInt(match[2], 10);
   if (isNaN(x) || isNaN(y)) return null;
-  return { x, y };
+  return { y, x }; // Note: grid is usually (x, y) but map coords are (lat, lng) which corresponds to (y, x)
 };
 
 // Convert grid coords to map center position
