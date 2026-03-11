@@ -51,13 +51,13 @@ const parseGridCoords = (input: string): { x: number; y: number } | null => {
   const x = parseInt(match[1], 10);
   const y = parseInt(match[2], 10);
   if (isNaN(x) || isNaN(y)) return null;
-  return { y, x }; // Note: grid is usually (x, y) but map coords are (lat, lng) which corresponds to (y, x)
+  return { x, y };
 };
 
 // Convert grid coords to map center position
 const gridToMapCenter = (x: number, y: number): { lat: number; lng: number } => ({
-  lat: y * CHUNK_SIZE + CHUNK_SIZE / 2,
-  lng: x * CHUNK_SIZE + CHUNK_SIZE / 2,
+  lat: x * CHUNK_SIZE + CHUNK_SIZE / 2,
+  lng: y * CHUNK_SIZE + CHUNK_SIZE / 2,
 });
 
 export const MapLocationEditor: React.FC = () => {
