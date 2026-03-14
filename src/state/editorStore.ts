@@ -189,12 +189,13 @@ export const EditorStore = {
     // Priority: NPC with valid location
     const firstNpcIdx = npcs.findIndex((n) => hasValidLoc(n?.npcLocation));
     if (firstNpcIdx >= 0) {
+      const npcFloor = npcs[firstNpcIdx]?.floor;
       this.setSelection({
         selectedStep: stepIndex,
         targetType: "npc",
         targetIndex: firstNpcIdx,
         floor:
-          typeof step.floor === "number" ? step.floor : state.selection.floor,
+          typeof npcFloor === "number" ? npcFloor : state.selection.floor,
       });
       return;
     }
@@ -204,22 +205,21 @@ export const EditorStore = {
       (o?.objectLocation ?? []).some((p) => hasValidLoc(p))
     );
     if (firstObjIdx >= 0) {
+      const objFloor = objects[firstObjIdx]?.floor;
       this.setSelection({
         selectedStep: stepIndex,
         targetType: "object",
         targetIndex: firstObjIdx,
         floor:
-          typeof step.floor === "number" ? step.floor : state.selection.floor,
+          typeof objFloor === "number" ? objFloor : state.selection.floor,
       });
       return;
     }
 
-    // Nothing valid: keep targetType but reset index to 0 safely; sync floor
+    // Nothing valid: keep targetType but reset index to 0 safely
     this.setSelection({
       selectedStep: stepIndex,
       targetIndex: 0,
-      floor:
-        typeof step.floor === "number" ? step.floor : state.selection.floor,
     });
   },
 
@@ -324,7 +324,7 @@ export const EditorStore = {
         let nextSelection = {
           ...draft.selection,
           selectedStep: 0,
-          floor: step0?.floor ?? 0,
+          floor: 0,
           targetType: draft.selection.targetType,
           targetIndex: 0,
           chatheadVariant: draft.selection.chatheadVariant ?? "default", // NEW: Preserve variant
@@ -347,9 +347,11 @@ export const EditorStore = {
           if (npcIdx >= 0) {
             nextSelection.targetType = "npc";
             nextSelection.targetIndex = npcIdx;
+            nextSelection.floor = step0.highlights.npc[npcIdx]?.floor ?? 0;
           } else if (objIdx >= 0) {
             nextSelection.targetType = "object";
             nextSelection.targetIndex = objIdx;
+            nextSelection.floor = step0.highlights.object[objIdx]?.floor ?? 0;
           } else {
             // keep current type, index 0
             nextSelection.targetIndex = 0;

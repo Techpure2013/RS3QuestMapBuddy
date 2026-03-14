@@ -311,10 +311,10 @@ export const MapLocationEditor: React.FC = () => {
     const gridArea: MapArea = {
       mapId: -1,
       name: `Grid ${x}, ${y}`,
-      center: [center.lng, center.lat],
+      center: [center.lat, center.lng],
       bounds: [
-        [x * CHUNK_SIZE, y * CHUNK_SIZE],
-        [x * CHUNK_SIZE + CHUNK_SIZE, y * CHUNK_SIZE + CHUNK_SIZE],
+        [y * CHUNK_SIZE, x * CHUNK_SIZE],
+        [y * CHUNK_SIZE + CHUNK_SIZE, x * CHUNK_SIZE + CHUNK_SIZE],
       ],
     };
     EditorStore.setHighlights({ selectedArea: null });

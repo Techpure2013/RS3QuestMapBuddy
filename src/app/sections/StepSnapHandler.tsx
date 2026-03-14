@@ -50,9 +50,10 @@ const StepSnapHandler: React.FC<StepSnapHandlerProps> = ({
     }
 
     if (snapLocation) {
-      // Sync floor if available
-      if (typeof step.floor === "number") {
-        onFloorChange(step.floor);
+      // Sync floor from the target highlight
+      const targetFloor = target?.floor;
+      if (typeof targetFloor === "number") {
+        onFloorChange(targetFloor);
       }
 
       // Fly smoothly to the target

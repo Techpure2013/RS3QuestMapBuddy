@@ -8,6 +8,7 @@ interface PlotNpcListProps {
   isActive: boolean;
   onSelect: (index: number) => void;
   onClearPoint: (index: number) => void;
+  onFloorChange: (index: number, floor: number) => void;
 }
 
 export const PlotNpcList: React.FC<PlotNpcListProps> = ({
@@ -16,6 +17,7 @@ export const PlotNpcList: React.FC<PlotNpcListProps> = ({
   isActive,
   onSelect,
   onClearPoint,
+  onFloorChange,
 }) => {
   if (npcs.length === 0) {
     return <div className="qp-empty">No NPCs yet</div>;
@@ -31,6 +33,7 @@ export const PlotNpcList: React.FC<PlotNpcListProps> = ({
           isActive={isActive && i === selectedIndex}
           onSelect={() => onSelect(i)}
           onClearPoint={() => onClearPoint(i)}
+          onFloorChange={(floor) => onFloorChange(i, floor)}
         />
       ))}
     </ul>
@@ -43,6 +46,7 @@ interface PlotNpcItemProps {
   isActive: boolean;
   onSelect: () => void;
   onClearPoint: () => void;
+  onFloorChange: (floor: number) => void;
 }
 
 const PlotNpcItem: React.FC<PlotNpcItemProps> = ({
@@ -51,6 +55,7 @@ const PlotNpcItem: React.FC<PlotNpcItemProps> = ({
   isActive,
   onSelect,
   onClearPoint,
+  onFloorChange,
 }) => {
   const loc = npc.npcLocation as NpcLocation | undefined;
   const hasLoc = !!loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng);
@@ -65,6 +70,18 @@ const PlotNpcItem: React.FC<PlotNpcItemProps> = ({
         <span className="plot-target-name">
           {npc.npcName || `NPC ${index + 1}`}
         </span>
+        <select
+          value={npc.floor ?? 0}
+          onChange={(e) => { e.stopPropagation(); onFloorChange(Number(e.target.value)); }}
+          onClick={(e) => e.stopPropagation()}
+          style={{ marginLeft: "auto", width: 52, fontSize: "0.7rem", background: "#1f2937", color: "#e5e7eb", border: "1px solid #4b5563", borderRadius: 3, padding: "1px 2px" }}
+          title="Floor"
+        >
+          <option value={0}>F0</option>
+          <option value={1}>F1</option>
+          <option value={2}>F2</option>
+          <option value={3}>F3</option>
+        </select>
       </div>
 
       <div className="plot-target-coords">

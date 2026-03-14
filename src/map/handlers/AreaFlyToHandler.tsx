@@ -1,7 +1,16 @@
 import { useEffect, useRef } from "react";
+import L from "leaflet";
 import { useMap } from "react-leaflet";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import { EditorStore } from "../../state/editorStore";
+
+/** Offset fly target using container-point conversion at current zoom */
+function offsetFly(map: L.Map, lat: number, lng: number): [number, number] {
+  const c = map.getCenter();
+  const pt = map.latLngToContainerPoint(c);
+  const shifted = map.containerPointToLatLng(L.point(pt.x, pt.y - 150));
+  return [lat + (shifted.lat - c.lat), lng + (shifted.lng - c.lng)];
+}
 
 /**
  * Consumes ui.areaFlyRequest (one-shot token).
@@ -19,14 +28,12 @@ const AreaFlyToHandler: React.FC = () => {
     tokenRef.current = req.token;
 
     const bounds = req.area.bounds;
-    // Geometric center from bounds
     const lat = (bounds[0][0] + bounds[1][0]) / 2;
     const lng = (bounds[0][1] + bounds[1][1]) / 2;
 
-    // Use current zoom level instead of hardcoded zoom
-    map.flyTo([lat, lng], map.getZoom(), { duration: 1.0 });
+    const flyTarget = offsetFly(map, lat, lng);
+    map.flyTo(flyTarget, map.getZoom(), { duration: 1.0 });
 
-    // Clear request
     EditorStore.setUi({ areaFlyRequest: undefined });
   }, [map, ui.areaFlyRequest]);
 

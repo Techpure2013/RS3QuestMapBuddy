@@ -6,6 +6,7 @@ export type SaveNpc = {
   npcName?: string;
   npcLocation?: CanonicalPoint;
   wanderRadius?: { bottomLeft: CanonicalPoint; topRight: CanonicalPoint };
+  floor?: number;
 };
 
 export type SaveObjPoint = CanonicalPoint & {
@@ -18,12 +19,12 @@ export type SaveObj = {
   name?: string;
   objectLocation?: SaveObjPoint[];
   objectRadius?: { bottomLeft: CanonicalPoint; topRight: CanonicalPoint };
+  floor?: number;
 };
 
 export type SavePlayerPlotBody = {
   playerName: string;
   stepId: number;
-  floor?: number;
   plotHighlights: { npc: SaveNpc[]; object: SaveObj[] };
 };
 

@@ -26,7 +26,6 @@ export type RestrictedPlotMode = {
 export interface PlotPayload {
   playerName: string;
   stepId: number;
-  floor: number;
   highlights: {
     npc: PlotNpcHighlight[];
     object: PlotObjectHighlight[];
@@ -41,6 +40,7 @@ export interface PlotNpcHighlight {
     bottomLeft: { lat: number; lng: number };
     topRight: { lat: number; lng: number };
   };
+  floor?: number;
 }
 
 export interface PlotObjectHighlight {
@@ -56,6 +56,7 @@ export interface PlotObjectHighlight {
     bottomLeft: { lat: number; lng: number };
     topRight: { lat: number; lng: number };
   };
+  floor?: number;
 }
 export interface SelectionState {
   selectedStep: number;

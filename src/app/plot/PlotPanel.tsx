@@ -263,6 +263,7 @@ const PlotPanel: React.FC = () => {
           (p) => p && Number.isFinite(p.lat) && Number.isFinite(p.lng)
         ),
         objectRadius: o.objectRadius,
+        floor: o.floor,
       }))
       .filter((o) => o.objectLocation.length > 0);
 
@@ -274,7 +275,6 @@ const PlotPanel: React.FC = () => {
     const res = await saveStepPlot({
       playerName: playerName.trim(),
       stepId: restricted.stepId,
-      floor: step.floor,
       highlights: {
         npc: npc.map((n) => ({
           id: n.id!,
@@ -284,6 +284,7 @@ const PlotPanel: React.FC = () => {
             lng: (n.npcLocation as NpcLocation).lng,
           },
           wanderRadius: n.wanderRadius,
+          ...(n.floor != null ? { floor: n.floor } : {}),
         })),
         object: object.map((o) => ({
           id: o.id,
@@ -295,6 +296,7 @@ const PlotPanel: React.FC = () => {
             numberLabel: p.numberLabel,
           })),
           objectRadius: o.objectRadius,
+          ...(o.floor != null ? { floor: o.floor } : {}),
         })),
       },
     }).catch((e) => ({

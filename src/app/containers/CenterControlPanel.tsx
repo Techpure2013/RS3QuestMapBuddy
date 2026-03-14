@@ -399,6 +399,7 @@ export const CenterControls: React.FC = () => {
       draftStep.highlights.npc.push({
         npcName: "New NPC",
         npcLocation: { lat: 0, lng: 0 },
+        floor: selection.floor,
       });
     });
     // Select the new NPC, enable coordinate capture, and focus name input
@@ -421,6 +422,7 @@ export const CenterControls: React.FC = () => {
       draftStep.highlights.object.push({
         name: "New Object",
         objectLocation: [],
+        floor: selection.floor,
       });
     });
     // Select the new object, enable coordinate capture, and focus name input
@@ -435,7 +437,6 @@ export const CenterControls: React.FC = () => {
     EditorStore.patchQuest((draft) => {
       const newStep = {
         stepDescription: "",
-        floor: draft.questSteps[selection.selectedStep]?.floor ?? 0,
         highlights: { npc: [], object: [] },
       };
       draft.questSteps.splice(insertIndex, 0, newStep);
@@ -536,7 +537,7 @@ export const CenterControls: React.FC = () => {
       const firstStep = flat.questSteps[0];
       let targetType: "npc" | "object" = "npc";
       let targetIndex = 0;
-      let floor = firstStep?.floor ?? 0;
+      let floor = 0;
 
       const isValidLocation = (loc: { lat: number; lng: number } | undefined) =>
         loc && (loc.lat !== 0 || loc.lng !== 0);
@@ -555,10 +556,12 @@ export const CenterControls: React.FC = () => {
         if (hasValidNpc) {
           targetType = "npc";
           targetIndex = 0;
+          floor = firstNpc.floor ?? 0;
           console.log(`🎯 Auto-selected first NPC: ${firstNpc.npcName}`);
         } else if (hasValidObject) {
           targetType = "object";
           targetIndex = 0;
+          floor = firstObject.floor ?? 0;
           console.log(`🎯 Auto-selected first Object: ${firstObject.name}`);
         } else {
           console.log("⚠️ No valid targets found in step 1");

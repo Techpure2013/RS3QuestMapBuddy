@@ -35,8 +35,12 @@ const AdminPlotSubmissions: React.FC = () => {
   useEffect(() => {
     EditorStore.setUi({ previewSubmission: selectedSubmission });
 
-    if (selectedSubmission && typeof selectedSubmission.floor === "number") {
-      EditorStore.setSelection({ floor: selectedSubmission.floor });
+    // Floor is now per-highlight, sync from first NPC/object if available
+    const firstNpc = selectedSubmission?.proposedhighlights?.npc?.[0];
+    const firstObj = selectedSubmission?.proposedhighlights?.object?.[0];
+    const previewFloor = firstNpc?.floor ?? firstObj?.floor;
+    if (typeof previewFloor === "number") {
+      EditorStore.setSelection({ floor: previewFloor });
     }
 
     return () => {

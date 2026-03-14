@@ -12,7 +12,6 @@ export function createDefaultQuest(name?: string): Quest {
         additionalStepInformation: [],
         dialogOptions: [],
         highlights: { npc: [], object: [] },
-        floor: 0,
       },
     ],
     questDetails: {

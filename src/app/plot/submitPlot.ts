@@ -14,6 +14,7 @@ export type SubmitHighlights = {
       bottomLeft: { lat: number; lng: number };
       topRight: { lat: number; lng: number };
     };
+    floor?: number;
   }>;
   object: Array<{
     id?: number;
@@ -23,12 +24,12 @@ export type SubmitHighlights = {
       bottomLeft: { lat: number; lng: number };
       topRight: { lat: number; lng: number };
     };
+    floor?: number;
   }>;
 };
 export type SubmitPlotBody = {
   playerName: string;
   stepId: number;
-  floor?: number;
   highlights: SubmitHighlights;
 };
 // src/state/api/submitPlot.ts

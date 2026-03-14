@@ -45,6 +45,7 @@ function extractValidNpcs(npcs: NpcHighlight[]) {
         npcName: n.npcName,
         npcLocation: { lat: loc.lat, lng: loc.lng },
         ...(n.wanderRadius ? { wanderRadius: n.wanderRadius } : {}),
+        ...(n.floor != null ? { floor: n.floor } : {}),
       };
       return typeof n.id === "number" && Number.isFinite(n.id)
         ? { id: n.id, ...base }
@@ -91,6 +92,7 @@ function extractValidObjects(objects: ObjectHighlight[]) {
           ...(p.numberLabel ? { numberLabel: p.numberLabel } : {}),
         })),
         ...(o.objectRadius ? { objectRadius: o.objectRadius } : {}),
+        ...(o.floor != null ? { floor: o.floor } : {}),
       };
       return typeof o.id === "number" && Number.isFinite(o.id)
         ? { id: o.id, ...base }
@@ -156,7 +158,6 @@ function validatePlotState(playerName: string): ValidationResult {
     payload: {
       playerName: normalizeName(playerName),
       stepId: rm.stepId,
-      floor: step.floor,
       highlights: { npc, object },
     },
   };
@@ -194,8 +195,7 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
     EditorStore.patchQuest((draft) => {
       const s = draft.questSteps[state.selection.selectedStep];
       if (!s) return;
-      s.floor = nf;
-      // Also set floor on the currently selected NPC or object
+      // Set floor on the currently selected NPC or object
       const { targetType, targetIndex } = state.selection;
       if (targetType === "npc" && s.highlights.npc[targetIndex]) {
         s.highlights.npc[targetIndex].floor = nf;
@@ -213,8 +213,7 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
     EditorStore.patchQuest((draft) => {
       const s = draft.questSteps[state.selection.selectedStep];
       if (!s) return;
-      s.floor = nf;
-      // Also set floor on the currently selected NPC or object
+      // Set floor on the currently selected NPC or object
       const { targetType, targetIndex } = state.selection;
       if (targetType === "npc" && s.highlights.npc[targetIndex]) {
         s.highlights.npc[targetIndex].floor = nf;
@@ -398,7 +397,6 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
       const saveRes = await savePlayerPlot({
         playerName: payload.playerName,
         stepId: payload.stepId,
-        floor: payload.floor,
         plotHighlights: payload.highlights,
       });
       if (saveRes.ok === false) {
@@ -410,7 +408,6 @@ const PlotControls: React.FC<PlotControlsProps> = ({ busy }) => {
       const submitRes = await submitPlotApi({
         playerName: payload.playerName,
         stepId: payload.stepId,
-        floor: payload.floor,
         highlights: payload.highlights,
       });
       if (submitRes.ok === false) {

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import L from "leaflet";
 import { useMap } from "react-leaflet";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import { EditorStore } from "../../state/editorStore";
@@ -6,6 +7,13 @@ import {
   convertSearchedNPCCoordToVisual,
   convertSearchedObjectCoordToVisual,
 } from "../../map/utils/coordinates";
+
+/** Offset fly target by px at a specific zoom level using project/unproject */
+function offsetFly(map: L.Map, lat: number, lng: number, zoom: number,  xPx = -250, yPx = -250): [number, number] {
+  const pt = map.project([lat, lng], zoom);
+  const shifted = map.unproject(L.point(pt.x + xPx, pt.y + yPx), zoom);
+  return [shifted.lat, shifted.lng];
+}
 
 const SearchHighlightFlyToHandler: React.FC = () => {
   const map = useMap();
@@ -38,7 +46,7 @@ const SearchHighlightFlyToHandler: React.FC = () => {
       if (!v) return;
       const lat = v.lat - 2;
       const lng = v.lng + 8;
-      map.flyTo([lat, lng], 5, { duration: 0.5 });
+      map.flyTo(offsetFly(map, lat, lng, 5), 5, { duration: 0.5 });
       return;
     }
 
@@ -53,7 +61,7 @@ const SearchHighlightFlyToHandler: React.FC = () => {
       if (!v) return;
       const lat = v.lat - 2;
       const lng = v.lng + 8;
-      map.flyTo([lat, lng], 5, { duration: 0.5 });
+      map.flyTo(offsetFly(map, lat, lng, 5), 5, { duration: 0.5 });
       return;
     }
   }, [map, highlights]);

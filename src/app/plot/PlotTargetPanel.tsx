@@ -23,6 +23,14 @@ const PlotTargetsPanel: React.FC = () => {
     return step.highlights.object?.[sel.targetIndex]?.name ?? "";
   }, [step, sel.targetType, sel.targetIndex]);
 
+  const currentFloor = useMemo(() => {
+    if (!step) return 0;
+    if (sel.targetType === "npc") {
+      return step.highlights.npc?.[sel.targetIndex]?.floor ?? 0;
+    }
+    return step.highlights.object?.[sel.targetIndex]?.floor ?? 0;
+  }, [step, sel.targetType, sel.targetIndex]);
+
   const currentObjectColor = useMemo(() => {
     if (ui.selectedObjectColor) return ui.selectedObjectColor;
     if (!step || sel.targetType !== "object") return "#FFFFFF";
@@ -73,6 +81,22 @@ const PlotTargetsPanel: React.FC = () => {
         if (t) t.name = name;
       }
     });
+  }, []);
+
+  const onFloorChange = useCallback((floor: number) => {
+    const state = EditorStore.getState();
+    EditorStore.patchQuest((draft) => {
+      const s = draft.questSteps[state.selection.selectedStep];
+      if (!s) return;
+      if (state.selection.targetType === "npc") {
+        const t = s.highlights.npc?.[state.selection.targetIndex];
+        if (t) t.floor = floor;
+      } else {
+        const t = s.highlights.object?.[state.selection.targetIndex];
+        if (t) t.floor = floor;
+      }
+    });
+    EditorStore.setSelection({ floor });
   }, []);
 
   const onAddNpc = useCallback(() => {
@@ -136,6 +160,7 @@ const PlotTargetsPanel: React.FC = () => {
           bottomLeft: { lat: 0, lng: 0 },
           topRight: { lat: 0, lng: 0 },
         },
+        floor: state.selection.floor,
       });
     });
     const nextIndex =
@@ -363,6 +388,21 @@ const PlotTargetsPanel: React.FC = () => {
         />
       </div>
 
+      <div className="plot-control-group">
+        <label className="plot-field-label">Floor</label>
+        <select
+          value={currentFloor}
+          onChange={(e) => onFloorChange(Number(e.target.value))}
+          className="plot-input-text"
+          style={{ width: 80 }}
+        >
+          <option value={0}>0</option>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+        </select>
+      </div>
+
       {sel.targetType === "object" && (
         <div className="plot-object-controls">
           <div className="plot-control-group">
@@ -399,6 +439,14 @@ const PlotTargetsPanel: React.FC = () => {
           isActive={sel.targetType === "npc"}
           onSelect={(i) => onTargetIndexChange(i, "npc")}
           onClearPoint={clearNpcPoint}
+          onFloorChange={(i, floor) => {
+            onFloorChange(floor);
+            const state = EditorStore.getState();
+            EditorStore.patchQuest((draft) => {
+              const s = draft.questSteps[state.selection.selectedStep];
+              if (s?.highlights.npc?.[i]) s.highlights.npc[i].floor = floor;
+            });
+          }}
         />
       </div>
 
@@ -410,6 +458,14 @@ const PlotTargetsPanel: React.FC = () => {
           isActive={sel.targetType === "object"}
           onSelect={(i) => onTargetIndexChange(i, "object")}
           onDeletePoint={deleteObjectPoint}
+          onFloorChange={(i, floor) => {
+            onFloorChange(floor);
+            const state = EditorStore.getState();
+            EditorStore.patchQuest((draft) => {
+              const s = draft.questSteps[state.selection.selectedStep];
+              if (s?.highlights.object?.[i]) s.highlights.object[i].floor = floor;
+            });
+          }}
         />
       </div>
 

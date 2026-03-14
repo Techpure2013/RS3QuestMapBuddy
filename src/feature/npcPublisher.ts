@@ -29,8 +29,6 @@ export async function recordQuestNpcLocations(quest: Quest): Promise<{
 
   for (let stepIndex = 0; stepIndex < quest.questSteps.length; stepIndex++) {
     const step = quest.questSteps[stepIndex];
-    const floor = typeof step.floor === "number" ? step.floor : 0;
-
     for (const npc of step.highlights.npc ?? []) {
       const npcName = npc.npcName || "(unnamed)";
 
@@ -87,7 +85,7 @@ export async function recordQuestNpcLocations(quest: Quest): Promise<{
         await recordNpcLocation(npcId, npcName, {
           lat: loc.lat,
           lng: loc.lng,
-          floor,
+          floor: npc.floor ?? 0,
         });
         recorded++;
         details.push({
@@ -98,7 +96,7 @@ export async function recordQuestNpcLocations(quest: Quest): Promise<{
         console.log(
           `✅ Recorded: ${npcName} (ID: ${npcId}) at {${loc.lat}, ${
             loc.lng
-          }, F${floor}} (step ${stepIndex + 1})`
+          }, F${npc.floor ?? 0}} (step ${stepIndex + 1})`
         );
       } catch (err) {
         failed++;

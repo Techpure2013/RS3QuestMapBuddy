@@ -8,6 +8,7 @@ interface PlotObjectListProps {
   isActive: boolean;
   onSelect: (index: number) => void;
   onDeletePoint: (objIndex: number, locIndex: number) => void;
+  onFloorChange?: (index: number, floor: number) => void;
 }
 
 export const PlotObjectList: React.FC<PlotObjectListProps> = ({
@@ -16,6 +17,7 @@ export const PlotObjectList: React.FC<PlotObjectListProps> = ({
   isActive,
   onSelect,
   onDeletePoint,
+  onFloorChange,
 }) => {
   if (objects.length === 0) {
     return <div className="qp-empty">No Objects yet</div>;
@@ -31,6 +33,7 @@ export const PlotObjectList: React.FC<PlotObjectListProps> = ({
           isActive={isActive && i === selectedIndex}
           onSelect={() => onSelect(i)}
           onDeletePoint={(locIdx) => onDeletePoint(i, locIdx)}
+          onFloorChange={(floor) => onFloorChange?.(i, floor)}
         />
       ))}
     </ul>
@@ -43,6 +46,7 @@ interface PlotObjectItemProps {
   isActive: boolean;
   onSelect: () => void;
   onDeletePoint: (locIndex: number) => void;
+  onFloorChange: (floor: number) => void;
 }
 
 const PlotObjectItem: React.FC<PlotObjectItemProps> = ({
@@ -51,6 +55,7 @@ const PlotObjectItem: React.FC<PlotObjectItemProps> = ({
   isActive,
   onSelect,
   onDeletePoint,
+  onFloorChange,
 }) => {
   const pts = object.objectLocation ?? [];
 
@@ -64,6 +69,18 @@ const PlotObjectItem: React.FC<PlotObjectItemProps> = ({
         <span className="plot-target-name">
           {object.name || `Object ${index + 1}`}
         </span>
+        <select
+          value={object.floor ?? 0}
+          onChange={(e) => { e.stopPropagation(); onFloorChange(Number(e.target.value)); }}
+          onClick={(e) => e.stopPropagation()}
+          style={{ marginLeft: "auto", width: 52, fontSize: "0.7rem", background: "#1f2937", color: "#e5e7eb", border: "1px solid #4b5563", borderRadius: 3, padding: "1px 2px" }}
+          title="Floor"
+        >
+          <option value={0}>F0</option>
+          <option value={1}>F1</option>
+          <option value={2}>F2</option>
+          <option value={3}>F3</option>
+        </select>
       </div>
 
       <div className="plot-target-coords">

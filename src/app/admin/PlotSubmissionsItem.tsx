@@ -39,8 +39,6 @@ export const PlotSubmissionItem: React.FC<PlotSubmissionItemProps> = React.memo(
         <div className="submission-meta">
           <span className="submission-step">Step {item.step_number}</span>
           <span className="submission-divider">•</span>
-          <span className="submission-floor">Floor {item.floor ?? 0}</span>
-          <span className="submission-divider">•</span>
           <span className="submission-player">{item.playername}</span>
         </div>
 

@@ -154,7 +154,6 @@ const StepControlBar: React.FC = React.memo(() => {
 
       draft.questSteps.splice(clamped, 0, {
         stepDescription: "",
-        floor,
         highlights: { npc: [], object: [] },
         itemsNeeded: [],
         itemsRecommended: [],

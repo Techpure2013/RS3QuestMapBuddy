@@ -933,7 +933,6 @@ export function getStepEndpoint(step: {
     npc: Array<{ npcLocation: { lat: number; lng: number }; floor?: number }>;
     object: Array<{ objectLocation: Array<{ lat: number; lng: number }>; floor?: number }>;
   };
-  floor: number;
 }): { lat: number; lng: number; floor: number } | null {
   if (step.highlights.npc.length > 0) {
     const npc = step.highlights.npc[0];
@@ -941,7 +940,7 @@ export function getStepEndpoint(step: {
       return {
         lat: npc.npcLocation.lat,
         lng: npc.npcLocation.lng,
-        floor: npc.floor ?? step.floor,
+        floor: npc.floor ?? 0,
       };
     }
   }
@@ -954,7 +953,7 @@ export function getStepEndpoint(step: {
         return {
           lat: loc.lat,
           lng: loc.lng,
-          floor: obj.floor ?? step.floor,
+          floor: obj.floor ?? 0,
         };
       }
     }
@@ -970,14 +969,12 @@ export async function generateStepToStepPath(
       npc: Array<{ npcLocation: { lat: number; lng: number }; floor?: number }>;
       object: Array<{ objectLocation: Array<{ lat: number; lng: number }>; floor?: number }>;
     };
-    floor: number;
   },
   toStep: {
     highlights: {
       npc: Array<{ npcLocation: { lat: number; lng: number }; floor?: number }>;
       object: Array<{ objectLocation: Array<{ lat: number; lng: number }>; floor?: number }>;
     };
-    floor: number;
   }
 ): Promise<PathWaypoint[] | null> {
   const fromPoint = getStepEndpoint(fromStep);

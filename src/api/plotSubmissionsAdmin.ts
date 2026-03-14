@@ -16,6 +16,7 @@ export type PlotSubmissionRow = {
         bottomLeft: { lat: number; lng: number };
         topRight: { lat: number; lng: number };
       };
+      floor?: number;
     }>;
     object: Array<{
       id?: number;
@@ -30,10 +31,10 @@ export type PlotSubmissionRow = {
         bottomLeft: { lat: number; lng: number };
         topRight: { lat: number; lng: number };
       };
+      floor?: number;
     }>;
   };
   proposedhighlights: PlotSubmissionRow["basehighlights"];
-  floor: number | null;
   contenthash: string;
   status: "pending" | "approved" | "rejected";
   rejectionreason: string | null;

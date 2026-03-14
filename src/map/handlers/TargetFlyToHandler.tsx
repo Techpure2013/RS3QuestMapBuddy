@@ -1,10 +1,18 @@
 // src/map/handlers/TargetFlyToHandler.tsx
 import { useEffect, useRef } from "react";
+import L from "leaflet";
 import { useMap } from "react-leaflet";
 import { useEditorSelector } from "../../state/useEditorSelector";
 import { EditorStore } from "../../state/editorStore";
 import type { NpcHighlight, ObjectHighlight } from "../../state/types";
 import { convertManualCoordToVisual } from "../../map/utils/coordinates";
+
+/** Offset fly target by px at a specific zoom level using project/unproject */
+function offsetFly(map: L.Map, lat: number, lng: number, zoom: number, xPx = -250, yPx = -250): [number, number] {
+  const pt = map.project([lat, lng], zoom);
+  const shifted = map.unproject(L.point(pt.x + xPx, pt.y + yPx), zoom);
+  return [shifted.lat, shifted.lng];
+}
 
 /**
  * Computes the same center the renderer uses:
@@ -107,7 +115,8 @@ const TargetFlyToHandler: React.FC = () => {
     }
 
     // always zoom 5 for targets
-    map.flyTo([centerLat, centerLng], 5, { duration: 0.5 });
+    const flyTarget = offsetFly(map, centerLat, centerLng, 5);
+    map.flyTo(flyTarget, 5, { duration: 0.5 });
 
     EditorStore.setUi({ flyToTargetRequest: undefined });
   }, [map, ui.flyToTargetRequest]);

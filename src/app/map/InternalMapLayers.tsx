@@ -424,7 +424,6 @@ const InternalMapLayers: React.FC = () => {
           const sel = EditorStore.getState().selection;
           const step = draft.questSteps[sel.selectedStep];
           if (!step) return;
-          step.floor = sel.floor;
 
           const highlightTarget =
             step.highlights[sel.targetType][sel.targetIndex];

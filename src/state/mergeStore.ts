@@ -142,7 +142,6 @@ export const MergeStore = {
           ),
           // Always preserve local-only fields
           highlights: baseStep.highlights,
-          floor: baseStep.floor,
           stepId: baseStep.stepId,
           pathToStep: baseStep.pathToStep,
         };
@@ -461,6 +460,5 @@ function createEmptyStep(): QuestStep {
     dialogOptions: [],
     additionalStepInformation: [],
     highlights: { npc: [], object: [] },
-    floor: 0,
   };
 }

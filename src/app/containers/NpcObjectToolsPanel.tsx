@@ -624,6 +624,22 @@ export const NpcObjectToolsPanel: React.FC = () => {
             t.objectLocation.splice(locIdx, 1);
           });
         }}
+        onFloorChange={(index, type, floor) => {
+          EditorStore.patchQuest((draft) => {
+            const s = draft.questSteps[sel.selectedStep];
+            if (!s) return;
+            if (type === "npc") {
+              const t = s.highlights.npc?.[index];
+              if (t) t.floor = floor;
+            } else {
+              const t = s.highlights.object?.[index];
+              if (t) t.floor = floor;
+            }
+          });
+          if (type === sel.targetType && index === sel.targetIndex) {
+            EditorStore.setSelection({ floor });
+          }
+        }}
         targetNameValue={currentTargetName}
         onTargetNameChange={handleTargetNameChange}
       />

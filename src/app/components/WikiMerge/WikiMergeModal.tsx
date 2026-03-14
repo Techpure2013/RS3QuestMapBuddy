@@ -785,7 +785,6 @@ export const WikiMergeModal: React.FC = () => {
         dialogOptions: [],
         additionalStepInformation: [],
         highlights: { npc: [], object: [] },
-        floor: 0,
       });
     }
 
@@ -901,7 +900,6 @@ export const WikiMergeModal: React.FC = () => {
         additionalStepInformation: matchedLocal?.additionalStepInformation?.length ? [...matchedLocal.additionalStepInformation] : (wikiStep.additionalStepInformation?.length ? [...wikiStep.additionalStepInformation] : []),
         // Carry map data from the MATCHED local step (by text similarity)
         highlights: matchedLocal?.highlights ?? { npc: [], object: [] },
-        floor: matchedLocal?.floor ?? 0,
         stepId: matchedLocal?.stepId,
         pathToStep: matchedLocal?.pathToStep,
       };
@@ -945,7 +943,6 @@ export const WikiMergeModal: React.FC = () => {
         dialogOptions: [],
         additionalStepInformation: [],
         highlights: { npc: [], object: [] },
-        floor: 0,
       });
     }
 
@@ -1073,7 +1070,6 @@ export const WikiMergeModal: React.FC = () => {
           dialogOptions: [],
           additionalStepInformation: [],
           highlights: { npc: [], object: [] },
-          floor: 0,
         };
       }
 
@@ -1095,7 +1091,6 @@ export const WikiMergeModal: React.FC = () => {
         dialogOptions: [],
         additionalStepInformation: [],
         highlights: { npc: [], object: [] },
-        floor: 0,
       };
       applyFieldContent(newStep, insert.data.fieldName, insert.data.content);
 
@@ -1474,7 +1469,6 @@ function wikiStepToQuestStep(wiki: WikiQuestStep): QuestStep {
     dialogOptions: wiki.dialogOptions || [],
     additionalStepInformation: wiki.additionalStepInformation || [],
     highlights: { npc: [], object: [] },
-    floor: 0,
   };
 }
 

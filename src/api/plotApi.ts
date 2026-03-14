@@ -10,6 +10,7 @@ export type PlotNpcHighlight = {
     bottomLeft: { lat: number; lng: number };
     topRight: { lat: number; lng: number };
   };
+  floor?: number;
 };
 export type PlotObjectHighlight = {
   id: number;
@@ -24,6 +25,7 @@ export type PlotObjectHighlight = {
     bottomLeft: { lat: number; lng: number };
     topRight: { lat: number; lng: number };
   };
+  floor?: number;
 };
 export type PlotHighlights = {
   npc: PlotNpcHighlight[];
@@ -33,7 +35,6 @@ export type PlotHighlights = {
 export async function saveStepPlot(input: {
   playerName: string;
   stepId: number;
-  floor?: number;
   highlights: PlotHighlights;
 }): Promise<{ ok: true } | { ok: false; error: string }> {
   const base = getApiBase();
@@ -49,7 +50,6 @@ export async function getStepPlot(stepId: number, playerName: string) {
     ok: true;
     plot: {
       highlights: PlotHighlights;
-      floor: number | null;
       updatedAt: string;
     };
   }>(`${base}/api/plot/${stepId}/${encodeURIComponent(playerName)}`, {
@@ -63,7 +63,6 @@ export async function listStepPlots(stepId: number) {
     ok: true;
     items: Array<{
       playerName: string;
-      floor: number | null;
       updatedAt: string;
       highlights: PlotHighlights;
     }>;

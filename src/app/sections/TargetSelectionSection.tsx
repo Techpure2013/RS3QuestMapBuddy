@@ -23,6 +23,7 @@ interface TargetSelectionSectionProps {
   onDeleteObjectLocation: (locationIndex: number) => void;
   onDeleteNpc: (index: number) => void;
   onDeleteObject: (index: number) => void;
+  onFloorChange?: (index: number, type: "npc" | "object", floor: number) => void;
   targetNameValue: string;
   onTargetNameChange: (name: string) => void;
 }
@@ -42,6 +43,7 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
   onDeleteObjectLocation,
   onDeleteNpc,
   onDeleteObject,
+  onFloorChange,
   targetNameValue,
   onTargetNameChange,
 }) => {
@@ -419,6 +421,18 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
                     <span style={{ fontSize: 13, color: "#e5e7eb", flex: 1 }}>
                       {displayName}
                     </span>
+                    <select
+                      value={npc.floor ?? 0}
+                      onChange={(e) => { e.stopPropagation(); onFloorChange?.(index, "npc", Number(e.target.value)); }}
+                      onClick={(e) => e.stopPropagation()}
+                      style={{ width: 46, fontSize: 11, background: "#0f172a", color: "#e5e7eb", border: "1px solid #334155", borderRadius: 4, padding: "1px 2px", marginRight: 4, height: 20 }}
+                      title="Floor"
+                    >
+                      <option value={0}>F0</option>
+                      <option value={1}>F1</option>
+                      <option value={2}>F2</option>
+                      <option value={3}>F3</option>
+                    </select>
                     <span style={{ fontSize: 11, color: "#9ca3af", marginRight: 6 }}>
                       {isUnset ? "{unset}" : `{${loc.lat}, ${loc.lng}}`}
                     </span>
@@ -496,6 +510,18 @@ export const TargetSelectionSection: React.FC<TargetSelectionSectionProps> = ({
                       <span style={{ fontSize: 13, color: "#e5e7eb", flex: 1 }}>
                         {displayName}
                       </span>
+                      <select
+                        value={obj.floor ?? 0}
+                        onChange={(e) => { e.stopPropagation(); onFloorChange?.(index, "object", Number(e.target.value)); }}
+                        onClick={(e) => e.stopPropagation()}
+                        style={{ width: 46, fontSize: 11, background: "#0f172a", color: "#e5e7eb", border: "1px solid #334155", borderRadius: 4, padding: "1px 2px", marginRight: 4, height: 20 }}
+                        title="Floor"
+                      >
+                        <option value={0}>F0</option>
+                        <option value={1}>F1</option>
+                        <option value={2}>F2</option>
+                        <option value={3}>F3</option>
+                      </select>
                       <span style={{ fontSize: 11, color: "#9ca3af", marginRight: 6 }}>
                         {pts.length === 0
                           ? "No points"
