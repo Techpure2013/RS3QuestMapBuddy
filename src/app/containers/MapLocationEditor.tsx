@@ -56,8 +56,8 @@ const parseGridCoords = (input: string): { x: number; y: number } | null => {
 
 // Convert grid coords to map center position
 const gridToMapCenter = (x: number, y: number): { lat: number; lng: number } => ({
-  lat: y * CHUNK_SIZE + CHUNK_SIZE / 2,
-  lng: x * CHUNK_SIZE + CHUNK_SIZE / 2,
+  lat: x * CHUNK_SIZE + CHUNK_SIZE / 2,
+  lng: y * CHUNK_SIZE + CHUNK_SIZE / 2,
 });
 
 export const MapLocationEditor: React.FC = () => {
