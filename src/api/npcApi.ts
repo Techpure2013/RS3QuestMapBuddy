@@ -10,11 +10,17 @@ export type NpcSearchRow = {
   floor: number;
 };
 
+export type NpcWanderRadius = {
+  bottomLeft: { lat: number; lng: number };
+  topRight: { lat: number; lng: number };
+};
+
 export type EnrichedNpcSearchRow = NpcSearchRow & {
   questName?: string;
   stepNumber?: number;
   stepDescription?: string;
   questAppearances?: Array<{ questId: number; questName: string; stepNumber: number; stepDescription: string }>;
+  wanderRadius?: NpcWanderRadius;
 };
 
 export async function searchNpcs(

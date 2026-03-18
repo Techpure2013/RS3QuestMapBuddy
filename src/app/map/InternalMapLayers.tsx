@@ -631,7 +631,7 @@ const InternalMapLayers: React.FC = () => {
           {
             npcName: hiNpc.name,
             npcLocation: visual ?? { lat: 0, lng: 0 },
-            wanderRadius: {
+            wanderRadius: hiNpc.wanderRadius ?? {
               bottomLeft: { lat: 0, lng: 0 },
               topRight: { lat: 0, lng: 0 },
             },

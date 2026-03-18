@@ -16,7 +16,18 @@ export const NpcSearchPanel: React.FC = () => {
     if (!EditorStore.getState().ui.navReturn) {
       requestCaptureNavReturn(true);
     }
-    EditorStore.setHighlights({ highlightedNpc: npc });
+    EditorStore.setHighlights({
+      highlightedNpc: npc
+        ? {
+            id: npc.id,
+            name: npc.name,
+            lat: npc.lat,
+            lng: npc.lng,
+            floor: npc.floor,
+            wanderRadius: npc.wanderRadius,
+          }
+        : null,
+    });
   }, []);
 
   const onNpcSelect = useCallback((npc: Npc) => {
@@ -28,12 +39,14 @@ export const NpcSearchPanel: React.FC = () => {
       if (!step) return;
 
       const existing = step.highlights?.npc?.[sel.targetIndex];
+      const radius = npc.wanderRadius ?? { bottomLeft: { lat: 0, lng: 0 }, topRight: { lat: 0, lng: 0 } };
       if (existing) {
         // Update existing NPC
         existing.id = npc.id;
         existing.npcName = npc.name;
         existing.npcLocation = { lat: npc.lat, lng: npc.lng };
         existing.floor = npc.floor;
+        existing.wanderRadius = radius;
       } else {
         // Auto-create new NPC highlight
         if (!step.highlights) step.highlights = { npc: [], object: [] };
@@ -42,7 +55,7 @@ export const NpcSearchPanel: React.FC = () => {
           id: npc.id,
           npcName: npc.name,
           npcLocation: { lat: npc.lat, lng: npc.lng },
-          wanderRadius: { bottomLeft: { lat: null, lng: null }, topRight: { lat: null, lng: null } },
+          wanderRadius: radius,
           floor: npc.floor,
         } as any);
       }

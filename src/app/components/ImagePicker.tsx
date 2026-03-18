@@ -10,7 +10,7 @@ export interface ImagePickerProps {
 /**
  * Resolve wiki URLs to direct image URLs
  */
-function resolveWikiImageUrl(inputUrl: string): string {
+export function resolveWikiImageUrl(inputUrl: string): string {
   let url = inputUrl.trim();
 
   // runescape.wiki media viewer: https://runescape.wiki/w/Something#/media/File:Image.png

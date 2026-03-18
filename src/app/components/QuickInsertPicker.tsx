@@ -13,6 +13,7 @@ import {
   importCustomThumbnails,
   type CustomThumbnail,
 } from "../../data/customThumbnails";
+import { resolveWikiImageUrl } from "./ImagePicker";
 
 export interface QuickInsertPickerProps {
   onSelect: (markup: string) => void;
@@ -121,9 +122,10 @@ export const QuickInsertPicker: React.FC<QuickInsertPickerProps> = ({
   const handleAddCustom = () => {
     if (!newThumbnail.name.trim() || !newThumbnail.imageUrl.trim()) return;
 
+    const resolvedUrl = resolveWikiImageUrl(newThumbnail.imageUrl.trim());
     const added = addCustomThumbnail({
       name: newThumbnail.name.trim(),
-      imageUrl: newThumbnail.imageUrl.trim(),
+      imageUrl: resolvedUrl,
       defaultSize: newThumbnail.defaultSize,
       category: "misc",
       wikiUrl: newThumbnail.imageUrl.trim(),
@@ -343,7 +345,7 @@ export const QuickInsertPicker: React.FC<QuickInsertPickerProps> = ({
             />
             <input
               type="text"
-              placeholder="Image URL (https://...)"
+              placeholder="Image URL (wiki URLs auto-resolved)"
               value={newThumbnail.imageUrl}
               onChange={(e) =>
                 setNewThumbnail({ ...newThumbnail, imageUrl: e.target.value })
@@ -385,34 +387,45 @@ export const QuickInsertPicker: React.FC<QuickInsertPickerProps> = ({
               <span style={{ fontSize: "0.7rem", color: "#6b7280" }}>px</span>
             </div>
             {/* Preview */}
-            {newThumbnail.imageUrl && (
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 8,
-                  padding: 6,
-                  background: "#374151",
-                  borderRadius: 4,
-                }}
-              >
-                <span style={{ fontSize: "0.7rem", color: "#6b7280" }}>
-                  Preview:
-                </span>
-                <img
-                  src={newThumbnail.imageUrl}
-                  alt="preview"
+            {newThumbnail.imageUrl && (() => {
+              const previewResolved = resolveWikiImageUrl(newThumbnail.imageUrl.trim());
+              const wasResolved = previewResolved !== newThumbnail.imageUrl.trim();
+              return (
+                <div
                   style={{
-                    width: newThumbnail.defaultSize,
-                    height: newThumbnail.defaultSize,
-                    objectFit: "contain",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 4,
+                    padding: 6,
+                    background: "#374151",
+                    borderRadius: 4,
                   }}
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = "none";
-                  }}
-                />
-              </div>
-            )}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <span style={{ fontSize: "0.7rem", color: "#6b7280" }}>
+                      Preview:
+                    </span>
+                    <img
+                      src={previewResolved}
+                      alt="preview"
+                      style={{
+                        width: newThumbnail.defaultSize,
+                        height: newThumbnail.defaultSize,
+                        objectFit: "contain",
+                      }}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = "none";
+                      }}
+                    />
+                  </div>
+                  {wasResolved && (
+                    <div style={{ fontSize: "0.65rem", color: "#86efac" }}>
+                      Wiki URL auto-resolved
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
             <div style={{ display: "flex", gap: 8 }}>
               <button
                 type="button"

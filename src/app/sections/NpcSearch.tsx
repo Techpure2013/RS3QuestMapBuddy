@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { searchNpcsEnriched, deleteNpcLocation, removeNpcFromStepHighlights } from "../../api/npcApi";
+import { searchNpcsEnriched, deleteNpcLocation, removeNpcFromStepHighlights, type NpcWanderRadius } from "../../api/npcApi";
 import {
   loadNpcCache,
   saveNpcCache,
@@ -17,6 +17,7 @@ export interface Npc {
   stepNumber?: number;
   stepDescription?: string;
   questAppearances?: Array<{ questId: number; questName: string; stepNumber: number; stepDescription: string }>;
+  wanderRadius?: NpcWanderRadius;
 }
 
 interface NpcSearchProps {

@@ -142,6 +142,10 @@ export interface HighlightNpc {
   lat: number;
   lng: number;
   floor: number;
+  wanderRadius?: {
+    bottomLeft: { lat: number; lng: number };
+    topRight: { lat: number; lng: number };
+  };
 }
 export interface HighlightObject {
   id: number;
