@@ -16,7 +16,7 @@ export const ItemsNeededPanel: React.FC = () => {
         const step = draft.questSteps[sel.selectedStep];
         if (!step) return;
         const lines = text
-          .split("\n")
+          .split(/[\n,]/)
           .map((s) => s.trim())
           .filter((s) => s.length > 0);
         step.itemsNeeded = lines;

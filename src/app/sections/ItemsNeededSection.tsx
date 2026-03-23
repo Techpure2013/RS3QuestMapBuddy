@@ -53,9 +53,10 @@ export const ItemsNeededSection: React.FC<ItemsNeededSectionProps> = ({
           style={{ resize: "none", overflow: "hidden" }}
         />
         {lines.length > 0 && (
-          <ul style={{ marginTop: 6, paddingLeft: 18 }}>
+          <div style={{ marginTop: 6, display: "flex", flexDirection: "column", gap: 4 }}>
             {lines.map((s, i) => (
-              <li key={`${i}-${s}`}>
+              <label key={`${i}-${s}`} style={{ display: "flex", alignItems: "flex-start", gap: 6, cursor: "default" }}>
+                <input type="checkbox" style={{ marginTop: 3, accentColor: "#22c55e" }} />
                 <RichText
                   onStepClick={(step) => {
                     const stepIndex = step - 1;
@@ -66,9 +67,9 @@ export const ItemsNeededSection: React.FC<ItemsNeededSectionProps> = ({
                 >
                   {s}
                 </RichText>
-              </li>
+              </label>
             ))}
-          </ul>
+          </div>
         )}
       </div>
     </div>

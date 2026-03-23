@@ -8,6 +8,7 @@ export interface PanelProps {
   rightAdornment?: React.ReactNode;
   children: React.ReactNode;
   compact?: boolean; // New prop for even more compact mode
+  hasContent?: boolean; // Subtle highlight when collapsed and has content
 }
 
 export const Panel: React.FC<PanelProps> = ({
@@ -16,6 +17,7 @@ export const Panel: React.FC<PanelProps> = ({
   rightAdornment,
   children,
   compact = false,
+  hasContent = false,
 }) => {
   const [open, setOpen] = useState<boolean>(defaultOpen);
 
@@ -24,7 +26,7 @@ export const Panel: React.FC<PanelProps> = ({
       style={{
         margin: compact ? "4px 6px" : "6px 8px",
         borderRadius: 6,
-        border: "1px solid #374151",
+        border: !open && hasContent ? "1px solid #4b5563" : "1px solid #374151",
         background: "#111827",
       }}
     >
@@ -74,6 +76,9 @@ export const Panel: React.FC<PanelProps> = ({
           }}
         >
           {title}
+          {!open && hasContent && (
+            <span style={{ marginLeft: 6, color: "#3b82f6", fontSize: "0.5rem", verticalAlign: "middle" }}>●</span>
+          )}
         </strong>
 
         {/* Right adornment */}

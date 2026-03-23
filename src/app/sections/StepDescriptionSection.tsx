@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
-import { RichText } from "../../utils/RichText";
+import { RichText, splitAroundTables } from "../../utils/RichText";
+import { TablePreview } from "../components/TablePreview";
 import { FormattingToolbar } from "../components/FormattingToolbar";
 import { TableCreator } from "../components/TableCreator";
 import { EditorStore } from "../../state/editorStore";
@@ -38,15 +39,42 @@ export const StepDescriptionSection: React.FC<{
     }
   };
 
+  const segments = value ? splitAroundTables(value) : [];
+  const hasTableContent = segments.some((s) => s.type === "table");
+
   return (
     <div className="panel-section step-description-display">
-      <label className="EditDescriptionLabel">
-        <span className="description-text">
-          <strong>Step {stepNumber}:</strong>{" "}
-          {value ? <RichText onStepClick={handleStepClick}>{value}</RichText> : null}
-        </span>
-        <input type="checkbox" checked={editing} onChange={onToggleEdit} />
-      </label>
+      {!hasTableContent ? (
+        /* No tables — render normally inside the label */
+        <label className="EditDescriptionLabel">
+          <div className="description-text">
+            <strong>Step {stepNumber}:</strong>{" "}
+            {value ? <RichText onStepClick={handleStepClick}>{value}</RichText> : null}
+          </div>
+          <input type="checkbox" checked={editing} onChange={onToggleEdit} />
+        </label>
+      ) : (
+        /* Has tables — label gets step + checkbox, segments render as blocks below */
+        <>
+          <label className="EditDescriptionLabel">
+            <div className="description-text">
+              <strong>Step {stepNumber}:</strong>
+            </div>
+            <input type="checkbox" checked={editing} onChange={onToggleEdit} />
+          </label>
+          {segments.map((seg, i) =>
+            seg.type === "table" ? (
+              <div key={i} style={{ margin: "8px 0" }}>
+                <TablePreview markup={seg.content} onStepClick={handleStepClick} />
+              </div>
+            ) : (
+              <div key={i} style={{ padding: "2px 8px" }}>
+                <RichText onStepClick={handleStepClick}>{seg.content}</RichText>
+              </div>
+            ),
+          )}
+        </>
+      )}
       {editing && (
         <>
           <div style={{ display: "flex", gap: 8, marginBottom: 6, alignItems: "center" }}>

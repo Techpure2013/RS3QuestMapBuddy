@@ -36,7 +36,7 @@ export const ItemsRecommendedPanel: React.FC = () => {
         const step = draft.questSteps[selection.selectedStep];
         if (!step) return;
         const lines = text
-          .split("\n")
+          .split(/[\n,]/)
           .map((s) => s.trim())
           .filter((s) => s.length > 0);
         step.itemsRecommended = lines;

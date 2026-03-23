@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import RichText from "../../utils/RichText";
 
 const TABLE_COLORS_STORAGE_KEY = "table-creator-favorite-colors";
 
@@ -76,8 +77,14 @@ const DEFAULT_TABLE: TableData = {
 };
 
 // Clean wiki markup from cell content, leaving only readable text
+// Converts {{Plink|Item}} to wiki image + item name
 function cleanWikiContent(text: string): string {
   return text
+    // {{Plink|Item name}} → image + name (must be before generic template strip)
+    .replace(/\{\{[Pp]link\|([^}]+)\}\}/g, (_, name: string) => {
+      const imgName = name.trim().replace(/ /g, '_');
+      return `${name.trim()} ![${name.trim()}\\|24](https://runescape.wiki/images/${imgName}.png)`;
+    })
     // [[File:Name.png|30px]] or [[File:Name.png]] → strip entirely
     .replace(/\[\[File:[^\]]+\]\]/gi, '')
     // [[Category:...]] → strip entirely
@@ -86,8 +93,12 @@ function cleanWikiContent(text: string): string {
     .replace(/\[\[([^\]]*?\|)([^\]]*?)\]\]/g, '$2')
     // [[Simple link]] → Simple link
     .replace(/\[\[([^\]]+)\]\]/g, '$1')
-    // {{Template|params}} → strip
+    // {{Template|params}} → strip (remaining non-Plink templates)
     .replace(/\{\{[^}]*\}\}/g, '')
+    // '''bold''' → **bold**
+    .replace(/'''([^']+)'''/g, '**$1**')
+    // ''italic'' → *italic*
+    .replace(/''([^']+)''/g, '*$1*')
     // <br />, <br>, <br/> → space
     .replace(/<br\s*\/?>/gi, ' ')
     // Other HTML tags → strip
@@ -324,6 +335,11 @@ function parseWikiTable(text: string): TableData | null {
       continue;
     }
 
+    // Table caption (|+) — skip
+    if (trimmed.startsWith("|+")) {
+      continue;
+    }
+
     // Regular cells (|)
     if (trimmed.startsWith("|") && !trimmed.startsWith("|-") && !trimmed.startsWith("{|") && !trimmed.startsWith("|}")) {
       pastHeaders = true;
@@ -483,8 +499,16 @@ function generateMarkdownTable(table: TableData): string {
   md += `ebg:${table.evenRowBgColor}|`;
   md += `obg:${table.oddRowBgColor}|`;
 
+  // Escape unescaped pipes in cell content (but preserve already-escaped \|)
+  const escPipes = (s: string) => s.replace(/(?<!\\)\|/g, "\\|");
+
+  // Pad empty cells with a space so that adjacent empty cells don't produce
+  // "||" which conflicts with the row separator. The parser trims cells, so
+  // the spaces are invisible after round-tripping.
+  const cellVal = (s: string) => escPipes(s) || " ";
+
   // Headers
-  md += table.headers.map(h => h.content.replace(/\|/g, "\\|")).join("|") + "||";
+  md += table.headers.map(h => cellVal(h.content)).join("|") + "||";
 
   // Rows
   for (const row of table.rows) {
@@ -492,7 +516,7 @@ function generateMarkdownTable(table: TableData): string {
     while (cells.length < colCount) {
       cells.push({ content: "" });
     }
-    md += cells.map(c => c.content.replace(/\|/g, "\\|")).join("|") + "||";
+    md += cells.map(c => cellVal(c.content)).join("|") + "||";
   }
 
   md = md.slice(0, -2); // Remove trailing ||
@@ -580,6 +604,21 @@ export const TableCreator: React.FC<TableCreatorProps> = ({ onInsert, onClose })
   const removeRow = (index: number) => {
     const newRows = table.rows.filter((_, i) => i !== index);
     setTable({ ...table, rows: newRows });
+  };
+
+  const insertImageIntoCell = (type: "header" | "cell", index: number, colIndex?: number) => {
+    const name = window.prompt("Item name (e.g. Clean toadflax):");
+    if (!name?.trim()) return;
+    const trimmed = name.trim();
+    const imgName = trimmed.replace(/ /g, "_");
+    const imgSyntax = `![${trimmed}\\|24](https://runescape.wiki/images/${imgName}.png)`;
+    if (type === "header") {
+      const cur = table.headers[index].content;
+      updateHeader(index, cur ? `${cur} ${imgSyntax}` : imgSyntax);
+    } else if (colIndex !== undefined) {
+      const cur = table.rows[index][colIndex].content;
+      updateCell(index, colIndex, cur ? `${cur} ${imgSyntax}` : imgSyntax);
+    }
   };
 
   const handleInsertInline = () => {
@@ -921,6 +960,13 @@ Or paste tab-separated content from a rendered wiki table.`}
                           style={{ ...inputStyle, fontWeight: "bold" }}
                         />
                         <button
+                          onClick={() => insertImageIntoCell("header", i)}
+                          style={{ ...buttonStyle, padding: "4px 6px", fontSize: "0.7rem" }}
+                          title="Insert image"
+                        >
+                          IMG
+                        </button>
+                        <button
                           onClick={() => removeColumn(i)}
                           style={{ ...buttonStyle, padding: "4px 8px", background: "#7f1d1d" }}
                           title="Remove column"
@@ -937,11 +983,20 @@ Or paste tab-separated content from a rendered wiki table.`}
                   <tr key={ri}>
                     {row.map((cell, ci) => (
                       <td key={ci} style={{ padding: 4 }}>
-                        <input
-                          value={cell.content}
-                          onChange={(e) => updateCell(ri, ci, e.target.value)}
-                          style={inputStyle}
-                        />
+                        <div style={{ display: "flex", gap: 4 }}>
+                          <input
+                            value={cell.content}
+                            onChange={(e) => updateCell(ri, ci, e.target.value)}
+                            style={inputStyle}
+                          />
+                          <button
+                            onClick={() => insertImageIntoCell("cell", ri, ci)}
+                            style={{ ...buttonStyle, padding: "4px 6px", fontSize: "0.7rem", flexShrink: 0 }}
+                            title="Insert image"
+                          >
+                            IMG
+                          </button>
+                        </div>
                       </td>
                     ))}
                     <td style={{ padding: 4 }}>
@@ -1164,7 +1219,7 @@ Or paste tab-separated content from a rendered wiki table.`}
                       fontWeight: "bold",
                     }}
                   >
-                    {h.content}
+                    <RichText>{h.content.replace(/\\\|/g, "|")}</RichText>
                   </th>
                 ))}
               </tr>
@@ -1184,7 +1239,7 @@ Or paste tab-separated content from a rendered wiki table.`}
                         border: `1px solid ${table.borderColor}`,
                       }}
                     >
-                      {cell.content}
+                      <RichText>{cell.content.replace(/\\\|/g, "|")}</RichText>
                     </td>
                   ))}
                 </tr>

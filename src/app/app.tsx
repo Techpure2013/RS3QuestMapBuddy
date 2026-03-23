@@ -33,10 +33,18 @@ import CenterControls from "./containers/CenterControlPanel";
 import Panel from "./sections/panel";
 import QuestRewardsPanel from "./containers/QuestRewardsPanel";
 import { useAuth } from "state/useAuth";
+import { useEditorSelector } from "../state/useEditorSelector";
 import AdminPlotSubmissions from "./admin/PlotSubmissionAdmin";
 
 const App: React.FC = () => {
   const { isAuthed } = useAuth();
+  const quest = useEditorSelector((s) => s.quest);
+  const sel = useEditorSelector((s) => s.selection);
+
+  const currentStep = quest?.questSteps?.[sel.selectedStep];
+  const hasItemsNeeded = (currentStep?.itemsNeeded?.length ?? 0) > 0;
+  const hasItemsRecommended = (currentStep?.itemsRecommended?.length ?? 0) > 0;
+  const hasAdditionalInfo = (currentStep?.additionalStepInformation?.length ?? 0) > 0;
 
   // Initialize keybind system on mount
   useEffect(() => {
@@ -51,13 +59,13 @@ const App: React.FC = () => {
             <Panel defaultOpen={false} title="Quest Details" compact>
               <QuestDetailsPanel />
             </Panel>
-            <Panel defaultOpen={false} title="Items Needed" compact>
+            <Panel defaultOpen={false} title="Items Needed" compact hasContent={hasItemsNeeded}>
               <ItemsNeededPanel />
             </Panel>
-            <Panel defaultOpen={false} title="Items Recommended" compact>
+            <Panel defaultOpen={false} title="Items Recommended" compact hasContent={hasItemsRecommended}>
               <ItemsRecommendedPanel />
             </Panel>
-            <Panel defaultOpen={false} title="Additional Information" compact>
+            <Panel defaultOpen={false} title="Additional Information" compact hasContent={hasAdditionalInfo}>
               <AdditionalInfoPanel />
             </Panel>
             <Panel defaultOpen={false} title="Dialog Options" compact>
@@ -79,7 +87,7 @@ const App: React.FC = () => {
         )}
       </>
     ),
-    [isAuthed]
+    [isAuthed, hasItemsNeeded, hasItemsRecommended, hasAdditionalInfo]
   );
 
   const rightDock = useMemo(

@@ -22,7 +22,7 @@ import React from "react";
  * Combinations work: __**bold underline**__ or __*italic underline*__
  */
 
-interface TableStyle {
+export interface TableStyle {
 	borderColor: string;
 	headerBgColor: string;
 	headerTextColor: string;
@@ -30,7 +30,7 @@ interface TableStyle {
 	oddRowBgColor: string;
 }
 
-interface TableData {
+export interface TableData {
 	headers: string[];
 	rows: string[][];
 	style: TableStyle;
@@ -49,8 +49,27 @@ type TextNode =
 	| { type: "steplink"; step: number; children: TextNode[] }
 	| { type: "table"; table: TableData };
 
+// Split on unescaped | characters, unescaping \| to | in the result
+function splitOnUnescapedPipe(s: string): string[] {
+	const result: string[] = [];
+	let current = "";
+	for (let i = 0; i < s.length; i++) {
+		if (s[i] === "\\" && s[i + 1] === "|") {
+			current += "|"; // unescape
+			i++; // skip the |
+		} else if (s[i] === "|") {
+			result.push(current);
+			current = "";
+		} else {
+			current += s[i];
+		}
+	}
+	result.push(current);
+	return result;
+}
+
 // Parse table syntax: {{table|border:#color|hbg:#color|htx:#color|ebg:#color|obg:#color|h1|h2||r1c1|r1c2||r2c1|r2c2}}
-function parseTableSyntax(content: string): TableData | null {
+export function parseTableSyntax(content: string): TableData | null {
 	const parts = content.split("|");
 	if (parts.length < 2) return null;
 
@@ -64,7 +83,7 @@ function parseTableSyntax(content: string): TableData | null {
 
 	let dataStart = 0;
 
-	// Parse style options at the beginning
+	// Parse style options at the beginning (style values don't contain escaped pipes)
 	for (let i = 0; i < parts.length; i++) {
 		const part = parts[i].trim();
 		if (part.startsWith("border:")) {
@@ -93,12 +112,12 @@ function parseTableSyntax(content: string): TableData | null {
 
 	if (rowStrings.length < 1) return null;
 
-	// First row is headers
-	const headers = rowStrings[0].split("|").map(h => h.replace(/\\\|/g, "|").trim());
+	// First row is headers — split on unescaped | only
+	const headers = splitOnUnescapedPipe(rowStrings[0]).map(h => h.trim());
 	const rows: string[][] = [];
 
 	for (let i = 1; i < rowStrings.length; i++) {
-		const cells = rowStrings[i].split("|").map(c => c.replace(/\\\|/g, "|").trim());
+		const cells = splitOnUnescapedPipe(rowStrings[i]).map(c => c.trim());
 		rows.push(cells);
 	}
 
@@ -472,7 +491,6 @@ function renderNodes(
 							style={{
 								borderCollapse: "collapse",
 								border: `1px solid ${table.style.borderColor}`,
-								fontSize: "0.85rem",
 								width: "100%",
 							}}
 						>
@@ -482,15 +500,14 @@ function renderNodes(
 										<th
 											key={hi}
 											style={{
-												padding: "6px 10px",
+												padding: "8px 12px",
 												color: table.style.headerTextColor,
 												border: `1px solid ${table.style.borderColor}`,
 												textAlign: "left",
 												fontWeight: "bold",
-												whiteSpace: "nowrap",
 											}}
 										>
-											{header}
+											{renderNodes(parseRichText(header), `${key}-h${hi}`, options)}
 										</th>
 									))}
 								</tr>
@@ -507,12 +524,12 @@ function renderNodes(
 											<td
 												key={ci}
 												style={{
-													padding: "6px 10px",
+													padding: "8px 12px",
 													color: "#e5e7eb",
 													border: `1px solid ${table.style.borderColor}`,
 												}}
 											>
-												{cell}
+												{renderNodes(parseRichText(cell), `${key}-r${ri}-c${ci}`, options)}
 											</td>
 										))}
 									</tr>
@@ -647,6 +664,33 @@ export function stripFormatting(text: string): string {
 	}
 
 	return result;
+}
+
+/** Split content into text and table segments so tables can render as block elements */
+export function splitAroundTables(
+	text: string,
+): Array<{ type: "text" | "table"; content: string }> {
+	const segments: Array<{ type: "text" | "table"; content: string }> = [];
+	let lastIndex = 0;
+	const regex = /\{\{table\|((?:[^{}]|\{[^{}]*\})*)\}\}/g;
+	let match;
+
+	while ((match = regex.exec(text)) !== null) {
+		if (match.index > lastIndex) {
+			segments.push({
+				type: "text",
+				content: text.substring(lastIndex, match.index),
+			});
+		}
+		segments.push({ type: "table", content: match[0] });
+		lastIndex = match.index + match[0].length;
+	}
+
+	if (lastIndex < text.length) {
+		segments.push({ type: "text", content: text.substring(lastIndex) });
+	}
+
+	return segments;
 }
 
 export default RichText;

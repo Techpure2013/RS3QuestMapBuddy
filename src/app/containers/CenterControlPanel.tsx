@@ -48,6 +48,11 @@ function cleanFloorText(text: string): string {
   return cleaned;
 }
 
+/** Split comma-separated items into individual entries */
+function splitCommaItems(items: string[]): string[] {
+  return items.flatMap(s => s.split(",")).map(s => s.trim()).filter(Boolean);
+}
+
 /** Apply floor text cleanup to all text fields in wiki steps */
 function cleanWikiStepFloorText(steps: WikiQuestStep[]): WikiQuestStep[] {
   return steps.map(step => ({
@@ -55,8 +60,8 @@ function cleanWikiStepFloorText(steps: WikiQuestStep[]): WikiQuestStep[] {
     stepDescription: cleanFloorText(step.stepDescription || ""),
     additionalStepInformation: (step.additionalStepInformation || []).map(cleanFloorText),
     dialogOptions: (step.dialogOptions || []).map(cleanFloorText),
-    itemsNeeded: (step.itemsNeeded || []).map(cleanFloorText),
-    itemsRecommended: (step.itemsRecommended || []).map(cleanFloorText),
+    itemsNeeded: splitCommaItems((step.itemsNeeded || []).map(cleanFloorText)),
+    itemsRecommended: splitCommaItems((step.itemsRecommended || []).map(cleanFloorText)),
   }));
 }
 import { searchNpcs } from "../../api/npcApi";
@@ -66,7 +71,8 @@ import { WikiMergeModal } from "../components/WikiMerge";
 import { useAuth } from "./../../state/useAuth";
 import { fetchMe } from "./../../api/auth";
 import { buildPlotLink } from "utils/plotLinks";
-import { RichText, stripFormatting } from "../../utils/RichText";
+import { RichText, stripFormatting, splitAroundTables } from "../../utils/RichText";
+import { TablePreview } from "../components/TablePreview";
 import { ColorPicker } from "../components/ColorPicker";
 import { ImagePicker } from "../components/ImagePicker";
 import { StepLinkPicker } from "../components/StepLinkPicker";
@@ -76,7 +82,7 @@ import { useEditorHotkeys, getHotkeyForAction } from "../hooks/useEditorHotkeys"
 import { editorActions } from "../../keybinds/actions";
 import { keybindStore } from "../../keybinds/keybindStore";
 import { IconTable } from "@tabler/icons-react";
-import { autoHighlight, splitColorSegments, CHAT_PATTERNS, LODESTONE_PATTERNS } from "../components/FormattingToolbar";
+import { autoHighlight, autoItalic, splitColorSegments, CHAT_PATTERNS, LODESTONE_PATTERNS, ACT_PATTERNS } from "../components/FormattingToolbar";
 import { HighlightSettingsStore } from "../../state/highlightSettingsStore";
 import { QUICK_INSERT_THUMBNAILS } from "../../data/quickInsertThumbnails";
 
@@ -1150,13 +1156,30 @@ export const CenterControls: React.FC = () => {
                     fontSize: "0.7rem",
                     background: "#1f2937",
                     border: "1px solid #4b5563",
-                    borderLeft: "3px solid #FF69B4",
                     borderRadius: 3,
                     color: "#e5e7eb",
                     cursor: "pointer",
+                    textDecoration: "underline",
                   }}
                 >
                   Dir
+                </button>
+                <button
+                  type="button"
+                  title="Apply italic to selected text (actions)"
+                  onClick={() => wrapSelection("*", "*")}
+                  style={{
+                    padding: "3px 8px",
+                    fontSize: "0.7rem",
+                    background: "#1f2937",
+                    border: "1px solid #4b5563",
+                    borderRadius: 3,
+                    color: "#e5e7eb",
+                    cursor: "pointer",
+                    fontStyle: "italic",
+                  }}
+                >
+                  Act
                 </button>
                 <button
                   type="button"
@@ -1869,9 +1892,30 @@ export const CenterControls: React.FC = () => {
                         });
                         handleStepChange(autoFormatDirectionsAndFloors(localStepDesc));
                       }}
-                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderLeft: "3px solid #FF69B4", borderRadius: 3, color: "#e5e7eb", cursor: "pointer" }}
+                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderRadius: 3, color: "#e5e7eb", cursor: "pointer", textDecoration: "underline" }}
                     >
                       Dir
+                    </button>
+                    <button
+                      type="button"
+                      title="Auto-italicize right-click/left-click — ALL steps"
+                      onClick={() => {
+                        EditorStore.patchQuest((draft) => {
+                          for (const step of draft.questSteps) {
+                            step.stepDescription = autoItalic(step.stepDescription, ACT_PATTERNS);
+                            if (step.additionalStepInformation) {
+                              step.additionalStepInformation = step.additionalStepInformation.map(
+                                (info) => autoItalic(info, ACT_PATTERNS)
+                              );
+                            }
+                          }
+                          syncQuestImageDescriptions(draft);
+                        });
+                        handleStepChange(autoItalic(localStepDesc, ACT_PATTERNS));
+                      }}
+                      style={{ padding: "3px 8px", fontSize: "0.7rem", background: "#1f2937", border: "1px solid #4b5563", borderRadius: 3, color: "#e5e7eb", cursor: "pointer", fontStyle: "italic" }}
+                    >
+                      Act
                     </button>
                   </div>
                 )}
@@ -1927,46 +1971,61 @@ export const CenterControls: React.FC = () => {
                 }}
               />
               {/* Rich Text Preview */}
-              {localStepDesc && (
-                <div
-                  style={{
-                    marginTop: 8,
-                    padding: "8px 10px",
-                    background: "#111827",
-                    border: "1px solid #374151",
-                    borderRadius: 4,
-                    fontSize: "0.8125rem",
-                    lineHeight: 1.5,
-                    color: "#e5e7eb",
-                    maxHeight: 200,
-                    overflowY: "auto",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: "0.625rem",
-                      color: "#6b7280",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
-                      display: "block",
-                      marginBottom: 4,
-                    }}
-                  >
-                    Preview
-                  </span>
-                  <RichText
-                    onStepClick={(step) => {
-                      // Step numbers in UI are 1-indexed, but internally 0-indexed
-                      const stepIndex = step - 1;
-                      if (stepIndex >= 0 && quest?.questSteps && stepIndex < quest.questSteps.length) {
-                        EditorStore.autoSelectFirstValidTargetForStep(stepIndex);
-                      }
-                    }}
-                  >
-                    {localStepDesc}
-                  </RichText>
-                </div>
-              )}
+              {localStepDesc && (() => {
+                const previewSegs = splitAroundTables(localStepDesc);
+                const textParts = previewSegs.filter((s) => s.type === "text");
+                const tableParts = previewSegs.filter((s) => s.type === "table");
+                const textContent = textParts.map((s) => s.content).join("").trim();
+                const onStep = (step: number) => {
+                  const stepIndex = step - 1;
+                  if (stepIndex >= 0 && quest?.questSteps && stepIndex < quest.questSteps.length) {
+                    EditorStore.autoSelectFirstValidTargetForStep(stepIndex);
+                  }
+                };
+                return (
+                  <>
+                    {/* Text preview */}
+                    {textContent && (
+                      <div
+                        style={{
+                          marginTop: 8,
+                          padding: "8px 10px",
+                          background: "#111827",
+                          border: "1px solid #374151",
+                          borderRadius: 4,
+                          fontSize: "0.8125rem",
+                          lineHeight: 1.5,
+                          color: "#e5e7eb",
+                          maxHeight: 200,
+                          overflowY: "auto",
+                        }}
+                      >
+                        <span
+                          style={{
+                            fontSize: "0.625rem",
+                            color: "#6b7280",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.05em",
+                            display: "block",
+                            marginBottom: 4,
+                          }}
+                        >
+                          Preview
+                        </span>
+                        {textParts.map((seg, i) => (
+                          <RichText key={i} onStepClick={onStep}>{seg.content}</RichText>
+                        ))}
+                      </div>
+                    )}
+                    {/* Table preview — uses exact same rendering as TableCreator preview */}
+                    {tableParts.map((seg, i) => (
+                      <div key={`tbl-${i}`} style={{ marginTop: 8 }}>
+                        <TablePreview markup={seg.content} onStepClick={onStep} />
+                      </div>
+                    ))}
+                  </>
+                );
+              })()}
             </div>
 
           </div>

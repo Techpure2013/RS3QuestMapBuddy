@@ -78,7 +78,50 @@ export function autoHighlight(text: string, color: string, patterns: RegExp[]): 
   return segments.map((s) => s.text).join("");
 }
 
+/**
+ * Apply auto-italic to text, skipping already-formatted regions.
+ * Wraps matched text in *...* for italic rendering.
+ */
+export function autoItalic(text: string, patterns: RegExp[]): string {
+  let segments = splitColorSegments(text);
+
+  for (const pattern of patterns) {
+    const nextSegments: { text: string; colored: boolean }[] = [];
+    for (const seg of segments) {
+      if (seg.colored) {
+        nextSegments.push(seg);
+        continue;
+      }
+      const src = seg.text;
+      const re = new RegExp(pattern.source, pattern.flags.includes("g") ? pattern.flags : pattern.flags + "g");
+      let last = 0;
+      let m: RegExpExecArray | null;
+      while ((m = re.exec(src)) !== null) {
+        // Skip if already wrapped in * (italic)
+        const before = src.substring(0, m.index);
+        const after = src.substring(m.index + m[0].length);
+        if (before.endsWith("*") || after.startsWith("*")) {
+          continue;
+        }
+        if (m.index > last) {
+          nextSegments.push({ text: src.slice(last, m.index), colored: false });
+        }
+        nextSegments.push({ text: `*${m[0]}*`, colored: true });
+        last = m.index + m[0].length;
+        if (m[0].length === 0) { re.lastIndex++; }
+      }
+      if (last < src.length) {
+        nextSegments.push({ text: src.slice(last), colored: false });
+      }
+    }
+    segments = nextSegments;
+  }
+  return segments.map((s) => s.text).join("");
+}
+
 // ── Auto-highlight pattern definitions ──
+
+export const ACT_PATTERNS = [/\bright[\s-]click\b/gi, /\bleft[\s-]click\b/gi];
 
 export const CHAT_PATTERNS = [/\(Chat\s+[\d•·.\-~✓✗×]+\)/gi];
 
@@ -310,6 +353,23 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
           ))}
           <button
             type="button"
+            title="Apply italic to selected text (actions like right-click)"
+            onClick={() => wrapSelection("*", "*")}
+            style={{
+              padding: "3px 8px",
+              fontSize: "0.7rem",
+              background: "#1f2937",
+              border: "1px solid #4b5563",
+              borderRadius: 3,
+              color: "#e5e7eb",
+              cursor: "pointer",
+              fontStyle: "italic",
+            }}
+          >
+            Act
+          </button>
+          <button
+            type="button"
             title="Apply underline to selected text (directions)"
             onClick={() => wrapSelection("__", "__")}
             style={{
@@ -317,10 +377,10 @@ export const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
               fontSize: "0.7rem",
               background: "#1f2937",
               border: "1px solid #4b5563",
-              borderLeft: "3px solid #FF69B4",
               borderRadius: 3,
               color: "#e5e7eb",
               cursor: "pointer",
+              textDecoration: "underline",
             }}
           >
             Dir
