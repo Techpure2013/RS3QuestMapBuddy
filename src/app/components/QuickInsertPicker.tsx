@@ -93,17 +93,16 @@ export const QuickInsertPicker: React.FC<QuickInsertPickerProps> = ({
     ...customThumbnails,
   ];
 
-  // Filter thumbnails by category and search
+  // Filter thumbnails: global search across all categories, or filter by active tab
+  const isSearching = search.trim() !== "";
   const filteredThumbnails = allThumbnails.filter((t) => {
     const isCustom = "isCustom" in t && t.isCustom;
-    const matchesCategory =
-      activeCategory === "custom"
-        ? isCustom
-        : !isCustom && t.category === activeCategory;
-    const matchesSearch =
-      search.trim() === "" ||
-      t.name.toLowerCase().includes(search.toLowerCase());
-    return matchesCategory && matchesSearch;
+    if (isSearching) {
+      return t.name.toLowerCase().includes(search.toLowerCase());
+    }
+    return activeCategory === "custom"
+      ? isCustom
+      : !isCustom && t.category === activeCategory;
   });
 
   // Get categories that have items (include custom always)
@@ -484,13 +483,13 @@ export const QuickInsertPicker: React.FC<QuickInsertPickerProps> = ({
       >
         {availableCategories.map((cat) => {
           const catInfo = ALL_CATEGORIES[cat];
-          const isActive = activeCategory === cat;
+          const isActive = !isSearching && activeCategory === cat;
           const customCount = cat === "custom" ? customThumbnails.length : 0;
           return (
             <button
               key={cat}
               type="button"
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => { setActiveCategory(cat); setSearch(""); }}
               style={{
                 padding: "4px 8px",
                 fontSize: "0.7rem",

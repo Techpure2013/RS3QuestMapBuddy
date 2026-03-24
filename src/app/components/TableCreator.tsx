@@ -351,6 +351,25 @@ function parseWikiTable(text: string): TableData | null {
       for (const content of cellContent) {
         currentRow.push(parseCellAttributes(content));
       }
+      continue;
+    }
+
+    // Continuation lines (e.g. bullet lists, plain text inside a cell)
+    // Append to the last cell in the current row
+    const target = currentRow.length > 0 ? currentRow : currentHeaderRow;
+    if (target.length > 0) {
+      const lastCell = target[target.length - 1];
+      let content = trimmed;
+      // Strip MediaWiki bullet markers
+      if (content.startsWith("*")) {
+        content = content.substring(1).trim();
+      }
+      content = cleanWikiContent(content);
+      if (content) {
+        lastCell.content = lastCell.content
+          ? lastCell.content + ", " + content
+          : content;
+      }
     }
   }
 

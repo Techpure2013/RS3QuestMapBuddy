@@ -56,6 +56,7 @@ export const QUICK_INSERT_THUMBNAILS: QuickInsertThumbnail[] = [
   mapIcon("lodestone-menaphos", "Menaphos", "Menaphos_lodestone_icon.png", "lodestone"),
   mapIcon("lodestone-anachronia", "Anachronia", "Anachronia_lodestone_icon.png", "lodestone"),
   mapIcon("lodestone-city-of-um", "City of Um", "City_of_Um_lodestone_icon.png", "lodestone"),
+  mapIcon("lodestone-wendlewick", "Wendlewick", "Wendlewick_lodestone_icon.png", "lodestone"),
 
   // ============ PRAYERS ============
   mapIcon("prayer-protect-magic", "Protect from Magic", "Protect_from_Magic.png", "prayer"),
