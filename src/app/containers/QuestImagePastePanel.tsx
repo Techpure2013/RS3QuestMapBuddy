@@ -10,6 +10,10 @@ import {
 } from "../../map/utils/imageUtils";
 import { getApiBase } from "../../utils/apiBase";
 
+/** encodeURIComponent leaves ' unencoded — encode it too so folder names with apostrophes work */
+const encodeFolder = (name: string) =>
+  encodeURIComponent(name).replace(/'/g, "%27");
+
 interface FolderImage {
   filename: string;
   url: string;
@@ -93,7 +97,7 @@ export const QuestImagePastePanel: React.FC = () => {
       formData.append("file", blob, fileName);
 
       const url = selectedFolder
-        ? `${getApiBase()}/api/images/upload?folder=${encodeURIComponent(selectedFolder)}`
+        ? `${getApiBase()}/api/images/upload?folder=${encodeFolder(selectedFolder)}`
         : `${getApiBase()}/api/images/upload`;
 
       const res = await fetch(url, {
@@ -121,7 +125,7 @@ export const QuestImagePastePanel: React.FC = () => {
     }
     try {
       const res = await fetch(
-        `${getApiBase()}/api/images/folders/${encodeURIComponent(selectedFolder)}`,
+        `${getApiBase()}/api/images/folders/${encodeFolder(selectedFolder)}`,
         { credentials: "include" }
       );
       if (res.ok) {
@@ -265,7 +269,7 @@ export const QuestImagePastePanel: React.FC = () => {
     try {
       setIsLoading(true);
       const res = await fetch(
-        `${getApiBase()}/api/images/folder/${encodeURIComponent(selectedFolder)}/${encodeURIComponent(filename)}`,
+        `${getApiBase()}/api/images/folder/${encodeFolder(selectedFolder)}/${encodeURIComponent(filename)}`,
         { method: "DELETE", credentials: "include" }
       );
       if (res.ok) {
@@ -291,7 +295,7 @@ export const QuestImagePastePanel: React.FC = () => {
     try {
       setIsLoading(true);
       const res = await fetch(
-        `${getApiBase()}/api/images/folders/${encodeURIComponent(selectedFolder)}`,
+        `${getApiBase()}/api/images/folders/${encodeFolder(selectedFolder)}`,
         { method: "DELETE", credentials: "include" }
       );
       if (res.ok) {
