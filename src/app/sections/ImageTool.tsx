@@ -2,7 +2,8 @@ import React, { useMemo, useState } from "react";
 import type { QuestImage } from "./../../state/types";
 
 export interface StepOption {
-  value: string; // string step key, e.g., "1", "1a"
+  stepId: number | undefined;
+  stepNumber: number; // 1-based display number
   label: string; // step description
 }
 
@@ -13,16 +14,43 @@ export interface QuestImagesPanelProps {
   questImageList: QuestImage[];
   onRemoveQuestImage: (index: number) => void;
 
-  // Editing
-  onEditImage: (
-    index: number,
-    patch: { step?: string; stepDescription?: string }
-  ) => void;
+  onEditImage: (index: number, patch: { stepIds?: number[] }) => void;
   stepOptions: StepOption[];
 
   // Optional: collapse control
   isOpen?: boolean;
   onToggle?: () => void;
+}
+
+/** Resolve stepIds to display string like "Step 3" or "Steps 2, 5" */
+function resolveStepLabel(
+  stepIds: number[],
+  stepOptions: StepOption[]
+): string {
+  if (stepIds.length === 0) return "Unlinked";
+  const labels: string[] = [];
+  for (const sid of stepIds) {
+    const opt = stepOptions.find((o) => o.stepId === sid);
+    if (opt) labels.push(`Step ${opt.stepNumber}`);
+    else labels.push(`Step ?${sid}`);
+  }
+  return labels.join(", ");
+}
+
+/** Resolve stepIds to a tooltip with descriptions */
+function resolveStepTooltip(
+  stepIds: number[],
+  stepOptions: StepOption[]
+): string {
+  if (stepIds.length === 0) return "Not linked to any step";
+  return stepIds
+    .map((sid) => {
+      const opt = stepOptions.find((o) => o.stepId === sid);
+      return opt
+        ? `Step ${opt.stepNumber}: ${opt.label}`
+        : `Step ID ${sid} (deleted?)`;
+    })
+    .join("\n");
 }
 
 export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
@@ -36,12 +64,11 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
   stepOptions,
 
   isOpen = true,
-  onToggle,
 }) => {
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
   const buildPreviewUrl = (img: QuestImage): string => {
-    const folder = encodeURIComponent(questName.replace(/:/g, ""));
+    const folder = encodeURIComponent(questName.replace(/[:']/g, ""));
     return `${previewBaseUrl}/${folder}/${img.src}`;
   };
 
@@ -49,7 +76,11 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
     setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
-  const stepSelectOptions = useMemo(() => stepOptions, [stepOptions]);
+  // Only steps that have a valid stepId can be linked
+  const linkableSteps = useMemo(
+    () => stepOptions.filter((o) => typeof o.stepId === "number"),
+    [stepOptions]
+  );
 
   return (
     <div className="panel-section">
@@ -66,8 +97,11 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
               {questImageList.map((img, i) => {
                 const url = buildPreviewUrl(img);
                 const isRowOpen = !!expanded[i];
-                const stepString = String(img.step ?? "");
+                const stepIds = img.stepIds ?? [];
+                const stepLabel = resolveStepLabel(stepIds, stepOptions);
+                const stepTooltip = resolveStepTooltip(stepIds, stepOptions);
                 const uniqueKey = `${i}_${img.src}`;
+
                 return (
                   <li key={uniqueKey} style={{ padding: 8 }}>
                     <div
@@ -83,10 +117,20 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
                           flex: 1,
                           overflow: "hidden",
                           textOverflow: "ellipsis",
+                          fontSize: 13,
                         }}
-                        title={`${img.src} (${img.width}x${img.height}) — ${img.stepDescription}`}
+                        title={`${img.src} (${img.width}x${img.height})\n${stepTooltip}`}
                       >
-                        Step {stepString}: {img.src}
+                        <span
+                          style={{
+                            color: stepIds.length > 0 ? "#93c5fd" : "#f87171",
+                            fontWeight: 500,
+                            marginRight: 6,
+                          }}
+                        >
+                          {stepLabel}
+                        </span>
+                        {img.src}
                       </span>
 
                       <button
@@ -105,63 +149,106 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
                       </button>
                     </div>
 
-                    {/* Inline editor for step (string) and description */}
-                    <div
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr",
-                        gap: 8,
-                        marginTop: 8,
-                      }}
-                    >
+                    {/* Step linker */}
+                    <div style={{ marginTop: 8 }}>
                       <div className="control-group">
-                        <label>Step (string)</label>
-                        <input
-                          type="text"
-                          value={stepString}
-                          onChange={(e) =>
-                            onEditImage(i, { step: e.target.value })
-                          }
-                          placeholder="e.g., 1, 1a, 2, etc."
-                        />
-                      </div>
+                        <label style={{ fontSize: 11, color: "#9ca3af" }}>
+                          Linked Steps
+                        </label>
 
-                      <div className="control-group">
-                        <label>Step Description</label>
+                        {/* Show current links as removable chips */}
+                        {stepIds.length > 0 && (
+                          <div
+                            style={{
+                              display: "flex",
+                              flexWrap: "wrap",
+                              gap: 4,
+                              marginBottom: 6,
+                            }}
+                          >
+                            {stepIds.map((sid) => {
+                              const opt = stepOptions.find(
+                                (o) => o.stepId === sid
+                              );
+                              return (
+                                <span
+                                  key={sid}
+                                  style={{
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    gap: 4,
+                                    background: "#1e3a5f",
+                                    color: "#93c5fd",
+                                    borderRadius: 4,
+                                    padding: "2px 8px",
+                                    fontSize: 11,
+                                  }}
+                                  title={
+                                    opt
+                                      ? opt.label
+                                      : `Step ID ${sid} (not found)`
+                                  }
+                                >
+                                  Step{" "}
+                                  {opt ? opt.stepNumber : `?${sid}`}
+                                  <button
+                                    onClick={() => {
+                                      const next = stepIds.filter(
+                                        (id) => id !== sid
+                                      );
+                                      onEditImage(i, { stepIds: next });
+                                    }}
+                                    style={{
+                                      background: "none",
+                                      border: "none",
+                                      color: "#f87171",
+                                      cursor: "pointer",
+                                      padding: 0,
+                                      fontSize: 12,
+                                      lineHeight: 1,
+                                    }}
+                                    title="Unlink this step"
+                                  >
+                                    ×
+                                  </button>
+                                </span>
+                              );
+                            })}
+                          </div>
+                        )}
+
+                        {/* Dropdown to add a step link */}
                         <select
-                          value={img.stepDescription ?? ""}
+                          value=""
                           onChange={(e) => {
-                            const selectedLabel = e.target.value;
-                            const matchedOpt = stepSelectOptions.find(
-                              (opt) => opt.label === selectedLabel
-                            );
-                            // Update both step (STRING) and stepDescription when selecting from dropdown
-                            onEditImage(i, {
-                              stepDescription: selectedLabel,
-                              ...(matchedOpt ? { step: matchedOpt.value } : {}),
-                            });
+                            const newSid = Number(e.target.value);
+                            if (
+                              !isNaN(newSid) &&
+                              !stepIds.includes(newSid)
+                            ) {
+                              onEditImage(i, {
+                                stepIds: [...stepIds, newSid],
+                              });
+                            }
                           }}
+                          style={{ fontSize: 12 }}
                         >
-                          <option value="">— Select description —</option>
-                          {stepSelectOptions.map((opt) => (
-                            <option
-                              key={opt.value + opt.label}
-                              value={opt.label}
-                            >
-                              {opt.value}. {opt.label}
-                            </option>
-                          ))}
+                          <option value="">
+                            {stepIds.length === 0
+                              ? "— Link to a step —"
+                              : "— Add another step —"}
+                          </option>
+                          {linkableSteps
+                            .filter((o) => !stepIds.includes(o.stepId!))
+                            .map((opt) => (
+                              <option key={opt.stepId} value={opt.stepId}>
+                                Step {opt.stepNumber}:{" "}
+                                {opt.label.length > 60
+                                  ? opt.label.slice(0, 57) + "..."
+                                  : opt.label}
+                              </option>
+                            ))}
                         </select>
-                        <textarea
-                          value={img.stepDescription ?? ""}
-                          onChange={(e) =>
-                            onEditImage(i, {
-                              stepDescription: e.target.value,
-                            })
-                          }
-                          rows={2}
-                          placeholder="Edit description…"
-                        />
                       </div>
                     </div>
 
@@ -192,9 +279,9 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
                               textOverflow: "ellipsis",
                               maxWidth: "75%",
                             }}
-                            title={img.stepDescription || ""}
+                            title={stepTooltip}
                           >
-                            {img.stepDescription || `Step ${stepString}`}
+                            {stepLabel}
                           </div>
                           <a
                             href={url}

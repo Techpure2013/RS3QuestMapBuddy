@@ -9,6 +9,7 @@ import {
   processImageBlobToWebp,
 } from "../../map/utils/imageUtils";
 import { getApiBase } from "../../utils/apiBase";
+import { useAuth } from "../../state/useAuth";
 
 /** encodeURIComponent leaves ' unencoded — encode it too so folder names with apostrophes work */
 const encodeFolder = (name: string) =>
@@ -20,6 +21,8 @@ interface FolderImage {
 }
 
 export const QuestImagePastePanel: React.FC = () => {
+  const { email } = useAuth();
+  const isAdmin = email === "techpure2013@gmail.com";
   const quest = useEditorSelector((s) => s.quest);
   const selectedStep = useEditorSelector((s) => s.selection.selectedStep);
   const [folders, setFolders] = useState<string[]>([]);
@@ -29,6 +32,8 @@ export const QuestImagePastePanel: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [folderImages, setFolderImages] = useState<FolderImage[]>([]);
   const [showImages, setShowImages] = useState(false);
+  const [folderFilter, setFolderFilter] = useState<string>("");
+  const [selectedForDelete, setSelectedForDelete] = useState<Set<string>>(new Set());
 
   const questName = quest?.questName ?? "";
   const stepKey = useMemo(() => String(selectedStep + 1), [selectedStep]);
@@ -52,6 +57,29 @@ export const QuestImagePastePanel: React.FC = () => {
     fetchFolders();
   }, [fetchFolders]);
 
+  // Reset folder selection when switching quests so auto-select can re-match
+  useEffect(() => {
+    setSelectedFolder("");
+  }, [questName]);
+
+  // Auto-select VPS folder when quest loads (match questName to folder list)
+  useEffect(() => {
+    if (!questName || folders.length === 0 || selectedFolder) return;
+    // Folder names match quest names with colons and apostrophes stripped
+    const normalized = questName.replace(/[:']/g, "");
+    const match = folders.find(
+      (f) => f.toLowerCase() === normalized.toLowerCase()
+    );
+    if (match) setSelectedFolder(match);
+  }, [questName, folders, selectedFolder]);
+
+  // Filtered folder list for search
+  const filteredFolders = useMemo(() => {
+    if (!folderFilter.trim()) return folders;
+    const q = folderFilter.trim().toLowerCase();
+    return folders.filter((f) => f.toLowerCase().includes(q));
+  }, [folders, folderFilter]);
+
   const persist = useCallback(() => {
     const q = EditorStore.getState().quest;
     if (q) void saveActiveBundle(questToBundle(q));
@@ -74,14 +102,16 @@ export const QuestImagePastePanel: React.FC = () => {
 
       EditorStore.patchQuest((draft) => {
         const list = draft.questImages ?? (draft.questImages = []);
-        const stepDescription =
-          draft.questSteps[selectedStep]?.stepDescription ?? `Step ${stepKey}`;
+        const currentStep = draft.questSteps[selectedStep];
+        const stepId = currentStep?.stepId;
         const newImg: QuestImage = {
-          step: stepKey,
           src: filename,
           width,
           height,
-          stepDescription,
+          stepIds: typeof stepId === "number" ? [stepId] : [],
+          // Backward compat
+          step: stepKey,
+          stepDescription: currentStep?.stepDescription ?? `Step ${stepKey}`,
         };
         list.push(newImg);
       });
@@ -165,7 +195,7 @@ export const QuestImagePastePanel: React.FC = () => {
 
         handleAddQuestImage(imageUrl, width, height);
         setStatus(`Saved: ${imageUrl}`);
-        if (showImages) await fetchFolderImages();
+        await fetchFolderImages();
       } catch (e) {
         console.error("Failed to process/upload pasted image:", e);
         setStatus(
@@ -175,7 +205,7 @@ export const QuestImagePastePanel: React.FC = () => {
         setIsLoading(false);
       }
     },
-    [quest, selectedFolder, safeFileName, uploadToVPS, handleAddQuestImage, showImages, fetchFolderImages]
+    [quest, selectedFolder, safeFileName, uploadToVPS, handleAddQuestImage, fetchFolderImages]
   );
 
   const processUrl = useCallback(
@@ -213,7 +243,7 @@ export const QuestImagePastePanel: React.FC = () => {
 
         handleAddQuestImage(imageUrl, width, height);
         setStatus(`Saved: ${imageUrl}`);
-        if (showImages) await fetchFolderImages();
+        await fetchFolderImages();
       } catch (e) {
         console.error("Failed to add image from URL:", e);
         setStatus(
@@ -223,7 +253,7 @@ export const QuestImagePastePanel: React.FC = () => {
         setIsLoading(false);
       }
     },
-    [quest, selectedFolder, safeFileName, uploadToVPS, handleAddQuestImage, showImages, fetchFolderImages]
+    [quest, selectedFolder, safeFileName, uploadToVPS, handleAddQuestImage, fetchFolderImages]
   );
 
   const createFolder = useCallback(async () => {
@@ -254,44 +284,75 @@ export const QuestImagePastePanel: React.FC = () => {
     }
   }, [newFolderName, fetchFolders]);
 
-  // Fetch images when folder changes
+  // Fetch images whenever folder changes (for count + grid)
   useEffect(() => {
-    if (showImages) {
-      fetchFolderImages();
-    }
-  }, [selectedFolder, showImages, fetchFolderImages]);
+    fetchFolderImages();
+  }, [selectedFolder, fetchFolderImages]);
 
-  // Delete an image
-  const deleteImage = useCallback(async (filename: string) => {
-    if (!selectedFolder) return;
-    if (!confirm(`Delete image "${filename}"?`)) return;
+  // Link an existing folder image to the current step without re-uploading
+  const linkExistingImage = useCallback(
+    (filename: string) => {
+      if (!quest) return;
+      // Create an img element to get dimensions
+      const imgEl = new Image();
+      imgEl.onload = () => {
+        handleAddQuestImage(filename, imgEl.naturalWidth, imgEl.naturalHeight);
+        setStatus(`Linked: ${filename} → Step ${stepKey}`);
+      };
+      imgEl.onerror = () => {
+        // Fallback: link with 0x0 dimensions
+        handleAddQuestImage(filename, 0, 0);
+        setStatus(`Linked: ${filename} → Step ${stepKey} (dimensions unknown)`);
+      };
+      imgEl.src = `https://techpure.dev/images/${encodeFolder(selectedFolder)}/${encodeURIComponent(filename)}`;
+    },
+    [quest, selectedFolder, handleAddQuestImage, stepKey]
+  );
 
+  // Admin-only: toggle image selection for batch delete
+  const toggleSelectImage = useCallback((filename: string) => {
+    setSelectedForDelete((prev) => {
+      const next = new Set(prev);
+      if (next.has(filename)) next.delete(filename);
+      else next.add(filename);
+      return next;
+    });
+  }, []);
+
+  // Admin-only: batch delete selected images from VPS
+  const deleteSelectedImages = useCallback(async () => {
+    if (!selectedFolder || !isAdmin || selectedForDelete.size === 0) return;
     try {
       setIsLoading(true);
-      const res = await fetch(
-        `${getApiBase()}/api/images/folder/${encodeFolder(selectedFolder)}/${encodeURIComponent(filename)}`,
-        { method: "DELETE", credentials: "include" }
+      setStatus(`Deleting ${selectedForDelete.size} image(s)...`);
+      const results = await Promise.allSettled(
+        [...selectedForDelete].map((filename) =>
+          fetch(
+            `${getApiBase()}/api/images/folder/${encodeFolder(selectedFolder)}/${encodeURIComponent(filename)}`,
+            { method: "DELETE", credentials: "include" }
+          )
+        )
       );
-      if (res.ok) {
-        setStatus(`Deleted: ${filename}`);
-        await fetchFolderImages();
-      } else {
-        const errData = await res.json().catch(() => ({}));
-        setStatus(`Failed to delete: ${errData.error || "Unknown"}`);
-      }
+      const failed = results.filter((r) => r.status === "rejected").length;
+      setSelectedForDelete(new Set());
+      await fetchFolderImages();
+      setStatus(
+        failed > 0
+          ? `Deleted ${selectedForDelete.size - failed}, ${failed} failed`
+          : `Deleted ${selectedForDelete.size} image(s)`
+      );
     } catch (err) {
-      console.error("Failed to delete image:", err);
-      setStatus("Failed to delete image");
+      console.error("Failed to delete images:", err);
+      setStatus("Failed to delete images");
     } finally {
       setIsLoading(false);
     }
-  }, [selectedFolder, fetchFolderImages]);
+  }, [selectedFolder, isAdmin, selectedForDelete, fetchFolderImages]);
 
-  // Delete a folder
+  // Admin-only: delete a folder from VPS
   const deleteFolder = useCallback(async () => {
-    if (!selectedFolder) return;
+    if (!selectedFolder || !isAdmin) return;
     if (!confirm(`Delete folder "${selectedFolder}" and ALL its images? This cannot be undone!`)) return;
-
     try {
       setIsLoading(true);
       const res = await fetch(
@@ -313,7 +374,7 @@ export const QuestImagePastePanel: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [selectedFolder, fetchFolders]);
+  }, [selectedFolder, isAdmin, fetchFolders]);
 
   return (
     <>
@@ -321,6 +382,14 @@ export const QuestImagePastePanel: React.FC = () => {
         <label style={{ fontSize: 12, color: "#9ca3af", marginBottom: 4, display: "block" }}>
           Select VPS Folder:
         </label>
+        <input
+          type="text"
+          value={folderFilter}
+          onChange={(e) => setFolderFilter(e.target.value)}
+          placeholder="Search folders..."
+          style={{ marginBottom: 4, fontSize: 12 }}
+          disabled={isLoading}
+        />
         <div style={{ display: "flex", gap: 8 }}>
           <select
             value={selectedFolder}
@@ -329,21 +398,20 @@ export const QuestImagePastePanel: React.FC = () => {
             disabled={isLoading}
           >
             <option value="">-- Select a folder --</option>
-            {folders.map((folder) => (
+            {filteredFolders.map((folder) => (
               <option key={folder} value={folder}>
                 {folder}
               </option>
             ))}
           </select>
-          {selectedFolder && (
+          {isAdmin && selectedFolder && (
             <button
               onClick={deleteFolder}
               disabled={isLoading}
-              className="button--delete"
-              style={{ backgroundColor: "#dc2626", padding: "4px 8px" }}
-              title="Delete folder"
+              style={{ backgroundColor: "#dc2626", padding: "4px 8px", border: "none", borderRadius: 4, color: "white", cursor: "pointer" }}
+              title="Delete folder (admin)"
             >
-              🗑️
+              X
             </button>
           )}
         </div>
@@ -373,12 +441,9 @@ export const QuestImagePastePanel: React.FC = () => {
       {selectedFolder && (
         <div style={{ marginBottom: 8 }}>
           <button
-            onClick={() => {
-              setShowImages(!showImages);
-              if (!showImages) fetchFolderImages();
-            }}
+            onClick={() => setShowImages(!showImages)}
             disabled={isLoading}
-            style={{ width: "100%", padding: "6px 12px" }}
+            style={{ width: "100%", padding: "6px 12px", boxSizing: "border-box" }}
           >
             {showImages ? "Hide Images" : `View Images (${folderImages.length})`}
           </button>
@@ -397,6 +462,39 @@ export const QuestImagePastePanel: React.FC = () => {
             backgroundColor: "#1f2937",
           }}
         >
+          {isAdmin && selectedForDelete.size > 0 && (
+            <div style={{ display: "flex", gap: 8, marginBottom: 8, alignItems: "center" }}>
+              <button
+                onClick={deleteSelectedImages}
+                disabled={isLoading}
+                style={{
+                  backgroundColor: "#dc2626",
+                  color: "white",
+                  border: "none",
+                  borderRadius: 4,
+                  padding: "4px 12px",
+                  fontSize: 12,
+                  cursor: "pointer",
+                }}
+              >
+                Delete {selectedForDelete.size} selected
+              </button>
+              <button
+                onClick={() => setSelectedForDelete(new Set())}
+                style={{
+                  backgroundColor: "transparent",
+                  color: "#9ca3af",
+                  border: "1px solid #374151",
+                  borderRadius: 4,
+                  padding: "4px 8px",
+                  fontSize: 12,
+                  cursor: "pointer",
+                }}
+              >
+                Clear
+              </button>
+            </div>
+          )}
           {folderImages.length === 0 ? (
             <div style={{ color: "#9ca3af", textAlign: "center", padding: 16 }}>
               No images in this folder
@@ -409,62 +507,81 @@ export const QuestImagePastePanel: React.FC = () => {
                 gap: 8,
               }}
             >
-              {folderImages.map((img) => (
-                <div
-                  key={img.filename}
-                  style={{
-                    position: "relative",
-                    border: "1px solid #374151",
-                    borderRadius: 4,
-                    overflow: "hidden",
-                    backgroundColor: "#111827",
-                  }}
-                >
-                  <img
-                    src={`https://techpure.dev${img.url}`}
-                    alt={img.filename}
-                    style={{
-                      width: "100%",
-                      height: 80,
-                      objectFit: "cover",
-                      display: "block",
-                    }}
-                    loading="lazy"
-                  />
+              {folderImages.map((img) => {
+                const alreadyLinked = (quest?.questImages ?? []).some(
+                  (qi) => qi.src === img.filename
+                );
+                const isSelected = selectedForDelete.has(img.filename);
+                return (
                   <div
+                    key={img.filename}
                     style={{
-                      padding: 4,
-                      fontSize: 10,
-                      color: "#9ca3af",
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                    }}
-                    title={img.filename}
-                  >
-                    {img.filename}
-                  </div>
-                  <button
-                    onClick={() => deleteImage(img.filename)}
-                    disabled={isLoading}
-                    style={{
-                      position: "absolute",
-                      top: 2,
-                      right: 2,
-                      backgroundColor: "#dc2626",
-                      border: "none",
+                      position: "relative",
+                      border: `1px solid ${isSelected ? "#dc2626" : alreadyLinked ? "#22c55e" : "#374151"}`,
                       borderRadius: 4,
-                      padding: "2px 6px",
-                      fontSize: 12,
-                      cursor: "pointer",
-                      color: "white",
+                      overflow: "hidden",
+                      backgroundColor: "#111827",
                     }}
-                    title="Delete image"
                   >
-                    ×
-                  </button>
-                </div>
-              ))}
+                    {isAdmin && (
+                      <input
+                        type="checkbox"
+                        checked={isSelected}
+                        onChange={() => toggleSelectImage(img.filename)}
+                        style={{
+                          position: "absolute",
+                          top: 4,
+                          left: 4,
+                          zIndex: 1,
+                          accentColor: "#dc2626",
+                        }}
+                        title="Select for deletion"
+                      />
+                    )}
+                    <img
+                      src={`https://techpure.dev${img.url}`}
+                      alt={img.filename}
+                      style={{
+                        width: "100%",
+                        height: 80,
+                        objectFit: "cover",
+                        display: "block",
+                      }}
+                      loading="lazy"
+                    />
+                    <div
+                      style={{
+                        padding: 4,
+                        fontSize: 10,
+                        color: "#9ca3af",
+                        wordBreak: "break-all",
+                      }}
+                    >
+                      {img.filename}
+                    </div>
+                    <button
+                      onClick={() => linkExistingImage(img.filename)}
+                      disabled={isLoading || alreadyLinked}
+                      style={{
+                        width: "100%",
+                        padding: "3px 0",
+                        fontSize: 11,
+                        backgroundColor: alreadyLinked ? "#374151" : "#1e3a5f",
+                        color: alreadyLinked ? "#6b7280" : "#93c5fd",
+                        border: "none",
+                        cursor: alreadyLinked ? "default" : "pointer",
+                      }}
+                      title={
+                        alreadyLinked
+                          ? "Already linked to quest"
+                          : `Link to current step (Step ${stepKey})`
+                      }
+                    >
+                      {alreadyLinked ? "Linked" : `+ Link Step ${stepKey}`}
+                    </button>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>

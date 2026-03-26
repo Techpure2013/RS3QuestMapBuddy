@@ -1,5 +1,4 @@
 import React, { useMemo, useCallback } from "react";
-import Panel from "./../sections/panel";
 import QuestImagesPanel from "./../sections/ImageTool";
 import { useEditorSelector } from "./../../state/useEditorSelector";
 import { EditorStore } from "./../../state/editorStore";
@@ -9,14 +8,14 @@ import { saveActiveBundle } from "./../../idb/bundleStore";
 export const QuestImagesPanelContainer: React.FC = () => {
   const quest = useEditorSelector((s) => s.quest);
 
-  // Build dropdown options from current steps
+  // Build dropdown options from current steps, including stepId
   const stepOptions = useMemo(() => {
     const steps = quest?.questSteps ?? [];
-    return steps.map((s, idx) => {
-      const value = String(idx + 1); // string step key for UI options
-      const label = s.stepDescription ?? `Step ${value}`;
-      return { value, label };
-    });
+    return steps.map((s, idx) => ({
+      stepId: s.stepId,
+      stepNumber: idx + 1,
+      label: s.stepDescription ?? `Step ${idx + 1}`,
+    }));
   }, [quest]);
 
   const persist = useCallback(() => {
@@ -40,16 +39,12 @@ export const QuestImagesPanelContainer: React.FC = () => {
   );
 
   const onEditImage = useCallback(
-    (index: number, patch: { step?: string; stepDescription?: string }) => {
+    (index: number, patch: { stepIds?: number[] }) => {
       EditorStore.patchQuest((draft) => {
         const img = draft.questImages?.[index];
         if (!img) return;
-        if (typeof patch.step !== "undefined") {
-          // QuestImage.step is definitively a string
-          (img as QuestImage).step = patch.step;
-        }
-        if (typeof patch.stepDescription !== "undefined") {
-          img.stepDescription = patch.stepDescription;
+        if (patch.stepIds !== undefined) {
+          img.stepIds = patch.stepIds;
         }
       });
       persist();

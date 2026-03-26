@@ -253,11 +253,15 @@ export type QuestStep = {
 };
 
 export type QuestImage = {
-  step: string;
   src: string;
   height: number;
   width: number;
-  stepDescription: string;
+  /** Permanent step IDs this image is associated with */
+  stepIds: number[];
+  /** @deprecated old index-based step key, kept for migration */
+  step?: string;
+  /** @deprecated old description field, kept for migration */
+  stepDescription?: string;
 };
 
 /* ==========================================================================
@@ -284,6 +288,7 @@ export type NormalizedQuestStep = {
   additionalStepInformation: string[];
   dialogOptions: string[];
   highlights: QuestHighlights;
+  stepId?: number;
   pathToStep?: QuestPath;
   completionConditions?: StepCompletionConditions | null;
 };
@@ -352,11 +357,12 @@ export type PlotQuestBundle = {
     pathToStep?: QuestPath;
   }>;
   images: Array<{
-    step: string;
     src: string;
     height: number;
     width: number;
-    stepDescription: string;
+    stepIds?: number[];
+    step?: string;
+    stepDescription?: string;
   }>;
   // Optional fields your server may add
   rewards?: { questPoints: number; questRewards: string[] };
@@ -399,20 +405,30 @@ export function bundleToQuest(b: QuestBundle): Quest {
     questPoints: 0,
     questRewards: [],
   };
+  const questSteps = sorted.map((s) => ({
+    stepDescription: s.stepDescription ?? "",
+    itemsNeeded: toLinesArray(s.itemsNeeded),
+    itemsRecommended: toLinesArray(s.itemsRecommended),
+    additionalStepInformation: toLinesArray(s.additionalStepInformation),
+    dialogOptions: toLinesArray(s.dialogOptions),
+    highlights: s.highlights ?? { npc: [], object: [] },
+    stepId: typeof s.stepId === "number" ? s.stepId : undefined,
+    pathToStep: s.pathToStep,
+    completionConditions: (s as any).completionConditions ?? null,
+  }));
+
+  // Build stepId lookup by 1-based step key for migrating old images
+  const stepIdByKey = new Map<number, number>();
+  questSteps.forEach((s, idx) => {
+    if (typeof s.stepId === "number") {
+      stepIdByKey.set(idx + 1, s.stepId);
+    }
+  });
+
   return {
     questName: b.quest.name,
     lastEditedBy: (b as any).lastEditedBy,
-    questSteps: sorted.map((s) => ({
-      stepDescription: s.stepDescription ?? "",
-      itemsNeeded: toLinesArray(s.itemsNeeded),
-      itemsRecommended: toLinesArray(s.itemsRecommended),
-      additionalStepInformation: toLinesArray(s.additionalStepInformation),
-      dialogOptions: toLinesArray(s.dialogOptions),
-      highlights: s.highlights ?? { npc: [], object: [] },
-      stepId: typeof s.stepId === "number" ? s.stepId : undefined,
-      pathToStep: s.pathToStep,
-      completionConditions: (s as any).completionConditions ?? null,
-    })),
+    questSteps,
     questDetails: {
       Quest: b.details.Quest,
       StartPoint: b.details.StartPoint ?? "",
@@ -423,13 +439,25 @@ export function bundleToQuest(b: QuestBundle): Quest {
       Recommended: b.details.Recommended ?? [],
       EnemiesToDefeat: b.details.EnemiesToDefeat ?? [],
     },
-    questImages: (b.images ?? []).map((img) => ({
-      step: String(img.step ?? ""),
-      src: img.src ?? "",
-      width: typeof img.width === "number" ? img.width : 0,
-      height: typeof img.height === "number" ? img.height : 0,
-      stepDescription: img.stepDescription ?? "",
-    })),
+    questImages: (b.images ?? []).map((img) => {
+      const raw = img as Record<string, unknown>;
+      let stepIds: number[] = [];
+      if (Array.isArray(raw.stepIds) && raw.stepIds.length > 0) {
+        stepIds = raw.stepIds as number[];
+      } else if (typeof raw.step === "string" && raw.step) {
+        const key = parseInt(raw.step as string, 10);
+        const sid = stepIdByKey.get(key);
+        if (typeof sid === "number") stepIds = [sid];
+      }
+      return {
+        src: img.src ?? "",
+        width: typeof img.width === "number" ? img.width : 0,
+        height: typeof img.height === "number" ? img.height : 0,
+        stepIds,
+        step: typeof raw.step === "string" ? raw.step : undefined,
+        stepDescription: typeof raw.stepDescription === "string" ? raw.stepDescription : undefined,
+      };
+    }),
     rewards,
   };
 }
@@ -486,14 +514,17 @@ export function questToBundle(q: Quest): QuestBundleNormalized {
       additionalStepInformation: toLinesArray(s.additionalStepInformation),
       dialogOptions: toLinesArray(s.dialogOptions),
       highlights: s.highlights ?? { npc: [], object: [] },
+      ...(typeof s.stepId === "number" ? { stepId: s.stepId } : {}),
       pathToStep: s.pathToStep,
       completionConditions: s.completionConditions ?? null,
     })),
     images: (q.questImages ?? []).map((img) => ({
-      step: String(img.step ?? ""), // ENSURE STRING
       src: img.src,
       width: img.width,
       height: img.height,
+      stepIds: img.stepIds ?? [],
+      // Backward-compat fields for older server/client versions
+      step: img.step ?? "",
       stepDescription: img.stepDescription ?? "",
     })),
     rewards: q.rewards ?? { questPoints: 0, questRewards: [] },

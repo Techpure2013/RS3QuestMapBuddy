@@ -86,15 +86,6 @@ import { autoHighlight, autoItalic, splitColorSegments, CHAT_PATTERNS, LODESTONE
 import { HighlightSettingsStore } from "../../state/highlightSettingsStore";
 import { QUICK_INSERT_THUMBNAILS } from "../../data/quickInsertThumbnails";
 
-/** Sync all QuestImage.stepDescription fields with current step descriptions */
-function syncQuestImageDescriptions(draft: { questSteps: { stepDescription: string }[]; questImages?: { step: string; stepDescription: string }[] }) {
-  for (const img of draft.questImages ?? []) {
-    const stepIdx = parseInt(img.step, 10) - 1;
-    if (!isNaN(stepIdx) && stepIdx >= 0 && stepIdx < draft.questSteps.length) {
-      img.stepDescription = draft.questSteps[stepIdx].stepDescription;
-    }
-  }
-}
 
 export const CenterControls: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -178,7 +169,7 @@ export const CenterControls: React.FC = () => {
           EditorStore.patchQuest((draft) => {
             const step = draft.questSteps[prevStep];
             if (step) step.stepDescription = localStepDesc;
-            syncQuestImageDescriptions(draft);
+
           });
         }
       }
@@ -240,7 +231,6 @@ export const CenterControls: React.FC = () => {
         EditorStore.patchQuest((draft) => {
           const step = draft.questSteps[selection.selectedStep];
           if (step) step.stepDescription = text;
-          syncQuestImageDescriptions(draft);
         });
         setHasStepChanges(false);
         setSaveStatus("saved");
@@ -269,7 +259,6 @@ export const CenterControls: React.FC = () => {
     EditorStore.patchQuest((draft) => {
       const step = draft.questSteps[selection.selectedStep];
       if (step) step.stepDescription = localStepDesc;
-      syncQuestImageDescriptions(draft);
     });
     setHasStepChanges(false);
     setSaveStatus("saved");
@@ -1404,7 +1393,7 @@ export const CenterControls: React.FC = () => {
                               );
                             }
                           }
-                          syncQuestImageDescriptions(draft);
+              
                         });
                         handleStepChange(autoHighlight(localStepDesc, "#00FF00", CHAT_PATTERNS));
                       }}
@@ -1534,7 +1523,7 @@ export const CenterControls: React.FC = () => {
                               );
                             }
                           }
-                          syncQuestImageDescriptions(draft);
+              
                         });
                         handleStepChange(insertLodestoneImages(localStepDesc));
                       }}
@@ -1555,7 +1544,7 @@ export const CenterControls: React.FC = () => {
                               );
                             }
                           }
-                          syncQuestImageDescriptions(draft);
+              
                         });
                         handleStepChange(autoHighlight(localStepDesc, "#00FFFF", HighlightSettingsStore.getActionPatterns()));
                       }}
@@ -1576,7 +1565,7 @@ export const CenterControls: React.FC = () => {
                               );
                             }
                           }
-                          syncQuestImageDescriptions(draft);
+              
                         });
                         handleStepChange(autoHighlight(localStepDesc, "#FF0000", HighlightSettingsStore.getKillPatterns()));
                       }}
@@ -1597,7 +1586,7 @@ export const CenterControls: React.FC = () => {
                               );
                             }
                           }
-                          syncQuestImageDescriptions(draft);
+              
                         });
                         handleStepChange(autoHighlight(localStepDesc, "#FFFF00", HighlightSettingsStore.getLocationPatterns()));
                       }}
@@ -1716,7 +1705,7 @@ export const CenterControls: React.FC = () => {
                               );
                             }
                           }
-                          syncQuestImageDescriptions(draft);
+              
                         });
                         handleStepChange(autoHighlight(localStepDesc, "#FFA500", npcPatterns));
                       }}
@@ -1772,7 +1761,7 @@ export const CenterControls: React.FC = () => {
                               );
                             }
                           }
-                          syncQuestImageDescriptions(draft);
+              
                         });
                         handleStepChange(autoHighlight(localStepDesc, "#FFA500", objPatterns));
                       }}
@@ -1888,7 +1877,7 @@ export const CenterControls: React.FC = () => {
                               );
                             }
                           }
-                          syncQuestImageDescriptions(draft);
+              
                         });
                         handleStepChange(autoFormatDirectionsAndFloors(localStepDesc));
                       }}
@@ -1909,7 +1898,7 @@ export const CenterControls: React.FC = () => {
                               );
                             }
                           }
-                          syncQuestImageDescriptions(draft);
+              
                         });
                         handleStepChange(autoItalic(localStepDesc, ACT_PATTERNS));
                       }}
