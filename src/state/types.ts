@@ -518,15 +518,29 @@ export function questToBundle(q: Quest): QuestBundleNormalized {
       pathToStep: s.pathToStep,
       completionConditions: s.completionConditions ?? null,
     })),
-    images: (q.questImages ?? []).map((img) => ({
-      src: img.src,
-      width: img.width,
-      height: img.height,
-      stepIds: img.stepIds ?? [],
-      // Backward-compat fields for older server/client versions
-      step: img.step ?? "",
-      stepDescription: img.stepDescription ?? "",
-    })),
+    images: (q.questImages ?? []).map((img) => {
+      // Derive backward-compat step/stepDescription from current stepIds
+      // so the correct linkage survives even if the server strips stepIds
+      let step = img.step ?? "";
+      let stepDescription = img.stepDescription ?? "";
+      const ids = img.stepIds ?? [];
+      if (ids.length > 0) {
+        const steps = q.questSteps ?? [];
+        const idx = steps.findIndex((s) => s.stepId === ids[0]);
+        if (idx >= 0) {
+          step = String(idx + 1);
+          stepDescription = steps[idx].stepDescription ?? `Step ${idx + 1}`;
+        }
+      }
+      return {
+        src: img.src,
+        width: img.width,
+        height: img.height,
+        stepIds: ids,
+        step,
+        stepDescription,
+      };
+    }),
     rewards: q.rewards ?? { questPoints: 0, questRewards: [] },
   };
 }

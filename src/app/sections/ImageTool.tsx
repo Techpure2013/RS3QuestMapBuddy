@@ -68,7 +68,7 @@ export const QuestImagesPanel: React.FC<QuestImagesPanelProps> = ({
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
   const buildPreviewUrl = (img: QuestImage): string => {
-    const folder = encodeURIComponent(questName.replace(/[:']/g, ""));
+    const folder = encodeURIComponent(questName.replace(/:/g, ""));
     return `${previewBaseUrl}/${folder}/${img.src}`;
   };
 

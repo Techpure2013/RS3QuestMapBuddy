@@ -65,11 +65,10 @@ export const QuestImagePastePanel: React.FC = () => {
   // Auto-select VPS folder when quest loads (match questName to folder list)
   useEffect(() => {
     if (!questName || folders.length === 0 || selectedFolder) return;
-    // Folder names match quest names with colons and apostrophes stripped
-    const normalized = questName.replace(/[:']/g, "");
-    const match = folders.find(
-      (f) => f.toLowerCase() === normalized.toLowerCase()
-    );
+    // Strip colons and apostrophes from both sides for matching
+    const strip = (s: string) => s.replace(/[:']/g, "").toLowerCase();
+    const normalized = strip(questName);
+    const match = folders.find((f) => strip(f) === normalized);
     if (match) setSelectedFolder(match);
   }, [questName, folders, selectedFolder]);
 
