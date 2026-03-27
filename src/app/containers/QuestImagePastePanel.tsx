@@ -21,8 +21,8 @@ interface FolderImage {
 }
 
 export const QuestImagePastePanel: React.FC = () => {
-  const { email } = useAuth();
-  const isAdmin = email === "techpure2013@gmail.com";
+  const { isAuthed, role } = useAuth();
+  const isOwner = role === "owner";
   const quest = useEditorSelector((s) => s.quest);
   const selectedStep = useEditorSelector((s) => s.selection.selectedStep);
   const [folders, setFolders] = useState<string[]>([]);
@@ -318,9 +318,9 @@ export const QuestImagePastePanel: React.FC = () => {
     });
   }, []);
 
-  // Admin-only: batch delete selected images from VPS
+  // Batch delete selected images from VPS (any authenticated user)
   const deleteSelectedImages = useCallback(async () => {
-    if (!selectedFolder || !isAdmin || selectedForDelete.size === 0) return;
+    if (!selectedFolder || !isAuthed || selectedForDelete.size === 0) return;
     try {
       setIsLoading(true);
       setStatus(`Deleting ${selectedForDelete.size} image(s)...`);
@@ -346,11 +346,11 @@ export const QuestImagePastePanel: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [selectedFolder, isAdmin, selectedForDelete, fetchFolderImages]);
+  }, [selectedFolder, isAuthed, selectedForDelete, fetchFolderImages]);
 
   // Admin-only: delete a folder from VPS
   const deleteFolder = useCallback(async () => {
-    if (!selectedFolder || !isAdmin) return;
+    if (!selectedFolder || !isOwner) return;
     if (!confirm(`Delete folder "${selectedFolder}" and ALL its images? This cannot be undone!`)) return;
     try {
       setIsLoading(true);
@@ -373,7 +373,7 @@ export const QuestImagePastePanel: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [selectedFolder, isAdmin, fetchFolders]);
+  }, [selectedFolder, isOwner, fetchFolders]);
 
   return (
     <>
@@ -403,7 +403,7 @@ export const QuestImagePastePanel: React.FC = () => {
               </option>
             ))}
           </select>
-          {isAdmin && selectedFolder && (
+          {isOwner && selectedFolder && (
             <button
               onClick={deleteFolder}
               disabled={isLoading}
@@ -461,25 +461,16 @@ export const QuestImagePastePanel: React.FC = () => {
             backgroundColor: "#1f2937",
           }}
         >
-          {isAdmin && selectedForDelete.size > 0 && (
+          {isAuthed && (
             <div style={{ display: "flex", gap: 8, marginBottom: 8, alignItems: "center" }}>
               <button
-                onClick={deleteSelectedImages}
-                disabled={isLoading}
-                style={{
-                  backgroundColor: "#dc2626",
-                  color: "white",
-                  border: "none",
-                  borderRadius: 4,
-                  padding: "4px 12px",
-                  fontSize: 12,
-                  cursor: "pointer",
+                onClick={() => {
+                  if (selectedForDelete.size === folderImages.length) {
+                    setSelectedForDelete(new Set());
+                  } else {
+                    setSelectedForDelete(new Set(folderImages.map((img) => img.filename)));
+                  }
                 }}
-              >
-                Delete {selectedForDelete.size} selected
-              </button>
-              <button
-                onClick={() => setSelectedForDelete(new Set())}
                 style={{
                   backgroundColor: "transparent",
                   color: "#9ca3af",
@@ -490,8 +481,41 @@ export const QuestImagePastePanel: React.FC = () => {
                   cursor: "pointer",
                 }}
               >
-                Clear
+                {selectedForDelete.size === folderImages.length ? "Deselect All" : "Select All"}
               </button>
+              {selectedForDelete.size > 0 && (
+                <>
+                  <button
+                    onClick={deleteSelectedImages}
+                    disabled={isLoading}
+                    style={{
+                      backgroundColor: "#dc2626",
+                      color: "white",
+                      border: "none",
+                      borderRadius: 4,
+                      padding: "4px 12px",
+                      fontSize: 12,
+                      cursor: "pointer",
+                    }}
+                  >
+                    Delete {selectedForDelete.size} selected
+                  </button>
+                  <button
+                    onClick={() => setSelectedForDelete(new Set())}
+                    style={{
+                      backgroundColor: "transparent",
+                      color: "#9ca3af",
+                      border: "1px solid #374151",
+                      borderRadius: 4,
+                      padding: "4px 8px",
+                      fontSize: 12,
+                      cursor: "pointer",
+                    }}
+                  >
+                    Clear
+                  </button>
+                </>
+              )}
             </div>
           )}
           {folderImages.length === 0 ? (
@@ -507,10 +531,28 @@ export const QuestImagePastePanel: React.FC = () => {
               }}
             >
               {folderImages.map((img) => {
-                const alreadyLinked = (quest?.questImages ?? []).some(
+                const linkedImage = (quest?.questImages ?? []).find(
                   (qi) => qi.src === img.filename
                 );
+                const alreadyLinked = !!linkedImage;
                 const isSelected = selectedForDelete.has(img.filename);
+
+                // Resolve linked step labels
+                let linkedLabel = "Linked";
+                if (linkedImage) {
+                  const ids = linkedImage.stepIds ?? [];
+                  if (ids.length > 0) {
+                    const steps = quest?.questSteps ?? [];
+                    const labels = ids.map((sid) => {
+                      const idx = steps.findIndex((s) => s.stepId === sid);
+                      return idx >= 0 ? `Step ${idx + 1}` : `Step ?`;
+                    });
+                    linkedLabel = labels.join(", ");
+                  } else {
+                    linkedLabel = "Unlinked";
+                  }
+                }
+
                 return (
                   <div
                     key={img.filename}
@@ -522,7 +564,7 @@ export const QuestImagePastePanel: React.FC = () => {
                       backgroundColor: "#111827",
                     }}
                   >
-                    {isAdmin && (
+                    {isAuthed && (
                       <input
                         type="checkbox"
                         checked={isSelected}
@@ -558,26 +600,39 @@ export const QuestImagePastePanel: React.FC = () => {
                     >
                       {img.filename}
                     </div>
-                    <button
-                      onClick={() => linkExistingImage(img.filename)}
-                      disabled={isLoading || alreadyLinked}
-                      style={{
-                        width: "100%",
-                        padding: "3px 0",
-                        fontSize: 11,
-                        backgroundColor: alreadyLinked ? "#374151" : "#1e3a5f",
-                        color: alreadyLinked ? "#6b7280" : "#93c5fd",
-                        border: "none",
-                        cursor: alreadyLinked ? "default" : "pointer",
-                      }}
-                      title={
-                        alreadyLinked
-                          ? "Already linked to quest"
-                          : `Link to current step (Step ${stepKey})`
-                      }
-                    >
-                      {alreadyLinked ? "Linked" : `+ Link Step ${stepKey}`}
-                    </button>
+                    {alreadyLinked ? (
+                      <div
+                        style={{
+                          width: "100%",
+                          padding: "3px 4px",
+                          fontSize: 11,
+                          backgroundColor: "#374151",
+                          color: linkedImage.stepIds?.length ? "#22c55e" : "#f87171",
+                          textAlign: "center",
+                          boxSizing: "border-box",
+                        }}
+                        title={linkedLabel}
+                      >
+                        {linkedLabel}
+                      </div>
+                    ) : (
+                      <button
+                        onClick={() => linkExistingImage(img.filename)}
+                        disabled={isLoading}
+                        style={{
+                          width: "100%",
+                          padding: "3px 0",
+                          fontSize: 11,
+                          backgroundColor: "#1e3a5f",
+                          color: "#93c5fd",
+                          border: "none",
+                          cursor: "pointer",
+                        }}
+                        title={`Link to current step (Step ${stepKey})`}
+                      >
+                        + Link Step {stepKey}
+                      </button>
+                    )}
                   </div>
                 );
               })}

@@ -430,9 +430,13 @@ export const CenterControls: React.FC = () => {
     if (!quest) return;
     const insertIndex = selection.selectedStep + 1;
     EditorStore.patchQuest((draft) => {
+      // Assign a temporary negative stepId so image linking works before publish.
+      // The server will replace it with a real DB id on save.
+      const tempStepId = -(Date.now() + Math.floor(Math.random() * 1000));
       const newStep = {
         stepDescription: "",
         highlights: { npc: [], object: [] },
+        stepId: tempStepId,
       };
       draft.questSteps.splice(insertIndex, 0, newStep);
     });

@@ -6,6 +6,7 @@ const AUTH_EVENT = "rs3qb:auth-changed";
 export function useAuth() {
   const [isAuthed, setAuthed] = useState<boolean>(false);
   const [email, setEmail] = useState<string | undefined>(undefined);
+  const [role, setRole] = useState<string | undefined>(undefined);
 
   // prevent concurrent refreshes
   const inFlightRef = useRef<Promise<boolean> | null>(null);
@@ -29,6 +30,7 @@ export function useAuth() {
       const me = await fetchMe();
       setAuthed(me.ok);
       setEmail(me.email);
+      setRole(me.role);
 
       // broadcast only if state meaningfully changed
       const changed = me.ok !== isAuthed || me.email !== email;
@@ -88,6 +90,7 @@ export function useAuth() {
     // immediate local flip (hide panels now)
     setAuthed(false);
     setEmail(undefined);
+    setRole(undefined);
     lastChangedAtRef.current = Date.now();
     window.dispatchEvent(
       new CustomEvent(AUTH_EVENT, { detail: { ok: false, email: undefined } })
@@ -103,5 +106,5 @@ export function useAuth() {
     }, 200);
   }, [refresh]);
 
-  return { isAuthed, email, refresh, signOut };
+  return { isAuthed, email, role, refresh, signOut };
 }

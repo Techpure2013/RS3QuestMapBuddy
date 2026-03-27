@@ -514,7 +514,7 @@ export function questToBundle(q: Quest): QuestBundleNormalized {
       additionalStepInformation: toLinesArray(s.additionalStepInformation),
       dialogOptions: toLinesArray(s.dialogOptions),
       highlights: s.highlights ?? { npc: [], object: [] },
-      ...(typeof s.stepId === "number" ? { stepId: s.stepId } : {}),
+      ...(typeof s.stepId === "number" && s.stepId > 0 ? { stepId: s.stepId } : {}),
       pathToStep: s.pathToStep,
       completionConditions: s.completionConditions ?? null,
     })),
@@ -536,7 +536,7 @@ export function questToBundle(q: Quest): QuestBundleNormalized {
         src: img.src,
         width: img.width,
         height: img.height,
-        stepIds: ids,
+        stepIds: ids.filter((id) => id > 0),
         step,
         stepDescription,
       };
