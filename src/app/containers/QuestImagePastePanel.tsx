@@ -308,6 +308,26 @@ export const QuestImagePastePanel: React.FC = () => {
     [quest, selectedFolder, handleAddQuestImage, stepKey]
   );
 
+  // Add the current step to an already-linked image's stepIds
+  const addStepToImage = useCallback(
+    (filename: string) => {
+      if (!quest) return;
+      const currentStep = quest.questSteps[selectedStep];
+      const stepId = currentStep?.stepId;
+      if (typeof stepId !== "number") return;
+      EditorStore.patchQuest((draft) => {
+        const img = (draft.questImages ?? []).find((qi) => qi.src === filename);
+        if (!img) return;
+        if (!img.stepIds.includes(stepId)) {
+          img.stepIds = [...img.stepIds, stepId];
+        }
+      });
+      persist();
+      setStatus(`Added Step ${stepKey} to ${filename}`);
+    },
+    [quest, selectedStep, stepKey, persist]
+  );
+
   // Admin-only: toggle image selection for batch delete
   const toggleSelectImage = useCallback((filename: string) => {
     setSelectedForDelete((prev) => {
@@ -553,6 +573,12 @@ export const QuestImagePastePanel: React.FC = () => {
                   }
                 }
 
+                // Check if the current step is already linked to this image
+                const currentStepId = quest?.questSteps[selectedStep]?.stepId;
+                const currentStepAlreadyLinked = alreadyLinked
+                  && typeof currentStepId === "number"
+                  && (linkedImage.stepIds ?? []).includes(currentStepId);
+
                 return (
                   <div
                     key={img.filename}
@@ -601,20 +627,40 @@ export const QuestImagePastePanel: React.FC = () => {
                       {img.filename}
                     </div>
                     {alreadyLinked ? (
-                      <div
-                        style={{
-                          width: "100%",
-                          padding: "3px 4px",
-                          fontSize: 11,
-                          backgroundColor: "#374151",
-                          color: linkedImage.stepIds?.length ? "#22c55e" : "#f87171",
-                          textAlign: "center",
-                          boxSizing: "border-box",
-                        }}
-                        title={linkedLabel}
-                      >
-                        {linkedLabel}
-                      </div>
+                      <>
+                        <div
+                          style={{
+                            width: "100%",
+                            padding: "3px 4px",
+                            fontSize: 11,
+                            backgroundColor: "#374151",
+                            color: linkedImage.stepIds?.length ? "#22c55e" : "#f87171",
+                            textAlign: "center",
+                            boxSizing: "border-box",
+                          }}
+                          title={linkedLabel}
+                        >
+                          {linkedLabel}
+                        </div>
+                        {!currentStepAlreadyLinked && (
+                          <button
+                            onClick={() => addStepToImage(img.filename)}
+                            disabled={isLoading}
+                            style={{
+                              width: "100%",
+                              padding: "3px 0",
+                              fontSize: 11,
+                              backgroundColor: "#1e3a5f",
+                              color: "#93c5fd",
+                              border: "none",
+                              cursor: "pointer",
+                            }}
+                            title={`Also link to Step ${stepKey}`}
+                          >
+                            + Step {stepKey}
+                          </button>
+                        )}
+                      </>
                     ) : (
                       <button
                         onClick={() => linkExistingImage(img.filename)}
